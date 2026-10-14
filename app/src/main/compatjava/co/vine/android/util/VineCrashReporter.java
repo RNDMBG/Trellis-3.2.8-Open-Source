@@ -3,11 +3,11 @@ package co.vine.android.util;
 import android.content.Context;
 import android.util.Log;
 
-/**
- * Source-compatible diagnostic sink for Vine's old embedded Crashlytics calls.
- * The recovered third-party SDK is not usable source, so keep app diagnostics
- * safe and local until a supported reporting backend is deliberately chosen.
- */
+
+
+
+
+
 public final class VineCrashReporter {
     private static final String TAG = "Crashlytics";
 

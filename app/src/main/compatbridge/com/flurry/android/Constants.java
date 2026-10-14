@@ -1,6 +1,6 @@
 package com.flurry.android;
 
-/** Compatibility constants used by recovered Vine source. */
+
 public final class Constants {
     private Constants() { }
     public static final byte FEMALE = 0;

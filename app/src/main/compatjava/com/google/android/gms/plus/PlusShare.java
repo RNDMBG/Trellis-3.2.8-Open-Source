@@ -1,9 +1,9 @@
 package com.google.android.gms.plus;
 
-/**
- * Data-key compatibility constants used by Vine's API and share parsing.
- * The Google+ client itself is not bundled because that service is retired.
- */
+
+
+
+
 public final class PlusShare {
     private PlusShare() {
     }

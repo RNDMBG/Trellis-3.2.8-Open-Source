@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import java.util.Map;
 
-/** Local no-network replacement for the retired Flurry SDK. */
+
 public final class FlurryAgent {
     private static final String TAG = "VineAnalytics";
     private FlurryAgent() { }

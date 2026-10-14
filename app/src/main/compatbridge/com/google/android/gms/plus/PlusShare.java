@@ -1,6 +1,6 @@
 package com.google.android.gms.plus;
 
-/** Google+ data keys retained for Vine API compatibility. */
+
 public final class PlusShare {
     private PlusShare() { }
     public static final String KEY_CALL_TO_ACTION_LABEL = "label";

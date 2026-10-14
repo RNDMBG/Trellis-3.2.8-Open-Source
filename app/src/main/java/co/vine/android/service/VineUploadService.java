@@ -1021,13 +1021,21 @@
                     }
 
                     @Override 
-           protected void onCancelled() {
-               SLog.m448d("Task cancelled. {}, {}.", this.path, this.action);
-               if (!this.mIsDiscarded) {
-                   VineUploadService.access$1100(VineUploadService.this, this.path);
+            protected void onCancelled() {
+                SLog.m448d("Task cancelled. {}, {}.", this.path, this.action);
+                if (!this.mIsDiscarded) {
+                    VineUploadService.access$1100(VineUploadService.this, this.path);
+                    this.mExecutionStatus = 1;
+                    VineUploadService.this.startService(VineUploadService.getNotifyFailedIntent(getContext()));
+                    if (this.mUpload != null) {
+                        UploadManager.setStatus(getContext(), this.mUpload, 2, null);
+                        if (VineUploadService.ACTION_UPLOAD.equals(this.action) && this.mUpload.isPrivate) {
+                            VineUploadService.access$1000(VineUploadService.this, this.mUpload.path);
                         }
-               onComplete();
                     }
+                }
+                onComplete();
+            }
 
            private void onComplete() {
                         synchronized (VineUploadService.class) {

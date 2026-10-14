@@ -4,13 +4,13 @@ import android.content.Context;
 import android.util.Log;
 import java.util.Map;
 
-/**
- * Local no-network replacement for the obsolete Flurry integration.
- *
- * <p>Analytics is optional to the Vine client. Keeping these calls as a
- * logging facade preserves application flow without embedding a closed,
- * obsolete analytics SDK or silently sending data.</p>
- */
+
+
+
+
+
+
+
 public final class FlurryAgent {
     private static final String TAG = "VineAnalytics";
 
@@ -30,7 +30,7 @@ public final class FlurryAgent {
     }
 
     public static void setUseHttps(boolean useHttps) {
-        // Retained for source compatibility. This facade never performs network I/O.
+        
     }
 
     public static void setUserId(String userId) {

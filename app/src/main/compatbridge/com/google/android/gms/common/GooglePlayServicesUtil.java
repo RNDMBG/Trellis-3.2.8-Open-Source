@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
-/** Optional-service boundary; the open build does not bundle Google Play Services. */
+
 public final class GooglePlayServicesUtil {
     public static final String GOOGLE_PLAY_SERVICES_PACKAGE = "com.google.android.gms";
     public static final int SERVICE_MISSING = 1;
