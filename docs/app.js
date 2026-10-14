@@ -10,7 +10,7 @@ function buildNumber(tag) {
 function renderRelease(rel) {
   var tag = rel.tag_name || "";
   var n = buildNumber(tag);
-  var label = n >= 0 ? "Latest: 3.2.8 (build " + n + ")" : "Latest: " + tag;
+  var label = n >= 0 ? "build " + n : tag;
   document.getElementById("versionLine").textContent = label;
   var assets = rel.assets || [];
   for (var i = 0; i < assets.length; i++) {
@@ -23,7 +23,7 @@ function renderRelease(rel) {
 }
 
 function renderFallback() {
-  document.getElementById("versionLine").textContent = "Couldn't reach GitHub just now — the releases page has every build.";
+  document.getElementById("versionLine").textContent = "";
 }
 
 try {
