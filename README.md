@@ -8,7 +8,7 @@ libraries and third-party components keep their original ownership.
 
 ## Build
 
-1. Open `jadx-android-studio-project` in Android Studio (uses the bundled JBR, JDK 17).
+1. Open `trellis-android-studio-project` in Android Studio (uses the bundled JBR, JDK 17).
 2. Let Gradle sync, then build:
    `.\gradlew.bat :app:assembleArm64Debug`
 3. Release builds are signed with the project `key0` keystore, which is
@@ -17,9 +17,9 @@ libraries and third-party components keep their original ownership.
 
 ## Versioning
 
-`versionName` stays `3.2.8` forever. Each official build bumps
+`versionName` stays `3.2.8` forever. Each official build bumps so nothing is mixed.
 `trellisBuildNumber` in `gradle.properties` by the number of changes since
-the last build (first official build is 10). `versionCode` is derived as
+the last build (first official build is 10). `versionCode` is changed as
 `1600241 + trellisBuildNumber` so every install is an upgrade.
 
 ## Updates
