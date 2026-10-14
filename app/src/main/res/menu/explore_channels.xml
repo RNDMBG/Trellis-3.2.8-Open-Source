@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:vine="http://schemas.android.com/apk/res-auto">
+    <item android:id="@id/follow_channel" android:visible="false" android:title="@string/follow" vine:showAsAction="always" />
+    <item android:id="@id/audio" android:title="@string/mute" vine:showAsAction="never" />
+</menu>

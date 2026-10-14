@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s nowa wiadomość</item>
+        <item quantity="other">%1$s nowe wiadomości</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" obserwujący</item>
+        <item quantity="other">\"%1$s\" obserwujących</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" obserwowanych</item>
+        <item quantity="other">\"%1$s\" obserwowanych</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" polubienie</item>
+        <item quantity="other">\"%1$s\" polubienia</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s Zapętlenie</item>
+        <item quantity="other">%1$s Zapętleń</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" wpis</item>
+        <item quantity="other">\"%1$s\" wpisów</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s podany dalej</item>
+        <item quantity="other">%1$s podanych dalej</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">1d temu</item>
+        <item quantity="other">%dd temu</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 dzień</item>
+        <item quantity="other">%d dni</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">1 dzień temu</item>
+        <item quantity="other">%d dni temu</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">1h temu</item>
+        <item quantity="other">%dh temu</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 godzina</item>
+        <item quantity="other">%d godzin</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">godzinę temu</item>
+        <item quantity="other">%d godzin temu</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">1m temu</item>
+        <item quantity="other">%dm temu</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 minuta</item>
+        <item quantity="other">%d minut</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">minutę temu</item>
+        <item quantity="other">%d minut temu</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">miesiąc temu</item>
+        <item quantity="other">%d miesięcy temu</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">1s temu</item>
+        <item quantity="other">%ds temu</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 sekunda</item>
+        <item quantity="other">%d sekund</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">sekundę temu</item>
+        <item quantity="other">%d sekund temu</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">tydzień temu</item>
+        <item quantity="other">%d tygodni temu</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">rok temu</item>
+        <item quantity="other">%d lat temu</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s komentarz</item>
+        <item quantity="other">%1$s komentarzy</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s polubienie</item>
+        <item quantity="other">%1$s polubień</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" lubi to</item>
+        <item quantity="other">\"%1$s osób\" lubi to</item>
+    </plurals>
+</resources>

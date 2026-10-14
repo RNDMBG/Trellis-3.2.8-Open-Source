@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s new message</item>
+        <item quantity="other">%1$s new messages</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" Follower</item>
+        <item quantity="other">\"%1$s\" Followers</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" Following</item>
+        <item quantity="other">\"%1$s\" Following</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" Like</item>
+        <item quantity="other">\"%1$s\" Likes</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s Loop</item>
+        <item quantity="other">%1$s Loops</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" Post</item>
+        <item quantity="other">\"%1$s\" Posts</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s revine</item>
+        <item quantity="other">%1$s revines</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">1d ago</item>
+        <item quantity="other">%dd ago</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">1 day ago</item>
+        <item quantity="other">%d days ago</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">1h ago</item>
+        <item quantity="other">%dh ago</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">1 hour ago</item>
+        <item quantity="other">%d hours ago</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">1m ago</item>
+        <item quantity="other">%dm ago</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">1 minute ago</item>
+        <item quantity="other">%d minutes ago</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">1 month ago</item>
+        <item quantity="other">%d months ago</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">1s ago</item>
+        <item quantity="other">%ds ago</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 second</item>
+        <item quantity="other">%d seconds</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">1 second ago</item>
+        <item quantity="other">%d seconds ago</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">1 week ago</item>
+        <item quantity="other">%d weeks ago</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">1 year ago</item>
+        <item quantity="other">%d years ago</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s comment</item>
+        <item quantity="other">%1$s comments</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s like</item>
+        <item quantity="other">%1$s likes</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">%1$s likes this</item>
+        <item quantity="other">\"%1$s people\" like this</item>
+    </plurals>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="find_friends_colors">
+        <item>@color/find_friend_address</item>
+        <item>@color/find_friend_twitter</item>
+        <item>@color/find_friend_search</item>
+    </array>
+    <array name="find_friends_colors_twitter_reg">
+        <item>@color/find_friend_twitter</item>
+        <item>@color/find_friend_address</item>
+        <item>@color/find_friend_search</item>
+    </array>
+</resources>

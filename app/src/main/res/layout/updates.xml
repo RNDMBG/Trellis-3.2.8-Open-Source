@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@android:color/white"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="@android:color/black" android:id="@id/updates_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" />
+    <Button android:id="@id/updates_check" android:text="@string/updates_check_now" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" />
+    <LinearLayout android:orientation="horizontal" android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:textColor="@android:color/black" android:text="@string/updates_auto" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="13.0sp" android:textColor="@android:color/darker_gray" android:text="@string/updates_auto_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <co.vine.android.views.SwitchImple android:id="@id/updates_auto" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/VineSwitch" />
+    </LinearLayout>
+</LinearLayout>

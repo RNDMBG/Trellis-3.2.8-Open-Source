@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s پیام جدید</item>
+        <item quantity="other">%1$s پیام جدید</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" دنبال کننده</item>
+        <item quantity="other">\"%1$s\" دنبال کننده</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" را دنبال می کنید</item>
+        <item quantity="other">\"%1$s\" را دنبال می کنید</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" پسندیدن</item>
+        <item quantity="other">\"%1$s\" پسندیدن</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s حلقه</item>
+        <item quantity="other">%1$s حلقه</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" پست</item>
+        <item quantity="other">\"%1$s\" پست‌</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s revine</item>
+        <item quantity="other">%1$s revine</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">1 روز قبل</item>
+        <item quantity="other">%d روز قبل</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">۱ روز</item>
+        <item quantity="other">%d روز</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">1 روز قبل</item>
+        <item quantity="other">%d روز قبل</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">1 ساعت قبل</item>
+        <item quantity="other">%d ساعت قبل</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 ساعت</item>
+        <item quantity="other">%d ساعت</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">1 ساعت قبل</item>
+        <item quantity="other">%d ساعت قبل</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">1 دقیقه قبل</item>
+        <item quantity="other">%d دقیقه قبل</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">۱ دقیقه</item>
+        <item quantity="other">%d دقیقه</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">1 دقیقه قبل</item>
+        <item quantity="other">%d دقیقه قبل</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">1 ماه قبل</item>
+        <item quantity="other">%d ماه قبل</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">1 ثانیه قبل</item>
+        <item quantity="other">%d ثانیه قبل</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">ا ثانیه</item>
+        <item quantity="other">%d ثانیه</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">1 ثانیه قبل</item>
+        <item quantity="other">%d ثانیه قبل</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">1 هفته قبل</item>
+        <item quantity="other">%d هفته قبل</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">1 سال قبل</item>
+        <item quantity="other">%d سال قبل</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s نظر</item>
+        <item quantity="other">%1$s نظر</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s پسندیدن</item>
+        <item quantity="other">%1$s پسندید</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" این را پسندید</item>
+        <item quantity="other">\"%1$s نفر\" این را پسندیدند</item>
+    </plurals>
+</resources>

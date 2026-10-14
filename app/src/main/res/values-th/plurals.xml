@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s ข้อความใหม่</item>
+        <item quantity="other">%1$s ข้อความใหม่</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" ผู้ติดตาม</item>
+        <item quantity="other">\"%1$s\" ผู้ติดตาม</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" กําลังติดตาม</item>
+        <item quantity="other">\"%1$s\" ติดตาม</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" ชื่นชอบ</item>
+        <item quantity="other">\"%1$s\" ชื่นชอบ</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s ลูป</item>
+        <item quantity="other">%1$s ลูป</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" โพสต์</item>
+        <item quantity="other">\"%1$s\" โพสต์</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s รีไวน์</item>
+        <item quantity="other">%1$s รีไวน์</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">1 วันก่อน</item>
+        <item quantity="other">%d วันก่อน</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 วัน</item>
+        <item quantity="other">%d วัน</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">1 วันก่อน</item>
+        <item quantity="other">%d วันก่อน</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">1 ชม. ก่อน</item>
+        <item quantity="other">%d ชม. ก่อน</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 ชั่วโมง</item>
+        <item quantity="other">%d ชั่วโมง</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">1 ชั่วโมงก่อน</item>
+        <item quantity="other">%d ชั่วโมงก่อน</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">1 นาทีก่อน</item>
+        <item quantity="other">%d นาทีก่อน</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 นาที</item>
+        <item quantity="other">%d นาที</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">1 นาทีก่อน</item>
+        <item quantity="other">%d นาทีก่อน</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">1 เดือนก่อน</item>
+        <item quantity="other">%d เดือนก่อน</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">1 วิฯ ก่อน</item>
+        <item quantity="other">%d วิฯ ก่อน</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 วินาที</item>
+        <item quantity="other">%d วินาที</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">1 วินาทีก่อน</item>
+        <item quantity="other">%d วินาทีก่อน</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">1 สัปดาห์ก่อน</item>
+        <item quantity="other">%d สัปดาห์ก่อน</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">1 ปีก่อน</item>
+        <item quantity="other">%d ปีก่อน</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s ความเห็น</item>
+        <item quantity="other">%1$s ความเห็น</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s ถูกใจ</item>
+        <item quantity="other">%1$s ถูกใจ</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" ชอบไวน์นี้</item>
+        <item quantity="other">\"%1$s คน\"ถูกใจสิ่งนี้</item>
+    </plurals>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <co.vine.android.widget.ScrollDeltaScrollView android:id="@id/scrollview" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:descendantFocusability="blocksDescendants" android:layout_width="match_parent" android:layout_height="0.0dp">
+            <View android:layout_width="match_parent" android:layout_height="@dimen/tabbar_height" />
+            <co.vine.android.views.WebViewContainerLayout android:id="@id/webview_container" android:layout_width="match_parent" android:layout_height="match_parent" />
+            <include android:id="@id/empty" layout="@layout/sadface_empty" />
+        </LinearLayout>
+    </co.vine.android.widget.ScrollDeltaScrollView>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/real_sadface" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:id="@id/sadface" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_medium" android:layout_marginBottom="@dimen/spacing_large" android:src="@drawable/background_sadface" />
+        <co.vine.android.widget.TypefacesTextView android:gravity="center" android:id="@id/empty_text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dp" android:layout_marginRight="20.0dp" style="@style/Byline" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="right|bottom" android:id="@id/search" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dp" android:layout_marginBottom="9.0dp" android:src="@drawable/ic_explore_search" />
+</FrameLayout>

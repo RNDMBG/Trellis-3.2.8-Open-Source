@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'co.vine.android'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'co.vine.android'
+        minSdk 16
+        // Android 16 emulator images reject packages targeting below API 24.
+        // API 24 is the smallest compatibility bump and preserves the legacy UI.
+        targetSdk 24
+        // Trellis builds ride on top so every install is an upgrade.
+        // versionName stays 3.2.8; bump trellisBuildNumber in gradle.properties.
+        versionCode 1600241 + Integer.parseInt((findProperty('trellisBuildNumber') ?: '0').toString())
+        versionName '3.2.8'
+
+        // The decompiled app uses the Support RenderScript API.
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    useLibrary 'org.apache.http.legacy'
+    packaging {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+                // Keep the project's two custom Draft pager classes, but use the original
+                // version-matched library binaries for stock Support Library source and
+                // Jackson 2.3.4. JADX's emitted bridge/synthetic methods in those sources
+                // cause duplicates and missing synthetic placeholder classes.
+                srcDir 'src/main/compatjava'
+                srcDir 'src/main/compatbridge'
+                exclude 'android/support/annotation/**'
+                exclude 'android/support/v4/**'
+                exclude 'android/support/v7/**'
+                exclude 'android/support/p001v8/renderscript/**'
+                exclude 'com/fasterxml/jackson/core/**'
+                // These SDK implementations were recovered from obfuscated bytecode and
+                // are not required for the Vine application core. Keep the recovered
+                // sources on disk for provenance, but compile the small compatibility
+                // facades under src/main/compatjava instead.
+                exclude 'com/flurry/**'
+                exclude 'com/google/android/gms/**'
+                exclude 'com/google/ads/**'
+                exclude 'org/apache/commons/p005io/**'
+                // The embedded Crashlytics SDK was recovered as obfuscated bytecode with
+                // incomplete synthetic control flow. Vine uses only its public logging facade;
+                // compile the maintained compatibility implementation from compatjava instead.
+                exclude 'com/crashlytics/**'
+                exclude 'co/vine/android/SonyRecordingActivity.java'
+                exclude 'co/vine/android/SonyRecordingFragment.java'
+                exclude 'com/googlecode/javacpp/BuildMojo.java'
+                exclude 'co/vine/android/SonyRecordingActivity.java'
+                exclude 'com/googlecode/javacpp/BuildMojo.java'
+            }
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file(findProperty('releaseStoreFile') ?: '../key0')
+            storePassword findProperty('releaseStorePassword') ?: ''
+            keyAlias findProperty('releaseKeyAlias') ?: 'key0'
+            keyPassword findProperty('releaseKeyPassword') ?: ''
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    // Separate ARM64 release variant. The recovered APK contains only ARMv7
+    // native libraries, so this variant deliberately packages no ARM32
+    // binaries. It is installable on arm64-v8a devices while native features
+    // remain disabled until true ARM64 builds are supplied.
+    flavorDimensions += 'abi'
+    productFlavors {
+        arm64 {
+            dimension 'abi'
+            ndk {
+                abiFilters 'arm64-v8a'
+            }
+        }
+    }
+
+
+    lint {
+        // The recovered project contains legacy AppCompat/resource variants whose
+        // lint model is incompatible with current AGP, while Java/resource packaging
+        // remains valid. Keep lint visible in reports without blocking the APK.
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation files("${android.sdkDirectory}/build-tools/35.0.0/renderscript/lib/renderscript-v8.jar")
+    // Vine's source uses the legacy support APIs from the AppCompat 21 generation.
+    implementation 'com.android.support:appcompat-v7:21.0.3'
+    implementation 'com.android.support:support-v4:21.0.3'
+
+    // The decompiled Jackson PackageVersion identifies this exact core version.
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.3.4'
+    implementation 'commons-io:commons-io:2.13.0'
+}

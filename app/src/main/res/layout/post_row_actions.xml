@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" android:layout_marginBottom="10.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/post_viewer_actions" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+        <co.vine.android.widget.ColorizedCircleButton android:id="@id/like" android:padding="0.0dp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:src="@drawable/btn_post_like" android:layout_weight="0.25" />
+        <co.vine.android.widget.ColorizedCircleButton android:id="@id/comment" android:padding="0.0dp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:src="@drawable/btn_post_comment" android:layout_weight="0.25" />
+        <co.vine.android.widget.ColorizedCircleButton android:id="@id/share_post" android:padding="0.0dp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:src="@drawable/btn_share" android:layout_weight="0.25" />
+        <View android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="0.25" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="56.0dp" android:layout_height="wrap_content" android:layout_alignTop="@id/post_viewer_actions" android:layout_alignBottom="@id/post_viewer_actions" android:layout_alignParentRight="true">
+        <ImageView android:layout_gravity="center" android:id="@id/more_options" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_options" />
+    </FrameLayout>
+</RelativeLayout>

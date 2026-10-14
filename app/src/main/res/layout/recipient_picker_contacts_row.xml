@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_generic" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:vine="http://schemas.android.com/apk/res-auto">
+    <co.vine.android.widget.TypefacesTextView android:textColor="#4d000000" android:gravity="center" android:id="@id/separator" android:background="@color/solid_super_light_gray" android:padding="@dimen/spacing_micro" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" vine:textWeight="3" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/indicator_container" android:layout_width="wrap_content" android:layout_height="60.0dp" android:layout_below="@id/separator" android:layout_alignParentRight="true">
+        <ImageView android:id="@id/phone_indicator" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dp" android:src="@drawable/ic_phone" />
+        <ImageView android:id="@id/email_indicator" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dp" android:src="@drawable/ic_mail" />
+    </LinearLayout>
+    <co.vine.android.widget.TypefacesTextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/contact_name" android:paddingRight="@dimen/spacing_small" android:layout_width="match_parent" android:layout_height="60.0dp" android:layout_marginLeft="@dimen/spacing_small" android:lines="1" android:layout_toLeftOf="@id/indicator_container" android:layout_toRightOf="@id/user_image" android:layout_below="@id/separator" vine:textWeight="3" />
+    <View android:id="@id/divider" android:background="@drawable/rule_horizontal_5" android:layout_width="match_parent" android:layout_height="2.0dp" android:layout_marginBottom="1.0dp" android:layout_alignParentBottom="true" />
+</RelativeLayout>

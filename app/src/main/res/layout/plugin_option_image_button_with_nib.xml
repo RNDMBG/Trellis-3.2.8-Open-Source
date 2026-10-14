@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:layout_gravity="center" android:id="@id/option_image_button" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="@dimen/record_options_button_size" android:layout_weight="1.0" />
+    <ImageView android:layout_gravity="center|bottom" android:id="@id/nib" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/nib_up" android:tint="@color/tool_drawer_bg" />
+</FrameLayout>

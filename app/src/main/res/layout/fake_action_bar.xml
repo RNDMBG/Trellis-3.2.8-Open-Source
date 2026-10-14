@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:orientation="horizontal" android:id="@id/distance_marker" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <RelativeLayout android:orientation="horizontal" android:id="@id/fake_action_bar" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:id="@id/fake_action_bar_left" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_alignParentLeft="true">
+            <ImageView android:id="@id/ab_back_button" android:layout_width="56.0dp" android:layout_height="56.0dp" android:scaleType="center" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/ab_home_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+            <TextView android:gravity="left|center" android:id="@id/ab_title_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dp" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/fake_action_bar_right" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_margin="10.0dp" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/ab_overflow" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</RelativeLayout>

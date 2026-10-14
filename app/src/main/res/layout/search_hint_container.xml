@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/search_hint" android:background="@drawable/bg_generic" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <co.vine.android.widget.TypefacesTextView android:textSize="@dimen/font_size_medium" android:textColor="@color/search_hint_title" android:gravity="left|center" android:id="@id/search_hint_title" android:paddingLeft="@dimen/spacing_small" android:layout_width="wrap_content" android:layout_height="@dimen/spacing_large" />
+    <ImageView android:id="@id/search_hint_icon" android:layout_width="@dimen/spacing_large" android:layout_height="@dimen/spacing_large" android:src="@drawable/ic_search_grey" android:scaleType="center" android:layout_alignParentRight="true" />
+    <View android:background="@color/btn_tab_default_fill" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_alignParentBottom="true" />
+</RelativeLayout>

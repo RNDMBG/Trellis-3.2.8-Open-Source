@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">הודעה חדשה %1$s</item>
+        <item quantity="other">%1$s הודעות חדשות</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">עוקב \"%1$s\"</item>
+        <item quantity="other">\"%1$s\" עוקבים</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" במעקב</item>
+        <item quantity="other">\"%1$s\" במעקב</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">"הערת 'אהבתי' \"%1$s\""</item>
+        <item quantity="other">"\"%1$s\" הערות 'אהבתי'"</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">חזרה %1$s</item>
+        <item quantity="other">%1$s חזרות</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">פרסום \"%1$s\"</item>
+        <item quantity="other">\"%1$s\" פרסומים</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">סרטון %1$s נשלח מחדש</item>
+        <item quantity="other">%1$s סרטונים נשלחו מחדש</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">לפני יום אחד</item>
+        <item quantity="other">לפני %d ימים</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">יום אחד</item>
+        <item quantity="other">%d ימים</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">לפני יום אחד</item>
+        <item quantity="other">לפני %d ימים</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">לפני שעה אחת</item>
+        <item quantity="other">לפני %d שעות</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">שעה אחת</item>
+        <item quantity="other">%d שעות</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">לפני שעה אחת</item>
+        <item quantity="other">לפני %d שעות</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">לפני דקה אחת</item>
+        <item quantity="other">לפני %d דקות</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">דקה אחת</item>
+        <item quantity="other">%d דקות</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">לפני דקה אחת</item>
+        <item quantity="other">לפני %d דקות</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">לפני חודש אחד</item>
+        <item quantity="other">לפני %d חודשים</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">לפני שנייה אחת</item>
+        <item quantity="other">לפני %d שניות</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">שנייה אחת</item>
+        <item quantity="other">%d שניות</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">לפני שנייה אחת</item>
+        <item quantity="other">לפני %d שניות</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">לפני שבוע אחד</item>
+        <item quantity="other">לפני %d שבועות</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">לפני שנה אחת</item>
+        <item quantity="other">לפני %d שנים</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">תגובה %1$s</item>
+        <item quantity="other">%1$s תגובות</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">"הערת 'אהבתי' %1$s"</item>
+        <item quantity="other">"%1$s הערות 'אהבתי'"</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" אוהב את זה</item>
+        <item quantity="other">\"%1$s אנשים\" אוהבים את זה</item>
+    </plurals>
+</resources>

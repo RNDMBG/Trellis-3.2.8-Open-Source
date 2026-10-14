@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/videoContainer" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/sensitive_text" android:background="@color/sensitive_background" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <co.vine.android.widget.TypefacesTextView android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/warning" style="@style/WarningText" />
+        <co.vine.android.widget.TypefacesTextView android:textStyle="bold" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sensitive_content" style="@style/SensitiveText" />
+    </LinearLayout>
+    <ImageView android:id="@id/video_image" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    <ProgressBar android:id="@id/video_load_image" android:layout_width="48.0dp" android:layout_height="48.0dp" android:indeterminate="true" android:layout_centerInParent="true" style="?android:progressBarStyleLarge" />
+    <FrameLayout android:id="@id/videoViewContainer" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerInParent="true">
+        <co.vine.android.player.SdkVideoView android:id="@id/videoView" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </FrameLayout>
+    <ImageView android:id="@id/video_image_top" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    <co.vine.android.views.MultiPhaseBitmapView android:id="@id/doubleTapView" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" />
+</RelativeLayout>

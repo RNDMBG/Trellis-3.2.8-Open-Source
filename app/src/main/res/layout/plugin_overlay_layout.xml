@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <co.vine.android.views.DrawingView android:id="@id/drawing_view" android:layout_width="match_parent" android:layout_height="400.0dp" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/drawTools" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10.0dp" android:layout_alignParentBottom="true">
+        <Button android:textColor="@android:color/white" android:id="@id/size" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+        <Button android:textColor="@android:color/white" android:id="@id/undo" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="B" android:layout_weight="1.0" />
+        <Button android:id="@id/color" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text=" " android:layout_weight="1.0" />
+        <Button android:textColor="@android:color/white" android:id="@id/clear" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="c" android:layout_weight="1.0" />
+        <Button android:textColor="@android:color/white" android:id="@id/advance" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/editTools" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10.0dp" android:layout_alignParentBottom="true">
+        <Button android:textColor="@android:color/white" android:id="@id/save" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="Save" android:layout_weight="1.0" />
+        <Button android:textColor="@android:color/white" android:id="@id/restore" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="Restore" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

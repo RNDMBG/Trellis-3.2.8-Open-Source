@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/bg_channel_followed_modal" android:paddingLeft="20.0dp" android:paddingTop="16.0dp" android:paddingRight="20.0dp" android:paddingBottom="13.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="26.0dp" android:layout_marginRight="26.0dp" android:layout_centerInParent="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:vine="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp" android:src="@drawable/ic_favorite_confirmation" />
+    <co.vine.android.widget.TypefacesTextView android:textSize="@dimen/font_size_default" android:textColor="#fffdfdfd" android:gravity="center" android:id="@id/description" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content" />
+</LinearLayout>

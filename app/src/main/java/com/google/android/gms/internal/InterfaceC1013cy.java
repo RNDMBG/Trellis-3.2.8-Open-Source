@@ -1,0 +1,302 @@
+            package com.google.android.gms.internal;
+
+            import android.os.Binder;
+            import android.os.IBinder;
+            import android.os.IInterface;
+            import android.os.Parcel;
+            import android.os.RemoteException;
+            
+            /* JADX INFO: renamed from: com.google.android.gms.internal.cy */
+            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            public interface InterfaceC1013cy extends IInterface {
+
+                /* JADX INFO: renamed from: com.google.android.gms.internal.cy$a */
+                public static abstract class a extends Binder implements InterfaceC1013cy {
+
+                    /* JADX INFO: renamed from: com.google.android.gms.internal.cy$a$a, reason: collision with other inner class name */
+                    private static class C1327a implements InterfaceC1013cy {
+
+                        /* JADX INFO: renamed from: dG */
+                        private IBinder f1647dG;
+
+                        C1327a(IBinder iBinder) {
+                            this.f1647dG = iBinder;
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        /* JADX INFO: renamed from: a */
+                        public void mo1506a(InterfaceC1012cx interfaceC1012cx) throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                parcelObtain.writeStrongBinder(interfaceC1012cx != null ? interfaceC1012cx.asBinder() : null);
+                                this.f1647dG.transact(5005, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        /* JADX INFO: renamed from: a */
+                        public void mo1507a(InterfaceC1012cx interfaceC1012cx, int i) throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                parcelObtain.writeStrongBinder(interfaceC1012cx != null ? interfaceC1012cx.asBinder() : null);
+                                parcelObtain.writeInt(i);
+                                this.f1647dG.transact(5004, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        /* JADX INFO: renamed from: a */
+                        public void mo1508a(InterfaceC1012cx interfaceC1012cx, int i, String str, byte[] bArr) throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                parcelObtain.writeStrongBinder(interfaceC1012cx != null ? interfaceC1012cx.asBinder() : null);
+                                parcelObtain.writeInt(i);
+                                parcelObtain.writeString(str);
+                                parcelObtain.writeByteArray(bArr);
+                                this.f1647dG.transact(5006, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        /* JADX INFO: renamed from: a */
+                        public void mo1509a(InterfaceC1012cx interfaceC1012cx, int i, byte[] bArr) throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                parcelObtain.writeStrongBinder(interfaceC1012cx != null ? interfaceC1012cx.asBinder() : null);
+                                parcelObtain.writeInt(i);
+                                parcelObtain.writeByteArray(bArr);
+                                this.f1647dG.transact(5003, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+
+                        @Override // android.os.IInterface
+                        public IBinder asBinder() {
+                            return this.f1647dG;
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        /* JADX INFO: renamed from: b */
+                        public void mo1510b(InterfaceC1012cx interfaceC1012cx) throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                parcelObtain.writeStrongBinder(interfaceC1012cx != null ? interfaceC1012cx.asBinder() : null);
+                                this.f1647dG.transact(5008, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        /* JADX INFO: renamed from: b */
+                        public void mo1511b(InterfaceC1012cx interfaceC1012cx, int i) throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                parcelObtain.writeStrongBinder(interfaceC1012cx != null ? interfaceC1012cx.asBinder() : null);
+                                parcelObtain.writeInt(i);
+                                this.f1647dG.transact(5007, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        /* JADX INFO: renamed from: c */
+                        public void mo1512c(InterfaceC1012cx interfaceC1012cx) throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                parcelObtain.writeStrongBinder(interfaceC1012cx != null ? interfaceC1012cx.asBinder() : null);
+                                this.f1647dG.transact(5009, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        public int getMaxNumKeys() throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                this.f1647dG.transact(5002, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                int i = parcelObtain2.readInt();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                return i;
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+
+                        @Override // com.google.android.gms.internal.InterfaceC1013cy
+                        public int getMaxStateSize() throws RemoteException {
+                            Parcel parcelObtain = Parcel.obtain();
+                            Parcel parcelObtain2 = Parcel.obtain();
+                            try {
+                                parcelObtain.writeInterfaceToken("com.google.android.gms.appstate.internal.IAppStateService");
+                                this.f1647dG.transact(5001, parcelObtain, parcelObtain2, 0);
+                                parcelObtain2.readException();
+                                int i = parcelObtain2.readInt();
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                return i;
+                            } catch (Throwable th) {
+                                parcelObtain2.recycle();
+                                parcelObtain.recycle();
+                                throw th;
+                            }
+                        }
+                    }
+
+                    /* JADX INFO: renamed from: t */
+                    public static InterfaceC1013cy m1513t(IBinder iBinder) {
+                        if (iBinder == null) {
+                            return null;
+                        }
+                        IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                        return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1013cy)) ? new C1327a(iBinder) : (InterfaceC1013cy) iInterfaceQueryLocalInterface;
+                    }
+
+                    @Override // android.os.Binder
+                    public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+                        switch (code) {
+                            case 5001:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                int maxStateSize = getMaxStateSize();
+                                reply.writeNoException();
+                                reply.writeInt(maxStateSize);
+                                return true;
+                            case 5002:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                int maxNumKeys = getMaxNumKeys();
+                                reply.writeNoException();
+                                reply.writeInt(maxNumKeys);
+                                return true;
+                            case 5003:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                mo1509a(InterfaceC1012cx.a.m1505s(data.readStrongBinder()), data.readInt(), data.createByteArray());
+                                reply.writeNoException();
+                                return true;
+                            case 5004:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                mo1507a(InterfaceC1012cx.a.m1505s(data.readStrongBinder()), data.readInt());
+                                reply.writeNoException();
+                                return true;
+                            case 5005:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                mo1506a(InterfaceC1012cx.a.m1505s(data.readStrongBinder()));
+                                reply.writeNoException();
+                                return true;
+                            case 5006:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                mo1508a(InterfaceC1012cx.a.m1505s(data.readStrongBinder()), data.readInt(), data.readString(), data.createByteArray());
+                                reply.writeNoException();
+                                return true;
+                            case 5007:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                mo1511b(InterfaceC1012cx.a.m1505s(data.readStrongBinder()), data.readInt());
+                                reply.writeNoException();
+                                return true;
+                            case 5008:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                mo1510b(InterfaceC1012cx.a.m1505s(data.readStrongBinder()));
+                                reply.writeNoException();
+                                return true;
+                            case 5009:
+                                data.enforceInterface("com.google.android.gms.appstate.internal.IAppStateService");
+                                mo1512c(InterfaceC1012cx.a.m1505s(data.readStrongBinder()));
+                                reply.writeNoException();
+                                return true;
+                            case 1598968902:
+                                reply.writeString("com.google.android.gms.appstate.internal.IAppStateService");
+                                return true;
+                            default:
+                                return super.onTransact(code, data, reply, flags);
+                        }
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                void mo1506a(InterfaceC1012cx interfaceC1012cx) throws RemoteException;
+
+                /* JADX INFO: renamed from: a */
+                void mo1507a(InterfaceC1012cx interfaceC1012cx, int i) throws RemoteException;
+
+                /* JADX INFO: renamed from: a */
+                void mo1508a(InterfaceC1012cx interfaceC1012cx, int i, String str, byte[] bArr) throws RemoteException;
+
+                /* JADX INFO: renamed from: a */
+                void mo1509a(InterfaceC1012cx interfaceC1012cx, int i, byte[] bArr) throws RemoteException;
+
+                /* JADX INFO: renamed from: b */
+                void mo1510b(InterfaceC1012cx interfaceC1012cx) throws RemoteException;
+
+                /* JADX INFO: renamed from: b */
+                void mo1511b(InterfaceC1012cx interfaceC1012cx, int i) throws RemoteException;
+
+                /* JADX INFO: renamed from: c */
+                void mo1512c(InterfaceC1012cx interfaceC1012cx) throws RemoteException;
+
+                int getMaxNumKeys() throws RemoteException;
+
+                int getMaxStateSize() throws RemoteException;
+            }

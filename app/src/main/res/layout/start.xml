@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <co.vine.android.player.SdkVideoView android:id="@id/start_video" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="3.0">
+            <TextView android:textSize="18.0sp" android:textColor="#a6ffffff" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/splash_page_description" android:drawableTop="@drawable/logo_signup" android:drawablePadding="16.0dp" android:layout_centerInParent="true" android:lineSpacingExtra="2.0sp" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="2.0">
+            <co.vine.android.widget.TypefacesTextView android:textSize="14.0sp" android:textColor="@color/solid_white" android:gravity="center" android:id="@id/start_sign_in" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" android:layout_alignParentBottom="true" />
+            <RelativeLayout android:id="@id/start_button_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="34.0dp" android:layout_above="@id/start_sign_in" android:layout_centerHorizontal="true">
+                <co.vine.android.widget.StartButton android:id="@id/sign_up_twitter" android:background="@drawable/bg_signup_twitter" android:drawableLeft="@drawable/signup_twitter_ic" android:layout_alignParentBottom="true" style="@style/SignUpButton" />
+                <co.vine.android.widget.StartButton android:id="@id/start_sign_up_email" android:background="@drawable/bg_signup_email" android:layout_marginBottom="@dimen/spacing_small" android:drawableLeft="@drawable/signup_email_ic" android:layout_above="@id/sign_up_twitter" style="@style/SignUpButton" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

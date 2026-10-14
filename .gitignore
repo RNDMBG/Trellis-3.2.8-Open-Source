@@ -1,0 +1,16 @@
+# Gradle / build outputs
+.gradle/
+build/
+app/build/
+# Local SDK path and signing material (never commit keys)
+local.properties
+key0
+*.keystore
+*.jks
+# Built APKs ship as GitHub Release assets, not repo files
+*.apk
+*.ap_
+# IDE locals
+.idea/
+*.log
+.DS_Store

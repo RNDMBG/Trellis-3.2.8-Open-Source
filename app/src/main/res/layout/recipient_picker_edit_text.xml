@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<co.vine.android.widget.TypefacesEditText android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/query" android:padding="7.0dp" android:layout_marginRight="2.0dp" android:layout_marginBottom="3.0dp" android:minWidth="150.0dp" android:minHeight="38.0dp" vine:textWeight="3" style="@style/EditText.RecipientSearchView"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:vine="http://schemas.android.com/apk/res-auto" />

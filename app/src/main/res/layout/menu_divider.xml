@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View android:id="@id/divider" android:background="@drawable/rule_horizontal_5" android:layout_width="match_parent" android:layout_height="2.0dp" android:layout_marginBottom="1.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

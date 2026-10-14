@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s новое сообщение</item>
+        <item quantity="other">%1$s новых сообщений</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">Читатель: \"%1$s\"</item>
+        <item quantity="other">Читатели: \"%1$s\"</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">Читаемых: \"%1$s\"</item>
+        <item quantity="other">Читаемых: \"%1$s\"</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">Нравится: \"%1$s\"</item>
+        <item quantity="other">Понравилось: \"%1$s\"</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s просмотр</item>
+        <item quantity="other">Просмотров: %1$s</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">Записи: \"%1$s\"</item>
+        <item quantity="other">Записи: \"%1$s\"</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">Ревайны: %1$s</item>
+        <item quantity="other">Ревайны: %1$s</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">1 д назад</item>
+        <item quantity="other">%dдн назад</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 день</item>
+        <item quantity="other">%d дн</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">1 день назад</item>
+        <item quantity="other">%d дн назад</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">1ч назад</item>
+        <item quantity="other">%d ч назад</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 ч</item>
+        <item quantity="other">%d ч</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">1 час назад</item>
+        <item quantity="other">%d час назад</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">1 мин назад</item>
+        <item quantity="other">%d мин назад</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 мин</item>
+        <item quantity="other">%d мин</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">1 минуту назад</item>
+        <item quantity="other">%d мин назад</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">1 месяц назад</item>
+        <item quantity="other">%d мес назад</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">1 сек назад</item>
+        <item quantity="other">%d сек назад</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 секунда</item>
+        <item quantity="other">%d сек</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">1 секунду назад</item>
+        <item quantity="other">%d сек назад</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">1 неделю назад</item>
+        <item quantity="other">%d нед назад</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">1 год назад</item>
+        <item quantity="other">%d год назад</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">Комментарий %1$s</item>
+        <item quantity="other">Комментарии %1$s</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">Нравится %1$s</item>
+        <item quantity="other">Понравилось %1$s</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" пользователям нравится</item>
+        <item quantity="other">\"%1$s пользователям\" нравится</item>
+    </plurals>
+</resources>

@@ -1,0 +1,261 @@
+            package com.google.android.gms.common.internal.safeparcel;
+
+            import android.os.Bundle;
+            import android.os.IBinder;
+            import android.os.Parcel;
+            import android.os.Parcelable;
+            import java.util.List;
+            
+            /* JADX INFO: renamed from: com.google.android.gms.common.internal.safeparcel.b */
+            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            public class C0902b {
+                /* JADX INFO: renamed from: A */
+                private static int m1129A(Parcel parcel, int i) {
+                    parcel.writeInt((-65536) | i);
+                    parcel.writeInt(0);
+                    return parcel.dataPosition();
+                }
+
+                /* JADX INFO: renamed from: B */
+                private static void m1130B(Parcel parcel, int i) {
+                    int iDataPosition = parcel.dataPosition();
+                    parcel.setDataPosition(i - 4);
+                    parcel.writeInt(iDataPosition - i);
+                    parcel.setDataPosition(iDataPosition);
+                }
+
+                /* JADX INFO: renamed from: C */
+                public static void m1131C(Parcel parcel, int i) {
+                    m1130B(parcel, i);
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1132a(Parcel parcel, int i, byte b) {
+                    m1148b(parcel, i, 4);
+                    parcel.writeInt(b);
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1133a(Parcel parcel, int i, double d) {
+                    m1148b(parcel, i, 8);
+                    parcel.writeDouble(d);
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1134a(Parcel parcel, int i, float f) {
+                    m1148b(parcel, i, 4);
+                    parcel.writeFloat(f);
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1135a(Parcel parcel, int i, long j) {
+                    m1148b(parcel, i, 8);
+                    parcel.writeLong(j);
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1136a(Parcel parcel, int i, Bundle bundle, boolean z) {
+                    if (bundle == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcel.writeBundle(bundle);
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1137a(Parcel parcel, int i, IBinder iBinder, boolean z) {
+                    if (iBinder == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcel.writeStrongBinder(iBinder);
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1138a(Parcel parcel, int i, Parcel parcel2, boolean z) {
+                    if (parcel2 == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcel.appendFrom(parcel2, 0, parcel2.dataSize());
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1139a(Parcel parcel, int i, Parcelable parcelable, int i2, boolean z) {
+                    if (parcelable == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcelable.writeToParcel(parcel, i2);
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1140a(Parcel parcel, int i, String str, boolean z) {
+                    if (str == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcel.writeString(str);
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1141a(Parcel parcel, int i, List<String> list, boolean z) {
+                    if (list == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcel.writeStringList(list);
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1142a(Parcel parcel, int i, short s) {
+                    m1148b(parcel, i, 4);
+                    parcel.writeInt(s);
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1143a(Parcel parcel, int i, boolean z) {
+                    m1148b(parcel, i, 4);
+                    parcel.writeInt(z ? 1 : 0);
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1144a(Parcel parcel, int i, byte[] bArr, boolean z) {
+                    if (bArr == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcel.writeByteArray(bArr);
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static <T extends Parcelable> void m1145a(Parcel parcel, int i, T[] tArr, int i2, boolean z) {
+                    if (tArr == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                            return;
+                        }
+                        return;
+                    }
+                    int iM1129A = m1129A(parcel, i);
+                    parcel.writeInt(tArr.length);
+                    for (T t : tArr) {
+                        if (t == null) {
+                            parcel.writeInt(0);
+                        } else {
+                            m1147a(parcel, t, i2);
+                        }
+                    }
+                    m1130B(parcel, iM1129A);
+                }
+
+                /* JADX INFO: renamed from: a */
+                public static void m1146a(Parcel parcel, int i, String[] strArr, boolean z) {
+                    if (strArr == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcel.writeStringArray(strArr);
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: a */
+                private static <T extends Parcelable> void m1147a(Parcel parcel, T t, int i) {
+                    int iDataPosition = parcel.dataPosition();
+                    parcel.writeInt(1);
+                    int iDataPosition2 = parcel.dataPosition();
+                    t.writeToParcel(parcel, i);
+                    int iDataPosition3 = parcel.dataPosition();
+                    parcel.setDataPosition(iDataPosition);
+                    parcel.writeInt(iDataPosition3 - iDataPosition2);
+                    parcel.setDataPosition(iDataPosition3);
+                }
+
+                /* JADX INFO: renamed from: b */
+                private static void m1148b(Parcel parcel, int i, int i2) {
+                    if (i2 < 65535) {
+                        parcel.writeInt((i2 << 16) | i);
+                    } else {
+                        parcel.writeInt((-65536) | i);
+                        parcel.writeInt(i2);
+                    }
+                }
+
+                /* JADX INFO: renamed from: b */
+                public static <T extends Parcelable> void m1149b(Parcel parcel, int i, List<T> list, boolean z) {
+                    if (list == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                            return;
+                        }
+                        return;
+                    }
+                    int iM1129A = m1129A(parcel, i);
+                    int size = list.size();
+                    parcel.writeInt(size);
+                    for (int i2 = 0; i2 < size; i2++) {
+                        T t = list.get(i2);
+                        if (t == null) {
+                            parcel.writeInt(0);
+                        } else {
+                            m1147a(parcel, t, 0);
+                        }
+                    }
+                    m1130B(parcel, iM1129A);
+                }
+
+                /* JADX INFO: renamed from: c */
+                public static void m1150c(Parcel parcel, int i, int i2) {
+                    m1148b(parcel, i, 4);
+                    parcel.writeInt(i2);
+                }
+
+                /* JADX INFO: renamed from: c */
+                public static void m1151c(Parcel parcel, int i, List list, boolean z) {
+                    if (list == null) {
+                        if (z) {
+                            m1148b(parcel, i, 0);
+                        }
+                    } else {
+                        int iM1129A = m1129A(parcel, i);
+                        parcel.writeList(list);
+                        m1130B(parcel, iM1129A);
+                    }
+                }
+
+                /* JADX INFO: renamed from: k */
+                public static int m1152k(Parcel parcel) {
+                    return m1129A(parcel, 20293);
+                }
+            }

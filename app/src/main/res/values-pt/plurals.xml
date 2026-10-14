@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s nova mensagem</item>
+        <item quantity="other">%1$s novas mensagens</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" Seguidor</item>
+        <item quantity="other">\"%1$s\" Seguidores</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" Seguindo</item>
+        <item quantity="other">\"%1$s\" Seguindo</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" Curtiu</item>
+        <item quantity="other">\"%1$s\" Curtiram</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s Ciclo</item>
+        <item quantity="other">%1$s Ciclos</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" Publicação</item>
+        <item quantity="other">\"%1$s\" Publicações</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s revine</item>
+        <item quantity="other">%1$s revines</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">há 1 d</item>
+        <item quantity="other">há %d d</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 dia</item>
+        <item quantity="other">%d dias</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">há 1 dia</item>
+        <item quantity="other">há %d dias</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">há 1 h</item>
+        <item quantity="other">há %d h</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 hora</item>
+        <item quantity="other">%d horas</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">há 1 hora</item>
+        <item quantity="other">há %d horas</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">há 1 min</item>
+        <item quantity="other">há %d min</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 minuto</item>
+        <item quantity="other">%d minutos</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">há 1 minuto</item>
+        <item quantity="other">há %d minutos</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">há 1 mês</item>
+        <item quantity="other">há %d meses</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">há 1 s</item>
+        <item quantity="other">há %d s</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 segundo</item>
+        <item quantity="other">%d segundos</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">há 1 segundo</item>
+        <item quantity="other">há %d segundos</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">há 1 semana</item>
+        <item quantity="other">há %d semanas</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">há 1 ano</item>
+        <item quantity="other">há %d anos</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s comentário</item>
+        <item quantity="other">%1$s comentários</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s curtiu</item>
+        <item quantity="other">%1$s curtiram</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" curtiu isto</item>
+        <item quantity="other">\"%1$s pessoas\" curtiram isto</item>
+    </plurals>
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s رسالة جديدة</item>
+        <item quantity="other">%1$s رسائل جديدة</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" متابِع</item>
+        <item quantity="other">\"%1$s\" متابِعون</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" مُتابَعون</item>
+        <item quantity="other">\"%1$s\" متابَعون</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" إعجاب</item>
+        <item quantity="other">\"%1$s\" إعجابات</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s تكرار</item>
+        <item quantity="other">%1$s تكرارات</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" منشور</item>
+        <item quantity="other">\"%1$s\" منشورات</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s إعادة نشر</item>
+        <item quantity="other">%1$s إعادة نشر</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">منذ يوم</item>
+        <item quantity="other">منذ %dد</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">يوم واحد</item>
+        <item quantity="other">%d أيام</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">منذ يوم واحد</item>
+        <item quantity="other">منذ %d يوم</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">منذ ساعة</item>
+        <item quantity="other">منذ %dس</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">ساعة واحدة</item>
+        <item quantity="other">%d ساعات</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">منذ ساعة واحدة</item>
+        <item quantity="other">مُنذ %d ساعة</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">منذ دقيقة</item>
+        <item quantity="other">منذ %dد</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">دقيقة واحدة</item>
+        <item quantity="other">%d دقائق</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">منذ دقيقة واحدة</item>
+        <item quantity="other">منذ %d دقيقة</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">منذ شهر</item>
+        <item quantity="other">منذ %d شهور</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">منذ ثانية واحدة</item>
+        <item quantity="other">منذ %dث</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">ثانية واحدة</item>
+        <item quantity="other">%d ثوان</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">منذ ثانية واحدة</item>
+        <item quantity="other">منذ %d ثوانٍ</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">منذ أسبوع</item>
+        <item quantity="other">منذ %d أسبوع</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">منذ سنة</item>
+        <item quantity="other">منذ %d سنوات</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s تعليق</item>
+        <item quantity="other">%1$s تعليقات</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s إعجاب</item>
+        <item quantity="other">%1$s إعجابات</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" معجبون بهذا</item>
+        <item quantity="other">\"%1$s أشخاص\" معجبون بهذا</item>
+    </plurals>
+</resources>

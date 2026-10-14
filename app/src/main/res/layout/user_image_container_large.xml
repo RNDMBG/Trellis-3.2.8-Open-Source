@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/user_image" android:layout_width="89.0dp" android:layout_height="89.0dp" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/user_image_frame" android:background="@drawable/circular_avatar_overlay" android:layout_width="@dimen/user_image_size_large" android:layout_height="@dimen/user_image_size_large" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/user_image_action" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/avatar_add" android:layout_alignTop="@id/user_image" android:layout_alignRight="@id/user_image" />
+</merge>

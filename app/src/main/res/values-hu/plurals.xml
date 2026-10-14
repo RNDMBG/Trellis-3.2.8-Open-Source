@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s új üzenet</item>
+        <item quantity="other">%1$s új üzenet</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" követő</item>
+        <item quantity="other">\"%1$s\" követő</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" követő</item>
+        <item quantity="other">\"%1$s\" követő</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" kedvencként jelölés</item>
+        <item quantity="other">\"%1$s\" kedvencként jelölés</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s lejátszás</item>
+        <item quantity="other">%1$s lejátszás</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" bejegyzés</item>
+        <item quantity="other">\"%1$s\" bejegyzés</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s revine</item>
+        <item quantity="other">%1$s revine</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">1 napja</item>
+        <item quantity="other">%d napja</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 nap</item>
+        <item quantity="other">%d nap</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">1 nappal ezelőtt</item>
+        <item quantity="other">%d napja</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">1 órája</item>
+        <item quantity="other">%d órája</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 óra</item>
+        <item quantity="other">%d óra</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">1 órája</item>
+        <item quantity="other">%d órája</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">1 perce</item>
+        <item quantity="other">%d perce</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 perc</item>
+        <item quantity="other">%d perc</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">1 perce</item>
+        <item quantity="other">%d perce</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">1 hónapja</item>
+        <item quantity="other">%d hónapja</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">1 másodperce</item>
+        <item quantity="other">%d másodperce</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 másodperc</item>
+        <item quantity="other">%d másodperc</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">1 másodperce</item>
+        <item quantity="other">%d másodperce</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">1 hete</item>
+        <item quantity="other">%d hete</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">1 évvel ezelőtt</item>
+        <item quantity="other">%d éve</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s megjegyzés</item>
+        <item quantity="other">%1$s megjegyzés</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s tetszésnyilvánítás</item>
+        <item quantity="other">%1$s tetszésnyilvánítás</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" kedveli</item>
+        <item quantity="other">\"%1$s felhasználó\" kedveli ezt</item>
+    </plurals>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:vine="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0dp" android:layout_height="0.0dp" />
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <View android:background="@drawable/rule_horizontal_light" android:layout_width="match_parent" android:layout_height="2.0dp" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="5.0dp">
+            <co.vine.android.widget.TypefacesTextView android:textColor="@color/soft_black" android:gravity="center" android:layout_gravity="center|top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dp" android:layout_marginTop="5.0dp" android:layout_marginRight="10.0dp" android:minHeight="28.0dp" android:text="@string/to" vine:textWeight="4" />
+            <co.vine.android.views.FlowLayout android:id="@id/picked_recipient_flow" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View android:background="@drawable/rule_horizontal_light" android:layout_width="match_parent" android:layout_height="2.0dp" />
+        <co.vine.android.widget.tabs.IconTabHost android:id="@android:id/tabhost" android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <FrameLayout android:id="@android:id/tabcontent" android:layout_width="0.0dp" android:layout_height="0.0dp" />
+                <TabWidget android:id="@android:id/tabs" android:background="@color/solid_light_gray" android:padding="0.0px" android:layout_width="match_parent" android:layout_height="@dimen/tabbar_height" android:layout_margin="0.0px" android:divider="@null" />
+                <co.vine.android.widget.tabs.ViewPagerScrollBar android:id="@id/scrollbar" android:layout_width="match_parent" android:layout_height="@dimen/tabbar_height" vine:scrollBarHeight="4.0dp" />
+                <android.support.v4.view.ViewPager android:id="@id/pager" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@android:id/tabs" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+        </co.vine.android.widget.tabs.IconTabHost>
+    </LinearLayout>
+</RelativeLayout>

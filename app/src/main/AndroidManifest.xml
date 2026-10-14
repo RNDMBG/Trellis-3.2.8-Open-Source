@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="co.vine.android">
+    <permission android:name="co.vine.android.BROADCAST" android:protectionLevel="signature"/>
+    <uses-permission android:name="co.vine.android.BROADCAST"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.twitter.android.permission.AUTH_APP"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.sonymobile.permission.CAMERA_ADDON"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="co.vine.android.AppShell" android:theme="@style/VineTheme">
+        <provider android:authorities="co.vine.android.provider.VineProvider" android:exported="false" android:label="@string/vine" android:name="co.vine.android.provider.VineProvider"/>
+        <provider android:authorities="co.vine.android.provider.VineUploadProvider" android:exported="false" android:label="@string/vine" android:name="co.vine.android.provider.VineUploadProvider" android:process=":upload"/>
+        <provider android:authorities="co.vine.android.provider.VineSuggestionsProvider" android:exported="false" android:label="@string/vine" android:name="co.vine.android.provider.VineSuggestionsProvider"/>
+        <provider android:authorities="co.vine.android.provider.VineVideoProvider" android:exported="false" android:name="co.vine.android.provider.VineVideoProvider"/>
+        <activity android:exported="true" android:name="co.vine.android.RecordingActivity" android:process=":record" android:screenOrientation="portrait" android:theme="@style/VineTheme.NoTitleBar"/>
+        <activity android:exported="true" android:name="co.vine.android.SonyRecordingActivity" android:process=":record" android:screenOrientation="portrait" android:theme="@style/VineTheme.NoTitleBar"/>
+        <service android:exported="false" android:name="co.vine.android.service.ResourceService" android:process=":record"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:name="com.facebook.LoginActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="co.vine.android.SonyStartActivity" android:theme="@style/VineTheme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:launchMode="singleTask" android:name="co.vine.android.StartActivity" android:theme="@style/VineTheme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="vine.co"/>
+                <data android:host="www.vine.co"/>
+                <data android:host="grape.vine.co"/>
+                <data android:pathPattern=".*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="vine"/>
+                <data android:pathPattern=".*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="co.vine.android.LoginActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.DarkActionBar" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:name="co.vine.android.DebugHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.UsersActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.UpdatesActivity" android:screenOrientation="portrait"/>
+        <provider android:name="android.support.v4.content.FileProvider" android:authorities="co.vine.android.fileprovider" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/update_paths" />
+        </provider>
+        <activity android:name="co.vine.android.HomeTabActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.Home"/>
+        <activity android:name="co.vine.android.LoginTwitterActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.DarkActionBar" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:name="co.vine.android.SignUpPagerActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.DarkActionBar" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="co.vine.android.EditProfileCropActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/authenticator_activity_title" android:name="co.vine.android.AuthenticatorActivity" android:permission="android.permission.MANAGE_USERS" android:screenOrientation="portrait" android:theme="@style/VineTheme.Dialog.Dark"/>
+        <activity android:name="co.vine.android.ExploreVideoListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.CommentsActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="co.vine.android.HashtagActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.ResetPasswordActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.DarkActionBar" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:name="co.vine.android.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.FindFriendsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.FindFriendsNUXActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.DarkActionBar.NoBackButton"/>
+        <activity android:name="co.vine.android.ProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.SingleActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.SearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.Preference" android:windowSoftInputMode="stateHidden"/>
+        <activity android:excludeFromRecents="true" android:name="co.vine.android.PostOptionsDialogActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.Dialog"/>
+        <activity android:name="co.vine.android.ContentControlsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.CaptchaActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.ExploreChannelsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.ChannelsListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.NotificationSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.NotificationAlertsSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="standard" android:name="co.vine.android.ReshareActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTop" android:name="co.vine.android.ConversationActivityMain" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="co.vine.android.ShowLogActivity"/>
+        <activity android:launchMode="singleTop" android:name="co.vine.android.ConversationActivity" android:process=":record" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="co.vine.android.ImageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.ConfirmationFlowActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.DarkActionBar.NoBackButton"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="co.vine.android.ViewOverlayActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.ViewOverlayActivity.OnboardVm"/>
+        <activity android:name="co.vine.android.PrivacyControlsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.SyncControlsActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.Sync"/>
+        <activity android:name="co.vine.android.ChannelsListNUXActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.DarkActionBar.NoBackButton"/>
+        <service android:exported="false" android:name="co.vine.android.service.VineService"/>
+        <service android:exported="true" android:name="co.vine.android.service.VineAuthenticationService" android:permission="android.permission.MANAGE_USERS">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <service android:label="@string/notif_service_label" android:name="co.vine.android.service.GCMRegistrationService"/>
+        <service android:label="@string/notif_service_label" android:name="co.vine.android.service.GCMNotificationService"/>
+        <service android:label="@string/chat_service_label" android:name="co.vine.android.service.RealTimeChatService" android:process=":record"/>
+        <uses-library android:name="com.sonymobile.camera.addon.api" android:required="false"/>
+        <activity android:launchMode="standard" android:name="co.vine.android.PostActivity"/>
+        <activity android:launchMode="singleTask" android:name="co.vine.android.SonyLaunchActivity">
+            <intent-filter>
+                <action android:name="com.sonymobile.camera.addon.action.REGISTER_MODE"/>
+            </intent-filter>
+            <meta-data android:name="com.sonymobile.camera.addon.MODE_ATTRIBUTES" android:resource="@xml/modes"/>
+        </activity>
+        <activity android:name="co.vine.android.UploadsListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.CameraWidgetConfigureActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="co.vine.android.RecipientPickerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.ImportTrimCropActivity" android:process=":trim" android:screenOrientation="portrait" android:theme="@style/VineTheme.NoTitleBar.Dark"/>
+        <activity android:name="co.vine.android.FavoritePeopleActivity" android:screenOrientation="portrait"/>
+        <activity android:name="co.vine.android.FavoritePeopleOnboardActivity" android:screenOrientation="portrait" android:theme="@style/VineTheme.OverlayActivity.OnboardFavoriteUsers"/>
+        <service android:exported="false" android:name="co.vine.android.service.VineUploadService" android:process=":upload"/>
+        <receiver android:label="@string/camera_widget_name" android:name="co.vine.android.CameraWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/camera_widget_provider"/>
+        </receiver>
+        <receiver android:name="co.vine.android.DeviceBootReceiver" android:process=":record">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/app_name" android:name="co.vine.android.service.AccountsChangedReceiver" android:permission="android.permission.MANAGE_USERS">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="co.vine.android.service.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="co.vine.android"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="co.vine.android.service.ConnectivityStatusReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:label="@string/chat_service_label" android:name="co.vine.android.service.SessionChangedReceiver$UploadSessionChangedReceiver" android:process=":upload">
+            <intent-filter>
+                <action android:name="co.vine.android.session.login"/>
+                <action android:name="co.vine.android.session.logout"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:label="@string/chat_service_label" android:name="co.vine.android.service.SessionChangedReceiver$RecordSessionChangedReceiver" android:process=":record">
+            <intent-filter>
+                <action android:name="co.vine.android.session.login"/>
+                <action android:name="co.vine.android.session.logout"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="2fa6302c3e528319c2fd8f4c233d688012b78633"/>
+        <activity android:label="@string/title_activity_reporting" android:name="co.vine.android.ReportingActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>
+

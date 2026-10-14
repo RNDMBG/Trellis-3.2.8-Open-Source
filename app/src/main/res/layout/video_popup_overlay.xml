@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/videoOverlayForTimeline" android:background="#da000000" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/videoContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <co.vine.android.player.OldSdkVideoView android:id="@id/videoView" android:background="@android:color/darker_gray" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerInParent="true" />
+        <ProgressBar android:id="@id/videoLoadProgressBar" android:visibility="gone" android:layout_width="48.0dp" android:layout_height="48.0dp" android:indeterminate="true" android:layout_centerInParent="true" style="?android:progressBarStyleLarge" />
+    </RelativeLayout>
+</RelativeLayout>

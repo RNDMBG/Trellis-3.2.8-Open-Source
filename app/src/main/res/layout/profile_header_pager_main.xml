@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/profile_content_inner" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/user_image_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9.0dp">
+        <include layout="@layout/user_image_container_large" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/username_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dp">
+        <co.vine.android.widget.TypefacesTextView android:id="@id/username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/ProfileText.Title" />
+        <ImageView android:id="@id/profile_verified" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-1.0dp" android:layout_marginTop="6.0dp" android:src="@drawable/ic_profile_verified" android:layout_toRightOf="@id/username" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp">
+        <co.vine.android.widget.TypefacesTextView android:textSize="15.0sp" android:textColor="@color/solid_white" android:id="@id/followers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.5dp" android:layout_weight="1.0" />
+        <co.vine.android.widget.TypefacesTextView android:textSize="15.0sp" android:textColor="@color/solid_white" android:id="@id/following" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.5dp" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

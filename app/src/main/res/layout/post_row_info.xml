@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dp" android:layout_marginTop="12.0dp" android:layout_marginRight="13.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <co.vine.android.widget.TypefacesTextView android:gravity="left" android:id="@id/text" android:layout_width="match_parent" android:layout_height="wrap_content" android:lineSpacingExtra="4.0dp" style="@style/TimelineCaption" />
+    <co.vine.android.widget.TypefacesTextView android:textColor="@color/black_thirty_five_percent" android:gravity="left" android:layout_gravity="left" android:id="@id/likes_comments_revines_count" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dp" style="@style/TimelineTimestamp" />
+</LinearLayout>

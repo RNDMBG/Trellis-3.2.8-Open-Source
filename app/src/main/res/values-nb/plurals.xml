@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s ny melding</item>
+        <item quantity="other">%1$s nye meldinger</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" følger</item>
+        <item quantity="other">\"%1$s\" følgere</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" følger</item>
+        <item quantity="other">\"%1$s\" følger</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" liker</item>
+        <item quantity="other">\"%1$s\" liker</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s sløyfe</item>
+        <item quantity="other">%1$s sløyfer</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" vine</item>
+        <item quantity="other">\"%1$s\" vines</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s revine</item>
+        <item quantity="other">%1$s revines</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">1 d siden</item>
+        <item quantity="other">%d d siden</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 dag</item>
+        <item quantity="other">%d dager</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">1 dag siden</item>
+        <item quantity="other">%d dager siden</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">1 t siden</item>
+        <item quantity="other">%d t siden</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 time</item>
+        <item quantity="other">%d timer</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">1 time siden</item>
+        <item quantity="other">%d timer siden</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">1 min siden</item>
+        <item quantity="other">%dmin siden</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 minutt</item>
+        <item quantity="other">%d minutter</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">1 minutt siden</item>
+        <item quantity="other">%d minutter siden</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">1 måned siden</item>
+        <item quantity="other">%d måneder siden</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">1 s siden</item>
+        <item quantity="other">%d s siden</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 sekund</item>
+        <item quantity="other">%d sekunder</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">1 sekund siden</item>
+        <item quantity="other">%d sekunder siden</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">1 uke siden</item>
+        <item quantity="other">%d uker siden</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">1 år siden</item>
+        <item quantity="other">%d år siden</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s kommentar</item>
+        <item quantity="other">%1$s kommentarer</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s liker</item>
+        <item quantity="other">%1$s liker</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" liker dette</item>
+        <item quantity="other">\"%1$s personer\" liker dette</item>
+    </plurals>
+</resources>

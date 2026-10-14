@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s nouveau message</item>
+        <item quantity="other">%1$s nouveaux messages</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" Abonné</item>
+        <item quantity="other">\"%1$s\" Abonnés</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" Abonnement</item>
+        <item quantity="other">\"%1$s\" Abonnements</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">"\"%1$s\" J'aime"</item>
+        <item quantity="other">"\"%1$s\" J'aime"</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s Boucle</item>
+        <item quantity="other">%1$s Boucles</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" Publication</item>
+        <item quantity="other">\"%1$s\" Publications</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s revine</item>
+        <item quantity="other">%1$s revines</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">il y a 1j</item>
+        <item quantity="other">il y a %dj</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 jour</item>
+        <item quantity="other">%d jours</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">il y a 1 jour</item>
+        <item quantity="other">il y a %d jours</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">il y a 1h</item>
+        <item quantity="other">il y a %dh</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 heure</item>
+        <item quantity="other">%d heures</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">Il y a 1 heure</item>
+        <item quantity="other">il y a %d heures</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">il y a 1m</item>
+        <item quantity="other">il y a %dm</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">il y a 1 minute</item>
+        <item quantity="other">il y a %d minutes</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">il y a 1 mois</item>
+        <item quantity="other">il y a %d mois</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">il y a 1s</item>
+        <item quantity="other">il y a %ds</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 seconde</item>
+        <item quantity="other">%d secondes</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">il y a 1 seconde</item>
+        <item quantity="other">il y a %d secondes</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">il y a 1 semaine</item>
+        <item quantity="other">il y a %d semaines</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">il y a 1 an</item>
+        <item quantity="other">il y a %d ans</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s commentaire</item>
+        <item quantity="other">%1$s commentaires</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">"%1$s j'aime"</item>
+        <item quantity="other">"%1$s j'aime"</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">\"%1$s\" aiment ça</item>
+        <item quantity="other">\"%1$s personnes\" aiment ça</item>
+    </plurals>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="0.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="0.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:vine="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:gravity="center" android:id="@id/profile_content_outer" android:background="@color/bg_profile_header" android:paddingLeft="@dimen/standard_spacing" android:paddingRight="@dimen/standard_spacing" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <android.support.v4.view.ViewPager android:id="@id/pager" android:layout_width="match_parent" android:layout_height="169.0dp" />
+        <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/profile_dots_height" android:layout_below="@id/pager">
+            <co.vine.android.widget.DotIndicators android:layout_gravity="center|top" android:id="@id/dots" android:layout_width="match_parent" android:layout_height="wrap_content" vine:onIcon="@drawable/profile_pagination" vine:offAlpha="50" vine:dotPadding="@dimen/profile_dot_padding" />
+        </FrameLayout>
+    </RelativeLayout>
+    <RelativeLayout android:orientation="horizontal" android:id="@id/profile_actions_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="13.0dp" android:layout_marginTop="13.0dp" android:layout_marginRight="13.0dp" android:layout_below="@id/profile_content_outer">
+        <Button android:textSize="@dimen/font_size_large" android:textStyle="bold" android:textColor="@color/black_thirty_percent" android:gravity="center" android:id="@id/settings" android:background="@drawable/btn_settings" android:clickable="true" android:layout_width="match_parent" android:layout_height="@dimen/profile_button_height" android:text="@string/settings" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:textSize="@dimen/font_size_large" android:textStyle="bold" android:textColor="@color/black_thirty_percent" android:gravity="center" android:id="@id/profile_follow" android:background="@drawable/follow_button" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="@dimen/profile_button_height" android:layout_marginRight="4.5dp" android:text="@string/follow" android:layout_weight="1.0" />
+            <Button android:textSize="@dimen/font_size_large" android:textStyle="bold" android:gravity="center" android:id="@id/message_button" android:background="@drawable/btn_profile" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="@dimen/profile_button_height" android:layout_marginLeft="4.5dp" android:text="@string/message" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/profile_tabs" android:layout_width="match_parent" android:layout_height="54.0dp" android:layout_below="@id/profile_actions_container">
+        <RelativeLayout android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:id="@id/postsParent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <co.vine.android.widget.TypefacesTextView android:textSize="@dimen/font_size_large" android:id="@id/postsLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TabButton2" />
+            </LinearLayout>
+            <FrameLayout android:id="@id/posts_dropdown" android:visibility="invisible" android:layout_width="40.0dp" android:layout_height="match_parent" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+                <ImageView android:layout_gravity="right|bottom" android:id="@id/profile_arrow_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dp" android:layout_marginBottom="9.0dp" android:src="@drawable/profile_filter_posts_nib" />
+            </FrameLayout>
+        </RelativeLayout>
+        <View android:layout_gravity="bottom" android:background="@drawable/rule_vertical_6" android:layout_width="2.0dp" android:layout_height="54.0dp" />
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/likesParent" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <co.vine.android.widget.TypefacesTextView android:textSize="@dimen/font_size_large" android:id="@id/likesLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TabButton2" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="@color/solid_super_light_gray" android:layout_width="match_parent" android:layout_height="@dimen/double_standard_spacing" android:layout_below="@id/profile_tabs" />
+    <LinearLayout android:orientation="vertical" android:id="@id/postsLikeDropDown" android:background="@color/solid_super_light_gray" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/profile_tabs">
+        <RelativeLayout android:id="@id/postsDropDownHideRevine" android:layout_width="match_parent" android:layout_height="48.0dp">
+            <co.vine.android.widget.TypefacesTextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@id/postsDropDownHideRevineLabel" android:paddingLeft="13.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" textStyle="0" textWeight="4" />
+            <ImageView android:id="@id/postsDropDownHideRevineIcon" android:layout_width="56.0dp" android:layout_height="wrap_content" android:scaleType="center" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ProgressBar android:id="@id/profile_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:layout_centerInParent="true" style="?android:progressBarStyleSmall" />
+</RelativeLayout>

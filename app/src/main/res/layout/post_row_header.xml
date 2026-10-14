@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/top_content_container" android:paddingLeft="9.0dp" android:paddingTop="9.0dp" android:paddingRight="13.0dp" android:paddingBottom="9.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/user_image" android:clickable="false" android:layout_width="40.0dp" android:layout_height="40.0dp" android:scaleType="centerCrop" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <RelativeLayout android:id="@id/avatar_follow_container" android:layout_width="22.0dp" android:layout_height="22.0dp" android:layout_marginRight="-12.0dp" android:layout_marginBottom="-2.0dp" android:layout_alignRight="@id/user_image" android:layout_alignBottom="@id/user_image">
+        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/circle_shape_white" />
+        <co.vine.android.widget.VineToggleButton android:id="@id/follow_button" android:background="@drawable/btn_avatar_follow" android:layout_width="18.0dp" android:layout_height="18.0dp" android:textOn="" android:textOff="" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <co.vine.android.widget.TypefacesTextView android:ellipsize="end" android:gravity="left" android:id="@id/username" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxEms="10" android:singleLine="true" android:layout_toRightOf="@id/user_image" style="@style/TimelineUsername" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/loops_container" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:layout_alignTop="@id/username" android:layout_alignBottom="@id/username" android:layout_alignParentRight="true">
+        <ImageView android:id="@id/fire" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dp" android:src="@drawable/ic_feed_hot" />
+        <co.vine.android.widget.CounterView android:id="@id/loopCount" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <co.vine.android.widget.TypefacesTextView android:textSize="13.0sp" android:id="@id/loops_plus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+" android:singleLine="true" />
+    </LinearLayout>
+    <co.vine.android.widget.TypefacesTextView android:gravity="left" android:id="@id/loops_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loops" android:singleLine="true" android:layout_below="@id/username" android:layout_alignParentRight="true" style="@style/TimelineTimestamp" />
+    <Button android:id="@id/loops_hint_button" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="40.0dp" android:text="@null" android:layout_alignLeft="@id/loops_label" android:layout_alignParentRight="true" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/loops_label" android:layout_toRightOf="@id/user_image" android:layout_below="@id/username" android:layout_alignTop="@id/loops_label" android:layout_alignBottom="@id/loops_label">
+        <co.vine.android.widget.TypefacesTextView android:id="@id/timestamp" android:paddingRight="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:drawablePadding="6.0dp" style="@style/TimelineTimestamp" />
+    </LinearLayout>
+</RelativeLayout>

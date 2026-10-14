@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="new_messages">
+        <item quantity="one">%1$s नया संदेश</item>
+        <item quantity="other">%1$s नए संदेश</item>
+    </plurals>
+    <plurals name="profile_followers">
+        <item quantity="one">\"%1$s\" फ़ॉलोअर</item>
+        <item quantity="other">\"%1$s\" फ़ॉलोअर्स</item>
+    </plurals>
+    <plurals name="profile_following">
+        <item quantity="one">\"%1$s\" फ़ॉलोइंग</item>
+        <item quantity="other">\"%1$s\" फ़ॉलोइंग</item>
+    </plurals>
+    <plurals name="profile_likes">
+        <item quantity="one">\"%1$s\" पसंदीदा</item>
+        <item quantity="other">\"%1$s\" पसंदीदा</item>
+    </plurals>
+    <plurals name="profile_loops">
+        <item quantity="one">%1$s लूप</item>
+        <item quantity="other">%1$s लूप</item>
+    </plurals>
+    <plurals name="profile_posts">
+        <item quantity="one">\"%1$s\" पोस्ट</item>
+        <item quantity="other">\"%1$s\" पोस्ट</item>
+    </plurals>
+    <plurals name="revine_count">
+        <item quantity="one">%1$s रीवाईन</item>
+        <item quantity="other">%1$s रीवाईन</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="one">1 दिन पहले</item>
+        <item quantity="other">%d दिन पहले</item>
+    </plurals>
+    <plurals name="time_days_verbose">
+        <item quantity="one">1 दिन</item>
+        <item quantity="other">%d दिन</item>
+    </plurals>
+    <plurals name="time_days_verbose_ago">
+        <item quantity="one">1 दिन पहले</item>
+        <item quantity="other">%d दिन पहले</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="one">1 घंटे पहले</item>
+        <item quantity="other">%d घंटे पहले</item>
+    </plurals>
+    <plurals name="time_hours_verbose">
+        <item quantity="one">1 घंटा</item>
+        <item quantity="other">%d घंटे</item>
+    </plurals>
+    <plurals name="time_hours_verbose_ago">
+        <item quantity="one">1 घंटा पहले</item>
+        <item quantity="other">%d घंटे पहले</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="one">1 क्षण पहेले</item>
+        <item quantity="other">%d क्षण पहले</item>
+    </plurals>
+    <plurals name="time_mins_verbose">
+        <item quantity="one">1 क्षण</item>
+        <item quantity="other">%d क्षण</item>
+    </plurals>
+    <plurals name="time_mins_verbose_ago">
+        <item quantity="one">1 मिनट पहले</item>
+        <item quantity="other">%d क्षण पहले</item>
+    </plurals>
+    <plurals name="time_months_verbose_ago">
+        <item quantity="one">1 महीने पहले</item>
+        <item quantity="other">%d महीने पहले</item>
+    </plurals>
+    <plurals name="time_secs">
+        <item quantity="one">1 पल पहेले</item>
+        <item quantity="other">%d पल पहले</item>
+    </plurals>
+    <plurals name="time_secs_verbose">
+        <item quantity="one">1 पल</item>
+        <item quantity="other">%d पल</item>
+    </plurals>
+    <plurals name="time_secs_verbose_ago">
+        <item quantity="one">1 पल पहले</item>
+        <item quantity="other">%d पल पहले</item>
+    </plurals>
+    <plurals name="time_weeks_verbose_ago">
+        <item quantity="one">1 सप्ताह पहले</item>
+        <item quantity="other">%d सप्ताह पहले</item>
+    </plurals>
+    <plurals name="time_years_verbose_ago">
+        <item quantity="one">1 साल पहले</item>
+        <item quantity="other">%d साल पहले</item>
+    </plurals>
+    <plurals name="timeline_compact_comments">
+        <item quantity="one">%1$s टिप्पणि</item>
+        <item quantity="other">%1$s टिप्पणियाँ</item>
+    </plurals>
+    <plurals name="timeline_compact_likes">
+        <item quantity="one">%1$s पसंद</item>
+        <item quantity="other">%1$s पसंदीदा</item>
+    </plurals>
+    <plurals name="timeline_likes">
+        <item quantity="one">%1$s को पसंद है ये</item>
+        <item quantity="other">\"%1$s लोगो\" ने पसंद किया</item>
+    </plurals>
+</resources>

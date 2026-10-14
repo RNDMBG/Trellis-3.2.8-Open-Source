@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:descendantFocusability="blocksDescendants" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/content" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_padding">
+        <co.vine.android.widget.TypefacesTextView android:textStyle="bold" android:textColor="@color/activity_count" android:id="@id/content_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="68.0dp" android:layout_marginTop="@dimen/activity_padding" style="@style/ActivityCount" />
+    </RelativeLayout>
+    <View android:id="@id/divider" android:background="@drawable/rule_horizontal_5" android:padding="0.0dp" android:layout_width="match_parent" android:layout_height="2.0dp" android:layout_below="@id/content" />
+</RelativeLayout>

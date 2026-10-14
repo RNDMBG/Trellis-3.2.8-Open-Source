@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_user_row" android:addStatesFromChildren="true" android:descendantFocusability="blocksDescendants" style="@style/ListRow"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/profile_image" android:background="@drawable/circle_shape_light" android:layout_width="@dimen/user_image_size" android:layout_height="@dimen/user_image_size" android:layout_marginRight="@dimen/list_row_padding" android:scaleType="centerCrop" android:layout_alignParentLeft="true" />
+    <co.vine.android.widget.TypefacesTextView android:textSize="@dimen/font_size_medium" android:textColor="@color/primary_text" android:id="@id/content" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/profile_image" />
+    <co.vine.android.widget.TypefacesTextView android:id="@id/timestamp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/profile_image" android:layout_below="@id/content" style="@style/Byline.Timestamp" />
+</RelativeLayout>

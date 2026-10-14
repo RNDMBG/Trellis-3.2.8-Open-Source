@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<co.vine.android.widget.tabs.FragmentTabHost android:id="@id/tabhost" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TabWidget android:orientation="horizontal" android:id="@android:id/tabs" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <FrameLayout android:id="@id/tabFrameLayout" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </LinearLayout>
+</co.vine.android.widget.tabs.FragmentTabHost>

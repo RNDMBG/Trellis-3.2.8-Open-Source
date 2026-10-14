@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:orientation="vertical" android:id="@android:id/empty" android:background="@color/solid_white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/btn_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_small" android:layout_alignParentBottom="true">
+        <Button android:id="@id/friends_btn" android:background="@drawable/btn_twitter_cta" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Button.FindFriends" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/bg_container" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/btn_container">
+        <ImageView android:id="@id/friends_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/background_twitter" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

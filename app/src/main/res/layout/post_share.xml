@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/share_content" android:layout_width="match_parent" android:layout_height="0.0dp">
+        <LinearLayout android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0dp" android:layout_height="0.0dp" />
+        <RelativeLayout android:id="@id/caption_preview_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dp">
+            <ImageView android:id="@id/image_preview" android:layout_width="@dimen/large_preview_image" android:layout_height="@dimen/large_preview_image" android:layout_marginTop="@dimen/spacing_small" android:layout_marginRight="@dimen/spacing_small" android:layout_alignParentRight="true" />
+            <co.vine.android.widget.PopupEditText android:textColorHint="@color/text_color_share_hint" android:gravity="top" android:id="@id/caption" android:background="@android:color/transparent" android:layout_height="89.0dp" android:layout_marginLeft="12.0dp" android:layout_marginTop="@dimen/spacing_small" android:layout_marginRight="8.0dp" android:hint="@string/post_hint" android:lines="4" android:layout_toLeftOf="@id/image_preview" style="@style/EditText" threshold="0" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" style="@style/ShareItem">
+            <View android:id="@id/add_to_channel_divider" android:background="@color/dark_list_divider_color" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_alignParentTop="true" />
+            <RelativeLayout android:id="@id/add_to_channel_container" android:background="@drawable/bg_generic" android:paddingLeft="@dimen/standard_spacing" android:layout_width="match_parent" android:layout_height="@dimen/spacing_large" android:layout_below="@id/add_to_channel_divider">
+                <ImageView android:id="@id/add_to_channel_icon" android:layout_width="10.0dp" android:layout_height="32.0dp" android:layout_marginLeft="6.0dp" android:src="@drawable/ic_channel_icon" android:scaleType="fitXY" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <co.vine.android.widget.TypefacesTextView android:id="@id/add_to_channel_text" android:background="@android:color/transparent" android:paddingLeft="8.0dp" android:paddingTop="10.0dp" android:paddingBottom="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_to_channel" android:layout_toRightOf="@id/add_to_channel_icon" style="@style/ShareItem.Text" />
+            </RelativeLayout>
+            <View android:id="@id/vine_divider" android:background="@color/dark_list_divider_color" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_below="@id/add_to_channel_container" />
+            <RelativeLayout android:id="@id/post_to_vine_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/vine_divider" style="@style/ShareItem.Outer">
+                <co.vine.android.widget.TypefacesTextView android:id="@id/post_to_vine_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/post_to_vine" style="@style/ShareItem.Text" />
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                    <co.vine.android.views.SwitchImple android:id="@id/post_to_vine_switch" android:layout_alignParentRight="true" style="@style/VineSwitch" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <View android:id="@id/twitter_divider" android:background="@color/dark_list_divider_color" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_below="@id/post_to_vine_container" />
+            <RelativeLayout android:id="@id/post_to_twitter_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/twitter_divider" style="@style/ShareItem.Outer">
+                <co.vine.android.widget.TypefacesTextView android:id="@id/post_to_twitter_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/post_to_twitter" style="@style/ShareItem.Text" />
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                    <co.vine.android.views.SwitchImple android:id="@id/post_to_twitter_switch" android:layout_alignParentRight="true" style="@style/VineSwitch" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <View android:id="@id/facebook_divider" android:background="@color/dark_list_divider_color" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_below="@id/post_to_twitter_container" />
+            <RelativeLayout android:id="@id/post_to_facebook_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/facebook_divider" style="@style/ShareItem.Outer">
+                <co.vine.android.widget.TypefacesTextView android:id="@id/post_to_facebook_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/post_to_facebook" style="@style/ShareItem.Text" />
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                    <co.vine.android.views.SwitchImple android:id="@id/post_to_facebook_switch" android:layout_alignParentRight="true" style="@style/VineSwitch" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <View android:background="@color/dark_list_divider_color" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_below="@id/post_to_facebook_container" />
+        </RelativeLayout>
+        <Button android:textSize="@dimen/font_size_large" android:textStyle="bold" android:textColor="@color/solid_white" android:gravity="center" android:layout_gravity="center|bottom" android:id="@id/done_button" android:background="@drawable/btn_done_share" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="@dimen/share_done_button_height" android:layout_margin="@dimen/standard_spacing" android:text="@string/done" />
+    </LinearLayout>
+</ScrollView>
