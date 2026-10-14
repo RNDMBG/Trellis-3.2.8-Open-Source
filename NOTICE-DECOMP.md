@@ -11,4 +11,4 @@ The following are retained as separate third-party or proprietary material:
 
 New compatibility bridges and recovery edits were added only to make the recovered project readable and buildable.
 
-The native recording stack remains ARM32-only. A genuine ARM64 port requires compatible 64-bit native sources/binaries or a replacement implementation.
+The native recording stack remains ARM32-only. A genuine ARM64 port requires compatible 64-bit native sources/binaries or a replacement implementation, which I am working on.
