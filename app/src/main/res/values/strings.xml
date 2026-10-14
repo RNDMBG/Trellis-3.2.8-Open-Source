@@ -748,6 +748,9 @@ looping videos"</string>
     <string name="updates_error">Could not check for updates. Try again later.</string>
     <string name="updates_available_title">Update available</string>
     <string name="updates_available_msg">A new Vine version has been released, would you like to update?</string>
+    <string name="updates_downloading_title">Downloading</string>
+    <string name="updates_install_title">Update</string>
+    <string name="updates_install_msg">Would you like to install the update now?</string>
     <string name="updates_downloading">Downloading update…</string>
     <string name="later">Later</string>
     <string name="yesterday">Yesterday</string>

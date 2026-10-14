@@ -286,6 +286,7 @@
 /* 315 */               AppImpl.getInstance().startCameraService(this);
 /* 317 */               VineAccountHelper.syncNormalVideoPlayable(this);
 /* 319 */               PrefetchManager.getInstance(this).delayNextPrefetch();
+               UpdateManager.checkOnStartup(this);
                         try {
 /* 322 */                   int errorCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
 /* 323 */                   if (errorCode == 0) {

@@ -13,6 +13,8 @@ public final class UpdateConfig {
     public static final String APK_ASSET_SUFFIX = ".apk";
     public static final String PREF_AUTO_UPDATE = "auto_updates";
     public static final String APK_FILE_NAME = "vine-update.apk";
+    public static final String PREF_UPDATE_READY = "update_ready";
+    public static final String PREF_READY_BUILD = "update_ready_build";
     // versionName stays 3.2.8 forever. The Trellis build number is
     // versionCode - VERSION_CODE_BASE (first official build is 10).
     // Release tags look like "build-30".

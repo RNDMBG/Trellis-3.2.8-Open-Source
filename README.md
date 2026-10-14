@@ -3,7 +3,7 @@
 Trellis is Vine 3.2.8 for Android, brought back to life. The code was
 recovered from the original app and fixed so it builds and runs today.
 This is not the official Vine source. The old Vine code, art, and
-libraries still belong to their owners. Read `NOTICE-RECOVERY.md` and
+libraries still belong to their owners. Read `NOTICE-DECOMP.md` and
 `PROJECT-LICENSE.md` before you share anything.
 
 ## How to build

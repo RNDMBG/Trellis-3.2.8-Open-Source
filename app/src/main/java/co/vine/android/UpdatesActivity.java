@@ -21,6 +21,7 @@ public class UpdatesActivity extends BaseControllerActionBarActivity implements 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, C0257R.layout.updates, true);
         setupActionBar((Boolean) true, (Boolean) true, C0257R.string.updates_title, (Boolean) true, (Boolean) true);
+        UpdateManager.ensureDownloadReceiver(getApplicationContext());
 
         mStatus = (TextView) findViewById(C0257R.id.updates_status);
         mCheckButton = (Button) findViewById(C0257R.id.updates_check);
