@@ -264,11 +264,13 @@ public final class UpdateManager {
         return out;
     }
 
-    /** A newer build exists: offer install directly if its APK is already downloaded. */
+    /** A newer build exists: offer install only if the downloaded APK is that exact build. */
     static void handleNewerFound(Activity activity, UpdateInfo info) {
-        if (isDownloadReady(activity)) {
+        if (isDownloadReady(activity) && readyBuild(activity) == info.build) {
             showInstallDialog(activity);
         } else {
+            clearReadyState(activity);
+            deleteStaleApks(activity);
             showUpdateDialog(activity, info);
         }
     }
@@ -369,6 +371,44 @@ public final class UpdateManager {
         }
     }
 
+    static int readyBuild(Context context) {
+        try {
+            return Util.getDefaultSharedPrefs(context).getInt(UpdateConfig.PREF_READY_BUILD, 0);
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    static void clearReadyState(Context context) {
+        try {
+            Util.getDefaultSharedPrefs(context).edit().putBoolean(UpdateConfig.PREF_UPDATE_READY, false).apply();
+        } catch (Exception ignored) {
+        }
+    }
+
+    /** Deletes our APK file(s), including suffixed re-download copies. */
+    static void deleteStaleApks(Context context) {
+        try {
+            File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            File[] files = dir.listFiles();
+            if (files == null) {
+                return;
+            }
+            String base = UpdateConfig.APK_FILE_NAME;
+            int dot = base.lastIndexOf('.');
+            final String prefix = dot > 0 ? base.substring(0, dot) : base;
+            for (File f : files) {
+                String name = f.getName();
+                if (name.equals(base) || (name.startsWith(prefix) && name.endsWith(UpdateConfig.APK_ASSET_SUFFIX))) {
+                    try {
+                        f.delete();
+                    } catch (Exception ignored) {
+                    }
+                }
+            }
+        } catch (Exception ignored) {
+        }
+    }
     static void markDownloadReady(Context context, int build) {
         try {
             Util.getDefaultSharedPrefs(context).edit()
@@ -391,10 +431,7 @@ public final class UpdateManager {
             }
             int readyBuild = prefs.getInt(UpdateConfig.PREF_READY_BUILD, 0);
             if (currentBuild(context) >= readyBuild && readyBuild > 0) {
-                File file = downloadedApkFile(context);
-                if (file != null && file.exists()) {
-                    file.delete();
-                }
+                deleteStaleApks(context);
                 prefs.edit().putBoolean(UpdateConfig.PREF_UPDATE_READY, false).apply();
             }
         } catch (Exception ignored) {
