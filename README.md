@@ -1,6 +1,6 @@
 # Trellis-3.2.8-Open-Source
 
-Trellis is Vine 3.2.8 for Android, brought back to life. The code was
+Vine 3.2.8 for Android, brought back to life by a Vine revival named Trellis which is maintained by ConciousBone, calvink19, and Astro15. See https://trls.uk for more information. The code was
 recovered and decompiled from the original app and fixed so it builds and runs today on modern ARM64 devices.
 This is not the official Vine source. The old Vine code, art, and
 libraries still belong to their owners. Read `NOTICE-DECOMP.md` and
