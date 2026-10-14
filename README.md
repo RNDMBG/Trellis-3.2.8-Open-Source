@@ -1,39 +1,40 @@
 # Trellis-3.2.8-Open-Source
 
-Trellis is a maintainable Android Studio reconstruction of the Vine 3.2.8 app,
-recovered from an existing APK via JADX and repaired for compilation.
-It is **not** the official Vine source release. See `NOTICE-RECOVERY.md` and
-`PROJECT-LICENSE.md` before redistributing: recovered code, artwork, native
-libraries and third-party components keep their original ownership.
+Trellis is Vine 3.2.8 for Android, brought back to life. The code was
+recovered from the original app and fixed so it builds and runs today.
+This is not the official Vine source. The old Vine code, art, and
+libraries still belong to their owners. Read `NOTICE-RECOVERY.md` and
+`PROJECT-LICENSE.md` before you share anything.
 
-## Build
+## How to build
 
-1. Open `trellis-android-studio-project` in Android Studio (uses the bundled JBR, JDK 17).
-2. Let Gradle sync, then build:
+1. Open this folder in Android Studio (it uses the built-in Java).
+2. Wait for Gradle to sync, then build:
    `.\gradlew.bat :app:assembleArm64Debug`
-3. Release builds are signed with the project `key0` keystore, which is
-   **private and never committed**. Pass it via temporary properties:
+3. Release builds need the private `key0` key file. It is not in this
+   repo. Build like this:
    `.\gradlew.bat :app:assembleArm64Release -PreleaseStoreFile=../key0 -PreleaseStorePassword=... -PreleaseKeyAlias=key0 -PreleaseKeyPassword=...`
 
-## Versioning
+## Versions
 
-`versionName` stays `3.2.8` forever. Each official build bumps so nothing is mixed.
-`trellisBuildNumber` in `gradle.properties` by the number of changes since
-the last build (first official build is 10). `versionCode` is changed as
-`1600241 + trellisBuildNumber` so every install is an upgrade.
+The version always stays `3.2.8`. Each official build gets a build
+number instead. You find it in `gradle.properties` (`trellisBuildNumber`,
+first one is 10). When you ship a new build, add the number of changes
+since the last one (10 + 20 changes = build 30).
 
 ## Updates
 
-Settings → Updates checks `releases/latest` on this repo, shows
-"A new Vine version has been released, would you like to update?" with
-Yes (downloads the APK, opens the installer) / Later. Point
-`UpdateConfig.GITHUB_OWNER/GITHUB_REPO` at this repo. Each release must be
-tagged `build-<N>` (e.g. `build-30`) with the signed APK attached
-(any name ending in `.apk`).
+Settings → Updates can check this repo for a new build. If there is one,
+the app asks "A new Vine version has been released, would you like to
+update?" Yes downloads it and opens the installer, Later asks again
+next time you open the app. Each release here must be tagged
+`build-<number>` (like `build-30`) and have the signed APK attached
+(any file name ending in `.apk`).
 
-## Maintenance rule
+## One rule
 
-`app/src/main/java/co/vine/android/C0257R.java` is a frozen constants copy.
-**After adding ANY resource**, regenerate its values from the build's
-`app/build/intermediates/runtime_symbol_list/<variant>/process<Variant>Resources/R.txt`
-before shipping, or the app will resolve wrong resources and crash.
+`app/src/main/java/co/vine/android/C0257R.java` is a frozen copy of the
+resource numbers. **Every time you add a file to `res/`, you must refresh
+the numbers in it from the build output** (`app/build/intermediates/
+runtime_symbol_list/.../R.txt`) before you ship. If you skip this, the
+app will open the wrong screens and crash.
