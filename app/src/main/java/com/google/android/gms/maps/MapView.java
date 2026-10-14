@@ -19,25 +19,25 @@
             import com.google.android.gms.maps.internal.IMapViewDelegate;
             import com.google.android.gms.maps.model.RuntimeRemoteException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class MapView extends FrameLayout {
 
-                /* JADX INFO: renamed from: pI */
+                
                 private GoogleMap f2241pI;
 
-                /* JADX INFO: renamed from: pM */
+                
                 private final C1146b f2242pM;
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.MapView$a */
+                
                 static class C1145a implements LifecycleDelegate {
 
-                    /* JADX INFO: renamed from: pN */
+                    
                     private final ViewGroup f2243pN;
 
-                    /* JADX INFO: renamed from: pO */
+                    
                     private final IMapViewDelegate f2244pO;
 
-                    /* JADX INFO: renamed from: pP */
+                    
                     private View f2245pP;
 
                     public C1145a(ViewGroup viewGroup, IMapViewDelegate iMapViewDelegate) {
@@ -45,12 +45,12 @@
                         this.f2243pN = (ViewGroup) C1028dm.m1605e(viewGroup);
                     }
 
-                    /* JADX INFO: renamed from: cF */
+                    
                     public IMapViewDelegate m2220cF() {
                         return this.f2244pO;
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onCreate(Bundle savedInstanceState) {
                         try {
                             this.f2244pO.onCreate(savedInstanceState);
@@ -62,12 +62,12 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
                         throw new UnsupportedOperationException("onCreateView not allowed on MapViewDelegate");
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onDestroy() {
                         try {
                             this.f2244pO.onDestroy();
@@ -76,17 +76,17 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onDestroyView() {
                         throw new UnsupportedOperationException("onDestroyView not allowed on MapViewDelegate");
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onInflate(Activity activity, Bundle attrs, Bundle savedInstanceState) {
                         throw new UnsupportedOperationException("onInflate not allowed on MapViewDelegate");
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onLowMemory() {
                         try {
                             this.f2244pO.onLowMemory();
@@ -95,7 +95,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onPause() {
                         try {
                             this.f2244pO.onPause();
@@ -104,7 +104,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onResume() {
                         try {
                             this.f2244pO.onResume();
@@ -113,7 +113,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onSaveInstanceState(Bundle outState) {
                         try {
                             this.f2244pO.onSaveInstanceState(outState);
@@ -123,17 +123,17 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.MapView$b */
+                
                 static class C1146b extends AbstractC0903a<C1145a> {
                     private final Context mContext;
 
-                    /* JADX INFO: renamed from: pL */
+                    
                     protected InterfaceC0906d<C1145a> f2246pL;
 
-                    /* JADX INFO: renamed from: pQ */
+                    
                     private final ViewGroup f2247pQ;
 
-                    /* JADX INFO: renamed from: pR */
+                    
                     private final GoogleMapOptions f2248pR;
 
                     C1146b(ViewGroup viewGroup, Context context, GoogleMapOptions googleMapOptions) {
@@ -142,14 +142,14 @@
                         this.f2248pR = googleMapOptions;
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a
-                    /* JADX INFO: renamed from: a */
+                    @Override 
+                    
                     protected void mo1160a(InterfaceC0906d<C1145a> interfaceC0906d) {
                         this.f2246pL = interfaceC0906d;
                         m2221cE();
                     }
 
-                    /* JADX INFO: renamed from: cE */
+                    
                     public void m2221cE() {
                         if (this.f2246pL == null || m1161bP() != null) {
                             return;

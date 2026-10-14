@@ -5,7 +5,7 @@
             import android.content.IntentSender;
             import com.google.android.gms.internal.C1027dl;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class ConnectionResult {
                 public static final int DATE_INVALID = 12;
                 public static final int DEVELOPER_ERROR = 10;
@@ -21,10 +21,10 @@
                 public static final int SIGN_IN_REQUIRED = 4;
                 public static final int SUCCESS = 0;
 
-                /* JADX INFO: renamed from: iP */
+                
                 public static final ConnectionResult f928iP = new ConnectionResult(0, null);
 
-                /* JADX INFO: renamed from: iC */
+                
                 private final int f929iC;
                 private final PendingIntent mPendingIntent;
 
@@ -33,7 +33,7 @@
                     this.mPendingIntent = pendingIntent;
                 }
 
-                /* JADX INFO: renamed from: aH */
+                
                 private String m1010aH() {
                     switch (this.f929iC) {
                         case 0:

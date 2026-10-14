@@ -13,12 +13,12 @@
             import java.util.Iterator;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class LocationClient implements GooglePlayServicesClient {
                 public static final String KEY_LOCATION_CHANGED = "com.google.android.location.LOCATION";
                 public static final String KEY_MOCK_LOCATION = "mockLocation";
 
-                /* JADX INFO: renamed from: ou */
+                
                 private final C1068ez f2183ou;
 
                 public interface OnAddGeofencesResultListener {
@@ -80,12 +80,12 @@
                     this.f2183ou.addGeofences(arrayList, pendingIntent, listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void connect() {
                     this.f2183ou.connect();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void disconnect() {
                     this.f2183ou.disconnect();
                 }
@@ -94,32 +94,32 @@
                     return this.f2183ou.getLastLocation();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnected() {
                     return this.f2183ou.isConnected();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnecting() {
                     return this.f2183ou.isConnecting();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionCallbacksRegistered(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     return this.f2183ou.isConnectionCallbacksRegistered(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionFailedListenerRegistered(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     return this.f2183ou.isConnectionFailedListenerRegistered(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f2183ou.registerConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f2183ou.registerConnectionFailedListener(listener);
                 }
@@ -160,12 +160,12 @@
                     this.f2183ou.setMockMode(isMockMode);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f2183ou.unregisterConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f2183ou.unregisterConnectionFailedListener(listener);
                 }

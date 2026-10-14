@@ -7,25 +7,25 @@
             import android.os.RemoteException;
             import com.google.android.gms.common.data.C0891d;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.cx */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1012cx extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.cx$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1012cx {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.internal.cx$a$a, reason: collision with other inner class name */
+                    
                     private static class C1326a implements InterfaceC1012cx {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f1646dG;
 
                         C1326a(IBinder iBinder) {
                             this.f1646dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1012cx
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo1496a(int i, C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -49,8 +49,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1012cx
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo1497a(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -73,13 +73,13 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f1646dG;
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1012cx
-                        /* JADX INFO: renamed from: m */
+                        @Override 
+                        
                         public void mo1498m(int i) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -97,7 +97,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1012cx
+                        @Override 
                         public void onSignOutComplete() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -114,7 +114,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1012cx
+                        @Override 
                         public void onStateDeleted(int statusCode, int stateKey) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -138,7 +138,7 @@
                         attachInterface(this, "com.google.android.gms.appstate.internal.IAppStateCallbacks");
                     }
 
-                    /* JADX INFO: renamed from: s */
+                    
                     public static InterfaceC1012cx m1505s(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -147,12 +147,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1012cx)) ? new C1326a(iBinder) : (InterfaceC1012cx) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 5001:
@@ -189,13 +189,13 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo1496a(int i, C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo1497a(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: m */
+                
                 void mo1498m(int i) throws RemoteException;
 
                 void onSignOutComplete() throws RemoteException;

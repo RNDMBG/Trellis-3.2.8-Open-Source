@@ -11,8 +11,8 @@
             import java.util.ArrayList;
             import java.util.concurrent.TimeUnit;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 18 */    public class CounterView extends View implements Runnable {
+            
+    public class CounterView extends View implements Runnable {
                 private static final int ANIMATION_DURATION_MAX = (int) TimeUnit.NANOSECONDS.convert(150, TimeUnit.MILLISECONDS);
                 private static final int ANIMATION_DURATION_MIN = (int) TimeUnit.NANOSECONDS.convert(20, TimeUnit.MILLISECONDS);
                 private static final int FRAME_DELAY = 20;
@@ -42,47 +42,47 @@
                 private final Paint mPaint;
                 private double mVelocityPerMS;
 
-/* 19 */        static /* synthetic */ AnimationMode access$000(CounterView x0) {
-/* 20 */            return x0.mAnimationMode;
+        static  AnimationMode access$000(CounterView x0) {
+            return x0.mAnimationMode;
                 }
 
-/* 19 */        static /* synthetic */ int access$100() {
-/* 20 */            return ANIMATION_DURATION_MAX;
+        static  int access$100() {
+            return ANIMATION_DURATION_MAX;
                 }
 
-/* 19 */        static /* synthetic */ int access$200() {
-/* 20 */            return ANIMATION_DURATION_MIN;
+        static  int access$200() {
+            return ANIMATION_DURATION_MIN;
                 }
 
-/* 55 */        public void setAnimationMode(AnimationMode animationMode) {
-/* 56 */            this.mAnimationMode = animationMode;
+        public void setAnimationMode(AnimationMode animationMode) {
+            this.mAnimationMode = animationMode;
                 }
 
-/* 59 */        public void setMinAnimationSeparation(long minAnimationSeparation) {
-/* 60 */            this.mMinAnimationSeparation = minAnimationSeparation;
+        public void setMinAnimationSeparation(long minAnimationSeparation) {
+            this.mMinAnimationSeparation = minAnimationSeparation;
                 }
 
-/* 63 */        public void setMaxAnimationSeparation(long maxAnimationSeparation) {
-/* 64 */            this.mMaxAnimationSeparation = maxAnimationSeparation;
+        public void setMaxAnimationSeparation(long maxAnimationSeparation) {
+            this.mMaxAnimationSeparation = maxAnimationSeparation;
                 }
 
-/* 67 */        public void incrementExtraCount(int n) {
-/* 68 */            adjustExtraCount(this.mExtraCount + ((long) n));
+        public void incrementExtraCount(int n) {
+            adjustExtraCount(this.mExtraCount + ((long) n));
                 }
 
-/* 74 */        public static class AnimationMode {
+        public static class AnimationMode {
                     public final boolean alphaAnimation;
                     public final boolean continuousAnimation;
                     public final boolean pedometerAnimation;
 
-/* 75 */            public AnimationMode(boolean continuousAnimation, boolean pedometerAnimation, boolean alphaAnimation) {
-/* 77 */                this.continuousAnimation = continuousAnimation;
-/* 78 */                this.pedometerAnimation = pedometerAnimation;
-/* 79 */                this.alphaAnimation = alphaAnimation;
+            public AnimationMode(boolean continuousAnimation, boolean pedometerAnimation, boolean alphaAnimation) {
+                this.continuousAnimation = continuousAnimation;
+                this.pedometerAnimation = pedometerAnimation;
+                this.alphaAnimation = alphaAnimation;
                     }
                 }
 
-/* 92 */        public class DigitAnimation {
+        public class DigitAnimation {
                     public long mAnimatingCount;
                     public long mAnimationDuration;
                     public long mAnimationStartTime;
@@ -93,313 +93,313 @@
                     public boolean mIsAnimating;
                     private final double mNextDivider;
 
-/* 93 */            public DigitAnimation(int indexFromRight, double velocityPerMS, long drawingCount) {
-/* 95 */                this.mIndexFromRight = indexFromRight;
-/* 96 */                this.mDivider = Math.pow(10.0d, this.mIndexFromRight);
-/* 97 */                this.mNextDivider = Math.pow(10.0d, this.mIndexFromRight + 1);
-/* 98 */                if (this.mIndexFromRight > 0) {
-/* 99 */                    this.mDrawingDigit = (int) ((drawingCount / this.mDivider) % 10.0d);
+            public DigitAnimation(int indexFromRight, double velocityPerMS, long drawingCount) {
+                this.mIndexFromRight = indexFromRight;
+                this.mDivider = Math.pow(10.0d, this.mIndexFromRight);
+                this.mNextDivider = Math.pow(10.0d, this.mIndexFromRight + 1);
+                if (this.mIndexFromRight > 0) {
+                    this.mDrawingDigit = (int) ((drawingCount / this.mDivider) % 10.0d);
                         } else {
-/* 101 */                   this.mDrawingDigit = (int) (drawingCount % 10);
+                   this.mDrawingDigit = (int) (drawingCount % 10);
                         }
-/* 103 */               this.mAnimatingCount = drawingCount;
-/* 105 */               if (velocityPerMS > 0.0d && CounterView.access$000(CounterView.this).continuousAnimation) {
-/* 106 */                   if (this.mIndexFromRight > 0) {
-/* 107 */                       this.mAnimationDuration = (long) (1.0d / (velocityPerMS / ((double) (this.mIndexFromRight * 10))));
+               this.mAnimatingCount = drawingCount;
+               if (velocityPerMS > 0.0d && CounterView.access$000(CounterView.this).continuousAnimation) {
+                   if (this.mIndexFromRight > 0) {
+                       this.mAnimationDuration = (long) (1.0d / (velocityPerMS / ((double) (this.mIndexFromRight * 10))));
                             } else {
-/* 109 */                       this.mAnimationDuration = (long) (1.0d / velocityPerMS);
+                       this.mAnimationDuration = (long) (1.0d / velocityPerMS);
                             }
                         } else {
-/* 112 */                   this.mAnimationDuration = 2147483647L;
+                   this.mAnimationDuration = 2147483647L;
                         }
-/* 117 */               this.mAnimationDuration *= 1000;
-/* 118 */               this.mAnimationDuration = Math.min(this.mAnimationDuration, CounterView.access$100());
-/* 119 */               this.mAnimationDuration = Math.max(this.mAnimationDuration, CounterView.access$200());
+               this.mAnimationDuration *= 1000;
+               this.mAnimationDuration = Math.min(this.mAnimationDuration, CounterView.access$100());
+               this.mAnimationDuration = Math.max(this.mAnimationDuration, CounterView.access$200());
                     }
 
-/* 122 */           public boolean invalidate(long currentTime, long currentCount, boolean shouldAnimate) {
-/* 123 */               int currentRealDigit = this.mDrawingDigit;
-/* 124 */               if (this.mIsAnimating && currentTime - this.mAnimationStartTime > this.mAnimationDuration) {
-/* 126 */                   if (this.mIndexFromRight > 0) {
-/* 127 */                       currentRealDigit = (int) ((this.mAnimatingCount / this.mDivider) % 10.0d);
+           public boolean invalidate(long currentTime, long currentCount, boolean shouldAnimate) {
+               int currentRealDigit = this.mDrawingDigit;
+               if (this.mIsAnimating && currentTime - this.mAnimationStartTime > this.mAnimationDuration) {
+                   if (this.mIndexFromRight > 0) {
+                       currentRealDigit = (int) ((this.mAnimatingCount / this.mDivider) % 10.0d);
                             } else {
-/* 129 */                       currentRealDigit = (int) (this.mAnimatingCount % 10);
+                       currentRealDigit = (int) (this.mAnimatingCount % 10);
                             }
-/* 131 */                   if (CounterView.access$000(CounterView.this).pedometerAnimation) {
-/* 132 */                       this.mDrawingDigit = (this.mDrawingDigit + 1) % 10;
+                   if (CounterView.access$000(CounterView.this).pedometerAnimation) {
+                       this.mDrawingDigit = (this.mDrawingDigit + 1) % 10;
                             } else {
-/* 134 */                       this.mDrawingDigit = this.mCurrentAnimatingToDigit;
+                       this.mDrawingDigit = this.mCurrentAnimatingToDigit;
                             }
-/* 136 */                   this.mIsAnimating = false;
+                   this.mIsAnimating = false;
                         }
-/* 139 */               boolean shouldAnimateNext = false;
-/* 140 */               if ((shouldAnimate || currentRealDigit != this.mDrawingDigit) && !this.mIsAnimating) {
-/* 142 */                   this.mIsAnimating = true;
-/* 143 */                   this.mAnimationStartTime = System.nanoTime();
-/* 144 */                   int currentRest = (int) (this.mAnimatingCount / this.mNextDivider);
-/* 145 */                   int nextRest = (int) (currentCount / this.mNextDivider);
-/* 146 */                   shouldAnimateNext = currentRest != nextRest;
-/* 147 */                   this.mAnimatingCount = currentCount;
-/* 148 */                   if (CounterView.access$000(CounterView.this).pedometerAnimation) {
-/* 149 */                       this.mCurrentAnimatingToDigit = (this.mDrawingDigit + 1) % 10;
+               boolean shouldAnimateNext = false;
+               if ((shouldAnimate || currentRealDigit != this.mDrawingDigit) && !this.mIsAnimating) {
+                   this.mIsAnimating = true;
+                   this.mAnimationStartTime = System.nanoTime();
+                   int currentRest = (int) (this.mAnimatingCount / this.mNextDivider);
+                   int nextRest = (int) (currentCount / this.mNextDivider);
+                   shouldAnimateNext = currentRest != nextRest;
+                   this.mAnimatingCount = currentCount;
+                   if (CounterView.access$000(CounterView.this).pedometerAnimation) {
+                       this.mCurrentAnimatingToDigit = (this.mDrawingDigit + 1) % 10;
                             } else if (this.mIndexFromRight > 0) {
-/* 152 */                       this.mCurrentAnimatingToDigit = (int) ((this.mAnimatingCount / this.mDivider) % 10.0d);
+                       this.mCurrentAnimatingToDigit = (int) ((this.mAnimatingCount / this.mDivider) % 10.0d);
                             } else {
-/* 154 */                       this.mCurrentAnimatingToDigit = (int) (this.mAnimatingCount % 10);
+                       this.mCurrentAnimatingToDigit = (int) (this.mAnimatingCount % 10);
                             }
                         }
-/* 159 */               return shouldAnimateNext;
+               return shouldAnimateNext;
                     }
                 }
 
-/* 163 */       public CounterView(Context context) {
-/* 164 */           super(context);
-/* 42 */            this.mDigitAnimations = new ArrayList<>();
-/* 45 */            this.mAnimationMode = new AnimationMode(false, false, true);
-/* 49 */            this.mLOCK = new int[0];
-/* 165 */           this.mPaint = init();
-/* 166 */           updateTextSizes();
+       public CounterView(Context context) {
+           super(context);
+            this.mDigitAnimations = new ArrayList<>();
+            this.mAnimationMode = new AnimationMode(false, false, true);
+            this.mLOCK = new int[0];
+           this.mPaint = init();
+           updateTextSizes();
                 }
 
-/* 169 */       private Paint init() {
-/* 170 */           Paint paint = new Paint(65);
-/* 171 */           this.mBounds = new Rect[]{new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect()};
-/* 184 */           paint.setTextSize(32.0f);
-/* 185 */           paint.setColor(-16777216);
-/* 186 */           paint.setStyle(Paint.Style.FILL);
-/* 187 */           paint.setTextAlign(Paint.Align.RIGHT);
-/* 188 */           return paint;
+       private Paint init() {
+           Paint paint = new Paint(65);
+           this.mBounds = new Rect[]{new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect(), new Rect()};
+           paint.setTextSize(32.0f);
+           paint.setColor(-16777216);
+           paint.setStyle(Paint.Style.FILL);
+           paint.setTextAlign(Paint.Align.RIGHT);
+           return paint;
                 }
 
-/* 191 */       private void updateTextSizes() {
-/* 192 */           this.mMaxTextWidth = 0;
-/* 193 */           this.mMaxTextHeight = 0;
+       private void updateTextSizes() {
+           this.mMaxTextWidth = 0;
+           this.mMaxTextHeight = 0;
                     for (int i = 0; i < this.mBounds.length; i++) {
-/* 195 */               if (i != 10) {
-/* 196 */                   this.mPaint.getTextBounds(String.valueOf(i), 0, 1, this.mBounds[i]);
+               if (i != 10) {
+                   this.mPaint.getTextBounds(String.valueOf(i), 0, 1, this.mBounds[i]);
                         } else {
-/* 198 */                   this.mPaint.getTextBounds(K_SEPARATOR, 0, 1, this.mBounds[i]);
+                   this.mPaint.getTextBounds(K_SEPARATOR, 0, 1, this.mBounds[i]);
                         }
-/* 200 */               if (this.mMaxTextWidth < this.mBounds[i].width()) {
-/* 201 */                   this.mMaxTextWidth = this.mBounds[i].width();
+               if (this.mMaxTextWidth < this.mBounds[i].width()) {
+                   this.mMaxTextWidth = this.mBounds[i].width();
                         }
-/* 203 */               if (this.mMaxTextHeight < this.mBounds[i].height()) {
-/* 204 */                   this.mMaxTextHeight = this.mBounds[i].height();
+               if (this.mMaxTextHeight < this.mBounds[i].height()) {
+                   this.mMaxTextHeight = this.mBounds[i].height();
                         }
                     }
-/* 207 */           this.mInterCharacterSpacingX = getResources().getDimensionPixelSize(C0257R.dimen.counter_horizontal_text_spacing);
-/* 208 */           this.mInterCharacterSpacingY = getResources().getDimensionPixelSize(C0257R.dimen.counter_vertical_text_spacing);
+           this.mInterCharacterSpacingX = getResources().getDimensionPixelSize(C0257R.dimen.counter_horizontal_text_spacing);
+           this.mInterCharacterSpacingY = getResources().getDimensionPixelSize(C0257R.dimen.counter_vertical_text_spacing);
                 }
 
-/* 211 */       public CounterView(Context context, AttributeSet attrs) {
-/* 212 */           super(context, attrs);
-/* 42 */            this.mDigitAnimations = new ArrayList<>();
-/* 45 */            this.mAnimationMode = new AnimationMode(false, false, true);
-/* 49 */            this.mLOCK = new int[0];
-/* 213 */           this.mPaint = init();
-/* 214 */           updateTextSizes();
+       public CounterView(Context context, AttributeSet attrs) {
+           super(context, attrs);
+            this.mDigitAnimations = new ArrayList<>();
+            this.mAnimationMode = new AnimationMode(false, false, true);
+            this.mLOCK = new int[0];
+           this.mPaint = init();
+           updateTextSizes();
                 }
 
-/* 217 */       public CounterView(Context context, AttributeSet attrs, int defStyle) {
-/* 218 */           super(context, attrs, defStyle);
-/* 42 */            this.mDigitAnimations = new ArrayList<>();
-/* 45 */            this.mAnimationMode = new AnimationMode(false, false, true);
-/* 49 */            this.mLOCK = new int[0];
-/* 219 */           this.mPaint = init();
-/* 220 */           updateTextSizes();
+       public CounterView(Context context, AttributeSet attrs, int defStyle) {
+           super(context, attrs, defStyle);
+            this.mDigitAnimations = new ArrayList<>();
+            this.mAnimationMode = new AnimationMode(false, false, true);
+            this.mLOCK = new int[0];
+           this.mPaint = init();
+           updateTextSizes();
                 }
 
-/* 223 */       public void setTypeFace(Typeface typeFace) {
-/* 224 */           this.mPaint.setTypeface(typeFace);
-/* 225 */           requestLayout();
+       public void setTypeFace(Typeface typeFace) {
+           this.mPaint.setTypeface(typeFace);
+           requestLayout();
                 }
 
-/* 228 */       public void setTextSize(float textSize) {
-/* 229 */           this.mPaint.setTextSize(textSize);
-/* 230 */           requestLayout();
+       public void setTextSize(float textSize) {
+           this.mPaint.setTextSize(textSize);
+           requestLayout();
                 }
 
-/* 233 */       public void reset() {
-/* 234 */           this.mLastDigitCount = 0;
-/* 235 */           this.mKnownCount = 0L;
-/* 236 */           this.mKnownCountRefreshTime = -1L;
-/* 237 */           this.mVelocityPerMS = 0.0d;
-/* 238 */           this.mDrawingCount = 0L;
-/* 239 */           this.mDigitAnimations.clear();
+       public void reset() {
+           this.mLastDigitCount = 0;
+           this.mKnownCount = 0L;
+           this.mKnownCountRefreshTime = -1L;
+           this.mVelocityPerMS = 0.0d;
+           this.mDrawingCount = 0L;
+           this.mDigitAnimations.clear();
                 }
 
-/* 242 */       public long setKnownCount(long knownCount, double velocityPerMS, long knownCountRefreshTime) {
+       public long setKnownCount(long knownCount, double velocityPerMS, long knownCountRefreshTime) {
                     if (knownCountRefreshTime > 0) {
-/* 244 */               long time = System.currentTimeMillis();
-/* 245 */               this.mKnownCount = (long) (knownCount + ((time - knownCountRefreshTime) * velocityPerMS));
-/* 246 */               this.mKnownCountRefreshTime = time;
+               long time = System.currentTimeMillis();
+               this.mKnownCount = (long) (knownCount + ((time - knownCountRefreshTime) * velocityPerMS));
+               this.mKnownCountRefreshTime = time;
                     } else {
-/* 248 */               this.mKnownCount = knownCount;
+               this.mKnownCount = knownCount;
                     }
-/* 250 */           this.mVelocityPerMS = velocityPerMS;
+           this.mVelocityPerMS = velocityPerMS;
                     synchronized (this.mLOCK) {
                         try {
-/* 252 */                   this.mLastDigitCount = 0;
-/* 253 */                   this.mDigitAnimations.clear();
-/* 254 */                   invalidateDigitSize(true);
+                   this.mLastDigitCount = 0;
+                   this.mDigitAnimations.clear();
+                   invalidateDigitSize(true);
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
-/* 256 */           return this.mKnownCount;
+           return this.mKnownCount;
                 }
 
-/* 259 */       public void pause() {
-/* 260 */           this.mIsPaused = true;
-/* 261 */           removeCallbacks(this);
+       public void pause() {
+           this.mIsPaused = true;
+           removeCallbacks(this);
                 }
 
-/* 264 */       public void resume() {
-/* 265 */           if (this.mIsPaused) {
-/* 266 */               this.mIsPaused = false;
-/* 267 */               postInvalidate();
+       public void resume() {
+           if (this.mIsPaused) {
+               this.mIsPaused = false;
+               postInvalidate();
                     }
                 }
 
-/* 271 */       public long getCount() {
+       public long getCount() {
                     return (long) ((this.mKnownCountRefreshTime > 0 ? this.mVelocityPerMS * (System.currentTimeMillis() - this.mKnownCountRefreshTime) : 0.0d) + this.mKnownCount);
                 }
 
-                @Override // android.view.View
-/* 276 */       public void onDraw(Canvas canvas) {
-/* 277 */           int x = getMeasuredWidth();
-/* 278 */           int measuredHeight = getMeasuredHeight();
+                @Override 
+       public void onDraw(Canvas canvas) {
+           int x = getMeasuredWidth();
+           int measuredHeight = getMeasuredHeight();
                     synchronized (this.mLOCK) {
                         try {
-/* 280 */                   int length = this.mDigitAnimations.size();
-/* 281 */                   String num = "";
+                   int length = this.mDigitAnimations.size();
+                   String num = "";
                             for (int i = 0; i < length; i++) {
-/* 283 */                       if (i >= 3 && i % 3 == 0) {
-/* 284 */                           this.mPaint.setAlpha(255);
-/* 285 */                           canvas.drawText(K_SEPARATOR, x, (measuredHeight >> 1) + this.mBounds[10].height() + this.mInterCharacterSpacingY, this.mPaint);
-/* 286 */                           x -= this.mBounds[10].width();
+                       if (i >= 3 && i % 3 == 0) {
+                           this.mPaint.setAlpha(255);
+                           canvas.drawText(K_SEPARATOR, x, (measuredHeight >> 1) + this.mBounds[10].height() + this.mInterCharacterSpacingY, this.mPaint);
+                           x -= this.mBounds[10].width();
                                 }
-/* 288 */                       DigitAnimation digitAnimation = this.mDigitAnimations.get(i);
-/* 289 */                       int digit = digitAnimation.mDrawingDigit;
-/* 290 */                       String digitText = String.valueOf(digit);
-/* 291 */                       int y = getIntrinsicHeightForDigit(measuredHeight, digit);
-/* 292 */                       if (digitAnimation.mIsAnimating) {
-/* 293 */                           long diff = System.nanoTime() - digitAnimation.mAnimationStartTime;
-/* 294 */                           double progress = diff / digitAnimation.mAnimationDuration;
+                       DigitAnimation digitAnimation = this.mDigitAnimations.get(i);
+                       int digit = digitAnimation.mDrawingDigit;
+                       String digitText = String.valueOf(digit);
+                       int y = getIntrinsicHeightForDigit(measuredHeight, digit);
+                       if (digitAnimation.mIsAnimating) {
+                           long diff = System.nanoTime() - digitAnimation.mAnimationStartTime;
+                           double progress = diff / digitAnimation.mAnimationDuration;
                                     if (diff >= digitAnimation.mAnimationDuration || (digitAnimation.mCurrentAnimatingToDigit == digit && !this.mAnimationMode.pedometerAnimation)) {
-/* 296 */                               num = num + digitAnimation.mCurrentAnimatingToDigit;
-/* 297 */                               this.mPaint.setAlpha(255);
-/* 298 */                               canvas.drawText(String.valueOf(digitAnimation.mCurrentAnimatingToDigit), x, y, this.mPaint);
+                               num = num + digitAnimation.mCurrentAnimatingToDigit;
+                               this.mPaint.setAlpha(255);
+                               canvas.drawText(String.valueOf(digitAnimation.mCurrentAnimatingToDigit), x, y, this.mPaint);
                                     } else {
-/* 300 */                               int topY = (int) (((double) y) - (((double) (this.mBounds[digit].height() + this.mInterCharacterSpacingY)) * progress));
-/* 301 */                               if (digit != 0 || i != length - 1 || length == 1) {
-/* 302 */                                   if (this.mAnimationMode.alphaAnimation) {
-/* 303 */                                       this.mPaint.setAlpha((int) ((1.0d - progress) * 255.0d));
+                               int topY = (int) (((double) y) - (((double) (this.mBounds[digit].height() + this.mInterCharacterSpacingY)) * progress));
+                               if (digit != 0 || i != length - 1 || length == 1) {
+                                   if (this.mAnimationMode.alphaAnimation) {
+                                       this.mPaint.setAlpha((int) ((1.0d - progress) * 255.0d));
                                             }
-/* 305 */                                   canvas.drawText(digitText, x, topY, this.mPaint);
+                                   canvas.drawText(digitText, x, topY, this.mPaint);
                                         }
-/* 307 */                               num = num + digitText;
-/* 308 */                               int botY = this.mBounds[digit].height() + topY + this.mInterCharacterSpacingY;
-/* 309 */                               if (this.mAnimationMode.alphaAnimation) {
-/* 310 */                                   this.mPaint.setAlpha((int) (255.0d * progress));
+                               num = num + digitText;
+                               int botY = this.mBounds[digit].height() + topY + this.mInterCharacterSpacingY;
+                               if (this.mAnimationMode.alphaAnimation) {
+                                   this.mPaint.setAlpha((int) (255.0d * progress));
                                         }
-/* 312 */                               canvas.drawText(String.valueOf(digitAnimation.mCurrentAnimatingToDigit), x, botY, this.mPaint);
+                               canvas.drawText(String.valueOf(digitAnimation.mCurrentAnimatingToDigit), x, botY, this.mPaint);
                                     }
                                 } else {
-/* 315 */                           num = num + digitText;
-/* 316 */                           this.mPaint.setAlpha(255);
-/* 317 */                           canvas.drawText(digitText, x, y, this.mPaint);
+                           num = num + digitText;
+                           this.mPaint.setAlpha(255);
+                           canvas.drawText(digitText, x, y, this.mPaint);
                                 }
-/* 319 */                       x -= this.mMaxTextWidth + this.mInterCharacterSpacingX;
+                       x -= this.mMaxTextWidth + this.mInterCharacterSpacingX;
                             }
-/* 321 */                   if (!num.equals(this.mLastPrint)) {
-/* 322 */                       this.mLastPrint = num;
+                   if (!num.equals(this.mLastPrint)) {
+                       this.mLastPrint = num;
                             }
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
-/* 325 */           removeCallbacks(this);
-/* 326 */           if (!this.mIsPaused) {
-/* 327 */               postDelayed(this, 20L);
+           removeCallbacks(this);
+           if (!this.mIsPaused) {
+               postDelayed(this, 20L);
                     }
                 }
 
-                @Override // android.view.View
-/* 332 */       protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+                @Override 
+       protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
                     int width;
                     int height;
-/* 333 */           int widthMode = View.MeasureSpec.getMode(widthMeasureSpec);
-/* 334 */           int heightMode = View.MeasureSpec.getMode(heightMeasureSpec);
-/* 335 */           int widthSize = View.MeasureSpec.getSize(widthMeasureSpec);
-/* 336 */           int heightSize = View.MeasureSpec.getSize(heightMeasureSpec);
-/* 340 */           updateTextSizes();
-/* 342 */           if (widthMode == 1073741824) {
-/* 343 */               width = widthSize;
+           int widthMode = View.MeasureSpec.getMode(widthMeasureSpec);
+           int heightMode = View.MeasureSpec.getMode(heightMeasureSpec);
+           int widthSize = View.MeasureSpec.getSize(widthMeasureSpec);
+           int heightSize = View.MeasureSpec.getSize(heightMeasureSpec);
+           updateTextSizes();
+           if (widthMode == 1073741824) {
+               width = widthSize;
                     } else {
-/* 345 */               int digits = Math.max(this.mLastDigitCount, String.valueOf(this.mDrawingCount).length());
-/* 346 */               width = ((this.mMaxTextWidth + this.mInterCharacterSpacingX) * digits) + ((digits / 3) * this.mBounds[10].width()) + getPaddingLeft() + getPaddingRight();
-/* 349 */               if (heightMode == Integer.MIN_VALUE) {
-/* 350 */                   width = Math.min(width, widthSize);
+               int digits = Math.max(this.mLastDigitCount, String.valueOf(this.mDrawingCount).length());
+               width = ((this.mMaxTextWidth + this.mInterCharacterSpacingX) * digits) + ((digits / 3) * this.mBounds[10].width()) + getPaddingLeft() + getPaddingRight();
+               if (heightMode == Integer.MIN_VALUE) {
+                   width = Math.min(width, widthSize);
                         }
                     }
-/* 353 */           if (heightMode == 1073741824) {
-/* 354 */               height = heightSize;
+           if (heightMode == 1073741824) {
+               height = heightSize;
                     } else {
-/* 356 */               height = this.mMaxTextHeight + getPaddingTop() + getPaddingBottom() + this.mInterCharacterSpacingY;
-/* 357 */               if (heightMode == Integer.MIN_VALUE) {
-/* 358 */                   height = Math.min(height, heightSize);
+               height = this.mMaxTextHeight + getPaddingTop() + getPaddingBottom() + this.mInterCharacterSpacingY;
+               if (heightMode == Integer.MIN_VALUE) {
+                   height = Math.min(height, heightSize);
                         }
                     }
-/* 361 */           setMeasuredDimension(width, height);
+           setMeasuredDimension(width, height);
                 }
 
-/* 364 */       private int getIntrinsicHeightForDigit(int measuredHeight, int digit) {
-/* 365 */           return (this.mBounds[digit].height() + measuredHeight) >> 1;
+       private int getIntrinsicHeightForDigit(int measuredHeight, int digit) {
+           return (this.mBounds[digit].height() + measuredHeight) >> 1;
                 }
 
-/* 368 */       public void invalidateCounterUI() {
-/* 369 */           this.mCanAnimate = true;
+       public void invalidateCounterUI() {
+           this.mCanAnimate = true;
                 }
 
-/* 376 */       public void adjustExtraCount(long extraCount) {
-/* 377 */           this.mExtraCount = extraCount;
+       public void adjustExtraCount(long extraCount) {
+           this.mExtraCount = extraCount;
                 }
 
-/* 380 */       private void invalidateDigitSize(boolean forceDigitSizeRecal) {
+       private void invalidateDigitSize(boolean forceDigitSizeRecal) {
                     synchronized (this.mLOCK) {
                         try {
-/* 382 */                   if (this.mDigitAnimations.size() == 0) {
-/* 383 */                       this.mDigitAnimations.add(new DigitAnimation(0, this.mVelocityPerMS, this.mDrawingCount));
+                   if (this.mDigitAnimations.size() == 0) {
+                       this.mDigitAnimations.add(new DigitAnimation(0, this.mVelocityPerMS, this.mDrawingCount));
                             }
-/* 385 */                   long currentCount = getCount() + this.mExtraCount;
-/* 386 */                   long currentTime = System.nanoTime();
-/* 387 */                   int digitCount = String.valueOf(this.mDrawingCount).length();
-/* 388 */                   long diffTimeMs = System.currentTimeMillis() - this.mLastAnimationTime;
-/* 389 */                   boolean shouldAnimateNext = currentCount > this.mDigitAnimations.get(0).mAnimatingCount;
-/* 390 */                   if (forceDigitSizeRecal || (diffTimeMs >= this.mMinAnimationSeparation && (this.mCanAnimate || diffTimeMs >= this.mMaxAnimationSeparation))) {
-/* 393 */                       this.mLastAnimationTime = System.currentTimeMillis();
-/* 394 */                       int i = 0;
-/* 395 */                       long newDrawingCount = 0;
+                   long currentCount = getCount() + this.mExtraCount;
+                   long currentTime = System.nanoTime();
+                   int digitCount = String.valueOf(this.mDrawingCount).length();
+                   long diffTimeMs = System.currentTimeMillis() - this.mLastAnimationTime;
+                   boolean shouldAnimateNext = currentCount > this.mDigitAnimations.get(0).mAnimatingCount;
+                   if (forceDigitSizeRecal || (diffTimeMs >= this.mMinAnimationSeparation && (this.mCanAnimate || diffTimeMs >= this.mMaxAnimationSeparation))) {
+                       this.mLastAnimationTime = System.currentTimeMillis();
+                       int i = 0;
+                       long newDrawingCount = 0;
                                 while (true) {
-/* 396 */                           if (i >= digitCount && !shouldAnimateNext) {
+                           if (i >= digitCount && !shouldAnimateNext) {
                                         break;
                                     }
-/* 397 */                           if (this.mDigitAnimations.size() <= i) {
-/* 398 */                               this.mDigitAnimations.add(new DigitAnimation(i, this.mVelocityPerMS, this.mDrawingCount));
+                           if (this.mDigitAnimations.size() <= i) {
+                               this.mDigitAnimations.add(new DigitAnimation(i, this.mVelocityPerMS, this.mDrawingCount));
                                     }
-/* 400 */                           DigitAnimation digitAnim = this.mDigitAnimations.get(i);
-/* 401 */                           shouldAnimateNext = digitAnim.invalidate(currentTime, currentCount, shouldAnimateNext);
+                           DigitAnimation digitAnim = this.mDigitAnimations.get(i);
+                           shouldAnimateNext = digitAnim.invalidate(currentTime, currentCount, shouldAnimateNext);
                                     newDrawingCount = (long) ((i == 0 ? digitAnim.mDrawingDigit : ((double) digitAnim.mDrawingDigit) * Math.pow(10.0d, i)) + newDrawingCount);
-/* 406 */                           i++;
+                           i++;
                                 }
-/* 408 */                       setDrawingCount(newDrawingCount, forceDigitSizeRecal);
-/* 409 */                       if (this.mLastDigitCount != this.mDigitAnimations.size()) {
-/* 410 */                           this.mLastDigitCount = this.mDigitAnimations.size();
-/* 411 */                           requestLayout();
+                       setDrawingCount(newDrawingCount, forceDigitSizeRecal);
+                       if (this.mLastDigitCount != this.mDigitAnimations.size()) {
+                           this.mLastDigitCount = this.mDigitAnimations.size();
+                           requestLayout();
                                 }
-/* 413 */                       if (!this.mAnimationMode.continuousAnimation) {
-/* 414 */                           this.mCanAnimate = false;
+                       if (!this.mAnimationMode.continuousAnimation) {
+                           this.mCanAnimate = false;
                                 }
                             }
                         } catch (Throwable th) {
@@ -408,15 +408,15 @@
                     }
                 }
 
-/* 420 */       private void setDrawingCount(long newDrawingCount, boolean invalidation) {
-/* 421 */           this.mDrawingCount = newDrawingCount;
+       private void setDrawingCount(long newDrawingCount, boolean invalidation) {
+           this.mDrawingCount = newDrawingCount;
                 }
 
-                @Override // java.lang.Runnable
-/* 425 */       public void run() {
-/* 426 */           invalidateDigitSize(false);
-/* 427 */           if (!this.mIsPaused && isShown()) {
-/* 428 */               postInvalidate();
+                @Override 
+       public void run() {
+           invalidateDigitSize(false);
+           if (!this.mIsPaused && isShown()) {
+               postInvalidate();
                     }
                 }
             }

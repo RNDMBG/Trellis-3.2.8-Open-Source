@@ -27,9 +27,9 @@
             import java.nio.LongBuffer;
             import java.nio.ShortBuffer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties({@Platform(cinclude = {"<libavutil/avutil.h>", "<libavutil/error.h>", "<libavutil/mem.h>", "<libavutil/mathematics.h>", "<libavutil/rational.h>", "<libavutil/log.h>", "<libavutil/buffer.h>", "<libavutil/frame.h>", "<libavutil/pixfmt.h>", "<libavutil/samplefmt.h>", "<libavutil/channel_layout.h>", "<libavutil/cpu.h>", "<libavutil/dict.h>", "<libavutil/opt.h>", "<libavutil/audioconvert.h>", "<libavutil/pixdesc.h>", "<libavutil/imgutils.h>"}, define = {"__STDC_CONSTANT_MACROS"}, includepath = {"/usr/local/include/ffmpeg/", "/opt/local/include/ffmpeg/", "/usr/include/ffmpeg/"}, link = {"avutil@.52"}, options = {"default", "nodeprecated"}), @Platform(includepath = {"C:/MinGW/local/include/ffmpeg/", "C:/MinGW/include/ffmpeg/", "src/main/resources/com/googlecode/javacv/cpp/"}, preload = {"avutil-52"}, value = {"windows"})})
-/* 41 */    public class avutil {
+    public class avutil {
                 public static final int AVERROR_BSF_NOT_FOUND;
                 public static final int AVERROR_BUFFER_TOO_SMALL;
                 public static final int AVERROR_BUG;
@@ -1695,121 +1695,121 @@
                 public static native void ff_check_pixfmt_descriptors();
 
                 static {
-/* 43 */            Loader.load();
-/* 274 */           AV_NOPTS_VALUE = AV_NOPTS_VALUE();
-/* 417 */           AVERROR_BSF_NOT_FOUND = AVERROR_BSF_NOT_FOUND();
-/* 420 */           AVERROR_BUG = AVERROR_BUG();
-/* 423 */           AVERROR_BUFFER_TOO_SMALL = AVERROR_BUFFER_TOO_SMALL();
-/* 426 */           AVERROR_DECODER_NOT_FOUND = AVERROR_DECODER_NOT_FOUND();
-/* 429 */           AVERROR_DEMUXER_NOT_FOUND = AVERROR_DEMUXER_NOT_FOUND();
-/* 432 */           AVERROR_ENCODER_NOT_FOUND = AVERROR_ENCODER_NOT_FOUND();
-/* 435 */           AVERROR_EOF = AVERROR_EOF();
-/* 438 */           AVERROR_EXIT = AVERROR_EXIT();
-/* 441 */           AVERROR_EXTERNAL = AVERROR_EXTERNAL();
-/* 444 */           AVERROR_FILTER_NOT_FOUND = AVERROR_FILTER_NOT_FOUND();
-/* 447 */           AVERROR_INVALIDDATA = AVERROR_INVALIDDATA();
-/* 450 */           AVERROR_MUXER_NOT_FOUND = AVERROR_MUXER_NOT_FOUND();
-/* 453 */           AVERROR_OPTION_NOT_FOUND = AVERROR_OPTION_NOT_FOUND();
-/* 456 */           AVERROR_PATCHWELCOME = AVERROR_PATCHWELCOME();
-/* 459 */           AVERROR_PROTOCOL_NOT_FOUND = AVERROR_PROTOCOL_NOT_FOUND();
-/* 463 */           AVERROR_STREAM_NOT_FOUND = AVERROR_STREAM_NOT_FOUND();
-/* 469 */           AVERROR_BUG2 = AVERROR_BUG2();
-/* 472 */           AVERROR_UNKNOWN = AVERROR_UNKNOWN();
-/* 863 */           NAN = NAN();
-/* 867 */           INFINITY = INFINITY();
-/* 2791 */          AV_PIX_FMT_RGB32 = AV_PIX_FMT_RGB32();
-/* 2793 */          AV_PIX_FMT_RGB32_1 = AV_PIX_FMT_RGB32_1();
-/* 2795 */          AV_PIX_FMT_BGR32 = AV_PIX_FMT_BGR32();
-/* 2797 */          AV_PIX_FMT_BGR32_1 = AV_PIX_FMT_BGR32_1();
-/* 2799 */          AV_PIX_FMT_0RGB32 = AV_PIX_FMT_0RGB32();
-/* 2801 */          AV_PIX_FMT_0BGR32 = AV_PIX_FMT_0BGR32();
-/* 2804 */          AV_PIX_FMT_GRAY16 = AV_PIX_FMT_GRAY16();
-/* 2806 */          AV_PIX_FMT_RGB48 = AV_PIX_FMT_RGB48();
-/* 2808 */          AV_PIX_FMT_RGB565 = AV_PIX_FMT_RGB565();
-/* 2810 */          AV_PIX_FMT_RGB555 = AV_PIX_FMT_RGB555();
-/* 2812 */          AV_PIX_FMT_RGB444 = AV_PIX_FMT_RGB444();
-/* 2814 */          AV_PIX_FMT_BGR48 = AV_PIX_FMT_BGR48();
-/* 2816 */          AV_PIX_FMT_BGR565 = AV_PIX_FMT_BGR565();
-/* 2818 */          AV_PIX_FMT_BGR555 = AV_PIX_FMT_BGR555();
-/* 2820 */          AV_PIX_FMT_BGR444 = AV_PIX_FMT_BGR444();
-/* 2823 */          AV_PIX_FMT_YUV420P9 = AV_PIX_FMT_YUV420P9();
-/* 2825 */          AV_PIX_FMT_YUV422P9 = AV_PIX_FMT_YUV422P9();
-/* 2827 */          AV_PIX_FMT_YUV444P9 = AV_PIX_FMT_YUV444P9();
-/* 2829 */          AV_PIX_FMT_YUV420P10 = AV_PIX_FMT_YUV420P10();
-/* 2831 */          AV_PIX_FMT_YUV422P10 = AV_PIX_FMT_YUV422P10();
-/* 2833 */          AV_PIX_FMT_YUV444P10 = AV_PIX_FMT_YUV444P10();
-/* 2835 */          AV_PIX_FMT_YUV420P12 = AV_PIX_FMT_YUV420P12();
-/* 2837 */          AV_PIX_FMT_YUV422P12 = AV_PIX_FMT_YUV422P12();
-/* 2839 */          AV_PIX_FMT_YUV444P12 = AV_PIX_FMT_YUV444P12();
-/* 2841 */          AV_PIX_FMT_YUV420P14 = AV_PIX_FMT_YUV420P14();
-/* 2843 */          AV_PIX_FMT_YUV422P14 = AV_PIX_FMT_YUV422P14();
-/* 2845 */          AV_PIX_FMT_YUV444P14 = AV_PIX_FMT_YUV444P14();
-/* 2847 */          AV_PIX_FMT_YUV420P16 = AV_PIX_FMT_YUV420P16();
-/* 2849 */          AV_PIX_FMT_YUV422P16 = AV_PIX_FMT_YUV422P16();
-/* 2851 */          AV_PIX_FMT_YUV444P16 = AV_PIX_FMT_YUV444P16();
-/* 2854 */          AV_PIX_FMT_RGBA64 = AV_PIX_FMT_RGBA64();
-/* 2856 */          AV_PIX_FMT_BGRA64 = AV_PIX_FMT_BGRA64();
-/* 2858 */          AV_PIX_FMT_GBRP9 = AV_PIX_FMT_GBRP9();
-/* 2860 */          AV_PIX_FMT_GBRP10 = AV_PIX_FMT_GBRP10();
-/* 2862 */          AV_PIX_FMT_GBRP12 = AV_PIX_FMT_GBRP12();
-/* 2864 */          AV_PIX_FMT_GBRP14 = AV_PIX_FMT_GBRP14();
-/* 2866 */          AV_PIX_FMT_GBRP16 = AV_PIX_FMT_GBRP16();
-/* 2869 */          AV_PIX_FMT_YUVA420P9 = AV_PIX_FMT_YUVA420P9();
-/* 2871 */          AV_PIX_FMT_YUVA422P9 = AV_PIX_FMT_YUVA422P9();
-/* 2873 */          AV_PIX_FMT_YUVA444P9 = AV_PIX_FMT_YUVA444P9();
-/* 2875 */          AV_PIX_FMT_YUVA420P10 = AV_PIX_FMT_YUVA420P10();
-/* 2877 */          AV_PIX_FMT_YUVA422P10 = AV_PIX_FMT_YUVA422P10();
-/* 2879 */          AV_PIX_FMT_YUVA444P10 = AV_PIX_FMT_YUVA444P10();
-/* 2881 */          AV_PIX_FMT_YUVA420P16 = AV_PIX_FMT_YUVA420P16();
-/* 2883 */          AV_PIX_FMT_YUVA422P16 = AV_PIX_FMT_YUVA422P16();
-/* 2885 */          AV_PIX_FMT_YUVA444P16 = AV_PIX_FMT_YUVA444P16();
-/* 2888 */          AV_PIX_FMT_XYZ12 = AV_PIX_FMT_XYZ12();
-/* 2895 */          PIX_FMT_RGB32 = AV_PIX_FMT_RGB32;
-/* 2896 */          PIX_FMT_RGB32_1 = AV_PIX_FMT_RGB32_1;
-/* 2897 */          PIX_FMT_BGR32 = AV_PIX_FMT_BGR32;
-/* 2898 */          PIX_FMT_BGR32_1 = AV_PIX_FMT_BGR32_1;
-/* 2899 */          PIX_FMT_0RGB32 = AV_PIX_FMT_0RGB32;
-/* 2900 */          PIX_FMT_0BGR32 = AV_PIX_FMT_0BGR32;
-/* 2902 */          PIX_FMT_GRAY16 = AV_PIX_FMT_GRAY16;
-/* 2903 */          PIX_FMT_RGB48 = AV_PIX_FMT_RGB48;
-/* 2904 */          PIX_FMT_RGB565 = AV_PIX_FMT_RGB565;
-/* 2905 */          PIX_FMT_RGB555 = AV_PIX_FMT_RGB555;
-/* 2906 */          PIX_FMT_RGB444 = AV_PIX_FMT_RGB444;
-/* 2907 */          PIX_FMT_BGR48 = AV_PIX_FMT_BGR48;
-/* 2908 */          PIX_FMT_BGR565 = AV_PIX_FMT_BGR565;
-/* 2909 */          PIX_FMT_BGR555 = AV_PIX_FMT_BGR555;
-/* 2910 */          PIX_FMT_BGR444 = AV_PIX_FMT_BGR444;
-/* 2912 */          PIX_FMT_YUV420P9 = AV_PIX_FMT_YUV420P9;
-/* 2913 */          PIX_FMT_YUV422P9 = AV_PIX_FMT_YUV422P9;
-/* 2914 */          PIX_FMT_YUV444P9 = AV_PIX_FMT_YUV444P9;
-/* 2915 */          PIX_FMT_YUV420P10 = AV_PIX_FMT_YUV420P10;
-/* 2916 */          PIX_FMT_YUV422P10 = AV_PIX_FMT_YUV422P10;
-/* 2917 */          PIX_FMT_YUV444P10 = AV_PIX_FMT_YUV444P10;
-/* 2918 */          PIX_FMT_YUV420P12 = AV_PIX_FMT_YUV420P12;
-/* 2919 */          PIX_FMT_YUV422P12 = AV_PIX_FMT_YUV422P12;
-/* 2920 */          PIX_FMT_YUV444P12 = AV_PIX_FMT_YUV444P12;
-/* 2921 */          PIX_FMT_YUV420P14 = AV_PIX_FMT_YUV420P14;
-/* 2922 */          PIX_FMT_YUV422P14 = AV_PIX_FMT_YUV422P14;
-/* 2923 */          PIX_FMT_YUV444P14 = AV_PIX_FMT_YUV444P14;
-/* 2924 */          PIX_FMT_YUV420P16 = AV_PIX_FMT_YUV420P16;
-/* 2925 */          PIX_FMT_YUV422P16 = AV_PIX_FMT_YUV422P16;
-/* 2926 */          PIX_FMT_YUV444P16 = AV_PIX_FMT_YUV444P16;
-/* 2928 */          PIX_FMT_RGBA64 = AV_PIX_FMT_RGBA64;
-/* 2929 */          PIX_FMT_BGRA64 = AV_PIX_FMT_BGRA64;
-/* 2930 */          PIX_FMT_GBRP9 = AV_PIX_FMT_GBRP9;
-/* 2931 */          PIX_FMT_GBRP10 = AV_PIX_FMT_GBRP10;
-/* 2932 */          PIX_FMT_GBRP12 = AV_PIX_FMT_GBRP12;
-/* 2933 */          PIX_FMT_GBRP14 = AV_PIX_FMT_GBRP14;
-/* 2934 */          PIX_FMT_GBRP16 = AV_PIX_FMT_GBRP16;
-/* 4045 */          AV_OPT_TYPE_IMAGE_SIZE = AV_OPT_TYPE_IMAGE_SIZE();
-/* 4048 */          AV_OPT_TYPE_PIXEL_FMT = AV_OPT_TYPE_PIXEL_FMT();
-/* 4051 */          AV_OPT_TYPE_SAMPLE_FMT = AV_OPT_TYPE_SAMPLE_FMT();
-/* 4055 */          AV_OPT_TYPE_VIDEO_RATE = AV_OPT_TYPE_VIDEO_RATE();
-/* 4058 */          AV_OPT_TYPE_DURATION = AV_OPT_TYPE_DURATION();
-/* 4061 */          AV_OPT_TYPE_COLOR = AV_OPT_TYPE_COLOR();
+            Loader.load();
+           AV_NOPTS_VALUE = AV_NOPTS_VALUE();
+           AVERROR_BSF_NOT_FOUND = AVERROR_BSF_NOT_FOUND();
+           AVERROR_BUG = AVERROR_BUG();
+           AVERROR_BUFFER_TOO_SMALL = AVERROR_BUFFER_TOO_SMALL();
+           AVERROR_DECODER_NOT_FOUND = AVERROR_DECODER_NOT_FOUND();
+           AVERROR_DEMUXER_NOT_FOUND = AVERROR_DEMUXER_NOT_FOUND();
+           AVERROR_ENCODER_NOT_FOUND = AVERROR_ENCODER_NOT_FOUND();
+           AVERROR_EOF = AVERROR_EOF();
+           AVERROR_EXIT = AVERROR_EXIT();
+           AVERROR_EXTERNAL = AVERROR_EXTERNAL();
+           AVERROR_FILTER_NOT_FOUND = AVERROR_FILTER_NOT_FOUND();
+           AVERROR_INVALIDDATA = AVERROR_INVALIDDATA();
+           AVERROR_MUXER_NOT_FOUND = AVERROR_MUXER_NOT_FOUND();
+           AVERROR_OPTION_NOT_FOUND = AVERROR_OPTION_NOT_FOUND();
+           AVERROR_PATCHWELCOME = AVERROR_PATCHWELCOME();
+           AVERROR_PROTOCOL_NOT_FOUND = AVERROR_PROTOCOL_NOT_FOUND();
+           AVERROR_STREAM_NOT_FOUND = AVERROR_STREAM_NOT_FOUND();
+           AVERROR_BUG2 = AVERROR_BUG2();
+           AVERROR_UNKNOWN = AVERROR_UNKNOWN();
+           NAN = NAN();
+           INFINITY = INFINITY();
+          AV_PIX_FMT_RGB32 = AV_PIX_FMT_RGB32();
+          AV_PIX_FMT_RGB32_1 = AV_PIX_FMT_RGB32_1();
+          AV_PIX_FMT_BGR32 = AV_PIX_FMT_BGR32();
+          AV_PIX_FMT_BGR32_1 = AV_PIX_FMT_BGR32_1();
+          AV_PIX_FMT_0RGB32 = AV_PIX_FMT_0RGB32();
+          AV_PIX_FMT_0BGR32 = AV_PIX_FMT_0BGR32();
+          AV_PIX_FMT_GRAY16 = AV_PIX_FMT_GRAY16();
+          AV_PIX_FMT_RGB48 = AV_PIX_FMT_RGB48();
+          AV_PIX_FMT_RGB565 = AV_PIX_FMT_RGB565();
+          AV_PIX_FMT_RGB555 = AV_PIX_FMT_RGB555();
+          AV_PIX_FMT_RGB444 = AV_PIX_FMT_RGB444();
+          AV_PIX_FMT_BGR48 = AV_PIX_FMT_BGR48();
+          AV_PIX_FMT_BGR565 = AV_PIX_FMT_BGR565();
+          AV_PIX_FMT_BGR555 = AV_PIX_FMT_BGR555();
+          AV_PIX_FMT_BGR444 = AV_PIX_FMT_BGR444();
+          AV_PIX_FMT_YUV420P9 = AV_PIX_FMT_YUV420P9();
+          AV_PIX_FMT_YUV422P9 = AV_PIX_FMT_YUV422P9();
+          AV_PIX_FMT_YUV444P9 = AV_PIX_FMT_YUV444P9();
+          AV_PIX_FMT_YUV420P10 = AV_PIX_FMT_YUV420P10();
+          AV_PIX_FMT_YUV422P10 = AV_PIX_FMT_YUV422P10();
+          AV_PIX_FMT_YUV444P10 = AV_PIX_FMT_YUV444P10();
+          AV_PIX_FMT_YUV420P12 = AV_PIX_FMT_YUV420P12();
+          AV_PIX_FMT_YUV422P12 = AV_PIX_FMT_YUV422P12();
+          AV_PIX_FMT_YUV444P12 = AV_PIX_FMT_YUV444P12();
+          AV_PIX_FMT_YUV420P14 = AV_PIX_FMT_YUV420P14();
+          AV_PIX_FMT_YUV422P14 = AV_PIX_FMT_YUV422P14();
+          AV_PIX_FMT_YUV444P14 = AV_PIX_FMT_YUV444P14();
+          AV_PIX_FMT_YUV420P16 = AV_PIX_FMT_YUV420P16();
+          AV_PIX_FMT_YUV422P16 = AV_PIX_FMT_YUV422P16();
+          AV_PIX_FMT_YUV444P16 = AV_PIX_FMT_YUV444P16();
+          AV_PIX_FMT_RGBA64 = AV_PIX_FMT_RGBA64();
+          AV_PIX_FMT_BGRA64 = AV_PIX_FMT_BGRA64();
+          AV_PIX_FMT_GBRP9 = AV_PIX_FMT_GBRP9();
+          AV_PIX_FMT_GBRP10 = AV_PIX_FMT_GBRP10();
+          AV_PIX_FMT_GBRP12 = AV_PIX_FMT_GBRP12();
+          AV_PIX_FMT_GBRP14 = AV_PIX_FMT_GBRP14();
+          AV_PIX_FMT_GBRP16 = AV_PIX_FMT_GBRP16();
+          AV_PIX_FMT_YUVA420P9 = AV_PIX_FMT_YUVA420P9();
+          AV_PIX_FMT_YUVA422P9 = AV_PIX_FMT_YUVA422P9();
+          AV_PIX_FMT_YUVA444P9 = AV_PIX_FMT_YUVA444P9();
+          AV_PIX_FMT_YUVA420P10 = AV_PIX_FMT_YUVA420P10();
+          AV_PIX_FMT_YUVA422P10 = AV_PIX_FMT_YUVA422P10();
+          AV_PIX_FMT_YUVA444P10 = AV_PIX_FMT_YUVA444P10();
+          AV_PIX_FMT_YUVA420P16 = AV_PIX_FMT_YUVA420P16();
+          AV_PIX_FMT_YUVA422P16 = AV_PIX_FMT_YUVA422P16();
+          AV_PIX_FMT_YUVA444P16 = AV_PIX_FMT_YUVA444P16();
+          AV_PIX_FMT_XYZ12 = AV_PIX_FMT_XYZ12();
+          PIX_FMT_RGB32 = AV_PIX_FMT_RGB32;
+          PIX_FMT_RGB32_1 = AV_PIX_FMT_RGB32_1;
+          PIX_FMT_BGR32 = AV_PIX_FMT_BGR32;
+          PIX_FMT_BGR32_1 = AV_PIX_FMT_BGR32_1;
+          PIX_FMT_0RGB32 = AV_PIX_FMT_0RGB32;
+          PIX_FMT_0BGR32 = AV_PIX_FMT_0BGR32;
+          PIX_FMT_GRAY16 = AV_PIX_FMT_GRAY16;
+          PIX_FMT_RGB48 = AV_PIX_FMT_RGB48;
+          PIX_FMT_RGB565 = AV_PIX_FMT_RGB565;
+          PIX_FMT_RGB555 = AV_PIX_FMT_RGB555;
+          PIX_FMT_RGB444 = AV_PIX_FMT_RGB444;
+          PIX_FMT_BGR48 = AV_PIX_FMT_BGR48;
+          PIX_FMT_BGR565 = AV_PIX_FMT_BGR565;
+          PIX_FMT_BGR555 = AV_PIX_FMT_BGR555;
+          PIX_FMT_BGR444 = AV_PIX_FMT_BGR444;
+          PIX_FMT_YUV420P9 = AV_PIX_FMT_YUV420P9;
+          PIX_FMT_YUV422P9 = AV_PIX_FMT_YUV422P9;
+          PIX_FMT_YUV444P9 = AV_PIX_FMT_YUV444P9;
+          PIX_FMT_YUV420P10 = AV_PIX_FMT_YUV420P10;
+          PIX_FMT_YUV422P10 = AV_PIX_FMT_YUV422P10;
+          PIX_FMT_YUV444P10 = AV_PIX_FMT_YUV444P10;
+          PIX_FMT_YUV420P12 = AV_PIX_FMT_YUV420P12;
+          PIX_FMT_YUV422P12 = AV_PIX_FMT_YUV422P12;
+          PIX_FMT_YUV444P12 = AV_PIX_FMT_YUV444P12;
+          PIX_FMT_YUV420P14 = AV_PIX_FMT_YUV420P14;
+          PIX_FMT_YUV422P14 = AV_PIX_FMT_YUV422P14;
+          PIX_FMT_YUV444P14 = AV_PIX_FMT_YUV444P14;
+          PIX_FMT_YUV420P16 = AV_PIX_FMT_YUV420P16;
+          PIX_FMT_YUV422P16 = AV_PIX_FMT_YUV422P16;
+          PIX_FMT_YUV444P16 = AV_PIX_FMT_YUV444P16;
+          PIX_FMT_RGBA64 = AV_PIX_FMT_RGBA64;
+          PIX_FMT_BGRA64 = AV_PIX_FMT_BGRA64;
+          PIX_FMT_GBRP9 = AV_PIX_FMT_GBRP9;
+          PIX_FMT_GBRP10 = AV_PIX_FMT_GBRP10;
+          PIX_FMT_GBRP12 = AV_PIX_FMT_GBRP12;
+          PIX_FMT_GBRP14 = AV_PIX_FMT_GBRP14;
+          PIX_FMT_GBRP16 = AV_PIX_FMT_GBRP16;
+          AV_OPT_TYPE_IMAGE_SIZE = AV_OPT_TYPE_IMAGE_SIZE();
+          AV_OPT_TYPE_PIXEL_FMT = AV_OPT_TYPE_PIXEL_FMT();
+          AV_OPT_TYPE_SAMPLE_FMT = AV_OPT_TYPE_SAMPLE_FMT();
+          AV_OPT_TYPE_VIDEO_RATE = AV_OPT_TYPE_VIDEO_RATE();
+          AV_OPT_TYPE_DURATION = AV_OPT_TYPE_DURATION();
+          AV_OPT_TYPE_COLOR = AV_OPT_TYPE_COLOR();
                 }
 
-/* 1009 */      public static class AVRational extends Pointer {
+      public static class AVRational extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1824,28 +1824,28 @@
 
 
                     static {
-/* 1012 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1012 */          public AVRational() {
+          public AVRational() {
                         allocate();
                     }
 
-/* 1013 */          public AVRational(int size) {
+          public AVRational(int size) {
                         allocateArray(size);
                     }
 
-/* 1014 */          public AVRational(Pointer p) {
-/* 1015 */              super(p);
+          public AVRational(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1018 */          public AVRational position(int position) {
-/* 1019 */              return (AVRational) super.position(position);
+                    @Override 
+          public AVRational position(int position) {
+              return (AVRational) super.position(position);
                     }
                 }
 
-/* 1175 */      public static class AVClass extends Pointer {
+      public static class AVClass extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1895,167 +1895,167 @@
 
 
                     static {
-/* 1178 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1178 */          public AVClass() {
+          public AVClass() {
                         allocate();
                     }
 
-/* 1179 */          public AVClass(int size) {
+          public AVClass(int size) {
                         allocateArray(size);
                     }
 
-/* 1180 */          public AVClass(Pointer p) {
-/* 1181 */              super(p);
+          public AVClass(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1184 */          public AVClass position(int position) {
-/* 1185 */              return (AVClass) super.position(position);
+                    @Override 
+          public AVClass position(int position) {
+              return (AVClass) super.position(position);
                     }
 
-/* 1197 */          public static class Item_name_Pointer extends FunctionPointer {
+          public static class Item_name_Pointer extends FunctionPointer {
                         private native void allocate();
 
                         @Cast({"const char*"})
                         public native BytePointer call(Pointer pointer);
 
                         static {
-/* 1199 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1199 */              public Item_name_Pointer(Pointer p) {
-/* 1200 */                  super(p);
+              public Item_name_Pointer(Pointer p) {
+                  super(p);
                         }
 
-/* 1200 */              protected Item_name_Pointer() {
+              protected Item_name_Pointer() {
                             allocate();
                         }
                     }
 
-/* 1239 */          public static class Child_next_Pointer_Pointer extends FunctionPointer {
+          public static class Child_next_Pointer_Pointer extends FunctionPointer {
                         private native void allocate();
 
                         public native Pointer call(Pointer pointer, Pointer pointer2);
 
                         static {
-/* 1241 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1241 */              public Child_next_Pointer_Pointer(Pointer p) {
-/* 1242 */                  super(p);
+              public Child_next_Pointer_Pointer(Pointer p) {
+                  super(p);
                         }
 
-/* 1242 */              protected Child_next_Pointer_Pointer() {
+              protected Child_next_Pointer_Pointer() {
                             allocate();
                         }
                     }
 
-/* 1256 */          public static class Child_class_next_AVClass extends FunctionPointer {
+          public static class Child_class_next_AVClass extends FunctionPointer {
                         private native void allocate();
 
                         @Const
                         public native AVClass call(@Const AVClass aVClass);
 
                         static {
-/* 1258 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1258 */              public Child_class_next_AVClass(Pointer p) {
-/* 1259 */                  super(p);
+              public Child_class_next_AVClass(Pointer p) {
+                  super(p);
                         }
 
-/* 1259 */              protected Child_class_next_AVClass() {
+              protected Child_class_next_AVClass() {
                             allocate();
                         }
                     }
 
-/* 1276 */          public static class Get_category_Pointer extends FunctionPointer {
+          public static class Get_category_Pointer extends FunctionPointer {
                         private native void allocate();
 
                         @Cast({"AVClassCategory"})
                         public native int call(Pointer pointer);
 
                         static {
-/* 1278 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1278 */              public Get_category_Pointer(Pointer p) {
-/* 1279 */                  super(p);
+              public Get_category_Pointer(Pointer p) {
+                  super(p);
                         }
 
-/* 1279 */              protected Get_category_Pointer() {
+              protected Get_category_Pointer() {
                             allocate();
                         }
                     }
 
-/* 1289 */          public static class Query_ranges_PointerPointer_Pointer_BytePointer_int extends FunctionPointer {
+          public static class Query_ranges_PointerPointer_Pointer_BytePointer_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(@Cast({"AVOptionRanges**"}) PointerPointer pointerPointer, Pointer pointer, @Cast({"const char*"}) BytePointer bytePointer, int i);
 
                         static {
-/* 1291 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1291 */              public Query_ranges_PointerPointer_Pointer_BytePointer_int(Pointer p) {
-/* 1292 */                  super(p);
+              public Query_ranges_PointerPointer_Pointer_BytePointer_int(Pointer p) {
+                  super(p);
                         }
 
-/* 1292 */              protected Query_ranges_PointerPointer_Pointer_BytePointer_int() {
+              protected Query_ranges_PointerPointer_Pointer_BytePointer_int() {
                             allocate();
                         }
                     }
                 }
 
-/* 1358 */      public static class Arg0_Pointer_int_BytePointer_Pointer extends FunctionPointer {
+      public static class Arg0_Pointer_int_BytePointer_Pointer extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(Pointer pointer, int i, @Cast({"const char*"}) BytePointer bytePointer, @ByVal @Cast({"va_list*"}) Pointer pointer2);
 
                     static {
-/* 1360 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1360 */          public Arg0_Pointer_int_BytePointer_Pointer(Pointer p) {
-/* 1361 */              super(p);
+          public Arg0_Pointer_int_BytePointer_Pointer(Pointer p) {
+              super(p);
                     }
 
-/* 1361 */          protected Arg0_Pointer_int_BytePointer_Pointer() {
+          protected Arg0_Pointer_int_BytePointer_Pointer() {
                         allocate();
                     }
                 }
 
-/* 1366 */      public static class Arg0_Pointer_int_String_Pointer extends FunctionPointer {
+      public static class Arg0_Pointer_int_String_Pointer extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(Pointer pointer, int i, String str, @ByVal @Cast({"va_list*"}) Pointer pointer2);
 
                     static {
-/* 1368 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1368 */          public Arg0_Pointer_int_String_Pointer(Pointer p) {
-/* 1369 */              super(p);
+          public Arg0_Pointer_int_String_Pointer(Pointer p) {
+              super(p);
                     }
 
-/* 1369 */          protected Arg0_Pointer_int_String_Pointer() {
+          protected Arg0_Pointer_int_String_Pointer() {
                         allocate();
                     }
                 }
 
                 @Opaque
-/* 1498 */      public static class AVBuffer extends Pointer {
-/* 1499 */          public AVBuffer() {
+      public static class AVBuffer extends Pointer {
+          public AVBuffer() {
                     }
 
-/* 1500 */          public AVBuffer(Pointer p) {
-/* 1501 */              super(p);
+          public AVBuffer(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 1508 */      public static class AVBufferRef extends Pointer {
+      public static class AVBufferRef extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2075,110 +2075,110 @@
 
 
                     static {
-/* 1511 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1511 */          public AVBufferRef() {
+          public AVBufferRef() {
                         allocate();
                     }
 
-/* 1512 */          public AVBufferRef(int size) {
+          public AVBufferRef(int size) {
                         allocateArray(size);
                     }
 
-/* 1513 */          public AVBufferRef(Pointer p) {
-/* 1514 */              super(p);
+          public AVBufferRef(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1517 */          public AVBufferRef position(int position) {
-/* 1518 */              return (AVBufferRef) super.position(position);
+                    @Override 
+          public AVBufferRef position(int position) {
+              return (AVBufferRef) super.position(position);
                     }
                 }
 
-/* 1568 */      public static class Free_Pointer_BytePointer extends FunctionPointer {
+      public static class Free_Pointer_BytePointer extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(Pointer pointer, @Cast({"uint8_t*"}) BytePointer bytePointer);
 
                     static {
-/* 1570 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1570 */          public Free_Pointer_BytePointer(Pointer p) {
-/* 1571 */              super(p);
+          public Free_Pointer_BytePointer(Pointer p) {
+              super(p);
                     }
 
-/* 1571 */          protected Free_Pointer_BytePointer() {
+          protected Free_Pointer_BytePointer() {
                         allocate();
                     }
                 }
 
-/* 1576 */      public static class Free_Pointer_ByteBuffer extends FunctionPointer {
+      public static class Free_Pointer_ByteBuffer extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(Pointer pointer, @Cast({"uint8_t*"}) ByteBuffer byteBuffer);
 
                     static {
-/* 1578 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1578 */          public Free_Pointer_ByteBuffer(Pointer p) {
-/* 1579 */              super(p);
+          public Free_Pointer_ByteBuffer(Pointer p) {
+              super(p);
                     }
 
-/* 1579 */          protected Free_Pointer_ByteBuffer() {
+          protected Free_Pointer_ByteBuffer() {
                         allocate();
                     }
                 }
 
-/* 1584 */      public static class Free_Pointer_byte extends FunctionPointer {
+      public static class Free_Pointer_byte extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(Pointer pointer, @Cast({"uint8_t*"}) byte[] bArr);
 
                     static {
-/* 1586 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1586 */          public Free_Pointer_byte(Pointer p) {
-/* 1587 */              super(p);
+          public Free_Pointer_byte(Pointer p) {
+              super(p);
                     }
 
-/* 1587 */          protected Free_Pointer_byte() {
+          protected Free_Pointer_byte() {
                         allocate();
                     }
                 }
 
                 @Opaque
-/* 1711 */      public static class AVBufferPool extends Pointer {
-/* 1712 */          public AVBufferPool() {
+      public static class AVBufferPool extends Pointer {
+          public AVBufferPool() {
                     }
 
-/* 1713 */          public AVBufferPool(Pointer p) {
-/* 1714 */              super(p);
+          public AVBufferPool(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 1725 */      public static class Alloc_int extends FunctionPointer {
+      public static class Alloc_int extends FunctionPointer {
                     private native void allocate();
 
                     public native AVBufferRef call(int i);
 
                     static {
-/* 1727 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1727 */          public Alloc_int(Pointer p) {
-/* 1728 */              super(p);
+          public Alloc_int(Pointer p) {
+              super(p);
                     }
 
-/* 1728 */          protected Alloc_int() {
+          protected Alloc_int() {
                         allocate();
                     }
                 }
 
-/* 1802 */      public static class AVFrameSideData extends Pointer {
+      public static class AVFrameSideData extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2203,28 +2203,28 @@
 
 
                     static {
-/* 1805 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1805 */          public AVFrameSideData() {
+          public AVFrameSideData() {
                         allocate();
                     }
 
-/* 1806 */          public AVFrameSideData(int size) {
+          public AVFrameSideData(int size) {
                         allocateArray(size);
                     }
 
-/* 1807 */          public AVFrameSideData(Pointer p) {
-/* 1808 */              super(p);
+          public AVFrameSideData(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1811 */          public AVFrameSideData position(int position) {
-/* 1812 */              return (AVFrameSideData) super.position(position);
+                    @Override 
+          public AVFrameSideData position(int position) {
+              return (AVFrameSideData) super.position(position);
                     }
                 }
 
-/* 1848 */      public static class AVFrame extends Pointer {
+      public static class AVFrame extends Pointer {
                     public static final int AV_NUM_DATA_POINTERS = 8;
                     public static final int FF_DECODE_ERROR_INVALID_BITSTREAM = 1;
                     public static final int FF_DECODE_ERROR_MISSING_REFERENCE = 2;
@@ -2526,38 +2526,38 @@
 
 
                     static {
-/* 1851 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1851 */          public AVFrame() {
+          public AVFrame() {
                         allocate();
                     }
 
-/* 1852 */          public AVFrame(int size) {
+          public AVFrame(int size) {
                         allocateArray(size);
                     }
 
-/* 1853 */          public AVFrame(Pointer p) {
-/* 1854 */              super(p);
+          public AVFrame(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1857 */          public AVFrame position(int position) {
-/* 1858 */              return (AVFrame) super.position(position);
+                    @Override 
+          public AVFrame position(int position) {
+              return (AVFrame) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 3411 */      public static class AVBPrint extends Pointer {
-/* 3412 */          public AVBPrint() {
+      public static class AVBPrint extends Pointer {
+          public AVBPrint() {
                     }
 
-/* 3413 */          public AVBPrint(Pointer p) {
-/* 3414 */              super(p);
+          public AVBPrint(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 3706 */      public static class AVDictionaryEntry extends Pointer {
+      public static class AVDictionaryEntry extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2574,38 +2574,38 @@
 
 
                     static {
-/* 3709 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3709 */          public AVDictionaryEntry() {
+          public AVDictionaryEntry() {
                         allocate();
                     }
 
-/* 3710 */          public AVDictionaryEntry(int size) {
+          public AVDictionaryEntry(int size) {
                         allocateArray(size);
                     }
 
-/* 3711 */          public AVDictionaryEntry(Pointer p) {
-/* 3712 */              super(p);
+          public AVDictionaryEntry(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3715 */          public AVDictionaryEntry position(int position) {
-/* 3716 */              return (AVDictionaryEntry) super.position(position);
+                    @Override 
+          public AVDictionaryEntry position(int position) {
+              return (AVDictionaryEntry) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 3722 */      public static class AVDictionary extends Pointer {
-/* 3723 */          public AVDictionary() {
+      public static class AVDictionary extends Pointer {
+          public AVDictionary() {
                     }
 
-/* 3724 */          public AVDictionary(Pointer p) {
-/* 3725 */              super(p);
+          public AVDictionary(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 4076 */      public static class AVOption extends Pointer {
+      public static class AVOption extends Pointer {
                     public static final int AV_OPT_FLAG_AUDIO_PARAM = 8;
                     public static final int AV_OPT_FLAG_DECODING_PARAM = 2;
                     public static final int AV_OPT_FLAG_ENCODING_PARAM = 1;
@@ -2653,28 +2653,28 @@
 
 
                     static {
-/* 4079 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4079 */          public AVOption() {
+          public AVOption() {
                         allocate();
                     }
 
-/* 4080 */          public AVOption(int size) {
+          public AVOption(int size) {
                         allocateArray(size);
                     }
 
-/* 4081 */          public AVOption(Pointer p) {
-/* 4082 */              super(p);
+          public AVOption(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 4085 */          public AVOption position(int position) {
-/* 4086 */              return (AVOption) super.position(position);
+                    @Override 
+          public AVOption position(int position) {
+              return (AVOption) super.position(position);
                     }
                 }
 
-/* 4135 */      public static class AVOptionRange extends Pointer {
+      public static class AVOptionRange extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2705,28 +2705,28 @@
 
 
                     static {
-/* 4138 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4138 */          public AVOptionRange() {
+          public AVOptionRange() {
                         allocate();
                     }
 
-/* 4139 */          public AVOptionRange(int size) {
+          public AVOptionRange(int size) {
                         allocateArray(size);
                     }
 
-/* 4140 */          public AVOptionRange(Pointer p) {
-/* 4141 */              super(p);
+          public AVOptionRange(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 4144 */          public AVOptionRange position(int position) {
-/* 4145 */              return (AVOptionRange) super.position(position);
+                    @Override 
+          public AVOptionRange position(int position) {
+              return (AVOptionRange) super.position(position);
                     }
                 }
 
-/* 4160 */      public static class AVOptionRanges extends Pointer {
+      public static class AVOptionRanges extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2745,28 +2745,28 @@
 
 
                     static {
-/* 4163 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4163 */          public AVOptionRanges() {
+          public AVOptionRanges() {
                         allocate();
                     }
 
-/* 4164 */          public AVOptionRanges(int size) {
+          public AVOptionRanges(int size) {
                         allocateArray(size);
                     }
 
-/* 4165 */          public AVOptionRanges(Pointer p) {
-/* 4166 */              super(p);
+          public AVOptionRanges(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 4169 */          public AVOptionRanges position(int position) {
-/* 4170 */              return (AVOptionRanges) super.position(position);
+                    @Override 
+          public AVOptionRanges position(int position) {
+              return (AVOptionRanges) super.position(position);
                     }
                 }
 
-/* 4796 */      public static class AVComponentDescriptor extends Pointer {
+      public static class AVComponentDescriptor extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2803,28 +2803,28 @@
 
 
                     static {
-/* 4799 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4799 */          public AVComponentDescriptor() {
+          public AVComponentDescriptor() {
                         allocate();
                     }
 
-/* 4800 */          public AVComponentDescriptor(int size) {
+          public AVComponentDescriptor(int size) {
                         allocateArray(size);
                     }
 
-/* 4801 */          public AVComponentDescriptor(Pointer p) {
-/* 4802 */              super(p);
+          public AVComponentDescriptor(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 4805 */          public AVComponentDescriptor position(int position) {
-/* 4806 */              return (AVComponentDescriptor) super.position(position);
+                    @Override 
+          public AVComponentDescriptor position(int position) {
+              return (AVComponentDescriptor) super.position(position);
                     }
                 }
 
-/* 4836 */      public static class AVPixFmtDescriptor extends Pointer {
+      public static class AVPixFmtDescriptor extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2863,24 +2863,24 @@
 
 
                     static {
-/* 4839 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4839 */          public AVPixFmtDescriptor() {
+          public AVPixFmtDescriptor() {
                         allocate();
                     }
 
-/* 4840 */          public AVPixFmtDescriptor(int size) {
+          public AVPixFmtDescriptor(int size) {
                         allocateArray(size);
                     }
 
-/* 4841 */          public AVPixFmtDescriptor(Pointer p) {
-/* 4842 */              super(p);
+          public AVPixFmtDescriptor(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 4845 */          public AVPixFmtDescriptor position(int position) {
-/* 4846 */              return (AVPixFmtDescriptor) super.position(position);
+                    @Override 
+          public AVPixFmtDescriptor position(int position) {
+              return (AVPixFmtDescriptor) super.position(position);
                     }
                 }
             }

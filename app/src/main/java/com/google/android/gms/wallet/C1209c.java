@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.c */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1209c implements Parcelable.Creator<FullWallet> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2348a(FullWallet fullWallet, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, fullWallet.getVersionCode());
@@ -22,7 +22,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: P */
+                
                 public FullWallet m2349P(Parcel parcel) {
                     String[] strArrM1124w = null;
                     int iM1111j = C0901a.m1111j(parcel);
@@ -71,18 +71,18 @@
                     return new FullWallet(iM1105f, strM1113l3, strM1113l2, proxyCard, strM1113l, address2, address, strArrM1124w);
                 }
 
-                /* JADX INFO: renamed from: au */
+                
                 public FullWallet[] m2350au(int i) {
                     return new FullWallet[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ FullWallet createFromParcel(Parcel x0) {
+                @Override 
+                public  FullWallet createFromParcel(Parcel x0) {
                     return m2349P(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ FullWallet[] newArray(int x0) {
+                @Override 
+                public  FullWallet[] newArray(int x0) {
                     return m2350au(x0);
                 }
             }

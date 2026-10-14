@@ -2,8 +2,8 @@
 
             import com.vandalsoftware.p004io.IoUtils;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 31 */    public enum JsonEncoding {
+            
+    public enum JsonEncoding {
                 UTF8(IoUtils.UTF_8, false, 8),
                 UTF16_BE("UTF-16BE", true, 16),
                 UTF16_LE("UTF-16LE", false, 16),
@@ -14,21 +14,21 @@
                 protected final int _bits;
                 protected final String _javaName;
 
-/* 32 */        JsonEncoding(String str, boolean z, int i) {
-/* 34 */            this._javaName = str;
-/* 35 */            this._bigEndian = z;
-/* 36 */            this._bits = i;
+        JsonEncoding(String str, boolean z, int i) {
+            this._javaName = str;
+            this._bigEndian = z;
+            this._bits = i;
                 }
 
-/* 43 */        public String getJavaName() {
-/* 44 */            return this._javaName;
+        public String getJavaName() {
+            return this._javaName;
                 }
 
-/* 53 */        public boolean isBigEndian() {
-/* 54 */            return this._bigEndian;
+        public boolean isBigEndian() {
+            return this._bigEndian;
                 }
 
-/* 55 */        public int bits() {
-/* 56 */            return this._bits;
+        public int bits() {
+            return this._bits;
                 }
             }

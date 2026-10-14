@@ -23,22 +23,22 @@
             import java.util.Iterator;
             import java.util.Set;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class AdMobAdapter implements MediationBannerAdapter<AdMobExtras, AdMobServerParameters>, MediationInterstitialAdapter<AdMobExtras, AdMobServerParameters> {
 
-                /* JADX INFO: renamed from: h */
+                
                 private AdView f860h;
 
-                /* JADX INFO: renamed from: i */
+                
                 private InterstitialAd f861i;
 
-                /* JADX INFO: renamed from: com.google.ads.mediation.admob.AdMobAdapter$a */
+                
                 private static final class C0846a extends AdListener {
 
-                    /* JADX INFO: renamed from: j */
+                    
                     private final AdMobAdapter f862j;
 
-                    /* JADX INFO: renamed from: k */
+                    
                     private final MediationBannerListener f863k;
 
                     public C0846a(AdMobAdapter adMobAdapter, MediationBannerListener mediationBannerListener) {
@@ -46,40 +46,40 @@
                         this.f863k = mediationBannerListener;
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdClosed() {
                         this.f863k.onDismissScreen(this.f862j);
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdFailedToLoad(int errorCode) {
                         this.f863k.onFailedToReceiveAd(this.f862j, C0963bb.m1295f(errorCode));
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdLeftApplication() {
                         this.f863k.onLeaveApplication(this.f862j);
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdLoaded() {
                         this.f863k.onReceivedAd(this.f862j);
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdOpened() {
                         this.f863k.onClick(this.f862j);
                         this.f863k.onPresentScreen(this.f862j);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.ads.mediation.admob.AdMobAdapter$b */
+                
                 private static final class C0847b extends AdListener {
 
-                    /* JADX INFO: renamed from: j */
+                    
                     private final AdMobAdapter f864j;
 
-                    /* JADX INFO: renamed from: l */
+                    
                     private final MediationInterstitialListener f865l;
 
                     public C0847b(AdMobAdapter adMobAdapter, MediationInterstitialListener mediationInterstitialListener) {
@@ -87,33 +87,33 @@
                         this.f865l = mediationInterstitialListener;
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdClosed() {
                         this.f865l.onDismissScreen(this.f864j);
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdFailedToLoad(int errorCode) {
                         this.f865l.onFailedToReceiveAd(this.f864j, C0963bb.m1295f(errorCode));
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdLeftApplication() {
                         this.f865l.onLeaveApplication(this.f864j);
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdLoaded() {
                         this.f865l.onReceivedAd(this.f864j);
                     }
 
-                    @Override // com.google.android.gms.ads.AdListener
+                    @Override 
                     public void onAdOpened() {
                         this.f865l.onPresentScreen(this.f864j);
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static AdRequest m978a(Context context, MediationAdRequest mediationAdRequest, AdMobExtras adMobExtras, AdMobServerParameters adMobServerParameters) {
                     AdRequest.Builder builder = new AdRequest.Builder();
                     Date birthday = mediationAdRequest.getBirthday();
@@ -148,7 +148,7 @@
                     return builder.build();
                 }
 
-                @Override // com.google.ads.mediation.MediationAdapter
+                @Override 
                 public void destroy() {
                     if (this.f860h != null) {
                         this.f860h.destroy();
@@ -159,17 +159,17 @@
                     }
                 }
 
-                @Override // com.google.ads.mediation.MediationAdapter
+                @Override 
                 public Class<AdMobExtras> getAdditionalParametersType() {
                     return AdMobExtras.class;
                 }
 
-                @Override // com.google.ads.mediation.MediationBannerAdapter
+                @Override 
                 public View getBannerView() {
                     return this.f860h;
                 }
 
-                @Override // com.google.ads.mediation.MediationAdapter
+                @Override 
                 public Class<AdMobServerParameters> getServerParametersType() {
                     return AdMobServerParameters.class;
                 }
@@ -191,7 +191,7 @@
                     this.f861i.loadAd(m978a(activity, mediationAdRequest, extras, serverParameters));
                 }
 
-                @Override // com.google.ads.mediation.MediationInterstitialAdapter
+                @Override 
                 public void showInterstitial() {
                     this.f861i.show();
                 }

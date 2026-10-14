@@ -14,9 +14,9 @@
             import java.nio.ByteBuffer;
             import java.nio.IntBuffer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties(inherit = {avutil.class}, value = {@Platform(cinclude = {"<libpostproc/postprocess.h>"}, link = {"postproc@.52"}), @Platform(preload = {"postproc-52"}, value = {"windows"})})
-/* 35 */    public class postproc {
+    public class postproc {
                 public static final int PP_CPU_CAPS_3DNOW = 1073741824;
                 public static final int PP_CPU_CAPS_ALTIVEC = 268435456;
                 public static final int PP_CPU_CAPS_AUTO = 524288;
@@ -68,6 +68,6 @@
                 public static native void pp_postprocess(@ByPtrPtr @Cast({"const uint8_t**"}) byte[] bArr, @Const int[] iArr, @ByPtrPtr @Cast({"uint8_t**"}) byte[] bArr2, @Const int[] iArr2, int i, int i2, @Const BytePointer bytePointer, int i3, @Cast({"pp_mode*"}) Pointer pointer, @Cast({"pp_context*"}) Pointer pointer2, int i4);
 
                 static {
-/* 37 */            Loader.load();
+            Loader.load();
                 }
             }

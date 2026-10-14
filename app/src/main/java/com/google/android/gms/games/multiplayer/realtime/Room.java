@@ -7,7 +7,7 @@
             import com.google.android.gms.games.multiplayer.Participatable;
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface Room extends Parcelable, Freezable<Room>, Participatable {
                 public static final int ROOM_STATUS_ACTIVE = 3;
                 public static final int ROOM_STATUS_AUTO_MATCHING = 1;

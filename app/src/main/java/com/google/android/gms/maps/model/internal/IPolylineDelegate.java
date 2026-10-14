@@ -9,28 +9,28 @@
             import java.util.ArrayList;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface IPolylineDelegate extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.IPolylineDelegate$a */
+                
                 public static abstract class AbstractBinderC1186a extends Binder implements IPolylineDelegate {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.IPolylineDelegate$a$a */
+                    
                     private static class a implements IPolylineDelegate {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2363dG;
 
                         a(IBinder iBinder) {
                             this.f2363dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2363dG;
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public boolean equalsRemote(IPolylineDelegate other) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -50,7 +50,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public int getColor() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -69,7 +69,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public String getId() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -88,7 +88,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public List<LatLng> getPoints() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -107,7 +107,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public float getWidth() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -126,7 +126,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public float getZIndex() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -145,7 +145,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public int hashCodeRemote() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -164,7 +164,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public boolean isGeodesic() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -183,7 +183,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public boolean isVisible() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -202,7 +202,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public void remove() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -219,7 +219,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public void setColor(int color) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -237,7 +237,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public void setGeodesic(boolean geodesic) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -255,7 +255,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public void setPoints(List<LatLng> points) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -273,7 +273,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public void setVisible(boolean visible) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -291,7 +291,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public void setWidth(float width) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -309,7 +309,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.IPolylineDelegate
+                        @Override 
                         public void setZIndex(float zIndex) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -328,7 +328,7 @@
                         }
                     }
 
-                    /* JADX INFO: renamed from: ah */
+                    
                     public static IPolylineDelegate m2304ah(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -337,7 +337,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IPolylineDelegate)) ? new a(iBinder) : (IPolylineDelegate) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
                         switch (i) {
                             case 1:

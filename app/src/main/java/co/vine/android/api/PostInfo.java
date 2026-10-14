@@ -6,8 +6,8 @@
             import org.json.JSONException;
             import org.json.JSONObject;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 46 */    public class PostInfo {
+            
+    public class PostInfo {
                 public static final String AG_CHANNEL_ID = "channelId";
                 public static final String AG_DESCRIPTION = "description";
                 public static final String AG_ENTITIES = "entities";
@@ -33,67 +33,67 @@
                 public final String sharedPostThumbUrl;
                 public final String sharedPostVideoUrl;
 
-/* 47 */        public PostInfo(String caption, boolean postToTwitter, boolean postToFacebook, long channelId, ArrayList<VineEntity> entities, String message, long postId, String videoUrl, String thumbUrl, long created, ArrayList<VineRecipient> recipients, int maxLoops) {
-/* 52 */            this.caption = caption == null ? "" : caption;
-/* 53 */            this.postToTwitter = postToTwitter;
-/* 54 */            this.postToFacebook = postToFacebook;
-/* 55 */            this.entities = entities;
-/* 56 */            this.channelId = channelId;
-/* 57 */            this.created = created;
-/* 58 */            this.message = message;
-/* 59 */            this.postId = postId;
-/* 60 */            this.recipients = recipients;
-/* 61 */            this.maxLoops = maxLoops;
-/* 62 */            this.sharedPostVideoUrl = videoUrl;
-/* 63 */            this.sharedPostThumbUrl = thumbUrl;
+        public PostInfo(String caption, boolean postToTwitter, boolean postToFacebook, long channelId, ArrayList<VineEntity> entities, String message, long postId, String videoUrl, String thumbUrl, long created, ArrayList<VineRecipient> recipients, int maxLoops) {
+            this.caption = caption == null ? "" : caption;
+            this.postToTwitter = postToTwitter;
+            this.postToFacebook = postToFacebook;
+            this.entities = entities;
+            this.channelId = channelId;
+            this.created = created;
+            this.message = message;
+            this.postId = postId;
+            this.recipients = recipients;
+            this.maxLoops = maxLoops;
+            this.sharedPostVideoUrl = videoUrl;
+            this.sharedPostThumbUrl = thumbUrl;
                 }
 
-/* 68 */        public String toString() {
+        public String toString() {
                     try {
-/* 69 */                return toJson().toString();
+                return toJson().toString();
                     } catch (JSONException e) {
-/* 71 */                throw new RuntimeException(e);
+                throw new RuntimeException(e);
                     }
                 }
 
-/* 75 */        private JSONObject toJson() throws JSONException {
-/* 76 */            JSONObject jsonObject = new JSONObject();
-/* 77 */            jsonObject.put("description", this.caption);
-/* 78 */            jsonObject.put("postToTwitter", this.postToTwitter);
-/* 79 */            jsonObject.put("postToFacebook", this.postToFacebook);
-/* 80 */            jsonObject.put("channelId", this.channelId);
-/* 81 */            jsonObject.put("maxLoops", this.maxLoops);
-/* 82 */            if (!TextUtils.isEmpty(this.sharedPostVideoUrl)) {
-/* 83 */                jsonObject.put("videoUrl", this.sharedPostVideoUrl);
+        private JSONObject toJson() throws JSONException {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("description", this.caption);
+            jsonObject.put("postToTwitter", this.postToTwitter);
+            jsonObject.put("postToFacebook", this.postToFacebook);
+            jsonObject.put("channelId", this.channelId);
+            jsonObject.put("maxLoops", this.maxLoops);
+            if (!TextUtils.isEmpty(this.sharedPostVideoUrl)) {
+                jsonObject.put("videoUrl", this.sharedPostVideoUrl);
                     }
-/* 85 */            if (!TextUtils.isEmpty(this.sharedPostThumbUrl)) {
-/* 86 */                jsonObject.put("thumbUrl", this.sharedPostThumbUrl);
+            if (!TextUtils.isEmpty(this.sharedPostThumbUrl)) {
+                jsonObject.put("thumbUrl", this.sharedPostThumbUrl);
                     }
-/* 88 */            if (this.entities != null && !this.entities.isEmpty()) {
-/* 89 */                jsonObject.put("entities", entitiesToJsonArray(this.entities));
+            if (this.entities != null && !this.entities.isEmpty()) {
+                jsonObject.put("entities", entitiesToJsonArray(this.entities));
                     }
-/* 91 */            if (this.recipients != null && !this.recipients.isEmpty()) {
-/* 92 */                jsonObject.put("recipients", recipientsToJsonArray(this.recipients));
+            if (this.recipients != null && !this.recipients.isEmpty()) {
+                jsonObject.put("recipients", recipientsToJsonArray(this.recipients));
                     }
-/* 94 */            jsonObject.put("message", this.message);
-/* 95 */            jsonObject.put("postId", this.postId);
-/* 96 */            jsonObject.put("created", this.created);
-/* 97 */            return jsonObject;
+            jsonObject.put("message", this.message);
+            jsonObject.put("postId", this.postId);
+            jsonObject.put("created", this.created);
+            return jsonObject;
                 }
 
-/* 100 */       public static JSONArray entitiesToJsonArray(ArrayList<VineEntity> entities) throws JSONException {
-/* 101 */           JSONArray array = new JSONArray();
+       public static JSONArray entitiesToJsonArray(ArrayList<VineEntity> entities) throws JSONException {
+           JSONArray array = new JSONArray();
                     for (VineEntity entity : entities) {
-/* 103 */               array.put(entity.toJsonObject());
+               array.put(entity.toJsonObject());
                     }
-/* 105 */           return array;
+           return array;
                 }
 
-/* 108 */       public static JSONArray recipientsToJsonArray(ArrayList<VineRecipient> recipients) throws JSONException {
-/* 109 */           JSONArray array = new JSONArray();
+       public static JSONArray recipientsToJsonArray(ArrayList<VineRecipient> recipients) throws JSONException {
+           JSONArray array = new JSONArray();
                     for (VineRecipient recipient : recipients) {
-/* 111 */               array.put(recipient.toJsonObject());
+               array.put(recipient.toJsonObject());
                     }
-/* 113 */           return array;
+           return array;
                 }
             }

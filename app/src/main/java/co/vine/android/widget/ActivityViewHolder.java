@@ -6,8 +6,8 @@
             import co.vine.android.C0257R;
             import co.vine.android.cache.image.ImageKey;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 50 */    public class ActivityViewHolder {
+            
+    public class ActivityViewHolder {
                 public static final int TYPE_COMMENT_LIST = 3;
                 public static final int TYPE_POST = 1;
                 public static final int TYPE_USER = 0;
@@ -40,22 +40,22 @@
                 public ImageView typeIcon;
                 public long userId;
 
-/* 51 */        public ActivityViewHolder(View v) {
-/* 53 */            this.typeIcon = (ImageView) v.findViewById(C0257R.id.activity_type_icon);
-/* 54 */            this.avatar = (ImageView) v.findViewById(C0257R.id.user_image);
-/* 55 */            this.thumbnail = (ImageView) v.findViewById(C0257R.id.thumbnail);
-/* 56 */            this.followButton = v.findViewById(C0257R.id.follow);
-/* 57 */            this.contentLine = (TextView) v.findViewById(C0257R.id.content_line);
-/* 58 */            this.dateLine = (TextView) v.findViewById(C0257R.id.date_line);
-/* 61 */            this.milestoneBackground = (ImageView) v.findViewById(C0257R.id.milestone_background);
-/* 62 */            this.milestoneOverlay = v.findViewById(C0257R.id.milestone_color_overlay);
-/* 63 */            this.milestoneImage = (ImageView) v.findViewById(C0257R.id.milestone_image);
-/* 64 */            this.milestoneImageFrame = (ImageView) v.findViewById(C0257R.id.milestone_image_frame);
-/* 65 */            this.milestoneIcon = (ImageView) v.findViewById(C0257R.id.milestone_icon);
-/* 66 */            this.milestoneTitle = (TextView) v.findViewById(C0257R.id.milestone_title);
-/* 67 */            this.milestoneDescription = (TextView) v.findViewById(C0257R.id.milestone_secondary);
-/* 70 */            this.headerView = v.findViewById(C0257R.id.header);
-/* 71 */            this.headerText = (TextView) v.findViewById(C0257R.id.header_text);
-/* 73 */            this.divider = v.findViewById(C0257R.id.divider);
+        public ActivityViewHolder(View v) {
+            this.typeIcon = (ImageView) v.findViewById(C0257R.id.activity_type_icon);
+            this.avatar = (ImageView) v.findViewById(C0257R.id.user_image);
+            this.thumbnail = (ImageView) v.findViewById(C0257R.id.thumbnail);
+            this.followButton = v.findViewById(C0257R.id.follow);
+            this.contentLine = (TextView) v.findViewById(C0257R.id.content_line);
+            this.dateLine = (TextView) v.findViewById(C0257R.id.date_line);
+            this.milestoneBackground = (ImageView) v.findViewById(C0257R.id.milestone_background);
+            this.milestoneOverlay = v.findViewById(C0257R.id.milestone_color_overlay);
+            this.milestoneImage = (ImageView) v.findViewById(C0257R.id.milestone_image);
+            this.milestoneImageFrame = (ImageView) v.findViewById(C0257R.id.milestone_image_frame);
+            this.milestoneIcon = (ImageView) v.findViewById(C0257R.id.milestone_icon);
+            this.milestoneTitle = (TextView) v.findViewById(C0257R.id.milestone_title);
+            this.milestoneDescription = (TextView) v.findViewById(C0257R.id.milestone_secondary);
+            this.headerView = v.findViewById(C0257R.id.header);
+            this.headerText = (TextView) v.findViewById(C0257R.id.header_text);
+            this.divider = v.findViewById(C0257R.id.divider);
                 }
             }

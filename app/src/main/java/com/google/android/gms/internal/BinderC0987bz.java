@@ -11,34 +11,34 @@
             import java.util.List;
             import java.util.Map;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bz */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class BinderC0987bz extends InterfaceC0986by.a {
 
-                /* JADX INFO: renamed from: gL */
+                
                 private static final Object f1518gL = new Object();
 
-                /* JADX INFO: renamed from: gM */
+                
                 private static BinderC0987bz f1519gM;
 
-                /* JADX INFO: renamed from: gN */
+                
                 private final InterfaceC0946al f1520gN;
                 private final Context mContext;
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bz$1, reason: invalid class name */
+                
                 static class AnonymousClass1 implements Runnable {
 
-                    /* JADX INFO: renamed from: gO */
-                    final /* synthetic */ Context f1521gO;
+                    
+                    final  Context f1521gO;
 
-                    /* JADX INFO: renamed from: gP */
-                    final /* synthetic */ C0982bu f1522gP;
+                    
+                    final  C0982bu f1522gP;
 
-                    /* JADX INFO: renamed from: gQ */
-                    final /* synthetic */ C0990cb f1523gQ;
+                    
+                    final  C0990cb f1523gQ;
 
-                    /* JADX INFO: renamed from: gR */
-                    final /* synthetic */ String f1524gR;
+                    
+                    final  String f1524gR;
 
                     AnonymousClass1(Context context, C0982bu c0982bu, C0990cb c0990cb, String str) {
                         this.f1521gO = context;
@@ -47,7 +47,7 @@
                         this.f1524gR = str;
                     }
 
-                    @Override // java.lang.Runnable
+                    @Override 
                     public void run() {
                         C1005cq c1005cqM1462a = C1005cq.m1462a(this.f1521gO, new C1126x(), false, false, null, this.f1522gP.f1494eg);
                         c1005cqM1462a.setWillNotDraw(true);
@@ -66,7 +66,7 @@
                     this.f1520gN = interfaceC0946al;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static C0984bw m1379a(Context context, InterfaceC0946al interfaceC0946al, C0982bu c0982bu) {
                     C1002cn.m1454m("Starting ad request from service.");
                     interfaceC0946al.init();
@@ -85,7 +85,7 @@
                     return TextUtils.isEmpty(strM1391aj) ? new C0984bw(c0990cb.getErrorCode()) : m1380a(context, c0982bu.f1494eg.f1596hP, strM1391aj);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static C0984bw m1380a(Context context, String str, String str2) {
                     try {
                         C0991cc c0991cc = new C0991cc();
@@ -141,7 +141,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static BinderC0987bz m1381a(Context context, InterfaceC0946al interfaceC0946al) {
                     BinderC0987bz binderC0987bz;
                     synchronized (f1518gL) {
@@ -157,7 +157,7 @@
                     return binderC0987bz;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static void m1382a(String str, Map<String, List<String>> map, String str2, int i) {
                     if (C1002cn.m1453k(2)) {
                         C1002cn.m1457p("Http Response: {\n  URL:\n    " + str + "\n  Headers:");
@@ -182,8 +182,8 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0986by
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 public C0984bw mo1377a(C0982bu c0982bu) {
                     return m1379a(this.mContext, this.f1520gN, c0982bu);
                 }

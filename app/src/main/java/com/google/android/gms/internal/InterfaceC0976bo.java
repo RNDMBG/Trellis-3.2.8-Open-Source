@@ -7,25 +7,25 @@
             import android.os.RemoteException;
             import com.google.android.gms.dynamic.InterfaceC0904b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bo */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC0976bo extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bo$a */
+                
                 public static abstract class a extends Binder implements InterfaceC0976bo {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.internal.bo$a$a, reason: collision with other inner class name */
+                    
                     private static class C1324a implements InterfaceC0976bo {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f1469dG;
 
                         C1324a(IBinder iBinder) {
                             this.f1469dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0976bo
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public IBinder mo1343a(InterfaceC0904b interfaceC0904b) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -45,13 +45,13 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f1469dG;
                         }
                     }
 
-                    /* JADX INFO: renamed from: n */
+                    
                     public static InterfaceC0976bo m1344n(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -60,7 +60,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC0976bo)) ? new C1324a(iBinder) : (InterfaceC0976bo) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:
@@ -78,6 +78,6 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 IBinder mo1343a(InterfaceC0904b interfaceC0904b) throws RemoteException;
             }

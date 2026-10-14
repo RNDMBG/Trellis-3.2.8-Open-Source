@@ -1,238 +1,238 @@
             package android.support.v4.util;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 21 */    public class SparseArrayCompat<E> implements Cloneable {
+            
+    public class SparseArrayCompat<E> implements Cloneable {
                 private static final Object DELETED = new Object();
                 private boolean mGarbage;
                 private int[] mKeys;
                 private int mSize;
                 private Object[] mValues;
 
-                /* JADX INFO: renamed from: clone, reason: collision with other method in class */
-/* 22 */        public /* bridge */ /* synthetic */ Object m2472clone() throws CloneNotSupportedException {
-/* 23 */            return clone();
+                
+        public   Object m2472clone() throws CloneNotSupportedException {
+            return clone();
                 }
 
-/* 34 */        public SparseArrayCompat() {
-/* 35 */            this(10);
+        public SparseArrayCompat() {
+            this(10);
                 }
 
-/* 44 */        public SparseArrayCompat(int initialCapacity) {
-/* 25 */            this.mGarbage = false;
-/* 46 */            if (initialCapacity == 0) {
-/* 47 */                this.mKeys = ContainerHelpers.EMPTY_INTS;
-/* 48 */                this.mValues = ContainerHelpers.EMPTY_OBJECTS;
+        public SparseArrayCompat(int initialCapacity) {
+            this.mGarbage = false;
+            if (initialCapacity == 0) {
+                this.mKeys = ContainerHelpers.EMPTY_INTS;
+                this.mValues = ContainerHelpers.EMPTY_OBJECTS;
                     } else {
-/* 50 */                int initialCapacity2 = ContainerHelpers.idealIntArraySize(initialCapacity);
-/* 51 */                this.mKeys = new int[initialCapacity2];
-/* 52 */                this.mValues = new Object[initialCapacity2];
+                int initialCapacity2 = ContainerHelpers.idealIntArraySize(initialCapacity);
+                this.mKeys = new int[initialCapacity2];
+                this.mValues = new Object[initialCapacity2];
                     }
-/* 54 */            this.mSize = 0;
+            this.mSize = 0;
                 }
 
-/* 59 */        public SparseArrayCompat<E> clone() {
-/* 60 */            SparseArrayCompat<E> clone = null;
+        public SparseArrayCompat<E> clone() {
+            SparseArrayCompat<E> clone = null;
                     try {
-/* 62 */                clone = (SparseArrayCompat) super.clone();
-/* 63 */                clone.mKeys = (int[]) this.mKeys.clone();
-/* 64 */                clone.mValues = (Object[]) this.mValues.clone();
-/* 68 */                return clone;
+                clone = (SparseArrayCompat) super.clone();
+                clone.mKeys = (int[]) this.mKeys.clone();
+                clone.mValues = (Object[]) this.mValues.clone();
+                return clone;
                     } catch (CloneNotSupportedException e) {
-/* 68 */                return clone;
+                return clone;
                     }
                 }
 
-/* 75 */        public E get(int key) {
-/* 76 */            return get(key, null);
+        public E get(int key) {
+            return get(key, null);
                 }
 
-/* 84 */        public E get(int i, E e) {
-/* 85 */            int iBinarySearch = ContainerHelpers.binarySearch(this.mKeys, this.mSize, i);
+        public E get(int i, E e) {
+            int iBinarySearch = ContainerHelpers.binarySearch(this.mKeys, this.mSize, i);
                     return (iBinarySearch < 0 || this.mValues[iBinarySearch] == DELETED) ? e : (E) this.mValues[iBinarySearch];
                 }
 
-/* 97 */        public void delete(int key) {
-/* 98 */            int i = ContainerHelpers.binarySearch(this.mKeys, this.mSize, key);
-/* 100 */           if (i >= 0 && this.mValues[i] != DELETED) {
-/* 102 */               this.mValues[i] = DELETED;
-/* 103 */               this.mGarbage = true;
+        public void delete(int key) {
+            int i = ContainerHelpers.binarySearch(this.mKeys, this.mSize, key);
+           if (i >= 0 && this.mValues[i] != DELETED) {
+               this.mValues[i] = DELETED;
+               this.mGarbage = true;
                     }
                 }
 
-/* 111 */       public void remove(int key) {
-/* 112 */           delete(key);
+       public void remove(int key) {
+           delete(key);
                 }
 
-/* 118 */       public void removeAt(int index) {
-/* 119 */           if (this.mValues[index] != DELETED) {
-/* 120 */               this.mValues[index] = DELETED;
-/* 121 */               this.mGarbage = true;
+       public void removeAt(int index) {
+           if (this.mValues[index] != DELETED) {
+               this.mValues[index] = DELETED;
+               this.mGarbage = true;
                     }
                 }
 
-/* 131 */       public void removeAtRange(int index, int size) {
-/* 132 */           int end = Math.min(this.mSize, index + size);
+       public void removeAtRange(int index, int size) {
+           int end = Math.min(this.mSize, index + size);
                     for (int i = index; i < end; i++) {
-/* 134 */               removeAt(i);
+               removeAt(i);
                     }
                 }
 
-                /* JADX INFO: renamed from: gc */
-/* 140 */       private void m1gc() {
-/* 141 */           int n = this.mSize;
-/* 142 */           int o = 0;
-/* 143 */           int[] keys = this.mKeys;
-/* 144 */           Object[] values = this.mValues;
+                
+       private void m1gc() {
+           int n = this.mSize;
+           int o = 0;
+           int[] keys = this.mKeys;
+           Object[] values = this.mValues;
                     for (int i = 0; i < n; i++) {
-/* 147 */               Object val = values[i];
-/* 149 */               if (val != DELETED) {
-/* 150 */                   if (i != o) {
-/* 151 */                       keys[o] = keys[i];
-/* 152 */                       values[o] = val;
-/* 153 */                       values[i] = null;
+               Object val = values[i];
+               if (val != DELETED) {
+                   if (i != o) {
+                       keys[o] = keys[i];
+                       values[o] = val;
+                       values[i] = null;
                             }
-/* 156 */                   o++;
+                   o++;
                         }
                     }
-/* 160 */           this.mGarbage = false;
-/* 161 */           this.mSize = o;
+           this.mGarbage = false;
+           this.mSize = o;
                 }
 
-/* 171 */       public void put(int key, E value) {
-/* 172 */           int i = ContainerHelpers.binarySearch(this.mKeys, this.mSize, key);
-/* 174 */           if (i >= 0) {
-/* 175 */               this.mValues[i] = value;
-/* 216 */               return;
+       public void put(int key, E value) {
+           int i = ContainerHelpers.binarySearch(this.mKeys, this.mSize, key);
+           if (i >= 0) {
+               this.mValues[i] = value;
+               return;
                     }
-/* 177 */           int i2 = i ^ (-1);
-/* 179 */           if (i2 < this.mSize && this.mValues[i2] == DELETED) {
-/* 180 */               this.mKeys[i2] = key;
-/* 181 */               this.mValues[i2] = value;
-/* 216 */               return;
+           int i2 = i ^ (-1);
+           if (i2 < this.mSize && this.mValues[i2] == DELETED) {
+               this.mKeys[i2] = key;
+               this.mValues[i2] = value;
+               return;
                     }
-/* 185 */           if (this.mGarbage && this.mSize >= this.mKeys.length) {
-/* 186 */               m1gc();
-/* 189 */               i2 = ContainerHelpers.binarySearch(this.mKeys, this.mSize, key) ^ (-1);
+           if (this.mGarbage && this.mSize >= this.mKeys.length) {
+               m1gc();
+               i2 = ContainerHelpers.binarySearch(this.mKeys, this.mSize, key) ^ (-1);
                     }
-/* 192 */           if (this.mSize >= this.mKeys.length) {
-/* 193 */               int n = ContainerHelpers.idealIntArraySize(this.mSize + 1);
-/* 195 */               int[] nkeys = new int[n];
-/* 196 */               Object[] nvalues = new Object[n];
-/* 199 */               System.arraycopy(this.mKeys, 0, nkeys, 0, this.mKeys.length);
-/* 200 */               System.arraycopy(this.mValues, 0, nvalues, 0, this.mValues.length);
-/* 202 */               this.mKeys = nkeys;
-/* 203 */               this.mValues = nvalues;
+           if (this.mSize >= this.mKeys.length) {
+               int n = ContainerHelpers.idealIntArraySize(this.mSize + 1);
+               int[] nkeys = new int[n];
+               Object[] nvalues = new Object[n];
+               System.arraycopy(this.mKeys, 0, nkeys, 0, this.mKeys.length);
+               System.arraycopy(this.mValues, 0, nvalues, 0, this.mValues.length);
+               this.mKeys = nkeys;
+               this.mValues = nvalues;
                     }
-/* 206 */           if (this.mSize - i2 != 0) {
-/* 208 */               System.arraycopy(this.mKeys, i2, this.mKeys, i2 + 1, this.mSize - i2);
-/* 209 */               System.arraycopy(this.mValues, i2, this.mValues, i2 + 1, this.mSize - i2);
+           if (this.mSize - i2 != 0) {
+               System.arraycopy(this.mKeys, i2, this.mKeys, i2 + 1, this.mSize - i2);
+               System.arraycopy(this.mValues, i2, this.mValues, i2 + 1, this.mSize - i2);
                     }
-/* 212 */           this.mKeys[i2] = key;
-/* 213 */           this.mValues[i2] = value;
-/* 214 */           this.mSize++;
+           this.mKeys[i2] = key;
+           this.mValues[i2] = value;
+           this.mSize++;
                 }
 
-/* 222 */       public int size() {
-/* 223 */           if (this.mGarbage) {
-/* 224 */               m1gc();
+       public int size() {
+           if (this.mGarbage) {
+               m1gc();
                     }
-/* 227 */           return this.mSize;
+           return this.mSize;
                 }
 
-/* 235 */       public int keyAt(int index) {
-/* 236 */           if (this.mGarbage) {
-/* 237 */               m1gc();
+       public int keyAt(int index) {
+           if (this.mGarbage) {
+               m1gc();
                     }
-/* 240 */           return this.mKeys[index];
+           return this.mKeys[index];
                 }
 
-/* 249 */       public E valueAt(int i) {
-/* 250 */           if (this.mGarbage) {
-/* 251 */               m1gc();
+       public E valueAt(int i) {
+           if (this.mGarbage) {
+               m1gc();
                     }
-/* 254 */           return (E) this.mValues[i];
+           return (E) this.mValues[i];
                 }
 
-/* 262 */       public void setValueAt(int index, E value) {
-/* 263 */           if (this.mGarbage) {
-/* 264 */               m1gc();
+       public void setValueAt(int index, E value) {
+           if (this.mGarbage) {
+               m1gc();
                     }
-/* 267 */           this.mValues[index] = value;
+           this.mValues[index] = value;
                 }
 
-/* 275 */       public int indexOfKey(int key) {
-/* 276 */           if (this.mGarbage) {
-/* 277 */               m1gc();
+       public int indexOfKey(int key) {
+           if (this.mGarbage) {
+               m1gc();
                     }
-/* 280 */           return ContainerHelpers.binarySearch(this.mKeys, this.mSize, key);
+           return ContainerHelpers.binarySearch(this.mKeys, this.mSize, key);
                 }
 
-/* 293 */       public int indexOfValue(E value) {
-/* 294 */           if (this.mGarbage) {
-/* 295 */               m1gc();
+       public int indexOfValue(E value) {
+           if (this.mGarbage) {
+               m1gc();
                     }
                     for (int i = 0; i < this.mSize; i++) {
-/* 299 */               if (this.mValues[i] == value) {
-/* 302 */                   return i;
+               if (this.mValues[i] == value) {
+                   return i;
                         }
                     }
-/* 302 */           return -1;
+           return -1;
                 }
 
-/* 308 */       public void clear() {
-/* 309 */           int n = this.mSize;
-/* 310 */           Object[] values = this.mValues;
+       public void clear() {
+           int n = this.mSize;
+           Object[] values = this.mValues;
                     for (int i = 0; i < n; i++) {
-/* 313 */               values[i] = null;
+               values[i] = null;
                     }
-/* 316 */           this.mSize = 0;
-/* 317 */           this.mGarbage = false;
+           this.mSize = 0;
+           this.mGarbage = false;
                 }
 
-/* 324 */       public void append(int key, E value) {
-/* 325 */           if (this.mSize != 0 && key <= this.mKeys[this.mSize - 1]) {
-/* 326 */               put(key, value);
-/* 352 */               return;
+       public void append(int key, E value) {
+           if (this.mSize != 0 && key <= this.mKeys[this.mSize - 1]) {
+               put(key, value);
+               return;
                     }
-/* 330 */           if (this.mGarbage && this.mSize >= this.mKeys.length) {
-/* 331 */               m1gc();
+           if (this.mGarbage && this.mSize >= this.mKeys.length) {
+               m1gc();
                     }
-/* 334 */           int pos = this.mSize;
-/* 335 */           if (pos >= this.mKeys.length) {
-/* 336 */               int n = ContainerHelpers.idealIntArraySize(pos + 1);
-/* 338 */               int[] nkeys = new int[n];
-/* 339 */               Object[] nvalues = new Object[n];
-/* 342 */               System.arraycopy(this.mKeys, 0, nkeys, 0, this.mKeys.length);
-/* 343 */               System.arraycopy(this.mValues, 0, nvalues, 0, this.mValues.length);
-/* 345 */               this.mKeys = nkeys;
-/* 346 */               this.mValues = nvalues;
+           int pos = this.mSize;
+           if (pos >= this.mKeys.length) {
+               int n = ContainerHelpers.idealIntArraySize(pos + 1);
+               int[] nkeys = new int[n];
+               Object[] nvalues = new Object[n];
+               System.arraycopy(this.mKeys, 0, nkeys, 0, this.mKeys.length);
+               System.arraycopy(this.mValues, 0, nvalues, 0, this.mValues.length);
+               this.mKeys = nkeys;
+               this.mValues = nvalues;
                     }
-/* 349 */           this.mKeys[pos] = key;
-/* 350 */           this.mValues[pos] = value;
-/* 351 */           this.mSize = pos + 1;
+           this.mKeys[pos] = key;
+           this.mValues[pos] = value;
+           this.mSize = pos + 1;
                 }
 
-/* 362 */       public String toString() {
-/* 363 */           if (size() <= 0) {
-/* 364 */               return "{}";
+       public String toString() {
+           if (size() <= 0) {
+               return "{}";
                     }
-/* 367 */           StringBuilder buffer = new StringBuilder(this.mSize * 28);
-/* 368 */           buffer.append('{');
+           StringBuilder buffer = new StringBuilder(this.mSize * 28);
+           buffer.append('{');
                     for (int i = 0; i < this.mSize; i++) {
-/* 370 */               if (i > 0) {
-/* 371 */                   buffer.append(", ");
+               if (i > 0) {
+                   buffer.append(", ");
                         }
-/* 373 */               int key = keyAt(i);
-/* 374 */               buffer.append(key);
-/* 375 */               buffer.append('=');
-/* 376 */               Object value = valueAt(i);
-/* 377 */               if (value != this) {
-/* 378 */                   buffer.append(value);
+               int key = keyAt(i);
+               buffer.append(key);
+               buffer.append('=');
+               Object value = valueAt(i);
+               if (value != this) {
+                   buffer.append(value);
                         } else {
-/* 380 */                   buffer.append("(this Map)");
+                   buffer.append("(this Map)");
                         }
                     }
-/* 383 */           buffer.append('}');
-/* 384 */           return buffer.toString();
+           buffer.append('}');
+           return buffer.toString();
                 }
             }

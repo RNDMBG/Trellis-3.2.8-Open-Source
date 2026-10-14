@@ -13,8 +13,8 @@
             import java.util.ArrayList;
             import java.util.Iterator;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 78 */    public class TaskStackBuilder implements Iterable<Intent> {
+            
+    public class TaskStackBuilder implements Iterable<Intent> {
                 private static final TaskStackBuilderImpl IMPL;
                 private static final String TAG = "TaskStackBuilder";
                 private final ArrayList<Intent> mIntents = new ArrayList<>();
@@ -28,171 +28,171 @@
                     PendingIntent getPendingIntent(Context context, Intent[] intentArr, int i, int i2, Bundle bundle);
                 }
 
-/* 79 */        static class TaskStackBuilderImplBase implements TaskStackBuilderImpl {
-/* 80 */            TaskStackBuilderImplBase() {
+        static class TaskStackBuilderImplBase implements TaskStackBuilderImpl {
+            TaskStackBuilderImplBase() {
                     }
 
-                    @Override // android.support.v4.app.TaskStackBuilder.TaskStackBuilderImpl
-/* 83 */            public PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode, int flags, Bundle options) {
-/* 84 */                Intent topIntent = new Intent(intents[intents.length - 1]);
-/* 85 */                topIntent.addFlags(268435456);
-/* 86 */                return PendingIntent.getActivity(context, requestCode, topIntent, flags);
-                    }
-                }
-
-/* 88 */        static class TaskStackBuilderImplHoneycomb implements TaskStackBuilderImpl {
-/* 89 */            TaskStackBuilderImplHoneycomb() {
-                    }
-
-                    @Override // android.support.v4.app.TaskStackBuilder.TaskStackBuilderImpl
-/* 92 */            public PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode, int flags, Bundle options) {
-/* 93 */                intents[0] = new Intent(intents[0]).addFlags(268484608);
-/* 96 */                return TaskStackBuilderHoneycomb.getActivitiesPendingIntent(context, requestCode, intents, flags);
+                    @Override 
+            public PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode, int flags, Bundle options) {
+                Intent topIntent = new Intent(intents[intents.length - 1]);
+                topIntent.addFlags(268435456);
+                return PendingIntent.getActivity(context, requestCode, topIntent, flags);
                     }
                 }
 
-/* 99 */        static class TaskStackBuilderImplJellybean implements TaskStackBuilderImpl {
-/* 100 */           TaskStackBuilderImplJellybean() {
+        static class TaskStackBuilderImplHoneycomb implements TaskStackBuilderImpl {
+            TaskStackBuilderImplHoneycomb() {
                     }
 
-                    @Override // android.support.v4.app.TaskStackBuilder.TaskStackBuilderImpl
-/* 103 */           public PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode, int flags, Bundle options) {
-/* 104 */               intents[0] = new Intent(intents[0]).addFlags(268484608);
-/* 107 */               return TaskStackBuilderJellybean.getActivitiesPendingIntent(context, requestCode, intents, flags, options);
+                    @Override 
+            public PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode, int flags, Bundle options) {
+                intents[0] = new Intent(intents[0]).addFlags(268484608);
+                return TaskStackBuilderHoneycomb.getActivitiesPendingIntent(context, requestCode, intents, flags);
+                    }
+                }
+
+        static class TaskStackBuilderImplJellybean implements TaskStackBuilderImpl {
+           TaskStackBuilderImplJellybean() {
+                    }
+
+                    @Override 
+           public PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode, int flags, Bundle options) {
+               intents[0] = new Intent(intents[0]).addFlags(268484608);
+               return TaskStackBuilderJellybean.getActivitiesPendingIntent(context, requestCode, intents, flags, options);
                     }
                 }
 
                 static {
-/* 115 */           if (Build.VERSION.SDK_INT >= 11) {
-/* 116 */               IMPL = new TaskStackBuilderImplHoneycomb();
+           if (Build.VERSION.SDK_INT >= 11) {
+               IMPL = new TaskStackBuilderImplHoneycomb();
                     } else {
-/* 118 */               IMPL = new TaskStackBuilderImplBase();
+               IMPL = new TaskStackBuilderImplBase();
                     }
                 }
 
-/* 124 */       private TaskStackBuilder(Context a) {
-/* 126 */           this.mSourceContext = a;
+       private TaskStackBuilder(Context a) {
+           this.mSourceContext = a;
                 }
 
-/* 136 */       public static TaskStackBuilder create(Context context) {
-/* 137 */           return new TaskStackBuilder(context);
+       public static TaskStackBuilder create(Context context) {
+           return new TaskStackBuilder(context);
                 }
 
-/* 149 */       public static TaskStackBuilder from(Context context) {
-/* 150 */           return create(context);
+       public static TaskStackBuilder from(Context context) {
+           return create(context);
                 }
 
-/* 160 */       public TaskStackBuilder addNextIntent(Intent nextIntent) {
-/* 161 */           this.mIntents.add(nextIntent);
-/* 162 */           return this;
+       public TaskStackBuilder addNextIntent(Intent nextIntent) {
+           this.mIntents.add(nextIntent);
+           return this;
                 }
 
-/* 177 */       public TaskStackBuilder addNextIntentWithParentStack(Intent nextIntent) {
-/* 178 */           ComponentName target = nextIntent.getComponent();
-/* 179 */           if (target == null) {
-/* 180 */               target = nextIntent.resolveActivity(this.mSourceContext.getPackageManager());
+       public TaskStackBuilder addNextIntentWithParentStack(Intent nextIntent) {
+           ComponentName target = nextIntent.getComponent();
+           if (target == null) {
+               target = nextIntent.resolveActivity(this.mSourceContext.getPackageManager());
                     }
-/* 182 */           if (target != null) {
-/* 183 */               addParentStack(target);
+           if (target != null) {
+               addParentStack(target);
                     }
-/* 185 */           addNextIntent(nextIntent);
-/* 186 */           return this;
+           addNextIntent(nextIntent);
+           return this;
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-/* 196 */       public TaskStackBuilder addParentStack(Activity activity) {
-/* 197 */           Intent parent = null;
-/* 198 */           if (activity instanceof SupportParentable) {
-/* 199 */               parent = ((SupportParentable) activity).getSupportParentActivityIntent();
+                
+       public TaskStackBuilder addParentStack(Activity activity) {
+           Intent parent = null;
+           if (activity instanceof SupportParentable) {
+               parent = ((SupportParentable) activity).getSupportParentActivityIntent();
                     }
-/* 201 */           if (parent == null) {
-/* 202 */               parent = NavUtils.getParentActivityIntent(activity);
+           if (parent == null) {
+               parent = NavUtils.getParentActivityIntent(activity);
                     }
-/* 205 */           if (parent != null) {
-/* 208 */               ComponentName target = parent.getComponent();
-/* 209 */               if (target == null) {
-/* 210 */                   target = parent.resolveActivity(this.mSourceContext.getPackageManager());
+           if (parent != null) {
+               ComponentName target = parent.getComponent();
+               if (target == null) {
+                   target = parent.resolveActivity(this.mSourceContext.getPackageManager());
                         }
-/* 212 */               addParentStack(target);
-/* 213 */               addNextIntent(parent);
+               addParentStack(target);
+               addNextIntent(parent);
                     }
-/* 215 */           return this;
+           return this;
                 }
 
-/* 225 */       public TaskStackBuilder addParentStack(Class<?> sourceActivityClass) {
-/* 226 */           return addParentStack(new ComponentName(this.mSourceContext, sourceActivityClass));
+       public TaskStackBuilder addParentStack(Class<?> sourceActivityClass) {
+           return addParentStack(new ComponentName(this.mSourceContext, sourceActivityClass));
                 }
 
-/* 237 */       public TaskStackBuilder addParentStack(ComponentName sourceActivityName) {
-/* 238 */           int insertAt = this.mIntents.size();
+       public TaskStackBuilder addParentStack(ComponentName sourceActivityName) {
+           int insertAt = this.mIntents.size();
                     try {
-/* 240 */               Intent parent = NavUtils.getParentActivityIntent(this.mSourceContext, sourceActivityName);
-/* 241 */               while (parent != null) {
-/* 242 */                   this.mIntents.add(insertAt, parent);
-/* 243 */                   parent = NavUtils.getParentActivityIntent(this.mSourceContext, parent.getComponent());
+               Intent parent = NavUtils.getParentActivityIntent(this.mSourceContext, sourceActivityName);
+               while (parent != null) {
+                   this.mIntents.add(insertAt, parent);
+                   parent = NavUtils.getParentActivityIntent(this.mSourceContext, parent.getComponent());
                         }
-/* 249 */               return this;
+               return this;
                     } catch (PackageManager.NameNotFoundException e) {
-/* 246 */               Log.e(TAG, "Bad ComponentName while traversing activity parent metadata");
-/* 247 */               throw new IllegalArgumentException(e);
+               Log.e(TAG, "Bad ComponentName while traversing activity parent metadata");
+               throw new IllegalArgumentException(e);
                     }
                 }
 
-/* 255 */       public int getIntentCount() {
-/* 256 */           return this.mIntents.size();
+       public int getIntentCount() {
+           return this.mIntents.size();
                 }
 
-/* 269 */       public Intent getIntent(int index) {
-/* 270 */           return editIntentAt(index);
+       public Intent getIntent(int index) {
+           return editIntentAt(index);
                 }
 
-/* 281 */       public Intent editIntentAt(int index) {
-/* 282 */           return this.mIntents.get(index);
+       public Intent editIntentAt(int index) {
+           return this.mIntents.get(index);
                 }
 
-                @Override // java.lang.Iterable
-/* 288 */       public Iterator<Intent> iterator() {
-/* 289 */           return this.mIntents.iterator();
+                @Override 
+       public Iterator<Intent> iterator() {
+           return this.mIntents.iterator();
                 }
 
-/* 300 */       public void startActivities() {
-/* 301 */           startActivities(null);
+       public void startActivities() {
+           startActivities(null);
                 }
 
-/* 315 */       public void startActivities(Bundle options) {
-/* 316 */           if (this.mIntents.isEmpty()) {
-/* 317 */               throw new IllegalStateException("No intents added to TaskStackBuilder; cannot startActivities");
+       public void startActivities(Bundle options) {
+           if (this.mIntents.isEmpty()) {
+               throw new IllegalStateException("No intents added to TaskStackBuilder; cannot startActivities");
                     }
-/* 321 */           Intent[] intents = (Intent[]) this.mIntents.toArray(new Intent[this.mIntents.size()]);
-/* 322 */           intents[0] = new Intent(intents[0]).addFlags(268484608);
-/* 325 */           if (!ContextCompat.startActivities(this.mSourceContext, intents, options)) {
-/* 326 */               Intent topIntent = new Intent(intents[intents.length - 1]);
-/* 327 */               topIntent.addFlags(268435456);
-/* 328 */               this.mSourceContext.startActivity(topIntent);
+           Intent[] intents = (Intent[]) this.mIntents.toArray(new Intent[this.mIntents.size()]);
+           intents[0] = new Intent(intents[0]).addFlags(268484608);
+           if (!ContextCompat.startActivities(this.mSourceContext, intents, options)) {
+               Intent topIntent = new Intent(intents[intents.length - 1]);
+               topIntent.addFlags(268435456);
+               this.mSourceContext.startActivity(topIntent);
                     }
                 }
 
-/* 343 */       public PendingIntent getPendingIntent(int requestCode, int flags) {
-/* 344 */           return getPendingIntent(requestCode, flags, null);
+       public PendingIntent getPendingIntent(int requestCode, int flags) {
+           return getPendingIntent(requestCode, flags, null);
                 }
 
-/* 360 */       public PendingIntent getPendingIntent(int requestCode, int flags, Bundle options) {
-/* 361 */           if (this.mIntents.isEmpty()) {
-/* 362 */               throw new IllegalStateException("No intents added to TaskStackBuilder; cannot getPendingIntent");
+       public PendingIntent getPendingIntent(int requestCode, int flags, Bundle options) {
+           if (this.mIntents.isEmpty()) {
+               throw new IllegalStateException("No intents added to TaskStackBuilder; cannot getPendingIntent");
                     }
-/* 366 */           Intent[] intents = (Intent[]) this.mIntents.toArray(new Intent[this.mIntents.size()]);
-/* 367 */           intents[0] = new Intent(intents[0]).addFlags(268484608);
-/* 371 */           return IMPL.getPendingIntent(this.mSourceContext, intents, requestCode, flags, options);
+           Intent[] intents = (Intent[]) this.mIntents.toArray(new Intent[this.mIntents.size()]);
+           intents[0] = new Intent(intents[0]).addFlags(268484608);
+           return IMPL.getPendingIntent(this.mSourceContext, intents, requestCode, flags, options);
                 }
 
-/* 381 */       public Intent[] getIntents() {
-/* 382 */           Intent[] intents = new Intent[this.mIntents.size()];
-/* 383 */           if (intents.length != 0) {
-/* 385 */               intents[0] = new Intent(this.mIntents.get(0)).addFlags(268484608);
+       public Intent[] getIntents() {
+           Intent[] intents = new Intent[this.mIntents.size()];
+           if (intents.length != 0) {
+               intents[0] = new Intent(this.mIntents.get(0)).addFlags(268484608);
                         for (int i = 1; i < intents.length; i++) {
-/* 389 */                   intents[i] = new Intent(this.mIntents.get(i));
+                   intents[i] = new Intent(this.mIntents.get(i));
                         }
                     }
-/* 391 */           return intents;
+           return intents;
                 }
             }

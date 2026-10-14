@@ -6,8 +6,8 @@
             import com.googlecode.javacv.cpp.avcodec;
             import com.googlecode.javacv.cpp.avutil;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 65 */    public enum VineKnownErrors {
+            
+    public enum VineKnownErrors {
                 INVALID_ERROR_CODE(-1, C0257R.string.API_ERROR_INVALID_ERROR_CODE),
                 UNKNOWN_ERROR(0, C0257R.string.API_ERROR_UNKNOWN_ERROR),
                 UNSUPPORTED_METHOD(1, C0257R.string.API_ERROR_UNSUPPORTED_METHOD),
@@ -62,119 +62,119 @@
                 public final int code;
                 public final int message;
 
-/* 66 */        VineKnownErrors(int code, int message) {
-/* 68 */            this.code = code;
-/* 69 */            this.message = message;
+        VineKnownErrors(int code, int message) {
+            this.code = code;
+            this.message = message;
                 }
 
-/* 72 */        public String getMessage(Context context) {
-/* 73 */            return context.getString(this.message);
+        public String getMessage(Context context) {
+            return context.getString(this.message);
                 }
 
-/* 76 */        public static VineKnownErrors valueOf(VineError error) {
-/* 77 */            return valueOf(error.errorCode);
+        public static VineKnownErrors valueOf(VineError error) {
+            return valueOf(error.errorCode);
                 }
 
-/* 80 */        public static VineKnownErrors valueOf(int code) {
+        public static VineKnownErrors valueOf(int code) {
                     switch (code) {
                         case 0:
-/* 83 */                    return UNKNOWN_ERROR;
+                    return UNKNOWN_ERROR;
                         case 1:
-/* 85 */                    return UNSUPPORTED_METHOD;
+                    return UNSUPPORTED_METHOD;
                         case 3:
-/* 87 */                    return MISSING_REQUIRED_FIELD;
+                    return MISSING_REQUIRED_FIELD;
                         case 4:
-/* 89 */                    return ACCESS_DENIED;
+                    return ACCESS_DENIED;
                         case 5:
-/* 91 */                    return INVALID_ARGUMENT;
+                    return INVALID_ARGUMENT;
                         case 6:
-/* 93 */                    return NON_INTEGER_VALUE;
+                    return NON_INTEGER_VALUE;
                         case 100:
-/* 95 */                    return REQUIRES_LOGIN;
+                    return REQUIRES_LOGIN;
                         case 101:
-/* 97 */                    return BAD_CREDENTIALS;
+                    return BAD_CREDENTIALS;
                         case 102:
-/* 99 */                    return EXPIRED_SESSION;
+                    return EXPIRED_SESSION;
                         case 103:
-/* 101 */                   return INVALID_SESSION;
+                   return INVALID_SESSION;
                         case 104:
-/* 103 */                   return FACEBOOK_NOT_AUTHORIZED;
+                   return FACEBOOK_NOT_AUTHORIZED;
                         case 105:
-/* 105 */                   return TWITTER_NOT_AUTHORIZED;
+                   return TWITTER_NOT_AUTHORIZED;
                         case 106:
-/* 107 */                   return ADDRESS_BOOK_NOT_FOUND;
+                   return ADDRESS_BOOK_NOT_FOUND;
                         case 107:
-/* 109 */                   return FACEBOOK_FF_DISABLED;
-                        case avcodec.AV_CODEC_ID_JV /* 150 */:
-/* 111 */                   return REQUIRES_ADMIN_LOGIN;
+                   return FACEBOOK_FF_DISABLED;
+                        case avcodec.AV_CODEC_ID_JV :
+                   return REQUIRES_ADMIN_LOGIN;
                         case 200:
-/* 113 */                   return USERNAME_IN_USE;
+                   return USERNAME_IN_USE;
                         case 201:
-/* 115 */                   return USERNAME_INVALID_CHARACTERS;
+                   return USERNAME_INVALID_CHARACTERS;
                         case 202:
-/* 117 */                   return USERNAME_INVALID_LENGTH;
+                   return USERNAME_INVALID_LENGTH;
                         case 203:
-/* 119 */                   return ORPHANED_USER_ACCOUNT;
+                   return ORPHANED_USER_ACCOUNT;
                         case 205:
-/* 121 */                   return DESCRIPTION_INVALID_LENGTH;
+                   return DESCRIPTION_INVALID_LENGTH;
                         case 206:
-/* 123 */                   return TOO_MANY_MENTIONS;
+                   return TOO_MANY_MENTIONS;
                         case 207:
-/* 125 */                   return DUPLICATE_MENTIONS;
+                   return DUPLICATE_MENTIONS;
                         case 208:
-/* 127 */                   return USER_DESCRIPTION_INVALID_LENGTH;
+                   return USER_DESCRIPTION_INVALID_LENGTH;
                         case 210:
-/* 129 */                   return PASSWORD_INVALID;
+                   return PASSWORD_INVALID;
                         case 211:
-/* 131 */                   return PHONE_INVALID;
+                   return PHONE_INVALID;
                         case 212:
-/* 133 */                   return LOCATION_INVALID_LENGTH;
+                   return LOCATION_INVALID_LENGTH;
                         case 220:
-/* 135 */                   return EMAIL_IN_USE;
+                   return EMAIL_IN_USE;
                         case 221:
-/* 137 */                   return EMAIL_INVALID;
+                   return EMAIL_INVALID;
                         case 222:
-/* 139 */                   return TWITTER_NAME_IN_USE;
+                   return TWITTER_NAME_IN_USE;
                         case 223:
-/* 141 */                   return TWITTER_WRONG_ACCOUNT;
+                   return TWITTER_WRONG_ACCOUNT;
                         case 225:
-/* 143 */                   return PASSWORD_RESET_TOKEN_EXPIRED;
+                   return PASSWORD_RESET_TOKEN_EXPIRED;
                         case 250:
-/* 145 */                   return CANT_FOLLOW_SELF;
+                   return CANT_FOLLOW_SELF;
                         case 251:
-/* 147 */                   return CANT_FLAG_SELF;
-                        case avutil.AV_PIX_FMT_YUV420P12BE /* 301 */:
-/* 149 */                   return FSQUARE_VENUE_INVALID;
+                   return CANT_FLAG_SELF;
+                        case avutil.AV_PIX_FMT_YUV420P12BE :
+                   return FSQUARE_VENUE_INVALID;
                         case 302:
-/* 151 */                   return VIDEOURL_INVALID;
-                        case avutil.AV_PIX_FMT_YUV420P14BE /* 303 */:
-/* 153 */                   return COMMENT_INVALID_LENGTH;
+                   return VIDEOURL_INVALID;
+                        case avutil.AV_PIX_FMT_YUV420P14BE :
+                   return COMMENT_INVALID_LENGTH;
                         case 304:
-/* 155 */                   return AVATAR_INVALID;
+                   return AVATAR_INVALID;
                         case 333:
-/* 157 */                   return MESSAGE_RECIPIENT_INVALID_EMAIL_ADDRESS;
+                   return MESSAGE_RECIPIENT_INVALID_EMAIL_ADDRESS;
                         case 400:
-/* 159 */                   return RELATIONSHIP_REQUIRES_ACTION;
+                   return RELATIONSHIP_REQUIRES_ACTION;
                         case 419:
-/* 161 */                   return CAPTCHA;
+                   return CAPTCHA;
                         case 500:
-/* 163 */                   return NOTIFICATION_REFERENCES_SELF;
+                   return NOTIFICATION_REFERENCES_SELF;
                         case 620:
-/* 165 */                   return VERIFY_TOKEN_EXPIRED;
+                   return VERIFY_TOKEN_EXPIRED;
                         case 621:
-/* 167 */                   return VERIFY_CONTACT_MISMATCH;
+                   return VERIFY_CONTACT_MISMATCH;
                         case 623:
-/* 169 */                   return VERIFY_PHONE_WRONG_USER;
+                   return VERIFY_PHONE_WRONG_USER;
                         case 624:
-/* 171 */                   return VERIFY_TOKEN_NOT_FOUND;
+                   return VERIFY_TOKEN_NOT_FOUND;
                         case 666:
-/* 173 */                   return MESSAGE_RECIPIENT_OUT_OF_NETWORK;
-                        case VineService.AMAZON_ERROR_CODE /* 900 */:
-/* 175 */                   return RECORD_DOES_NOT_EXIST;
+                   return MESSAGE_RECIPIENT_OUT_OF_NETWORK;
+                        case VineService.AMAZON_ERROR_CODE :
+                   return RECORD_DOES_NOT_EXIST;
                         case 901:
-/* 177 */                   return NO_ARGUMENTS_PROVIDED;
+                   return NO_ARGUMENTS_PROVIDED;
                         default:
-/* 179 */                   return INVALID_ERROR_CODE;
+                   return INVALID_ERROR_CODE;
                     }
                 }
             }

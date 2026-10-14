@@ -11,14 +11,14 @@
             import java.net.HttpURLConnection;
             import java.net.URL;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.ct */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C1008ct extends C1006cr {
                 public C1008ct(C1005cq c1005cq, boolean z) {
                     super(c1005cq, z);
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static WebResourceResponse m1495b(Context context, String str, String str2) throws IOException {
                     HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str2).openConnection();
                     try {
@@ -33,7 +33,7 @@
                     }
                 }
 
-                @Override // android.webkit.WebViewClient
+                @Override 
                 public WebResourceResponse shouldInterceptRequest(WebView webView, String url) {
                     WebResourceResponse webResourceResponseM1495b;
                     try {

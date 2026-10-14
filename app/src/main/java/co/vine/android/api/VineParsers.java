@@ -28,8 +28,8 @@
             import org.json.JSONException;
             import org.json.JSONObject;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 31 */    public class VineParsers {
+            
+    public class VineParsers {
                 private static final String PARAM_DATA = "data";
                 private static final String PARAM_EDITION_ID = "editionId";
                 private static final String PARAM_NAME = "name";
@@ -66,226 +66,226 @@
                     public abstract T parse(JsonParser jsonParser, Bundle bundle) throws IOException;
                 }
 
-/* 32 */        static /* synthetic */ ArrayList access$000(JsonParser x0, Bundle x1) throws IOException {
-/* 33 */            return parseUsersArray(x0, x1);
+        static  ArrayList access$000(JsonParser x0, Bundle x1) throws IOException {
+            return parseUsersArray(x0, x1);
                 }
 
-/* 32 */        static /* synthetic */ VineUser access$100(JsonParser x0) throws IOException {
-/* 33 */            return parseUser(x0);
+        static  VineUser access$100(JsonParser x0) throws IOException {
+            return parseUser(x0);
                 }
 
-/* 32 */        static /* synthetic */ VineNotificationSetting access$1000(JsonParser x0) throws IOException {
-/* 33 */            return parseNotificationSetting(x0);
+        static  VineNotificationSetting access$1000(JsonParser x0) throws IOException {
+            return parseNotificationSetting(x0);
                 }
 
-/* 32 */        static /* synthetic */ VineLike access$200(JsonParser x0) throws IOException {
-/* 33 */            return parseLike(x0);
+        static  VineLike access$200(JsonParser x0) throws IOException {
+            return parseLike(x0);
                 }
 
-/* 32 */        static /* synthetic */ VinePost access$300(JsonParser x0) throws IOException {
-/* 33 */            return parsePost(x0);
+        static  VinePost access$300(JsonParser x0) throws IOException {
+            return parsePost(x0);
                 }
 
-/* 32 */        static /* synthetic */ VineComment access$400(JsonParser x0) throws IOException {
-/* 33 */            return parseComment(x0);
+        static  VineComment access$400(JsonParser x0) throws IOException {
+            return parseComment(x0);
                 }
 
-/* 32 */        static /* synthetic */ VineSingleNotification access$500(JsonParser x0) throws IOException {
-/* 33 */            return parseNotification(x0);
+        static  VineSingleNotification access$500(JsonParser x0) throws IOException {
+            return parseNotification(x0);
                 }
 
-/* 32 */        static /* synthetic */ VineEverydayNotification access$600(JsonParser x0) throws IOException {
-/* 33 */            return parseEverydayNotification(x0);
+        static  VineEverydayNotification access$600(JsonParser x0) throws IOException {
+            return parseEverydayNotification(x0);
                 }
 
-/* 32 */        static /* synthetic */ VineTag access$700(JsonParser x0) throws IOException {
-/* 33 */            return parseTag(x0);
+        static  VineTag access$700(JsonParser x0) throws IOException {
+            return parseTag(x0);
                 }
 
-/* 32 */        static /* synthetic */ VineChannel access$800(JsonParser x0) throws IOException {
-/* 33 */            return parseChannel(x0);
+        static  VineChannel access$800(JsonParser x0) throws IOException {
+            return parseChannel(x0);
                 }
 
-/* 32 */        static /* synthetic */ VineConversation access$900(JsonParser x0) throws IOException {
-/* 33 */            return parseConversation(x0);
+        static  VineConversation access$900(JsonParser x0) throws IOException {
+            return parseConversation(x0);
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$1 */
-/* 61 */        static class C03351 extends RecordListParser<VineUser> {
-/* 62 */            C03351() {
+                
+        static class C03351 extends RecordListParser<VineUser> {
+            C03351() {
                     }
 
-                    @Override // co.vine.android.api.VineParsers.RecordListParser
-/* 66 */            public ArrayList<VineUser> parse(JsonParser parser, Bundle extras) throws IOException {
-/* 67 */                return VineParsers.access$000(parser, extras);
-                    }
-                }
-
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$2 */
-/* 70 */        static class C03402 extends RecordParser<VineUser> {
-/* 71 */            C03402() {
-                    }
-
-
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 75 */            public VineUser parse(JsonParser parser, Bundle extras) throws IOException {
-/* 76 */                return VineParsers.access$100(parser);
+                    @Override 
+            public ArrayList<VineUser> parse(JsonParser parser, Bundle extras) throws IOException {
+                return VineParsers.access$000(parser, extras);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$3 */
-/* 78 */        static class C03413 extends RecordParser<VineLike> {
-/* 79 */            C03413() {
+                
+        static class C03402 extends RecordParser<VineUser> {
+            C03402() {
                     }
 
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 83 */            public VineLike parse(JsonParser parser, Bundle extras) throws IOException {
-/* 84 */                return VineParsers.access$200(parser);
-                    }
-                }
-
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$4 */
-/* 86 */        static class C03424 extends RecordParser<VinePost> {
-/* 87 */            C03424() {
-                    }
-
-
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 91 */            public VinePost parse(JsonParser parser, Bundle extras) throws IOException {
-/* 92 */                return VineParsers.access$300(parser);
+                    
+                    @Override 
+            public VineUser parse(JsonParser parser, Bundle extras) throws IOException {
+                return VineParsers.access$100(parser);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$5 */
-/* 94 */        static class C03435 extends RecordParser<VineComment> {
-/* 95 */            C03435() {
+                
+        static class C03413 extends RecordParser<VineLike> {
+            C03413() {
                     }
 
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 99 */            public VineComment parse(JsonParser parser, Bundle extras) throws IOException {
-/* 100 */               return VineParsers.access$400(parser);
-                    }
-                }
-
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$6 */
-/* 103 */       static class C03446 extends RecordParser<VineSingleNotification> {
-/* 104 */           C03446() {
-                    }
-
-
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 107 */           public VineSingleNotification parse(JsonParser parser, Bundle extras) throws IOException {
-/* 108 */               return VineParsers.access$500(parser);
+                    
+                    @Override 
+            public VineLike parse(JsonParser parser, Bundle extras) throws IOException {
+                return VineParsers.access$200(parser);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$7 */
-/* 111 */       static class C03457 extends RecordParser<VineEverydayNotification> {
-/* 112 */           C03457() {
+                
+        static class C03424 extends RecordParser<VinePost> {
+            C03424() {
                     }
 
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 115 */           public VineEverydayNotification parse(JsonParser parser, Bundle extras) throws IOException {
-/* 116 */               return VineParsers.access$600(parser);
-                    }
-                }
-
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$8 */
-/* 118 */       static class C03468 extends RecordParser<VineTag> {
-/* 119 */           C03468() {
-                    }
-
-
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 123 */           public VineTag parse(JsonParser parser, Bundle extras) throws IOException {
-/* 124 */               return VineParsers.access$700(parser);
+                    
+                    @Override 
+            public VinePost parse(JsonParser parser, Bundle extras) throws IOException {
+                return VineParsers.access$300(parser);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$9 */
-/* 126 */       static class C03479 extends RecordParser<VineChannel> {
-/* 127 */           C03479() {
+                
+        static class C03435 extends RecordParser<VineComment> {
+            C03435() {
                     }
 
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 131 */           public VineChannel parse(JsonParser parser, Bundle extras) throws IOException {
-/* 132 */               return VineParsers.access$800(parser);
-                    }
-                }
-
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$10 */
-/* 134 */       static class C033610 extends RecordParser<VinePrivateMessage> {
-/* 135 */           C033610() {
-                    }
-
-
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 138 */           public VinePrivateMessage parse(JsonParser parser, Bundle extras) throws IOException {
-/* 139 */               return VineParsers.parsePrivateMessage(parser);
+                    
+                    @Override 
+            public VineComment parse(JsonParser parser, Bundle extras) throws IOException {
+               return VineParsers.access$400(parser);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$11 */
-/* 141 */       static class C033711 extends RecordParser<VineConversation> {
-/* 142 */           C033711() {
+                
+       static class C03446 extends RecordParser<VineSingleNotification> {
+           C03446() {
                     }
 
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 145 */           public VineConversation parse(JsonParser parser, Bundle extras) throws IOException {
-/* 146 */               return VineParsers.access$900(parser);
+                    
+                    @Override 
+           public VineSingleNotification parse(JsonParser parser, Bundle extras) throws IOException {
+               return VineParsers.access$500(parser);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineParsers$12 */
-/* 148 */       static class C033812 extends RecordParser<VineNotificationSetting> {
-/* 149 */           C033812() {
+                
+       static class C03457 extends RecordParser<VineEverydayNotification> {
+           C03457() {
                     }
 
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // co.vine.android.api.VineParsers.RecordParser
-/* 152 */           public VineNotificationSetting parse(JsonParser parser, Bundle extras) throws IOException {
-/* 153 */               return VineParsers.access$1000(parser);
+                    
+                    @Override 
+           public VineEverydayNotification parse(JsonParser parser, Bundle extras) throws IOException {
+               return VineParsers.access$600(parser);
                     }
                 }
 
-/* 157 */       public static Object parseVineResponse(JsonParser p, int type, Bundle extras) throws IOException {
-/* 158 */           if (type == 16) {
-/* 159 */               return null;
+                
+       static class C03468 extends RecordParser<VineTag> {
+           C03468() {
                     }
-/* 161 */           if (type == 15) {
-/* 162 */               return parseServerStatus(p);
+
+
+                    
+                    @Override 
+           public VineTag parse(JsonParser parser, Bundle extras) throws IOException {
+               return VineParsers.access$700(parser);
                     }
-/* 164 */           if (type == 1) {
-/* 165 */               return parseGeneral(p);
+                }
+
+                
+       static class C03479 extends RecordParser<VineChannel> {
+           C03479() {
                     }
-/* 168 */           JsonToken t = p.nextToken();
-/* 169 */           while (t != null && t != JsonToken.END_OBJECT) {
+
+
+                    
+                    @Override 
+           public VineChannel parse(JsonParser parser, Bundle extras) throws IOException {
+               return VineParsers.access$800(parser);
+                    }
+                }
+
+                
+       static class C033610 extends RecordParser<VinePrivateMessage> {
+           C033610() {
+                    }
+
+
+                    
+                    @Override 
+           public VinePrivateMessage parse(JsonParser parser, Bundle extras) throws IOException {
+               return VineParsers.parsePrivateMessage(parser);
+                    }
+                }
+
+                
+       static class C033711 extends RecordParser<VineConversation> {
+           C033711() {
+                    }
+
+
+                    
+                    @Override 
+           public VineConversation parse(JsonParser parser, Bundle extras) throws IOException {
+               return VineParsers.access$900(parser);
+                    }
+                }
+
+                
+       static class C033812 extends RecordParser<VineNotificationSetting> {
+           C033812() {
+                    }
+
+
+                    
+                    @Override 
+           public VineNotificationSetting parse(JsonParser parser, Bundle extras) throws IOException {
+               return VineParsers.access$1000(parser);
+                    }
+                }
+
+       public static Object parseVineResponse(JsonParser p, int type, Bundle extras) throws IOException {
+           if (type == 16) {
+               return null;
+                    }
+           if (type == 15) {
+               return parseServerStatus(p);
+                    }
+           if (type == 1) {
+               return parseGeneral(p);
+                    }
+           JsonToken t = p.nextToken();
+           while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 172 */                       if (!"data".equals(p.getCurrentName())) {
+                       if (!"data".equals(p.getCurrentName())) {
                                     continue;
                                 } else {
                                     switch (type) {
                                         case 2:
-/* 175 */                                   return parseUser(p);
+                                   return parseUser(p);
                                         case 3:
-/* 178 */                                   return parsePagedData(p, USERS_PARSER, extras);
+                                   return parsePagedData(p, USERS_PARSER, extras);
                                         case 4:
                                         case 15:
                                         case 16:
@@ -297,70 +297,70 @@
                                         case 33:
                                         case 34:
                                         default:
-/* 247 */                                   p.skipChildren();
+                                   p.skipChildren();
                                             break;
                                         case 5:
-/* 184 */                                   return parseSignUp(p);
+                                   return parseSignUp(p);
                                         case 6:
-/* 187 */                                   return parsePagedData(p, COMMENT_PARSER);
+                                   return parsePagedData(p, COMMENT_PARSER);
                                         case 7:
-/* 193 */                                   return parseComment(p);
+                                   return parseComment(p);
                                         case 8:
-/* 190 */                                   return parsePagedData(p, POST_PARSER);
+                                   return parsePagedData(p, POST_PARSER);
                                         case 9:
-/* 196 */                                   return parsePagedData(p, ACTIVITY_PARSER);
+                                   return parsePagedData(p, ACTIVITY_PARSER);
                                         case 10:
-/* 202 */                                   return parseLikeId(p);
+                                   return parseLikeId(p);
                                         case 11:
-/* 205 */                                   return parsePagedData(p, LIKES_PARSER);
+                                   return parsePagedData(p, LIKES_PARSER);
                                         case 12:
-/* 208 */                                   return parseVinePostResponse(p);
+                                   return parseVinePostResponse(p);
                                         case 13:
-/* 181 */                                   return parseClientProfile(p);
+                                   return parseClientProfile(p);
                                         case 14:
-/* 214 */                                   return parsePagedData(p, TAG_PARSER);
+                                   return parsePagedData(p, TAG_PARSER);
                                         case 18:
-/* 217 */                                   return parsePagedData(p, CHANNELS_PARSER);
+                                   return parsePagedData(p, CHANNELS_PARSER);
                                         case 19:
-/* 220 */                                   return parseRepostResponse(p);
+                                   return parseRepostResponse(p);
                                         case 22:
-/* 229 */                                   return parsePagedData(p, MESSAGES_PARSER);
+                                   return parsePagedData(p, MESSAGES_PARSER);
                                         case 23:
-/* 226 */                                   return parsePrivateMessage(p);
+                                   return parsePrivateMessage(p);
                                         case 24:
-/* 211 */                                   return parsePrivateMessageResponse(p);
+                                   return parsePrivateMessageResponse(p);
                                         case 25:
-/* 223 */                                   return parsePagedData(p, CONVERSATIONS_PARSER);
+                                   return parsePagedData(p, CONVERSATIONS_PARSER);
                                         case 26:
-/* 232 */                                   return parseActivityCounts(p);
+                                   return parseActivityCounts(p);
                                         case 27:
-/* 235 */                                   return parseLoopsSubmission(p);
+                                   return parseLoopsSubmission(p);
                                         case 28:
-/* 199 */                                   return parsePagedData(p, GROUPED_ACTIVITY_PARSER);
+                                   return parsePagedData(p, GROUPED_ACTIVITY_PARSER);
                                         case 29:
-/* 238 */                                   return parseClientFlags(p);
+                                   return parseClientFlags(p);
                                         case 30:
-/* 241 */                                   return parsePagedData(p, NOTIFICATION_SETTING_PARSER);
+                                   return parsePagedData(p, NOTIFICATION_SETTING_PARSER);
                                         case 35:
-/* 244 */                                   return parseComplaintMenu(p);
+                                   return parseComplaintMenu(p);
                                     }
                                 }
                                 break;
                             case START_ARRAY:
-/* 254 */                       if ("data".equals(p.getCurrentName())) {
+                       if ("data".equals(p.getCurrentName())) {
                                     switch (type) {
                                         case 3:
-/* 257 */                                   return parseUsersArray(p, extras);
+                                   return parseUsersArray(p, extras);
                                         case 8:
-/* 258 */                                   return parseRecordArray(p, POST_PARSER, extras);
+                                   return parseRecordArray(p, POST_PARSER, extras);
                                         case 25:
-/* 259 */                                   return parseRecordArray(p, CONVERSATIONS_PARSER, extras);
+                                   return parseRecordArray(p, CONVERSATIONS_PARSER, extras);
                                         case 28:
-/* 260 */                                   return parseRecordArray(p, GROUPED_ACTIVITY_PARSER, extras);
+                                   return parseRecordArray(p, GROUPED_ACTIVITY_PARSER, extras);
                                         case 20:
-/* 261 */                                   return parseEditions(p);
+                                   return parseEditions(p);
                                         default:
-/* 263 */                                   p.skipChildren();
+                                   p.skipChildren();
                                             break;
                                     }
                                 } else {
@@ -368,424 +368,424 @@
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
-/* 270 */                       if ("data".equals(p.getCurrentName())) {
+                       if ("data".equals(p.getCurrentName())) {
                                     switch (type) {
                                         case 21:
-/* 273 */                                   return Integer.valueOf(p.getIntValue());
+                                   return Integer.valueOf(p.getIntValue());
                                     }
                                 }
                                 continue;
                         }
-/* 280 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 282 */           throw new IllegalArgumentException("Unhandled parse type " + type);
+           throw new IllegalArgumentException("Unhandled parse type " + type);
                 }
 
-/* 285 */       private static VineLoopSubmissionResponse parseLoopsSubmission(JsonParser p) throws IOException {
-/* 286 */           int submissionInterval = 0;
-/* 288 */           JsonToken t = p.nextToken();
-/* 289 */           while (t != null && t != JsonToken.END_OBJECT) {
+       private static VineLoopSubmissionResponse parseLoopsSubmission(JsonParser p) throws IOException {
+           int submissionInterval = 0;
+           JsonToken t = p.nextToken();
+           while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                             case START_ARRAY:
-/* 301 */                       p.skipChildren();
+                       p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 293 */                       String cn = p.getCurrentName();
-/* 294 */                       if ("nextAfter".equals(cn)) {
-/* 295 */                           submissionInterval = p.getIntValue();
+                       String cn = p.getCurrentName();
+                       if ("nextAfter".equals(cn)) {
+                           submissionInterval = p.getIntValue();
                                 }
                                 break;
                         }
-/* 290 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 307 */           return new VineLoopSubmissionResponse(submissionInterval);
+           return new VineLoopSubmissionResponse(submissionInterval);
                 }
 
-/* 310 */       private static Object parseEditions(JsonParser p) throws IOException {
-/* 311 */           ArrayList<Pair<String, String>> editions = new ArrayList<>();
-/* 313 */           JsonToken t = p.nextToken();
-/* 314 */           String editionId = null;
-/* 315 */           while (t != null && t != JsonToken.END_OBJECT) {
-/* 316 */               if (t == JsonToken.START_OBJECT) {
-/* 317 */                   JsonToken t2 = p.nextToken();
-/* 318 */                   while (t2 != null && t2 != JsonToken.END_OBJECT) {
-/* 319 */                       if (t2 == JsonToken.VALUE_STRING) {
-/* 320 */                           if (PARAM_EDITION_ID.equals(p.getCurrentName())) {
-/* 321 */                               editionId = p.getText();
+       private static Object parseEditions(JsonParser p) throws IOException {
+           ArrayList<Pair<String, String>> editions = new ArrayList<>();
+           JsonToken t = p.nextToken();
+           String editionId = null;
+           while (t != null && t != JsonToken.END_OBJECT) {
+               if (t == JsonToken.START_OBJECT) {
+                   JsonToken t2 = p.nextToken();
+                   while (t2 != null && t2 != JsonToken.END_OBJECT) {
+                       if (t2 == JsonToken.VALUE_STRING) {
+                           if (PARAM_EDITION_ID.equals(p.getCurrentName())) {
+                               editionId = p.getText();
                                     } else if ("name".equals(p.getCurrentName())) {
-/* 323 */                               editions.add(new Pair<>(editionId, p.getText()));
+                               editions.add(new Pair<>(editionId, p.getText()));
                                     }
                                 }
-/* 326 */                       t2 = p.nextToken();
+                       t2 = p.nextToken();
                             }
                         }
-/* 329 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 331 */           return editions;
+           return editions;
                 }
 
-/* 334 */       private static Object parseRepostResponse(JsonParser p) throws IOException {
-/* 335 */           long repostId = 0;
-/* 336 */           long postId = 0;
-/* 338 */           JsonToken t = p.nextToken();
-/* 339 */           while (t != null && t != JsonToken.END_OBJECT) {
+       private static Object parseRepostResponse(JsonParser p) throws IOException {
+           long repostId = 0;
+           long postId = 0;
+           JsonToken t = p.nextToken();
+           while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                             case START_ARRAY:
-/* 352 */                       p.skipChildren();
+                       p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 342 */                       String cn = p.getCurrentName();
-/* 343 */                       if ("repostId".equals(cn)) {
-/* 344 */                           repostId = p.getLongValue();
+                       String cn = p.getCurrentName();
+                       if ("repostId".equals(cn)) {
+                           repostId = p.getLongValue();
                                 } else if ("postId".equals(cn)) {
-/* 346 */                           postId = p.getLongValue();
+                           postId = p.getLongValue();
                                 }
                                 break;
                         }
-/* 356 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 359 */           VineRepost vr = new VineRepost();
-/* 360 */           vr.repostId = repostId;
-/* 361 */           vr.postId = postId;
-/* 362 */           return vr;
+           VineRepost vr = new VineRepost();
+           vr.repostId = repostId;
+           vr.postId = postId;
+           return vr;
                 }
 
-/* 365 */       private static VineActivityCounts parseActivityCounts(JsonParser p) throws IOException {
-/* 366 */           int messages = 0;
-/* 367 */           int notifications = 0;
-/* 369 */           JsonToken t = p.nextToken();
-/* 370 */           while (t != null && t != JsonToken.END_OBJECT) {
+       private static VineActivityCounts parseActivityCounts(JsonParser p) throws IOException {
+           int messages = 0;
+           int notifications = 0;
+           JsonToken t = p.nextToken();
+           while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case VALUE_NUMBER_INT:
-/* 373 */                       String cn = p.getCurrentName();
-/* 374 */                       if ("messages".equals(cn)) {
-/* 375 */                           messages = p.getIntValue();
+                       String cn = p.getCurrentName();
+                       if ("messages".equals(cn)) {
+                           messages = p.getIntValue();
                                 } else if ("notifications".equals(cn)) {
-/* 377 */                           notifications = p.getIntValue();
+                           notifications = p.getIntValue();
                                 }
                                 break;
                         }
-/* 382 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 385 */           VineActivityCounts result = new VineActivityCounts(messages, notifications);
-/* 386 */           return result;
+           VineActivityCounts result = new VineActivityCounts(messages, notifications);
+           return result;
                 }
 
-/* 391 */       private static <T extends Parcelable> VinePagedData<T> parsePagedData(JsonParser p, PagedDataParser<T> parser) throws IOException {
-/* 392 */           return parsePagedData(p, parser, null);
+       private static <T extends Parcelable> VinePagedData<T> parsePagedData(JsonParser p, PagedDataParser<T> parser) throws IOException {
+           return parsePagedData(p, parser, null);
                 }
 
-/* 398 */       private static <T extends Parcelable> VinePagedData<T> parsePagedData(JsonParser jsonParser, PagedDataParser<T> pagedDataParser, Bundle bundle) throws IOException {
-/* 399 */           VinePagedData<T> vinePagedData = new VinePagedData<>();
-/* 400 */           vinePagedData.items = new ArrayList<>();
-/* 401 */           int i = 1;
-/* 403 */           RecordParser<T> recordParser = null;
-/* 404 */           RecordListParser<T> recordListParser = null;
-/* 406 */           if (pagedDataParser instanceof RecordListParser) {
-/* 407 */               recordListParser = (RecordListParser) pagedDataParser;
+       private static <T extends Parcelable> VinePagedData<T> parsePagedData(JsonParser jsonParser, PagedDataParser<T> pagedDataParser, Bundle bundle) throws IOException {
+           VinePagedData<T> vinePagedData = new VinePagedData<>();
+           vinePagedData.items = new ArrayList<>();
+           int i = 1;
+           RecordParser<T> recordParser = null;
+           RecordListParser<T> recordListParser = null;
+           if (pagedDataParser instanceof RecordListParser) {
+               recordListParser = (RecordListParser) pagedDataParser;
                     } else {
-/* 409 */               recordParser = (RecordParser) pagedDataParser;
+               recordParser = (RecordParser) pagedDataParser;
                     }
-/* 412 */           JsonToken jsonTokenNextToken = jsonParser.nextToken();
-/* 413 */           while (jsonTokenNextToken != null && jsonTokenNextToken != JsonToken.END_OBJECT) {
+           JsonToken jsonTokenNextToken = jsonParser.nextToken();
+           while (jsonTokenNextToken != null && jsonTokenNextToken != JsonToken.END_OBJECT) {
                         switch (jsonTokenNextToken) {
                             case START_OBJECT:
-/* 416 */                       if ("channel".equals(jsonParser.getCurrentName())) {
-/* 417 */                           vinePagedData.channel = parseChannel(jsonParser);
+                       if ("channel".equals(jsonParser.getCurrentName())) {
+                           vinePagedData.channel = parseChannel(jsonParser);
                                 } else {
-/* 419 */                           jsonParser.skipChildren();
+                           jsonParser.skipChildren();
                                 }
                                 break;
                             case START_ARRAY:
-/* 458 */                       if (PARAM_RECORDS.equals(jsonParser.getCurrentName())) {
-/* 459 */                           if (recordListParser != null) {
-/* 460 */                               vinePagedData.items.addAll(recordListParser.parse(jsonParser, bundle));
+                       if (PARAM_RECORDS.equals(jsonParser.getCurrentName())) {
+                           if (recordListParser != null) {
+                               vinePagedData.items.addAll(recordListParser.parse(jsonParser, bundle));
                                     } else {
-/* 462 */                               if (recordParser == null) {
-/* 463 */                                   throw new RuntimeException("Invalid parser.");
+                               if (recordParser == null) {
+                                   throw new RuntimeException("Invalid parser.");
                                         }
-/* 465 */                               JsonToken jsonTokenNextToken2 = jsonParser.nextToken();
+                               JsonToken jsonTokenNextToken2 = jsonParser.nextToken();
                                 int recordIndex = 0;
-/* 466 */                               while (jsonTokenNextToken2 != null && jsonTokenNextToken2 != JsonToken.END_ARRAY) {
-/* 467 */                                   T t = pagedDataParser == POST_PARSER ? (T) parseFeedPost(jsonParser) : recordParser.parse(jsonParser, bundle);
-/* 468 */                                   if (t != null) {
-/* 469 */                                       vinePagedData.items.add(t);
+                               while (jsonTokenNextToken2 != null && jsonTokenNextToken2 != JsonToken.END_ARRAY) {
+                                   T t = pagedDataParser == POST_PARSER ? (T) parseFeedPost(jsonParser) : recordParser.parse(jsonParser, bundle);
+                                   if (t != null) {
+                                       vinePagedData.items.add(t);
                                         }
                                     recordIndex++;
-/* 471 */                                   jsonTokenNextToken2 = jsonParser.nextToken();
+                                   jsonTokenNextToken2 = jsonParser.nextToken();
                                         }
                                     }
                                 }
-/* 475 */                       if ("users".equals(jsonParser.getCurrentName())) {
-/* 476 */                           JsonToken jsonTokenNextToken3 = jsonParser.nextToken();
-/* 477 */                           if (vinePagedData.participants == null) {
-/* 478 */                               vinePagedData.participants = new ArrayList<>();
+                       if ("users".equals(jsonParser.getCurrentName())) {
+                           JsonToken jsonTokenNextToken3 = jsonParser.nextToken();
+                           if (vinePagedData.participants == null) {
+                               vinePagedData.participants = new ArrayList<>();
                                     }
-/* 480 */                           while (jsonTokenNextToken3 != null && jsonTokenNextToken3 != JsonToken.END_ARRAY) {
-/* 481 */                               VineUser vineUser = USER_PARSER.parse(jsonParser, null);
-/* 482 */                               if (vineUser != null) {
-/* 483 */                                   vinePagedData.participants.add(vineUser);
+                           while (jsonTokenNextToken3 != null && jsonTokenNextToken3 != JsonToken.END_ARRAY) {
+                               VineUser vineUser = USER_PARSER.parse(jsonParser, null);
+                               if (vineUser != null) {
+                                   vinePagedData.participants.add(vineUser);
                                         }
-/* 485 */                               jsonTokenNextToken3 = jsonParser.nextToken();
+                               jsonTokenNextToken3 = jsonParser.nextToken();
                                     }
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
-/* 435 */                       String currentName = jsonParser.getCurrentName();
-/* 436 */                       if ("count".equals(currentName)) {
-/* 437 */                           vinePagedData.count = jsonParser.getIntValue();
+                       String currentName = jsonParser.getCurrentName();
+                       if ("count".equals(currentName)) {
+                           vinePagedData.count = jsonParser.getIntValue();
                                 } else if ("nextPage".equals(currentName)) {
-/* 439 */                           vinePagedData.nextPage = jsonParser.getIntValue();
+                           vinePagedData.nextPage = jsonParser.getIntValue();
                                 } else if ("previousPage".equals(currentName)) {
-/* 441 */                           vinePagedData.previousPage = jsonParser.getIntValue();
+                           vinePagedData.previousPage = jsonParser.getIntValue();
                                 } else if (VineService.EXTRA_SIZE.equals(currentName)) {
-/* 443 */                           vinePagedData.size = jsonParser.getIntValue();
+                           vinePagedData.size = jsonParser.getIntValue();
                                 } else if ("anchor".equals(currentName)) {
-/* 445 */                           vinePagedData.anchor = jsonParser.getLongValue();
+                           vinePagedData.anchor = jsonParser.getLongValue();
                                 } else if ("title".equals(currentName)) {
-/* 447 */                           vinePagedData.title = jsonParser.getText();
+                           vinePagedData.title = jsonParser.getText();
                                 } else if ("unreadMessageCount".equals(currentName)) {
-/* 449 */                           vinePagedData.unreadMessageCount = jsonParser.getLongValue();
+                           vinePagedData.unreadMessageCount = jsonParser.getLongValue();
                                 } else if ("lastMessageRead".equals(currentName)) {
-/* 451 */                           vinePagedData.lastMessageRead = jsonParser.getLongValue();
+                           vinePagedData.lastMessageRead = jsonParser.getLongValue();
                                 } else if ("lastMessage".equals(currentName)) {
-/* 453 */                           vinePagedData.lastMessage = jsonParser.getLongValue();
+                           vinePagedData.lastMessage = jsonParser.getLongValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 425 */                       if ("anchor".equals(jsonParser.getCurrentName())) {
-/* 426 */                           vinePagedData.stringAnchor = jsonParser.getText();
+                       if ("anchor".equals(jsonParser.getCurrentName())) {
+                           vinePagedData.stringAnchor = jsonParser.getText();
                                 } else if ("inbox".equals(jsonParser.getCurrentName()) && CommonUtil.FIELD_TYPE_OTHER.equals(jsonParser.getValueAsString())) {
-/* 429 */                           i = 2;
+                           i = 2;
                                 }
                                 break;
                         }
-/* 491 */               jsonTokenNextToken = jsonParser.nextToken();
+               jsonTokenNextToken = jsonParser.nextToken();
                     }
-/* 494 */           vinePagedData.networkType = i;
-/* 495 */           return vinePagedData;
+           vinePagedData.networkType = i;
+           return vinePagedData;
                 }
 
-/* 497 */      private static <T extends Parcelable> VinePagedData<T> parseRecordArray(JsonParser parser, RecordParser<T> recordParser, Bundle extras) throws IOException {
-/* 498 */          VinePagedData<T> result = new VinePagedData<>();
-/* 499 */          result.items = new ArrayList<>();
-/* 500 */          JsonToken token = parser.nextToken();
-/* 501 */          while (token != null && token != JsonToken.END_ARRAY) {
-/* 502 */              T item = recordParser.parse(parser, extras);
-/* 503 */              if (item != null) {
-/* 504 */                  result.items.add(item);
+      private static <T extends Parcelable> VinePagedData<T> parseRecordArray(JsonParser parser, RecordParser<T> recordParser, Bundle extras) throws IOException {
+          VinePagedData<T> result = new VinePagedData<>();
+          result.items = new ArrayList<>();
+          JsonToken token = parser.nextToken();
+          while (token != null && token != JsonToken.END_ARRAY) {
+              T item = recordParser.parse(parser, extras);
+              if (item != null) {
+                  result.items.add(item);
                     }
-/* 506 */              token = parser.nextToken();
+              token = parser.nextToken();
                 }
-/* 508 */          result.count = result.items.size();
-/* 509 */          result.size = result.items.size();
-/* 510 */          return result;
+          result.count = result.items.size();
+          result.size = result.items.size();
+          return result;
             }
 
-/* 499 */       private static VineLike parseLike(JsonParser p) throws IOException {
-/* 500 */           VineLike vineLike = new VineLike();
-/* 501 */           JsonToken t = p.nextToken();
-/* 502 */           int following = -1;
-/* 503 */           int blocked = 0;
-/* 505 */           while (t != null && t != JsonToken.END_OBJECT) {
+       private static VineLike parseLike(JsonParser p) throws IOException {
+           VineLike vineLike = new VineLike();
+           JsonToken t = p.nextToken();
+           int following = -1;
+           int blocked = 0;
+           while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 508 */                       if ("user".equals(p.getCurrentName())) {
-/* 509 */                           vineLike.user = parseUser(p);
+                       if ("user".equals(p.getCurrentName())) {
+                           vineLike.user = parseUser(p);
                                 }
                                 break;
                             case START_ARRAY:
-/* 514 */                       p.skipChildren();
+                       p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 531 */                       String cn = p.getCurrentName();
-/* 532 */                       if ("likeId".equals(cn)) {
-/* 533 */                           vineLike.likeId = p.getLongValue();
+                       String cn = p.getCurrentName();
+                       if ("likeId".equals(cn)) {
+                           vineLike.likeId = p.getLongValue();
                                 } else if ("userId".equals(cn)) {
-/* 535 */                           vineLike.userId = p.getLongValue();
+                           vineLike.userId = p.getLongValue();
                                 } else if ("verified".equals(cn)) {
-/* 537 */                           vineLike.verified = p.getIntValue();
+                           vineLike.verified = p.getIntValue();
                                 } else if ("following".equals(cn)) {
-/* 539 */                           following = p.getIntValue();
+                           following = p.getIntValue();
                                 } else if ("blocked".equals(cn)) {
-/* 541 */                           blocked = p.getIntValue();
+                           blocked = p.getIntValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 518 */                       String cn2 = p.getCurrentName();
-/* 519 */                       if ("created".equals(cn2)) {
-/* 520 */                           vineLike.created = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+                       String cn2 = p.getCurrentName();
+                       if ("created".equals(cn2)) {
+                           vineLike.created = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
                                 } else if ("location".equals(cn2)) {
-/* 522 */                           vineLike.location = p.getText();
+                           vineLike.location = p.getText();
                                 } else if ("avatarUrl".equals(cn2)) {
-/* 524 */                           vineLike.avatarUrl = p.getText();
+                           vineLike.avatarUrl = p.getText();
                                 } else if ("username".equals(cn2)) {
-/* 526 */                           vineLike.username = p.getText();
+                           vineLike.username = p.getText();
                                 }
                                 break;
                         }
-/* 550 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 553 */           if (vineLike.user != null) {
-/* 554 */               vineLike.user.following = following;
-/* 555 */               vineLike.user.blocked = blocked;
+           if (vineLike.user != null) {
+               vineLike.user.following = following;
+               vineLike.user.blocked = blocked;
                     }
-/* 558 */           return vineLike;
+           return vineLike;
                 }
 
-/* 561 */       private static VineByline parseByline(JsonParser p) throws IOException {
-/* 562 */           String iconUrl = null;
-/* 563 */           String body = null;
-/* 564 */           ArrayList<VineEntity> entities = new ArrayList<>();
-/* 566 */           JsonToken t = p.nextToken();
-/* 568 */           while (t != null && t != JsonToken.END_OBJECT) {
+       private static VineByline parseByline(JsonParser p) throws IOException {
+           String iconUrl = null;
+           String body = null;
+           ArrayList<VineEntity> entities = new ArrayList<>();
+           JsonToken t = p.nextToken();
+           while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 571 */                       p.skipChildren();
+                       p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 575 */                       if ("entities".equals(p.getCurrentName())) {
-/* 576 */                           JsonToken t2 = p.nextToken();
-/* 577 */                           while (t2 != null && t2 != JsonToken.END_ARRAY) {
-/* 578 */                               VineEntity entity = parseEntity(p);
-/* 579 */                               if (entity != null) {
-/* 580 */                                   entities.add(entity);
+                       if ("entities".equals(p.getCurrentName())) {
+                           JsonToken t2 = p.nextToken();
+                           while (t2 != null && t2 != JsonToken.END_ARRAY) {
+                               VineEntity entity = parseEntity(p);
+                               if (entity != null) {
+                                   entities.add(entity);
                                         }
-/* 582 */                               t2 = p.nextToken();
+                               t2 = p.nextToken();
                                     }
-/* 584 */                           Util.validateAndFixEntities(entities);
+                           Util.validateAndFixEntities(entities);
                                 }
                                 break;
                             case VALUE_STRING:
-/* 589 */                       String cn = p.getCurrentName();
-/* 590 */                       if ("iconUrl".equals(cn)) {
-/* 591 */                           iconUrl = p.getText();
+                       String cn = p.getCurrentName();
+                       if ("iconUrl".equals(cn)) {
+                           iconUrl = p.getText();
                                 } else if ("body".equals(cn)) {
-/* 593 */                           body = p.getText();
+                           body = p.getText();
                                 }
                                 break;
                         }
-/* 598 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 601 */           return new VineByline(body, iconUrl, entities);
+           return new VineByline(body, iconUrl, entities);
                 }
 
-/* 604 */       private static VineRepost parseRepost(JsonParser p) throws IOException {
-/* 605 */           String username = null;
-/* 606 */           String avatarUrl = null;
-/* 607 */           String location = null;
-/* 608 */           String description = null;
-/* 609 */           long userId = 0;
-/* 610 */           long postId = 0;
-/* 611 */           long repostId = 0;
-/* 612 */           int verified = 0;
-/* 613 */           int priv = 0;
-/* 614 */           int unflaggable = 0;
-/* 616 */           JsonToken t = p.nextToken();
-/* 618 */           while (t != null && t != JsonToken.END_OBJECT) {
+       private static VineRepost parseRepost(JsonParser p) throws IOException {
+           String username = null;
+           String avatarUrl = null;
+           String location = null;
+           String description = null;
+           long userId = 0;
+           long postId = 0;
+           long repostId = 0;
+           int verified = 0;
+           int priv = 0;
+           int unflaggable = 0;
+           JsonToken t = p.nextToken();
+           while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 621 */                       if ("user".equals(p.getCurrentName())) {
-/* 622 */                           JsonToken t2 = p.nextToken();
-/* 623 */                           while (t2 != null && t2 != JsonToken.END_OBJECT) {
+                       if ("user".equals(p.getCurrentName())) {
+                           JsonToken t2 = p.nextToken();
+                           while (t2 != null && t2 != JsonToken.END_OBJECT) {
                                         switch (t2) {
                                             case START_OBJECT:
                                             case START_ARRAY:
-/* 653 */                                       p.skipChildren();
+                                       p.skipChildren();
                                                 break;
                                             case VALUE_NUMBER_INT:
-/* 639 */                                       String cn = p.getCurrentName();
-/* 640 */                                       if ("verified".equals(cn)) {
-/* 641 */                                           verified = p.getIntValue();
+                                       String cn = p.getCurrentName();
+                                       if ("verified".equals(cn)) {
+                                           verified = p.getIntValue();
                                                 } else if ("private".equals(cn)) {
-/* 643 */                                           priv = p.getIntValue();
+                                           priv = p.getIntValue();
                                                 } else if ("unflaggable".equals(cn)) {
-/* 645 */                                           unflaggable = p.getIntValue();
+                                           unflaggable = p.getIntValue();
                                                 } else if ("userId".equals(cn)) {
-/* 647 */                                           userId = p.getLongValue();
+                                           userId = p.getLongValue();
                                                 }
                                                 break;
                                             case VALUE_STRING:
-/* 626 */                                       String cn2 = p.getCurrentName();
-/* 627 */                                       if ("description".equals(cn2)) {
-/* 628 */                                           description = p.getText();
+                                       String cn2 = p.getCurrentName();
+                                       if ("description".equals(cn2)) {
+                                           description = p.getText();
                                                 } else if ("avatarUrl".equals(cn2)) {
-/* 630 */                                           avatarUrl = p.getText();
+                                           avatarUrl = p.getText();
                                                 } else if ("location".equals(cn2)) {
-/* 632 */                                           location = p.getText();
+                                           location = p.getText();
                                                 } else if ("username".equals(cn2)) {
-/* 634 */                                           username = p.getText();
+                                           username = p.getText();
                                                 }
                                                 break;
                                         }
-/* 657 */                               t2 = p.nextToken();
+                               t2 = p.nextToken();
                                     }
                                 } else {
-/* 660 */                           p.skipChildren();
+                           p.skipChildren();
                                 }
                                 break;
                             case START_ARRAY:
-/* 674 */                       p.skipChildren();
+                       p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 665 */                       String cn3 = p.getCurrentName();
-/* 666 */                       if ("repostId".equals(cn3)) {
-/* 667 */                           repostId = p.getLongValue();
+                       String cn3 = p.getCurrentName();
+                       if ("repostId".equals(cn3)) {
+                           repostId = p.getLongValue();
                                 } else if ("postId".equals(cn3)) {
-/* 669 */                           postId = p.getLongValue();
+                           postId = p.getLongValue();
                                 }
                                 break;
                         }
-/* 677 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 680 */           return new VineRepost(username, avatarUrl, location, description, userId, postId, repostId, verified, priv, unflaggable);
+           return new VineRepost(username, avatarUrl, location, description, userId, postId, repostId, verified, priv, unflaggable);
                 }
 
-/* 685 */       private static VinePost parsePost(JsonParser p) throws IOException {
-/* 686 */           VinePost vinePost = new VinePost();
-/* 687 */           String address = null;
-/* 688 */           String categoryIconUrl = null;
-/* 689 */           String categoryId = null;
-/* 690 */           String categoryShortName = null;
-/* 691 */           String city = null;
-/* 692 */           String countryCode = null;
-/* 693 */           String venueName = null;
-/* 694 */           String state = null;
-/* 695 */           String videoWebmUrl = null;
-/* 696 */           JsonToken t = p.nextToken();
-/* 697 */           boolean explicitContent = false;
-/* 698 */           boolean verified = false;
-/* 699 */           boolean liked = false;
-/* 700 */           boolean revined = false;
-/* 701 */           boolean promoted = false;
-/* 702 */           boolean postVerified = false;
-/* 703 */           boolean priv = false;
-/* 704 */           long loops = 0;
-/* 705 */           double velocity = 0.0d;
-/* 706 */           boolean onFire = false;
-/* 707 */           VineByline byline = null;
-/* 708 */           boolean following = false;
-/* 710 */           while (t != null && t != JsonToken.END_OBJECT) {
+       private static VinePost parsePost(JsonParser p) throws IOException {
+           VinePost vinePost = new VinePost();
+           String address = null;
+           String categoryIconUrl = null;
+           String categoryId = null;
+           String categoryShortName = null;
+           String city = null;
+           String countryCode = null;
+           String venueName = null;
+           String state = null;
+           String videoWebmUrl = null;
+           JsonToken t = p.nextToken();
+           boolean explicitContent = false;
+           boolean verified = false;
+           boolean liked = false;
+           boolean revined = false;
+           boolean promoted = false;
+           boolean postVerified = false;
+           boolean priv = false;
+           long loops = 0;
+           double velocity = 0.0d;
+           boolean onFire = false;
+           VineByline byline = null;
+           boolean following = false;
+           while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 713 */                       String cn = p.getCurrentName();
-/* 714 */                       if ("comments".equals(cn)) {
-/* 715 */                           vinePost.comments = parsePagedData(p, COMMENT_PARSER);
+                       String cn = p.getCurrentName();
+                       if ("comments".equals(cn)) {
+                           vinePost.comments = parsePagedData(p, COMMENT_PARSER);
                         } else if ("likes".equals(cn)) {
-/* 717 */                           vinePost.likes = parsePagedData(p, LIKES_PARSER);
+                           vinePost.likes = parsePagedData(p, LIKES_PARSER);
                                 } else if ("loops".equals(cn)) {
-/* 719 */                           JsonToken t2 = p.nextToken();
-/* 720 */                           while (t2 != null && t2 != JsonToken.END_OBJECT) {
+                           JsonToken t2 = p.nextToken();
+                           while (t2 != null && t2 != JsonToken.END_OBJECT) {
                                         switch (t2) {
                                             case START_OBJECT:
                                             case START_ARRAY:
-/* 724 */                                       p.skipChildren();
+                                       p.skipChildren();
                                                 break;
                                             case VALUE_NUMBER_INT:
-/* 736 */                                       if ("onFire".equals(p.getCurrentName())) {
-/* 737 */                                           if (p.getIntValue() != 1) {
+                                       if ("onFire".equals(p.getCurrentName())) {
+                                           if (p.getIntValue() != 1) {
                                                         onFire = false;
                                                     } else {
                                                         onFire = true;
@@ -794,99 +794,99 @@
                                                 break;
                                             case VALUE_TRUE:
                                             case VALUE_FALSE:
-/* 743 */                                       if ("onFire".equals(p.getCurrentName())) {
-/* 744 */                                           onFire = p.getBooleanValue();
+                                       if ("onFire".equals(p.getCurrentName())) {
+                                           onFire = p.getBooleanValue();
                                                 }
                                                 break;
                                             case VALUE_NUMBER_FLOAT:
-/* 728 */                                       if ("count".equals(p.getCurrentName())) {
-/* 729 */                                           loops = (long) p.getDoubleValue();
+                                       if ("count".equals(p.getCurrentName())) {
+                                           loops = (long) p.getDoubleValue();
                                                 } else if (Vine.PostColumns.VELOCITY.equals(p.getCurrentName())) {
-/* 731 */                                           velocity = p.getDoubleValue();
+                                           velocity = p.getDoubleValue();
                                                 }
                                                 break;
                                         }
-/* 749 */                               t2 = p.nextToken();
+                               t2 = p.nextToken();
                                     }
                         } else if ("user".equals(cn)) {
-/* 752 */                           vinePost.user = parseUser(p);
-/* 753 */                           vinePost.userBackgroundColor = vinePost.user.profileBackground;
+                           vinePost.user = parseUser(p);
+                           vinePost.userBackgroundColor = vinePost.user.profileBackground;
                         } else if ("repost".equals(cn)) {
-/* 755 */                           vinePost.repost = parseRepost(p);
+                           vinePost.repost = parseRepost(p);
                                 } else if (VineAPI.RESOURCE_REPOSTS.equals(cn)) {
-/* 757 */                           JsonToken t3 = p.nextToken();
-/* 758 */                           while (t3 != null && t3 != JsonToken.END_OBJECT) {
+                           JsonToken t3 = p.nextToken();
+                           while (t3 != null && t3 != JsonToken.END_OBJECT) {
                                         switch (t3) {
                                             case START_OBJECT:
                                             case START_ARRAY:
-/* 765 */                                       p.skipChildren();
+                                       p.skipChildren();
                                                 break;
                                             case VALUE_NUMBER_INT:
-/* 769 */                                       if ("count".equals(p.getCurrentName())) {
-/* 770 */                                           vinePost.revinersCount = p.getIntValue();
+                                       if ("count".equals(p.getCurrentName())) {
+                                           vinePost.revinersCount = p.getIntValue();
                                                 }
                                                 break;
                                         }
-/* 775 */                               t3 = p.nextToken();
+                               t3 = p.nextToken();
                                     }
                         } else if ("byline".equals(cn)) {
-/* 778 */                           byline = parseByline(p);
+                           byline = parseByline(p);
                                 } else {
-/* 780 */                           p.skipChildren();
+                           p.skipChildren();
                                 }
                                 break;
                             case START_ARRAY:
-/* 785 */                       String cn2 = p.getCurrentName();
-/* 786 */                       if ("tags".equals(cn2)) {
-/* 787 */                           vinePost.tags = parseTags(p);
+                       String cn2 = p.getCurrentName();
+                       if ("tags".equals(cn2)) {
+                           vinePost.tags = parseTags(p);
                                 } else if ("entities".equals(cn2)) {
-/* 789 */                           JsonToken t4 = p.nextToken();
-/* 790 */                           ArrayList<VineEntity> entities = null;
-/* 791 */                           while (t4 != null && t4 != JsonToken.END_ARRAY) {
-/* 792 */                               VineEntity entity = parseEntity(p);
-/* 793 */                               if (entities == null) {
-/* 794 */                                   entities = new ArrayList<>();
+                           JsonToken t4 = p.nextToken();
+                           ArrayList<VineEntity> entities = null;
+                           while (t4 != null && t4 != JsonToken.END_ARRAY) {
+                               VineEntity entity = parseEntity(p);
+                               if (entities == null) {
+                                   entities = new ArrayList<>();
                                         }
-/* 796 */                               if (entity != null) {
-/* 797 */                                   entities.add(entity);
+                               if (entity != null) {
+                                   entities.add(entity);
                                         }
-/* 799 */                               t4 = p.nextToken();
+                               t4 = p.nextToken();
                                     }
-/* 801 */                           if (entities != null) {
-/* 802 */                               Util.validateAndFixEntities(entities);
-/* 803 */                               vinePost.entities = entities;
+                           if (entities != null) {
+                               Util.validateAndFixEntities(entities);
+                               vinePost.entities = entities;
                                     }
                                 } else if ("videoUrls".equals(cn2)) {
-/* 806 */                           vinePost.setUpUrls(parseVideoUrls(p));
+                           vinePost.setUpUrls(parseVideoUrls(p));
                                 } else {
-/* 808 */                           p.skipChildren();
+                           p.skipChildren();
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
-/* 859 */                       String cn3 = p.getCurrentName();
-/* 860 */                       if ("explicitContent".equals(cn3)) {
-/* 861 */                           explicitContent = p.getIntValue() == 1;
+                       String cn3 = p.getCurrentName();
+                       if ("explicitContent".equals(cn3)) {
+                           explicitContent = p.getIntValue() == 1;
                                 } else if ("postFlags".equals(cn3)) {
-/* 863 */                           vinePost.postFlags = p.getIntValue();
+                           vinePost.postFlags = p.getIntValue();
                                 } else if ("postVerified".equals(cn3)) {
-/* 865 */                           postVerified = p.getIntValue() == 1;
+                           postVerified = p.getIntValue() == 1;
                                 } else if ("promoted".equals(cn3)) {
-/* 867 */                           promoted = p.getIntValue() == 1;
+                           promoted = p.getIntValue() == 1;
                                 } else if ("verified".equals(cn3)) {
-/* 869 */                           verified = p.getIntValue() == 1;
+                           verified = p.getIntValue() == 1;
                                 } else if ("postId".equals(cn3)) {
-/* 871 */                           vinePost.postId = p.getLongValue();
+                           vinePost.postId = p.getLongValue();
                                 } else if ("userId".equals(cn3)) {
-/* 873 */                           vinePost.userId = p.getLongValue();
+                           vinePost.userId = p.getLongValue();
                                 } else if ("myRepostId".equals(cn3)) {
-/* 875 */                           vinePost.myRepostId = p.getLongValue();
+                           vinePost.myRepostId = p.getLongValue();
                                     if (vinePost.myRepostId > 0) {
-/* 877 */                               revined = true;
+                               revined = true;
                                     }
                                 } else if (!"private".equals(cn3)) {
-/* 881 */                           if (!VineEverydayNotification.TYPE_LIKED.equals(cn3)) {
-/* 883 */                               if ("following".equals(cn3)) {
-/* 884 */                                   if (p.getIntValue() != 1) {
+                           if (!VineEverydayNotification.TYPE_LIKED.equals(cn3)) {
+                               if ("following".equals(cn3)) {
+                                   if (p.getIntValue() != 1) {
                                                 following = false;
                                             } else {
                                                 following = true;
@@ -904,92 +904,92 @@
                                 }
                                 break;
                             case VALUE_STRING:
-/* 813 */                       String cn4 = p.getCurrentName();
-/* 814 */                       if ("foursquareVenueId".equals(cn4)) {
-/* 815 */                           vinePost.foursquareVenueId = p.getText();
+                       String cn4 = p.getCurrentName();
+                       if ("foursquareVenueId".equals(cn4)) {
+                           vinePost.foursquareVenueId = p.getText();
                                 } else if ("description".equals(cn4)) {
-/* 817 */                           vinePost.description = p.getText();
+                           vinePost.description = p.getText();
                                 } else if ("created".equals(cn4)) {
-/* 819 */                           vinePost.created = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+                           vinePost.created = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
                                 } else if ("location".equals(cn4)) {
-/* 821 */                           vinePost.location = p.getText();
+                           vinePost.location = p.getText();
                                 } else if ("avatarUrl".equals(cn4)) {
-/* 823 */                           vinePost.avatarUrl = p.getText();
+                           vinePost.avatarUrl = p.getText();
                                 } else if ("videoLowURL".equals(cn4)) {
-/* 825 */                           vinePost.videoLowUrl = p.getText();
+                           vinePost.videoLowUrl = p.getText();
                                 } else if ("videoUrl".equals(cn4)) {
-/* 827 */                           vinePost.videoUrl = p.getText();
+                           vinePost.videoUrl = p.getText();
                                 } else if ("videoWebmUrl".equals(cn4)) {
-/* 829 */                           videoWebmUrl = p.getText();
+                           videoWebmUrl = p.getText();
                                 } else if ("username".equals(cn4)) {
-/* 831 */                           vinePost.username = p.getText();
+                           vinePost.username = p.getText();
                                 } else if ("shareUrl".equals(cn4)) {
-/* 833 */                           vinePost.shareUrl = p.getText();
+                           vinePost.shareUrl = p.getText();
                                 } else if (PlusShare.KEY_CONTENT_DEEP_LINK_METADATA_THUMBNAIL_URL.equals(cn4)) {
-/* 835 */                           vinePost.thumbnailUrl = p.getText();
+                           vinePost.thumbnailUrl = p.getText();
                                 } else if ("venueAddress".equals(cn4)) {
-/* 837 */                           address = p.getText();
+                           address = p.getText();
                                 } else if ("venueCategoryIconUrl".equals(cn4)) {
-/* 839 */                           categoryIconUrl = p.getText();
+                           categoryIconUrl = p.getText();
                                 } else if ("venueCategoryId".equals(cn4)) {
-/* 841 */                           categoryId = p.getText();
+                           categoryId = p.getText();
                                 } else if ("venueCategoryShortName".equals(cn4)) {
-/* 843 */                           categoryShortName = p.getText();
+                           categoryShortName = p.getText();
                                 } else if ("venueCity".equals(cn4)) {
-/* 845 */                           city = p.getText();
+                           city = p.getText();
                                 } else if ("venueCountryCode".equals(cn4)) {
-/* 847 */                           countryCode = p.getText();
+                           countryCode = p.getText();
                                 } else if ("venueName".equals(cn4)) {
-/* 849 */                           venueName = p.getText();
+                           venueName = p.getText();
                                 } else if ("state".equals(cn4)) {
-/* 851 */                           state = p.getText();
+                           state = p.getText();
                                 } else if (VineAPI.RESOURCE_PROFILE_BACKGROUND.equals(cn4)) {
-/* 853 */                           vinePost.userBackgroundColor = (int) Long.parseLong(p.getText().substring(2), 16);
+                           vinePost.userBackgroundColor = (int) Long.parseLong(p.getText().substring(2), 16);
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
-/* 890 */                       String cn5 = p.getCurrentName();
-/* 891 */                       if (VineEverydayNotification.TYPE_LIKED.equals(cn5)) {
-/* 892 */                           liked = p.getBooleanValue();
+                       String cn5 = p.getCurrentName();
+                       if (VineEverydayNotification.TYPE_LIKED.equals(cn5)) {
+                           liked = p.getBooleanValue();
                                 } else if ("revined".equals(cn5)) {
-/* 894 */                           revined = p.getBooleanValue();
+                           revined = p.getBooleanValue();
                                 }
                                 break;
                         }
-/* 899 */               t = p.nextToken();
+               t = p.nextToken();
                     }
-/* 902 */           if (TextUtils.isEmpty(vinePost.videoUrl) && videoWebmUrl != null) {
-/* 903 */               vinePost.videoUrl = videoWebmUrl;
+           if (TextUtils.isEmpty(vinePost.videoUrl) && videoWebmUrl != null) {
+               vinePost.videoUrl = videoWebmUrl;
                     }
-/* 906 */           if (vinePost.foursquareVenueId != null) {
-/* 907 */               vinePost.venueData = new VineVenue(categoryIconUrl, categoryShortName, categoryId, city, countryCode, venueName, state, address);
+           if (vinePost.foursquareVenueId != null) {
+               vinePost.venueData = new VineVenue(categoryIconUrl, categoryShortName, categoryId, city, countryCode, venueName, state, address);
                     }
-/* 911 */           vinePost.setFlagExplicit(explicitContent);
-/* 912 */           vinePost.setFlagVerified(verified);
-/* 913 */           vinePost.setFlagRevined(revined);
-/* 914 */           vinePost.setFlagLiked(liked);
-/* 915 */           vinePost.setFlagPromoted(promoted);
-/* 916 */           vinePost.setFlagPostVerified(postVerified);
-/* 917 */           vinePost.setFlagPrivate(priv);
-/* 919 */           vinePost.likesCount = vinePost.likes != null ? vinePost.likes.count : 0;
-/* 920 */           vinePost.commentsCount = vinePost.comments != null ? vinePost.comments.count : 0;
-/* 921 */           vinePost.loops = loops;
-/* 922 */           vinePost.lastRefresh = System.currentTimeMillis();
-/* 923 */           vinePost.velocity = velocity;
-/* 924 */           vinePost.onFire = onFire;
-/* 925 */           vinePost.byline = byline;
-/* 926 */           vinePost.following = following;
+           vinePost.setFlagExplicit(explicitContent);
+           vinePost.setFlagVerified(verified);
+           vinePost.setFlagRevined(revined);
+           vinePost.setFlagLiked(liked);
+           vinePost.setFlagPromoted(promoted);
+           vinePost.setFlagPostVerified(postVerified);
+           vinePost.setFlagPrivate(priv);
+           vinePost.likesCount = vinePost.likes != null ? vinePost.likes.count : 0;
+           vinePost.commentsCount = vinePost.comments != null ? vinePost.comments.count : 0;
+           vinePost.loops = loops;
+           vinePost.lastRefresh = System.currentTimeMillis();
+           vinePost.velocity = velocity;
+           vinePost.onFire = onFire;
+           vinePost.byline = byline;
+           vinePost.following = following;
                     vinePost.originalFollowingState = following;
-/* 928 */           return vinePost;
+           return vinePost;
                 }
 
-                /**
-                 * The reconstructed full post parser can loop forever on some revival-feed
-                 * records because their nested likes/comments objects do not match the old
-                 * Vine schema. The feed card only needs the bounded top-level fields below.
-                 */
-/* 930 */      private static VinePost parseFeedPost(JsonParser p) throws IOException {
+                
+
+
+
+
+      private static VinePost parseFeedPost(JsonParser p) throws IOException {
                     VinePost post = new VinePost();
                     VinePagedData<VineComment> comments = new VinePagedData<>();
                     VinePagedData<VineLike> likes = new VinePagedData<>();
@@ -1091,118 +1091,118 @@
                     return count;
                 }
 
-/* 931 */       private static List<VineVideoUrlTier> parseVideoUrls(JsonParser p) throws IOException {
-/* 932 */           ArrayList<VineVideoUrlTier> urls = new ArrayList<>();
-/* 933 */           JsonToken t = p.getCurrentToken();
-/* 934 */           while (t != null && t != JsonToken.END_ARRAY) {
-/* 935 */               t = p.nextToken();
-/* 936 */               if (t == JsonToken.START_OBJECT) {
-/* 937 */                   String url = null;
-/* 938 */                   float rate = 0.0f;
-/* 939 */                   String format = null;
-/* 941 */                   t = p.nextToken();
-/* 942 */                   while (t != null && t != JsonToken.END_OBJECT) {
-/* 943 */                       String currentName = p.getCurrentName();
-/* 944 */                       if (t == JsonToken.VALUE_STRING) {
-/* 945 */                           if ("videoUrl".equals(currentName)) {
-/* 946 */                               url = p.getText();
+       private static List<VineVideoUrlTier> parseVideoUrls(JsonParser p) throws IOException {
+           ArrayList<VineVideoUrlTier> urls = new ArrayList<>();
+           JsonToken t = p.getCurrentToken();
+           while (t != null && t != JsonToken.END_ARRAY) {
+               t = p.nextToken();
+               if (t == JsonToken.START_OBJECT) {
+                   String url = null;
+                   float rate = 0.0f;
+                   String format = null;
+                   t = p.nextToken();
+                   while (t != null && t != JsonToken.END_OBJECT) {
+                       String currentName = p.getCurrentName();
+                       if (t == JsonToken.VALUE_STRING) {
+                           if ("videoUrl".equals(currentName)) {
+                               url = p.getText();
                                     } else if ("format".equals(currentName)) {
-/* 948 */                               format = p.getText();
+                               format = p.getText();
                                     }
                                 } else if (t == JsonToken.VALUE_NUMBER_FLOAT) {
-/* 951 */                           if ("rate".equals(currentName)) {
-/* 952 */                               rate = p.getFloatValue();
+                           if ("rate".equals(currentName)) {
+                               rate = p.getFloatValue();
                                     }
                                 } else if (t == JsonToken.VALUE_NUMBER_INT && "rate".equals(currentName)) {
-/* 956 */                           rate = p.getIntValue();
+                           rate = p.getIntValue();
                                 }
-/* 959 */                       t = p.nextToken();
+                       t = p.nextToken();
                             }
-/* 962 */                   if (!VineVideoUrlTier.FORMAT_DASH.equals(format)) {
-/* 963 */                       VineVideoUrlTier vinePostUrl = new VineVideoUrlTier(url, rate, format);
-/* 964 */                       urls.add(vinePostUrl);
+                   if (!VineVideoUrlTier.FORMAT_DASH.equals(format)) {
+                       VineVideoUrlTier vinePostUrl = new VineVideoUrlTier(url, rate, format);
+                       urls.add(vinePostUrl);
                             }
                         }
                     }
-/* 968 */           return urls;
+           return urls;
                 }
 
-/* 971 */       private static ArrayList<VineTag> parseTags(JsonParser p) throws IOException {
-/* 972 */           ArrayList<VineTag> tags = new ArrayList<>();
-/* 973 */           JsonToken t = p.nextToken();
-/* 974 */           String tagName = null;
-/* 975 */           long tagId = 0;
-/* 976 */           while (t != null && t != JsonToken.END_ARRAY) {
+       private static ArrayList<VineTag> parseTags(JsonParser p) throws IOException {
+           ArrayList<VineTag> tags = new ArrayList<>();
+           JsonToken t = p.nextToken();
+           String tagName = null;
+           long tagId = 0;
+           while (t != null && t != JsonToken.END_ARRAY) {
                         switch (t) {
                             case START_OBJECT:
                                 break;
                             default:
                                 continue;
                         }
-/* 979 */               while (t != null && t != JsonToken.END_OBJECT) {
+               while (t != null && t != JsonToken.END_OBJECT) {
                             switch (t) {
                                 case VALUE_NUMBER_INT:
-/* 985 */                           tagId = p.getLongValue();
+                           tagId = p.getLongValue();
                                     break;
                                 case VALUE_STRING:
-/* 982 */                           tagName = p.getText();
+                           tagName = p.getText();
                                     break;
                             }
-/* 988 */                   t = p.nextToken();
+                   t = p.nextToken();
                         }
-/* 990 */               tags.add(new VineTag(tagName, tagId));
-/* 993 */               t = p.nextToken();
+               tags.add(new VineTag(tagName, tagId));
+               t = p.nextToken();
                     }
-/* 995 */           return tags;
+           return tags;
                 }
 
-/* 998 */       private static synchronized VineChannel parseChannel(JsonParser p) throws IOException {
+       private static synchronized VineChannel parseChannel(JsonParser p) throws IOException {
                     VineChannel vineChannel;
                     try {
                         vineChannel = new VineChannel();
-/* 1000 */              JsonToken t = p.nextToken();
-/* 1001 */              while (t != null && t != JsonToken.END_OBJECT) {
+              JsonToken t = p.nextToken();
+              while (t != null && t != JsonToken.END_OBJECT) {
                             switch (t) {
                                 case START_OBJECT:
                                 case START_ARRAY:
-/* 1005 */                          p.skipChildren();
+                          p.skipChildren();
                                     break;
                                 case VALUE_NUMBER_INT:
-/* 1036 */                          String cn = p.getCurrentName();
-/* 1037 */                          if ("channelId".equals(cn)) {
-/* 1038 */                              vineChannel.channelId = p.getLongValue();
+                          String cn = p.getCurrentName();
+                          if ("channelId".equals(cn)) {
+                              vineChannel.channelId = p.getLongValue();
                                     } else if ("following".equals(cn)) {
-/* 1040 */                              vineChannel.following = p.getIntValue() == 1;
+                              vineChannel.following = p.getIntValue() == 1;
                                     }
                                     break;
                                 case VALUE_STRING:
-/* 1009 */                          String cn2 = p.getCurrentName();
-/* 1010 */                          if ("channel".equals(cn2)) {
-/* 1011 */                              vineChannel.channel = p.getText();
+                          String cn2 = p.getCurrentName();
+                          if ("channel".equals(cn2)) {
+                              vineChannel.channel = p.getText();
                                     } else if ("iconFullUrl".equals(cn2)) {
-/* 1013 */                              vineChannel.iconFullUrl = p.getText();
+                              vineChannel.iconFullUrl = p.getText();
                                     } else if ("retinaIconFullUrl".equals(cn2)) {
-/* 1015 */                              vineChannel.retinaIconFullUrl = p.getText();
+                              vineChannel.retinaIconFullUrl = p.getText();
                                     } else if ("created".equals(cn2)) {
-/* 1017 */                              vineChannel.created = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+                              vineChannel.created = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
                                     } else if ("backgroundColor".equals(cn2)) {
-/* 1019 */                              String color = p.getText();
-/* 1020 */                              if (!color.startsWith("#")) {
-/* 1021 */                                  color = "#" + color;
+                              String color = p.getText();
+                              if (!color.startsWith("#")) {
+                                  color = "#" + color;
                                         }
-/* 1023 */                              vineChannel.backgroundColor = color;
+                              vineChannel.backgroundColor = color;
                                     } else if ("fontColor".equals(cn2)) {
-/* 1025 */                              String color2 = p.getText();
-/* 1026 */                              if (!color2.startsWith("#")) {
-/* 1027 */                                  color2 = "#" + color2;
+                              String color2 = p.getText();
+                              if (!color2.startsWith("#")) {
+                                  color2 = "#" + color2;
                                         }
-/* 1029 */                              vineChannel.fontColor = color2;
+                              vineChannel.fontColor = color2;
                                     } else if ("exploreRetinaIconFullUrl".equals(cn2)) {
-/* 1031 */                              vineChannel.exploreRetinaIconFullUrl = p.getText();
+                              vineChannel.exploreRetinaIconFullUrl = p.getText();
                                     }
                                     break;
                             }
-/* 1045 */                  t = p.nextToken();
+                  t = p.nextToken();
                         }
                     } catch (Throwable th) {
                         throw th;
@@ -1210,313 +1210,313 @@
                     return vineChannel;
                 }
 
-/* 1051 */      private static VineTag parseTag(JsonParser p) throws IOException {
-/* 1052 */          VineTag tag = new VineTag();
-/* 1053 */          JsonToken t = p.nextToken();
-/* 1054 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VineTag parseTag(JsonParser p) throws IOException {
+          VineTag tag = new VineTag();
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                             case START_ARRAY:
-/* 1064 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1060 */                      tag.tagId = p.getLongValue();
+                      tag.tagId = p.getLongValue();
                                 break;
                             case VALUE_STRING:
-/* 1057 */                      tag.tagName = p.getText();
+                      tag.tagName = p.getText();
                                 break;
                         }
-/* 1068 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1070 */          return tag;
+          return tag;
                 }
 
-/* 1073 */      private static VineComment parseComment(JsonParser p) throws IOException {
-/* 1074 */          JsonToken t = p.nextToken();
-/* 1075 */          String avatarUrl = null;
-/* 1076 */          String comment = null;
-/* 1077 */          long timestamp = 0;
-/* 1078 */          long commentId = 0;
-/* 1079 */          String location = null;
-/* 1080 */          VineUser user = null;
-/* 1081 */          long userId = 0;
-/* 1082 */          String username = null;
-/* 1083 */          boolean verified = false;
-/* 1084 */          ArrayList<VineEntity> entities = null;
-/* 1086 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VineComment parseComment(JsonParser p) throws IOException {
+          JsonToken t = p.nextToken();
+          String avatarUrl = null;
+          String comment = null;
+          long timestamp = 0;
+          long commentId = 0;
+          String location = null;
+          VineUser user = null;
+          long userId = 0;
+          String username = null;
+          boolean verified = false;
+          ArrayList<VineEntity> entities = null;
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1090 */                      if ("user".equals(p.getCurrentName())) {
-/* 1091 */                          user = parseUser(p);
+                      if ("user".equals(p.getCurrentName())) {
+                          user = parseUser(p);
                                 } else {
-/* 1093 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case START_ARRAY:
-/* 1129 */                      if ("entities".equals(p.getCurrentName())) {
-/* 1130 */                          JsonToken t2 = p.nextToken();
-/* 1131 */                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
-/* 1132 */                              VineEntity entity = parseEntity(p);
-/* 1133 */                              if (entities == null) {
-/* 1134 */                                  entities = new ArrayList<>();
+                      if ("entities".equals(p.getCurrentName())) {
+                          JsonToken t2 = p.nextToken();
+                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
+                              VineEntity entity = parseEntity(p);
+                              if (entities == null) {
+                                  entities = new ArrayList<>();
                                         }
-/* 1136 */                              if (entity != null) {
-/* 1137 */                                  entities.add(entity);
+                              if (entity != null) {
+                                  entities.add(entity);
                                         }
-/* 1139 */                              t2 = p.nextToken();
+                              t2 = p.nextToken();
                                     }
                                 } else {
-/* 1142 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1113 */                      String cn = p.getCurrentName();
-/* 1114 */                      if (ReportingFragment.EXTRA_COMMENT_ID.equals(cn)) {
-/* 1115 */                          commentId = p.getLongValue();
+                      String cn = p.getCurrentName();
+                      if (ReportingFragment.EXTRA_COMMENT_ID.equals(cn)) {
+                          commentId = p.getLongValue();
                                 } else if ("userId".equals(cn)) {
-/* 1117 */                          userId = p.getLongValue();
+                          userId = p.getLongValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 1098 */                      String cn2 = p.getCurrentName();
-/* 1099 */                      if ("avatarUrl".equals(cn2)) {
-/* 1100 */                          avatarUrl = p.getText();
+                      String cn2 = p.getCurrentName();
+                      if ("avatarUrl".equals(cn2)) {
+                          avatarUrl = p.getText();
                                 } else if ("comment".equals(cn2)) {
-/* 1102 */                          comment = p.getText();
+                          comment = p.getText();
                                 } else if ("created".equals(cn2)) {
-/* 1104 */                          timestamp = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+                          timestamp = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
                                 } else if ("location".equals(cn2)) {
-/* 1106 */                          location = p.getText();
+                          location = p.getText();
                                 } else if ("username".equals(cn2)) {
-/* 1108 */                          username = p.getText();
+                          username = p.getText();
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
-/* 1123 */                      if ("verified".equals(p.getCurrentName())) {
-/* 1124 */                          verified = p.getBooleanValue();
+                      if ("verified".equals(p.getCurrentName())) {
+                          verified = p.getBooleanValue();
                                 }
                                 break;
                         }
-/* 1147 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1149 */          if (entities != null) {
-/* 1150 */              Util.validateAndFixEntities(entities);
+          if (entities != null) {
+              Util.validateAndFixEntities(entities);
                     }
                     if (TextUtils.isEmpty(avatarUrl) && user != null) {
                         avatarUrl = user.avatarUrl;
                     }
                     avatarUrl = normalizeMediaUrl(avatarUrl);
-/* 1152 */          return new VineComment(commentId, comment, avatarUrl, user, timestamp, location, userId, username, verified, 0L, entities, false);
+          return new VineComment(commentId, comment, avatarUrl, user, timestamp, location, userId, username, verified, 0L, entities, false);
                 }
 
-/* 1156 */      private static Object parseGeneral(JsonParser p) throws IOException {
-/* 1157 */          JsonToken t = p.nextToken();
-/* 1158 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static Object parseGeneral(JsonParser p) throws IOException {
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                                 break;
                             case START_ARRAY:
-/* 1176 */                      p.skipChildren();
+                      p.skipChildren();
                                 continue;
                             case VALUE_NUMBER_INT:
                             case VALUE_STRING:
                             default:
                                 continue;
                             case VALUE_TRUE:
-/* 1161 */                      if (VineUploadService.EXTRA_SUCCESS.equals(p.getCurrentName())) {
-/* 1162 */                          return API_RESPONSE.SUCCESS;
+                      if (VineUploadService.EXTRA_SUCCESS.equals(p.getCurrentName())) {
+                          return API_RESPONSE.SUCCESS;
                                 }
                                 continue;
                             case VALUE_FALSE:
-/* 1167 */                      if (VineUploadService.EXTRA_SUCCESS.equals(p.getCurrentName())) {
-/* 1168 */                          return API_RESPONSE.FAILURE;
+                      if (VineUploadService.EXTRA_SUCCESS.equals(p.getCurrentName())) {
+                          return API_RESPONSE.FAILURE;
                                 }
                                 break;
                         }
-/* 1172 */              p.skipChildren();
-/* 1180 */              t = p.nextToken();
+              p.skipChildren();
+              t = p.nextToken();
                     }
-/* 1182 */          return null;
+          return null;
                 }
 
-/* 1185 */      private static Long parseLikeId(JsonParser p) throws IOException {
-/* 1186 */          long id = 0;
-/* 1187 */          JsonToken t = p.nextToken();
-/* 1188 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static Long parseLikeId(JsonParser p) throws IOException {
+          long id = 0;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                             case START_ARRAY:
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1191 */                      if ("likeId".equals(p.getCurrentName())) {
-/* 1192 */                          id = p.getLongValue();
+                      if ("likeId".equals(p.getCurrentName())) {
+                          id = p.getLongValue();
                                 }
-/* 1202 */                      t = p.nextToken();
+                      t = p.nextToken();
                                 break;
                             default:
                                 continue;
                         }
-/* 1198 */              p.skipChildren();
-/* 1202 */              t = p.nextToken();
+              p.skipChildren();
+              t = p.nextToken();
                     }
-/* 1204 */          return Long.valueOf(id);
+          return Long.valueOf(id);
                 }
 
-/* 1207 */      private static ArrayList<VineUser> parseUsersArray(JsonParser p, Bundle extras) throws IOException {
-/* 1208 */          JsonToken t = p.nextToken();
-/* 1209 */          ArrayList<VineUser> users = new ArrayList<>();
-/* 1210 */          int sectionId = -1;
-/* 1211 */          int sectionIndex = 0;
-/* 1213 */          if (extras != null) {
-/* 1214 */              long lastIndex = extras.getLong(VineParserReader.EXTRA_LAST_FRIEND_INDEX, -1L);
+      private static ArrayList<VineUser> parseUsersArray(JsonParser p, Bundle extras) throws IOException {
+          JsonToken t = p.nextToken();
+          ArrayList<VineUser> users = new ArrayList<>();
+          int sectionId = -1;
+          int sectionIndex = 0;
+          if (extras != null) {
+              long lastIndex = extras.getLong(VineParserReader.EXTRA_LAST_FRIEND_INDEX, -1L);
                         if (lastIndex >= 0) {
-/* 1216 */                  sectionId = (int) (lastIndex >> 32);
-/* 1217 */                  sectionIndex = (int) ((lastIndex - (((long) sectionId) << 32)) + 1);
+                  sectionId = (int) (lastIndex >> 32);
+                  sectionIndex = (int) ((lastIndex - (((long) sectionId) << 32)) + 1);
                         }
                     }
-/* 1221 */          while (t != null && t != JsonToken.END_ARRAY) {
-/* 1222 */              if (t == JsonToken.START_OBJECT) {
-/* 1223 */                  VineUser user = parseUser(p, sectionId);
-/* 1224 */                  if (user.sectionId >= 0) {
-/* 1225 */                      if (sectionId != user.sectionId) {
-/* 1226 */                          user.friendIndex = ((long) user.sectionId) << 32;
-/* 1227 */                          sectionIndex = 1;
-/* 1228 */                          sectionId = user.sectionId;
+          while (t != null && t != JsonToken.END_ARRAY) {
+              if (t == JsonToken.START_OBJECT) {
+                  VineUser user = parseUser(p, sectionId);
+                  if (user.sectionId >= 0) {
+                      if (sectionId != user.sectionId) {
+                          user.friendIndex = ((long) user.sectionId) << 32;
+                          sectionIndex = 1;
+                          sectionId = user.sectionId;
                                 } else {
-/* 1230 */                          user.friendIndex = (((long) user.sectionId) << 32) + ((long) sectionIndex);
-/* 1231 */                          sectionIndex++;
+                          user.friendIndex = (((long) user.sectionId) << 32) + ((long) sectionIndex);
+                          sectionIndex++;
                                 }
                             }
-/* 1234 */                  if (user != null) {
-/* 1235 */                      users.add(user);
+                  if (user != null) {
+                      users.add(user);
                             }
                         }
-/* 1238 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1240 */          return users;
+          return users;
                 }
 
-/* 1243 */      private static VineUser parseUser(JsonParser p) throws IOException {
-/* 1244 */          return parseUser(p, -1);
+      private static VineUser parseUser(JsonParser p) throws IOException {
+          return parseUser(p, -1);
                 }
 
-                /* JADX WARN: Unexpected iteration count in SwitchBreakVisitor. Please report as an issue */
+                
                 @Nullable
-/* 1248 */      private static VineUser parseUser(JsonParser p, int sectionId) throws IOException {
-/* 1249 */          String username = null;
-/* 1250 */          String avatarUrl = null;
-/* 1251 */          String description = null;
-/* 1252 */          String location = null;
-/* 1253 */          String phoneNumber = null;
-/* 1254 */          String email = null;
-/* 1255 */          String edition = null;
-/* 1256 */          String sectionTitle = null;
-/* 1257 */          long userId = 0;
-/* 1258 */          long orderId = 0;
-/* 1259 */          int blocked = 0;
-/* 1260 */          int blocking = 0;
-/* 1261 */          int explicit = 0;
-/* 1262 */          boolean isExternal = false;
-/* 1263 */          int followerCount = 0;
-/* 1264 */          int followingCount = 0;
-/* 1265 */          int following = -1;
-/* 1266 */          int likeCount = 0;
-/* 1267 */          int authoredPostCount = 0;
-/* 1268 */          int postCount = 0;
-/* 1269 */          int verified = 0;
-/* 1270 */          int twitterConnected = 0;
-/* 1271 */          int includePromoted = 0;
-/* 1272 */          int privateAccount = 0;
-/* 1273 */          boolean followApprovalPending = false;
-/* 1274 */          boolean followRequested = false;
-/* 1275 */          int repostsEnabled = 1;
-/* 1276 */          boolean acceptsOutOfNetworkConversations = false;
-/* 1277 */          int profileBackground = -1;
-/* 1278 */          boolean emailVerified = false;
-/* 1279 */          boolean phoneVerified = false;
-/* 1280 */          boolean disableAddressBook = false;
-/* 1281 */          boolean hiddenEmail = false;
-/* 1282 */          boolean hiddenPhoneNumber = false;
-/* 1283 */          boolean hiddenTwitter = false;
-/* 1284 */          long loopCount = 0;
-/* 1285 */          boolean notifyPosts = false;
-/* 1287 */          JsonToken t = p.nextToken();
-/* 1289 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VineUser parseUser(JsonParser p, int sectionId) throws IOException {
+          String username = null;
+          String avatarUrl = null;
+          String description = null;
+          String location = null;
+          String phoneNumber = null;
+          String email = null;
+          String edition = null;
+          String sectionTitle = null;
+          long userId = 0;
+          long orderId = 0;
+          int blocked = 0;
+          int blocking = 0;
+          int explicit = 0;
+          boolean isExternal = false;
+          int followerCount = 0;
+          int followingCount = 0;
+          int following = -1;
+          int likeCount = 0;
+          int authoredPostCount = 0;
+          int postCount = 0;
+          int verified = 0;
+          int twitterConnected = 0;
+          int includePromoted = 0;
+          int privateAccount = 0;
+          boolean followApprovalPending = false;
+          boolean followRequested = false;
+          int repostsEnabled = 1;
+          boolean acceptsOutOfNetworkConversations = false;
+          int profileBackground = -1;
+          boolean emailVerified = false;
+          boolean phoneVerified = false;
+          boolean disableAddressBook = false;
+          boolean hiddenEmail = false;
+          boolean hiddenPhoneNumber = false;
+          boolean hiddenTwitter = false;
+          long loopCount = 0;
+          boolean notifyPosts = false;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                             case START_ARRAY:
-/* 1379 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1315 */                      String name = p.getCurrentName();
-/* 1316 */                      if ("userId".equals(name) || "id".equals(name)) {
-/* 1317 */                          userId = p.getLongValue();
+                      String name = p.getCurrentName();
+                      if ("userId".equals(name) || "id".equals(name)) {
+                          userId = p.getLongValue();
                                     break;
                                 } else if ("blocked".equals(name)) {
-/* 1319 */                          blocked = p.getIntValue();
+                          blocked = p.getIntValue();
                                     break;
                                 } else if (Vine.UserColumns.BLOCKING.equals(name)) {
-/* 1321 */                          blocking = p.getIntValue();
+                          blocking = p.getIntValue();
                                     break;
                                 } else if ("explicit".equals(name)) {
-/* 1323 */                          explicit = p.getIntValue();
+                          explicit = p.getIntValue();
                                     break;
                                 } else if ("externalUser".equals(name)) {
-/* 1325 */                          isExternal = p.getIntValue() == 1;
+                          isExternal = p.getIntValue() == 1;
                                     break;
                                 } else if ("followerCount".equals(name)) {
-/* 1327 */                          followerCount = p.getIntValue();
+                          followerCount = p.getIntValue();
                                     break;
                                 } else if ("followingCount".equals(name)) {
-/* 1329 */                          followingCount = p.getIntValue();
+                          followingCount = p.getIntValue();
                                     break;
                                 } else if ("following".equals(name)) {
-/* 1331 */                          following = p.getIntValue();
+                          following = p.getIntValue();
                                     break;
                                 } else {
-/* 1332 */                          if ("likeCount".equals(name)) {
-/* 1333 */                              likeCount = p.getIntValue();
+                          if ("likeCount".equals(name)) {
+                              likeCount = p.getIntValue();
                                     } else if ("authoredPostCount".equals(name)) {
-/* 1335 */                              authoredPostCount = p.getIntValue();
+                              authoredPostCount = p.getIntValue();
                                     } else if ("postCount".equals(name)) {
-/* 1337 */                              postCount = p.getIntValue();
+                              postCount = p.getIntValue();
                                     } else if ("verified".equals(name)) {
-/* 1339 */                              verified = p.getIntValue();
+                              verified = p.getIntValue();
                                     } else if ("followId".equals(name)) {
-/* 1341 */                              orderId = p.getLongValue();
+                              orderId = p.getLongValue();
                                     } else if ("twitterConnected".equals(name)) {
-/* 1343 */                              twitterConnected = p.getIntValue();
+                              twitterConnected = p.getIntValue();
                                     } else if ("includePromoted".equals(name)) {
-/* 1345 */                              includePromoted = p.getIntValue();
+                              includePromoted = p.getIntValue();
                                     } else if ("private".equals(name)) {
-/* 1347 */                              privateAccount = p.getIntValue();
+                              privateAccount = p.getIntValue();
                                     } else if ("followApprovalPending".equals(name)) {
-/* 1349 */                              followApprovalPending = p.getIntValue() == 1;
+                              followApprovalPending = p.getIntValue() == 1;
                                     } else if ("followRequested".equals(name)) {
-/* 1351 */                              followRequested = p.getIntValue() == 1;
+                              followRequested = p.getIntValue() == 1;
                                     } else if ("repostsEnabled".equals(name)) {
-/* 1353 */                              repostsEnabled = p.getIntValue();
+                              repostsEnabled = p.getIntValue();
                                     } else if ("verifiedEmail".equals(name)) {
-/* 1355 */                              emailVerified = p.getIntValue() == 1;
+                              emailVerified = p.getIntValue() == 1;
                                     } else if ("verifiedPhoneNumber".equals(name)) {
-/* 1357 */                              phoneVerified = p.getIntValue() == 1;
+                              phoneVerified = p.getIntValue() == 1;
                                     } else if ("sectionId".equals(name)) {
-/* 1359 */                              sectionId = p.getIntValue();
+                              sectionId = p.getIntValue();
                                     } else if ("disableAddressBook".equals(name)) {
-/* 1361 */                              disableAddressBook = p.getIntValue() == 1;
+                              disableAddressBook = p.getIntValue() == 1;
                                     } else if (VineAPI.RESOURCE_ACCEPT_OUT_OF_NETWORK_CONVERSATIONS.equals(name)) {
-/* 1363 */                              acceptsOutOfNetworkConversations = p.getIntValue() == 1;
+                              acceptsOutOfNetworkConversations = p.getIntValue() == 1;
                                     } else if ("hiddenEmail".equals(name)) {
-/* 1365 */                              hiddenEmail = p.getIntValue() == 1;
+                              hiddenEmail = p.getIntValue() == 1;
                                     } else if ("hiddenPhoneNumber".equals(name)) {
-/* 1367 */                              hiddenPhoneNumber = p.getIntValue() == 1;
+                              hiddenPhoneNumber = p.getIntValue() == 1;
                                     } else if ("hiddenTwitter".equals(name)) {
-/* 1369 */                              hiddenTwitter = p.getIntValue() == 1;
+                              hiddenTwitter = p.getIntValue() == 1;
                                     } else if ("loopCount".equals(name)) {
-/* 1371 */                              loopCount = p.getLongValue();
+                              loopCount = p.getLongValue();
                                     } else if ("notifyPosts".equals(name)) {
-/* 1373 */                              if (p.getIntValue() != 1) {
+                              if (p.getIntValue() != 1) {
                                             notifyPosts = false;
                                         } else {
                                             notifyPosts = true;
@@ -1525,25 +1525,25 @@
                                     break;
                                 }
                             case VALUE_STRING:
-/* 1292 */                      String name2 = p.getCurrentName();
-/* 1293 */                      if ("avatarUrl".equals(name2) || "avatar_url".equals(name2)) {
-/* 1294 */                          avatarUrl = p.getText();
+                      String name2 = p.getCurrentName();
+                      if ("avatarUrl".equals(name2) || "avatar_url".equals(name2)) {
+                          avatarUrl = p.getText();
                                 } else if ("username".equals(name2)) {
-/* 1296 */                          username = p.getText();
+                          username = p.getText();
                                 } else if ("description".equals(name2)) {
-/* 1298 */                          description = p.getText();
+                          description = p.getText();
                                 } else if ("location".equals(name2)) {
-/* 1300 */                          location = p.getText();
+                          location = p.getText();
                                 } else if (VineRecipient.KEY_PHONE.equals(name2)) {
-/* 1302 */                          phoneNumber = p.getText();
+                          phoneNumber = p.getText();
                                 } else if ("email".equals(name2)) {
-/* 1304 */                          email = p.getText();
+                          email = p.getText();
                                 } else if ("edition".equals(name2)) {
-/* 1306 */                          edition = p.getText();
+                          edition = p.getText();
                                 } else if (VineAPI.RESOURCE_PROFILE_BACKGROUND.equals(name2)) {
-/* 1308 */                          profileBackground = (int) Long.parseLong(p.getText().substring(2), 16);
+                          profileBackground = (int) Long.parseLong(p.getText().substring(2), 16);
                                 } else if ("section".equals(name2)) {
-/* 1310 */                          sectionTitle = p.getText();
+                          sectionTitle = p.getText();
                                 }
                                 break;
                             case VALUE_TRUE:
@@ -1553,483 +1553,483 @@
                                 }
                                 break;
                         }
-/* 1385 */              t = p.nextToken();
+              t = p.nextToken();
                     }
                     if (userId <= 0) {
-/* 1389 */              return null;
+              return null;
                     }
-/* 1392 */          VineUser u = new VineUser(username, avatarUrl, description, location, userId, orderId, blocked, blocking, explicit, isExternal, followerCount, followingCount, following, likeCount, postCount, verified, email, phoneNumber, twitterConnected, includePromoted, privateAccount, repostsEnabled, edition, acceptsOutOfNetworkConversations, profileBackground, authoredPostCount, sectionTitle, disableAddressBook, hiddenEmail, hiddenPhoneNumber, hiddenTwitter, loopCount, notifyPosts);
-/* 1398 */          u.sectionId = sectionId;
-/* 1399 */          if (followApprovalPending) {
-/* 1400 */              u.setApprovalPending();
+          VineUser u = new VineUser(username, avatarUrl, description, location, userId, orderId, blocked, blocking, explicit, isExternal, followerCount, followingCount, following, likeCount, postCount, verified, email, phoneNumber, twitterConnected, includePromoted, privateAccount, repostsEnabled, edition, acceptsOutOfNetworkConversations, profileBackground, authoredPostCount, sectionTitle, disableAddressBook, hiddenEmail, hiddenPhoneNumber, hiddenTwitter, loopCount, notifyPosts);
+          u.sectionId = sectionId;
+          if (followApprovalPending) {
+              u.setApprovalPending();
                     }
-/* 1402 */          if (followRequested) {
-/* 1403 */              u.setFollowRequested();
+          if (followRequested) {
+              u.setFollowRequested();
                     }
-/* 1405 */          if (emailVerified) {
-/* 1406 */              u.setEmailVerified();
+          if (emailVerified) {
+              u.setEmailVerified();
                     }
-/* 1408 */          if (phoneVerified) {
-/* 1409 */              u.setPhoneVerified();
-/* 1411 */              return u;
+          if (phoneVerified) {
+              u.setPhoneVerified();
+              return u;
                     }
-/* 1411 */          return u;
+          return u;
                 }
 
-/* 1415 */      private static VineLogin parseSignUp(JsonParser p) throws IOException {
-/* 1416 */          long userId = 0;
-/* 1417 */          String edition = null;
-/* 1418 */          JsonToken t = p.nextToken();
-/* 1420 */          String sessionKey = null;
-/* 1421 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VineLogin parseSignUp(JsonParser p) throws IOException {
+          long userId = 0;
+          String edition = null;
+          JsonToken t = p.nextToken();
+          String sessionKey = null;
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1438 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1424 */                      if ("userId".equals(p.getCurrentName())) {
-/* 1425 */                          userId = p.getLongValue();
+                      if ("userId".equals(p.getCurrentName())) {
+                          userId = p.getLongValue();
                                 } else {
                                     continue;
                                 }
-/* 1444 */                      t = p.nextToken();
+                      t = p.nextToken();
                                 break;
                             case VALUE_STRING:
-/* 1430 */                      if (VineService.EXTRA_KEY.equals(p.getCurrentName())) {
-/* 1431 */                          sessionKey = p.getText();
+                      if (VineService.EXTRA_KEY.equals(p.getCurrentName())) {
+                          sessionKey = p.getText();
                                     continue;
                                 } else if ("edition".equals(p.getCurrentName())) {
-/* 1433 */                          edition = p.getText();
+                          edition = p.getText();
                                 }
-/* 1444 */                      t = p.nextToken();
+                      t = p.nextToken();
                                 break;
                             default:
                                 continue;
                         }
-/* 1441 */              p.skipChildren();
-/* 1444 */              t = p.nextToken();
+              p.skipChildren();
+              t = p.nextToken();
                     }
-/* 1447 */          VineLogin vl = new VineLogin(sessionKey, null, userId, edition);
-/* 1448 */          return vl;
+          VineLogin vl = new VineLogin(sessionKey, null, userId, edition);
+          return vl;
                 }
 
-/* 1459 */      public static TwitterUser parseTwitterUser(JsonParser p) throws IOException {
-/* 1460 */          String name = null;
-/* 1461 */          String screenName = null;
-/* 1462 */          String location = null;
-/* 1463 */          String description = null;
-/* 1464 */          String url = null;
-/* 1465 */          String profileUrl = null;
-/* 1466 */          boolean defaultProfileImage = false;
-/* 1467 */          long userId = 0;
-/* 1469 */          JsonToken t = p.nextToken();
-/* 1470 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static TwitterUser parseTwitterUser(JsonParser p) throws IOException {
+          String name = null;
+          String screenName = null;
+          String location = null;
+          String description = null;
+          String url = null;
+          String profileUrl = null;
+          boolean defaultProfileImage = false;
+          long userId = 0;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1504 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 1508 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1491 */                      if ("id".equals(p.getCurrentName())) {
-/* 1492 */                          userId = p.getLongValue();
+                      if ("id".equals(p.getCurrentName())) {
+                          userId = p.getLongValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 1473 */                      String cn = p.getCurrentName();
-/* 1474 */                      if ("name".equals(cn)) {
-/* 1475 */                          name = p.getText();
+                      String cn = p.getCurrentName();
+                      if ("name".equals(cn)) {
+                          name = p.getText();
                                 } else if ("screen_name".equals(cn)) {
-/* 1477 */                          screenName = p.getText();
+                          screenName = p.getText();
                                 } else if ("profile_image_url".equals(cn)) {
-/* 1479 */                          String profileUrl2 = p.getText();
-/* 1480 */                          profileUrl = profileUrl2.replace("_normal", "_bigger");
+                          String profileUrl2 = p.getText();
+                          profileUrl = profileUrl2.replace("_normal", "_bigger");
                                 } else if (PlusShare.KEY_CALL_TO_ACTION_URL.equals(cn)) {
-/* 1482 */                          url = p.getText();
+                          url = p.getText();
                                 } else if ("description".equals(cn)) {
-/* 1484 */                          description = p.getText();
+                          description = p.getText();
                                 } else if ("location".equals(cn)) {
-/* 1486 */                          location = p.getText();
+                          location = p.getText();
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
-/* 1498 */                      if ("default_profile_image".equals(p.getCurrentName())) {
-/* 1499 */                          defaultProfileImage = p.getBooleanValue();
+                      if ("default_profile_image".equals(p.getCurrentName())) {
+                          defaultProfileImage = p.getBooleanValue();
                                 }
                                 break;
                         }
-/* 1515 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1517 */          return new TwitterUser(name, screenName, location, description, url, profileUrl, defaultProfileImage, userId);
+          return new TwitterUser(name, screenName, location, description, url, profileUrl, defaultProfileImage, userId);
                 }
 
-/* 1522 */      public static JSONObject parseClientProfile(JsonParser p) throws IOException {
-/* 1523 */          SLog.m446d("Parse client profile.");
-/* 1524 */          JsonToken t = p.nextToken();
-/* 1525 */          JSONObject object = new JSONObject();
-/* 1526 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static JSONObject parseClientProfile(JsonParser p) throws IOException {
+          SLog.m446d("Parse client profile.");
+          JsonToken t = p.nextToken();
+          JSONObject object = new JSONObject();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1546 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 1550 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
                                 try {
-/* 1539 */                          object.put(p.getCurrentName(), p.getIntValue());
+                          object.put(p.getCurrentName(), p.getIntValue());
                                 } catch (JSONException e) {
-/* 1541 */                          SLog.m447d("Failed to parse: {}.", p.getCurrentName());
+                          SLog.m447d("Failed to parse: {}.", p.getCurrentName());
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
                                 try {
-/* 1531 */                          object.put(p.getCurrentName(), p.getBooleanValue());
+                          object.put(p.getCurrentName(), p.getBooleanValue());
                                 } catch (JSONException e2) {
-/* 1533 */                          SLog.m447d("Failed to parse: {}.", p.getCurrentName());
+                          SLog.m447d("Failed to parse: {}.", p.getCurrentName());
                                 }
                                 break;
                         }
-/* 1557 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1559 */          SLog.m447d("Parsed client profile: ", object);
-/* 1560 */          return object;
+          SLog.m447d("Parsed client profile: ", object);
+          return object;
                 }
 
-/* 1563 */      public static VineLogin parseLogin(JsonParser p) throws IOException {
-/* 1564 */          String key = null;
-/* 1565 */          String username = null;
-/* 1566 */          String edition = null;
-/* 1567 */          long userId = 0;
-/* 1568 */          boolean success = false;
-/* 1570 */          JsonToken t = p.nextToken();
-/* 1571 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static VineLogin parseLogin(JsonParser p) throws IOException {
+          String key = null;
+          String username = null;
+          String edition = null;
+          long userId = 0;
+          boolean success = false;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1574 */                      if ("data".equals(p.getCurrentName())) {
-/* 1575 */                          JsonToken t2 = p.nextToken();
-/* 1576 */                          while (t2 != null && t2 != JsonToken.END_OBJECT) {
+                      if ("data".equals(p.getCurrentName())) {
+                          JsonToken t2 = p.nextToken();
+                          while (t2 != null && t2 != JsonToken.END_OBJECT) {
                                         switch (t2) {
                                             case VALUE_NUMBER_INT:
-/* 1590 */                                      if ("userId".equals(p.getCurrentName())) {
-/* 1591 */                                          userId = p.getLongValue();
+                                      if ("userId".equals(p.getCurrentName())) {
+                                          userId = p.getLongValue();
                                                 }
                                                 break;
                                             case VALUE_STRING:
-/* 1579 */                                      String name = p.getCurrentName();
-/* 1580 */                                      if (VineService.EXTRA_KEY.equals(name)) {
-/* 1581 */                                          key = p.getText();
+                                      String name = p.getCurrentName();
+                                      if (VineService.EXTRA_KEY.equals(name)) {
+                                          key = p.getText();
                                                 } else if ("username".equals(name)) {
-/* 1583 */                                          username = p.getText();
+                                          username = p.getText();
                                                 } else if ("edition".equals(name)) {
-/* 1585 */                                          edition = p.getText();
+                                          edition = p.getText();
                                                 }
                                                 break;
                                         }
-/* 1599 */                              t2 = p.nextToken();
+                              t2 = p.nextToken();
                                     }
                                 } else {
-/* 1602 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
-/* 1608 */                      if (VineUploadService.EXTRA_SUCCESS.equals(p.getCurrentName())) {
-/* 1609 */                          success = p.getBooleanValue();
+                      if (VineUploadService.EXTRA_SUCCESS.equals(p.getCurrentName())) {
+                          success = p.getBooleanValue();
                                 }
                                 break;
                         }
-/* 1617 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1620 */          if (success) {
-/* 1621 */              return new VineLogin(key, username, userId, edition);
+          if (success) {
+              return new VineLogin(key, username, userId, edition);
                     }
                     return null;
                 }
 
-/* 1627 */      public static VineError parseError(JsonParser p) throws IOException {
-/* 1628 */          int error = 0;
-/* 1629 */          String reason = null;
-/* 1630 */          String data = null;
-/* 1631 */          JsonToken t = p.nextToken();
-/* 1633 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static VineError parseError(JsonParser p) throws IOException {
+          int error = 0;
+          String reason = null;
+          String data = null;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1636 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 1640 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1644 */                      if ("code".equals(p.getCurrentName())) {
-/* 1645 */                          error = p.getIntValue();
+                      if ("code".equals(p.getCurrentName())) {
+                          error = p.getIntValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 1650 */                      if ("error".equals(p.getCurrentName())) {
-/* 1651 */                          reason = p.getText();
+                      if ("error".equals(p.getCurrentName())) {
+                          reason = p.getText();
                                 } else if ("data".equals(p.getCurrentName())) {
-/* 1653 */                          data = p.getText();
+                          data = p.getText();
                                 }
                                 break;
                         }
-/* 1657 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1659 */          return new VineError(error, reason, data);
+          return new VineError(error, reason, data);
                 }
 
-/* 1662 */      public static VineError parseMessageError(JsonParser p) throws IOException {
-/* 1663 */          int error = 0;
-/* 1664 */          String reason = null;
-/* 1665 */          JsonToken t = p.nextToken();
-/* 1667 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static VineError parseMessageError(JsonParser p) throws IOException {
+          int error = 0;
+          String reason = null;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1670 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 1674 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1678 */                      if ("code".equals(p.getCurrentName())) {
-/* 1679 */                          error = p.getIntValue();
+                      if ("code".equals(p.getCurrentName())) {
+                          error = p.getIntValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 1684 */                      if ("message".equals(p.getCurrentName())) {
-/* 1685 */                          reason = p.getText();
+                      if ("message".equals(p.getCurrentName())) {
+                          reason = p.getText();
                                 }
                                 break;
                         }
-/* 1689 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1691 */          return new VineError(error, reason);
+          return new VineError(error, reason);
                 }
 
-/* 1694 */      public static VineSingleNotification parsePushNotification(JsonParser p) throws IOException {
-/* 1695 */          if (p.nextToken() == JsonToken.START_OBJECT) {
-/* 1696 */              return parseNotification(p);
+      public static VineSingleNotification parsePushNotification(JsonParser p) throws IOException {
+          if (p.nextToken() == JsonToken.START_OBJECT) {
+              return parseNotification(p);
                     }
                     return null;
                 }
 
-/* 1702 */      public static ArrayList<VineRTCConversation> parseRTCEvent(JsonParser p) throws IOException {
-/* 1703 */          ArrayList<VineRTCConversation> event = null;
-/* 1705 */          JsonToken t = p.nextToken();
-/* 1706 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static ArrayList<VineRTCConversation> parseRTCEvent(JsonParser p) throws IOException {
+          ArrayList<VineRTCConversation> event = null;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1709 */                      if ("data".equals(p.getCurrentName())) {
-/* 1710 */                          JsonToken t2 = p.nextToken();
-/* 1711 */                          while (t2 != null && t2 != JsonToken.END_OBJECT) {
+                      if ("data".equals(p.getCurrentName())) {
+                          JsonToken t2 = p.nextToken();
+                          while (t2 != null && t2 != JsonToken.END_OBJECT) {
                                         switch (t2) {
                                             case START_OBJECT:
-/* 1714 */                                      if ("conversations".equals(p.getCurrentName())) {
-/* 1715 */                                          event = parseRTCConversations(p);
+                                      if ("conversations".equals(p.getCurrentName())) {
+                                          event = parseRTCConversations(p);
                                                 }
                                                 break;
                                         }
-/* 1720 */                              t2 = p.nextToken();
+                              t2 = p.nextToken();
                                     }
                                 }
                                 break;
                             case START_ARRAY:
-/* 1726 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                         }
-/* 1730 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1733 */          return event;
+          return event;
                 }
 
-/* 1737 */      public static ArrayList<VineRTCConversation> parseRTCConversations(JsonParser p) throws IOException {
-/* 1738 */          ArrayList<VineRTCConversation> conversations = new ArrayList<>();
-/* 1742 */          JsonToken t = p.nextToken();
-/* 1743 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static ArrayList<VineRTCConversation> parseRTCConversations(JsonParser p) throws IOException {
+          ArrayList<VineRTCConversation> conversations = new ArrayList<>();
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1746 */                      long conversationId = Long.parseLong(p.getCurrentName());
-/* 1747 */                      ArrayList<VineRTCParticipant> participants = parseRTCParticipants(p);
-/* 1748 */                      conversations.add(new VineRTCConversation(conversationId, participants));
+                      long conversationId = Long.parseLong(p.getCurrentName());
+                      ArrayList<VineRTCParticipant> participants = parseRTCParticipants(p);
+                      conversations.add(new VineRTCConversation(conversationId, participants));
                                 break;
                             case START_ARRAY:
-/* 1752 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                         }
-/* 1756 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1759 */          return conversations;
+          return conversations;
                 }
 
-/* 1763 */      public static ArrayList<VineRTCParticipant> parseRTCParticipants(JsonParser p) throws IOException {
-/* 1764 */          ArrayList<VineRTCParticipant> participants = new ArrayList<>();
-/* 1766 */          boolean connected = false;
-/* 1767 */          boolean typing = false;
-/* 1768 */          long lastMessageId = -1;
-/* 1770 */          JsonToken t = p.nextToken();
-/* 1771 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static ArrayList<VineRTCParticipant> parseRTCParticipants(JsonParser p) throws IOException {
+          ArrayList<VineRTCParticipant> participants = new ArrayList<>();
+          boolean connected = false;
+          boolean typing = false;
+          long lastMessageId = -1;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1774 */                      long userId = Long.parseLong(p.getCurrentName());
-/* 1775 */                      JsonToken t2 = p.nextToken();
-/* 1776 */                      while (t2 != null && t2 != JsonToken.END_OBJECT) {
+                      long userId = Long.parseLong(p.getCurrentName());
+                      JsonToken t2 = p.nextToken();
+                      while (t2 != null && t2 != JsonToken.END_OBJECT) {
                                     switch (t2) {
                                         case VALUE_NUMBER_INT:
-/* 1779 */                                  if ("last_message_id".equals(p.getCurrentName())) {
-/* 1780 */                                      lastMessageId = p.getLongValue();
+                                  if ("last_message_id".equals(p.getCurrentName())) {
+                                      lastMessageId = p.getLongValue();
                                             }
                                             break;
                                         case VALUE_TRUE:
                                         case VALUE_FALSE:
-/* 1786 */                                  String cn = p.getCurrentName();
-/* 1787 */                                  if ("connected".equals(cn)) {
-/* 1788 */                                      connected = p.getBooleanValue();
+                                  String cn = p.getCurrentName();
+                                  if ("connected".equals(cn)) {
+                                      connected = p.getBooleanValue();
                                             } else if (VineWebSocketClient.PARAM_TYPING.equals(cn)) {
-/* 1790 */                                      typing = p.getBooleanValue();
+                                      typing = p.getBooleanValue();
                                             }
                                             break;
                                     }
-/* 1795 */                          t2 = p.nextToken();
+                          t2 = p.nextToken();
                                 }
-/* 1797 */                      participants.add(new VineRTCParticipant(userId, connected, typing, lastMessageId));
+                      participants.add(new VineRTCParticipant(userId, connected, typing, lastMessageId));
                                 break;
                             case START_ARRAY:
-/* 1802 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                         }
-/* 1806 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1809 */          return participants;
+          return participants;
                 }
 
-/* 1812 */      private static VineConversation parseConversation(JsonParser p) throws IOException {
-/* 1813 */          JsonToken t = p.nextToken();
-/* 1815 */          long conversationId = 0;
-/* 1816 */          long createdBy = 0;
-/* 1817 */          long lastMessage = 0;
-/* 1819 */          long unreadMessageCount = 0;
-/* 1821 */          ArrayList<VinePrivateMessage> messages = null;
-/* 1822 */          ArrayList<Long> users = null;
-/* 1823 */          int networkType = 1;
-/* 1825 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VineConversation parseConversation(JsonParser p) throws IOException {
+          JsonToken t = p.nextToken();
+          long conversationId = 0;
+          long createdBy = 0;
+          long lastMessage = 0;
+          long unreadMessageCount = 0;
+          ArrayList<VinePrivateMessage> messages = null;
+          ArrayList<Long> users = null;
+          int networkType = 1;
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1851 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 1863 */                      String name = p.getCurrentName();
-/* 1864 */                      if ("messages".equals(name)) {
-/* 1865 */                          JsonToken t2 = p.nextToken();
-/* 1866 */                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
-/* 1867 */                              VinePrivateMessage message = parsePrivateMessage(p);
-/* 1868 */                              if (messages == null) {
-/* 1869 */                                  messages = new ArrayList<>();
+                      String name = p.getCurrentName();
+                      if ("messages".equals(name)) {
+                          JsonToken t2 = p.nextToken();
+                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
+                              VinePrivateMessage message = parsePrivateMessage(p);
+                              if (messages == null) {
+                                  messages = new ArrayList<>();
                                         }
-/* 1871 */                              if (messages != null) {
-/* 1872 */                                  messages.add(message);
+                              if (messages != null) {
+                                  messages.add(message);
                                         }
-/* 1874 */                              t2 = p.nextToken();
+                              t2 = p.nextToken();
                                     }
                                 } else if ("users".equals(name)) {
-/* 1877 */                          JsonToken t3 = p.nextToken();
-/* 1878 */                          while (t3 != null && t3 != JsonToken.END_ARRAY) {
+                          JsonToken t3 = p.nextToken();
+                          while (t3 != null && t3 != JsonToken.END_ARRAY) {
                                         switch (t3) {
                                             case VALUE_NUMBER_INT:
-/* 1881 */                                      long userId = p.getLongValue();
-/* 1882 */                                      if (users == null) {
-/* 1883 */                                          users = new ArrayList<>();
+                                      long userId = p.getLongValue();
+                                      if (users == null) {
+                                          users = new ArrayList<>();
                                                 }
-/* 1885 */                                      if (users != null) {
-/* 1886 */                                          users.add(Long.valueOf(userId));
+                                      if (users != null) {
+                                          users.add(Long.valueOf(userId));
                                                 }
                                                 break;
                                         }
-/* 1891 */                              t3 = p.nextToken();
+                              t3 = p.nextToken();
                                     }
                                 } else {
-/* 1894 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1836 */                      String cn = p.getCurrentName();
-/* 1837 */                      if ("conversationId".equals(cn)) {
-/* 1838 */                          conversationId = p.getLongValue();
+                      String cn = p.getCurrentName();
+                      if ("conversationId".equals(cn)) {
+                          conversationId = p.getLongValue();
                                 } else if ("lastMessage".equals(cn)) {
-/* 1840 */                          lastMessage = p.getLongValue();
+                          lastMessage = p.getLongValue();
                                 } else if ("lastMessageRead".equals(cn)) {
-/* 1842 */                          p.getLongValue();
+                          p.getLongValue();
                                 } else if ("unreadMessageCount".equals(cn)) {
-/* 1844 */                          unreadMessageCount = p.getLongValue();
+                          unreadMessageCount = p.getLongValue();
                                 } else if ("createdBy".equals(cn)) {
-/* 1846 */                          createdBy = p.getLongValue();
+                          createdBy = p.getLongValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 1828 */                      if ("inbox".equals(p.getCurrentName()) && CommonUtil.FIELD_TYPE_OTHER.equals(p.getValueAsString())) {
-/* 1830 */                          networkType = 2;
+                      if ("inbox".equals(p.getCurrentName()) && CommonUtil.FIELD_TYPE_OTHER.equals(p.getValueAsString())) {
+                          networkType = 2;
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
-/* 1857 */                      if (Vine.MessagesColumns.DELETED.equals(p.getCurrentName())) {
-/* 1858 */                          p.getBooleanValue();
+                      if (Vine.MessagesColumns.DELETED.equals(p.getCurrentName())) {
+                          p.getBooleanValue();
                                 }
                                 break;
                         }
-/* 1899 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1902 */          VineConversation result = new VineConversation(conversationId, lastMessage, createdBy, messages, users, networkType, unreadMessageCount);
-/* 1904 */          return result;
+          VineConversation result = new VineConversation(conversationId, lastMessage, createdBy, messages, users, networkType, unreadMessageCount);
+          return result;
                 }
 
-/* 1908 */      private static VineNotificationSetting parseNotificationSetting(JsonParser p) throws IOException {
-/* 1909 */          JsonToken t = p.nextToken();
-/* 1910 */          boolean isBooleanSetting = false;
-/* 1911 */          String name = null;
-/* 1912 */          String title = null;
-/* 1913 */          String section = null;
-/* 1914 */          String value = null;
-/* 1917 */          ArrayList<Pair<String, String>> choices = new ArrayList<>();
-/* 1919 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VineNotificationSetting parseNotificationSetting(JsonParser p) throws IOException {
+          JsonToken t = p.nextToken();
+          boolean isBooleanSetting = false;
+          String name = null;
+          String title = null;
+          String section = null;
+          String value = null;
+          ArrayList<Pair<String, String>> choices = new ArrayList<>();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 1940 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 1944 */                      if ("choices".equals(p.getCurrentName())) {
-/* 1945 */                          JsonToken t2 = p.nextToken();
-/* 1946 */                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
-/* 1947 */                              String choiceTitle = null;
-/* 1948 */                              String choiceValue = null;
-/* 1949 */                              if (t2 == JsonToken.START_OBJECT) {
-/* 1950 */                                  JsonToken t3 = p.nextToken();
-/* 1951 */                                  while (t3 != null && t3 != JsonToken.END_OBJECT) {
-/* 1952 */                                      if ("title".equals(p.getCurrentName())) {
-/* 1953 */                                          choiceTitle = p.getText();
+                      if ("choices".equals(p.getCurrentName())) {
+                          JsonToken t2 = p.nextToken();
+                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
+                              String choiceTitle = null;
+                              String choiceValue = null;
+                              if (t2 == JsonToken.START_OBJECT) {
+                                  JsonToken t3 = p.nextToken();
+                                  while (t3 != null && t3 != JsonToken.END_OBJECT) {
+                                      if ("title".equals(p.getCurrentName())) {
+                                          choiceTitle = p.getText();
                                                 } else if (Vine.Settings.PROP_VALUE.equals(p.getCurrentName())) {
-/* 1955 */                                          choiceValue = p.getText();
+                                          choiceValue = p.getText();
                                                 }
-/* 1957 */                                      t3 = p.nextToken();
+                                      t3 = p.nextToken();
                                             }
-/* 1960 */                                  if (TextUtils.isEmpty(choiceTitle) && !TextUtils.isEmpty(choiceValue)) {
-/* 1961 */                                      choiceTitle = choiceValue;
+                                  if (TextUtils.isEmpty(choiceTitle) && !TextUtils.isEmpty(choiceValue)) {
+                                      choiceTitle = choiceValue;
                                             }
-/* 1963 */                                  choices.add(new Pair<>(choiceTitle, choiceValue));
+                                  choices.add(new Pair<>(choiceTitle, choiceValue));
                                         }
-/* 1965 */                              t2 = p.nextToken();
+                              t2 = p.nextToken();
                                     }
                                 } else {
-/* 1968 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
-/* 1934 */                      if ("boolean".equals(p.getCurrentName())) {
-/* 1935 */                          if (p.getIntValue() != 1) {
+                      if ("boolean".equals(p.getCurrentName())) {
+                          if (p.getIntValue() != 1) {
                                         isBooleanSetting = false;
                                     } else {
                                         isBooleanSetting = true;
@@ -2037,255 +2037,255 @@
                                 }
                                 break;
                             case VALUE_STRING:
-/* 1922 */                      if ("title".equals(p.getCurrentName())) {
-/* 1923 */                          title = p.getText();
+                      if ("title".equals(p.getCurrentName())) {
+                          title = p.getText();
                                 } else if ("section".equals(p.getCurrentName())) {
-/* 1925 */                          section = p.getText();
+                          section = p.getText();
                                 } else if (Vine.Settings.PROP_VALUE.equals(p.getCurrentName())) {
-/* 1927 */                          value = p.getText();
+                          value = p.getText();
                                 } else if ("name".equals(p.getCurrentName())) {
-/* 1929 */                          name = p.getText();
+                          name = p.getText();
                                 }
                                 break;
                         }
-/* 1973 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 1976 */          VineNotificationSetting result = new VineNotificationSetting(isBooleanSetting, name, title, section, value, choices);
-/* 1979 */          return result;
+          VineNotificationSetting result = new VineNotificationSetting(isBooleanSetting, name, title, section, value, choices);
+          return result;
                 }
 
-/* 1982 */      public static VinePrivateMessage parsePrivateMessage(JsonParser p) throws IOException {
-/* 1983 */          JsonToken t = p.nextToken();
-/* 1984 */          long conversationId = 0;
-/* 1985 */          long messageId = 0;
-/* 1986 */          long userId = 0;
-/* 1987 */          long created = 0;
-/* 1988 */          String message = null;
-/* 1989 */          String videoUrl = null;
-/* 1990 */          String thumbnailUrl = null;
-/* 1991 */          boolean vanished = false;
-/* 1992 */          boolean ephemeral = false;
-/* 1993 */          VinePost post = null;
-/* 1994 */          int maxLoops = Integer.MAX_VALUE;
-/* 1995 */          long vanishDate = -1;
-/* 1996 */          int networkType = 1;
-/* 1998 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static VinePrivateMessage parsePrivateMessage(JsonParser p) throws IOException {
+          JsonToken t = p.nextToken();
+          long conversationId = 0;
+          long messageId = 0;
+          long userId = 0;
+          long created = 0;
+          String message = null;
+          String videoUrl = null;
+          String thumbnailUrl = null;
+          boolean vanished = false;
+          boolean ephemeral = false;
+          VinePost post = null;
+          int maxLoops = Integer.MAX_VALUE;
+          long vanishDate = -1;
+          int networkType = 1;
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 2043 */                      String name = p.getCurrentName();
-/* 2044 */                      if ("post".equals(name)) {
-/* 2045 */                          post = parsePost(p);
-/* 2046 */                          videoUrl = post.videoUrl;
-/* 2047 */                          thumbnailUrl = post.thumbnailUrl;
+                      String name = p.getCurrentName();
+                      if ("post".equals(name)) {
+                          post = parsePost(p);
+                          videoUrl = post.videoUrl;
+                          thumbnailUrl = post.thumbnailUrl;
                                 } else {
-/* 2049 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case START_ARRAY:
-/* 2054 */                      String name2 = p.getCurrentName();
-/* 2056 */                      if ("videoUrls".equals(name2)) {
-/* 2057 */                          List<VineVideoUrlTier> urls = parseVideoUrls(p);
-/* 2058 */                          videoUrl = getHighestH264Url(urls);
-/* 2059 */                          if (TextUtils.isEmpty(videoUrl)) {
-/* 2060 */                              videoUrl = getHighestWebmUrl(urls);
+                      String name2 = p.getCurrentName();
+                      if ("videoUrls".equals(name2)) {
+                          List<VineVideoUrlTier> urls = parseVideoUrls(p);
+                          videoUrl = getHighestH264Url(urls);
+                          if (TextUtils.isEmpty(videoUrl)) {
+                              videoUrl = getHighestWebmUrl(urls);
                                     }
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
-/* 2020 */                      String name3 = p.getCurrentName();
-/* 2021 */                      if ("conversationId".equals(name3)) {
-/* 2022 */                          conversationId = p.getLongValue();
+                      String name3 = p.getCurrentName();
+                      if ("conversationId".equals(name3)) {
+                          conversationId = p.getLongValue();
                                 } else if ("messageId".equals(name3)) {
-/* 2024 */                          messageId = p.getLongValue();
+                          messageId = p.getLongValue();
                                 } else if ("userId".equals(name3)) {
-/* 2026 */                          userId = p.getLongValue();
+                          userId = p.getLongValue();
                                 } else if ("maxLoops".equals(name3)) {
-/* 2028 */                          maxLoops = p.getIntValue();
+                          maxLoops = p.getIntValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 2001 */                      String name4 = p.getCurrentName();
-/* 2002 */                      if ("message".equals(name4)) {
-/* 2003 */                          message = p.getText();
+                      String name4 = p.getCurrentName();
+                      if ("message".equals(name4)) {
+                          message = p.getText();
                                 } else if ("videoUrl".equals(name4)) {
-/* 2005 */                          videoUrl = p.getText();
+                          videoUrl = p.getText();
                                 } else if (PlusShare.KEY_CONTENT_DEEP_LINK_METADATA_THUMBNAIL_URL.equals(name4)) {
-/* 2007 */                          thumbnailUrl = p.getText();
+                          thumbnailUrl = p.getText();
                                 } else if ("created".equals(name4)) {
-/* 2009 */                          created = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+                          created = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
                                 } else if ("vanishedDate".equals(name4)) {
-/* 2011 */                          vanishDate = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+                          vanishDate = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
                                 } else if ("inbox".equals(p.getCurrentName()) && CommonUtil.FIELD_TYPE_OTHER.equals(p.getValueAsString())) {
-/* 2014 */                          networkType = 2;
+                          networkType = 2;
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
-/* 2034 */                      String name5 = p.getCurrentName();
-/* 2035 */                      if (Vine.MessagesColumns.VANISHED.equals(name5)) {
-/* 2036 */                          vanished = p.getBooleanValue();
+                      String name5 = p.getCurrentName();
+                      if (Vine.MessagesColumns.VANISHED.equals(name5)) {
+                          vanished = p.getBooleanValue();
                                 } else if (Vine.MessagesColumns.EPHEMERAL.equals(name5)) {
-/* 2038 */                          ephemeral = p.getBooleanValue();
+                          ephemeral = p.getBooleanValue();
                                 }
                                 break;
                         }
-/* 2066 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2069 */          return new VinePrivateMessage(-1L, conversationId, messageId, userId, created, message, videoUrl, thumbnailUrl, networkType, false, vanished, maxLoops, vanishDate, ephemeral, 0L, post, 0, (String) null);
+          return new VinePrivateMessage(-1L, conversationId, messageId, userId, created, message, videoUrl, thumbnailUrl, networkType, false, vanished, maxLoops, vanishDate, ephemeral, 0L, post, 0, (String) null);
                 }
 
-/* 2074 */      private static String getHighestH264Url(List<VineVideoUrlTier> urls) {
-/* 2075 */          if (urls != null && urls.size() > 0) {
-/* 2076 */              VineVideoUrlTier topTier = null;
+      private static String getHighestH264Url(List<VineVideoUrlTier> urls) {
+          if (urls != null && urls.size() > 0) {
+              VineVideoUrlTier topTier = null;
                         for (int i = 0; i < urls.size(); i++) {
-/* 2078 */                  if (VineVideoUrlTier.FORMAT_H264.equals(urls.get(i).format) && (topTier == null || urls.get(i).rate > topTier.rate)) {
-/* 2080 */                      VineVideoUrlTier topTier2 = urls.get(i);
+                  if (VineVideoUrlTier.FORMAT_H264.equals(urls.get(i).format) && (topTier == null || urls.get(i).rate > topTier.rate)) {
+                      VineVideoUrlTier topTier2 = urls.get(i);
                                 topTier = topTier2;
                             }
                         }
-/* 2084 */              if (topTier != null) {
-/* 2085 */                  SLog.m447d("ryango highest h264 {}", topTier.url);
-/* 2086 */                  return topTier.url;
+              if (topTier != null) {
+                  SLog.m447d("ryango highest h264 {}", topTier.url);
+                  return topTier.url;
                         }
                     }
                     return null;
                 }
 
-/* 2092 */      private static String getHighestWebmUrl(List<VineVideoUrlTier> urls) {
-/* 2093 */          if (urls != null && urls.size() > 0) {
-/* 2094 */              VineVideoUrlTier topTier = null;
+      private static String getHighestWebmUrl(List<VineVideoUrlTier> urls) {
+          if (urls != null && urls.size() > 0) {
+              VineVideoUrlTier topTier = null;
                         for (int i = 0; i < urls.size(); i++) {
-/* 2096 */                  if (VineVideoUrlTier.FORMAT_WEBM.equals(urls.get(i).format) && (topTier == null || urls.get(i).rate > topTier.rate)) {
-/* 2098 */                      VineVideoUrlTier topTier2 = urls.get(i);
+                  if (VineVideoUrlTier.FORMAT_WEBM.equals(urls.get(i).format) && (topTier == null || urls.get(i).rate > topTier.rate)) {
+                      VineVideoUrlTier topTier2 = urls.get(i);
                                 topTier = topTier2;
                             }
                         }
-/* 2102 */              if (topTier != null) {
-/* 2103 */                  SLog.m447d("ryango highest webm {}", topTier.url);
-/* 2104 */                  return topTier.url;
+              if (topTier != null) {
+                  SLog.m447d("ryango highest webm {}", topTier.url);
+                  return topTier.url;
                         }
                     }
                     return null;
                 }
 
-/* 2111 */      private static VineSingleNotification parseNotification(JsonParser p) throws IOException {
-/* 2112 */          JsonToken t = p.nextToken();
-/* 2113 */          String avatarUrl = null;
-/* 2114 */          String username = null;
-/* 2115 */          String thumbnailUrl = null;
-/* 2116 */          String comment = null;
-/* 2117 */          long notificationId = 0;
-/* 2118 */          long userId = 0;
-/* 2119 */          long postId = 0;
-/* 2120 */          long createdAt = 0;
-/* 2121 */          long conversationId = 0;
-/* 2122 */          long unreadMessageCount = 0;
-/* 2123 */          long recipientUserId = 0;
-/* 2124 */          boolean verified = false;
-/* 2125 */          int notificationTypeId = 0;
-/* 2126 */          boolean privateAccount = false;
-/* 2127 */          boolean followRequested = false;
-/* 2128 */          boolean following = false;
-/* 2129 */          ArrayList<VineEntity> entities = null;
-/* 2130 */          String onboard = null;
-/* 2131 */          String url = null;
-/* 2132 */          String title = null;
-/* 2134 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VineSingleNotification parseNotification(JsonParser p) throws IOException {
+          JsonToken t = p.nextToken();
+          String avatarUrl = null;
+          String username = null;
+          String thumbnailUrl = null;
+          String comment = null;
+          long notificationId = 0;
+          long userId = 0;
+          long postId = 0;
+          long createdAt = 0;
+          long conversationId = 0;
+          long unreadMessageCount = 0;
+          long recipientUserId = 0;
+          boolean verified = false;
+          int notificationTypeId = 0;
+          boolean privateAccount = false;
+          boolean followRequested = false;
+          boolean following = false;
+          ArrayList<VineEntity> entities = null;
+          String onboard = null;
+          String url = null;
+          String title = null;
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 2212 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 2184 */                      if ("entities".equals(p.getCurrentName())) {
-/* 2185 */                          JsonToken t2 = p.nextToken();
-/* 2186 */                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
-/* 2187 */                              VineEntity entity = parseEntity(p);
-/* 2188 */                              if (entities == null) {
-/* 2189 */                                  entities = new ArrayList<>();
+                      if ("entities".equals(p.getCurrentName())) {
+                          JsonToken t2 = p.nextToken();
+                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
+                              VineEntity entity = parseEntity(p);
+                              if (entities == null) {
+                                  entities = new ArrayList<>();
                                         }
-/* 2191 */                              if (entity != null) {
-/* 2192 */                                  entities.add(entity);
+                              if (entity != null) {
+                                  entities.add(entity);
                                         }
-/* 2194 */                              t2 = p.nextToken();
+                              t2 = p.nextToken();
                                     }
                                 } else {
-/* 2197 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
-/* 2157 */                      String name = p.getCurrentName();
-/* 2158 */                      if ("notificationTypeId".equals(name)) {
-/* 2159 */                          notificationTypeId = p.getIntValue();
+                      String name = p.getCurrentName();
+                      if ("notificationTypeId".equals(name)) {
+                          notificationTypeId = p.getIntValue();
                                 } else if ("notificationId".equals(name)) {
-/* 2161 */                          notificationId = p.getLongValue();
+                          notificationId = p.getLongValue();
                                 } else if ("userId".equals(name)) {
-/* 2163 */                          userId = p.getLongValue();
+                          userId = p.getLongValue();
                                 } else if ("postId".equals(name)) {
-/* 2165 */                          postId = p.getLongValue();
+                          postId = p.getLongValue();
                                 } else if ("verified".equals(name)) {
-/* 2167 */                          verified = p.getIntValue() == 1;
+                          verified = p.getIntValue() == 1;
                                 } else if ("private".equals(name)) {
-/* 2169 */                          privateAccount = p.getIntValue() == 1;
+                          privateAccount = p.getIntValue() == 1;
                                 } else if ("followRequested".equals(name)) {
-/* 2171 */                          followRequested = p.getIntValue() == 1;
+                          followRequested = p.getIntValue() == 1;
                                 } else if ("following".equals(name)) {
-/* 2173 */                          following = p.getIntValue() == 1;
+                          following = p.getIntValue() == 1;
                                 } else if ("conversationId".equals(name)) {
-/* 2175 */                          conversationId = p.getLongValue();
+                          conversationId = p.getLongValue();
                                 } else if ("unreadMessageCount".equals(name)) {
-/* 2177 */                          unreadMessageCount = p.getLongValue();
+                          unreadMessageCount = p.getLongValue();
                                 } else if ("recipientUserId".equals(name)) {
-/* 2179 */                          recipientUserId = p.getLongValue();
+                          recipientUserId = p.getLongValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 2137 */                      String name2 = p.getCurrentName();
-/* 2138 */                      if ("avatarUrl".equals(name2)) {
-/* 2139 */                          avatarUrl = p.getText();
+                      String name2 = p.getCurrentName();
+                      if ("avatarUrl".equals(name2)) {
+                          avatarUrl = p.getText();
                                 } else if ("body".equals(name2)) {
-/* 2141 */                          username = Util.getUsernameFromActivity(p.getText());
-/* 2142 */                          comment = p.getText();
+                          username = Util.getUsernameFromActivity(p.getText());
+                          comment = p.getText();
                                 } else if (PlusShare.KEY_CONTENT_DEEP_LINK_METADATA_THUMBNAIL_URL.equals(name2)) {
-/* 2144 */                          thumbnailUrl = p.getText();
+                          thumbnailUrl = p.getText();
                                 } else if ("created".equals(name2)) {
-/* 2146 */                          createdAt = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+                          createdAt = DateTimeUtil.getTimeInMsFromString(p.getText(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
                                 } else if ("onboard".equals(name2)) {
-/* 2148 */                          onboard = p.getText();
+                          onboard = p.getText();
                                 } else if (PlusShare.KEY_CALL_TO_ACTION_URL.equals(name2)) {
-/* 2150 */                          url = p.getText();
+                          url = p.getText();
                                 } else if ("title".equals(name2)) {
-/* 2152 */                          title = p.getText();
+                          title = p.getText();
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
-/* 2203 */                      String name3 = p.getCurrentName();
-/* 2204 */                      if ("followRequested".equals(name3)) {
-/* 2205 */                          followRequested = p.getBooleanValue();
+                      String name3 = p.getCurrentName();
+                      if ("followRequested".equals(name3)) {
+                          followRequested = p.getBooleanValue();
                                 } else if ("following".equals(name3)) {
-/* 2207 */                          following = p.getBooleanValue();
+                          following = p.getBooleanValue();
                                 }
                                 break;
                         }
-/* 2216 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2219 */          VineSingleNotification result = new VineSingleNotification(avatarUrl, username, thumbnailUrl, comment, notificationId, userId, postId, createdAt, verified, notificationTypeId, conversationId, entities, unreadMessageCount, recipientUserId, onboard, url, title);
-/* 2223 */          if (entities != null) {
-/* 2224 */              Util.validateAndFixEntities(entities);
+          VineSingleNotification result = new VineSingleNotification(avatarUrl, username, thumbnailUrl, comment, notificationId, userId, postId, createdAt, verified, notificationTypeId, conversationId, entities, unreadMessageCount, recipientUserId, onboard, url, title);
+          if (entities != null) {
+              Util.validateAndFixEntities(entities);
                     }
-/* 2226 */          if (following) {
-/* 2227 */              result.setFollowing();
+          if (following) {
+              result.setFollowing();
                     }
-/* 2229 */          if (followRequested) {
-/* 2230 */              result.setFollowRequested();
+          if (followRequested) {
+              result.setFollowRequested();
                     }
-/* 2232 */          if (privateAccount) {
-/* 2233 */              result.setPrivate();
+          if (privateAccount) {
+              result.setPrivate();
                     }
-/* 2236 */          return result;
+          return result;
                 }
 
-/* 2241 */      private static VineEverydayNotification parseEverydayNotification(JsonParser p) throws IOException {
+      private static VineEverydayNotification parseEverydayNotification(JsonParser p) throws IOException {
           JsonToken t = p.nextToken();
           String body = null;
           String avatarUrl = null;
@@ -2368,440 +2368,440 @@
           }
           return new VineEverydayNotification(body, notificationId, type, post, user, new ArrayList<VineEntity>(), null, createdAt, isNew, 0);
       }
-/* 2323 */      public static VineMilestone parseMilestone(JsonParser p) throws IOException {
-/* 2324 */          String backgroundImageUrl = null;
-/* 2325 */          String backgroundVideoUrl = null;
-/* 2326 */          String iconUrl = null;
-/* 2327 */          String title = null;
-/* 2328 */          String description = null;
-/* 2329 */          String milestoneUrl = null;
-/* 2330 */          int overlayColor = 0;
-/* 2331 */          int blurRadius = 0;
-/* 2332 */          float overlayAlpha = 0.0f;
-/* 2333 */          JsonToken t = p.nextToken();
-/* 2334 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static VineMilestone parseMilestone(JsonParser p) throws IOException {
+          String backgroundImageUrl = null;
+          String backgroundVideoUrl = null;
+          String iconUrl = null;
+          String title = null;
+          String description = null;
+          String milestoneUrl = null;
+          int overlayColor = 0;
+          int blurRadius = 0;
+          float overlayAlpha = 0.0f;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case VALUE_NUMBER_INT:
-/* 2359 */                      if ("gaussianBlurRadius".equals(p.getCurrentName())) {
-/* 2360 */                          blurRadius = p.getIntValue();
+                      if ("gaussianBlurRadius".equals(p.getCurrentName())) {
+                          blurRadius = p.getIntValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 2337 */                      if ("backgroundImageUrl".equals(p.getCurrentName())) {
-/* 2338 */                          backgroundImageUrl = p.getText();
+                      if ("backgroundImageUrl".equals(p.getCurrentName())) {
+                          backgroundImageUrl = p.getText();
                                 } else if ("backgroundVideoUrl".equals(p.getCurrentName())) {
-/* 2340 */                          backgroundVideoUrl = p.getText();
+                          backgroundVideoUrl = p.getText();
                                 } else if ("iconUrl".equals(p.getCurrentName())) {
-/* 2342 */                          iconUrl = p.getText();
+                          iconUrl = p.getText();
                                 } else if ("title".equals(p.getCurrentName())) {
-/* 2344 */                          title = p.getText();
+                          title = p.getText();
                                 } else if ("description".equals(p.getCurrentName())) {
-/* 2346 */                          description = p.getText();
+                          description = p.getText();
                                 } else if ("milestoneUrl".equals(p.getCurrentName())) {
-/* 2348 */                          milestoneUrl = p.getText();
+                          milestoneUrl = p.getText();
                                 } else if ("overlayAlpha".equals(p.getCurrentName())) {
-/* 2350 */                          overlayAlpha = Float.parseFloat(p.getText());
+                          overlayAlpha = Float.parseFloat(p.getText());
                                 } else if ("overlayColor".equals(p.getCurrentName())) {
-/* 2352 */                          overlayColor = Integer.decode(p.getText()).intValue();
+                          overlayColor = Integer.decode(p.getText()).intValue();
                                 } else if ("gaussianBlurRadius".equals(p.getCurrentName())) {
-/* 2354 */                          blurRadius = Integer.parseInt(p.getText());
+                          blurRadius = Integer.parseInt(p.getText());
                                 }
                                 break;
                         }
-/* 2365 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2367 */          return new VineMilestone(backgroundImageUrl, backgroundVideoUrl, iconUrl, title, description, milestoneUrl, overlayColor, overlayAlpha, blurRadius);
+          return new VineMilestone(backgroundImageUrl, backgroundVideoUrl, iconUrl, title, description, milestoneUrl, overlayColor, overlayAlpha, blurRadius);
                 }
 
-/* 2372 */      public static VineEntity parseEntity(JsonParser p) throws IOException {
-/* 2373 */          String type = null;
-/* 2374 */          String link = null;
-/* 2375 */          String title = null;
-/* 2376 */          long id = 0;
-/* 2377 */          int start = -1;
-/* 2378 */          int end = -1;
-/* 2379 */          JsonToken t = p.nextToken();
-/* 2380 */          while (t != null && t != JsonToken.END_OBJECT) {
+      public static VineEntity parseEntity(JsonParser p) throws IOException {
+          String type = null;
+          String link = null;
+          String title = null;
+          long id = 0;
+          int start = -1;
+          int end = -1;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_ARRAY:
-/* 2394 */                      if ("range".equals(p.getCurrentName())) {
-/* 2395 */                          JsonToken t2 = p.nextToken();
-/* 2396 */                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
+                      if ("range".equals(p.getCurrentName())) {
+                          JsonToken t2 = p.nextToken();
+                          while (t2 != null && t2 != JsonToken.END_ARRAY) {
                                         switch (t2) {
                                             case VALUE_NUMBER_INT:
-/* 2399 */                                      if (start == -1) {
-/* 2400 */                                          start = p.getIntValue();
+                                      if (start == -1) {
+                                          start = p.getIntValue();
                                                 } else {
-/* 2402 */                                          end = p.getIntValue();
+                                          end = p.getIntValue();
                                                 }
                                                 break;
                                         }
-/* 2407 */                              t2 = p.nextToken();
+                              t2 = p.nextToken();
                                     }
                                 } else {
-/* 2410 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case VALUE_NUMBER_INT:
                                 break;
                             case VALUE_STRING:
-/* 2383 */                      String cn = p.getCurrentName();
-/* 2384 */                      if ("type".equals(cn)) {
-/* 2385 */                          type = p.getText();
+                      String cn = p.getCurrentName();
+                      if ("type".equals(cn)) {
+                          type = p.getText();
                                     continue;
                                 } else if ("link".equals(cn)) {
-/* 2387 */                          link = p.getText();
+                          link = p.getText();
                                 } else if ("title".equals(cn)) {
-/* 2389 */                          title = p.getText();
+                          title = p.getText();
                                 }
-/* 2423 */                      t = p.nextToken();
+                      t = p.nextToken();
                                 break;
                             default:
                                 continue;
                         }
-/* 2414 */              if ("id".equals(p.getCurrentName())) {
-/* 2415 */                  id = p.getLongValue();
+              if ("id".equals(p.getCurrentName())) {
+                  id = p.getLongValue();
                         }
-/* 2423 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2425 */          return new VineEntity(type, title, link, start, end, id);
+          return new VineEntity(type, title, link, start, end, id);
                 }
 
-/* 2428 */      private static ServerStatus parseServerStatus(JsonParser p) throws IOException {
-/* 2429 */          String uploadType = null;
-/* 2430 */          String status = null;
-/* 2431 */          String message = null;
-/* 2433 */          String staticTimelineUrl = null;
-/* 2434 */          JsonToken t = p.nextToken();
-/* 2435 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static ServerStatus parseServerStatus(JsonParser p) throws IOException {
+          String uploadType = null;
+          String status = null;
+          String message = null;
+          String staticTimelineUrl = null;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                             case START_ARRAY:
-/* 2439 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_STRING:
-/* 2443 */                      String cn = p.getCurrentName();
-/* 2444 */                      if ("uploadType".equals(cn)) {
-/* 2445 */                          uploadType = p.getText();
+                      String cn = p.getCurrentName();
+                      if ("uploadType".equals(cn)) {
+                          uploadType = p.getText();
                                 } else if ("status".equals(cn)) {
-/* 2447 */                          status = p.getText();
+                          status = p.getText();
                                 } else if ("message".equals(cn)) {
-/* 2449 */                          message = p.getText();
+                          message = p.getText();
                                 } else if ("staticTimelineUrl".equals(cn)) {
-/* 2451 */                          staticTimelineUrl = p.getText();
+                          staticTimelineUrl = p.getText();
                                 }
                                 break;
                         }
-/* 2456 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2458 */          return new ServerStatus(uploadType, status, message, null, staticTimelineUrl);
+          return new ServerStatus(uploadType, status, message, null, staticTimelineUrl);
                 }
 
-/* 2461 */      private static VineClientFlags parseClientFlags(JsonParser p) throws IOException {
-/* 2462 */          String messageTitle = null;
-/* 2463 */          String messageText = null;
-/* 2464 */          String apiHost = null;
-/* 2465 */          String rtcHost = null;
-/* 2466 */          String mediaHost = null;
-/* 2467 */          String exploreHost = null;
-/* 2468 */          long ttlSeconds = 0;
-/* 2469 */          boolean doubleTapToLikeOnPause = true;
-/* 2470 */          boolean prefetchEnabled = false;
-/* 2471 */          boolean useVinePlayer = SdkVideoView.getDefaultGlobalVinePlayer();
-/* 2473 */          JsonToken t = p.nextToken();
-/* 2474 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VineClientFlags parseClientFlags(JsonParser p) throws IOException {
+          String messageTitle = null;
+          String messageText = null;
+          String apiHost = null;
+          String rtcHost = null;
+          String mediaHost = null;
+          String exploreHost = null;
+          long ttlSeconds = 0;
+          boolean doubleTapToLikeOnPause = true;
+          boolean prefetchEnabled = false;
+          boolean useVinePlayer = SdkVideoView.getDefaultGlobalVinePlayer();
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                             case START_ARRAY:
-/* 2522 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 2508 */                      String cn = p.getCurrentName();
-/* 2509 */                      if ("doubleTapToLikeOnPause".equals(cn)) {
-/* 2510 */                          doubleTapToLikeOnPause = p.getIntValue() == 1;
+                      String cn = p.getCurrentName();
+                      if ("doubleTapToLikeOnPause".equals(cn)) {
+                          doubleTapToLikeOnPause = p.getIntValue() == 1;
                                 } else if ("prefetchEnabled".equals(cn)) {
-/* 2512 */                          prefetchEnabled = p.getIntValue() == 1;
+                          prefetchEnabled = p.getIntValue() == 1;
                                 } else if ("useVinePlayer".equals(cn)) {
-/* 2514 */                          useVinePlayer = p.getIntValue() == 1;
+                          useVinePlayer = p.getIntValue() == 1;
                                 } else if ("ttl_s".equals(p.getCurrentName())) {
-/* 2516 */                          ttlSeconds = p.getLongValue();
+                          ttlSeconds = p.getLongValue();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 2490 */                      String cn2 = p.getCurrentName();
-/* 2491 */                      if ("messageTitle".equals(cn2)) {
-/* 2492 */                          messageTitle = p.getText();
+                      String cn2 = p.getCurrentName();
+                      if ("messageTitle".equals(cn2)) {
+                          messageTitle = p.getText();
                                 } else if ("messageText".equals(cn2)) {
-/* 2494 */                          messageText = p.getText();
+                          messageText = p.getText();
                                 } else if ("apiHost".equals(cn2)) {
-/* 2496 */                          apiHost = p.getText();
+                          apiHost = p.getText();
                                 } else if ("rtcHost".equals(cn2)) {
-/* 2498 */                          rtcHost = p.getText();
+                          rtcHost = p.getText();
                                 } else if ("mediaHost".equals(cn2)) {
-/* 2500 */                          mediaHost = p.getText();
+                          mediaHost = p.getText();
                                 } else if ("exploreHost".equals(cn2)) {
-/* 2502 */                          exploreHost = p.getText();
+                          exploreHost = p.getText();
                                 }
                                 break;
                             case VALUE_TRUE:
                             case VALUE_FALSE:
-/* 2479 */                      String cn3 = p.getCurrentName();
-/* 2480 */                      if ("doubleTapToLikeOnPause".equals(cn3)) {
-/* 2481 */                          doubleTapToLikeOnPause = p.getBooleanValue();
+                      String cn3 = p.getCurrentName();
+                      if ("doubleTapToLikeOnPause".equals(cn3)) {
+                          doubleTapToLikeOnPause = p.getBooleanValue();
                                 } else if ("prefetchEnabled".equals(cn3)) {
-/* 2483 */                          prefetchEnabled = p.getBooleanValue();
+                          prefetchEnabled = p.getBooleanValue();
                                 } else if ("useVinePlayer".equals(cn3)) {
-/* 2485 */                          useVinePlayer = p.getBooleanValue();
+                          useVinePlayer = p.getBooleanValue();
                                 }
                                 break;
                         }
-/* 2526 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2529 */          return new VineClientFlags(messageTitle, messageText, apiHost, rtcHost, mediaHost, exploreHost, ttlSeconds, doubleTapToLikeOnPause, prefetchEnabled, useVinePlayer);
+          return new VineClientFlags(messageTitle, messageText, apiHost, rtcHost, mediaHost, exploreHost, ttlSeconds, doubleTapToLikeOnPause, prefetchEnabled, useVinePlayer);
                 }
 
-/* 2533 */      private static VinePostResponse parseVinePostResponse(JsonParser p) throws IOException {
-/* 2534 */          long postId = 0;
-/* 2535 */          long createdAt = 0;
-/* 2536 */          JsonToken t = p.nextToken();
-/* 2537 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VinePostResponse parseVinePostResponse(JsonParser p) throws IOException {
+          long postId = 0;
+          long createdAt = 0;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
                             case START_ARRAY:
-/* 2550 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case VALUE_NUMBER_INT:
-/* 2540 */                      String cn = p.getCurrentName();
-/* 2541 */                      if ("postId".equals(cn)) {
-/* 2542 */                          postId = p.getLongValue();
+                      String cn = p.getCurrentName();
+                      if ("postId".equals(cn)) {
+                          postId = p.getLongValue();
                                 } else if ("createdAt".equals(cn)) {
-/* 2544 */                          createdAt = p.getLongValue();
+                          createdAt = p.getLongValue();
                                 }
                                 break;
                         }
-/* 2554 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2556 */          return new VinePostResponse(postId, createdAt);
+          return new VinePostResponse(postId, createdAt);
                 }
 
-/* 2560 */      private static VinePrivateMessagePostResponseWithUsers parsePrivateMessageResponse(JsonParser p) throws IOException {
-/* 2561 */          ArrayList<VinePrivateMessageResponse> responses = new ArrayList<>();
-/* 2562 */          ArrayList<VineRecipient> recipients = new ArrayList<>();
-/* 2563 */          ArrayList<VineUser> users = null;
-/* 2564 */          VinePost post = null;
-/* 2565 */          int networkType = 1;
-/* 2567 */          JsonToken t = p.nextToken();
-/* 2568 */          while (t != null && t != JsonToken.END_OBJECT) {
+      private static VinePrivateMessagePostResponseWithUsers parsePrivateMessageResponse(JsonParser p) throws IOException {
+          ArrayList<VinePrivateMessageResponse> responses = new ArrayList<>();
+          ArrayList<VineRecipient> recipients = new ArrayList<>();
+          ArrayList<VineUser> users = null;
+          VinePost post = null;
+          int networkType = 1;
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
                         switch (t) {
                             case START_OBJECT:
-/* 2697 */                      p.skipChildren();
+                      p.skipChildren();
                                 break;
                             case START_ARRAY:
-/* 2579 */                      if ("messages".equals(p.getCurrentName())) {
-/* 2580 */                          while (t != null && t != JsonToken.END_ARRAY) {
+                      if ("messages".equals(p.getCurrentName())) {
+                          while (t != null && t != JsonToken.END_ARRAY) {
                                         switch (t) {
                                             case START_OBJECT:
-/* 2583 */                                      VineError error = null;
-/* 2584 */                                      String videoUrl = null;
-/* 2585 */                                      String thumbnailUrl = null;
-/* 2586 */                                      String shareUrl = null;
-/* 2587 */                                      String email = null;
-/* 2588 */                                      String phone = null;
-/* 2589 */                                      String recipientIdString = null;
-/* 2590 */                                      String videoWebmUrl = null;
-/* 2591 */                                      long conversationId = 0;
-/* 2592 */                                      long messageId = 0;
-/* 2593 */                                      long userId = -1;
-/* 2594 */                                      while (t != null && t != JsonToken.END_OBJECT) {
-/* 2595 */                                          String name = p.getCurrentName();
+                                      VineError error = null;
+                                      String videoUrl = null;
+                                      String thumbnailUrl = null;
+                                      String shareUrl = null;
+                                      String email = null;
+                                      String phone = null;
+                                      String recipientIdString = null;
+                                      String videoWebmUrl = null;
+                                      long conversationId = 0;
+                                      long messageId = 0;
+                                      long userId = -1;
+                                      while (t != null && t != JsonToken.END_OBJECT) {
+                                          String name = p.getCurrentName();
                                                     switch (t) {
                                                         case START_OBJECT:
-/* 2629 */                                                  String objName = p.getCurrentName();
-/* 2630 */                                                  if ("to".equals(objName)) {
-/* 2631 */                                                      while (t != null && t != JsonToken.END_OBJECT) {
-/* 2632 */                                                          String toName = p.getCurrentName();
+                                                  String objName = p.getCurrentName();
+                                                  if ("to".equals(objName)) {
+                                                      while (t != null && t != JsonToken.END_OBJECT) {
+                                                          String toName = p.getCurrentName();
                                                                     switch (t) {
                                                                         case VALUE_NUMBER_INT:
-/* 2645 */                                                                  if (toName.equals("userId")) {
-/* 2646 */                                                                      userId = p.getLongValue();
+                                                                  if (toName.equals("userId")) {
+                                                                      userId = p.getLongValue();
                                                                             }
                                                                             break;
                                                                         case VALUE_STRING:
-/* 2635 */                                                                  if (toName.equals("email")) {
-/* 2636 */                                                                      email = p.getText();
+                                                                  if (toName.equals("email")) {
+                                                                      email = p.getText();
                                                                             } else if (toName.equals(VineRecipient.KEY_PHONE)) {
-/* 2638 */                                                                      phone = p.getText();
+                                                                      phone = p.getText();
                                                                             } else if (toName.equals(VineRecipient.KEY_RECIPIENT_ID)) {
-/* 2640 */                                                                      recipientIdString = p.getText();
+                                                                      recipientIdString = p.getText();
                                                                             }
                                                                             break;
                                                                     }
-/* 2651 */                                                          t = p.nextToken();
+                                                          t = p.nextToken();
                                                                 }
                                                             } else if ("error".equals(objName)) {
-/* 2654 */                                                      error = parseMessageError(p);
+                                                      error = parseMessageError(p);
                                                             } else if ("post".equals(objName)) {
-/* 2656 */                                                      post = parsePost(p);
+                                                      post = parsePost(p);
                                                             }
                                                             break;
                                                         case START_ARRAY:
-/* 2618 */                                                  if ("videoUrls".equals(p.getCurrentName())) {
-/* 2619 */                                                      List<VineVideoUrlTier> urls = parseVideoUrls(p);
-/* 2620 */                                                      videoUrl = getHighestH264Url(urls);
-/* 2621 */                                                      videoWebmUrl = getHighestWebmUrl(urls);
-/* 2622 */                                                      if (TextUtils.isEmpty(videoUrl)) {
-/* 2623 */                                                          videoUrl = videoWebmUrl;
+                                                  if ("videoUrls".equals(p.getCurrentName())) {
+                                                      List<VineVideoUrlTier> urls = parseVideoUrls(p);
+                                                      videoUrl = getHighestH264Url(urls);
+                                                      videoWebmUrl = getHighestWebmUrl(urls);
+                                                      if (TextUtils.isEmpty(videoUrl)) {
+                                                          videoUrl = videoWebmUrl;
                                                                 }
                                                             }
                                                             break;
                                                         case VALUE_NUMBER_INT:
-/* 2610 */                                                  if ("conversationId".equals(name)) {
-/* 2611 */                                                      conversationId = p.getLongValue();
+                                                  if ("conversationId".equals(name)) {
+                                                      conversationId = p.getLongValue();
                                                             } else if ("messageId".equals(name)) {
-/* 2613 */                                                      messageId = p.getLongValue();
+                                                      messageId = p.getLongValue();
                                                             }
                                                             break;
                                                         case VALUE_STRING:
-/* 2598 */                                                  if ("videoUrl".equals(name)) {
-/* 2599 */                                                      videoUrl = p.getText();
+                                                  if ("videoUrl".equals(name)) {
+                                                      videoUrl = p.getText();
                                                             } else if (PlusShare.KEY_CONTENT_DEEP_LINK_METADATA_THUMBNAIL_URL.equals(name)) {
-/* 2601 */                                                      thumbnailUrl = p.getText();
+                                                      thumbnailUrl = p.getText();
                                                             } else if ("shareUrl".equals(name)) {
-/* 2603 */                                                      shareUrl = p.getText();
+                                                      shareUrl = p.getText();
                                                             } else if ("videoWebmUrl".equals(name)) {
-/* 2605 */                                                      videoWebmUrl = p.getText();
+                                                      videoWebmUrl = p.getText();
                                                             }
                                                             break;
                                                     }
-/* 2661 */                                          t = p.nextToken();
+                                          t = p.nextToken();
                                                 }
-/* 2663 */                                      long recipientId = -1;
-/* 2664 */                                      if (!TextUtils.isEmpty(recipientIdString)) {
-/* 2665 */                                          recipientId = Long.valueOf(recipientIdString).longValue();
+                                      long recipientId = -1;
+                                      if (!TextUtils.isEmpty(recipientIdString)) {
+                                          recipientId = Long.valueOf(recipientIdString).longValue();
                                                 }
-/* 2668 */                                      VineRecipient recipient = null;
-/* 2669 */                                      if (email != null) {
-/* 2670 */                                          recipient = VineRecipient.fromEmail(null, userId, email, recipientId);
+                                      VineRecipient recipient = null;
+                                      if (email != null) {
+                                          recipient = VineRecipient.fromEmail(null, userId, email, recipientId);
                                                 } else if (phone != null) {
-/* 2672 */                                          recipient = VineRecipient.fromPhone(null, userId, phone, recipientId);
+                                          recipient = VineRecipient.fromPhone(null, userId, phone, recipientId);
                                                 } else if (userId > 0) {
-/* 2674 */                                          recipient = VineRecipient.fromUser(null, userId, 0, recipientId);
+                                          recipient = VineRecipient.fromUser(null, userId, 0, recipientId);
                                                 } else {
-/* 2676 */                                          CrashUtil.log("No email, phone, or userId for recipient for message {}", Long.valueOf(messageId));
+                                          CrashUtil.log("No email, phone, or userId for recipient for message {}", Long.valueOf(messageId));
                                                 }
-/* 2678 */                                      if (TextUtils.isEmpty(videoUrl)) {
-/* 2679 */                                          videoUrl = videoWebmUrl;
+                                      if (TextUtils.isEmpty(videoUrl)) {
+                                          videoUrl = videoWebmUrl;
                                                 }
-/* 2681 */                                      recipients.add(recipient);
-/* 2682 */                                      responses.add(new VinePrivateMessageResponse(recipient, conversationId, messageId, videoUrl, thumbnailUrl, shareUrl, error, networkType));
+                                      recipients.add(recipient);
+                                      responses.add(new VinePrivateMessageResponse(recipient, conversationId, messageId, videoUrl, thumbnailUrl, shareUrl, error, networkType));
                                                 break;
                                         }
-/* 2687 */                              t = p.nextToken();
+                              t = p.nextToken();
                                     }
                                 } else if ("users".equals(p.getCurrentName())) {
-/* 2690 */                          users = parseUsersArray(p, null);
+                          users = parseUsersArray(p, null);
                                 } else {
-/* 2692 */                          p.skipChildren();
+                          p.skipChildren();
                                 }
                                 break;
                             case VALUE_STRING:
-/* 2571 */                      if ("inbox".equals(p.getCurrentName()) && CommonUtil.FIELD_TYPE_OTHER.equals(p.getValueAsString())) {
-/* 2573 */                          networkType = 2;
+                      if ("inbox".equals(p.getCurrentName()) && CommonUtil.FIELD_TYPE_OTHER.equals(p.getValueAsString())) {
+                          networkType = 2;
                                 }
                                 break;
                         }
-/* 2701 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2704 */          return new VinePrivateMessagePostResponseWithUsers(responses, recipients, users, post);
+          return new VinePrivateMessagePostResponseWithUsers(responses, recipients, users, post);
                 }
 
-/* 2709 */      public static ArrayList<ComplaintMenuOption> parseComplaintMenu(JsonParser p) throws IOException {
-/* 2710 */          ArrayList<ComplaintMenuOption> complaintMenuOptions = new ArrayList<>();
-/* 2711 */          JsonToken t = p.nextToken();
-/* 2712 */          while (t != null && t != JsonToken.END_OBJECT) {
-/* 2713 */              p.getCurrentName();
+      public static ArrayList<ComplaintMenuOption> parseComplaintMenu(JsonParser p) throws IOException {
+          ArrayList<ComplaintMenuOption> complaintMenuOptions = new ArrayList<>();
+          JsonToken t = p.nextToken();
+          while (t != null && t != JsonToken.END_OBJECT) {
+              p.getCurrentName();
                         switch (t) {
                             case FIELD_NAME:
-/* 2716 */                      String type = p.getCurrentName();
-/* 2717 */                      ComplaintMenuOption c = parseComplaintMenuOption(p, type);
-/* 2718 */                      complaintMenuOptions.add(c);
+                      String type = p.getCurrentName();
+                      ComplaintMenuOption c = parseComplaintMenuOption(p, type);
+                      complaintMenuOptions.add(c);
                                 break;
                         }
-/* 2724 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2726 */          return complaintMenuOptions;
+          return complaintMenuOptions;
                 }
 
-/* 2730 */      public static ComplaintMenuOption parseComplaintMenuOption(JsonParser p, String type) throws IOException {
-/* 2731 */          ComplaintMenuOption option = new ComplaintMenuOption();
-/* 2732 */          option.complaintType = type;
-/* 2733 */          JsonToken t = p.nextToken();
-/* 2734 */          while (t != JsonToken.END_OBJECT) {
-/* 2735 */              String tokenName = p.getCurrentName();
+      public static ComplaintMenuOption parseComplaintMenuOption(JsonParser p, String type) throws IOException {
+          ComplaintMenuOption option = new ComplaintMenuOption();
+          option.complaintType = type;
+          JsonToken t = p.nextToken();
+          while (t != JsonToken.END_OBJECT) {
+              String tokenName = p.getCurrentName();
                         switch (t) {
                             case FIELD_NAME:
-/* 2738 */                      if ("choices".equals(tokenName)) {
-/* 2739 */                          option.complaintChoices = parseComplaintChoiceArray(p);
+                      if ("choices".equals(tokenName)) {
+                          option.complaintChoices = parseComplaintChoiceArray(p);
                                 } else if ("prompt".equals(tokenName)) {
-/* 2741 */                          p.nextToken();
-/* 2742 */                          option.prompt = p.getText();
+                          p.nextToken();
+                          option.prompt = p.getText();
                                 }
                                 break;
                         }
-/* 2750 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2752 */          return option;
+          return option;
                 }
 
-/* 2756 */      public static ComplaintMenuOption.ComplaintChoice[] parseComplaintChoiceArray(JsonParser p) throws IOException {
-/* 2757 */          ArrayList<ComplaintMenuOption.ComplaintChoice> choices = new ArrayList<>();
-/* 2758 */          JsonToken t = p.nextToken();
-/* 2759 */          while (t != JsonToken.END_ARRAY) {
-/* 2760 */              p.getCurrentName();
+      public static ComplaintMenuOption.ComplaintChoice[] parseComplaintChoiceArray(JsonParser p) throws IOException {
+          ArrayList<ComplaintMenuOption.ComplaintChoice> choices = new ArrayList<>();
+          JsonToken t = p.nextToken();
+          while (t != JsonToken.END_ARRAY) {
+              p.getCurrentName();
                         switch (t) {
                             case START_OBJECT:
-/* 2763 */                      ComplaintMenuOption.ComplaintChoice choice = parseComplaintChoice(p);
-/* 2764 */                      choices.add(choice);
+                      ComplaintMenuOption.ComplaintChoice choice = parseComplaintChoice(p);
+                      choices.add(choice);
                                 break;
                         }
-/* 2770 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2772 */          return (ComplaintMenuOption.ComplaintChoice[]) choices.toArray(new ComplaintMenuOption.ComplaintChoice[choices.size()]);
+          return (ComplaintMenuOption.ComplaintChoice[]) choices.toArray(new ComplaintMenuOption.ComplaintChoice[choices.size()]);
                 }
 
-/* 2776 */      public static ComplaintMenuOption.ComplaintChoice parseComplaintChoice(JsonParser p) throws IOException {
-/* 2777 */          ComplaintMenuOption.ComplaintChoice choice = new ComplaintMenuOption.ComplaintChoice();
-/* 2778 */          JsonToken t = p.nextToken();
-/* 2779 */          while (t != JsonToken.END_OBJECT) {
-/* 2780 */              String tokenName = p.getCurrentName();
+      public static ComplaintMenuOption.ComplaintChoice parseComplaintChoice(JsonParser p) throws IOException {
+          ComplaintMenuOption.ComplaintChoice choice = new ComplaintMenuOption.ComplaintChoice();
+          JsonToken t = p.nextToken();
+          while (t != JsonToken.END_OBJECT) {
+              String tokenName = p.getCurrentName();
                         switch (t) {
                             case FIELD_NAME:
-/* 2783 */                      if ("title".equals(tokenName)) {
-/* 2784 */                          p.nextToken();
-/* 2785 */                          choice.title = p.getText();
+                      if ("title".equals(tokenName)) {
+                          p.nextToken();
+                          choice.title = p.getText();
                                 } else if (Vine.Settings.PROP_VALUE.equals(tokenName)) {
-/* 2787 */                          p.nextToken();
-/* 2788 */                          choice.value = p.getText();
+                          p.nextToken();
+                          choice.value = p.getText();
                                 } else if ("confirmation".equals(tokenName)) {
-/* 2791 */                          p.nextToken();
-/* 2792 */                          choice.confirmation = p.getText();
+                          p.nextToken();
+                          choice.confirmation = p.getText();
                                 }
                                 break;
                         }
-/* 2799 */              t = p.nextToken();
+              t = p.nextToken();
                     }
-/* 2801 */          return choice;
+          return choice;
                 }
 
-/* 2805 */      public static JsonParser createParser(InputStream inputStream) throws IOException {
-/* 2806 */          JsonParser jp = JSON_FACTORY.createJsonParser(inputStream);
-/* 2807 */          jp.nextToken();
-/* 2808 */          return jp;
+      public static JsonParser createParser(InputStream inputStream) throws IOException {
+          JsonParser jp = JSON_FACTORY.createJsonParser(inputStream);
+          jp.nextToken();
+          return jp;
                 }
 
-/* 2811 */      public static JsonParser createParser(String inputString) throws IOException {
-/* 2812 */          JsonParser jp = JSON_FACTORY.createJsonParser(inputString);
-/* 2813 */          jp.nextToken();
-/* 2814 */          return jp;
+      public static JsonParser createParser(String inputString) throws IOException {
+          JsonParser jp = JSON_FACTORY.createJsonParser(inputString);
+          jp.nextToken();
+          return jp;
                 }
             }

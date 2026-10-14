@@ -6,25 +6,25 @@
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             import com.google.android.gms.internal.C1028dm;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class NotifyTransactionStatusRequest implements SafeParcelable {
                 public static final Parcelable.Creator<NotifyTransactionStatusRequest> CREATOR = new C1215i();
 
-                /* JADX INFO: renamed from: iM */
+                
                 final int f2515iM;
                 int status;
 
-                /* JADX INFO: renamed from: tH */
+                
                 String f2516tH;
 
-                /* JADX INFO: renamed from: uj */
+                
                 String f2517uj;
 
                 public final class Builder {
                     private Builder() {
                     }
 
-                    /* synthetic */ Builder(NotifyTransactionStatusRequest x0, Object x1) {
+                     Builder(NotifyTransactionStatusRequest x0, Object x1) {
                         this();
                     }
 
@@ -81,7 +81,7 @@
                     return new Builder(notifyTransactionStatusRequest, null);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -102,7 +102,7 @@
                     return this.f2515iM;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C1215i.m2366a(this, out, flags);
                 }

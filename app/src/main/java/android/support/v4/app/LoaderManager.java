@@ -5,8 +5,8 @@
             import java.io.FileDescriptor;
             import java.io.PrintWriter;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 175 */   public abstract class LoaderManager {
+            
+   public abstract class LoaderManager {
 
                 public interface LoaderCallbacks<D> {
                     Loader<D> onCreateLoader(int i, Bundle bundle);
@@ -26,11 +26,11 @@
 
                 public abstract <D> Loader<D> restartLoader(int i, Bundle bundle, LoaderCallbacks<D> loaderCallbacks);
 
-/* 176 */       public static void enableDebugLogging(boolean enabled) {
-/* 177 */           LoaderManagerImpl.DEBUG = enabled;
+       public static void enableDebugLogging(boolean enabled) {
+           LoaderManagerImpl.DEBUG = enabled;
                 }
 
-/* 183 */       public boolean hasRunningLoaders() {
-/* 184 */           return false;
+       public boolean hasRunningLoaders() {
+           return false;
                 }
             }

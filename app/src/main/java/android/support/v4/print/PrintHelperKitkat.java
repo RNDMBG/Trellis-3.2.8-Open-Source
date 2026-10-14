@@ -23,8 +23,8 @@
             import java.io.IOException;
             import java.io.InputStream;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 44 */    class PrintHelperKitkat {
+            
+    class PrintHelperKitkat {
                 public static final int COLOR_MODE_COLOR = 2;
                 public static final int COLOR_MODE_MONOCHROME = 1;
                 private static final String LOG_TAG = "PrintHelperKitkat";
@@ -40,266 +40,266 @@
                 int mColorMode = 2;
                 int mOrientation = 1;
 
-/* 45 */        static /* synthetic */ Matrix access$000(PrintHelperKitkat x0, int x1, int x2, RectF x3, int x4) {
-/* 46 */            return x0.getMatrix(x1, x2, x3, x4);
+        static  Matrix access$000(PrintHelperKitkat x0, int x1, int x2, RectF x3, int x4) {
+            return x0.getMatrix(x1, x2, x3, x4);
                 }
 
-/* 45 */        static /* synthetic */ Bitmap access$200(PrintHelperKitkat x0, Uri x1, int x2) throws FileNotFoundException {
-/* 46 */            return x0.loadConstrainedBitmap(x1, x2);
+        static  Bitmap access$200(PrintHelperKitkat x0, Uri x1, int x2) throws FileNotFoundException {
+            return x0.loadConstrainedBitmap(x1, x2);
                 }
 
-/* 45 */        static /* synthetic */ Object access$300(PrintHelperKitkat x0) {
-/* 46 */            return x0.mLock;
+        static  Object access$300(PrintHelperKitkat x0) {
+            return x0.mLock;
                 }
 
-/* 86 */        PrintHelperKitkat(Context context) {
-/* 88 */            this.mContext = context;
+        PrintHelperKitkat(Context context) {
+            this.mContext = context;
                 }
 
-/* 101 */       public void setScaleMode(int scaleMode) {
-/* 102 */           this.mScaleMode = scaleMode;
+       public void setScaleMode(int scaleMode) {
+           this.mScaleMode = scaleMode;
                 }
 
-/* 111 */       public int getScaleMode() {
-/* 112 */           return this.mScaleMode;
+       public int getScaleMode() {
+           return this.mScaleMode;
                 }
 
-/* 123 */       public void setColorMode(int colorMode) {
-/* 124 */           this.mColorMode = colorMode;
+       public void setColorMode(int colorMode) {
+           this.mColorMode = colorMode;
                 }
 
-/* 133 */       public void setOrientation(int orientation) {
-/* 134 */           this.mOrientation = orientation;
+       public void setOrientation(int orientation) {
+           this.mOrientation = orientation;
                 }
 
-/* 143 */       public int getOrientation() {
-/* 144 */           return this.mOrientation;
+       public int getOrientation() {
+           return this.mOrientation;
                 }
 
-/* 153 */       public int getColorMode() {
-/* 154 */           return this.mColorMode;
+       public int getColorMode() {
+           return this.mColorMode;
                 }
 
-/* 163 */       public void printBitmap(String jobName, Bitmap bitmap) {
-/* 164 */           if (bitmap != null) {
-/* 167 */               int fittingMode = this.mScaleMode;
-/* 168 */               PrintManager printManager = (PrintManager) this.mContext.getSystemService("print");
-/* 169 */               PrintAttributes.MediaSize mediaSize = PrintAttributes.MediaSize.UNKNOWN_PORTRAIT;
-/* 170 */               if (bitmap.getWidth() > bitmap.getHeight()) {
-/* 171 */                   mediaSize = PrintAttributes.MediaSize.UNKNOWN_LANDSCAPE;
+       public void printBitmap(String jobName, Bitmap bitmap) {
+           if (bitmap != null) {
+               int fittingMode = this.mScaleMode;
+               PrintManager printManager = (PrintManager) this.mContext.getSystemService("print");
+               PrintAttributes.MediaSize mediaSize = PrintAttributes.MediaSize.UNKNOWN_PORTRAIT;
+               if (bitmap.getWidth() > bitmap.getHeight()) {
+                   mediaSize = PrintAttributes.MediaSize.UNKNOWN_LANDSCAPE;
                         }
-/* 173 */               PrintAttributes attr = new PrintAttributes.Builder().setMediaSize(mediaSize).setColorMode(this.mColorMode).build();
-/* 178 */               printManager.print(jobName, new C00341(jobName, bitmap, fittingMode), attr);
+               PrintAttributes attr = new PrintAttributes.Builder().setMediaSize(mediaSize).setColorMode(this.mColorMode).build();
+               printManager.print(jobName, new C00341(jobName, bitmap, fittingMode), attr);
                     }
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.print.PrintHelperKitkat$1 */
-/* 177 */       class C00341 extends PrintDocumentAdapter {
+                
+       class C00341 extends PrintDocumentAdapter {
                     private PrintAttributes mAttributes;
-                    final /* synthetic */ Bitmap val$bitmap;
-                    final /* synthetic */ int val$fittingMode;
-                    final /* synthetic */ String val$jobName;
+                    final  Bitmap val$bitmap;
+                    final  int val$fittingMode;
+                    final  String val$jobName;
 
-/* 178 */           C00341(String str, Bitmap bitmap, int i) {
+           C00341(String str, Bitmap bitmap, int i) {
                         this.val$jobName = str;
                         this.val$bitmap = bitmap;
                         this.val$fittingMode = i;
                     }
 
-                    @Override // android.print.PrintDocumentAdapter
-/* 188 */           public void onLayout(PrintAttributes oldPrintAttributes, PrintAttributes newPrintAttributes, CancellationSignal cancellationSignal, PrintDocumentAdapter.LayoutResultCallback layoutResultCallback, Bundle bundle) {
-/* 189 */               this.mAttributes = newPrintAttributes;
-/* 191 */               PrintDocumentInfo info = new PrintDocumentInfo.Builder(this.val$jobName).setContentType(1).setPageCount(1).build();
-/* 195 */               boolean changed = newPrintAttributes.equals(oldPrintAttributes) ? false : true;
-/* 196 */               layoutResultCallback.onLayoutFinished(info, changed);
+                    @Override 
+           public void onLayout(PrintAttributes oldPrintAttributes, PrintAttributes newPrintAttributes, CancellationSignal cancellationSignal, PrintDocumentAdapter.LayoutResultCallback layoutResultCallback, Bundle bundle) {
+               this.mAttributes = newPrintAttributes;
+               PrintDocumentInfo info = new PrintDocumentInfo.Builder(this.val$jobName).setContentType(1).setPageCount(1).build();
+               boolean changed = newPrintAttributes.equals(oldPrintAttributes) ? false : true;
+               layoutResultCallback.onLayoutFinished(info, changed);
                     }
 
-                    @Override // android.print.PrintDocumentAdapter
-/* 202 */           public void onWrite(PageRange[] pageRanges, ParcelFileDescriptor fileDescriptor, CancellationSignal cancellationSignal, PrintDocumentAdapter.WriteResultCallback writeResultCallback) {
-/* 203 */               PrintedPdfDocument pdfDocument = new PrintedPdfDocument(PrintHelperKitkat.this.mContext, this.mAttributes);
+                    @Override 
+           public void onWrite(PageRange[] pageRanges, ParcelFileDescriptor fileDescriptor, CancellationSignal cancellationSignal, PrintDocumentAdapter.WriteResultCallback writeResultCallback) {
+               PrintedPdfDocument pdfDocument = new PrintedPdfDocument(PrintHelperKitkat.this.mContext, this.mAttributes);
                         try {
-/* 206 */                   PdfDocument.Page page = pdfDocument.startPage(1);
-/* 208 */                   RectF content = new RectF(page.getInfo().getContentRect());
-/* 210 */                   Matrix matrix = PrintHelperKitkat.access$000(PrintHelperKitkat.this, this.val$bitmap.getWidth(), this.val$bitmap.getHeight(), content, this.val$fittingMode);
-/* 214 */                   page.getCanvas().drawBitmap(this.val$bitmap, matrix, null);
-/* 217 */                   pdfDocument.finishPage(page);
+                   PdfDocument.Page page = pdfDocument.startPage(1);
+                   RectF content = new RectF(page.getInfo().getContentRect());
+                   Matrix matrix = PrintHelperKitkat.access$000(PrintHelperKitkat.this, this.val$bitmap.getWidth(), this.val$bitmap.getHeight(), content, this.val$fittingMode);
+                   page.getCanvas().drawBitmap(this.val$bitmap, matrix, null);
+                   pdfDocument.finishPage(page);
                             try {
-/* 221 */                       pdfDocument.writeTo(new FileOutputStream(fileDescriptor.getFileDescriptor()));
-/* 224 */                       writeResultCallback.onWriteFinished(new PageRange[]{PageRange.ALL_PAGES});
+                       pdfDocument.writeTo(new FileOutputStream(fileDescriptor.getFileDescriptor()));
+                       writeResultCallback.onWriteFinished(new PageRange[]{PageRange.ALL_PAGES});
                             } catch (IOException ioe) {
-/* 228 */                       Log.e(PrintHelperKitkat.LOG_TAG, "Error writing printed content", ioe);
-/* 229 */                       writeResultCallback.onWriteFailed(null);
+                       Log.e(PrintHelperKitkat.LOG_TAG, "Error writing printed content", ioe);
+                       writeResultCallback.onWriteFailed(null);
                             }
-/* 232 */                   if (pdfDocument != null) {
-/* 233 */                       pdfDocument.close();
+                   if (pdfDocument != null) {
+                       pdfDocument.close();
                             }
-/* 235 */                   if (fileDescriptor != null) {
+                   if (fileDescriptor != null) {
                                 try {
-/* 237 */                           fileDescriptor.close();
+                           fileDescriptor.close();
                                 } catch (IOException e) {
                                 }
                             }
                         } catch (Throwable th) {
                             if (pdfDocument != null) {
-/* 233 */                       pdfDocument.close();
+                       pdfDocument.close();
                             }
-/* 235 */                   if (fileDescriptor != null) {
+                   if (fileDescriptor != null) {
                                 try {
-/* 237 */                           fileDescriptor.close();
+                           fileDescriptor.close();
                                 } catch (IOException e2) {
                                 }
                             }
-/* 240 */                   throw th;
+                   throw th;
                         }
                     }
                 }
 
-/* 256 */       private Matrix getMatrix(int imageWidth, int imageHeight, RectF content, int fittingMode) {
+       private Matrix getMatrix(int imageWidth, int imageHeight, RectF content, int fittingMode) {
                     float scale;
-/* 257 */           Matrix matrix = new Matrix();
-/* 260 */           float scale2 = content.width() / imageWidth;
-/* 261 */           if (fittingMode == 2) {
-/* 262 */               scale = Math.max(scale2, content.height() / imageHeight);
+           Matrix matrix = new Matrix();
+           float scale2 = content.width() / imageWidth;
+           if (fittingMode == 2) {
+               scale = Math.max(scale2, content.height() / imageHeight);
                     } else {
-/* 264 */               scale = Math.min(scale2, content.height() / imageHeight);
+               scale = Math.min(scale2, content.height() / imageHeight);
                     }
-/* 266 */           matrix.postScale(scale, scale);
-/* 269 */           float translateX = (content.width() - (imageWidth * scale)) / 2.0f;
-/* 271 */           float translateY = (content.height() - (imageHeight * scale)) / 2.0f;
-/* 273 */           matrix.postTranslate(translateX, translateY);
-/* 274 */           return matrix;
+           matrix.postScale(scale, scale);
+           float translateX = (content.width() - (imageWidth * scale)) / 2.0f;
+           float translateY = (content.height() - (imageHeight * scale)) / 2.0f;
+           matrix.postTranslate(translateX, translateY);
+           return matrix;
                 }
 
-/* 286 */       public void printBitmap(String jobName, Uri imageFile) throws FileNotFoundException {
-/* 287 */           int fittingMode = this.mScaleMode;
-/* 289 */           PrintDocumentAdapter printDocumentAdapter = new C00352(jobName, imageFile, fittingMode);
-/* 434 */           PrintManager printManager = (PrintManager) this.mContext.getSystemService("print");
-/* 435 */           PrintAttributes.Builder builder = new PrintAttributes.Builder();
-/* 436 */           builder.setColorMode(this.mColorMode);
-/* 438 */           if (this.mOrientation == 1) {
-/* 439 */               builder.setMediaSize(PrintAttributes.MediaSize.UNKNOWN_LANDSCAPE);
+       public void printBitmap(String jobName, Uri imageFile) throws FileNotFoundException {
+           int fittingMode = this.mScaleMode;
+           PrintDocumentAdapter printDocumentAdapter = new C00352(jobName, imageFile, fittingMode);
+           PrintManager printManager = (PrintManager) this.mContext.getSystemService("print");
+           PrintAttributes.Builder builder = new PrintAttributes.Builder();
+           builder.setColorMode(this.mColorMode);
+           if (this.mOrientation == 1) {
+               builder.setMediaSize(PrintAttributes.MediaSize.UNKNOWN_LANDSCAPE);
                     } else if (this.mOrientation == 2) {
-/* 441 */               builder.setMediaSize(PrintAttributes.MediaSize.UNKNOWN_PORTRAIT);
+               builder.setMediaSize(PrintAttributes.MediaSize.UNKNOWN_PORTRAIT);
                     }
-/* 443 */           PrintAttributes attr = builder.build();
-/* 445 */           printManager.print(jobName, printDocumentAdapter, attr);
+           PrintAttributes attr = builder.build();
+           printManager.print(jobName, printDocumentAdapter, attr);
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.print.PrintHelperKitkat$2 */
-/* 287 */       class C00352 extends PrintDocumentAdapter {
+                
+       class C00352 extends PrintDocumentAdapter {
                     AsyncTask<Uri, Boolean, Bitmap> loadBitmap;
                     private PrintAttributes mAttributes;
                     Bitmap mBitmap = null;
-                    final /* synthetic */ int val$fittingMode;
-                    final /* synthetic */ Uri val$imageFile;
-                    final /* synthetic */ String val$jobName;
+                    final  int val$fittingMode;
+                    final  Uri val$imageFile;
+                    final  String val$jobName;
 
-/* 288 */           C00352(String str, Uri uri, int i) {
+           C00352(String str, Uri uri, int i) {
                         this.val$jobName = str;
                         this.val$imageFile = uri;
                         this.val$fittingMode = i;
                     }
 
-/* 288 */           static /* synthetic */ void access$100(C00352 x0) {
-/* 289 */               x0.cancelLoad();
+           static  void access$100(C00352 x0) {
+               x0.cancelLoad();
                     }
 
-                    @Override // android.print.PrintDocumentAdapter
-/* 299 */           public void onLayout(PrintAttributes oldPrintAttributes, PrintAttributes newPrintAttributes, CancellationSignal cancellationSignal, PrintDocumentAdapter.LayoutResultCallback layoutResultCallback, Bundle bundle) {
-/* 300 */               if (cancellationSignal.isCanceled()) {
-/* 301 */                   layoutResultCallback.onLayoutCancelled();
-/* 302 */                   this.mAttributes = newPrintAttributes;
+                    @Override 
+           public void onLayout(PrintAttributes oldPrintAttributes, PrintAttributes newPrintAttributes, CancellationSignal cancellationSignal, PrintDocumentAdapter.LayoutResultCallback layoutResultCallback, Bundle bundle) {
+               if (cancellationSignal.isCanceled()) {
+                   layoutResultCallback.onLayoutCancelled();
+                   this.mAttributes = newPrintAttributes;
                         } else if (this.mBitmap != null) {
-/* 307 */                   PrintDocumentInfo info = new PrintDocumentInfo.Builder(this.val$jobName).setContentType(1).setPageCount(1).build();
-/* 311 */                   boolean changed = newPrintAttributes.equals(oldPrintAttributes) ? false : true;
-/* 312 */                   layoutResultCallback.onLayoutFinished(info, changed);
+                   PrintDocumentInfo info = new PrintDocumentInfo.Builder(this.val$jobName).setContentType(1).setPageCount(1).build();
+                   boolean changed = newPrintAttributes.equals(oldPrintAttributes) ? false : true;
+                   layoutResultCallback.onLayoutFinished(info, changed);
                         } else {
-/* 316 */                   this.loadBitmap = new AnonymousClass1(cancellationSignal, newPrintAttributes, oldPrintAttributes, layoutResultCallback);
-/* 365 */                   this.loadBitmap.execute(new Uri[0]);
-/* 367 */                   this.mAttributes = newPrintAttributes;
+                   this.loadBitmap = new AnonymousClass1(cancellationSignal, newPrintAttributes, oldPrintAttributes, layoutResultCallback);
+                   this.loadBitmap.execute(new Uri[0]);
+                   this.mAttributes = newPrintAttributes;
                         }
                     }
 
-                    /* JADX INFO: renamed from: android.support.v4.print.PrintHelperKitkat$2$1, reason: invalid class name */
-/* 314 */           class AnonymousClass1 extends AsyncTask<Uri, Boolean, Bitmap> {
-                        final /* synthetic */ CancellationSignal val$cancellationSignal;
-                        final /* synthetic */ PrintDocumentAdapter.LayoutResultCallback val$layoutResultCallback;
-                        final /* synthetic */ PrintAttributes val$newPrintAttributes;
-                        final /* synthetic */ PrintAttributes val$oldPrintAttributes;
+                    
+           class AnonymousClass1 extends AsyncTask<Uri, Boolean, Bitmap> {
+                        final  CancellationSignal val$cancellationSignal;
+                        final  PrintDocumentAdapter.LayoutResultCallback val$layoutResultCallback;
+                        final  PrintAttributes val$newPrintAttributes;
+                        final  PrintAttributes val$oldPrintAttributes;
 
-/* 315 */               AnonymousClass1(CancellationSignal cancellationSignal, PrintAttributes printAttributes, PrintAttributes printAttributes2, PrintDocumentAdapter.LayoutResultCallback layoutResultCallback) {
+               AnonymousClass1(CancellationSignal cancellationSignal, PrintAttributes printAttributes, PrintAttributes printAttributes2, PrintDocumentAdapter.LayoutResultCallback layoutResultCallback) {
                             this.val$cancellationSignal = cancellationSignal;
                             this.val$newPrintAttributes = printAttributes;
                             this.val$oldPrintAttributes = printAttributes2;
                             this.val$layoutResultCallback = layoutResultCallback;
                         }
 
-                        @Override // android.os.AsyncTask
-/* 315 */               protected /* bridge */ /* synthetic */ Bitmap doInBackground(Uri[] uriArr) {
-/* 316 */                   return doInBackground2(uriArr);
+                        @Override 
+               protected   Bitmap doInBackground(Uri[] uriArr) {
+                   return doInBackground2(uriArr);
                         }
 
-                        @Override // android.os.AsyncTask
-/* 315 */               protected /* bridge */ /* synthetic */ void onCancelled(Bitmap bitmap) {
-/* 316 */                   onCancelled2(bitmap);
+                        @Override 
+               protected   void onCancelled(Bitmap bitmap) {
+                   onCancelled2(bitmap);
                         }
 
-                        @Override // android.os.AsyncTask
-/* 315 */               protected /* bridge */ /* synthetic */ void onPostExecute(Bitmap bitmap) {
-/* 316 */                   onPostExecute2(bitmap);
+                        @Override 
+               protected   void onPostExecute(Bitmap bitmap) {
+                   onPostExecute2(bitmap);
                         }
 
-                        /* JADX INFO: renamed from: android.support.v4.print.PrintHelperKitkat$2$1$1, reason: invalid class name and collision with other inner class name */
-/* 320 */               class C13111 implements CancellationSignal.OnCancelListener {
-/* 321 */                   C13111() {
+                        
+               class C13111 implements CancellationSignal.OnCancelListener {
+                   C13111() {
                             }
 
-                            @Override // android.os.CancellationSignal.OnCancelListener
-/* 324 */                   public void onCancel() {
-/* 325 */                       C00352.access$100(C00352.this);
-/* 326 */                       AnonymousClass1.this.cancel(false);
+                            @Override 
+                   public void onCancel() {
+                       C00352.access$100(C00352.this);
+                       AnonymousClass1.this.cancel(false);
                             }
                         }
 
-                        @Override // android.os.AsyncTask
-/* 320 */               protected void onPreExecute() {
-/* 321 */                   this.val$cancellationSignal.setOnCancelListener(new C13111());
+                        @Override 
+               protected void onPreExecute() {
+                   this.val$cancellationSignal.setOnCancelListener(new C13111());
                         }
 
-                        /* JADX INFO: renamed from: doInBackground, reason: avoid collision after fix types in other method */
-/* 333 */               protected Bitmap doInBackground2(Uri... uris) {
+                        
+               protected Bitmap doInBackground2(Uri... uris) {
                             try {
-/* 334 */                       return PrintHelperKitkat.access$200(PrintHelperKitkat.this, C00352.this.val$imageFile, PrintHelperKitkat.MAX_PRINT_SIZE);
+                       return PrintHelperKitkat.access$200(PrintHelperKitkat.this, C00352.this.val$imageFile, PrintHelperKitkat.MAX_PRINT_SIZE);
                             } catch (FileNotFoundException e) {
-/* 338 */                       return null;
+                       return null;
                             }
                         }
 
-                        /* JADX INFO: renamed from: onPostExecute, reason: avoid collision after fix types in other method */
-/* 342 */               protected void onPostExecute2(Bitmap bitmap) {
-/* 343 */                   super.onPostExecute(bitmap);
-/* 344 */                   C00352.this.mBitmap = bitmap;
-/* 345 */                   if (bitmap != null) {
-/* 346 */                       PrintDocumentInfo info = new PrintDocumentInfo.Builder(C00352.this.val$jobName).setContentType(1).setPageCount(1).build();
-/* 350 */                       boolean changed = this.val$newPrintAttributes.equals(this.val$oldPrintAttributes) ? false : true;
-/* 352 */                       this.val$layoutResultCallback.onLayoutFinished(info, changed);
-/* 357 */                       return;
+                        
+               protected void onPostExecute2(Bitmap bitmap) {
+                   super.onPostExecute(bitmap);
+                   C00352.this.mBitmap = bitmap;
+                   if (bitmap != null) {
+                       PrintDocumentInfo info = new PrintDocumentInfo.Builder(C00352.this.val$jobName).setContentType(1).setPageCount(1).build();
+                       boolean changed = this.val$newPrintAttributes.equals(this.val$oldPrintAttributes) ? false : true;
+                       this.val$layoutResultCallback.onLayoutFinished(info, changed);
+                       return;
                             }
-/* 355 */                   this.val$layoutResultCallback.onLayoutFailed(null);
+                   this.val$layoutResultCallback.onLayoutFailed(null);
                         }
 
-                        /* JADX INFO: renamed from: onCancelled, reason: avoid collision after fix types in other method */
-/* 361 */               protected void onCancelled2(Bitmap result) {
-/* 362 */                   this.val$layoutResultCallback.onLayoutCancelled();
+                        
+               protected void onCancelled2(Bitmap result) {
+                   this.val$layoutResultCallback.onLayoutCancelled();
                         }
                     }
 
-/* 370 */           private void cancelLoad() {
+           private void cancelLoad() {
                         synchronized (PrintHelperKitkat.access$300(PrintHelperKitkat.this)) {
                             try {
-/* 372 */                       if (PrintHelperKitkat.this.mDecodeOptions != null) {
-/* 373 */                           PrintHelperKitkat.this.mDecodeOptions.requestCancelDecode();
-/* 374 */                           PrintHelperKitkat.this.mDecodeOptions = null;
+                       if (PrintHelperKitkat.this.mDecodeOptions != null) {
+                           PrintHelperKitkat.this.mDecodeOptions.requestCancelDecode();
+                           PrintHelperKitkat.this.mDecodeOptions = null;
                                 }
                             } catch (Throwable th) {
                                 throw th;
@@ -307,87 +307,87 @@
                         }
                     }
 
-                    @Override // android.print.PrintDocumentAdapter
-/* 380 */           public void onFinish() {
-/* 381 */               super.onFinish();
-/* 382 */               cancelLoad();
-/* 383 */               this.loadBitmap.cancel(true);
+                    @Override 
+           public void onFinish() {
+               super.onFinish();
+               cancelLoad();
+               this.loadBitmap.cancel(true);
                     }
 
-                    @Override // android.print.PrintDocumentAdapter
-/* 389 */           public void onWrite(PageRange[] pageRanges, ParcelFileDescriptor fileDescriptor, CancellationSignal cancellationSignal, PrintDocumentAdapter.WriteResultCallback writeResultCallback) {
-/* 390 */               PrintedPdfDocument pdfDocument = new PrintedPdfDocument(PrintHelperKitkat.this.mContext, this.mAttributes);
+                    @Override 
+           public void onWrite(PageRange[] pageRanges, ParcelFileDescriptor fileDescriptor, CancellationSignal cancellationSignal, PrintDocumentAdapter.WriteResultCallback writeResultCallback) {
+               PrintedPdfDocument pdfDocument = new PrintedPdfDocument(PrintHelperKitkat.this.mContext, this.mAttributes);
                         try {
-/* 394 */                   PdfDocument.Page page = pdfDocument.startPage(1);
-/* 395 */                   RectF content = new RectF(page.getInfo().getContentRect());
-/* 398 */                   Matrix matrix = PrintHelperKitkat.access$000(PrintHelperKitkat.this, this.mBitmap.getWidth(), this.mBitmap.getHeight(), content, this.val$fittingMode);
-/* 402 */                   page.getCanvas().drawBitmap(this.mBitmap, matrix, null);
-/* 405 */                   pdfDocument.finishPage(page);
+                   PdfDocument.Page page = pdfDocument.startPage(1);
+                   RectF content = new RectF(page.getInfo().getContentRect());
+                   Matrix matrix = PrintHelperKitkat.access$000(PrintHelperKitkat.this, this.mBitmap.getWidth(), this.mBitmap.getHeight(), content, this.val$fittingMode);
+                   page.getCanvas().drawBitmap(this.mBitmap, matrix, null);
+                   pdfDocument.finishPage(page);
                             try {
-/* 409 */                       pdfDocument.writeTo(new FileOutputStream(fileDescriptor.getFileDescriptor()));
-/* 412 */                       writeResultCallback.onWriteFinished(new PageRange[]{PageRange.ALL_PAGES});
+                       pdfDocument.writeTo(new FileOutputStream(fileDescriptor.getFileDescriptor()));
+                       writeResultCallback.onWriteFinished(new PageRange[]{PageRange.ALL_PAGES});
                             } catch (IOException ioe) {
-/* 416 */                       Log.e(PrintHelperKitkat.LOG_TAG, "Error writing printed content", ioe);
-/* 417 */                       writeResultCallback.onWriteFailed(null);
+                       Log.e(PrintHelperKitkat.LOG_TAG, "Error writing printed content", ioe);
+                       writeResultCallback.onWriteFailed(null);
                             }
-/* 420 */                   if (pdfDocument != null) {
-/* 421 */                       pdfDocument.close();
+                   if (pdfDocument != null) {
+                       pdfDocument.close();
                             }
-/* 423 */                   if (fileDescriptor != null) {
+                   if (fileDescriptor != null) {
                                 try {
-/* 425 */                           fileDescriptor.close();
+                           fileDescriptor.close();
                                 } catch (IOException e) {
                                 }
                             }
                         } catch (Throwable th) {
                             if (pdfDocument != null) {
-/* 421 */                       pdfDocument.close();
+                       pdfDocument.close();
                             }
-/* 423 */                   if (fileDescriptor != null) {
+                   if (fileDescriptor != null) {
                                 try {
-/* 425 */                           fileDescriptor.close();
+                           fileDescriptor.close();
                                 } catch (IOException e2) {
                                 }
                             }
-/* 428 */                   throw th;
+                   throw th;
                         }
                     }
                 }
 
-/* 456 */       private Bitmap loadConstrainedBitmap(Uri uri, int maxSideLength) throws FileNotFoundException {
+       private Bitmap loadConstrainedBitmap(Uri uri, int maxSideLength) throws FileNotFoundException {
                     BitmapFactory.Options decodeOptions;
                     Bitmap bitmapLoadBitmap = null;
-/* 457 */           if (maxSideLength <= 0 || uri == null || this.mContext == null) {
-/* 458 */               throw new IllegalArgumentException("bad argument to getScaledBitmap");
+           if (maxSideLength <= 0 || uri == null || this.mContext == null) {
+               throw new IllegalArgumentException("bad argument to getScaledBitmap");
                     }
-/* 461 */           BitmapFactory.Options opt = new BitmapFactory.Options();
-/* 462 */           opt.inJustDecodeBounds = true;
-/* 463 */           loadBitmap(uri, opt);
-/* 465 */           int w = opt.outWidth;
-/* 466 */           int h = opt.outHeight;
-/* 469 */           if (w > 0 && h > 0) {
-/* 474 */               int imageSide = Math.max(w, h);
-/* 476 */               int sampleSize = 1;
-/* 477 */               while (imageSide > maxSideLength) {
-/* 478 */                   imageSide >>>= 1;
-/* 479 */                   sampleSize <<= 1;
+           BitmapFactory.Options opt = new BitmapFactory.Options();
+           opt.inJustDecodeBounds = true;
+           loadBitmap(uri, opt);
+           int w = opt.outWidth;
+           int h = opt.outHeight;
+           if (w > 0 && h > 0) {
+               int imageSide = Math.max(w, h);
+               int sampleSize = 1;
+               while (imageSide > maxSideLength) {
+                   imageSide >>>= 1;
+                   sampleSize <<= 1;
                         }
-/* 483 */               if (sampleSize > 0 && Math.min(w, h) / sampleSize > 0) {
+               if (sampleSize > 0 && Math.min(w, h) / sampleSize > 0) {
                             synchronized (this.mLock) {
                                 try {
-/* 488 */                           this.mDecodeOptions = new BitmapFactory.Options();
-/* 489 */                           this.mDecodeOptions.inMutable = true;
-/* 490 */                           this.mDecodeOptions.inSampleSize = sampleSize;
-/* 491 */                           decodeOptions = this.mDecodeOptions;
+                           this.mDecodeOptions = new BitmapFactory.Options();
+                           this.mDecodeOptions.inMutable = true;
+                           this.mDecodeOptions.inSampleSize = sampleSize;
+                           decodeOptions = this.mDecodeOptions;
                                 } catch (Throwable th) {
                                     throw th;
                                 }
                             }
                             try {
-/* 494 */                       bitmapLoadBitmap = loadBitmap(uri, decodeOptions);
+                       bitmapLoadBitmap = loadBitmap(uri, decodeOptions);
                                 synchronized (this.mLock) {
                                     try {
-/* 497 */                               this.mDecodeOptions = null;
+                               this.mDecodeOptions = null;
                                     } catch (Throwable th2) {
                                         throw th2;
                                     }
@@ -395,7 +395,7 @@
                             } catch (Throwable th3) {
                                 synchronized (this.mLock) {
                                     try {
-/* 497 */                               this.mDecodeOptions = null;
+                               this.mDecodeOptions = null;
                                         throw th3;
                                     } catch (Throwable th4) {
                                         throw th4;
@@ -404,34 +404,34 @@
                             }
                         }
                     }
-/* 498 */           return bitmapLoadBitmap;
+           return bitmapLoadBitmap;
                 }
 
-/* 506 */       private Bitmap loadBitmap(Uri uri, BitmapFactory.Options o) throws FileNotFoundException {
-/* 507 */           if (uri == null || this.mContext == null) {
-/* 508 */               throw new IllegalArgumentException("bad argument to loadBitmap");
+       private Bitmap loadBitmap(Uri uri, BitmapFactory.Options o) throws FileNotFoundException {
+           if (uri == null || this.mContext == null) {
+               throw new IllegalArgumentException("bad argument to loadBitmap");
                     }
-/* 510 */           InputStream is = null;
+           InputStream is = null;
                     try {
-/* 512 */               is = this.mContext.getContentResolver().openInputStream(uri);
-/* 513 */               Bitmap bitmapDecodeStream = BitmapFactory.decodeStream(is, null, o);
-/* 515 */               if (is != null) {
+               is = this.mContext.getContentResolver().openInputStream(uri);
+               Bitmap bitmapDecodeStream = BitmapFactory.decodeStream(is, null, o);
+               if (is != null) {
                             try {
-/* 517 */                       is.close();
+                       is.close();
                             } catch (IOException t) {
-/* 519 */                       Log.w(LOG_TAG, "close fail ", t);
+                       Log.w(LOG_TAG, "close fail ", t);
                             }
                         }
-/* 520 */               return bitmapDecodeStream;
+               return bitmapDecodeStream;
                     } catch (Throwable th) {
                         if (is != null) {
                             try {
-/* 517 */                       is.close();
+                       is.close();
                             } catch (IOException t2) {
-/* 519 */                       Log.w(LOG_TAG, "close fail ", t2);
+                       Log.w(LOG_TAG, "close fail ", t2);
                             }
                         }
-/* 520 */               throw th;
+               throw th;
                     }
                 }
             }

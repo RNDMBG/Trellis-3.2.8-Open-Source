@@ -10,28 +10,28 @@
             import com.google.android.gms.maps.model.LatLng;
             import com.google.android.gms.maps.model.LatLngBounds;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface ICameraUpdateFactoryDelegate extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a */
+                
                 public static abstract class AbstractBinderC1150a extends Binder implements ICameraUpdateFactoryDelegate {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate$a$a */
+                    
                     private static class a implements ICameraUpdateFactoryDelegate {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2258dG;
 
                         a(IBinder iBinder) {
                             this.f2258dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2258dG;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b newCameraPosition(CameraPosition cameraPosition) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -56,7 +56,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b newLatLng(LatLng latLng) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -81,7 +81,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b newLatLngBounds(LatLngBounds bounds, int padding) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -107,7 +107,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b newLatLngBoundsWithSize(LatLngBounds bounds, int width, int height, int padding) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -135,7 +135,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b newLatLngZoom(LatLng latLng, float zoom) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -161,7 +161,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b scrollBy(float xPixel, float yPixel) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -182,7 +182,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b zoomBy(float amount) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -202,7 +202,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b zoomByWithFocus(float amount, int screenFocusX, int screenFocusY) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -224,7 +224,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b zoomIn() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -243,7 +243,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b zoomOut() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -262,7 +262,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate
+                        @Override 
                         public InterfaceC0904b zoomTo(float zoom) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -283,7 +283,7 @@
                         }
                     }
 
-                    /* JADX INFO: renamed from: H */
+                    
                     public static ICameraUpdateFactoryDelegate m2227H(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -292,7 +292,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof ICameraUpdateFactoryDelegate)) ? new a(iBinder) : (ICameraUpdateFactoryDelegate) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:

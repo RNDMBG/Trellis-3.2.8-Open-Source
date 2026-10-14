@@ -20,9 +20,9 @@
             import java.nio.IntBuffer;
             import java.nio.LongBuffer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties(inherit = {avcodec.class}, value = {@Platform(cinclude = {"<libavformat/avio.h>", "<libavformat/avformat.h>"}, link = {"avformat@.55"}), @Platform(preload = {"avformat-55"}, value = {"windows"})})
-/* 38 */    public class avformat {
+    public class avformat {
                 public static final int AVFMTCTX_NOHEADER = 1;
                 public static final int AVFMT_ALLOW_FLUSH = 65536;
                 public static final int AVFMT_DURATION_FROM_BITRATE = 2;
@@ -503,12 +503,12 @@
                 public static native int url_feof(AVIOContext aVIOContext);
 
                 static {
-/* 40 */            Loader.load();
-/* 1068 */          AVPROBE_SCORE_RETRY = AVPROBE_SCORE_RETRY();
-/* 1481 */          AVSTREAM_PARSE_FULL_RAW = AVSTREAM_PARSE_FULL_RAW();
+            Loader.load();
+          AVPROBE_SCORE_RETRY = AVPROBE_SCORE_RETRY();
+          AVSTREAM_PARSE_FULL_RAW = AVSTREAM_PARSE_FULL_RAW();
                 }
 
-/* 93 */        public static class AVIOInterruptCB extends Pointer {
+        public static class AVIOInterruptCB extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -523,46 +523,46 @@
 
 
                     static {
-/* 96 */                Loader.load();
+                Loader.load();
                     }
 
-/* 96 */            public AVIOInterruptCB() {
+            public AVIOInterruptCB() {
                         allocate();
                     }
 
-/* 97 */            public AVIOInterruptCB(int size) {
+            public AVIOInterruptCB(int size) {
                         allocateArray(size);
                     }
 
-/* 98 */            public AVIOInterruptCB(Pointer p) {
-/* 99 */                super(p);
+            public AVIOInterruptCB(Pointer p) {
+                super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 102 */           public AVIOInterruptCB position(int position) {
-/* 103 */               return (AVIOInterruptCB) super.position(position);
+                    @Override 
+           public AVIOInterruptCB position(int position) {
+               return (AVIOInterruptCB) super.position(position);
                     }
 
-/* 105 */           public static class Callback_Pointer extends FunctionPointer {
+           public static class Callback_Pointer extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(Pointer pointer);
 
                         static {
-/* 107 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 107 */               public Callback_Pointer(Pointer p) {
-/* 108 */                   super(p);
+               public Callback_Pointer(Pointer p) {
+                   super(p);
                         }
 
-/* 108 */               protected Callback_Pointer() {
+               protected Callback_Pointer() {
                             allocate();
                         }
                     }
                 }
 
-/* 127 */       public static class AVIOContext extends Pointer {
+       public static class AVIOContext extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -678,263 +678,263 @@
 
 
                     static {
-/* 130 */               Loader.load();
+               Loader.load();
                     }
 
-/* 130 */           public AVIOContext() {
+           public AVIOContext() {
                         allocate();
                     }
 
-/* 131 */           public AVIOContext(int size) {
+           public AVIOContext(int size) {
                         allocateArray(size);
                     }
 
-/* 132 */           public AVIOContext(Pointer p) {
-/* 133 */               super(p);
+           public AVIOContext(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 136 */           public AVIOContext position(int position) {
-/* 137 */               return (AVIOContext) super.position(position);
+                    @Override 
+           public AVIOContext position(int position) {
+               return (AVIOContext) super.position(position);
                     }
 
-/* 166 */           public static class Read_packet_Pointer_BytePointer_int extends FunctionPointer {
+           public static class Read_packet_Pointer_BytePointer_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(Pointer pointer, @Cast({"uint8_t*"}) BytePointer bytePointer, int i);
 
                         static {
-/* 168 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 168 */               public Read_packet_Pointer_BytePointer_int(Pointer p) {
-/* 169 */                   super(p);
+               public Read_packet_Pointer_BytePointer_int(Pointer p) {
+                   super(p);
                         }
 
-/* 169 */               protected Read_packet_Pointer_BytePointer_int() {
+               protected Read_packet_Pointer_BytePointer_int() {
                             allocate();
                         }
                     }
 
-/* 174 */           public static class Write_packet_Pointer_BytePointer_int extends FunctionPointer {
+           public static class Write_packet_Pointer_BytePointer_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(Pointer pointer, @Cast({"uint8_t*"}) BytePointer bytePointer, int i);
 
                         static {
-/* 176 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 176 */               public Write_packet_Pointer_BytePointer_int(Pointer p) {
-/* 177 */                   super(p);
+               public Write_packet_Pointer_BytePointer_int(Pointer p) {
+                   super(p);
                         }
 
-/* 177 */               protected Write_packet_Pointer_BytePointer_int() {
+               protected Write_packet_Pointer_BytePointer_int() {
                             allocate();
                         }
                     }
 
-/* 182 */           public static class Seek_Pointer_long_int extends FunctionPointer {
+           public static class Seek_Pointer_long_int extends FunctionPointer {
                         private native void allocate();
 
                         public native long call(Pointer pointer, long j, int i);
 
                         static {
-/* 184 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 184 */               public Seek_Pointer_long_int(Pointer p) {
-/* 185 */                   super(p);
+               public Seek_Pointer_long_int(Pointer p) {
+                   super(p);
                         }
 
-/* 185 */               protected Seek_Pointer_long_int() {
+               protected Seek_Pointer_long_int() {
                             allocate();
                         }
                     }
 
-/* 201 */           public static class Update_checksum_long_BytePointer_int extends FunctionPointer {
+           public static class Update_checksum_long_BytePointer_int extends FunctionPointer {
                         private native void allocate();
 
                         @Cast({"unsigned long"})
                         public native long call(@Cast({"unsigned long"}) long j, @Cast({"const uint8_t*"}) BytePointer bytePointer, @Cast({"unsigned int"}) int i);
 
                         static {
-/* 203 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 203 */               public Update_checksum_long_BytePointer_int(Pointer p) {
-/* 204 */                   super(p);
+               public Update_checksum_long_BytePointer_int(Pointer p) {
+                   super(p);
                         }
 
-/* 204 */               protected Update_checksum_long_BytePointer_int() {
+               protected Update_checksum_long_BytePointer_int() {
                             allocate();
                         }
                     }
 
-/* 214 */           public static class Read_pause_Pointer_int extends FunctionPointer {
+           public static class Read_pause_Pointer_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(Pointer pointer, int i);
 
                         static {
-/* 216 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 216 */               public Read_pause_Pointer_int(Pointer p) {
-/* 217 */                   super(p);
+               public Read_pause_Pointer_int(Pointer p) {
+                   super(p);
                         }
 
-/* 217 */               protected Read_pause_Pointer_int() {
+               protected Read_pause_Pointer_int() {
                             allocate();
                         }
                     }
 
-/* 227 */           public static class Read_seek_Pointer_int_long_int extends FunctionPointer {
+           public static class Read_seek_Pointer_int_long_int extends FunctionPointer {
                         private native void allocate();
 
                         public native long call(Pointer pointer, int i, long j, int i2);
 
                         static {
-/* 229 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 229 */               public Read_seek_Pointer_int_long_int(Pointer p) {
-/* 230 */                   super(p);
+               public Read_seek_Pointer_int_long_int(Pointer p) {
+                   super(p);
                         }
 
-/* 230 */               protected Read_seek_Pointer_int_long_int() {
+               protected Read_seek_Pointer_int_long_int() {
                             allocate();
                         }
                     }
                 }
 
-/* 308 */       public static class Read_packet_Pointer_BytePointer_int extends FunctionPointer {
+       public static class Read_packet_Pointer_BytePointer_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(Pointer pointer, @Cast({"uint8_t*"}) BytePointer bytePointer, int i);
 
                     static {
-/* 310 */               Loader.load();
+               Loader.load();
                     }
 
-/* 310 */           public Read_packet_Pointer_BytePointer_int(Pointer p) {
-/* 311 */               super(p);
+           public Read_packet_Pointer_BytePointer_int(Pointer p) {
+               super(p);
                     }
 
-/* 311 */           protected Read_packet_Pointer_BytePointer_int() {
+           protected Read_packet_Pointer_BytePointer_int() {
                         allocate();
                     }
                 }
 
-/* 315 */       public static class Write_packet_Pointer_BytePointer_int extends FunctionPointer {
+       public static class Write_packet_Pointer_BytePointer_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(Pointer pointer, @Cast({"uint8_t*"}) BytePointer bytePointer, int i);
 
                     static {
-/* 317 */               Loader.load();
+               Loader.load();
                     }
 
-/* 317 */           public Write_packet_Pointer_BytePointer_int(Pointer p) {
-/* 318 */               super(p);
+           public Write_packet_Pointer_BytePointer_int(Pointer p) {
+               super(p);
                     }
 
-/* 318 */           protected Write_packet_Pointer_BytePointer_int() {
+           protected Write_packet_Pointer_BytePointer_int() {
                         allocate();
                     }
                 }
 
-/* 322 */       public static class Seek_Pointer_long_int extends FunctionPointer {
+       public static class Seek_Pointer_long_int extends FunctionPointer {
                     private native void allocate();
 
                     public native long call(Pointer pointer, long j, int i);
 
                     static {
-/* 324 */               Loader.load();
+               Loader.load();
                     }
 
-/* 324 */           public Seek_Pointer_long_int(Pointer p) {
-/* 325 */               super(p);
+           public Seek_Pointer_long_int(Pointer p) {
+               super(p);
                     }
 
-/* 325 */           protected Seek_Pointer_long_int() {
+           protected Seek_Pointer_long_int() {
                         allocate();
                     }
                 }
 
-/* 330 */       public static class Read_packet_Pointer_ByteBuffer_int extends FunctionPointer {
+       public static class Read_packet_Pointer_ByteBuffer_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(Pointer pointer, @Cast({"uint8_t*"}) ByteBuffer byteBuffer, int i);
 
                     static {
-/* 332 */               Loader.load();
+               Loader.load();
                     }
 
-/* 332 */           public Read_packet_Pointer_ByteBuffer_int(Pointer p) {
-/* 333 */               super(p);
+           public Read_packet_Pointer_ByteBuffer_int(Pointer p) {
+               super(p);
                     }
 
-/* 333 */           protected Read_packet_Pointer_ByteBuffer_int() {
+           protected Read_packet_Pointer_ByteBuffer_int() {
                         allocate();
                     }
                 }
 
-/* 337 */       public static class Write_packet_Pointer_ByteBuffer_int extends FunctionPointer {
+       public static class Write_packet_Pointer_ByteBuffer_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(Pointer pointer, @Cast({"uint8_t*"}) ByteBuffer byteBuffer, int i);
 
                     static {
-/* 339 */               Loader.load();
+               Loader.load();
                     }
 
-/* 339 */           public Write_packet_Pointer_ByteBuffer_int(Pointer p) {
-/* 340 */               super(p);
+           public Write_packet_Pointer_ByteBuffer_int(Pointer p) {
+               super(p);
                     }
 
-/* 340 */           protected Write_packet_Pointer_ByteBuffer_int() {
+           protected Write_packet_Pointer_ByteBuffer_int() {
                         allocate();
                     }
                 }
 
-/* 345 */       public static class Read_packet_Pointer_byte_int extends FunctionPointer {
+       public static class Read_packet_Pointer_byte_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(Pointer pointer, @Cast({"uint8_t*"}) byte[] bArr, int i);
 
                     static {
-/* 347 */               Loader.load();
+               Loader.load();
                     }
 
-/* 347 */           public Read_packet_Pointer_byte_int(Pointer p) {
-/* 348 */               super(p);
+           public Read_packet_Pointer_byte_int(Pointer p) {
+               super(p);
                     }
 
-/* 348 */           protected Read_packet_Pointer_byte_int() {
+           protected Read_packet_Pointer_byte_int() {
                         allocate();
                     }
                 }
 
-/* 352 */       public static class Write_packet_Pointer_byte_int extends FunctionPointer {
+       public static class Write_packet_Pointer_byte_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(Pointer pointer, @Cast({"uint8_t*"}) byte[] bArr, int i);
 
                     static {
-/* 354 */               Loader.load();
+               Loader.load();
                     }
 
-/* 354 */           public Write_packet_Pointer_byte_int(Pointer p) {
-/* 355 */               super(p);
+           public Write_packet_Pointer_byte_int(Pointer p) {
+               super(p);
                     }
 
-/* 355 */           protected Write_packet_Pointer_byte_int() {
+           protected Write_packet_Pointer_byte_int() {
                         allocate();
                     }
                 }
 
-/* 1020 */      public static class AVFrac extends Pointer {
+      public static class AVFrac extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -953,38 +953,38 @@
 
 
                     static {
-/* 1023 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1023 */          public AVFrac() {
+          public AVFrac() {
                         allocate();
                     }
 
-/* 1024 */          public AVFrac(int size) {
+          public AVFrac(int size) {
                         allocateArray(size);
                     }
 
-/* 1025 */          public AVFrac(Pointer p) {
-/* 1026 */              super(p);
+          public AVFrac(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1029 */          public AVFrac position(int position) {
-/* 1030 */              return (AVFrac) super.position(position);
+                    @Override 
+          public AVFrac position(int position) {
+              return (AVFrac) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 1040 */      public static class AVCodecTag extends Pointer {
-/* 1041 */          public AVCodecTag() {
+      public static class AVCodecTag extends Pointer {
+          public AVCodecTag() {
                     }
 
-/* 1042 */          public AVCodecTag(Pointer p) {
-/* 1043 */              super(p);
+          public AVCodecTag(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 1047 */      public static class AVProbeData extends Pointer {
+      public static class AVProbeData extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1004,28 +1004,28 @@
 
 
                     static {
-/* 1050 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1050 */          public AVProbeData() {
+          public AVProbeData() {
                         allocate();
                     }
 
-/* 1051 */          public AVProbeData(int size) {
+          public AVProbeData(int size) {
                         allocateArray(size);
                     }
 
-/* 1052 */          public AVProbeData(Pointer p) {
-/* 1053 */              super(p);
+          public AVProbeData(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1056 */          public AVProbeData position(int position) {
-/* 1057 */              return (AVProbeData) super.position(position);
+                    @Override 
+          public AVProbeData position(int position) {
+              return (AVProbeData) super.position(position);
                     }
                 }
 
-/* 1127 */      public static class AVOutputFormat extends Pointer {
+      public static class AVOutputFormat extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1111,136 +1111,136 @@
 
 
                     static {
-/* 1130 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1130 */          public AVOutputFormat() {
+          public AVOutputFormat() {
                         allocate();
                     }
 
-/* 1131 */          public AVOutputFormat(int size) {
+          public AVOutputFormat(int size) {
                         allocateArray(size);
                     }
 
-/* 1132 */          public AVOutputFormat(Pointer p) {
-/* 1133 */              super(p);
+          public AVOutputFormat(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1136 */          public AVOutputFormat position(int position) {
-/* 1137 */              return (AVOutputFormat) super.position(position);
+                    @Override 
+          public AVOutputFormat position(int position) {
+              return (AVOutputFormat) super.position(position);
                     }
 
-/* 1188 */          public static class Write_header_AVFormatContext extends FunctionPointer {
+          public static class Write_header_AVFormatContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext);
 
                         static {
-/* 1190 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1190 */              public Write_header_AVFormatContext(Pointer p) {
-/* 1191 */                  super(p);
+              public Write_header_AVFormatContext(Pointer p) {
+                  super(p);
                         }
 
-/* 1191 */              protected Write_header_AVFormatContext() {
+              protected Write_header_AVFormatContext() {
                             allocate();
                         }
                     }
 
-/* 1203 */          public static class Write_packet_AVFormatContext_AVPacket extends FunctionPointer {
+          public static class Write_packet_AVFormatContext_AVPacket extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext, avcodec.AVPacket aVPacket);
 
                         static {
-/* 1205 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1205 */              public Write_packet_AVFormatContext_AVPacket(Pointer p) {
-/* 1206 */                  super(p);
+              public Write_packet_AVFormatContext_AVPacket(Pointer p) {
+                  super(p);
                         }
 
-/* 1206 */              protected Write_packet_AVFormatContext_AVPacket() {
+              protected Write_packet_AVFormatContext_AVPacket() {
                             allocate();
                         }
                     }
 
-/* 1211 */          public static class Write_trailer_AVFormatContext extends FunctionPointer {
+          public static class Write_trailer_AVFormatContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext);
 
                         static {
-/* 1213 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1213 */              public Write_trailer_AVFormatContext(Pointer p) {
-/* 1214 */                  super(p);
+              public Write_trailer_AVFormatContext(Pointer p) {
+                  super(p);
                         }
 
-/* 1214 */              protected Write_trailer_AVFormatContext() {
+              protected Write_trailer_AVFormatContext() {
                             allocate();
                         }
                     }
 
-/* 1222 */          public static class Interleave_packet_AVFormatContext_AVPacket_AVPacket_int extends FunctionPointer {
+          public static class Interleave_packet_AVFormatContext_AVPacket_AVPacket_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext, avcodec.AVPacket aVPacket, avcodec.AVPacket aVPacket2, int i);
 
                         static {
-/* 1224 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1224 */              public Interleave_packet_AVFormatContext_AVPacket_AVPacket_int(Pointer p) {
-/* 1225 */                  super(p);
+              public Interleave_packet_AVFormatContext_AVPacket_AVPacket_int(Pointer p) {
+                  super(p);
                         }
 
-/* 1225 */              protected Interleave_packet_AVFormatContext_AVPacket_AVPacket_int() {
+              protected Interleave_packet_AVFormatContext_AVPacket_AVPacket_int() {
                             allocate();
                         }
                     }
 
-/* 1238 */          public static class Query_codec_int_int extends FunctionPointer {
+          public static class Query_codec_int_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(@Cast({"AVCodecID"}) int i, int i2);
 
                         static {
-/* 1240 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1240 */              public Query_codec_int_int(Pointer p) {
-/* 1241 */                  super(p);
+              public Query_codec_int_int(Pointer p) {
+                  super(p);
                         }
 
-/* 1241 */              protected Query_codec_int_int() {
+              protected Query_codec_int_int() {
                             allocate();
                         }
                     }
 
-/* 1247 */          public static class Get_output_timestamp_AVFormatContext_int_LongPointer_LongPointer extends FunctionPointer {
+          public static class Get_output_timestamp_AVFormatContext_int_LongPointer_LongPointer extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVFormatContext aVFormatContext, int i, LongPointer longPointer, LongPointer longPointer2);
 
                         static {
-/* 1249 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1249 */              public Get_output_timestamp_AVFormatContext_int_LongPointer_LongPointer(Pointer p) {
-/* 1250 */                  super(p);
+              public Get_output_timestamp_AVFormatContext_int_LongPointer_LongPointer(Pointer p) {
+                  super(p);
                         }
 
-/* 1250 */              protected Get_output_timestamp_AVFormatContext_int_LongPointer_LongPointer() {
+              protected Get_output_timestamp_AVFormatContext_int_LongPointer_LongPointer() {
                             allocate();
                         }
                     }
                 }
 
-/* 1264 */      public static class AVInputFormat extends Pointer {
+      public static class AVInputFormat extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1323,190 +1323,190 @@
 
 
                     static {
-/* 1267 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1267 */          public AVInputFormat() {
+          public AVInputFormat() {
                         allocate();
                     }
 
-/* 1268 */          public AVInputFormat(int size) {
+          public AVInputFormat(int size) {
                         allocateArray(size);
                     }
 
-/* 1269 */          public AVInputFormat(Pointer p) {
-/* 1270 */              super(p);
+          public AVInputFormat(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1273 */          public AVInputFormat position(int position) {
-/* 1274 */              return (AVInputFormat) super.position(position);
+                    @Override 
+          public AVInputFormat position(int position) {
+              return (AVInputFormat) super.position(position);
                     }
 
-/* 1333 */          public static class Read_probe_AVProbeData extends FunctionPointer {
+          public static class Read_probe_AVProbeData extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVProbeData aVProbeData);
 
                         static {
-/* 1335 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1335 */              public Read_probe_AVProbeData(Pointer p) {
-/* 1336 */                  super(p);
+              public Read_probe_AVProbeData(Pointer p) {
+                  super(p);
                         }
 
-/* 1336 */              protected Read_probe_AVProbeData() {
+              protected Read_probe_AVProbeData() {
                             allocate();
                         }
                     }
 
-/* 1347 */          public static class Read_header_AVFormatContext extends FunctionPointer {
+          public static class Read_header_AVFormatContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext);
 
                         static {
-/* 1349 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1349 */              public Read_header_AVFormatContext(Pointer p) {
-/* 1350 */                  super(p);
+              public Read_header_AVFormatContext(Pointer p) {
+                  super(p);
                         }
 
-/* 1350 */              protected Read_header_AVFormatContext() {
+              protected Read_header_AVFormatContext() {
                             allocate();
                         }
                     }
 
-/* 1365 */          public static class Read_packet_AVFormatContext_AVPacket extends FunctionPointer {
+          public static class Read_packet_AVFormatContext_AVPacket extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext, avcodec.AVPacket aVPacket);
 
                         static {
-/* 1367 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1367 */              public Read_packet_AVFormatContext_AVPacket(Pointer p) {
-/* 1368 */                  super(p);
+              public Read_packet_AVFormatContext_AVPacket(Pointer p) {
+                  super(p);
                         }
 
-/* 1368 */              protected Read_packet_AVFormatContext_AVPacket() {
+              protected Read_packet_AVFormatContext_AVPacket() {
                             allocate();
                         }
                     }
 
-/* 1378 */          public static class Read_close_AVFormatContext extends FunctionPointer {
+          public static class Read_close_AVFormatContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext);
 
                         static {
-/* 1380 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1380 */              public Read_close_AVFormatContext(Pointer p) {
-/* 1381 */                  super(p);
+              public Read_close_AVFormatContext(Pointer p) {
+                  super(p);
                         }
 
-/* 1381 */              protected Read_close_AVFormatContext() {
+              protected Read_close_AVFormatContext() {
                             allocate();
                         }
                     }
 
-/* 1395 */          public static class Read_seek_AVFormatContext_int_long_int extends FunctionPointer {
+          public static class Read_seek_AVFormatContext_int_long_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext, int i, long j, int i2);
 
                         static {
-/* 1397 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1397 */              public Read_seek_AVFormatContext_int_long_int(Pointer p) {
-/* 1398 */                  super(p);
+              public Read_seek_AVFormatContext_int_long_int(Pointer p) {
+                  super(p);
                         }
 
-/* 1398 */              protected Read_seek_AVFormatContext_int_long_int() {
+              protected Read_seek_AVFormatContext_int_long_int() {
                             allocate();
                         }
                     }
 
-/* 1409 */          public static class Read_timestamp_AVFormatContext_int_LongPointer_long extends FunctionPointer {
+          public static class Read_timestamp_AVFormatContext_int_LongPointer_long extends FunctionPointer {
                         private native void allocate();
 
                         public native long call(AVFormatContext aVFormatContext, int i, LongPointer longPointer, long j);
 
                         static {
-/* 1411 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1411 */              public Read_timestamp_AVFormatContext_int_LongPointer_long(Pointer p) {
-/* 1412 */                  super(p);
+              public Read_timestamp_AVFormatContext_int_LongPointer_long(Pointer p) {
+                  super(p);
                         }
 
-/* 1412 */              protected Read_timestamp_AVFormatContext_int_LongPointer_long() {
+              protected Read_timestamp_AVFormatContext_int_LongPointer_long() {
                             allocate();
                         }
                     }
 
-/* 1423 */          public static class Read_play_AVFormatContext extends FunctionPointer {
+          public static class Read_play_AVFormatContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext);
 
                         static {
-/* 1425 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1425 */              public Read_play_AVFormatContext(Pointer p) {
-/* 1426 */                  super(p);
+              public Read_play_AVFormatContext(Pointer p) {
+                  super(p);
                         }
 
-/* 1426 */              protected Read_play_AVFormatContext() {
+              protected Read_play_AVFormatContext() {
                             allocate();
                         }
                     }
 
-/* 1436 */          public static class Read_pause_AVFormatContext extends FunctionPointer {
+          public static class Read_pause_AVFormatContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext);
 
                         static {
-/* 1438 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1438 */              public Read_pause_AVFormatContext(Pointer p) {
-/* 1439 */                  super(p);
+              public Read_pause_AVFormatContext(Pointer p) {
+                  super(p);
                         }
 
-/* 1439 */              protected Read_pause_AVFormatContext() {
+              protected Read_pause_AVFormatContext() {
                             allocate();
                         }
                     }
 
-/* 1451 */          public static class Read_seek2_AVFormatContext_int_long_long_long_int extends FunctionPointer {
+          public static class Read_seek2_AVFormatContext_int_long_long_long_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFormatContext aVFormatContext, int i, long j, long j2, long j3, int i2);
 
                         static {
-/* 1453 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1453 */              public Read_seek2_AVFormatContext_int_long_long_long_int(Pointer p) {
-/* 1454 */                  super(p);
+              public Read_seek2_AVFormatContext_int_long_long_long_int(Pointer p) {
+                  super(p);
                         }
 
-/* 1454 */              protected Read_seek2_AVFormatContext_int_long_long_long_int() {
+              protected Read_seek2_AVFormatContext_int_long_long_long_int() {
                             allocate();
                         }
                     }
                 }
 
-/* 1481 */      public static class AVIndexEntry extends Pointer {
+      public static class AVIndexEntry extends Pointer {
                     public static final int AVINDEX_KEYFRAME = 1;
 
                     private native void allocate();
@@ -1537,28 +1537,28 @@
 
 
                     static {
-/* 1484 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1484 */          public AVIndexEntry() {
+          public AVIndexEntry() {
                         allocate();
                     }
 
-/* 1485 */          public AVIndexEntry(int size) {
+          public AVIndexEntry(int size) {
                         allocateArray(size);
                     }
 
-/* 1486 */          public AVIndexEntry(Pointer p) {
-/* 1487 */              super(p);
+          public AVIndexEntry(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1490 */          public AVIndexEntry position(int position) {
-/* 1491 */              return (AVIndexEntry) super.position(position);
+                    @Override 
+          public AVIndexEntry position(int position) {
+              return (AVIndexEntry) super.position(position);
                     }
                 }
 
-/* 1558 */      public static class AVStream extends Pointer {
+      public static class AVStream extends Pointer {
                     public static final int MAX_PROBE_PACKETS = 2500;
                     public static final int MAX_REORDER_DELAY = 16;
                     public static final int MAX_STD_TIMEBASES = 726;
@@ -1606,10 +1606,10 @@
 
                     public native AVStream first_dts(long j);
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native int m2413id();
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native AVStream m2414id(int i);
 
                     public native int index();
@@ -1752,28 +1752,28 @@
 
 
                     static {
-/* 1561 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1561 */          public AVStream() {
+          public AVStream() {
                         allocate();
                     }
 
-/* 1562 */          public AVStream(int size) {
+          public AVStream(int size) {
                         allocateArray(size);
                     }
 
-/* 1563 */          public AVStream(Pointer p) {
-/* 1564 */              super(p);
+          public AVStream(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1567 */          public AVStream position(int position) {
-/* 1568 */              return (AVStream) super.position(position);
+                    @Override 
+          public AVStream position(int position) {
+              return (AVStream) super.position(position);
                     }
                 }
 
-/* 1800 */      public static class AVProgram extends Pointer {
+      public static class AVProgram extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1791,10 +1791,10 @@
 
                     public native AVProgram flags(int i);
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native int m2411id();
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native AVProgram m2412id(int i);
 
                     public native AVProgram metadata(avutil.AVDictionary aVDictionary);
@@ -1837,28 +1837,28 @@
 
 
                     static {
-/* 1803 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1803 */          public AVProgram() {
+          public AVProgram() {
                         allocate();
                     }
 
-/* 1804 */          public AVProgram(int size) {
+          public AVProgram(int size) {
                         allocateArray(size);
                     }
 
-/* 1805 */          public AVProgram(Pointer p) {
-/* 1806 */              super(p);
+          public AVProgram(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1809 */          public AVProgram position(int position) {
-/* 1810 */              return (AVProgram) super.position(position);
+                    @Override 
+          public AVProgram position(int position) {
+              return (AVProgram) super.position(position);
                     }
                 }
 
-/* 1843 */      public static class AVChapter extends Pointer {
+      public static class AVChapter extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1867,10 +1867,10 @@
 
                     public native AVChapter end(long j);
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native int m2407id();
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native AVChapter m2408id(int i);
 
                     public native AVChapter metadata(avutil.AVDictionary aVDictionary);
@@ -1888,28 +1888,28 @@
 
 
                     static {
-/* 1846 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1846 */          public AVChapter() {
+          public AVChapter() {
                         allocate();
                     }
 
-/* 1847 */          public AVChapter(int size) {
+          public AVChapter(int size) {
                         allocateArray(size);
                     }
 
-/* 1848 */          public AVChapter(Pointer p) {
-/* 1849 */              super(p);
+          public AVChapter(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1852 */          public AVChapter position(int position) {
-/* 1853 */              return (AVChapter) super.position(position);
+                    @Override 
+          public AVChapter position(int position) {
+              return (AVChapter) super.position(position);
                     }
                 }
 
-/* 1886 */      public static class AVFormatContext extends Pointer {
+      public static class AVFormatContext extends Pointer {
                     public static final int AVFMT_FLAG_CUSTOM_IO = 128;
                     public static final int AVFMT_FLAG_DISCARD_CORRUPT = 256;
                     public static final int AVFMT_FLAG_GENPTS = 1;
@@ -2114,10 +2114,10 @@
 
                     public native AVPacketList parse_queue_end();
 
-                    /* JADX INFO: renamed from: pb */
+                    
                     public native AVFormatContext m2409pb(AVIOContext aVIOContext);
 
-                    /* JADX INFO: renamed from: pb */
+                    
                     public native AVIOContext m2410pb();
 
                     public native Pointer priv_data();
@@ -2194,28 +2194,28 @@
 
 
                     static {
-/* 1889 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1889 */          public AVFormatContext() {
+          public AVFormatContext() {
                         allocate();
                     }
 
-/* 1890 */          public AVFormatContext(int size) {
+          public AVFormatContext(int size) {
                         allocateArray(size);
                     }
 
-/* 1891 */          public AVFormatContext(Pointer p) {
-/* 1892 */              super(p);
+          public AVFormatContext(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1895 */          public AVFormatContext position(int position) {
-/* 1896 */              return (AVFormatContext) super.position(position);
+                    @Override 
+          public AVFormatContext position(int position) {
+              return (AVFormatContext) super.position(position);
                     }
                 }
 
-/* 2263 */      public static class AVPacketList extends Pointer {
+      public static class AVPacketList extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2231,24 +2231,24 @@
 
 
                     static {
-/* 2266 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2266 */          public AVPacketList() {
+          public AVPacketList() {
                         allocate();
                     }
 
-/* 2267 */          public AVPacketList(int size) {
+          public AVPacketList(int size) {
                         allocateArray(size);
                     }
 
-/* 2268 */          public AVPacketList(Pointer p) {
-/* 2269 */              super(p);
+          public AVPacketList(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2272 */          public AVPacketList position(int position) {
-/* 2273 */              return (AVPacketList) super.position(position);
+                    @Override 
+          public AVPacketList position(int position) {
+              return (AVPacketList) super.position(position);
                     }
                 }
             }

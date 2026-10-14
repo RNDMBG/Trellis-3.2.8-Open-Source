@@ -17,26 +17,26 @@
             import com.google.android.gms.location.LocationStatusCodes;
             import java.util.List;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.ez */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1068ez extends AbstractC1020de<InterfaceC1066ex> {
 
-                /* JADX INFO: renamed from: oO */
+                
                 private final InterfaceC1072fc<InterfaceC1066ex> f1867oO;
 
-                /* JADX INFO: renamed from: oU */
+                
                 private final C1067ey f1868oU;
 
-                /* JADX INFO: renamed from: oV */
+                
                 private final String f1869oV;
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.ez$a */
+                
                 private final class a extends AbstractC1020de<InterfaceC1066ex>.b<LocationClient.OnAddGeofencesResultListener> {
 
-                    /* JADX INFO: renamed from: iC */
+                    
                     private final int f1870iC;
 
-                    /* JADX INFO: renamed from: oW */
+                    
                     private final String[] f1871oW;
 
                     public a(LocationClient.OnAddGeofencesResultListener onAddGeofencesResultListener, int i, String[] strArr) {
@@ -45,29 +45,29 @@
                         this.f1871oW = strArr;
                     }
 
-                    /* JADX INFO: renamed from: a, reason: avoid collision after fix types in other method */
+                    
                     protected void a2(LocationClient.OnAddGeofencesResultListener onAddGeofencesResultListener) {
                         if (onAddGeofencesResultListener != null) {
                             onAddGeofencesResultListener.onAddGeofencesResult(this.f1870iC, this.f1871oW);
                         }
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC1020de.b
-                    /* JADX INFO: renamed from: aF */
+                    @Override 
+                    
                     protected void mo1503aF() {
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.ez$b */
+                
                 private static final class b extends InterfaceC1065ew.a {
 
-                    /* JADX INFO: renamed from: oY */
+                    
                     private LocationClient.OnAddGeofencesResultListener f1873oY;
 
-                    /* JADX INFO: renamed from: oZ */
+                    
                     private LocationClient.OnRemoveGeofencesResultListener f1874oZ;
 
-                    /* JADX INFO: renamed from: pa */
+                    
                     private C1068ez f1875pa;
 
                     public b(LocationClient.OnAddGeofencesResultListener onAddGeofencesResultListener, C1068ez c1068ez) {
@@ -82,7 +82,7 @@
                         this.f1875pa = c1068ez;
                     }
 
-                    @Override // com.google.android.gms.internal.InterfaceC1065ew
+                    @Override 
                     public void onAddGeofencesResult(int statusCode, String[] geofenceRequestIds) throws RemoteException {
                         if (this.f1875pa == null) {
                             Log.wtf("LocationClientImpl", "onAddGeofenceResult called multiple times");
@@ -97,7 +97,7 @@
                         this.f1874oZ = null;
                     }
 
-                    @Override // com.google.android.gms.internal.InterfaceC1065ew
+                    @Override 
                     public void onRemoveGeofencesByPendingIntentResult(int statusCode, PendingIntent pendingIntent) {
                         if (this.f1875pa == null) {
                             Log.wtf("LocationClientImpl", "onRemoveGeofencesByPendingIntentResult called multiple times");
@@ -112,7 +112,7 @@
                         this.f1874oZ = null;
                     }
 
-                    @Override // com.google.android.gms.internal.InterfaceC1065ew
+                    @Override 
                     public void onRemoveGeofencesByRequestIdsResult(int statusCode, String[] geofenceRequestIds) {
                         if (this.f1875pa == null) {
                             Log.wtf("LocationClientImpl", "onRemoveGeofencesByRequestIdsResult called multiple times");
@@ -128,44 +128,44 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.ez$c */
+                
                 private final class c implements InterfaceC1072fc<InterfaceC1066ex> {
                     private c() {
                     }
 
-                    /* synthetic */ c(C1068ez c1068ez, Object anonymousClass1) {
+                     c(C1068ez c1068ez, Object anonymousClass1) {
                         this();
                     }
 
-                    @Override // com.google.android.gms.internal.InterfaceC1072fc
-                    /* JADX INFO: renamed from: bc */
+                    @Override 
+                    
                     public void mo1913bc() {
                         C1068ez.m1910a(C1068ez.this);
                     }
 
-                    @Override // com.google.android.gms.internal.InterfaceC1072fc
-                    /* JADX INFO: renamed from: bd */
-                    public /* synthetic */ IInterface mo1914bd() {
+                    @Override 
+                    
+                    public  IInterface mo1914bd() {
                         return m1915cn();
                     }
 
-                    /* JADX INFO: renamed from: cn */
+                    
                     public InterfaceC1066ex m1915cn() {
                         return (InterfaceC1066ex) C1068ez.m1911b(C1068ez.this);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.ez$d */
+                
                 private final class d extends AbstractC1020de<InterfaceC1066ex>.b<LocationClient.OnRemoveGeofencesResultListener> {
 
-                    /* JADX INFO: renamed from: iC */
+                    
                     private final int f1877iC;
                     private final PendingIntent mPendingIntent;
 
-                    /* JADX INFO: renamed from: oW */
+                    
                     private final String[] f1878oW;
 
-                    /* JADX INFO: renamed from: pb */
+                    
                     private final int f1880pb;
 
                     public d(int i, LocationClient.OnRemoveGeofencesResultListener onRemoveGeofencesResultListener, int i2, PendingIntent pendingIntent) {
@@ -186,7 +186,7 @@
                         this.mPendingIntent = null;
                     }
 
-                    /* JADX INFO: renamed from: a, reason: avoid collision after fix types in other method */
+                    
                     protected void a2(LocationClient.OnRemoveGeofencesResultListener onRemoveGeofencesResultListener) {
                         if (onRemoveGeofencesResultListener != null) {
                             switch (this.f1880pb) {
@@ -203,8 +203,8 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC1020de.b
-                    /* JADX INFO: renamed from: aF */
+                    @Override 
+                    
                     protected void mo1503aF() {
                     }
                 }
@@ -216,23 +216,23 @@
                     this.f1869oV = str;
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ void m1910a(C1068ez c1068ez) {
+                
+                static  void m1910a(C1068ez c1068ez) {
                     c1068ez.m1548bc();
                 }
 
-                /* JADX INFO: renamed from: b */
-                static /* synthetic */ IInterface m1911b(C1068ez c1068ez) {
+                
+                static  IInterface m1911b(C1068ez c1068ez) {
                     return c1068ez.m1549bd();
                 }
 
-                /* JADX INFO: renamed from: G */
+                
                 protected InterfaceC1066ex m1912G(IBinder iBinder) {
                     return InterfaceC1066ex.a.m1908F(iBinder);
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 protected void mo1365a(InterfaceC1025dj interfaceC1025dj, AbstractC1020de.d dVar) throws RemoteException {
                     Bundle bundle = new Bundle();
                     bundle.putString("client_name", this.f1869oV);
@@ -257,19 +257,19 @@
                     m1549bd().mo1905a(geofences, pendingIntent, bVar, getContext().getPackageName());
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: ag */
+                @Override 
+                
                 protected String mo1366ag() {
                     return "com.google.android.location.internal.GoogleLocationManagerService.START";
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: ah */
+                @Override 
+                
                 protected String mo1367ah() {
                     return "com.google.android.gms.location.internal.IGoogleLocationManagerService";
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de, com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void disconnect() {
                     synchronized (this.f1868oU) {
                         try {
@@ -288,9 +288,9 @@
                     return this.f1868oU.getLastLocation();
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: p */
-                protected /* synthetic */ IInterface mo1370p(IBinder iBinder) {
+                @Override 
+                
+                protected  IInterface mo1370p(IBinder iBinder) {
                     return m1912G(iBinder);
                 }
 

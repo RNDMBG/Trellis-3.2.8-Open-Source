@@ -8,10 +8,10 @@
             import java.util.HashSet;
             import java.util.Set;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.fr */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1087fr implements Parcelable.Creator<C1086fq> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2014a(C1086fq c1086fq, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     Set<Integer> setM1997di = c1086fq.m1997di();
@@ -183,7 +183,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: B */
+                
                 public C1086fq m2015B(Parcel parcel) {
                     int iM1111j = C0901a.m1111j(parcel);
                     HashSet hashSet = new HashSet();
@@ -487,18 +487,18 @@
                     return new C1086fq(hashSet, iM1105f, c1086fq, arrayListM1125x, c1086fq2, strM1113l, strM1113l2, strM1113l3, arrayListM1101c, iM1105f2, arrayListM1101c2, c1086fq3, arrayListM1101c3, strM1113l4, strM1113l5, c1086fq4, strM1113l6, strM1113l7, strM1113l8, arrayListM1101c4, strM1113l9, strM1113l10, strM1113l11, strM1113l12, strM1113l13, strM1113l14, strM1113l15, strM1113l16, strM1113l17, c1086fq5, strM1113l18, strM1113l19, strM1113l20, strM1113l21, c1086fq6, dM1110j, c1086fq7, dM1110j2, strM1113l22, c1086fq8, arrayListM1101c5, strM1113l23, strM1113l24, strM1113l25, strM1113l26, c1086fq9, strM1113l27, strM1113l28, strM1113l29, c1086fq10, strM1113l30, strM1113l31, strM1113l32, strM1113l33, strM1113l34, strM1113l35);
                 }
 
-                /* JADX INFO: renamed from: ag */
+                
                 public C1086fq[] m2016ag(int i) {
                     return new C1086fq[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1086fq createFromParcel(Parcel x0) {
+                @Override 
+                public  C1086fq createFromParcel(Parcel x0) {
                     return m2015B(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1086fq[] newArray(int x0) {
+                @Override 
+                public  C1086fq[] newArray(int x0) {
                     return m2016ag(x0);
                 }
             }

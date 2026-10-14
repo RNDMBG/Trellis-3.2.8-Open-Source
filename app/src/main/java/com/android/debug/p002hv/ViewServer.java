@@ -27,8 +27,8 @@
             import java.util.concurrent.locks.ReentrantReadWriteLock;
             import org.apache.commons.io.IOUtils;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 107 */   public class ViewServer implements Runnable {
+            
+   public class ViewServer implements Runnable {
                 private static final String BUILD_TYPE_USER = "user";
                 private static final String COMMAND_PROTOCOL_VERSION = "PROTOCOL";
                 private static final String COMMAND_SERVER_VERSION = "SERVER";
@@ -57,112 +57,112 @@
                     void windowsChanged();
                 }
 
-/* 108 */       /* synthetic */ ViewServer(Object x0) {
-/* 109 */           this();
+        ViewServer(Object x0) {
+           this();
                 }
 
-/* 108 */       static /* synthetic */ boolean access$200(Socket x0, String x1) {
-/* 109 */           return writeValue(x0, x1);
+       static  boolean access$200(Socket x0, String x1) {
+           return writeValue(x0, x1);
                 }
 
-/* 108 */       static /* synthetic */ ReentrantReadWriteLock access$300(ViewServer x0) {
-/* 109 */           return x0.mWindowsLock;
+       static  ReentrantReadWriteLock access$300(ViewServer x0) {
+           return x0.mWindowsLock;
                 }
 
-/* 108 */       static /* synthetic */ View access$400(ViewServer x0) {
-/* 109 */           return x0.mFocusedWindow;
+       static  View access$400(ViewServer x0) {
+           return x0.mFocusedWindow;
                 }
 
-/* 108 */       static /* synthetic */ HashMap<View, String> access$500(ViewServer x0) {
-/* 109 */           return x0.mWindows;
+       static  HashMap<View, String> access$500(ViewServer x0) {
+           return x0.mWindows;
                 }
 
-/* 108 */       static /* synthetic */ ReentrantReadWriteLock access$600(ViewServer x0) {
-/* 109 */           return x0.mFocusLock;
+       static  ReentrantReadWriteLock access$600(ViewServer x0) {
+           return x0.mFocusLock;
                 }
 
-/* 108 */       static /* synthetic */ void access$700(ViewServer x0, WindowListener x1) {
-/* 109 */           x0.addWindowListener(x1);
+       static  void access$700(ViewServer x0, WindowListener x1) {
+           x0.addWindowListener(x1);
                 }
 
-/* 108 */       static /* synthetic */ void access$800(ViewServer x0, WindowListener x1) {
-/* 109 */           x0.removeWindowListener(x1);
+       static  void access$800(ViewServer x0, WindowListener x1) {
+           x0.removeWindowListener(x1);
                 }
 
-/* 165 */       public static ViewServer get(Context context) {
-/* 166 */           ApplicationInfo info = context.getApplicationInfo();
-/* 167 */           if ("user".equals(Build.TYPE) && (info.flags & 2) != 0) {
-/* 169 */               if (sServer == null) {
-/* 170 */                   sServer = new ViewServer(VIEW_SERVER_DEFAULT_PORT);
+       public static ViewServer get(Context context) {
+           ApplicationInfo info = context.getApplicationInfo();
+           if ("user".equals(Build.TYPE) && (info.flags & 2) != 0) {
+               if (sServer == null) {
+                   sServer = new ViewServer(VIEW_SERVER_DEFAULT_PORT);
                         }
-/* 173 */               if (!sServer.isRunning()) {
+               if (!sServer.isRunning()) {
                             try {
-/* 175 */                       sServer.start();
+                       sServer.start();
                             } catch (IOException e) {
-/* 177 */                       Log.d(LOG_TAG, "Error:", e);
+                       Log.d(LOG_TAG, "Error:", e);
                             }
                         }
                     } else {
-/* 181 */               sServer = new NoopViewServer(null);
+               sServer = new NoopViewServer(null);
                     }
-/* 184 */           return sServer;
+           return sServer;
                 }
 
-/* 186 */       private ViewServer() {
-/* 141 */           this.mListeners = new CopyOnWriteArrayList();
-/* 144 */           this.mWindows = new HashMap<>();
-/* 145 */           this.mWindowsLock = new ReentrantReadWriteLock();
-/* 148 */           this.mFocusLock = new ReentrantReadWriteLock();
-/* 188 */           this.mPort = -1;
+       private ViewServer() {
+           this.mListeners = new CopyOnWriteArrayList();
+           this.mWindows = new HashMap<>();
+           this.mWindowsLock = new ReentrantReadWriteLock();
+           this.mFocusLock = new ReentrantReadWriteLock();
+           this.mPort = -1;
                 }
 
-/* 198 */       private ViewServer(int port) {
-/* 141 */           this.mListeners = new CopyOnWriteArrayList();
-/* 144 */           this.mWindows = new HashMap<>();
-/* 145 */           this.mWindowsLock = new ReentrantReadWriteLock();
-/* 148 */           this.mFocusLock = new ReentrantReadWriteLock();
-/* 200 */           this.mPort = port;
+       private ViewServer(int port) {
+           this.mListeners = new CopyOnWriteArrayList();
+           this.mWindows = new HashMap<>();
+           this.mWindowsLock = new ReentrantReadWriteLock();
+           this.mFocusLock = new ReentrantReadWriteLock();
+           this.mPort = port;
                 }
 
-/* 213 */       public boolean start() throws IOException {
-/* 214 */           if (this.mThread != null) {
-/* 215 */               return false;
+       public boolean start() throws IOException {
+           if (this.mThread != null) {
+               return false;
                     }
-/* 218 */           this.mThread = new Thread(this, "Local View Server [port=" + this.mPort + "]");
-/* 219 */           this.mThreadPool = Executors.newFixedThreadPool(10);
-/* 220 */           this.mThread.start();
-/* 222 */           return true;
+           this.mThread = new Thread(this, "Local View Server [port=" + this.mPort + "]");
+           this.mThreadPool = Executors.newFixedThreadPool(10);
+           this.mThread.start();
+           return true;
                 }
 
-/* 235 */       public boolean stop() {
-/* 236 */           if (this.mThread != null) {
-/* 237 */               this.mThread.interrupt();
-/* 238 */               if (this.mThreadPool != null) {
+       public boolean stop() {
+           if (this.mThread != null) {
+               this.mThread.interrupt();
+               if (this.mThreadPool != null) {
                             try {
-/* 240 */                       this.mThreadPool.shutdownNow();
+                       this.mThreadPool.shutdownNow();
                             } catch (SecurityException e) {
-/* 242 */                       Log.w(LOG_TAG, "Could not stop all view server threads");
+                       Log.w(LOG_TAG, "Could not stop all view server threads");
                             }
                         }
-/* 246 */               this.mThreadPool = null;
-/* 247 */               this.mThread = null;
+               this.mThreadPool = null;
+               this.mThread = null;
                         try {
-/* 250 */                   this.mServer.close();
-/* 251 */                   this.mServer = null;
-/* 252 */                   return true;
+                   this.mServer.close();
+                   this.mServer = null;
+                   return true;
                         } catch (IOException e2) {
-/* 254 */                   Log.w(LOG_TAG, "Could not close the view server");
+                   Log.w(LOG_TAG, "Could not close the view server");
                         }
                     }
-/* 258 */           this.mWindowsLock.writeLock().lock();
+           this.mWindowsLock.writeLock().lock();
                     try {
-/* 260 */               this.mWindows.clear();
-/* 262 */               this.mWindowsLock.writeLock().unlock();
-/* 265 */               this.mFocusLock.writeLock().lock();
+               this.mWindows.clear();
+               this.mWindowsLock.writeLock().unlock();
+               this.mFocusLock.writeLock().lock();
                         try {
-/* 267 */                   this.mFocusedWindow = null;
-/* 269 */                   this.mFocusLock.writeLock().unlock();
-/* 272 */                   return false;
+                   this.mFocusedWindow = null;
+                   this.mFocusLock.writeLock().unlock();
+                   return false;
                         } catch (Throwable th) {
                             this.mFocusLock.writeLock().unlock();
                             throw th;
@@ -173,97 +173,97 @@
                     }
                 }
 
-/* 284 */       public boolean isRunning() {
+       public boolean isRunning() {
                     return this.mThread != null && this.mThread.isAlive();
                 }
 
-/* 296 */       public void addWindow(Activity activity) {
+       public void addWindow(Activity activity) {
                     String name;
-/* 297 */           String name2 = activity.getTitle().toString();
-/* 298 */           if (TextUtils.isEmpty(name2)) {
-/* 299 */               name = activity.getClass().getCanonicalName() + "/0x" + System.identityHashCode(activity);
+           String name2 = activity.getTitle().toString();
+           if (TextUtils.isEmpty(name2)) {
+               name = activity.getClass().getCanonicalName() + "/0x" + System.identityHashCode(activity);
                     } else {
-/* 302 */               name = name2 + "(" + activity.getClass().getCanonicalName() + ")";
+               name = name2 + "(" + activity.getClass().getCanonicalName() + ")";
                     }
-/* 304 */           addWindow(activity.getWindow().getDecorView(), name);
+           addWindow(activity.getWindow().getDecorView(), name);
                 }
 
-/* 315 */       public void removeWindow(Activity activity) {
-/* 316 */           removeWindow(activity.getWindow().getDecorView());
+       public void removeWindow(Activity activity) {
+           removeWindow(activity.getWindow().getDecorView());
                 }
 
-/* 327 */       public void addWindow(View view, String name) {
-/* 328 */           this.mWindowsLock.writeLock().lock();
+       public void addWindow(View view, String name) {
+           this.mWindowsLock.writeLock().lock();
                     try {
-/* 330 */               this.mWindows.put(view.getRootView(), name);
-/* 332 */               this.mWindowsLock.writeLock().unlock();
-/* 334 */               fireWindowsChangedEvent();
+               this.mWindows.put(view.getRootView(), name);
+               this.mWindowsLock.writeLock().unlock();
+               fireWindowsChangedEvent();
                     } catch (Throwable th) {
                         this.mWindowsLock.writeLock().unlock();
                         throw th;
                     }
                 }
 
-/* 344 */       public void removeWindow(View view) {
-/* 345 */           this.mWindowsLock.writeLock().lock();
+       public void removeWindow(View view) {
+           this.mWindowsLock.writeLock().lock();
                     try {
-/* 347 */               this.mWindows.remove(view.getRootView());
-/* 349 */               this.mWindowsLock.writeLock().unlock();
-/* 351 */               fireWindowsChangedEvent();
+               this.mWindows.remove(view.getRootView());
+               this.mWindowsLock.writeLock().unlock();
+               fireWindowsChangedEvent();
                     } catch (Throwable th) {
                         this.mWindowsLock.writeLock().unlock();
                         throw th;
                     }
                 }
 
-/* 360 */       public void setFocusedWindow(Activity activity) {
-/* 361 */           setFocusedWindow(activity.getWindow().getDecorView());
+       public void setFocusedWindow(Activity activity) {
+           setFocusedWindow(activity.getWindow().getDecorView());
                 }
 
-/* 370 */       public void setFocusedWindow(View view) {
+       public void setFocusedWindow(View view) {
                     View rootView;
-/* 371 */           this.mFocusLock.writeLock().lock();
-/* 373 */           if (view == null) {
+           this.mFocusLock.writeLock().lock();
+           if (view == null) {
                         rootView = null;
                     } else {
                         try {
-/* 373 */                   rootView = view.getRootView();
+                   rootView = view.getRootView();
                         } catch (Throwable th) {
                             this.mFocusLock.writeLock().unlock();
                             throw th;
                         }
                     }
                     this.mFocusedWindow = rootView;
-/* 375 */           this.mFocusLock.writeLock().unlock();
-/* 377 */           fireFocusChangedEvent();
+           this.mFocusLock.writeLock().unlock();
+           fireFocusChangedEvent();
                 }
 
-                @Override // java.lang.Runnable
-/* 384 */       public void run() {
+                @Override 
+       public void run() {
                     try {
-/* 385 */               this.mServer = new ServerSocket(this.mPort, 10, InetAddress.getLocalHost());
+               this.mServer = new ServerSocket(this.mPort, 10, InetAddress.getLocalHost());
                     } catch (Exception e) {
-/* 387 */               Log.w(LOG_TAG, "Starting ServerSocket error: ", e);
+               Log.w(LOG_TAG, "Starting ServerSocket error: ", e);
                     }
-/* 390 */           while (this.mServer != null && Thread.currentThread() == this.mThread) {
+           while (this.mServer != null && Thread.currentThread() == this.mThread) {
                         try {
-/* 393 */                   Socket client = this.mServer.accept();
-/* 394 */                   if (this.mThreadPool != null) {
-/* 395 */                       this.mThreadPool.submit(new ViewServerWorker(client));
+                   Socket client = this.mServer.accept();
+                   if (this.mThreadPool != null) {
+                       this.mThreadPool.submit(new ViewServerWorker(client));
                             } else {
                                 try {
-/* 398 */                           client.close();
+                           client.close();
                                 } catch (IOException e2) {
-/* 400 */                           e2.printStackTrace();
+                           e2.printStackTrace();
                                 }
                             }
                         } catch (Exception e3) {
-/* 404 */                   Log.w(LOG_TAG, "Connection error: ", e3);
+                   Log.w(LOG_TAG, "Connection error: ", e3);
                         }
                     }
                 }
 
-/* 410 */       private static boolean writeValue(Socket client, String value) {
+       private static boolean writeValue(Socket client, String value) {
                     try {
                         BufferedWriter out = new BufferedWriter(
                                 new OutputStreamWriter(client.getOutputStream()), 8192);
@@ -277,137 +277,137 @@
                     }
                 }
 
-/* 433 */       private void fireWindowsChangedEvent() {
+       private void fireWindowsChangedEvent() {
                     for (WindowListener listener : this.mListeners) {
-/* 435 */               listener.windowsChanged();
+               listener.windowsChanged();
                     }
                 }
 
-/* 439 */       private void fireFocusChangedEvent() {
+       private void fireFocusChangedEvent() {
                     for (WindowListener listener : this.mListeners) {
-/* 441 */               listener.focusChanged();
+               listener.focusChanged();
                     }
                 }
 
-/* 445 */       private void addWindowListener(WindowListener listener) {
-/* 446 */           if (!this.mListeners.contains(listener)) {
-/* 447 */               this.mListeners.add(listener);
+       private void addWindowListener(WindowListener listener) {
+           if (!this.mListeners.contains(listener)) {
+               this.mListeners.add(listener);
                     }
                 }
 
-/* 451 */       private void removeWindowListener(WindowListener listener) {
-/* 452 */           this.mListeners.remove(listener);
+       private void removeWindowListener(WindowListener listener) {
+           this.mListeners.remove(listener);
                 }
 
-/* 461 */       private static class UncloseableOutputStream extends OutputStream {
+       private static class UncloseableOutputStream extends OutputStream {
                     private final OutputStream mStream;
 
-/* 462 */           UncloseableOutputStream(OutputStream stream) {
-/* 464 */               this.mStream = stream;
+           UncloseableOutputStream(OutputStream stream) {
+               this.mStream = stream;
                     }
 
-                    @Override // java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
-/* 468 */           public void close() throws IOException {
+                    @Override 
+           public void close() throws IOException {
                     }
 
-/* 471 */           public boolean equals(Object o) {
-/* 472 */               return this.mStream.equals(o);
+           public boolean equals(Object o) {
+               return this.mStream.equals(o);
                     }
 
-                    @Override // java.io.OutputStream, java.io.Flushable
-/* 475 */           public void flush() throws IOException {
-/* 476 */               this.mStream.flush();
+                    @Override 
+           public void flush() throws IOException {
+               this.mStream.flush();
                     }
 
-/* 479 */           public int hashCode() {
-/* 480 */               return this.mStream.hashCode();
+           public int hashCode() {
+               return this.mStream.hashCode();
                     }
 
-/* 483 */           public String toString() {
-/* 484 */               return this.mStream.toString();
+           public String toString() {
+               return this.mStream.toString();
                     }
 
-                    @Override // java.io.OutputStream
-/* 488 */           public void write(byte[] buffer, int offset, int count) throws IOException {
-/* 489 */               this.mStream.write(buffer, offset, count);
+                    @Override 
+           public void write(byte[] buffer, int offset, int count) throws IOException {
+               this.mStream.write(buffer, offset, count);
                     }
 
-                    @Override // java.io.OutputStream
-/* 492 */           public void write(byte[] buffer) throws IOException {
-/* 493 */               this.mStream.write(buffer);
+                    @Override 
+           public void write(byte[] buffer) throws IOException {
+               this.mStream.write(buffer);
                     }
 
-                    @Override // java.io.OutputStream
-/* 496 */           public void write(int oneByte) throws IOException {
-/* 497 */               this.mStream.write(oneByte);
-                    }
-                }
-
-/* 499 */       private static class NoopViewServer extends ViewServer {
-/* 500 */           /* synthetic */ NoopViewServer(Object x0) {
-/* 501 */               this();
-                    }
-
-/* 501 */           private NoopViewServer() {
-/* 502 */               super((Object) null);
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 506 */           public boolean start() throws IOException {
-/* 507 */               return false;
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 511 */           public boolean stop() {
-/* 512 */               return false;
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 516 */           public boolean isRunning() {
-/* 517 */               return false;
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 521 */           public void addWindow(Activity activity) {
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 525 */           public void removeWindow(Activity activity) {
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 529 */           public void addWindow(View view, String name) {
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 533 */           public void removeWindow(View view) {
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 537 */           public void setFocusedWindow(Activity activity) {
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer
-/* 541 */           public void setFocusedWindow(View view) {
-                    }
-
-                    @Override // com.android.debug.p002hv.ViewServer, java.lang.Runnable
-/* 545 */           public void run() {
+                    @Override 
+           public void write(int oneByte) throws IOException {
+               this.mStream.write(oneByte);
                     }
                 }
 
-/* 554 */       private class ViewServerWorker implements Runnable, WindowListener {
+       private static class NoopViewServer extends ViewServer {
+            NoopViewServer(Object x0) {
+               this();
+                    }
+
+           private NoopViewServer() {
+               super((Object) null);
+                    }
+
+                    @Override 
+           public boolean start() throws IOException {
+               return false;
+                    }
+
+                    @Override 
+           public boolean stop() {
+               return false;
+                    }
+
+                    @Override 
+           public boolean isRunning() {
+               return false;
+                    }
+
+                    @Override 
+           public void addWindow(Activity activity) {
+                    }
+
+                    @Override 
+           public void removeWindow(Activity activity) {
+                    }
+
+                    @Override 
+           public void addWindow(View view, String name) {
+                    }
+
+                    @Override 
+           public void removeWindow(View view) {
+                    }
+
+                    @Override 
+           public void setFocusedWindow(Activity activity) {
+                    }
+
+                    @Override 
+           public void setFocusedWindow(View view) {
+                    }
+
+                    @Override 
+           public void run() {
+                    }
+                }
+
+       private class ViewServerWorker implements Runnable, WindowListener {
                     private Socket mClient;
                     private final Object[] mLock = new Object[0];
                     private boolean mNeedWindowListUpdate = false;
                     private boolean mNeedFocusedWindowUpdate = false;
 
-/* 555 */           public ViewServerWorker(Socket client) {
-/* 557 */               this.mClient = client;
+           public ViewServerWorker(Socket client) {
+               this.mClient = client;
                     }
 
-                    @Override // java.lang.Runnable
-/* 562 */           public void run() {
+                    @Override 
+           public void run() {
                         BufferedReader in = null;
                         try {
                             in = new BufferedReader(new InputStreamReader(this.mClient.getInputStream()), 1024);
@@ -452,8 +452,8 @@
                         }
                     }
 
-                    /* JADX WARN: Code duplicated, block: B:48:0x00d2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-/* 620 */           private boolean windowCommand(Socket client, String command, String parameters) {
+                    
+           private boolean windowCommand(Socket client, String command, String parameters) {
                         try {
                             int index = parameters.indexOf(32);
                             if (index < 0) {
@@ -487,36 +487,36 @@
                         }
                     }
 
-/* 675 */           private View findWindow(int hashCode) {
-/* 676 */               if (hashCode == -1) {
-/* 678 */                   ViewServer.access$300(ViewServer.this).readLock().lock();
+           private View findWindow(int hashCode) {
+               if (hashCode == -1) {
+                   ViewServer.access$300(ViewServer.this).readLock().lock();
                             try {
-/* 680 */                       View window = ViewServer.access$400(ViewServer.this);
-/* 682 */                       ViewServer.access$300(ViewServer.this).readLock().unlock();
-/* 699 */                       return window;
+                       View window = ViewServer.access$400(ViewServer.this);
+                       ViewServer.access$300(ViewServer.this).readLock().unlock();
+                       return window;
                             } catch (Throwable th) {
                                 ViewServer.access$300(ViewServer.this).readLock().unlock();
                                 throw th;
                             }
                         }
-/* 688 */               ViewServer.access$300(ViewServer.this).readLock().lock();
+               ViewServer.access$300(ViewServer.this).readLock().lock();
                         try {
                             for (Map.Entry<View, String> entry : ViewServer.access$500(ViewServer.this).entrySet()) {
-/* 691 */                       if (System.identityHashCode(entry.getKey()) == hashCode) {
-/* 692 */                           View window2 = entry.getKey();
-/* 696 */                           ViewServer.access$300(ViewServer.this).readLock().unlock();
+                       if (System.identityHashCode(entry.getKey()) == hashCode) {
+                           View window2 = entry.getKey();
+                           ViewServer.access$300(ViewServer.this).readLock().unlock();
                                     return window2;
                                 }
                             }
                             ViewServer.access$300(ViewServer.this).readLock().unlock();
-/* 699 */                   return null;
+                   return null;
                         } catch (Throwable th2) {
                             ViewServer.access$300(ViewServer.this).readLock().unlock();
                             throw th2;
                         }
                     }
 
-/* 702 */           private boolean listWindows(Socket client) {
+           private boolean listWindows(Socket client) {
                         ViewServer.access$300(ViewServer.this).readLock().lock();
                         try {
                             BufferedWriter out = new BufferedWriter(
@@ -546,7 +546,7 @@
                         }
                     }
 
-/* 738 */           private boolean getFocusedWindow(Socket client) {
+           private boolean getFocusedWindow(Socket client) {
                         ViewServer.access$600(ViewServer.this).readLock().lock();
                         View focusedWindow;
                         try {
@@ -587,31 +587,31 @@
                         }
                     }
 
-                    @Override // com.android.debug.hv.ViewServer.WindowListener
-/* 785 */           public void windowsChanged() {
+                    @Override 
+           public void windowsChanged() {
                         synchronized (this.mLock) {
                             try {
-/* 787 */                       this.mNeedWindowListUpdate = true;
-/* 788 */                       this.mLock.notifyAll();
+                       this.mNeedWindowListUpdate = true;
+                       this.mLock.notifyAll();
                             } catch (Throwable th) {
                                 throw th;
                             }
                         }
                     }
 
-                    @Override // com.android.debug.hv.ViewServer.WindowListener
-/* 792 */           public void focusChanged() {
+                    @Override 
+           public void focusChanged() {
                         synchronized (this.mLock) {
                             try {
-/* 794 */                       this.mNeedFocusedWindowUpdate = true;
-/* 795 */                       this.mLock.notifyAll();
+                       this.mNeedFocusedWindowUpdate = true;
+                       this.mLock.notifyAll();
                             } catch (Throwable th) {
                                 throw th;
                             }
                         }
                     }
 
-/* 799 */           private boolean windowManagerAutolistLoop() {
+           private boolean windowManagerAutolistLoop() {
                         ViewServer.access$700(ViewServer.this, this);
                         try {
                             BufferedWriter out = new BufferedWriter(

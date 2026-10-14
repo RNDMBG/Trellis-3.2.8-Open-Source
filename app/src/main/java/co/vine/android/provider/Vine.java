@@ -7,8 +7,8 @@
             import co.vine.android.util.StringAnchorManager;
             import java.util.HashMap;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 83 */    public class Vine {
+            
+    public class Vine {
                 public static final int LIMIT_DEFAULT = 20;
                 public static final String QUERY_PARAMETER_DB_OWNER_ID = "db_owner_id";
                 public static final String QUERY_PARAMETER_LIMIT = "limit";
@@ -494,17 +494,17 @@
                     public static final String TABLE_NAME = "users";
                 }
 
-/* 84 */        public static StringAnchorManager getUserSectionsAnchorManager(Context context, int sectionType) {
-/* 85 */            String key = "user_sections_" + sectionType;
-/* 86 */            StringAnchorManager manager = sUserSectionAnchorManager.get(key);
-/* 87 */            if (manager == null) {
-/* 88 */                StringAnchorManager manager2 = new StringAnchorManager(context.getApplicationContext(), key);
-/* 89 */                sUserSectionAnchorManager.put(key, manager2);
-/* 91 */                return manager2;
+        public static StringAnchorManager getUserSectionsAnchorManager(Context context, int sectionType) {
+            String key = "user_sections_" + sectionType;
+            StringAnchorManager manager = sUserSectionAnchorManager.get(key);
+            if (manager == null) {
+                StringAnchorManager manager2 = new StringAnchorManager(context.getApplicationContext(), key);
+                sUserSectionAnchorManager.put(key, manager2);
+                return manager2;
                     }
-/* 91 */            return manager;
+            return manager;
                 }
 
-/* 1508 */      private Vine() {
+      private Vine() {
                 }
             }

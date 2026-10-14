@@ -15,69 +15,69 @@
             import com.google.android.gms.ads.AdActivity;
             import com.vandalsoftware.p004io.IoUtils;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bf */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class BinderC0967bf extends InterfaceC0975bn.a {
 
-                /* JADX INFO: renamed from: fD */
+                
                 private final Activity f1428fD;
 
-                /* JADX INFO: renamed from: fE */
+                
                 private C0969bh f1429fE;
 
-                /* JADX INFO: renamed from: fF */
+                
                 private C0971bj f1430fF;
 
-                /* JADX INFO: renamed from: fG */
+                
                 private C1005cq f1431fG;
 
-                /* JADX INFO: renamed from: fH */
+                
                 private b f1432fH;
 
-                /* JADX INFO: renamed from: fI */
+                
                 private ViewOnClickListenerC0972bk f1433fI;
 
-                /* JADX INFO: renamed from: fJ */
+                
                 private FrameLayout f1434fJ;
 
-                /* JADX INFO: renamed from: fK */
+                
                 private WebChromeClient.CustomViewCallback f1435fK;
 
-                /* JADX INFO: renamed from: fL */
+                
                 private boolean f1436fL = false;
 
-                /* JADX INFO: renamed from: fM */
+                
                 private boolean f1437fM = false;
 
-                /* JADX INFO: renamed from: fN */
+                
                 private RelativeLayout f1438fN;
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bf$1, reason: invalid class name */
+                
                 class AnonymousClass1 implements C1006cr.a {
                     AnonymousClass1() {
                     }
 
-                    @Override // com.google.android.gms.internal.C1006cr.a
-                    /* JADX INFO: renamed from: a */
+                    @Override 
+                    
                     public void mo1312a(C1005cq c1005cq) {
                         c1005cq.m1470at();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bf$a */
+                
                 private static final class a extends Exception {
                     public a(String str) {
                         super(str);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bf$b */
+                
                 private static final class b {
 
-                    /* JADX INFO: renamed from: fP */
+                    
                     public final ViewGroup.LayoutParams f1440fP;
 
-                    /* JADX INFO: renamed from: fQ */
+                    
                     public final ViewGroup f1441fQ;
                     public final int index;
 
@@ -98,7 +98,7 @@
                     this.f1428fD = activity;
                 }
 
-                /* JADX INFO: renamed from: T */
+                
                 private void m1300T() {
                     if (!this.f1428fD.isFinishing() || this.f1437fM) {
                         return;
@@ -120,7 +120,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static RelativeLayout.LayoutParams m1301a(int i, int i2, int i3, int i4) {
                     RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(i3, i4);
                     layoutParams.setMargins(i, i2, 0, 0);
@@ -129,7 +129,7 @@
                     return layoutParams;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static void m1302a(Context context, C0969bh c0969bh) {
                     Intent intent = new Intent();
                     intent.setClassName(context, AdActivity.CLASS_NAME);
@@ -139,7 +139,7 @@
                     context.startActivity(intent);
                 }
 
-                /* JADX INFO: renamed from: e */
+                
                 private void m1303e(boolean z) throws a {
                     this.f1428fD.requestWindowFeature(1);
                     Window window = this.f1428fD.getWindow();
@@ -177,12 +177,12 @@
                     m1310c(zM1489aD);
                 }
 
-                /* JADX INFO: renamed from: Q */
+                
                 public C0971bj m1304Q() {
                     return this.f1430fF;
                 }
 
-                /* JADX INFO: renamed from: R */
+                
                 public void m1305R() {
                     if (this.f1429fE != null) {
                         setRequestedOrientation(this.f1429fE.orientation);
@@ -198,13 +198,13 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: S */
+                
                 public void m1306S() {
                     this.f1438fN.removeView(this.f1433fI);
                     m1310c(true);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1307a(View view, WebChromeClient.CustomViewCallback customViewCallback) {
                     this.f1434fJ = new FrameLayout(this.f1428fD);
                     this.f1434fJ.setBackgroundColor(-16777216);
@@ -213,14 +213,14 @@
                     this.f1435fK = customViewCallback;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 public void m1308b(int i, int i2, int i3, int i4) {
                     if (this.f1430fF != null) {
                         this.f1430fF.setLayoutParams(m1301a(i, i2, i3, i4));
                     }
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 public void m1309c(int i, int i2, int i3, int i4) {
                     if (this.f1430fF == null) {
                         this.f1430fF = new C0971bj(this.f1428fD, this.f1431fG);
@@ -229,7 +229,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 public void m1310c(boolean z) {
                     this.f1433fI = new ViewOnClickListenerC0972bk(this.f1428fD, z ? 50 : 32);
                     RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
@@ -243,14 +243,14 @@
                     this.f1428fD.finish();
                 }
 
-                /* JADX INFO: renamed from: d */
+                
                 public void m1311d(boolean z) {
                     if (this.f1433fI != null) {
                         this.f1433fI.m1336d(z);
                     }
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0975bn
+                @Override 
                 public void onCreate(Bundle savedInstanceState) {
                     this.f1436fL = savedInstanceState != null ? savedInstanceState.getBoolean("com.google.android.gms.ads.internal.overlay.hasResumed", false) : false;
                     try {
@@ -297,7 +297,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0975bn
+                @Override 
                 public void onDestroy() {
                     if (this.f1430fF != null) {
                         this.f1430fF.destroy();
@@ -308,7 +308,7 @@
                     m1300T();
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0975bn
+                @Override 
                 public void onPause() {
                     if (this.f1430fF != null) {
                         this.f1430fF.pause();
@@ -320,11 +320,11 @@
                     m1300T();
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0975bn
+                @Override 
                 public void onRestart() {
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0975bn
+                @Override 
                 public void onResume() {
                     if (this.f1429fE != null && this.f1429fE.f1453ga == 4) {
                         if (this.f1436fL) {
@@ -338,16 +338,16 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0975bn
+                @Override 
                 public void onSaveInstanceState(Bundle outBundle) {
                     outBundle.putBoolean("com.google.android.gms.ads.internal.overlay.hasResumed", this.f1436fL);
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0975bn
+                @Override 
                 public void onStart() {
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0975bn
+                @Override 
                 public void onStop() {
                     m1300T();
                 }

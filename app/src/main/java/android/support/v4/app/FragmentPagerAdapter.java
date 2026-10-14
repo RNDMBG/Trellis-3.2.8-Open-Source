@@ -5,8 +5,8 @@
             import android.view.View;
             import android.view.ViewGroup;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 67 */    public abstract class FragmentPagerAdapter extends PagerAdapter {
+            
+    public abstract class FragmentPagerAdapter extends PagerAdapter {
                 private static final boolean DEBUG = false;
                 private static final String TAG = "FragmentPagerAdapter";
                 private FragmentTransaction mCurTransaction = null;
@@ -15,87 +15,87 @@
 
                 public abstract Fragment getItem(int i);
 
-/* 68 */        public FragmentPagerAdapter(FragmentManager fm) {
-/* 70 */            this.mFragmentManager = fm;
+        public FragmentPagerAdapter(FragmentManager fm) {
+            this.mFragmentManager = fm;
                 }
 
-                @Override // android.support.v4.view.PagerAdapter
-/* 79 */        public void startUpdate(ViewGroup container) {
+                @Override 
+        public void startUpdate(ViewGroup container) {
                 }
 
-                @Override // android.support.v4.view.PagerAdapter
-/* 83 */        public Object instantiateItem(ViewGroup container, int position) {
-/* 84 */            if (this.mCurTransaction == null) {
-/* 85 */                this.mCurTransaction = this.mFragmentManager.beginTransaction();
+                @Override 
+        public Object instantiateItem(ViewGroup container, int position) {
+            if (this.mCurTransaction == null) {
+                this.mCurTransaction = this.mFragmentManager.beginTransaction();
                     }
-/* 88 */            long itemId = getItemId(position);
-/* 91 */            String name = makeFragmentName(container.getId(), itemId);
-/* 92 */            Fragment fragment = this.mFragmentManager.findFragmentByTag(name);
-/* 93 */            if (fragment != null) {
-/* 95 */                this.mCurTransaction.attach(fragment);
+            long itemId = getItemId(position);
+            String name = makeFragmentName(container.getId(), itemId);
+            Fragment fragment = this.mFragmentManager.findFragmentByTag(name);
+            if (fragment != null) {
+                this.mCurTransaction.attach(fragment);
                     } else {
-/* 97 */                fragment = getItem(position);
-/* 99 */                this.mCurTransaction.add(container.getId(), fragment, makeFragmentName(container.getId(), itemId));
+                fragment = getItem(position);
+                this.mCurTransaction.add(container.getId(), fragment, makeFragmentName(container.getId(), itemId));
                     }
-/* 102 */           if (fragment != this.mCurrentPrimaryItem) {
-/* 103 */               fragment.setMenuVisibility(false);
-/* 104 */               fragment.setUserVisibleHint(false);
+           if (fragment != this.mCurrentPrimaryItem) {
+               fragment.setMenuVisibility(false);
+               fragment.setUserVisibleHint(false);
                     }
-/* 107 */           return fragment;
+           return fragment;
                 }
 
-                @Override // android.support.v4.view.PagerAdapter
-/* 111 */       public void destroyItem(ViewGroup container, int position, Object object) {
-/* 112 */           if (this.mCurTransaction == null) {
-/* 113 */               this.mCurTransaction = this.mFragmentManager.beginTransaction();
+                @Override 
+       public void destroyItem(ViewGroup container, int position, Object object) {
+           if (this.mCurTransaction == null) {
+               this.mCurTransaction = this.mFragmentManager.beginTransaction();
                     }
-/* 117 */           this.mCurTransaction.detach((Fragment) object);
+           this.mCurTransaction.detach((Fragment) object);
                 }
 
-                @Override // android.support.v4.view.PagerAdapter
-/* 121 */       public void setPrimaryItem(ViewGroup container, int position, Object object) {
-/* 122 */           Fragment fragment = (Fragment) object;
-/* 123 */           if (fragment != this.mCurrentPrimaryItem) {
-/* 124 */               if (this.mCurrentPrimaryItem != null) {
-/* 125 */                   this.mCurrentPrimaryItem.setMenuVisibility(false);
-/* 126 */                   this.mCurrentPrimaryItem.setUserVisibleHint(false);
+                @Override 
+       public void setPrimaryItem(ViewGroup container, int position, Object object) {
+           Fragment fragment = (Fragment) object;
+           if (fragment != this.mCurrentPrimaryItem) {
+               if (this.mCurrentPrimaryItem != null) {
+                   this.mCurrentPrimaryItem.setMenuVisibility(false);
+                   this.mCurrentPrimaryItem.setUserVisibleHint(false);
                         }
-/* 128 */               if (fragment != null) {
-/* 129 */                   fragment.setMenuVisibility(true);
-/* 130 */                   fragment.setUserVisibleHint(true);
+               if (fragment != null) {
+                   fragment.setMenuVisibility(true);
+                   fragment.setUserVisibleHint(true);
                         }
-/* 132 */               this.mCurrentPrimaryItem = fragment;
+               this.mCurrentPrimaryItem = fragment;
                     }
                 }
 
-                @Override // android.support.v4.view.PagerAdapter
-/* 137 */       public void finishUpdate(ViewGroup container) {
-/* 138 */           if (this.mCurTransaction != null) {
-/* 139 */               this.mCurTransaction.commitAllowingStateLoss();
-/* 140 */               this.mCurTransaction = null;
-/* 141 */               this.mFragmentManager.executePendingTransactions();
+                @Override 
+       public void finishUpdate(ViewGroup container) {
+           if (this.mCurTransaction != null) {
+               this.mCurTransaction.commitAllowingStateLoss();
+               this.mCurTransaction = null;
+               this.mFragmentManager.executePendingTransactions();
                     }
                 }
 
-                @Override // android.support.v4.view.PagerAdapter
-/* 146 */       public boolean isViewFromObject(View view, Object object) {
+                @Override 
+       public boolean isViewFromObject(View view, Object object) {
                     return ((Fragment) object).getView() == view;
                 }
 
-                @Override // android.support.v4.view.PagerAdapter
-/* 151 */       public Parcelable saveState() {
-/* 152 */           return null;
+                @Override 
+       public Parcelable saveState() {
+           return null;
                 }
 
-                @Override // android.support.v4.view.PagerAdapter
-/* 156 */       public void restoreState(Parcelable state, ClassLoader loader) {
+                @Override 
+       public void restoreState(Parcelable state, ClassLoader loader) {
                 }
 
-/* 168 */       public long getItemId(int position) {
-/* 169 */           return position;
+       public long getItemId(int position) {
+           return position;
                 }
 
-/* 172 */       private static String makeFragmentName(int viewId, long id) {
-/* 173 */           return "android:switcher:" + viewId + ":" + id;
+       private static String makeFragmentName(int viewId, long id) {
+           return "android:switcher:" + viewId + ":" + id;
                 }
             }

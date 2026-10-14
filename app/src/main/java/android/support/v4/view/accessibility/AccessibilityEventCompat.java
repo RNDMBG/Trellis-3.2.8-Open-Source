@@ -3,8 +3,8 @@
             import android.os.Build;
             import android.view.accessibility.AccessibilityEvent;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 31 */    public class AccessibilityEventCompat {
+            
+    public class AccessibilityEventCompat {
                 private static final AccessibilityEventVersionImpl IMPL;
                 public static final int TYPES_ALL_MASK = -1;
                 public static final int TYPE_ANNOUNCEMENT = 16384;
@@ -31,69 +31,69 @@
                     int getRecordCount(AccessibilityEvent accessibilityEvent);
                 }
 
-/* 32 */        static class AccessibilityEventStubImpl implements AccessibilityEventVersionImpl {
-/* 33 */            AccessibilityEventStubImpl() {
+        static class AccessibilityEventStubImpl implements AccessibilityEventVersionImpl {
+            AccessibilityEventStubImpl() {
                     }
 
-                    @Override // android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventVersionImpl
-/* 38 */            public void appendRecord(AccessibilityEvent event, Object record) {
+                    @Override 
+            public void appendRecord(AccessibilityEvent event, Object record) {
                     }
 
-                    @Override // android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventVersionImpl
-/* 42 */            public Object getRecord(AccessibilityEvent event, int index) {
-/* 43 */                return null;
+                    @Override 
+            public Object getRecord(AccessibilityEvent event, int index) {
+                return null;
                     }
 
-                    @Override // android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventVersionImpl
-/* 47 */            public int getRecordCount(AccessibilityEvent event) {
-/* 48 */                return 0;
+                    @Override 
+            public int getRecordCount(AccessibilityEvent event) {
+                return 0;
                     }
                 }
 
-/* 50 */        static class AccessibilityEventIcsImpl extends AccessibilityEventStubImpl {
-/* 51 */            AccessibilityEventIcsImpl() {
+        static class AccessibilityEventIcsImpl extends AccessibilityEventStubImpl {
+            AccessibilityEventIcsImpl() {
                     }
 
-                    @Override // android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventStubImpl, android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventVersionImpl
-/* 55 */            public void appendRecord(AccessibilityEvent event, Object record) {
-/* 56 */                AccessibilityEventCompatIcs.appendRecord(event, record);
+                    @Override 
+            public void appendRecord(AccessibilityEvent event, Object record) {
+                AccessibilityEventCompatIcs.appendRecord(event, record);
                     }
 
-                    @Override // android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventStubImpl, android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventVersionImpl
-/* 60 */            public Object getRecord(AccessibilityEvent event, int index) {
-/* 61 */                return AccessibilityEventCompatIcs.getRecord(event, index);
+                    @Override 
+            public Object getRecord(AccessibilityEvent event, int index) {
+                return AccessibilityEventCompatIcs.getRecord(event, index);
                     }
 
-                    @Override // android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventStubImpl, android.support.v4.view.accessibility.AccessibilityEventCompat.AccessibilityEventVersionImpl
-/* 65 */            public int getRecordCount(AccessibilityEvent event) {
-/* 66 */                return AccessibilityEventCompatIcs.getRecordCount(event);
+                    @Override 
+            public int getRecordCount(AccessibilityEvent event) {
+                return AccessibilityEventCompatIcs.getRecordCount(event);
                     }
                 }
 
                 static {
-/* 73 */            if (Build.VERSION.SDK_INT >= 14) {
-/* 74 */                IMPL = new AccessibilityEventIcsImpl();
+            if (Build.VERSION.SDK_INT >= 14) {
+                IMPL = new AccessibilityEventIcsImpl();
                     } else {
-/* 76 */                IMPL = new AccessibilityEventStubImpl();
+                IMPL = new AccessibilityEventStubImpl();
                     }
                 }
 
-/* 183 */       private AccessibilityEventCompat() {
+       private AccessibilityEventCompat() {
                 }
 
-/* 193 */       public static int getRecordCount(AccessibilityEvent event) {
-/* 194 */           return IMPL.getRecordCount(event);
+       public static int getRecordCount(AccessibilityEvent event) {
+           return IMPL.getRecordCount(event);
                 }
 
-/* 205 */       public static void appendRecord(AccessibilityEvent event, AccessibilityRecordCompat record) {
-/* 206 */           IMPL.appendRecord(event, record.getImpl());
+       public static void appendRecord(AccessibilityEvent event, AccessibilityRecordCompat record) {
+           IMPL.appendRecord(event, record.getImpl());
                 }
 
-/* 215 */       public static AccessibilityRecordCompat getRecord(AccessibilityEvent event, int index) {
-/* 216 */           return new AccessibilityRecordCompat(IMPL.getRecord(event, index));
+       public static AccessibilityRecordCompat getRecord(AccessibilityEvent event, int index) {
+           return new AccessibilityRecordCompat(IMPL.getRecord(event, index));
                 }
 
-/* 232 */       public static AccessibilityRecordCompat asRecord(AccessibilityEvent event) {
-/* 233 */           return new AccessibilityRecordCompat(event);
+       public static AccessibilityRecordCompat asRecord(AccessibilityEvent event) {
+           return new AccessibilityRecordCompat(event);
                 }
             }

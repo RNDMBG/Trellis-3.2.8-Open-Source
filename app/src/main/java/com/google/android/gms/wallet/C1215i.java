@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.i */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1215i implements Parcelable.Creator<NotifyTransactionStatusRequest> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2366a(NotifyTransactionStatusRequest notifyTransactionStatusRequest, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, notifyTransactionStatusRequest.f2515iM);
@@ -18,7 +18,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: V */
+                
                 public NotifyTransactionStatusRequest m2367V(Parcel parcel) {
                     String strM1113l = null;
                     int iM1105f = 0;
@@ -51,18 +51,18 @@
                     return new NotifyTransactionStatusRequest(iM1105f2, strM1113l2, iM1105f, strM1113l);
                 }
 
-                /* JADX INFO: renamed from: aA */
+                
                 public NotifyTransactionStatusRequest[] m2368aA(int i) {
                     return new NotifyTransactionStatusRequest[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ NotifyTransactionStatusRequest createFromParcel(Parcel x0) {
+                @Override 
+                public  NotifyTransactionStatusRequest createFromParcel(Parcel x0) {
                     return m2367V(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ NotifyTransactionStatusRequest[] newArray(int x0) {
+                @Override 
+                public  NotifyTransactionStatusRequest[] newArray(int x0) {
                     return m2368aA(x0);
                 }
             }

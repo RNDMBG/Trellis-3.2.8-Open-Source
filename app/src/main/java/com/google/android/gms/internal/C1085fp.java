@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.fp */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1085fp implements Parcelable.Creator<C1083fn> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m1994a(C1083fn c1083fn, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1140a(parcel, 1, c1083fn.getAccountName(), false);
@@ -23,7 +23,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: A */
+                
                 public C1083fn m1995A(Parcel parcel) {
                     String strM1113l = null;
                     int iM1111j = C0901a.m1111j(parcel);
@@ -76,18 +76,18 @@
                     return new C1083fn(iM1105f, strM1113l5, strArrM1124w3, strArrM1124w2, strArrM1124w, strM1113l4, strM1113l3, strM1113l2, strM1113l);
                 }
 
-                /* JADX INFO: renamed from: af */
+                
                 public C1083fn[] m1996af(int i) {
                     return new C1083fn[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1083fn createFromParcel(Parcel x0) {
+                @Override 
+                public  C1083fn createFromParcel(Parcel x0) {
                     return m1995A(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1083fn[] newArray(int x0) {
+                @Override 
+                public  C1083fn[] newArray(int x0) {
                     return m1996af(x0);
                 }
             }

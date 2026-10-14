@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.j */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1216j implements Parcelable.Creator<OfferWalletObject> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2369a(OfferWalletObject offerWalletObject, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, offerWalletObject.getVersionCode());
@@ -17,7 +17,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: W */
+                
                 public OfferWalletObject m2370W(Parcel parcel) {
                     String strM1113l = null;
                     int iM1111j = C0901a.m1111j(parcel);
@@ -46,18 +46,18 @@
                     return new OfferWalletObject(iM1105f, strM1113l2, strM1113l);
                 }
 
-                /* JADX INFO: renamed from: aB */
+                
                 public OfferWalletObject[] m2371aB(int i) {
                     return new OfferWalletObject[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ OfferWalletObject createFromParcel(Parcel x0) {
+                @Override 
+                public  OfferWalletObject createFromParcel(Parcel x0) {
                     return m2370W(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ OfferWalletObject[] newArray(int x0) {
+                @Override 
+                public  OfferWalletObject[] newArray(int x0) {
                     return m2371aB(x0);
                 }
             }

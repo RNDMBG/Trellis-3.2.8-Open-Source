@@ -1,10 +1,10 @@
             package com.google.android.gms;
             
-            /* JADX INFO: renamed from: com.google.android.gms.R */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0881R {
 
-                /* JADX INFO: renamed from: com.google.android.gms.R$attr */
+                
                 public static final class attr {
                     public static final int adSize = 2130772066;
                     public static final int adUnitId = 2130772067;
@@ -24,7 +24,7 @@
                     public static final int zOrderOnTop = 2130772119;
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.R$color */
+                
                 public static final class color {
                     public static final int common_action_bar_splitter = 2131296304;
                     public static final int common_signin_btn_dark_text_default = 2131296305;
@@ -40,7 +40,7 @@
                     public static final int common_signin_btn_text_light = 2131296432;
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.R$drawable */
+                
                 public static final class drawable {
                     public static final int common_signin_btn_icon_dark = 2130837790;
                     public static final int common_signin_btn_icon_disabled_dark = 2130837791;
@@ -72,7 +72,7 @@
                     public static final int ic_plusone_tall_off_client = 2130837999;
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.R$id */
+                
                 public static final class id {
                     public static final int hybrid = 2131427356;
                     public static final int none = 2131427355;
@@ -83,12 +83,12 @@
                     public static final int text2 = 2131427465;
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.R$integer */
+                
                 public static final class integer {
                     public static final int google_play_services_version = 2131492867;
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.R$string */
+                
                 public static final class string {
                     public static final int auth_client_needs_enabling_title = 2131624029;
                     public static final int auth_client_needs_installation_title = 2131624030;
@@ -118,7 +118,7 @@
                     public static final int common_signin_button_text_long = 2131624096;
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.R$styleable */
+                
                 public static final class styleable {
                     public static final int AdsAttrs_adSize = 0;
                     public static final int AdsAttrs_adUnitId = 1;

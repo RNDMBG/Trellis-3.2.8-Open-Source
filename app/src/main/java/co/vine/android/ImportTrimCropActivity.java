@@ -39,8 +39,8 @@
             import com.google.android.exoplayer.ExoPlaybackException;
             import com.google.android.exoplayer.ExoPlayer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 43 */    public class ImportTrimCropActivity extends BaseActionBarActivity implements View.OnClickListener, ThumbnailRangeFinderLayout.OnVideoTrimmedListener {
+            
+    public class ImportTrimCropActivity extends BaseActionBarActivity implements View.OnClickListener, ThumbnailRangeFinderLayout.OnVideoTrimmedListener {
                 public static final String ACTION_VIDEO_PICKED = "video_picked";
                 public static final String EXTRA_GALLERY_ONLY = "gallery_only";
                 public static final String EXTRA_DURATION = "current_duration";
@@ -71,168 +71,168 @@
                 private Runnable mProgressChecker = new RunnableC02307();
                 private View.OnTouchListener mVideoViewTouchListener = new ViewOnTouchListenerC02318();
 
-/* 44 */        static /* synthetic */ void access$000(ImportTrimCropActivity x0) {
-/* 45 */            x0.add();
+        static  void access$000(ImportTrimCropActivity x0) {
+            x0.add();
                 }
 
-/* 44 */        static /* synthetic */ int access$100(ImportTrimCropActivity x0) {
-/* 45 */            return x0.mMaxDurationMs;
+        static  int access$100(ImportTrimCropActivity x0) {
+            return x0.mMaxDurationMs;
                 }
 
-/* 44 */        static /* synthetic */ Runnable access$1000(ImportTrimCropActivity x0) {
-/* 45 */            return x0.mProgressChecker;
+        static  Runnable access$1000(ImportTrimCropActivity x0) {
+            return x0.mProgressChecker;
                 }
 
-/* 44 */        static /* synthetic */ Handler access$1100(ImportTrimCropActivity x0) {
-/* 45 */            return x0.mHandler;
+        static  Handler access$1100(ImportTrimCropActivity x0) {
+            return x0.mHandler;
                 }
 
-/* 44 */        static /* synthetic */ void access$1200(ImportTrimCropActivity x0) {
-/* 45 */            x0.playPauseVideo();
+        static  void access$1200(ImportTrimCropActivity x0) {
+            x0.playPauseVideo();
                 }
 
-/* 44 */        static /* synthetic */ ThumbnailRangeFinderLayout access$200(ImportTrimCropActivity x0) {
-/* 45 */            return x0.mThumbnailRangeFinder;
+        static  ThumbnailRangeFinderLayout access$200(ImportTrimCropActivity x0) {
+            return x0.mThumbnailRangeFinder;
                 }
 
-/* 44 */        static /* synthetic */ void access$300(ImportTrimCropActivity x0, int x1, int x2, int x3, long x4) {
-/* 45 */            x0.prepareVideoView(x1, x2, x3, x4);
+        static  void access$300(ImportTrimCropActivity x0, int x1, int x2, int x3, long x4) {
+            x0.prepareVideoView(x1, x2, x3, x4);
                 }
 
-/* 44 */        static /* synthetic */ boolean access$400(ImportTrimCropActivity x0) {
-/* 45 */            return x0.mHasRetried;
+        static  boolean access$400(ImportTrimCropActivity x0) {
+            return x0.mHasRetried;
                 }
 
-/* 44 */        static /* synthetic */ void access$500(ImportTrimCropActivity x0) {
-/* 45 */            x0.release();
+        static  void access$500(ImportTrimCropActivity x0) {
+            x0.release();
                 }
 
-/* 44 */        static /* synthetic */ Uri access$600(ImportTrimCropActivity x0) {
-/* 45 */            return x0.mFileUri;
+        static  Uri access$600(ImportTrimCropActivity x0) {
+            return x0.mFileUri;
                 }
 
-/* 44 */        static /* synthetic */ void access$700(ImportTrimCropActivity x0, Uri x1, int x2, Object x3) {
-/* 45 */            x0.showInvalidVideoError(x1, x2, x3);
+        static  void access$700(ImportTrimCropActivity x0, Uri x1, int x2, Object x3) {
+            x0.showInvalidVideoError(x1, x2, x3);
                 }
 
-/* 44 */        static /* synthetic */ StaticSizeExoPlayerTextureView access$800(ImportTrimCropActivity x0) {
-/* 45 */            return x0.mTextureView;
+        static  StaticSizeExoPlayerTextureView access$800(ImportTrimCropActivity x0) {
+            return x0.mTextureView;
                 }
 
-/* 44 */        static /* synthetic */ int access$900(ImportTrimCropActivity x0) {
-/* 45 */            return x0.checkTimeBar();
+        static  int access$900(ImportTrimCropActivity x0) {
+            return x0.checkTimeBar();
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 79 */        protected void onCreate(Bundle savedInstanceState) {
-/* 80 */            onCreate(savedInstanceState, C0257R.layout.import_trim_crop_activity, true, true);
+                @Override 
+        protected void onCreate(Bundle savedInstanceState) {
+            onCreate(savedInstanceState, C0257R.layout.import_trim_crop_activity, true, true);
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity
-/* 84 */        public void onCreate(Bundle savedInstanceState, int layout, boolean loginRequired, boolean readOnly) {
-/* 85 */            super.onCreate(savedInstanceState, layout, loginRequired, readOnly);
-/* 86 */            this.mStartDurationMs = 0;
-/* 87 */            this.mMaxDurationMs = 6000;
-/* 87 */            if (getIntent() != null && getIntent().getExtras() != null) {
-/* 88 */                Bundle extras = getIntent().getExtras();
-/* 89 */                this.mStartDurationMs = extras.getInt(EXTRA_DURATION);
-/* 90 */                this.mMaxDurationMs = extras.getInt(EXTRA_MAX_DURATION);
+                @Override 
+        public void onCreate(Bundle savedInstanceState, int layout, boolean loginRequired, boolean readOnly) {
+            super.onCreate(savedInstanceState, layout, loginRequired, readOnly);
+            this.mStartDurationMs = 0;
+            this.mMaxDurationMs = 6000;
+            if (getIntent() != null && getIntent().getExtras() != null) {
+                Bundle extras = getIntent().getExtras();
+                this.mStartDurationMs = extras.getInt(EXTRA_DURATION);
+                this.mMaxDurationMs = extras.getInt(EXTRA_MAX_DURATION);
                     }
-/* 91 */            if (this.mMaxDurationMs <= 0) {
-/* 92 */                this.mMaxDurationMs = 6000;
+            if (this.mMaxDurationMs <= 0) {
+                this.mMaxDurationMs = 6000;
                     }
-/* 93 */            if (this.mStartDurationMs < 0) {
-/* 94 */                this.mStartDurationMs = 0;
+            if (this.mStartDurationMs < 0) {
+                this.mStartDurationMs = 0;
                     } else if (this.mStartDurationMs > this.mMaxDurationMs) {
-/* 96 */                this.mStartDurationMs = this.mMaxDurationMs;
+                this.mStartDurationMs = this.mMaxDurationMs;
                     }
-/* 95 */            Point size = SystemUtil.getDisplaySize((Activity) this);
-/* 96 */            this.mHandler = new Handler(Looper.getMainLooper());
-/* 97 */            ViewGroup rootView = (ViewGroup) findViewById(C0257R.id.import_view_root);
-/* 98 */            this.mVideoContainer = (FrameLayout) findViewById(C0257R.id.video_container);
-/* 99 */            this.mPlayButton = (ImageButton) findViewById(C0257R.id.import_play_button);
-/* 100 */           this.mProgressView = (RegularProgressView) findViewById(C0257R.id.import_progress_view);
-/* 101 */           this.mProgressView.setSelectedColor(getResources().getColor(C0257R.color.vine_green));
-/* 102 */           this.mProgressView.setColor(getResources().getColor(C0257R.color.trim_yellow));
-/* 103 */           this.mStartRatio = this.mStartDurationMs / this.mMaxDurationMs;
-/* 104 */           this.mProgressView.setProgressRatio(this.mStartRatio);
-/* 105 */           this.mProgressView.setSelectedSection(0.0f, this.mStartRatio);
-/* 107 */           findViewById(C0257R.id.importTitle).setOnClickListener(new ViewOnClickListenerC02241());
-/* 114 */           findViewById(C0257R.id.trimCropBackButton).setOnClickListener(new ViewOnClickListenerC02252());
-/* 121 */           findViewById(C0257R.id.add).setOnClickListener(new ViewOnClickListenerC02263());
-/* 128 */           int height = getResources().getDimensionPixelSize(C0257R.dimen.carousel_height);
-/* 129 */           LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(-1, height);
-/* 132 */           ThumbnailRangeFinderLayout thumbnailRangeFinder = new ThumbnailRangeFinderLayout(this, (int) (this.mStartRatio * size.x));
-/* 133 */           thumbnailRangeFinder.setListener(this);
-/* 134 */           rootView.addView(thumbnailRangeFinder, params);
-/* 135 */           this.mThumbnailRangeFinder = thumbnailRangeFinder;
-/* 137 */           StaticSizeExoPlayerTextureView videoView = new StaticSizeExoPlayerTextureView(this);
-/* 138 */           videoView.setOnTouchListener(this.mVideoViewTouchListener);
-/* 139 */           videoView.setSize(size.x, size.x);
-/* 140 */           this.mTextureView = videoView;
-/* 141 */           this.mSize = size;
-/* 143 */           if (getIntent().getData() == null) {
+            Point size = SystemUtil.getDisplaySize((Activity) this);
+            this.mHandler = new Handler(Looper.getMainLooper());
+            ViewGroup rootView = (ViewGroup) findViewById(C0257R.id.import_view_root);
+            this.mVideoContainer = (FrameLayout) findViewById(C0257R.id.video_container);
+            this.mPlayButton = (ImageButton) findViewById(C0257R.id.import_play_button);
+           this.mProgressView = (RegularProgressView) findViewById(C0257R.id.import_progress_view);
+           this.mProgressView.setSelectedColor(getResources().getColor(C0257R.color.vine_green));
+           this.mProgressView.setColor(getResources().getColor(C0257R.color.trim_yellow));
+           this.mStartRatio = this.mStartDurationMs / this.mMaxDurationMs;
+           this.mProgressView.setProgressRatio(this.mStartRatio);
+           this.mProgressView.setSelectedSection(0.0f, this.mStartRatio);
+           findViewById(C0257R.id.importTitle).setOnClickListener(new ViewOnClickListenerC02241());
+           findViewById(C0257R.id.trimCropBackButton).setOnClickListener(new ViewOnClickListenerC02252());
+           findViewById(C0257R.id.add).setOnClickListener(new ViewOnClickListenerC02263());
+           int height = getResources().getDimensionPixelSize(C0257R.dimen.carousel_height);
+           LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(-1, height);
+           ThumbnailRangeFinderLayout thumbnailRangeFinder = new ThumbnailRangeFinderLayout(this, (int) (this.mStartRatio * size.x));
+           thumbnailRangeFinder.setListener(this);
+           rootView.addView(thumbnailRangeFinder, params);
+           this.mThumbnailRangeFinder = thumbnailRangeFinder;
+           StaticSizeExoPlayerTextureView videoView = new StaticSizeExoPlayerTextureView(this);
+           videoView.setOnTouchListener(this.mVideoViewTouchListener);
+           videoView.setSize(size.x, size.x);
+           this.mTextureView = videoView;
+           this.mSize = size;
+           if (getIntent().getData() == null) {
                             Intent pickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
                             pickerIntent.addCategory(Intent.CATEGORY_OPENABLE);
                             pickerIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-/* 145 */               pickerIntent.setType("video/*");
-/* 146 */               pickerIntent.putExtra("android.intent.extra.LOCAL_ONLY", true);
+               pickerIntent.setType("video/*");
+               pickerIntent.putExtra("android.intent.extra.LOCAL_ONLY", true);
                         try {
-/* 148 */                   startActivityForResult(Intent.createChooser(pickerIntent, getString(C0257R.string.pick_video)), 2);
-/* 157 */                   return;
+                   startActivityForResult(Intent.createChooser(pickerIntent, getString(C0257R.string.pick_video)), 2);
+                   return;
                         } catch (ActivityNotFoundException e) {
-/* 151 */                   Util.showCenteredToast(this, getString(C0257R.string.unsupported_feature) + " \n (" + getString(C0257R.string.pick_video) + ") ");
-/* 157 */                   return;
+                   Util.showCenteredToast(this, getString(C0257R.string.unsupported_feature) + " \n (" + getString(C0257R.string.pick_video) + ") ");
+                   return;
                         }
                     }
-/* 154 */           this.mHasRetried = true;
+           this.mHasRetried = true;
                     try {
-/* 155 */               onUriResult(getIntent().getData(), true);
+               onUriResult(getIntent().getData(), true);
                     } catch (Throwable e) {
                         Log.e("ImportTrimCropActivity", "Unable to open selected video", e);
                         finish();
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ImportTrimCropActivity$1 */
-/* 105 */       class ViewOnClickListenerC02241 implements View.OnClickListener {
-/* 106 */           ViewOnClickListenerC02241() {
+                
+       class ViewOnClickListenerC02241 implements View.OnClickListener {
+           ViewOnClickListenerC02241() {
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 109 */           public void onClick(View v) {
-/* 110 */               ImportTrimCropActivity.this.onBackPressed();
-                    }
-                }
-
-                /* JADX INFO: renamed from: co.vine.android.ImportTrimCropActivity$2 */
-/* 112 */       class ViewOnClickListenerC02252 implements View.OnClickListener {
-/* 113 */           ViewOnClickListenerC02252() {
-                    }
-
-                    @Override // android.view.View.OnClickListener
-/* 116 */           public void onClick(View v) {
-/* 117 */               ImportTrimCropActivity.this.onBackPressed();
+                    @Override 
+           public void onClick(View v) {
+               ImportTrimCropActivity.this.onBackPressed();
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ImportTrimCropActivity$3 */
-/* 119 */       class ViewOnClickListenerC02263 implements View.OnClickListener {
-/* 120 */           ViewOnClickListenerC02263() {
+                
+       class ViewOnClickListenerC02252 implements View.OnClickListener {
+           ViewOnClickListenerC02252() {
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 123 */           public void onClick(View v) {
-/* 124 */               ImportTrimCropActivity.access$000(ImportTrimCropActivity.this);
+                    @Override 
+           public void onClick(View v) {
+               ImportTrimCropActivity.this.onBackPressed();
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 160 */       protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-/* 161 */           super.onActivityResult(requestCode, resultCode, data);
-/* 162 */           if (resultCode == -1) {
-/* 163 */               if (requestCode == 2 && data != null) {
-/* 164 */                   Uri uri = data.getData();
+                
+       class ViewOnClickListenerC02263 implements View.OnClickListener {
+           ViewOnClickListenerC02263() {
+                    }
+
+                    @Override 
+           public void onClick(View v) {
+               ImportTrimCropActivity.access$000(ImportTrimCropActivity.this);
+                    }
+                }
+
+                @Override 
+       protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+           super.onActivityResult(requestCode, resultCode, data);
+           if (resultCode == -1) {
+               if (requestCode == 2 && data != null) {
+                   Uri uri = data.getData();
                             if (uri == null) {
                                 Util.showCenteredToast(this, getString(C0257R.string.error_import_video_unknown_error));
                                 finish();
@@ -242,94 +242,94 @@
                                 try {
                                     getContentResolver().takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
                                 } catch (Throwable ignored) {
-                                    // Some providers grant only a temporary read permission.
+                                    
                                 }
                             }
                             try {
-/* 166 */                       onUriResult(uri, false);
-/* 178 */                       return;
+                       onUriResult(uri, false);
+                       return;
                             } catch (Throwable th) {
-/* 168 */                       showInvalidVideoError(uri, C0257R.string.error_import_video_unknown_error, "Failed to validate video.");
-/* 178 */                       return;
+                       showInvalidVideoError(uri, C0257R.string.error_import_video_unknown_error, "Failed to validate video.");
+                       return;
                             }
                         }
-/* 170 */               if (requestCode == 1) {
-/* 171 */                   setResult(resultCode, data);
-/* 172 */                   release();
-/* 173 */                   finish();
-/* 178 */                   return;
+               if (requestCode == 1) {
+                   setResult(resultCode, data);
+                   release();
+                   finish();
+                   return;
                         }
-/* 178 */               return;
+               return;
                     }
-/* 176 */           finish();
+           finish();
                 }
 
                 @TargetApi(17)
-/* 181 */       private void onUriResult(Uri uri, boolean forceMetadataRetriever) throws Throwable {
+       private void onUriResult(Uri uri, boolean forceMetadataRetriever) throws Throwable {
                     uri = materializeVideoUri(uri);
                     long videoDurationMs;
                     int width;
                     int height;
-/* 182 */           String filePath = SdkFileUtils.getPath(this, uri);
-/* 183 */           if (filePath == null) {
-/* 184 */               throw new IllegalArgumentException("File path was null: " + uri);
+           String filePath = SdkFileUtils.getPath(this, uri);
+           if (filePath == null) {
+               throw new IllegalArgumentException("File path was null: " + uri);
                     }
-/* 186 */           MediaMetadataRetriever retriever = null;
+           MediaMetadataRetriever retriever = null;
                     try {
-/* 188 */               MediaMetadataRetriever retriever2 = new MediaMetadataRetriever();
+               MediaMetadataRetriever retriever2 = new MediaMetadataRetriever();
                         try {
-/* 189 */                   retriever2.setDataSource(filePath);
-/* 191 */                   String durationMsStr = retriever2.extractMetadata(9);
-/* 192 */                   String widthStr = retriever2.extractMetadata(18);
-/* 193 */                   String heightStr = retriever2.extractMetadata(19);
-/* 198 */                   if (durationMsStr != null) {
-/* 199 */                       videoDurationMs = Long.parseLong(durationMsStr);
+                   retriever2.setDataSource(filePath);
+                   String durationMsStr = retriever2.extractMetadata(9);
+                   String widthStr = retriever2.extractMetadata(18);
+                   String heightStr = retriever2.extractMetadata(19);
+                   if (durationMsStr != null) {
+                       videoDurationMs = Long.parseLong(durationMsStr);
                             } else {
-/* 201 */                       videoDurationMs = -1;
+                       videoDurationMs = -1;
                             }
-/* 203 */                   if (widthStr != null) {
-/* 204 */                       width = Integer.parseInt(widthStr);
+                   if (widthStr != null) {
+                       width = Integer.parseInt(widthStr);
                             } else {
-/* 206 */                       width = -1;
+                       width = -1;
                             }
-/* 208 */                   if (heightStr != null) {
-/* 209 */                       height = Integer.parseInt(heightStr);
+                   if (heightStr != null) {
+                       height = Integer.parseInt(heightStr);
                             } else {
-/* 211 */                       height = -1;
+                       height = -1;
                             }
-/* 214 */                   int rotation = 0;
-/* 215 */                   if (Build.VERSION.SDK_INT > 16) {
-/* 216 */                       String rotationStr = retriever2.extractMetadata(24);
-/* 217 */                       if (rotationStr != null) {
-/* 218 */                           rotation = Integer.parseInt(rotationStr);
+                   int rotation = 0;
+                   if (Build.VERSION.SDK_INT > 16) {
+                       String rotationStr = retriever2.extractMetadata(24);
+                       if (rotationStr != null) {
+                           rotation = Integer.parseInt(rotationStr);
                                 }
                             } else {
-/* 221 */                       Bitmap b = retriever2.getFrameAtTime(0L);
-/* 222 */                       if (b != null && width != height && height == b.getWidth()) {
-/* 224 */                           rotation = 90;
+                       Bitmap b = retriever2.getFrameAtTime(0L);
+                       if (b != null && width != height && height == b.getWidth()) {
+                           rotation = 90;
                                 }
                             }
-/* 229 */                   if (width != -1 && height != -1 && videoDurationMs != -1) {
-/* 230 */                       SLog.m464i("Width and height are avail from metadata.");
-/* 231 */                       this.mThumbnailRangeFinder.setVideoPath(uri, videoDurationMs, this.mMaxDurationMs, forceMetadataRetriever);
-/* 232 */                       prepareVideoView(width, height, rotation, videoDurationMs);
+                   if (width != -1 && height != -1 && videoDurationMs != -1) {
+                       SLog.m464i("Width and height are avail from metadata.");
+                       this.mThumbnailRangeFinder.setVideoPath(uri, videoDurationMs, this.mMaxDurationMs, forceMetadataRetriever);
+                       prepareVideoView(width, height, rotation, videoDurationMs);
                             } else {
-/* 234 */                       prepareVideoView(480, 480, rotation, videoDurationMs);
-/* 235 */                       this.mTextureView.setVideoSizeChangedListener(new C02274(uri, forceMetadataRetriever));
+                       prepareVideoView(480, 480, rotation, videoDurationMs);
+                       this.mTextureView.setVideoSizeChangedListener(new C02274(uri, forceMetadataRetriever));
                             }
-/* 245 */                   this.mTextureView.setExoPlayerErrorListener(new C02285(uri));
-/* 259 */                   this.mTextureView.setPlaybackEndedListener(new C02296());
-/* 265 */                   this.mFileUri = uri;
-/* 266 */                   preparePlayer(uri);
-/* 267 */                   this.mPlayButton.setVisibility(4);
-/* 270 */                   if (retriever2 != null) {
-/* 271 */                       retriever2.release();
+                   this.mTextureView.setExoPlayerErrorListener(new C02285(uri));
+                   this.mTextureView.setPlaybackEndedListener(new C02296());
+                   this.mFileUri = uri;
+                   preparePlayer(uri);
+                   this.mPlayButton.setVisibility(4);
+                   if (retriever2 != null) {
+                       retriever2.release();
                             }
                         } catch (Throwable th) {
-/* 270 */                   th = th;
+                   th = th;
                             retriever = retriever2;
                             if (retriever != null) {
-/* 271 */                       retriever.release();
+                       retriever.release();
                             }
                             throw th;
                         }
@@ -378,7 +378,7 @@
                                 }
                             }
                         } catch (Throwable ignored) {
-                            // Some providers reject metadata queries; the stream is enough.
+                            
                         } finally {
                             if (cursor != null) {
                                 cursor.close();
@@ -415,202 +415,202 @@
                     return Uri.fromFile(target);
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ImportTrimCropActivity$4 */
-/* 233 */       class C02274 implements StaticSizeExoPlayerTextureView.VideoSizeChangedListener {
-                    final /* synthetic */ boolean val$forceMetadataRetriever;
-                    final /* synthetic */ Uri val$uri;
+                
+       class C02274 implements StaticSizeExoPlayerTextureView.VideoSizeChangedListener {
+                    final  boolean val$forceMetadataRetriever;
+                    final  Uri val$uri;
 
-/* 234 */           C02274(Uri uri, boolean z) {
+           C02274(Uri uri, boolean z) {
                         this.val$uri = uri;
                         this.val$forceMetadataRetriever = z;
                     }
 
-                    @Override // co.vine.android.player.StaticSizeExoPlayerTextureView.VideoSizeChangedListener
-/* 237 */           public void onVideoSizeChanged(ExoPlayer player, int width, int height) {
-/* 238 */               SLog.m464i("Width and height are avail from media player.");
-/* 239 */               int duration = player.getDuration();
-/* 240 */               ImportTrimCropActivity.access$200(ImportTrimCropActivity.this).setVideoPath(this.val$uri, duration, ImportTrimCropActivity.access$100(ImportTrimCropActivity.this), this.val$forceMetadataRetriever);
-/* 241 */               ImportTrimCropActivity.access$300(ImportTrimCropActivity.this, width, height, 0, duration);
+                    @Override 
+           public void onVideoSizeChanged(ExoPlayer player, int width, int height) {
+               SLog.m464i("Width and height are avail from media player.");
+               int duration = player.getDuration();
+               ImportTrimCropActivity.access$200(ImportTrimCropActivity.this).setVideoPath(this.val$uri, duration, ImportTrimCropActivity.access$100(ImportTrimCropActivity.this), this.val$forceMetadataRetriever);
+               ImportTrimCropActivity.access$300(ImportTrimCropActivity.this, width, height, 0, duration);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ImportTrimCropActivity$5 */
-/* 243 */       class C02285 implements StaticSizeExoPlayerTextureView.ExoPlayerErrorListener {
-                    final /* synthetic */ Uri val$uri;
+                
+       class C02285 implements StaticSizeExoPlayerTextureView.ExoPlayerErrorListener {
+                    final  Uri val$uri;
 
-/* 244 */           C02285(Uri uri) {
+           C02285(Uri uri) {
                         this.val$uri = uri;
                     }
 
-                    @Override // co.vine.android.player.StaticSizeExoPlayerTextureView.ExoPlayerErrorListener
-/* 247 */           public void onError(ExoPlaybackException error) {
-/* 248 */               SLog.m446d("Video preview is unsupported; continuing with the import pipeline: " + String.valueOf(error));
-/* 256 */               ImportTrimCropActivity.this.mHasRetried = true;
-/* 257 */               ImportTrimCropActivity.this.mTextureView.setPlayWhenReady(false);
-/* 258 */               ImportTrimCropActivity.this.mPlayButton.setVisibility(8);
+                    @Override 
+           public void onError(ExoPlaybackException error) {
+               SLog.m446d("Video preview is unsupported; continuing with the import pipeline: " + String.valueOf(error));
+               ImportTrimCropActivity.this.mHasRetried = true;
+               ImportTrimCropActivity.this.mTextureView.setPlayWhenReady(false);
+               ImportTrimCropActivity.this.mPlayButton.setVisibility(8);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ImportTrimCropActivity$6 */
-/* 257 */       class C02296 implements StaticSizeExoPlayerTextureView.PlaybackEndedListener {
-/* 258 */           C02296() {
+                
+       class C02296 implements StaticSizeExoPlayerTextureView.PlaybackEndedListener {
+           C02296() {
                     }
 
-                    @Override // co.vine.android.player.StaticSizeExoPlayerTextureView.PlaybackEndedListener
-/* 261 */           public void onPlaybackEnded() {
-/* 262 */               ImportTrimCropActivity.access$800(ImportTrimCropActivity.this).seekTo((int) (ImportTrimCropActivity.access$200(ImportTrimCropActivity.this).trimStartTimeUsec / 1000));
-                    }
-                }
-
-/* 276 */       private void showInvalidVideoError(Uri uri, int userFacingStringRes, Object error) {
-/* 277 */           CrashUtil.logException(new IllegalArgumentException(), "Failed to select video: {} {}.", uri, error);
-/* 278 */           Util.showCenteredToast(this, getString(userFacingStringRes));
-/* 279 */           setResult(0);
-/* 280 */           finish();
-                }
-
-/* 283 */       private void preparePlayer(Uri uri) {
-/* 284 */           if (uri != null) {
-/* 285 */               this.mTextureView.openVideo(this.mFileUri);
+                    @Override 
+           public void onPlaybackEnded() {
+               ImportTrimCropActivity.access$800(ImportTrimCropActivity.this).seekTo((int) (ImportTrimCropActivity.access$200(ImportTrimCropActivity.this).trimStartTimeUsec / 1000));
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 289 */       protected void onResume() {
-/* 290 */           super.onResume();
-/* 291 */           this.mHandler.post(this.mProgressChecker);
+       private void showInvalidVideoError(Uri uri, int userFacingStringRes, Object error) {
+           CrashUtil.logException(new IllegalArgumentException(), "Failed to select video: {} {}.", uri, error);
+           Util.showCenteredToast(this, getString(userFacingStringRes));
+           setResult(0);
+           finish();
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 295 */       protected void onPause() {
-/* 296 */           super.onPause();
-/* 297 */           this.mHandler.removeCallbacks(this.mProgressChecker);
-/* 298 */           if (this.mTextureView.getPlayWhenReady()) {
-/* 299 */               playPauseVideo();
+       private void preparePlayer(Uri uri) {
+           if (uri != null) {
+               this.mTextureView.openVideo(this.mFileUri);
                     }
                 }
 
-/* 303 */       private void prepareVideoView(int videoWidth, int videoHeight, int rotation, long videoDurationMs) {
+                @Override 
+       protected void onResume() {
+           super.onResume();
+           this.mHandler.post(this.mProgressChecker);
+                }
+
+                @Override 
+       protected void onPause() {
+           super.onPause();
+           this.mHandler.removeCallbacks(this.mProgressChecker);
+           if (this.mTextureView.getPlayWhenReady()) {
+               playPauseVideo();
+                    }
+                }
+
+       private void prepareVideoView(int videoWidth, int videoHeight, int rotation, long videoDurationMs) {
                     ViewGroup videoViewPanner;
                     if (videoWidth <= 0 || videoHeight <= 0) {
                         videoWidth = 480;
                         videoHeight = 480;
                     }
-/* 304 */           if (this.mVideoViewPanner != null) {
-/* 305 */               this.mVideoViewPanner.removeView(this.mTextureView);
-/* 306 */               this.mVideoContainer.removeView(this.mVideoViewPanner);
-/* 307 */               this.mVideoViewPanner = null;
+           if (this.mVideoViewPanner != null) {
+               this.mVideoViewPanner.removeView(this.mTextureView);
+               this.mVideoContainer.removeView(this.mVideoViewPanner);
+               this.mVideoViewPanner = null;
                     }
-/* 310 */           StaticSizeExoPlayerTextureView textureView = this.mTextureView;
-/* 314 */           if (rotation == 90 || rotation == 270) {
+           StaticSizeExoPlayerTextureView textureView = this.mTextureView;
+           if (rotation == 90 || rotation == 270) {
                         int rotatedWidth = videoHeight;
                         videoHeight = videoWidth;
                         videoWidth = rotatedWidth;
                     }
-/* 320 */           if (videoWidth > videoHeight) {
-/* 321 */               videoViewPanner = new HorizontalScrollView(this);
+           if (videoWidth > videoHeight) {
+               videoViewPanner = new HorizontalScrollView(this);
                         this.mPlayerWidth = (int) (((float) videoWidth / (float) videoHeight) * this.mSize.x);
-/* 323 */               this.mPlayerHeight = this.mSize.x;
+               this.mPlayerHeight = this.mSize.x;
                     } else {
-/* 325 */               videoViewPanner = new ScrollView(this);
-/* 326 */               this.mPlayerWidth = this.mSize.x;
+               videoViewPanner = new ScrollView(this);
+               this.mPlayerWidth = this.mSize.x;
                         this.mPlayerHeight = (int) (((float) videoHeight / (float) videoWidth) * this.mSize.x);
                     }
-/* 329 */           textureView.setSize(this.mPlayerWidth, this.mPlayerHeight);
-/* 330 */           textureView.setSurfaceRotation(rotation);
-/* 332 */           videoViewPanner.addView(textureView);
-/* 333 */           videoViewPanner.setHorizontalScrollBarEnabled(false);
-/* 334 */           videoViewPanner.setVerticalScrollBarEnabled(false);
-/* 335 */           this.mVideoContainer.addView(videoViewPanner, 0, new LinearLayout.LayoutParams(this.mSize.x, this.mSize.x));
-/* 337 */           this.mVideoViewPanner = videoViewPanner;
-/* 338 */           this.mVideoWidth = videoWidth;
+           textureView.setSize(this.mPlayerWidth, this.mPlayerHeight);
+           textureView.setSurfaceRotation(rotation);
+           videoViewPanner.addView(textureView);
+           videoViewPanner.setHorizontalScrollBarEnabled(false);
+           videoViewPanner.setVerticalScrollBarEnabled(false);
+           this.mVideoContainer.addView(videoViewPanner, 0, new LinearLayout.LayoutParams(this.mSize.x, this.mSize.x));
+           this.mVideoViewPanner = videoViewPanner;
+           this.mVideoWidth = videoWidth;
                     SLog.m449d("mjama  width={}, height={}, ratio={}", Integer.valueOf(this.mPlayerWidth), Integer.valueOf(this.mPlayerHeight), Float.valueOf((float) videoWidth / (float) videoHeight));
-/* 341 */           this.mVideoHeight = videoHeight;
-/* 342 */           this.mProgressView.setProgressRatio(this.mStartRatio + (videoDurationMs / this.mMaxDurationMs));
+           this.mVideoHeight = videoHeight;
+           this.mProgressView.setProgressRatio(this.mStartRatio + (videoDurationMs / this.mMaxDurationMs));
                 }
 
-                @Override // android.view.View.OnClickListener
-/* 346 */       public void onClick(View view) {
-/* 347 */           if (view.getId() == 2131427603) {
-/* 348 */               playPauseVideo();
+                @Override 
+       public void onClick(View view) {
+           if (view.getId() == 2131427603) {
+               playPauseVideo();
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.app.Activity
-/* 353 */       public boolean onCreateOptionsMenu(Menu menu) {
-/* 354 */           getMenuInflater().inflate(C0257R.menu.import_trim, menu);
-/* 355 */           return true;
+                @Override 
+       public boolean onCreateOptionsMenu(Menu menu) {
+           getMenuInflater().inflate(C0257R.menu.import_trim, menu);
+           return true;
                 }
 
-                @Override // co.vine.android.widget.trimControls.ThumbnailRangeFinderLayout.OnVideoTrimmedListener
-/* 359 */       public void onVideoTrimmedByScrubber() {
-/* 360 */           updatePosition(((int) this.mThumbnailRangeFinder.trimEndTimeUsec) / 1000);
+                @Override 
+       public void onVideoTrimmedByScrubber() {
+           updatePosition(((int) this.mThumbnailRangeFinder.trimEndTimeUsec) / 1000);
                 }
 
-                @Override // co.vine.android.widget.trimControls.ThumbnailRangeFinderLayout.OnVideoTrimmedListener
-/* 364 */       public void onVideoTrimmedByCarousel() {
-/* 365 */           updatePosition(((int) this.mThumbnailRangeFinder.trimStartTimeUsec) / 1000);
+                @Override 
+       public void onVideoTrimmedByCarousel() {
+           updatePosition(((int) this.mThumbnailRangeFinder.trimStartTimeUsec) / 1000);
                 }
 
-                @Override // co.vine.android.widget.trimControls.ThumbnailRangeFinderLayout.OnVideoTrimmedListener
-/* 369 */       public void onStartEndTimeChanged(long trimStartTimeUsec, long trimEndTimeUsec) {
-/* 370 */           this.mProgressView.setProgressRatio(this.mStartRatio + (((trimEndTimeUsec - trimStartTimeUsec) / 1000.0f) / this.mMaxDurationMs));
+                @Override 
+       public void onStartEndTimeChanged(long trimStartTimeUsec, long trimEndTimeUsec) {
+           this.mProgressView.setProgressRatio(this.mStartRatio + (((trimEndTimeUsec - trimStartTimeUsec) / 1000.0f) / this.mMaxDurationMs));
                 }
 
-/* 373 */       private void updatePosition(int position) {
-/* 374 */           this.mTextureView.setPlayWhenReady(this.mTextureView.getPlayWhenReady());
-/* 375 */           this.mTextureView.seekTo(position);
-/* 376 */           this.mPlayButton.setVisibility(this.mTextureView.getPlayWhenReady() ? 8 : 0);
+       private void updatePosition(int position) {
+           this.mTextureView.setPlayWhenReady(this.mTextureView.getPlayWhenReady());
+           this.mTextureView.seekTo(position);
+           this.mPlayButton.setVisibility(this.mTextureView.getPlayWhenReady() ? 8 : 0);
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.app.Activity
-/* 380 */       public boolean onOptionsItemSelected(MenuItem item) {
-/* 381 */           int id = item.getItemId();
-/* 382 */           if (id == 2131427600) {
-/* 383 */               add();
+                @Override 
+       public boolean onOptionsItemSelected(MenuItem item) {
+           int id = item.getItemId();
+           if (id == 2131427600) {
+               add();
                     } else if (id == 16908332) {
-/* 385 */               release();
+               release();
                     }
-/* 387 */           return super.onOptionsItemSelected(item);
+           return super.onOptionsItemSelected(item);
                 }
 
-/* 390 */       private void release() {
-/* 391 */           if (this.mThumbnailRangeFinder != null) {
-/* 392 */               this.mThumbnailRangeFinder.stop();
+       private void release() {
+           if (this.mThumbnailRangeFinder != null) {
+               this.mThumbnailRangeFinder.stop();
                     }
-/* 394 */           if (this.mTextureView != null) {
-/* 395 */               this.mTextureView.release();
+           if (this.mTextureView != null) {
+               this.mTextureView.release();
                     }
                 }
 
-/* 401 */       private void add() {
+       private void add() {
                     if (this.mAddInProgress) {
                         return;
                     }
-/* 402 */           if (this.mVideoViewPanner != null || System.currentTimeMillis() - this.mAddRequestTime < 200) {
+           if (this.mVideoViewPanner != null || System.currentTimeMillis() - this.mAddRequestTime < 200) {
                         this.mAddInProgress = true;
                         if (getIntent().getBooleanExtra(EXTRA_GALLERY_ONLY, false)) {
                             completeGalleryUpload();
                             return;
                         }
-/* 403 */               this.mThumbnailRangeFinder.computeStartEndTimes();
-/* 404 */               Intent data = new Intent(ACTION_VIDEO_PICKED, this.mFileUri);
-/* 405 */               data.putExtra(EXTRA_TRIM_START_TIME_USEC, this.mThumbnailRangeFinder.trimStartTimeUsec);
-/* 406 */               data.putExtra(EXTRA_TRIM_END_TIME_USEC, this.mThumbnailRangeFinder.trimEndTimeUsec);
-/* 407 */               Point point = new Point();
-/* 408 */               if (this.mVideoViewPanner != null) {
-/* 409 */                   point.x = (int) ((this.mVideoViewPanner.getScrollX() / this.mPlayerWidth) * this.mVideoWidth);
-/* 410 */                   point.y = (int) ((this.mVideoViewPanner.getScrollY() / this.mPlayerHeight) * this.mVideoHeight);
+               this.mThumbnailRangeFinder.computeStartEndTimes();
+               Intent data = new Intent(ACTION_VIDEO_PICKED, this.mFileUri);
+               data.putExtra(EXTRA_TRIM_START_TIME_USEC, this.mThumbnailRangeFinder.trimStartTimeUsec);
+               data.putExtra(EXTRA_TRIM_END_TIME_USEC, this.mThumbnailRangeFinder.trimEndTimeUsec);
+               Point point = new Point();
+               if (this.mVideoViewPanner != null) {
+                   point.x = (int) ((this.mVideoViewPanner.getScrollX() / this.mPlayerWidth) * this.mVideoWidth);
+                   point.y = (int) ((this.mVideoViewPanner.getScrollY() / this.mPlayerHeight) * this.mVideoHeight);
                         }
-/* 412 */               SLog.m448d("mjama  origin.x={}, origin.y={}", Integer.valueOf(point.x), Integer.valueOf(point.y));
-/* 413 */               data.putExtra(EXTRA_TRIM_CROP_ORIGIN, point);
-/* 414 */               setResult(-1, data);
-/* 415 */               release();
-/* 416 */               finish();
-/* 417 */               SLog.m448d("mjama  trimStart={}, trimEnd={}", Long.valueOf(this.mThumbnailRangeFinder.trimStartTimeUsec), Long.valueOf(this.mThumbnailRangeFinder.trimEndTimeUsec));
-/* 422 */               return;
+               SLog.m448d("mjama  origin.x={}, origin.y={}", Integer.valueOf(point.x), Integer.valueOf(point.y));
+               data.putExtra(EXTRA_TRIM_CROP_ORIGIN, point);
+               setResult(-1, data);
+               release();
+               finish();
+               SLog.m448d("mjama  trimStart={}, trimEnd={}", Long.valueOf(this.mThumbnailRangeFinder.trimStartTimeUsec), Long.valueOf(this.mThumbnailRangeFinder.trimEndTimeUsec));
+               return;
                     }
-/* 420 */           this.mAddRequestTime = System.currentTimeMillis();
+           this.mAddRequestTime = System.currentTimeMillis();
                 }
 
                 private void completeGalleryUpload() {
@@ -652,67 +652,67 @@
                     }
                 }
 
-/* 424 */       private void playPauseVideo() {
-/* 425 */           if (this.mTextureView != null) {
-/* 426 */               if (this.mTextureView.getPlayWhenReady()) {
-/* 427 */                   this.mTextureView.setPlayWhenReady(false);
-/* 428 */                   this.mPlayButton.setVisibility(0);
+       private void playPauseVideo() {
+           if (this.mTextureView != null) {
+               if (this.mTextureView.getPlayWhenReady()) {
+                   this.mTextureView.setPlayWhenReady(false);
+                   this.mPlayButton.setVisibility(0);
                         } else {
-/* 430 */                   this.mTextureView.seekTo(((int) this.mThumbnailRangeFinder.trimStartTimeUsec) / 1000);
-/* 431 */                   this.mTextureView.setPlayWhenReady(true);
-/* 432 */                   this.mPlayButton.setVisibility(8);
+                   this.mTextureView.seekTo(((int) this.mThumbnailRangeFinder.trimStartTimeUsec) / 1000);
+                   this.mTextureView.setPlayWhenReady(true);
+                   this.mPlayButton.setVisibility(8);
                         }
                     }
                 }
 
-/* 437 */       private int checkTimeBar() {
-/* 438 */           int trimEndTimeMs = ((int) this.mThumbnailRangeFinder.trimEndTimeUsec) / 1000;
-/* 439 */           int position = this.mTextureView.getCurrentPosition();
-/* 440 */           if (position >= trimEndTimeMs && trimEndTimeMs > 0) {
-/* 441 */               this.mTextureView.seekTo((int) (this.mThumbnailRangeFinder.trimStartTimeUsec / 1000));
-/* 442 */               this.mTextureView.setPlayWhenReady(true);
+       private int checkTimeBar() {
+           int trimEndTimeMs = ((int) this.mThumbnailRangeFinder.trimEndTimeUsec) / 1000;
+           int position = this.mTextureView.getCurrentPosition();
+           if (position >= trimEndTimeMs && trimEndTimeMs > 0) {
+               this.mTextureView.seekTo((int) (this.mThumbnailRangeFinder.trimStartTimeUsec / 1000));
+               this.mTextureView.setPlayWhenReady(true);
                     }
-/* 444 */           return position;
+           return position;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ImportTrimCropActivity$7 */
-/* 445 */       class RunnableC02307 implements Runnable {
-/* 446 */           RunnableC02307() {
+                
+       class RunnableC02307 implements Runnable {
+           RunnableC02307() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 449 */           public void run() {
-/* 450 */               int position = ImportTrimCropActivity.access$900(ImportTrimCropActivity.this);
-/* 451 */               ImportTrimCropActivity.access$1100(ImportTrimCropActivity.this).postDelayed(ImportTrimCropActivity.access$1000(ImportTrimCropActivity.this), Math.max(66, 200 - (position % 200)));
+                    @Override 
+           public void run() {
+               int position = ImportTrimCropActivity.access$900(ImportTrimCropActivity.this);
+               ImportTrimCropActivity.access$1100(ImportTrimCropActivity.this).postDelayed(ImportTrimCropActivity.access$1000(ImportTrimCropActivity.this), Math.max(66, 200 - (position % 200)));
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ImportTrimCropActivity$8 */
-/* 453 */       class ViewOnTouchListenerC02318 implements View.OnTouchListener {
+                
+       class ViewOnTouchListenerC02318 implements View.OnTouchListener {
                     private long mTouchTime;
 
-/* 454 */           ViewOnTouchListenerC02318() {
+           ViewOnTouchListenerC02318() {
                     }
 
-                    @Override // android.view.View.OnTouchListener
-/* 459 */           public boolean onTouch(View view, MotionEvent motionEvent) {
+                    @Override 
+           public boolean onTouch(View view, MotionEvent motionEvent) {
                         switch (motionEvent.getAction()) {
                             case 0:
-/* 462 */                       this.mTouchTime = System.currentTimeMillis();
+                       this.mTouchTime = System.currentTimeMillis();
                                 break;
                             case 1:
                                 if (System.currentTimeMillis() - this.mTouchTime < 200) {
-/* 468 */                           ImportTrimCropActivity.access$1200(ImportTrimCropActivity.this);
+                           ImportTrimCropActivity.access$1200(ImportTrimCropActivity.this);
                                 }
                                 break;
                         }
-/* 473 */               return true;
+               return true;
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 478 */       public void onBackPressed() {
-/* 479 */           release();
-/* 480 */           super.onBackPressed();
+                @Override 
+       public void onBackPressed() {
+           release();
+           super.onBackPressed();
                 }
             }

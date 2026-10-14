@@ -5,8 +5,8 @@
             import android.view.MenuItem;
             import android.view.View;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 57 */    public abstract class ActionMode {
+            
+    public abstract class ActionMode {
                 private Object mTag;
                 private boolean mTitleOptionalHint;
 
@@ -44,27 +44,27 @@
 
                 public abstract void setTitle(CharSequence charSequence);
 
-/* 58 */        public void setTag(Object tag) {
-/* 59 */            this.mTag = tag;
+        public void setTag(Object tag) {
+            this.mTag = tag;
                 }
 
-/* 71 */        public Object getTag() {
-/* 72 */            return this.mTag;
+        public Object getTag() {
+            return this.mTag;
                 }
 
-/* 128 */       public void setTitleOptionalHint(boolean titleOptional) {
-/* 129 */           this.mTitleOptionalHint = titleOptional;
+       public void setTitleOptionalHint(boolean titleOptional) {
+           this.mTitleOptionalHint = titleOptional;
                 }
 
-/* 138 */       public boolean getTitleOptionalHint() {
-/* 139 */           return this.mTitleOptionalHint;
+       public boolean getTitleOptionalHint() {
+           return this.mTitleOptionalHint;
                 }
 
-/* 146 */       public boolean isTitleOptional() {
-/* 147 */           return false;
+       public boolean isTitleOptional() {
+           return false;
                 }
 
-/* 215 */       public boolean isUiFocusable() {
-/* 216 */           return true;
+       public boolean isUiFocusable() {
+           return true;
                 }
             }

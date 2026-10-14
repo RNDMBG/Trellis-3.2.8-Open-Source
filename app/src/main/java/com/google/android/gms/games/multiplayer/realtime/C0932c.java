@@ -10,11 +10,11 @@
             import com.google.android.gms.games.multiplayer.Participant;
             import java.util.ArrayList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.games.multiplayer.realtime.c */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0932c extends AbstractC0889b implements Room {
 
-                /* JADX INFO: renamed from: nu */
+                
                 private final int f1130nu;
 
                 C0932c(C0891d c0891d, int i, int i2) {
@@ -22,24 +22,24 @@
                     this.f1130nu = i2;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
 
-                @Override // com.google.android.gms.common.data.AbstractC0889b
+                @Override 
                 public boolean equals(Object obj) {
                     return RoomEntity.m1223a(this, obj);
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // com.google.android.gms.common.data.Freezable
+                
+                @Override 
                 public Room freeze() {
                     return new RoomEntity(this);
                 }
 
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public Bundle getAutoMatchCriteria() {
                     if (getBoolean("has_automatch_criteria")) {
                         return RoomConfig.createAutoMatchCriteria(getInteger("automatch_min_players"), getInteger("automatch_max_players"), getLong("automatch_bit_mask"));
@@ -47,32 +47,32 @@
                     return null;
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public int getAutoMatchWaitEstimateSeconds() {
                     return getInteger("automatch_wait_estimate_sec");
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public long getCreationTimestamp() {
                     return getLong("creation_timestamp");
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public String getCreatorId() {
                     return getString("creator_external");
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public String getDescription() {
                     return getString("description");
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public void getDescription(CharArrayBuffer dataOut) {
                     m1029a("description", dataOut);
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public String getParticipantId(String playerId) {
                     ArrayList<Participant> participants = getParticipants();
                     int size = participants.size();
@@ -86,7 +86,7 @@
                     return null;
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public ArrayList<String> getParticipantIds() {
                     ArrayList<Participant> participants = getParticipants();
                     ArrayList<String> arrayList = new ArrayList<>(this.f1130nu);
@@ -101,7 +101,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public int getParticipantStatus(String participantId) {
                     ArrayList<Participant> participants = getParticipants();
                     int size = participants.size();
@@ -114,7 +114,7 @@
                     throw new IllegalStateException("Participant " + participantId + " is not in room " + getRoomId());
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.Participatable
+                @Override 
                 public ArrayList<Participant> getParticipants() {
                     ArrayList<Participant> arrayList = new ArrayList<>(this.f1130nu);
                     for (int i = 0; i < this.f1130nu; i++) {
@@ -123,22 +123,22 @@
                     return arrayList;
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public String getRoomId() {
                     return getString("external_match_id");
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public int getStatus() {
                     return getInteger("status");
                 }
 
-                @Override // com.google.android.gms.games.multiplayer.realtime.Room
+                @Override 
                 public int getVariant() {
                     return getInteger("variant");
                 }
 
-                @Override // com.google.android.gms.common.data.AbstractC0889b
+                @Override 
                 public int hashCode() {
                     return RoomEntity.m1222a(this);
                 }
@@ -147,7 +147,7 @@
                     return RoomEntity.m1224b(this);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel dest, int flags) {
                     ((RoomEntity) freeze()).writeToParcel(dest, flags);
                 }

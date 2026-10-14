@@ -22,8 +22,8 @@
             import co.vine.android.util.ViewUtil;
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 28 */    public class FakeActionBar implements View.OnClickListener {
+            
+    public class FakeActionBar implements View.OnClickListener {
                 private RelativeLayout mActionBar;
                 private RelativeLayout mActionBarContainer;
                 private RelativeLayout mActionBarLeft;
@@ -53,218 +53,218 @@
                     LIGHT
                 }
 
-/* 29 */        static /* synthetic */ ActionBarActivity access$000(FakeActionBar x0) {
-/* 30 */            return x0.mActivity;
+        static  ActionBarActivity access$000(FakeActionBar x0) {
+            return x0.mActivity;
                 }
 
-/* 53 */        public MenuItemPack getMenuItemPack(int id) {
+        public MenuItemPack getMenuItemPack(int id) {
                     for (MenuItemPack pack : this.mMenuItemPacks) {
-/* 55 */                if (pack.item.getItemId() == id) {
-/* 59 */                    return pack;
+                if (pack.item.getItemId() == id) {
+                    return pack;
                         }
                     }
                     return null;
                 }
 
-/* 67 */        public void setActionBarColor(int color) {
-/* 68 */            this.mActionBar.setBackgroundColor(color);
+        public void setActionBarColor(int color) {
+            this.mActionBar.setBackgroundColor(color);
                 }
 
-/* 71 */        public void setActionBarTransition(TransitionDrawable td) {
-/* 72 */            this.mActionBar.setBackgroundDrawable(td);
+        public void setActionBarTransition(TransitionDrawable td) {
+            this.mActionBar.setBackgroundDrawable(td);
                 }
 
-                @Override // android.view.View.OnClickListener
-/* 76 */        public void onClick(View v) {
-/* 77 */            if (v == this.mBackIcon || v == this.mHomeIcon) {
-/* 78 */                this.mActivity.finish();
+                @Override 
+        public void onClick(View v) {
+            if (v == this.mBackIcon || v == this.mHomeIcon) {
+                this.mActivity.finish();
                     }
                 }
 
-/* 82 */        public RelativeLayout getActionBarLeft() {
-/* 83 */            return this.mActionBarLeft;
+        public RelativeLayout getActionBarLeft() {
+            return this.mActionBarLeft;
                 }
 
-/* 86 */        public LinearLayout getActionBarRight() {
-/* 87 */            return this.mActionBarRight;
+        public LinearLayout getActionBarRight() {
+            return this.mActionBarRight;
                 }
 
-/* 94 */        public FakeActionBar(ActionBarActivity activity) {
-/* 96 */            this.mActivity = activity;
+        public FakeActionBar(ActionBarActivity activity) {
+            this.mActivity = activity;
                 }
 
-/* 100 */       public void setTheme(Theme theme) {
-/* 101 */           this.mTheme = theme;
+       public void setTheme(Theme theme) {
+           this.mTheme = theme;
                 }
 
-/* 104 */       public void onCreate() {
-/* 105 */           this.mActionBarContainer = (RelativeLayout) LayoutInflater.from(this.mActivity).inflate(C0257R.layout.fake_action_bar, (ViewGroup) null);
-/* 106 */           this.mActionBar = (RelativeLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar);
-/* 107 */           ViewUtil.setActionBarHeight(this.mActivity, this.mActionBar);
-/* 108 */           this.mDistanceMarker = this.mActionBarContainer.findViewById(C0257R.id.distance_marker);
-/* 109 */           ViewUtil.setActionBarHeight(this.mActivity, this.mDistanceMarker);
-/* 110 */           this.mActionBarLeft = (RelativeLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar_left);
-/* 111 */           this.mActionBarRight = (LinearLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar_right);
-/* 112 */           this.mBackIcon = (ImageView) this.mActionBar.findViewById(C0257R.id.ab_back_button);
-/* 113 */           this.mHomeIcon = (ImageView) this.mActionBar.findViewById(C0257R.id.ab_home_button);
-/* 114 */           this.mTitleView = (TextView) this.mActionBar.findViewById(C0257R.id.ab_title_view);
+       public void onCreate() {
+           this.mActionBarContainer = (RelativeLayout) LayoutInflater.from(this.mActivity).inflate(C0257R.layout.fake_action_bar, (ViewGroup) null);
+           this.mActionBar = (RelativeLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar);
+           ViewUtil.setActionBarHeight(this.mActivity, this.mActionBar);
+           this.mDistanceMarker = this.mActionBarContainer.findViewById(C0257R.id.distance_marker);
+           ViewUtil.setActionBarHeight(this.mActivity, this.mDistanceMarker);
+           this.mActionBarLeft = (RelativeLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar_left);
+           this.mActionBarRight = (LinearLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar_right);
+           this.mBackIcon = (ImageView) this.mActionBar.findViewById(C0257R.id.ab_back_button);
+           this.mHomeIcon = (ImageView) this.mActionBar.findViewById(C0257R.id.ab_home_button);
+           this.mTitleView = (TextView) this.mActionBar.findViewById(C0257R.id.ab_title_view);
                 }
 
-/* 117 */       public ImageView getBackIcon() {
-/* 118 */           return this.mBackIcon;
+       public ImageView getBackIcon() {
+           return this.mBackIcon;
                 }
 
-/* 121 */       public ImageView getHomeIcon() {
-/* 122 */           return this.mHomeIcon;
+       public ImageView getHomeIcon() {
+           return this.mHomeIcon;
                 }
 
-/* 125 */       public void onPostCreate(Bundle savedInstanceState) {
-/* 126 */           if (this.mContentView == null || this.mActionBarContainer == null) {
-/* 127 */               throw new IllegalStateException("custom setContentView is not called.");
+       public void onPostCreate(Bundle savedInstanceState) {
+           if (this.mContentView == null || this.mActionBarContainer == null) {
+               throw new IllegalStateException("custom setContentView is not called.");
                     }
-/* 129 */           if (this.mDisplayHomeAsUp || this.mHomeButtonEnabled) {
-/* 130 */               if (this.mDisplayHomeAsUp) {
-/* 131 */                   this.mBackIcon.setImageResource(AppCompactProxy.getBackIcon("co.vine.android", this.mTheme == Theme.DARK));
-/* 132 */                   this.mBackIcon.setClickable(true);
-/* 133 */                   this.mBackIcon.setVisibility(0);
-/* 134 */                   this.mBackIcon.setOnClickListener(this);
+           if (this.mDisplayHomeAsUp || this.mHomeButtonEnabled) {
+               if (this.mDisplayHomeAsUp) {
+                   this.mBackIcon.setImageResource(AppCompactProxy.getBackIcon("co.vine.android", this.mTheme == Theme.DARK));
+                   this.mBackIcon.setClickable(true);
+                   this.mBackIcon.setVisibility(0);
+                   this.mBackIcon.setOnClickListener(this);
                         } else {
-/* 136 */                   this.mBackIcon.setVisibility(8);
+                   this.mBackIcon.setVisibility(8);
                         }
-/* 138 */               Drawable icon = null;
-/* 139 */               Resources.Theme theme = this.mActivity.getTheme();
-/* 140 */               if (theme != null) {
-/* 141 */                   TypedArray att = theme.obtainStyledAttributes(new int[]{R.attr.actionBarStyle});
-/* 142 */                   TypedValue typedValue = new TypedValue();
-/* 143 */                   if (att.getValue(0, typedValue)) {
-/* 144 */                       TypedArray att2 = theme.obtainStyledAttributes(typedValue.resourceId, new int[]{R.attr.icon});
-/* 145 */                       int iconRes = att2.getResourceId(0, -1);
-/* 146 */                       att.recycle();
-/* 147 */                       att2.recycle();
-/* 148 */                       if (iconRes > 0) {
-/* 149 */                           icon = this.mActivity.getResources().getDrawable(iconRes);
+               Drawable icon = null;
+               Resources.Theme theme = this.mActivity.getTheme();
+               if (theme != null) {
+                   TypedArray att = theme.obtainStyledAttributes(new int[]{R.attr.actionBarStyle});
+                   TypedValue typedValue = new TypedValue();
+                   if (att.getValue(0, typedValue)) {
+                       TypedArray att2 = theme.obtainStyledAttributes(typedValue.resourceId, new int[]{R.attr.icon});
+                       int iconRes = att2.getResourceId(0, -1);
+                       att.recycle();
+                       att2.recycle();
+                       if (iconRes > 0) {
+                           icon = this.mActivity.getResources().getDrawable(iconRes);
                                 }
                             }
                         }
-/* 153 */               if (icon == null) {
-/* 154 */                   icon = this.mActivity.getApplicationInfo().loadLogo(this.mActivity.getPackageManager());
+               if (icon == null) {
+                   icon = this.mActivity.getApplicationInfo().loadLogo(this.mActivity.getPackageManager());
                         }
-/* 156 */               if (this.mHomeButtonEnabled && this.mDisplayLogo) {
-/* 157 */                   this.mHomeIcon.setClickable(true);
-/* 158 */                   this.mHomeIcon.setOnClickListener(this);
-/* 159 */                   this.mHomeIcon.setImageDrawable(icon);
-/* 160 */                   this.mHomeIcon.setVisibility(0);
+               if (this.mHomeButtonEnabled && this.mDisplayLogo) {
+                   this.mHomeIcon.setClickable(true);
+                   this.mHomeIcon.setOnClickListener(this);
+                   this.mHomeIcon.setImageDrawable(icon);
+                   this.mHomeIcon.setVisibility(0);
                         } else {
-/* 162 */                   this.mHomeIcon.setVisibility(8);
+                   this.mHomeIcon.setVisibility(8);
                         }
                     } else {
-/* 165 */               this.mHomeIcon.setVisibility(8);
+               this.mHomeIcon.setVisibility(8);
                     }
-/* 167 */           if (this.mDisplayShowTitle.booleanValue() && this.mTitle != null) {
-/* 168 */               this.mTitleView.setVisibility(0);
-/* 169 */               this.mTitleView.setText(this.mTitle);
+           if (this.mDisplayShowTitle.booleanValue() && this.mTitle != null) {
+               this.mTitleView.setVisibility(0);
+               this.mTitleView.setText(this.mTitle);
                     } else {
-/* 171 */               this.mTitleView.setVisibility(8);
+               this.mTitleView.setVisibility(8);
                     }
                 }
 
-/* 175 */       public void setContentView(View v, ViewGroup.LayoutParams params) {
-/* 176 */           this.mContentView = v;
-/* 177 */           RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(params);
-/* 178 */           v.setLayoutParams(p);
-/* 179 */           p.addRule(3, this.mDistanceMarker.getId());
-/* 180 */           this.mActionBarContainer.addView(this.mContentView);
+       public void setContentView(View v, ViewGroup.LayoutParams params) {
+           this.mContentView = v;
+           RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(params);
+           v.setLayoutParams(p);
+           p.addRule(3, this.mDistanceMarker.getId());
+           this.mActionBarContainer.addView(this.mContentView);
                 }
 
-/* 183 */       public View getDistanceMaker() {
-/* 184 */           return this.mDistanceMarker;
+       public View getDistanceMaker() {
+           return this.mDistanceMarker;
                 }
 
-/* 187 */       public RelativeLayout getActionBar() {
-/* 188 */           return this.mActionBar;
+       public RelativeLayout getActionBar() {
+           return this.mActionBar;
                 }
 
-/* 191 */       public TextView getTitleView() {
-/* 192 */           return this.mTitleView;
+       public TextView getTitleView() {
+           return this.mTitleView;
                 }
 
-/* 195 */       public RelativeLayout getRoot() {
-/* 196 */           return this.mActionBarContainer;
+       public RelativeLayout getRoot() {
+           return this.mActionBarContainer;
                 }
 
-/* 199 */       public void setHomeButtonEnabled(Boolean setHomeButtonEnabled) {
-/* 200 */           this.mHomeButtonEnabled = setHomeButtonEnabled.booleanValue();
+       public void setHomeButtonEnabled(Boolean setHomeButtonEnabled) {
+           this.mHomeButtonEnabled = setHomeButtonEnabled.booleanValue();
                 }
 
-/* 203 */       public void setDisplayShowTitleEnabled(Boolean setDisplayShowTitleEnabled) {
-/* 204 */           this.mDisplayShowTitle = setDisplayShowTitleEnabled;
+       public void setDisplayShowTitleEnabled(Boolean setDisplayShowTitleEnabled) {
+           this.mDisplayShowTitle = setDisplayShowTitleEnabled;
                 }
 
-/* 207 */       public void setDisplayHomeAsUpEnabled(Boolean setDisplayHomeAsUpEnabled) {
-/* 208 */           this.mDisplayHomeAsUp = setDisplayHomeAsUpEnabled.booleanValue();
+       public void setDisplayHomeAsUpEnabled(Boolean setDisplayHomeAsUpEnabled) {
+           this.mDisplayHomeAsUp = setDisplayHomeAsUpEnabled.booleanValue();
                 }
 
-/* 211 */       public void setTitle(String title) {
-/* 212 */           this.mTitle = title;
+       public void setTitle(String title) {
+           this.mTitle = title;
                 }
 
-/* 215 */       public void setTitle(Integer titleRes) {
-/* 216 */           this.mTitle = this.mActivity.getString(titleRes.intValue());
+       public void setTitle(Integer titleRes) {
+           this.mTitle = this.mActivity.getString(titleRes.intValue());
                 }
 
-/* 219 */       public void setDisplayLogoEnabled(Boolean setDisplayLogoEnabled) {
-/* 220 */           this.mDisplayLogo = setDisplayLogoEnabled.booleanValue();
+       public void setDisplayLogoEnabled(Boolean setDisplayLogoEnabled) {
+           this.mDisplayLogo = setDisplayLogoEnabled.booleanValue();
                 }
 
-/* 223 */       public void onCreateOptionsMenu(Menu menu, boolean show) {
-/* 224 */           this.mMenu = menu;
+       public void onCreateOptionsMenu(Menu menu, boolean show) {
+           this.mMenu = menu;
                     for (MenuItemPack pack : this.mMenuItemPacks) {
-/* 226 */               if (pack.view != null) {
-/* 227 */                   this.mActionBarRight.removeView(pack.view);
+               if (pack.view != null) {
+                   this.mActionBarRight.removeView(pack.view);
                         }
                     }
-/* 230 */           if (show) {
-/* 233 */               int size = this.mMenu.size();
-/* 234 */               ArrayList<MenuItemPack> newMenuItemIndexes = new ArrayList<>();
+           if (show) {
+               int size = this.mMenu.size();
+               ArrayList<MenuItemPack> newMenuItemIndexes = new ArrayList<>();
                         for (int i = 0; i < size; i++) {
-/* 236 */                   MenuItem item = this.mMenu.getItem(i);
-/* 237 */                   if (item.isVisible()) {
-/* 238 */                       View v = null;
-/* 239 */                       Drawable icon = item.getIcon();
-/* 240 */                       CharSequence title = item.getTitle();
-/* 241 */                       if (icon != null) {
-/* 242 */                           v = new ImageView(this.mActivity);
-/* 243 */                           ((ImageView) v).setImageDrawable(icon);
+                   MenuItem item = this.mMenu.getItem(i);
+                   if (item.isVisible()) {
+                       View v = null;
+                       Drawable icon = item.getIcon();
+                       CharSequence title = item.getTitle();
+                       if (icon != null) {
+                           v = new ImageView(this.mActivity);
+                           ((ImageView) v).setImageDrawable(icon);
                                 }
-/* 245 */                       if (title != null) {
-/* 246 */                           v = new TextView(this.mActivity);
-/* 247 */                           ((TextView) v).setText(title);
+                       if (title != null) {
+                           v = new TextView(this.mActivity);
+                           ((TextView) v).setText(title);
                                 }
-/* 249 */                       if (v != null) {
-/* 250 */                           v.setOnClickListener(new ViewOnClickListenerC05491(item));
-/* 256 */                           this.mActionBarRight.addView(v);
+                       if (v != null) {
+                           v.setOnClickListener(new ViewOnClickListenerC05491(item));
+                           this.mActionBarRight.addView(v);
                                 }
                             }
                         }
-/* 260 */               this.mMenuItemPacks.clear();
-/* 261 */               this.mMenuItemPacks.addAll(newMenuItemIndexes);
+               this.mMenuItemPacks.clear();
+               this.mMenuItemPacks.addAll(newMenuItemIndexes);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.widget.FakeActionBar$1 */
-/* 248 */       class ViewOnClickListenerC05491 implements View.OnClickListener {
-                    final /* synthetic */ MenuItem val$item;
+                
+       class ViewOnClickListenerC05491 implements View.OnClickListener {
+                    final  MenuItem val$item;
 
-/* 249 */           ViewOnClickListenerC05491(MenuItem menuItem) {
+           ViewOnClickListenerC05491(MenuItem menuItem) {
                         this.val$item = menuItem;
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 252 */           public void onClick(View v) {
-/* 253 */               FakeActionBar.access$000(FakeActionBar.this).onOptionsItemSelected(this.val$item);
+                    @Override 
+           public void onClick(View v) {
+               FakeActionBar.access$000(FakeActionBar.this).onOptionsItemSelected(this.val$item);
                     }
                 }
 
-/* 264 */       public void onPrepareOptionsMenu(Menu menu, boolean show) {
+       public void onPrepareOptionsMenu(Menu menu, boolean show) {
                 }
             }

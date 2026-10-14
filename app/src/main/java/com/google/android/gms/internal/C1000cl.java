@@ -5,14 +5,14 @@
             import java.net.HttpURLConnection;
             import java.net.URL;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.cl */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C1000cl extends AbstractC0995cg {
 
-                /* JADX INFO: renamed from: hM */
+                
                 private final String f1593hM;
 
-                /* JADX INFO: renamed from: hN */
+                
                 private final String f1594hN;
                 private final Context mContext;
 
@@ -22,8 +22,8 @@
                     this.f1594hN = str2;
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC0995cg
-                /* JADX INFO: renamed from: ac */
+                @Override 
+                
                 public void mo1358ac() {
                     try {
                         C1002cn.m1457p("Pinging URL: " + this.f1594hN);
@@ -44,7 +44,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC0995cg
+                @Override 
                 public void onStop() {
                 }
             }

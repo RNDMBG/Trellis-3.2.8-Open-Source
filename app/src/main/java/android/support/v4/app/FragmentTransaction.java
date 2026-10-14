@@ -1,6 +1,6 @@
             package android.support.v4.app;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public abstract class FragmentTransaction {
                 public static final int TRANSIT_ENTER_MASK = 4096;
                 public static final int TRANSIT_EXIT_MASK = 8192;

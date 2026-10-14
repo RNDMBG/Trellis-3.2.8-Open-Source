@@ -7,29 +7,29 @@
             import android.os.Parcel;
             import android.os.RemoteException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bn */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC0975bn extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bn$a */
+                
                 public static abstract class a extends Binder implements InterfaceC0975bn {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.internal.bn$a$a, reason: collision with other inner class name */
+                    
                     private static class C1323a implements InterfaceC0975bn {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f1468dG;
 
                         C1323a(IBinder iBinder) {
                             this.f1468dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f1468dG;
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0975bn
+                        @Override 
                         public void onCreate(Bundle savedInstanceState) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -52,7 +52,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0975bn
+                        @Override 
                         public void onDestroy() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -69,7 +69,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0975bn
+                        @Override 
                         public void onPause() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -86,7 +86,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0975bn
+                        @Override 
                         public void onRestart() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -103,7 +103,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0975bn
+                        @Override 
                         public void onResume() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -120,7 +120,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0975bn
+                        @Override 
                         public void onSaveInstanceState(Bundle outState) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -146,7 +146,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0975bn
+                        @Override 
                         public void onStart() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -163,7 +163,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC0975bn
+                        @Override 
                         public void onStop() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -185,7 +185,7 @@
                         attachInterface(this, "com.google.android.gms.ads.internal.overlay.client.IAdOverlay");
                     }
 
-                    /* JADX INFO: renamed from: m */
+                    
                     public static InterfaceC0975bn m1342m(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -194,12 +194,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC0975bn)) ? new C1323a(iBinder) : (InterfaceC0975bn) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:

@@ -13,12 +13,12 @@
             import twitter4j.TwitterException;
             import twitter4j.conf.ConfigurationContext;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 42 */    public abstract class HttpResponse {
+            
+    public abstract class HttpResponse {
                 private static final String TAG = "T4JHttpResposne";
                 protected final HttpClientConfiguration CONF;
 
-                /* JADX INFO: renamed from: is */
+                
                 protected InputStream f2542is;
                 protected String responseAsString;
                 protected int statusCode;
@@ -30,30 +30,30 @@
 
                 public abstract Map<String, List<String>> getResponseHeaderFields();
 
-/* 43 */        HttpResponse() {
-/* 53 */            this.responseAsString = null;
-/* 55 */            this.streamConsumed = false;
-/* 45 */            this.CONF = ConfigurationContext.getInstance();
+        HttpResponse() {
+            this.responseAsString = null;
+            this.streamConsumed = false;
+            this.CONF = ConfigurationContext.getInstance();
                 }
 
-/* 47 */        public HttpResponse(HttpClientConfiguration conf) {
-/* 53 */            this.responseAsString = null;
-/* 55 */            this.streamConsumed = false;
-/* 49 */            this.CONF = conf;
+        public HttpResponse(HttpClientConfiguration conf) {
+            this.responseAsString = null;
+            this.streamConsumed = false;
+            this.CONF = conf;
                 }
 
-/* 57 */        public int getStatusCode() {
-/* 58 */            return this.statusCode;
+        public int getStatusCode() {
+            return this.statusCode;
                 }
 
-/* 76 */        public InputStream asStream() {
-/* 77 */            if (this.streamConsumed) {
-/* 78 */                throw new IllegalStateException("Stream has already been consumed.");
+        public InputStream asStream() {
+            if (this.streamConsumed) {
+                throw new IllegalStateException("Stream has already been consumed.");
                     }
-/* 80 */            return this.f2542is;
+            return this.f2542is;
                 }
 
-/* 90 */       public String asString() throws TwitterException {
+       public String asString() throws TwitterException {
                     if (this.responseAsString != null) {
                         return this.responseAsString;
                     }
@@ -85,14 +85,14 @@
                     }
                 }
 
-/* 133 */       private void disconnectForcibly() {
+       private void disconnectForcibly() {
                     try {
-/* 134 */               disconnect();
+               disconnect();
                     } catch (Exception e) {
                     }
                 }
 
-/* 142 */       public String toString() {
-/* 143 */           return "HttpResponse{statusCode=" + this.statusCode + ", responseAsString='" + this.responseAsString + "', is=" + this.f2542is + ", streamConsumed=" + this.streamConsumed + '}';
+       public String toString() {
+           return "HttpResponse{statusCode=" + this.statusCode + ", responseAsString='" + this.responseAsString + "', is=" + this.f2542is + ", streamConsumed=" + this.streamConsumed + '}';
                 }
             }

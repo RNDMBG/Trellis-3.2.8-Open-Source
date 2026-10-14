@@ -9,10 +9,10 @@
             import org.json.JSONException;
             import org.json.JSONObject;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.au */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0955au {
-                /* JADX INFO: renamed from: a */
+                
                 public static List<String> m1276a(JSONObject jSONObject, String str) throws JSONException {
                     JSONArray jSONArrayOptJSONArray = jSONObject.optJSONArray(str);
                     if (jSONArrayOptJSONArray == null) {
@@ -25,7 +25,7 @@
                     return Collections.unmodifiableList(arrayList);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static void m1277a(Context context, String str, C0993ce c0993ce, String str2, boolean z, List<String> list) {
                     String str3 = z ? "1" : "0";
                     Iterator<String> it = list.iterator();

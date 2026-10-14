@@ -16,7 +16,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.message.ParserCursor;
 import org.apache.http.util.CharArrayBuffer;
 
-/** Reads a URL-encoded response body into name/value pairs. */
+
 public class HttpEntityParserReader implements NetworkOperationReader {
     public static final String TAG = "VineParserReader";
     public static final boolean LOGGABLE = Log.isLoggable(TAG, 3);

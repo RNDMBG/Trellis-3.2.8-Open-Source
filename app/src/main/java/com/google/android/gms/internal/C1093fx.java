@@ -7,10 +7,10 @@
             import java.util.HashSet;
             import java.util.Set;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.fx */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1093fx implements Parcelable.Creator<C1091fv.a> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2061a(C1091fv.a aVar, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     Set<Integer> setM2037di = aVar.m2037di();
@@ -26,7 +26,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: E */
+                
                 public C1091fv.a m2062E(Parcel parcel) {
                     int iM1105f = 0;
                     int iM1111j = C0901a.m1111j(parcel);
@@ -59,18 +59,18 @@
                     return new C1091fv.a(hashSet, iM1105f3, iM1105f2, iM1105f);
                 }
 
-                /* JADX INFO: renamed from: aj */
+                
                 public C1091fv.a[] m2063aj(int i) {
                     return new C1091fv.a[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1091fv.a createFromParcel(Parcel x0) {
+                @Override 
+                public  C1091fv.a createFromParcel(Parcel x0) {
                     return m2062E(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1091fv.a[] newArray(int x0) {
+                @Override 
+                public  C1091fv.a[] newArray(int x0) {
                     return m2063aj(x0);
                 }
             }

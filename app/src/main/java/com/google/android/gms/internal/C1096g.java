@@ -6,17 +6,17 @@
             import com.google.android.gms.common.GooglePlayServicesRepairableException;
             import java.io.IOException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.g */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1096g extends AbstractC1069f {
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.g$a */
+                
                 class a {
 
-                    /* JADX INFO: renamed from: dt */
+                    
                     private String f2100dt;
 
-                    /* JADX INFO: renamed from: du */
+                    
                     private boolean f2101du;
 
                     public a(String str, boolean z) {
@@ -37,15 +37,15 @@
                     super(context, interfaceC1112j, interfaceC1113k);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static C1096g m2070a(String str, Context context) {
                     C0934a c0934a = new C0934a();
                     m1918a(str, context, c0934a);
                     return new C1096g(context, c0934a, new C1115m(239));
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1069f, com.google.android.gms.internal.AbstractC1042e
-                /* JADX INFO: renamed from: b */
+                @Override 
+                
                 protected void mo1697b(Context context) {
                     super.mo1697b(context);
                     try {
@@ -64,7 +64,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: f */
+                
                 a m2071f(Context context) throws GooglePlayServicesNotAvailableException, IOException {
                     String strMo1236a;
                     int i = 0;

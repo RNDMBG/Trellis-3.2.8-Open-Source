@@ -4,34 +4,34 @@
             import android.os.Parcelable;
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class LineItem implements SafeParcelable {
                 public static final Parcelable.Creator<LineItem> CREATOR = new C1211e();
                 String description;
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2481iM;
 
-                /* JADX INFO: renamed from: tD */
+                
                 String f2482tD;
 
-                /* JADX INFO: renamed from: tE */
+                
                 String f2483tE;
 
-                /* JADX INFO: renamed from: tQ */
+                
                 String f2484tQ;
 
-                /* JADX INFO: renamed from: tR */
+                
                 String f2485tR;
 
-                /* JADX INFO: renamed from: tS */
+                
                 int f2486tS;
 
                 public final class Builder {
                     private Builder() {
                     }
 
-                    /* synthetic */ Builder(LineItem x0, Object x1) {
+                     Builder(LineItem x0, Object x1) {
                         this();
                     }
 
@@ -98,7 +98,7 @@
                     return new Builder(lineItem, null);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -131,7 +131,7 @@
                     return this.f2481iM;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel dest, int flags) {
                     C1211e.m2354a(this, dest, flags);
                 }

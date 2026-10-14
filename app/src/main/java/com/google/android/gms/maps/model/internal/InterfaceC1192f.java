@@ -6,25 +6,25 @@
             import android.os.Parcel;
             import android.os.RemoteException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.f */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1192f extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.f$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1192f {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.f$a$a, reason: collision with other inner class name */
+                    
                     private static class C1368a implements InterfaceC1192f {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2369dG;
 
                         C1368a(IBinder iBinder) {
                             this.f2369dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public boolean mo2324a(InterfaceC1192f interfaceC1192f) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -44,12 +44,12 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2369dG;
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
+                        @Override 
                         public void clearTileCache() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -66,7 +66,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
+                        @Override 
                         public String getId() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -85,7 +85,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
+                        @Override 
                         public float getZIndex() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -104,7 +104,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
+                        @Override 
                         public int hashCodeRemote() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -123,7 +123,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
+                        @Override 
                         public boolean isVisible() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -142,7 +142,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
+                        @Override 
                         public void remove() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -159,7 +159,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
+                        @Override 
                         public void setVisible(boolean visible) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -177,7 +177,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1192f
+                        @Override 
                         public void setZIndex(float zIndex) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -196,7 +196,7 @@
                         }
                     }
 
-                    /* JADX INFO: renamed from: ai */
+                    
                     public static InterfaceC1192f m2325ai(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -205,7 +205,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1192f)) ? new C1368a(iBinder) : (InterfaceC1192f) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
                         switch (i) {
                             case 1:
@@ -267,7 +267,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 boolean mo2324a(InterfaceC1192f interfaceC1192f) throws RemoteException;
 
                 void clearTileCache() throws RemoteException;

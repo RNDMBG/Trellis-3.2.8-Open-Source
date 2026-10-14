@@ -6,27 +6,27 @@
             import java.util.ArrayList;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class Cart implements SafeParcelable {
                 public static final Parcelable.Creator<Cart> CREATOR = new C1208b();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2463iM;
 
-                /* JADX INFO: renamed from: tD */
+                
                 String f2464tD;
 
-                /* JADX INFO: renamed from: tE */
+                
                 String f2465tE;
 
-                /* JADX INFO: renamed from: tF */
+                
                 ArrayList<LineItem> f2466tF;
 
                 public final class Builder {
                     private Builder() {
                     }
 
-                    /* synthetic */ Builder(Cart x0, Object x1) {
+                     Builder(Cart x0, Object x1) {
                         this();
                     }
 
@@ -74,7 +74,7 @@
                     return new Builder(cart, null);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -95,7 +95,7 @@
                     return this.f2463iM;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel dest, int flags) {
                     C1208b.m2345a(this, dest, flags);
                 }

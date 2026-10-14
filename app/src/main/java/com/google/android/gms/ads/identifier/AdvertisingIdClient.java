@@ -13,15 +13,15 @@
             import com.google.android.gms.internal.InterfaceC1118p;
             import java.io.IOException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class AdvertisingIdClient {
 
                 public static final class Info {
 
-                    /* JADX INFO: renamed from: dX */
+                    
                     private final String f906dX;
 
-                    /* JADX INFO: renamed from: dY */
+                    
                     private final boolean f907dY;
 
                     Info(String advertisingId, boolean limitAdTrackingEnabled) {
@@ -38,7 +38,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: g */
+                
                 private static ServiceConnectionC0887a m996g(Context context) throws GooglePlayServicesRepairableException, GooglePlayServicesNotAvailableException, IOException {
                     try {
                         context.getPackageManager().getPackageInfo(GooglePlayServicesUtil.GOOGLE_PLAY_STORE_PACKAGE, 0);

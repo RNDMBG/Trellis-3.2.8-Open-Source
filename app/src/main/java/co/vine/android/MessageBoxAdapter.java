@@ -25,8 +25,8 @@
             import java.util.ArrayList;
             import java.util.HashMap;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 45 */    public class MessageBoxAdapter extends CursorAdapter {
+            
+    public class MessageBoxAdapter extends CursorAdapter {
                 private AppController mAppController;
                 private final HashMap<ImageKey, WeakReference<Bitmap>> mAvatars;
                 private Context mContext;
@@ -35,126 +35,126 @@
                 private ArrayList<Long> mIdsToNotifyFail;
                 private ArrayList<WeakReference<ConversationViewHolder>> mViewHolders;
 
-/* 46 */        public MessageBoxAdapter(Context context, AppController appController, InboxFragment fragment, int flags) {
-/* 47 */            super(context, (Cursor) null, flags);
-/* 42 */            this.mAvatars = new HashMap<>();
-/* 48 */            this.mAppController = appController;
-/* 49 */            this.mContext = context;
-/* 50 */            this.mViewHolders = new ArrayList<>();
-/* 51 */            this.mFragment = fragment;
-/* 53 */            this.mDefaultBg = new ColorDrawable(this.mContext.getResources().getColor(C0257R.color.conversation_menu_bg));
+        public MessageBoxAdapter(Context context, AppController appController, InboxFragment fragment, int flags) {
+            super(context, (Cursor) null, flags);
+            this.mAvatars = new HashMap<>();
+            this.mAppController = appController;
+            this.mContext = context;
+            this.mViewHolders = new ArrayList<>();
+            this.mFragment = fragment;
+            this.mDefaultBg = new ColorDrawable(this.mContext.getResources().getColor(C0257R.color.conversation_menu_bg));
                 }
 
-                @Override // android.support.v4.widget.CursorAdapter
-/* 57 */        public View newView(Context context, Cursor cursor, ViewGroup parent) {
-/* 58 */            LayoutInflater layoutInflater = LayoutInflater.from(context);
-/* 59 */            View v = layoutInflater.inflate(C0257R.layout.inbox_row_view, parent, false);
-/* 60 */            ConversationViewHolder holder = new ConversationViewHolder(v);
-/* 61 */            v.setTag(holder);
-/* 62 */            this.mViewHolders.add(new WeakReference<>(holder));
-/* 63 */            return v;
+                @Override 
+        public View newView(Context context, Cursor cursor, ViewGroup parent) {
+            LayoutInflater layoutInflater = LayoutInflater.from(context);
+            View v = layoutInflater.inflate(C0257R.layout.inbox_row_view, parent, false);
+            ConversationViewHolder holder = new ConversationViewHolder(v);
+            v.setTag(holder);
+            this.mViewHolders.add(new WeakReference<>(holder));
+            return v;
                 }
 
-                @Override // android.support.v4.widget.CursorAdapter
-/* 67 */        public void bindView(View view, Context context, Cursor cursor) {
-/* 68 */            ConversationViewHolder holder = (ConversationViewHolder) view.getTag();
-/* 70 */            int count = cursor.getInt(14);
-/* 71 */            String username = cursor.getString(8);
-/* 72 */            if (count == 1) {
-/* 73 */                holder.username.setText(username);
-/* 74 */                holder.image.setVisibility(0);
+                @Override 
+        public void bindView(View view, Context context, Cursor cursor) {
+            ConversationViewHolder holder = (ConversationViewHolder) view.getTag();
+            int count = cursor.getInt(14);
+            String username = cursor.getString(8);
+            if (count == 1) {
+                holder.username.setText(username);
+                holder.image.setVisibility(0);
                     } else {
-/* 76 */                if (count == 2) {
-/* 78 */                    holder.username.setText(username + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + this.mContext.getString(C0257R.string.and_x_others_single));
+                if (count == 2) {
+                    holder.username.setText(username + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + this.mContext.getString(C0257R.string.and_x_others_single));
                         } else if (count > 2) {
-/* 81 */                    holder.username.setText(username + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + String.format(this.mContext.getString(C0257R.string.and_x_others_plural), Integer.valueOf(count - 1)));
+                    holder.username.setText(username + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + String.format(this.mContext.getString(C0257R.string.and_x_others_plural), Integer.valueOf(count - 1)));
                         }
-/* 83 */                holder.image.setVisibility(8);
+                holder.image.setVisibility(8);
                     }
-/* 85 */            holder.loadMoreContent.setVisibility(0);
-/* 86 */            holder.loadMoreProgress.findViewById(C0257R.id.progress).setVisibility(8);
-/* 87 */            holder.loadMore.setVisibility(8);
-/* 88 */            holder.retryProgress.setVisibility(8);
-/* 90 */            long timestamp = cursor.getLong(2);
-/* 91 */            String relativeTime = Util.getRelativeTimeString(context, timestamp, true);
-/* 92 */            holder.timestamp.setText(relativeTime);
-/* 94 */            int color = cursor.getInt(13);
-/* 95 */            if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-/* 96 */                color = 16777215 & this.mContext.getResources().getColor(C0257R.color.vine_green);
+            holder.loadMoreContent.setVisibility(0);
+            holder.loadMoreProgress.findViewById(C0257R.id.progress).setVisibility(8);
+            holder.loadMore.setVisibility(8);
+            holder.retryProgress.setVisibility(8);
+            long timestamp = cursor.getLong(2);
+            String relativeTime = Util.getRelativeTimeString(context, timestamp, true);
+            holder.timestamp.setText(relativeTime);
+            int color = cursor.getInt(13);
+            if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
+                color = 16777215 & this.mContext.getResources().getColor(C0257R.color.vine_green);
                     }
-/* 98 */            holder.color = color;
-/* 99 */            int unreadCount = cursor.getInt(4);
-/* 100 */           if (unreadCount > 0) {
-/* 101 */               holder.unreadCount.setVisibility(0);
-/* 102 */               holder.unreadCount.setText(String.valueOf(unreadCount));
-/* 103 */               holder.unreadCount.getBackground().setColorFilter(new PorterDuffColorFilter((-16777216) | color, PorterDuff.Mode.SRC_IN));
+            holder.color = color;
+            int unreadCount = cursor.getInt(4);
+           if (unreadCount > 0) {
+               holder.unreadCount.setVisibility(0);
+               holder.unreadCount.setText(String.valueOf(unreadCount));
+               holder.unreadCount.getBackground().setColorFilter(new PorterDuffColorFilter((-16777216) | color, PorterDuff.Mode.SRC_IN));
                     } else {
-/* 105 */               holder.unreadCount.setVisibility(8);
+               holder.unreadCount.setVisibility(8);
                     }
-/* 108 */           String errorMessage = cursor.getString(15);
-/* 109 */           if (count == 1 || TextUtils.isEmpty(errorMessage)) {
-/* 110 */               holder.username.setTextColor((-16777216) | color);
-/* 111 */               holder.failedUpload.setVisibility(8);
-/* 112 */               holder.timestamp.setVisibility(0);
-/* 113 */               holder.tapToRetry.setVisibility(8);
+           String errorMessage = cursor.getString(15);
+           if (count == 1 || TextUtils.isEmpty(errorMessage)) {
+               holder.username.setTextColor((-16777216) | color);
+               holder.failedUpload.setVisibility(8);
+               holder.timestamp.setVisibility(0);
+               holder.tapToRetry.setVisibility(8);
                     } else {
-/* 116 */               holder.username.setTextColor(this.mContext.getResources().getColor(C0257R.color.conversation_menu_section_text));
-/* 117 */               holder.unreadCount.setVisibility(8);
-/* 118 */               holder.failedUpload.setVisibility(0);
-/* 119 */               holder.timestamp.setVisibility(8);
-/* 120 */               holder.tapToRetry.setText(C0257R.string.message_failed_tap_to_retry);
-/* 121 */               holder.tapToRetry.setVisibility(0);
+               holder.username.setTextColor(this.mContext.getResources().getColor(C0257R.color.conversation_menu_section_text));
+               holder.unreadCount.setVisibility(8);
+               holder.failedUpload.setVisibility(0);
+               holder.timestamp.setVisibility(8);
+               holder.tapToRetry.setText(C0257R.string.message_failed_tap_to_retry);
+               holder.tapToRetry.setVisibility(0);
                     }
-/* 124 */           String url = cursor.getString(12);
-/* 125 */           if (!TextUtils.isEmpty(url)) {
-/* 126 */               ImageKey key = new ImageKey(url, true);
-/* 127 */               if (Util.isDefaultAvatarUrl(url)) {
-/* 128 */                   setUserImage(holder, null, false);
+           String url = cursor.getString(12);
+           if (!TextUtils.isEmpty(url)) {
+               ImageKey key = new ImageKey(url, true);
+               if (Util.isDefaultAvatarUrl(url)) {
+                   setUserImage(holder, null, false);
                         } else {
-/* 130 */                   holder.avatarUrl = key;
-/* 131 */                   WeakReference<Bitmap> bmKey = this.mAvatars.get(key);
-/* 132 */                   Bitmap bm = null;
-/* 133 */                   if (bmKey != null) {
-/* 134 */                       Bitmap bm2 = bmKey.get();
+                   holder.avatarUrl = key;
+                   WeakReference<Bitmap> bmKey = this.mAvatars.get(key);
+                   Bitmap bm = null;
+                   if (bmKey != null) {
+                       Bitmap bm2 = bmKey.get();
                                 bm = bm2;
                             }
-/* 136 */                   if (bm == null && (bm = this.mAppController.getPhotoBitmap(key)) != null) {
-/* 139 */                       this.mAvatars.put(key, new WeakReference<>(bm));
+                   if (bm == null && (bm = this.mAppController.getPhotoBitmap(key)) != null) {
+                       this.mAvatars.put(key, new WeakReference<>(bm));
                             }
-/* 142 */                   setUserImage(holder, bm, true);
+                   setUserImage(holder, bm, true);
                         }
                     } else {
-/* 145 */               setUserImage(holder, null, false);
+               setUserImage(holder, null, false);
                     }
-/* 148 */           if (cursor.isLast()) {
-/* 149 */               holder.divider.setVisibility(8);
-/* 150 */               if (cursor.getInt(7) != 1) {
-/* 151 */                   holder.divider.setVisibility(0);
-/* 152 */                   holder.loadMore.setVisibility(0);
-/* 153 */                   if (this.mFragment.isLoadingMore()) {
-/* 154 */                       holder.loadMoreContent.setVisibility(8);
-/* 155 */                       holder.loadMoreProgress.setVisibility(0);
+           if (cursor.isLast()) {
+               holder.divider.setVisibility(8);
+               if (cursor.getInt(7) != 1) {
+                   holder.divider.setVisibility(0);
+                   holder.loadMore.setVisibility(0);
+                   if (this.mFragment.isLoadingMore()) {
+                       holder.loadMoreContent.setVisibility(8);
+                       holder.loadMoreProgress.setVisibility(0);
                             }
-/* 157 */                   holder.loadMore.setOnClickListener(this.mFragment);
-/* 163 */                   return;
+                   holder.loadMore.setOnClickListener(this.mFragment);
+                   return;
                         }
-/* 163 */               return;
+               return;
                     }
-/* 160 */           holder.divider.setVisibility(0);
-/* 161 */           holder.loadMore.setVisibility(8);
+           holder.divider.setVisibility(0);
+           holder.loadMore.setVisibility(8);
                 }
 
-                @Override // android.support.v4.widget.CursorAdapter, android.widget.Adapter
-/* 166 */       public long getItemId(int position) {
-/* 167 */           Cursor cursor = getCursor();
+                @Override 
+       public long getItemId(int position) {
+           Cursor cursor = getCursor();
                     return (cursor == null || cursor.isClosed() || !cursor.moveToPosition(position)) ? super.getItemId(position) : cursor.getLong(3);
                 }
 
-/* 175 */       public void setIdsToNotifyFailed(ArrayList<Long> idsToNotifyFailed) {
-/* 176 */           this.mIdsToNotifyFail = idsToNotifyFailed;
+       public void setIdsToNotifyFailed(ArrayList<Long> idsToNotifyFailed) {
+           this.mIdsToNotifyFail = idsToNotifyFailed;
                 }
 
-/* 192 */       private class ConversationViewHolder {
+       private class ConversationViewHolder {
                     public ImageKey avatarUrl;
                     public int color;
                     public View divider;
@@ -169,54 +169,54 @@
                     public TextView unreadCount;
                     public TextView username;
 
-/* 193 */           public ConversationViewHolder(View v) {
-/* 195 */               this.failedUpload = (ImageView) v.findViewById(C0257R.id.failed_upload);
-/* 196 */               this.image = (ImageView) v.findViewById(C0257R.id.avatar);
-/* 197 */               this.timestamp = (TextView) v.findViewById(C0257R.id.timestamp);
-/* 198 */               this.username = (TextView) v.findViewById(C0257R.id.inbox_username);
-/* 199 */               this.unreadCount = (TextView) v.findViewById(C0257R.id.unread_count);
-/* 200 */               this.loadMore = (FrameLayout) v.findViewById(C0257R.id.load_more);
-/* 201 */               this.divider = v.findViewById(C0257R.id.divider);
-/* 202 */               this.tapToRetry = (TextView) v.findViewById(C0257R.id.tap_to_retry);
-/* 203 */               this.retryProgress = v.findViewById(C0257R.id.retry_progress);
-/* 204 */               this.loadMoreContent = v.findViewById(C0257R.id.load_more_content);
-/* 205 */               this.loadMoreProgress = v.findViewById(C0257R.id.progress);
+           public ConversationViewHolder(View v) {
+               this.failedUpload = (ImageView) v.findViewById(C0257R.id.failed_upload);
+               this.image = (ImageView) v.findViewById(C0257R.id.avatar);
+               this.timestamp = (TextView) v.findViewById(C0257R.id.timestamp);
+               this.username = (TextView) v.findViewById(C0257R.id.inbox_username);
+               this.unreadCount = (TextView) v.findViewById(C0257R.id.unread_count);
+               this.loadMore = (FrameLayout) v.findViewById(C0257R.id.load_more);
+               this.divider = v.findViewById(C0257R.id.divider);
+               this.tapToRetry = (TextView) v.findViewById(C0257R.id.tap_to_retry);
+               this.retryProgress = v.findViewById(C0257R.id.retry_progress);
+               this.loadMoreContent = v.findViewById(C0257R.id.load_more_content);
+               this.loadMoreProgress = v.findViewById(C0257R.id.progress);
                     }
                 }
 
-/* 209 */       public synchronized void setUserImages(HashMap<ImageKey, UrlImage> images) {
+       public synchronized void setUserImages(HashMap<ImageKey, UrlImage> images) {
                     try {
                         ArrayList<WeakReference<ConversationViewHolder>> toRemove = new ArrayList<>();
                         for (WeakReference<ConversationViewHolder> ref : this.mViewHolders) {
-/* 212 */                   ConversationViewHolder holder = ref.get();
-/* 213 */                   if (holder == null) {
-/* 214 */                       toRemove.add(ref);
+                   ConversationViewHolder holder = ref.get();
+                   if (holder == null) {
+                       toRemove.add(ref);
                             } else {
-/* 216 */                       UrlImage image = images.get(holder.avatarUrl);
-/* 217 */                       if (image != null && image.isValid()) {
-/* 218 */                           this.mAvatars.put(holder.avatarUrl, new WeakReference<>(image.bitmap));
-/* 219 */                           setUserImage(holder, image.bitmap, true);
+                       UrlImage image = images.get(holder.avatarUrl);
+                       if (image != null && image.isValid()) {
+                           this.mAvatars.put(holder.avatarUrl, new WeakReference<>(image.bitmap));
+                           setUserImage(holder, image.bitmap, true);
                                 }
                             }
                         }
                         for (WeakReference<ConversationViewHolder> r : toRemove) {
-/* 224 */                   this.mViewHolders.remove(r);
+                   this.mViewHolders.remove(r);
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
 
-/* 228 */       private void setUserImage(ConversationViewHolder holder, Bitmap bmp, boolean loading) {
-/* 229 */           holder.image.setColorFilter((ColorFilter) null);
-/* 230 */           if (bmp != null) {
-/* 231 */               holder.image.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), bmp));
+       private void setUserImage(ConversationViewHolder holder, Bitmap bmp, boolean loading) {
+           holder.image.setColorFilter((ColorFilter) null);
+           if (bmp != null) {
+               holder.image.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), bmp));
                     } else if (loading) {
-/* 233 */               holder.image.setImageBitmap(null);
-/* 234 */               holder.image.setBackgroundColor(this.mContext.getResources().getColor(android.R.color.transparent));
+               holder.image.setImageBitmap(null);
+               holder.image.setBackgroundColor(this.mContext.getResources().getColor(android.R.color.transparent));
                     } else {
-/* 237 */               holder.image.setImageDrawable(null);
-/* 238 */               Util.safeSetDefaultAvatar(holder.image, Util.ProfileImageSize.MEDIUM, (-16777216) | holder.color);
+               holder.image.setImageDrawable(null);
+               Util.safeSetDefaultAvatar(holder.image, Util.ProfileImageSize.MEDIUM, (-16777216) | holder.color);
                     }
                 }
             }

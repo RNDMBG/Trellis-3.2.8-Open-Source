@@ -5,10 +5,10 @@
             import com.google.android.gms.maps.model.internal.InterfaceC1191e;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class Polygon {
 
-                /* JADX INFO: renamed from: qJ */
+                
                 private final InterfaceC1191e f2331qJ;
 
                 public Polygon(InterfaceC1191e delegate) {

@@ -16,9 +16,9 @@
             import java.nio.DoubleBuffer;
             import java.nio.IntBuffer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties(inherit = {avutil.class}, value = {@Platform(cinclude = {"<libswresample/swresample.h>"}, link = {"swresample@.0"}), @Platform(preload = {"swresample-0"}, value = {"windows"})})
-/* 37 */    public class swresample {
+    public class swresample {
                 public static final int SWR_CH_MAX = 32;
                 public static final int SWR_DITHER_NB = 72;
                 public static final int SWR_DITHER_NONE = 0;
@@ -94,16 +94,16 @@
                 public static native int swresample_version();
 
                 static {
-/* 39 */            Loader.load();
+            Loader.load();
                 }
 
                 @Opaque
-/* 191 */       public static class SwrContext extends Pointer {
-/* 192 */           public SwrContext() {
+       public static class SwrContext extends Pointer {
+           public SwrContext() {
                     }
 
-/* 193 */           public SwrContext(Pointer p) {
-/* 194 */               super(p);
+           public SwrContext(Pointer p) {
+               super(p);
                     }
                 }
             }

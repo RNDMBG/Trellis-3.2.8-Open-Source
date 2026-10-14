@@ -8,8 +8,8 @@
             import android.database.DataSetObserver;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 10 */    public abstract class GroupCursor<T> extends CursorWrapper {
+            
+    public abstract class GroupCursor<T> extends CursorWrapper {
                 public static final int LIMIT_DEFAULT = 20;
                 private final ContentObservable mContentObservable;
                 protected Cursor mCursor;
@@ -23,183 +23,183 @@
 
                 public abstract void onPrepare();
 
-/* 11 */        static /* synthetic */ ContentObservable access$000(GroupCursor x0) {
-/* 12 */            return x0.mContentObservable;
+        static  ContentObservable access$000(GroupCursor x0) {
+            return x0.mContentObservable;
                 }
 
-/* 30 */        public GroupCursor(Cursor cursor) {
-/* 31 */            this(cursor, 20);
+        public GroupCursor(Cursor cursor) {
+            this(cursor, 20);
                 }
 
-/* 34 */        public GroupCursor(Cursor cursor, int limit) {
-/* 35 */            super(cursor);
-/* 22 */            this.mCursorPosition = -1;
-/* 36 */            this.mLocalDataSetObservable = new LocalDataSetObservable();
-/* 37 */            this.mContentObservable = new ContentObservable();
-/* 38 */            this.mCursor = cursor;
-/* 39 */            if (limit <= 0) {
-/* 40 */                this.mLimit = 20;
+        public GroupCursor(Cursor cursor, int limit) {
+            super(cursor);
+            this.mCursorPosition = -1;
+            this.mLocalDataSetObservable = new LocalDataSetObservable();
+            this.mContentObservable = new ContentObservable();
+            this.mCursor = cursor;
+            if (limit <= 0) {
+                this.mLimit = 20;
                     } else {
-/* 42 */                this.mLimit = limit;
+                this.mLimit = limit;
                     }
-/* 44 */            if (cursor != null && !cursor.isClosed()) {
-/* 45 */                cursor.registerDataSetObserver(new LocalDataSetObserver());
-/* 46 */                cursor.registerContentObserver(new LocalContentObserver());
-                    }
-                }
-
-/* 53 */        public final void prepare() {
-/* 54 */            this.mPreparing = true;
-/* 55 */            onPrepare();
-/* 56 */            this.mPreparing = false;
-/* 57 */            if (this.mNeedsDispatchChange) {
-/* 58 */                this.mNeedsDispatchChange = false;
-/* 59 */                this.mContentObservable.dispatchChange(this.mSelfChange);
+            if (cursor != null && !cursor.isClosed()) {
+                cursor.registerDataSetObserver(new LocalDataSetObserver());
+                cursor.registerContentObserver(new LocalContentObserver());
                     }
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 66 */        public int getCount() {
-/* 67 */            if (this.mList != null) {
-/* 68 */                return this.mList.size();
+        public final void prepare() {
+            this.mPreparing = true;
+            onPrepare();
+            this.mPreparing = false;
+            if (this.mNeedsDispatchChange) {
+                this.mNeedsDispatchChange = false;
+                this.mContentObservable.dispatchChange(this.mSelfChange);
+                    }
+                }
+
+                @Override 
+        public int getCount() {
+            if (this.mList != null) {
+                return this.mList.size();
                     }
                     return 0;
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 75 */        public int getPosition() {
-/* 76 */            return this.mCursorPosition;
+                @Override 
+        public int getPosition() {
+            return this.mCursorPosition;
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 80 */        public boolean moveToFirst() {
-/* 81 */            return moveToPosition(0);
+                @Override 
+        public boolean moveToFirst() {
+            return moveToPosition(0);
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 85 */        public boolean moveToLast() {
-/* 86 */            return moveToPosition(this.mList.size() - 1);
+                @Override 
+        public boolean moveToLast() {
+            return moveToPosition(this.mList.size() - 1);
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 90 */        public boolean moveToNext() {
-/* 91 */            return moveToPosition(this.mCursorPosition + 1);
+                @Override 
+        public boolean moveToNext() {
+            return moveToPosition(this.mCursorPosition + 1);
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 95 */        public boolean moveToPrevious() {
-/* 96 */            return moveToPosition(this.mCursorPosition - 1);
+                @Override 
+        public boolean moveToPrevious() {
+            return moveToPosition(this.mCursorPosition - 1);
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 100 */       public boolean moveToPosition(int position) {
-/* 101 */           int size = getCount();
-/* 102 */           if (position <= -1) {
-/* 103 */               this.mCursorPosition = -1;
+                @Override 
+       public boolean moveToPosition(int position) {
+           int size = getCount();
+           if (position <= -1) {
+               this.mCursorPosition = -1;
                         return false;
                     }
-/* 105 */           if (position >= size) {
-/* 106 */               this.mCursorPosition = size;
+           if (position >= size) {
+               this.mCursorPosition = size;
                         return false;
                     }
-/* 109 */           this.mCursorPosition = position;
-/* 110 */           return true;
+           this.mCursorPosition = position;
+           return true;
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 115 */       public void registerDataSetObserver(DataSetObserver observer) {
-/* 116 */           if (observer != null) {
-/* 117 */               this.mLocalDataSetObservable.registerObserver(observer);
+                @Override 
+       public void registerDataSetObserver(DataSetObserver observer) {
+           if (observer != null) {
+               this.mLocalDataSetObservable.registerObserver(observer);
                     }
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 122 */       public void unregisterDataSetObserver(DataSetObserver observer) {
-/* 123 */           if (observer != null) {
-/* 124 */               this.mLocalDataSetObservable.unregisterObserver(observer);
+                @Override 
+       public void unregisterDataSetObserver(DataSetObserver observer) {
+           if (observer != null) {
+               this.mLocalDataSetObservable.unregisterObserver(observer);
                     }
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 129 */       public void registerContentObserver(ContentObserver observer) {
-/* 130 */           if (observer != null) {
-/* 131 */               this.mContentObservable.registerObserver(observer);
+                @Override 
+       public void registerContentObserver(ContentObserver observer) {
+           if (observer != null) {
+               this.mContentObservable.registerObserver(observer);
                     }
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 136 */       public void unregisterContentObserver(ContentObserver observer) {
-/* 137 */           if (observer != null) {
-/* 138 */               this.mContentObservable.unregisterObserver(observer);
+                @Override 
+       public void unregisterContentObserver(ContentObserver observer) {
+           if (observer != null) {
+               this.mContentObservable.unregisterObserver(observer);
                     }
                 }
 
-/* 142 */       public T getItem(int position) {
-/* 143 */           if (this.mList == null) {
-/* 144 */               return null;
+       public T getItem(int position) {
+           if (this.mList == null) {
+               return null;
                     }
                     return this.mList.get(position);
                 }
 
-                @Override // android.database.CursorWrapper, android.database.Cursor
-/* 156 */       public boolean requery() {
+                @Override 
+       public boolean requery() {
                     boolean result = false;
-/* 157 */           GroupCursor<T>.LocalDataSetObservable localDataSetObservable = this.mLocalDataSetObservable;
-/* 158 */           localDataSetObservable.setNotifyOnChange(false);
-/* 159 */           if (!this.mCursor.isClosed() && this.mCursor.requery()) {
+           GroupCursor<T>.LocalDataSetObservable localDataSetObservable = this.mLocalDataSetObservable;
+           localDataSetObservable.setNotifyOnChange(false);
+           if (!this.mCursor.isClosed() && this.mCursor.requery()) {
                         result = true;
                     }
-/* 160 */           prepare();
-/* 161 */           localDataSetObservable.setNotifyOnChange(true);
-/* 162 */           localDataSetObservable.notifyChanged();
-/* 163 */           return result;
+           prepare();
+           localDataSetObservable.setNotifyOnChange(true);
+           localDataSetObservable.notifyChanged();
+           return result;
                 }
 
-/* 171 */       protected class LocalDataSetObservable extends DataSetObservable {
+       protected class LocalDataSetObservable extends DataSetObservable {
                     private boolean mNotifyOnChange = true;
 
-/* 172 */           public LocalDataSetObservable() {
+           public LocalDataSetObservable() {
                     }
 
-/* 176 */           public void setNotifyOnChange(boolean notifyOnChange) {
-/* 177 */               this.mNotifyOnChange = notifyOnChange;
+           public void setNotifyOnChange(boolean notifyOnChange) {
+               this.mNotifyOnChange = notifyOnChange;
                     }
 
-                    @Override // android.database.DataSetObservable
-/* 181 */           public void notifyChanged() {
-/* 182 */               if (this.mNotifyOnChange) {
-/* 183 */                   super.notifyChanged();
+                    @Override 
+           public void notifyChanged() {
+               if (this.mNotifyOnChange) {
+                   super.notifyChanged();
                         }
                     }
                 }
 
-/* 187 */       private class LocalDataSetObserver extends DataSetObserver {
-/* 188 */           public LocalDataSetObserver() {
+       private class LocalDataSetObserver extends DataSetObserver {
+           public LocalDataSetObserver() {
                     }
 
-                    @Override // android.database.DataSetObserver
-/* 193 */           public void onInvalidated() {
-/* 194 */               GroupCursor.this.mLocalDataSetObservable.notifyInvalidated();
+                    @Override 
+           public void onInvalidated() {
+               GroupCursor.this.mLocalDataSetObservable.notifyInvalidated();
                     }
 
-                    @Override // android.database.DataSetObserver
-/* 198 */           public void onChanged() {
-/* 199 */               GroupCursor.this.mLocalDataSetObservable.notifyChanged();
+                    @Override 
+           public void onChanged() {
+               GroupCursor.this.mLocalDataSetObservable.notifyChanged();
                     }
                 }
 
-/* 202 */       private class LocalContentObserver extends ContentObserver {
-/* 203 */           public LocalContentObserver() {
-/* 205 */               super(null);
+       private class LocalContentObserver extends ContentObserver {
+           public LocalContentObserver() {
+               super(null);
                     }
 
-                    @Override // android.database.ContentObserver
-/* 209 */           public void onChange(boolean selfChange) {
-/* 210 */               GroupCursor.this.mSelfChange = selfChange;
-/* 211 */               if (GroupCursor.this.mPreparing) {
-/* 212 */                   GroupCursor.this.mNeedsDispatchChange = true;
+                    @Override 
+           public void onChange(boolean selfChange) {
+               GroupCursor.this.mSelfChange = selfChange;
+               if (GroupCursor.this.mPreparing) {
+                   GroupCursor.this.mNeedsDispatchChange = true;
                         } else {
-/* 214 */                   GroupCursor.access$000(GroupCursor.this).dispatchChange(selfChange);
+                   GroupCursor.access$000(GroupCursor.this).dispatchChange(selfChange);
                         }
                     }
                 }

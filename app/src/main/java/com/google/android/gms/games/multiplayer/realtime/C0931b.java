@@ -8,10 +8,10 @@
             import com.google.android.gms.games.multiplayer.ParticipantEntity;
             import java.util.ArrayList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.games.multiplayer.realtime.b */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C0931b implements Parcelable.Creator<RoomEntity> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m1229a(RoomEntity roomEntity, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1140a(parcel, 1, roomEntity.getRoomId(), false);
@@ -27,22 +27,22 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: V */
+                
                 public RoomEntity[] m1230V(int i) {
                     return new RoomEntity[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ RoomEntity createFromParcel(Parcel x0) {
+                @Override 
+                public  RoomEntity createFromParcel(Parcel x0) {
                     return mo1227y(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ RoomEntity[] newArray(int x0) {
+                @Override 
+                public  RoomEntity[] newArray(int x0) {
                     return m1230V(x0);
                 }
 
-                /* JADX INFO: renamed from: y */
+                
                 public RoomEntity mo1227y(Parcel parcel) {
                     int iM1105f = 0;
                     ArrayList arrayListM1101c = null;

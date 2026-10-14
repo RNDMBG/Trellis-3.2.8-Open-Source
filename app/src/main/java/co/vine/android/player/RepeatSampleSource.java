@@ -22,9 +22,9 @@
             import java.util.ArrayList;
             import java.util.Map;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @TargetApi(16)
-/* 57 */    public final class RepeatSampleSource implements SampleSource {
+    public final class RepeatSampleSource implements SampleSource {
                 private static final int DEFAULT_FILE_SIZE = 5242880;
                 private static final int DOMS_CUT_US = 50000;
                 private static final int MINIUM_FRAME_SIZE = 524288;
@@ -51,243 +51,243 @@
                     public boolean needsReadMore;
                 }
 
-/* 58 */        public RepeatSampleSource(Context context, Uri uri, int downstreamRendererCount) {
-/* 60 */            Assertions.checkState(Util.SDK_INT >= 16);
-/* 61 */            this.context = context;
-/* 62 */            this.remainingReleaseCount = downstreamRendererCount;
-/* 63 */            this.uri = uri;
-/* 65 */            String scheme = uri.getScheme();
-/* 66 */            if (scheme == null || scheme.equals(CommonUtil.FILE)) {
-/* 67 */                this.estimatedFileSize = (int) (new File(uri.getPath()).length() * 1.5d);
+        public RepeatSampleSource(Context context, Uri uri, int downstreamRendererCount) {
+            Assertions.checkState(Util.SDK_INT >= 16);
+            this.context = context;
+            this.remainingReleaseCount = downstreamRendererCount;
+            this.uri = uri;
+            String scheme = uri.getScheme();
+            if (scheme == null || scheme.equals(CommonUtil.FILE)) {
+                this.estimatedFileSize = (int) (new File(uri.getPath()).length() * 1.5d);
                     } else {
-/* 69 */                this.estimatedFileSize = DEFAULT_FILE_SIZE;
+                this.estimatedFileSize = DEFAULT_FILE_SIZE;
                     }
                 }
 
-/* 81 */        public static class Frame implements Comparable {
+        public static class Frame implements Comparable {
                     public final FrameInfo frameInfo = new FrameInfo();
                     public final MediaCodec.BufferInfo info;
                     public final int trackIndex;
 
-/* 82 */            public Frame(int trackIndex, MediaCodec.BufferInfo info) {
-/* 84 */                this.trackIndex = trackIndex;
-/* 85 */                this.info = info;
+            public Frame(int trackIndex, MediaCodec.BufferInfo info) {
+                this.trackIndex = trackIndex;
+                this.info = info;
                     }
 
-                    @Override // java.lang.Comparable
-/* 89 */            public int compareTo(@NonNull Object another) {
-/* 90 */                return (int) (this.info.presentationTimeUs - ((Frame) another).info.presentationTimeUs);
+                    @Override 
+            public int compareTo(@NonNull Object another) {
+                return (int) (this.info.presentationTimeUs - ((Frame) another).info.presentationTimeUs);
                     }
                 }
 
-/* 98 */        public static class TrackInfoWithFormat extends TrackInfo {
+        public static class TrackInfoWithFormat extends TrackInfo {
                     final MediaFormat format;
                     final boolean isVideo;
 
-/* 99 */            public TrackInfoWithFormat(String mimeType, long durationUs, MediaFormat format, boolean isVideo) {
-/* 100 */               super(mimeType, durationUs);
-/* 101 */               this.format = format;
-/* 102 */               this.isVideo = isVideo;
+            public TrackInfoWithFormat(String mimeType, long durationUs, MediaFormat format, boolean isVideo) {
+               super(mimeType, durationUs);
+               this.format = format;
+               this.isVideo = isVideo;
                     }
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 107 */       public boolean prepare() throws IOException {
-/* 108 */           if (!this.prepared) {
-/* 109 */               ByteBuffer buffer = ByteBuffer.allocate((int) (((double) this.estimatedFileSize) * 1.5d));
-/* 110 */               MediaExtractor extractor = new MediaExtractor();
-/* 111 */               extractor.setDataSource(this.context, this.uri, (Map<String, String>) null);
-/* 112 */               this.trackStates = new int[extractor.getTrackCount()];
-/* 113 */               this.pendingDiscontinuities = new boolean[this.trackStates.length];
-/* 114 */               this.trackInfos = new TrackInfoWithFormat[this.trackStates.length];
-/* 115 */               int[] frameCounts = new int[this.trackStates.length];
+                @Override 
+       public boolean prepare() throws IOException {
+           if (!this.prepared) {
+               ByteBuffer buffer = ByteBuffer.allocate((int) (((double) this.estimatedFileSize) * 1.5d));
+               MediaExtractor extractor = new MediaExtractor();
+               extractor.setDataSource(this.context, this.uri, (Map<String, String>) null);
+               this.trackStates = new int[extractor.getTrackCount()];
+               this.pendingDiscontinuities = new boolean[this.trackStates.length];
+               this.trackInfos = new TrackInfoWithFormat[this.trackStates.length];
+               int[] frameCounts = new int[this.trackStates.length];
                         for (int i = 0; i < this.trackStates.length; i++) {
-/* 117 */                   extractor.selectTrack(i);
-/* 118 */                   android.media.MediaFormat format = extractor.getTrackFormat(i);
-/* 120 */                   String mime = format.getString("mime");
-/* 119 */                   this.trackInfos[i] = new TrackInfoWithFormat(mime, -1L, MediaFormat.createFromFrameworkMediaFormatV16(format), mime.contains(MimeTypes.BASE_TYPE_VIDEO));
+                   extractor.selectTrack(i);
+                   android.media.MediaFormat format = extractor.getTrackFormat(i);
+                   String mime = format.getString("mime");
+                   this.trackInfos[i] = new TrackInfoWithFormat(mime, -1L, MediaFormat.createFromFrameworkMediaFormatV16(format), mime.contains(MimeTypes.BASE_TYPE_VIDEO));
                         }
-/* 126 */               SLog.m465i("Track count: {}", Integer.valueOf(this.trackStates.length));
-/* 127 */               this.lastTimestamp = 0L;
-/* 128 */               ArrayList<Frame> frames = new ArrayList<>();
-/* 130 */               int offset = 0;
-/* 131 */               while (extractor.getSampleTrackIndex() >= 0) {
-/* 132 */                   MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
-/* 133 */                   bufferInfo.offset = offset;
-/* 134 */                   bufferInfo.size = extractor.readSampleData(buffer, offset);
-/* 135 */                   if (bufferInfo.size < 0) {
-/* 136 */                       bufferInfo.size = 0;
-/* 137 */                       SLog.m464i("EOS reached? ");
+               SLog.m465i("Track count: {}", Integer.valueOf(this.trackStates.length));
+               this.lastTimestamp = 0L;
+               ArrayList<Frame> frames = new ArrayList<>();
+               int offset = 0;
+               while (extractor.getSampleTrackIndex() >= 0) {
+                   MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
+                   bufferInfo.offset = offset;
+                   bufferInfo.size = extractor.readSampleData(buffer, offset);
+                   if (bufferInfo.size < 0) {
+                       bufferInfo.size = 0;
+                       SLog.m464i("EOS reached? ");
                             } else {
-/* 139 */                       offset += bufferInfo.size;
-/* 140 */                       if (buffer.capacity() - offset < 524288) {
-/* 141 */                           SLog.m477w("Processing large file?");
-/* 142 */                           ByteBuffer newBuffer = ByteBuffer.allocate(buffer.capacity() * 2);
-/* 143 */                           buffer.position(0);
-/* 144 */                           newBuffer.put(buffer);
-/* 145 */                           buffer = newBuffer;
+                       offset += bufferInfo.size;
+                       if (buffer.capacity() - offset < 524288) {
+                           SLog.m477w("Processing large file?");
+                           ByteBuffer newBuffer = ByteBuffer.allocate(buffer.capacity() * 2);
+                           buffer.position(0);
+                           newBuffer.put(buffer);
+                           buffer = newBuffer;
                                 }
-/* 147 */                       bufferInfo.presentationTimeUs = extractor.getSampleTime();
-/* 148 */                       bufferInfo.flags = extractor.getSampleFlags();
-/* 149 */                       boolean syncSample = (bufferInfo.flags & 1) > 0;
-/* 150 */                       int trackIndex = extractor.getSampleTrackIndex();
-/* 151 */                       frames.add(new Frame(trackIndex, bufferInfo));
-/* 152 */                       frameCounts[trackIndex] = frameCounts[trackIndex] + 1;
+                       bufferInfo.presentationTimeUs = extractor.getSampleTime();
+                       bufferInfo.flags = extractor.getSampleFlags();
+                       boolean syncSample = (bufferInfo.flags & 1) > 0;
+                       int trackIndex = extractor.getSampleTrackIndex();
+                       frames.add(new Frame(trackIndex, bufferInfo));
+                       frameCounts[trackIndex] = frameCounts[trackIndex] + 1;
                                 if (bufferInfo.presentationTimeUs > this.lastTimestamp) {
-/* 154 */                           this.lastTimestamp = bufferInfo.presentationTimeUs;
+                           this.lastTimestamp = bufferInfo.presentationTimeUs;
                                 }
-/* 156 */                       extractor.advance();
-/* 157 */                       SLog.m464i(trackIndex + " at " + bufferInfo.presentationTimeUs + " offset " + bufferInfo.offset + " size " + bufferInfo.size + " sync " + syncSample);
+                       extractor.advance();
+                       SLog.m464i(trackIndex + " at " + bufferInfo.presentationTimeUs + " offset " + bufferInfo.offset + " size " + bufferInfo.size + " sync " + syncSample);
                             }
                         }
-/* 163 */               extractor.release();
-/* 164 */               this.currentFrameIndex = 0;
-/* 165 */               this.buffer = buffer.array();
-/* 166 */               this.frames = new Frame[frames.size()];
-/* 167 */               frames.toArray(this.frames);
-/* 168 */               decideFramesToCut(frames);
-/* 169 */               SLog.m467i("Total data read: {} bytes, {} {}", Integer.valueOf(offset), Integer.valueOf(frameCounts[0]), Integer.valueOf(frameCounts[1]));
-/* 170 */               this.prepared = true;
-/* 172 */               return true;
+               extractor.release();
+               this.currentFrameIndex = 0;
+               this.buffer = buffer.array();
+               this.frames = new Frame[frames.size()];
+               frames.toArray(this.frames);
+               decideFramesToCut(frames);
+               SLog.m467i("Total data read: {} bytes, {} {}", Integer.valueOf(offset), Integer.valueOf(frameCounts[0]), Integer.valueOf(frameCounts[1]));
+               this.prepared = true;
+               return true;
                     }
-/* 172 */           return true;
+           return true;
                 }
 
-/* 176 */       private void decideFramesToCut(ArrayList<Frame> frames) {
+       private void decideFramesToCut(ArrayList<Frame> frames) {
                     for (Frame frame : frames) {
                         if (frame.info.presentationTimeUs >= this.lastTimestamp - 50000 || frame.info.presentationTimeUs <= 50000) {
-/* 180 */                   frame.frameInfo.doNotDisplay = true;
+                   frame.frameInfo.doNotDisplay = true;
                         }
                         if (frame.info.presentationTimeUs >= this.lastTimestamp - 100000) {
-/* 183 */                   frame.frameInfo.needsReadMore = true;
+                   frame.frameInfo.needsReadMore = true;
                         }
                     }
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 189 */       public int getTrackCount() {
-/* 190 */           Assertions.checkState(this.prepared);
-/* 191 */           return this.trackStates.length;
+                @Override 
+       public int getTrackCount() {
+           Assertions.checkState(this.prepared);
+           return this.trackStates.length;
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 195 */       public TrackInfo getTrackInfo(int track) {
-/* 196 */           Assertions.checkState(this.prepared);
-/* 197 */           return this.trackInfos[track];
+                @Override 
+       public TrackInfo getTrackInfo(int track) {
+           Assertions.checkState(this.prepared);
+           return this.trackInfos[track];
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 201 */       public void enable(int track, long timeUs) {
-/* 202 */           Assertions.checkState(this.prepared);
-/* 203 */           Assertions.checkState(this.trackStates[track] == 0);
-/* 204 */           this.trackStates[track] = 1;
-/* 205 */           seekToUs(timeUs);
+                @Override 
+       public void enable(int track, long timeUs) {
+           Assertions.checkState(this.prepared);
+           Assertions.checkState(this.trackStates[track] == 0);
+           this.trackStates[track] = 1;
+           seekToUs(timeUs);
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 209 */       public boolean continueBuffering(long playbackPositionUs) {
-/* 210 */           return true;
+                @Override 
+       public boolean continueBuffering(long playbackPositionUs) {
+           return true;
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 215 */       public int readData(int track, long playbackPositionUs, MediaFormatHolder formatHolder, SampleHolder sampleHolder, boolean onlyReadDiscontinuity) {
-/* 216 */           Assertions.checkState(this.prepared);
-/* 217 */           Assertions.checkState(this.trackStates[track] != 0);
-/* 218 */           if (this.pendingDiscontinuities[track]) {
-/* 219 */               this.pendingDiscontinuities[track] = false;
-/* 220 */               return -5;
+                @Override 
+       public int readData(int track, long playbackPositionUs, MediaFormatHolder formatHolder, SampleHolder sampleHolder, boolean onlyReadDiscontinuity) {
+           Assertions.checkState(this.prepared);
+           Assertions.checkState(this.trackStates[track] != 0);
+           if (this.pendingDiscontinuities[track]) {
+               this.pendingDiscontinuities[track] = false;
+               return -5;
                     }
-/* 222 */           if (onlyReadDiscontinuity) {
+           if (onlyReadDiscontinuity) {
                         return -2;
                     }
-/* 225 */           if (this.trackStates[track] != 2) {
-/* 226 */               formatHolder.format = this.trackInfos[track].format;
-/* 227 */               formatHolder.drmInitData = null;
-/* 228 */               this.trackStates[track] = 2;
-/* 229 */               return -4;
+           if (this.trackStates[track] != 2) {
+               formatHolder.format = this.trackInfos[track].format;
+               formatHolder.drmInitData = null;
+               this.trackStates[track] = 2;
+               return -4;
                     }
-/* 231 */           int extractorTrackIndex = this.frames[this.currentFrameIndex].trackIndex;
-/* 232 */           if (extractorTrackIndex == track) {
-/* 233 */               if (sampleHolder.data != null) {
-/* 234 */                   int offset = sampleHolder.data.position();
-/* 235 */                   sampleHolder.data.put(this.buffer, this.frames[this.currentFrameIndex].info.offset, this.frames[this.currentFrameIndex].info.size);
-/* 236 */                   sampleHolder.size = this.frames[this.currentFrameIndex].info.size;
-/* 237 */                   sampleHolder.data.position(sampleHolder.size + offset);
+           int extractorTrackIndex = this.frames[this.currentFrameIndex].trackIndex;
+           if (extractorTrackIndex == track) {
+               if (sampleHolder.data != null) {
+                   int offset = sampleHolder.data.position();
+                   sampleHolder.data.put(this.buffer, this.frames[this.currentFrameIndex].info.offset, this.frames[this.currentFrameIndex].info.size);
+                   sampleHolder.size = this.frames[this.currentFrameIndex].info.size;
+                   sampleHolder.data.position(sampleHolder.size + offset);
                         } else {
-/* 239 */                   sampleHolder.size = 0;
+                   sampleHolder.size = 0;
                         }
-/* 241 */               sampleHolder.timeUs = this.frames[this.currentFrameIndex].info.presentationTimeUs + this.currentExtraTime;
-/* 242 */               sampleHolder.flags = this.frames[this.currentFrameIndex].info.flags;
-/* 243 */               sampleHolder.decodeOnly = this.frames[this.currentFrameIndex].frameInfo.doNotDisplay;
-/* 244 */               this.seekTimeUs = -1L;
-/* 245 */               advance();
-/* 246 */               return -3;
+               sampleHolder.timeUs = this.frames[this.currentFrameIndex].info.presentationTimeUs + this.currentExtraTime;
+               sampleHolder.flags = this.frames[this.currentFrameIndex].info.flags;
+               sampleHolder.decodeOnly = this.frames[this.currentFrameIndex].frameInfo.doNotDisplay;
+               this.seekTimeUs = -1L;
+               advance();
+               return -3;
                     }
-/* 248 */           return extractorTrackIndex < 0 ? -1 : -2;
+           return extractorTrackIndex < 0 ? -1 : -2;
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 253 */       public void disable(int track) {
-/* 254 */           Assertions.checkState(this.prepared);
-/* 255 */           Assertions.checkState(this.trackStates[track] != 0);
-/* 256 */           this.pendingDiscontinuities[track] = false;
-/* 257 */           this.trackStates[track] = 0;
+                @Override 
+       public void disable(int track) {
+           Assertions.checkState(this.prepared);
+           Assertions.checkState(this.trackStates[track] != 0);
+           this.pendingDiscontinuities[track] = false;
+           this.trackStates[track] = 0;
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 261 */       public void seekToUs(long timeUs) {
-/* 262 */           Assertions.checkState(this.prepared);
+                @Override 
+       public void seekToUs(long timeUs) {
+           Assertions.checkState(this.prepared);
                     if (this.seekTimeUs != timeUs) {
-/* 266 */               this.seekTimeUs = timeUs;
-/* 267 */               seekToUsInternal(timeUs);
+               this.seekTimeUs = timeUs;
+               seekToUsInternal(timeUs);
                         for (int i = 0; i < this.trackStates.length; i++) {
-/* 269 */                   if (this.trackStates[i] != 0) {
-/* 270 */                       this.pendingDiscontinuities[i] = true;
+                   if (this.trackStates[i] != 0) {
+                       this.pendingDiscontinuities[i] = true;
                             }
                         }
                     }
                 }
 
-/* 276 */       private void seekToUsInternal(long timeUs) {
+       private void seekToUsInternal(long timeUs) {
                     if (timeUs > this.currentExtraTime) {
                         if (timeUs > this.currentExtraTime + this.lastTimestamp) {
-/* 280 */                   this.currentExtraTime += this.lastTimestamp;
-/* 281 */                   this.currentFrameIndex = 0;
-/* 291 */                   return;
+                   this.currentExtraTime += this.lastTimestamp;
+                   this.currentFrameIndex = 0;
+                   return;
                         }
-/* 291 */               return;
+               return;
                     }
                     for (int i = 0; i < this.frames.length; i++) {
                         if (this.frames[i].info.presentationTimeUs + this.currentExtraTime >= timeUs) {
-/* 286 */                   this.currentFrameIndex = i;
-/* 291 */                   return;
+                   this.currentFrameIndex = i;
+                   return;
                         }
                     }
                 }
 
-/* 293 */       private void advance() {
-/* 294 */           this.currentFrameIndex++;
-/* 295 */           if (this.currentFrameIndex >= this.frames.length) {
-/* 296 */               this.currentFrameIndex = 0;
-/* 297 */               this.currentExtraTime += this.lastTimestamp;
-/* 298 */               SLog.m446d("Loop happened.");
+       private void advance() {
+           this.currentFrameIndex++;
+           if (this.currentFrameIndex >= this.frames.length) {
+               this.currentFrameIndex = 0;
+               this.currentExtraTime += this.lastTimestamp;
+               SLog.m446d("Loop happened.");
                     }
-/* 300 */           SLog.m447d("Sample source advanced to {}ms", Long.valueOf((this.frames[this.currentFrameIndex].info.presentationTimeUs + this.currentExtraTime) / 1000));
+           SLog.m447d("Sample source advanced to {}ms", Long.valueOf((this.frames[this.currentFrameIndex].info.presentationTimeUs + this.currentExtraTime) / 1000));
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 304 */       public long getBufferedPositionUs() {
-/* 305 */           Assertions.checkState(this.prepared);
-/* 306 */           return -3L;
+                @Override 
+       public long getBufferedPositionUs() {
+           Assertions.checkState(this.prepared);
+           return -3L;
                 }
 
-                @Override // com.google.android.exoplayer.SampleSource
-/* 310 */       public void release() {
-/* 311 */           Assertions.checkState(this.remainingReleaseCount > 0);
-/* 312 */           int i = this.remainingReleaseCount - 1;
+                @Override 
+       public void release() {
+           Assertions.checkState(this.remainingReleaseCount > 0);
+           int i = this.remainingReleaseCount - 1;
                     this.remainingReleaseCount = i;
                     if (i == 0) {
-/* 313 */               this.buffer = null;
+               this.buffer = null;
                     }
                 }
             }

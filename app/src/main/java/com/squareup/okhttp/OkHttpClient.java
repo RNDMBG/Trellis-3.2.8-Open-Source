@@ -21,8 +21,8 @@
             import javax.net.ssl.SSLContext;
             import javax.net.ssl.SSLSocketFactory;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 49 */    public class OkHttpClient implements Cloneable {
+            
+    public class OkHttpClient implements Cloneable {
                 private static SSLSocketFactory defaultSslSocketFactory;
                 private Authenticator authenticator;
                 private Cache cache;
@@ -48,419 +48,419 @@
                 private static final List<Protocol> DEFAULT_PROTOCOLS = Util.immutableList(Protocol.HTTP_2, Protocol.SPDY_3, Protocol.HTTP_1_1);
                 private static final List<ConnectionSpec> DEFAULT_CONNECTION_SPECS = Util.immutableList(ConnectionSpec.MODERN_TLS, ConnectionSpec.COMPATIBLE_TLS, ConnectionSpec.CLEARTEXT);
 
-/* 50 */        static /* synthetic */ Network access$000(OkHttpClient x0) {
-/* 51 */            return x0.network;
+        static  Network access$000(OkHttpClient x0) {
+            return x0.network;
                 }
 
-/* 50 */        static /* synthetic */ Network access$002(OkHttpClient x0, Network x1) {
-/* 51 */            x0.network = x1;
+        static  Network access$002(OkHttpClient x0, Network x1) {
+            x0.network = x1;
                     return x1;
                 }
 
-                /* JADX INFO: renamed from: clone, reason: collision with other method in class */
+                
 
                 static {
-/* 59 */            Internal.instance = new C12641();
+            Internal.instance = new C12641();
                 }
 
-                /* JADX INFO: renamed from: com.squareup.okhttp.OkHttpClient$1 */
-/* 57 */        static class C12641 extends Internal {
-/* 58 */            C12641() {
+                
+        static class C12641 extends Internal {
+            C12641() {
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 61 */            public Transport newTransport(Connection connection, HttpEngine httpEngine) throws IOException {
-/* 62 */                return connection.newTransport(httpEngine);
+                    @Override 
+            public Transport newTransport(Connection connection, HttpEngine httpEngine) throws IOException {
+                return connection.newTransport(httpEngine);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 65 */            public boolean clearOwner(Connection connection) {
-/* 66 */                return connection.clearOwner();
+                    @Override 
+            public boolean clearOwner(Connection connection) {
+                return connection.clearOwner();
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 69 */            public void closeIfOwnedBy(Connection connection, Object owner) throws IOException {
-/* 70 */                connection.closeIfOwnedBy(owner);
+                    @Override 
+            public void closeIfOwnedBy(Connection connection, Object owner) throws IOException {
+                connection.closeIfOwnedBy(owner);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 73 */            public int recycleCount(Connection connection) {
-/* 74 */                return connection.recycleCount();
+                    @Override 
+            public int recycleCount(Connection connection) {
+                return connection.recycleCount();
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 77 */            public void setProtocol(Connection connection, Protocol protocol) {
-/* 78 */                connection.setProtocol(protocol);
+                    @Override 
+            public void setProtocol(Connection connection, Protocol protocol) {
+                connection.setProtocol(protocol);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 81 */            public void setOwner(Connection connection, HttpEngine httpEngine) {
-/* 82 */                connection.setOwner(httpEngine);
+                    @Override 
+            public void setOwner(Connection connection, HttpEngine httpEngine) {
+                connection.setOwner(httpEngine);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 85 */            public boolean isReadable(Connection pooled) {
-/* 86 */                return pooled.isReadable();
+                    @Override 
+            public boolean isReadable(Connection pooled) {
+                return pooled.isReadable();
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 89 */            public void addLine(Headers.Builder builder, String line) {
-/* 90 */                builder.addLine(line);
+                    @Override 
+            public void addLine(Headers.Builder builder, String line) {
+                builder.addLine(line);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 93 */            public void setCache(OkHttpClient client, InternalCache internalCache) {
-/* 94 */                client.setInternalCache(internalCache);
+                    @Override 
+            public void setCache(OkHttpClient client, InternalCache internalCache) {
+                client.setInternalCache(internalCache);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 97 */            public InternalCache internalCache(OkHttpClient client) {
-/* 98 */                return client.internalCache();
+                    @Override 
+            public InternalCache internalCache(OkHttpClient client) {
+                return client.internalCache();
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 101 */           public void recycle(ConnectionPool pool, Connection connection) {
-/* 102 */               pool.recycle(connection);
+                    @Override 
+           public void recycle(ConnectionPool pool, Connection connection) {
+               pool.recycle(connection);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 105 */           public RouteDatabase routeDatabase(OkHttpClient client) {
-/* 106 */               return client.routeDatabase();
+                    @Override 
+           public RouteDatabase routeDatabase(OkHttpClient client) {
+               return client.routeDatabase();
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 109 */           public Network network(OkHttpClient client) {
-/* 110 */               return OkHttpClient.access$000(client);
+                    @Override 
+           public Network network(OkHttpClient client) {
+               return OkHttpClient.access$000(client);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 113 */           public void setNetwork(OkHttpClient client, Network network) {
-/* 114 */               OkHttpClient.access$002(client, network);
+                    @Override 
+           public void setNetwork(OkHttpClient client, Network network) {
+               OkHttpClient.access$002(client, network);
                     }
 
-                    @Override // com.squareup.okhttp.internal.Internal
-/* 118 */           public void connectAndSetOwner(OkHttpClient client, Connection connection, HttpEngine owner, Request request) throws IOException {
-/* 119 */               connection.connectAndSetOwner(client, owner, request);
+                    @Override 
+           public void connectAndSetOwner(OkHttpClient client, Connection connection, HttpEngine owner, Request request) throws IOException {
+               connection.connectAndSetOwner(client, owner, request);
                     }
                 }
 
-/* 151 */       public OkHttpClient() {
-/* 146 */           this.followSslRedirects = true;
-/* 147 */           this.followRedirects = true;
-/* 153 */           this.routeDatabase = new RouteDatabase();
-/* 154 */           this.dispatcher = new Dispatcher();
+       public OkHttpClient() {
+           this.followSslRedirects = true;
+           this.followRedirects = true;
+           this.routeDatabase = new RouteDatabase();
+           this.dispatcher = new Dispatcher();
                 }
 
-/* 156 */       private OkHttpClient(OkHttpClient okHttpClient) {
-/* 146 */           this.followSslRedirects = true;
-/* 147 */           this.followRedirects = true;
-/* 158 */           this.routeDatabase = okHttpClient.routeDatabase;
-/* 159 */           this.dispatcher = okHttpClient.dispatcher;
-/* 160 */           this.proxy = okHttpClient.proxy;
-/* 161 */           this.protocols = okHttpClient.protocols;
-/* 162 */           this.connectionSpecs = okHttpClient.connectionSpecs;
-/* 163 */           this.proxySelector = okHttpClient.proxySelector;
-/* 164 */           this.cookieHandler = okHttpClient.cookieHandler;
-/* 165 */           this.cache = okHttpClient.cache;
-/* 166 */           this.internalCache = this.cache != null ? this.cache.internalCache : okHttpClient.internalCache;
-/* 167 */           this.socketFactory = okHttpClient.socketFactory;
-/* 168 */           this.sslSocketFactory = okHttpClient.sslSocketFactory;
-/* 169 */           this.hostnameVerifier = okHttpClient.hostnameVerifier;
-/* 170 */           this.certificatePinner = okHttpClient.certificatePinner;
-/* 171 */           this.authenticator = okHttpClient.authenticator;
-/* 172 */           this.connectionPool = okHttpClient.connectionPool;
-/* 173 */           this.network = okHttpClient.network;
-/* 174 */           this.followSslRedirects = okHttpClient.followSslRedirects;
-/* 175 */           this.followRedirects = okHttpClient.followRedirects;
-/* 176 */           this.connectTimeout = okHttpClient.connectTimeout;
-/* 177 */           this.readTimeout = okHttpClient.readTimeout;
-/* 178 */           this.writeTimeout = okHttpClient.writeTimeout;
+       private OkHttpClient(OkHttpClient okHttpClient) {
+           this.followSslRedirects = true;
+           this.followRedirects = true;
+           this.routeDatabase = okHttpClient.routeDatabase;
+           this.dispatcher = okHttpClient.dispatcher;
+           this.proxy = okHttpClient.proxy;
+           this.protocols = okHttpClient.protocols;
+           this.connectionSpecs = okHttpClient.connectionSpecs;
+           this.proxySelector = okHttpClient.proxySelector;
+           this.cookieHandler = okHttpClient.cookieHandler;
+           this.cache = okHttpClient.cache;
+           this.internalCache = this.cache != null ? this.cache.internalCache : okHttpClient.internalCache;
+           this.socketFactory = okHttpClient.socketFactory;
+           this.sslSocketFactory = okHttpClient.sslSocketFactory;
+           this.hostnameVerifier = okHttpClient.hostnameVerifier;
+           this.certificatePinner = okHttpClient.certificatePinner;
+           this.authenticator = okHttpClient.authenticator;
+           this.connectionPool = okHttpClient.connectionPool;
+           this.network = okHttpClient.network;
+           this.followSslRedirects = okHttpClient.followSslRedirects;
+           this.followRedirects = okHttpClient.followRedirects;
+           this.connectTimeout = okHttpClient.connectTimeout;
+           this.readTimeout = okHttpClient.readTimeout;
+           this.writeTimeout = okHttpClient.writeTimeout;
                 }
 
-/* 186 */       public final void setConnectTimeout(long timeout, TimeUnit unit) {
+       public final void setConnectTimeout(long timeout, TimeUnit unit) {
                     if (timeout < 0) {
                         throw new IllegalArgumentException("timeout < 0");
                     }
-/* 188 */           if (unit == null) {
+           if (unit == null) {
                         throw new IllegalArgumentException("unit == null");
                     }
-/* 189 */           long millis = unit.toMillis(timeout);
+           long millis = unit.toMillis(timeout);
                     if (millis > 2147483647L) {
                         throw new IllegalArgumentException("Timeout too large.");
                     }
-/* 191 */           this.connectTimeout = (int) millis;
+           this.connectTimeout = (int) millis;
                 }
 
-/* 195 */       public final int getConnectTimeout() {
-/* 196 */           return this.connectTimeout;
+       public final int getConnectTimeout() {
+           return this.connectTimeout;
                 }
 
-/* 204 */       public final void setReadTimeout(long timeout, TimeUnit unit) {
+       public final void setReadTimeout(long timeout, TimeUnit unit) {
                     if (timeout < 0) {
                         throw new IllegalArgumentException("timeout < 0");
                     }
-/* 206 */           if (unit == null) {
+           if (unit == null) {
                         throw new IllegalArgumentException("unit == null");
                     }
-/* 207 */           long millis = unit.toMillis(timeout);
+           long millis = unit.toMillis(timeout);
                     if (millis > 2147483647L) {
                         throw new IllegalArgumentException("Timeout too large.");
                     }
-/* 209 */           this.readTimeout = (int) millis;
+           this.readTimeout = (int) millis;
                 }
 
-/* 213 */       public final int getReadTimeout() {
-/* 214 */           return this.readTimeout;
+       public final int getReadTimeout() {
+           return this.readTimeout;
                 }
 
-/* 220 */       public final void setWriteTimeout(long timeout, TimeUnit unit) {
+       public final void setWriteTimeout(long timeout, TimeUnit unit) {
                     if (timeout < 0) {
                         throw new IllegalArgumentException("timeout < 0");
                     }
-/* 222 */           if (unit == null) {
+           if (unit == null) {
                         throw new IllegalArgumentException("unit == null");
                     }
-/* 223 */           long millis = unit.toMillis(timeout);
+           long millis = unit.toMillis(timeout);
                     if (millis > 2147483647L) {
                         throw new IllegalArgumentException("Timeout too large.");
                     }
-/* 225 */           this.writeTimeout = (int) millis;
+           this.writeTimeout = (int) millis;
                 }
 
-/* 229 */       public final int getWriteTimeout() {
-/* 230 */           return this.writeTimeout;
+       public final int getWriteTimeout() {
+           return this.writeTimeout;
                 }
 
-/* 239 */       public final OkHttpClient setProxy(Proxy proxy) {
-/* 240 */           this.proxy = proxy;
-/* 241 */           return this;
+       public final OkHttpClient setProxy(Proxy proxy) {
+           this.proxy = proxy;
+           return this;
                 }
 
-/* 244 */       public final Proxy getProxy() {
-/* 245 */           return this.proxy;
+       public final Proxy getProxy() {
+           return this.proxy;
                 }
 
-/* 257 */       public final OkHttpClient setProxySelector(ProxySelector proxySelector) {
-/* 258 */           this.proxySelector = proxySelector;
-/* 259 */           return this;
+       public final OkHttpClient setProxySelector(ProxySelector proxySelector) {
+           this.proxySelector = proxySelector;
+           return this;
                 }
 
-/* 262 */       public final ProxySelector getProxySelector() {
-/* 263 */           return this.proxySelector;
+       public final ProxySelector getProxySelector() {
+           return this.proxySelector;
                 }
 
-/* 273 */       public final OkHttpClient setCookieHandler(CookieHandler cookieHandler) {
-/* 274 */           this.cookieHandler = cookieHandler;
-/* 275 */           return this;
+       public final OkHttpClient setCookieHandler(CookieHandler cookieHandler) {
+           this.cookieHandler = cookieHandler;
+           return this;
                 }
 
-/* 278 */       public final CookieHandler getCookieHandler() {
-/* 279 */           return this.cookieHandler;
+       public final CookieHandler getCookieHandler() {
+           return this.cookieHandler;
                 }
 
-/* 283 */       final void setInternalCache(InternalCache internalCache) {
-/* 284 */           this.internalCache = internalCache;
-/* 285 */           this.cache = null;
+       final void setInternalCache(InternalCache internalCache) {
+           this.internalCache = internalCache;
+           this.cache = null;
                 }
 
-/* 288 */       final InternalCache internalCache() {
-/* 289 */           return this.internalCache;
+       final InternalCache internalCache() {
+           return this.internalCache;
                 }
 
-/* 292 */       public final OkHttpClient setCache(Cache cache) {
-/* 293 */           this.cache = cache;
-/* 294 */           this.internalCache = null;
-/* 295 */           return this;
+       public final OkHttpClient setCache(Cache cache) {
+           this.cache = cache;
+           this.internalCache = null;
+           return this;
                 }
 
-/* 298 */       public final Cache getCache() {
-/* 299 */           return this.cache;
+       public final Cache getCache() {
+           return this.cache;
                 }
 
-/* 308 */       public final OkHttpClient setSocketFactory(SocketFactory socketFactory) {
-/* 309 */           this.socketFactory = socketFactory;
-/* 310 */           return this;
+       public final OkHttpClient setSocketFactory(SocketFactory socketFactory) {
+           this.socketFactory = socketFactory;
+           return this;
                 }
 
-/* 313 */       public final SocketFactory getSocketFactory() {
-/* 314 */           return this.socketFactory;
+       public final SocketFactory getSocketFactory() {
+           return this.socketFactory;
                 }
 
-/* 322 */       public final OkHttpClient setSslSocketFactory(SSLSocketFactory sslSocketFactory) {
-/* 323 */           this.sslSocketFactory = sslSocketFactory;
-/* 324 */           return this;
+       public final OkHttpClient setSslSocketFactory(SSLSocketFactory sslSocketFactory) {
+           this.sslSocketFactory = sslSocketFactory;
+           return this;
                 }
 
-/* 327 */       public final SSLSocketFactory getSslSocketFactory() {
-/* 328 */           return this.sslSocketFactory;
+       public final SSLSocketFactory getSslSocketFactory() {
+           return this.sslSocketFactory;
                 }
 
-/* 337 */       public final OkHttpClient setHostnameVerifier(HostnameVerifier hostnameVerifier) {
-/* 338 */           this.hostnameVerifier = hostnameVerifier;
-/* 339 */           return this;
+       public final OkHttpClient setHostnameVerifier(HostnameVerifier hostnameVerifier) {
+           this.hostnameVerifier = hostnameVerifier;
+           return this;
                 }
 
-/* 342 */       public final HostnameVerifier getHostnameVerifier() {
-/* 343 */           return this.hostnameVerifier;
+       public final HostnameVerifier getHostnameVerifier() {
+           return this.hostnameVerifier;
                 }
 
-/* 352 */       public final OkHttpClient setCertificatePinner(CertificatePinner certificatePinner) {
-/* 353 */           this.certificatePinner = certificatePinner;
-/* 354 */           return this;
+       public final OkHttpClient setCertificatePinner(CertificatePinner certificatePinner) {
+           this.certificatePinner = certificatePinner;
+           return this;
                 }
 
-/* 357 */       public final CertificatePinner getCertificatePinner() {
-/* 358 */           return this.certificatePinner;
+       public final CertificatePinner getCertificatePinner() {
+           return this.certificatePinner;
                 }
 
-/* 368 */       public final OkHttpClient setAuthenticator(Authenticator authenticator) {
-/* 369 */           this.authenticator = authenticator;
-/* 370 */           return this;
+       public final OkHttpClient setAuthenticator(Authenticator authenticator) {
+           this.authenticator = authenticator;
+           return this;
                 }
 
-/* 373 */       public final Authenticator getAuthenticator() {
-/* 374 */           return this.authenticator;
+       public final Authenticator getAuthenticator() {
+           return this.authenticator;
                 }
 
-/* 383 */       public final OkHttpClient setConnectionPool(ConnectionPool connectionPool) {
-/* 384 */           this.connectionPool = connectionPool;
-/* 385 */           return this;
+       public final OkHttpClient setConnectionPool(ConnectionPool connectionPool) {
+           this.connectionPool = connectionPool;
+           return this;
                 }
 
-/* 388 */       public final ConnectionPool getConnectionPool() {
-/* 389 */           return this.connectionPool;
+       public final ConnectionPool getConnectionPool() {
+           return this.connectionPool;
                 }
 
-/* 399 */       public final OkHttpClient setFollowSslRedirects(boolean followProtocolRedirects) {
-/* 400 */           this.followSslRedirects = followProtocolRedirects;
-/* 401 */           return this;
+       public final OkHttpClient setFollowSslRedirects(boolean followProtocolRedirects) {
+           this.followSslRedirects = followProtocolRedirects;
+           return this;
                 }
 
-/* 404 */       public final boolean getFollowSslRedirects() {
-/* 405 */           return this.followSslRedirects;
+       public final boolean getFollowSslRedirects() {
+           return this.followSslRedirects;
                 }
 
-/* 409 */       public final void setFollowRedirects(boolean followRedirects) {
-/* 410 */           this.followRedirects = followRedirects;
+       public final void setFollowRedirects(boolean followRedirects) {
+           this.followRedirects = followRedirects;
                 }
 
-/* 413 */       public final boolean getFollowRedirects() {
-/* 414 */           return this.followRedirects;
+       public final boolean getFollowRedirects() {
+           return this.followRedirects;
                 }
 
-/* 417 */       final RouteDatabase routeDatabase() {
-/* 418 */           return this.routeDatabase;
+       final RouteDatabase routeDatabase() {
+           return this.routeDatabase;
                 }
 
-/* 425 */       public final OkHttpClient setDispatcher(Dispatcher dispatcher) {
-/* 426 */           if (dispatcher == null) {
+       public final OkHttpClient setDispatcher(Dispatcher dispatcher) {
+           if (dispatcher == null) {
                         throw new IllegalArgumentException("dispatcher == null");
                     }
-/* 427 */           this.dispatcher = dispatcher;
-/* 428 */           return this;
+           this.dispatcher = dispatcher;
+           return this;
                 }
 
-/* 431 */       public final Dispatcher getDispatcher() {
-/* 432 */           return this.dispatcher;
+       public final Dispatcher getDispatcher() {
+           return this.dispatcher;
                 }
 
-/* 466 */       public final OkHttpClient setProtocols(List<Protocol> protocols) {
-/* 467 */           List<Protocol> protocols2 = Util.immutableList(protocols);
-/* 468 */           if (!protocols2.contains(Protocol.HTTP_1_1)) {
-/* 469 */               throw new IllegalArgumentException("protocols doesn't contain http/1.1: " + protocols2);
+       public final OkHttpClient setProtocols(List<Protocol> protocols) {
+           List<Protocol> protocols2 = Util.immutableList(protocols);
+           if (!protocols2.contains(Protocol.HTTP_1_1)) {
+               throw new IllegalArgumentException("protocols doesn't contain http/1.1: " + protocols2);
                     }
-/* 471 */           if (protocols2.contains(Protocol.HTTP_1_0)) {
-/* 472 */               throw new IllegalArgumentException("protocols must not contain http/1.0: " + protocols2);
+           if (protocols2.contains(Protocol.HTTP_1_0)) {
+               throw new IllegalArgumentException("protocols must not contain http/1.0: " + protocols2);
                     }
-/* 474 */           if (protocols2.contains(null)) {
-/* 475 */               throw new IllegalArgumentException("protocols must not contain null");
+           if (protocols2.contains(null)) {
+               throw new IllegalArgumentException("protocols must not contain null");
                     }
-/* 477 */           this.protocols = Util.immutableList(protocols2);
-/* 478 */           return this;
+           this.protocols = Util.immutableList(protocols2);
+           return this;
                 }
 
-/* 481 */       public final List<Protocol> getProtocols() {
-/* 482 */           return this.protocols;
+       public final List<Protocol> getProtocols() {
+           return this.protocols;
                 }
 
-/* 485 */       public final OkHttpClient setConnectionSpecs(List<ConnectionSpec> connectionSpecs) {
-/* 486 */           this.connectionSpecs = Util.immutableList(connectionSpecs);
-/* 487 */           return this;
+       public final OkHttpClient setConnectionSpecs(List<ConnectionSpec> connectionSpecs) {
+           this.connectionSpecs = Util.immutableList(connectionSpecs);
+           return this;
                 }
 
-/* 490 */       public final List<ConnectionSpec> getConnectionSpecs() {
-/* 491 */           return this.connectionSpecs;
+       public final List<ConnectionSpec> getConnectionSpecs() {
+           return this.connectionSpecs;
                 }
 
-/* 497 */       public Call newCall(Request request) {
-/* 498 */           return new Call(this, request);
+       public Call newCall(Request request) {
+           return new Call(this, request);
                 }
 
-/* 505 */       public OkHttpClient cancel(Object tag) {
-/* 506 */           getDispatcher().cancel(tag);
-/* 507 */           return this;
+       public OkHttpClient cancel(Object tag) {
+           getDispatcher().cancel(tag);
+           return this;
                 }
 
-/* 514 */       final OkHttpClient copyWithDefaults() {
-/* 515 */           OkHttpClient result = new OkHttpClient(this);
-/* 516 */           if (result.proxySelector == null) {
-/* 517 */               result.proxySelector = ProxySelector.getDefault();
+       final OkHttpClient copyWithDefaults() {
+           OkHttpClient result = new OkHttpClient(this);
+           if (result.proxySelector == null) {
+               result.proxySelector = ProxySelector.getDefault();
                     }
-/* 519 */           if (result.cookieHandler == null) {
-/* 520 */               result.cookieHandler = CookieHandler.getDefault();
+           if (result.cookieHandler == null) {
+               result.cookieHandler = CookieHandler.getDefault();
                     }
-/* 522 */           if (result.socketFactory == null) {
-/* 523 */               result.socketFactory = SocketFactory.getDefault();
+           if (result.socketFactory == null) {
+               result.socketFactory = SocketFactory.getDefault();
                     }
-/* 525 */           if (result.sslSocketFactory == null) {
-/* 526 */               result.sslSocketFactory = getDefaultSSLSocketFactory();
+           if (result.sslSocketFactory == null) {
+               result.sslSocketFactory = getDefaultSSLSocketFactory();
                     }
-/* 528 */           if (result.hostnameVerifier == null) {
-/* 529 */               result.hostnameVerifier = OkHostnameVerifier.INSTANCE;
+           if (result.hostnameVerifier == null) {
+               result.hostnameVerifier = OkHostnameVerifier.INSTANCE;
                     }
-/* 531 */           if (result.certificatePinner == null) {
-/* 532 */               result.certificatePinner = CertificatePinner.DEFAULT;
+           if (result.certificatePinner == null) {
+               result.certificatePinner = CertificatePinner.DEFAULT;
                     }
-/* 534 */           if (result.authenticator == null) {
-/* 535 */               result.authenticator = AuthenticatorAdapter.INSTANCE;
+           if (result.authenticator == null) {
+               result.authenticator = AuthenticatorAdapter.INSTANCE;
                     }
-/* 537 */           if (result.connectionPool == null) {
-/* 538 */               result.connectionPool = ConnectionPool.getDefault();
+           if (result.connectionPool == null) {
+               result.connectionPool = ConnectionPool.getDefault();
                     }
-/* 540 */           if (result.protocols == null) {
-/* 541 */               result.protocols = DEFAULT_PROTOCOLS;
+           if (result.protocols == null) {
+               result.protocols = DEFAULT_PROTOCOLS;
                     }
-/* 543 */           if (result.connectionSpecs == null) {
-/* 544 */               result.connectionSpecs = DEFAULT_CONNECTION_SPECS;
+           if (result.connectionSpecs == null) {
+               result.connectionSpecs = DEFAULT_CONNECTION_SPECS;
                     }
-/* 546 */           if (result.network == null) {
-/* 547 */               result.network = Network.DEFAULT;
+           if (result.network == null) {
+               result.network = Network.DEFAULT;
                     }
-/* 549 */           return result;
+           return result;
                 }
 
-/* 563 */       private synchronized SSLSocketFactory getDefaultSSLSocketFactory() {
+       private synchronized SSLSocketFactory getDefaultSSLSocketFactory() {
                     try {
                         if (defaultSslSocketFactory == null) {
                             try {
-/* 566 */                       SSLContext sslContext = SSLContext.getInstance("TLS");
-/* 567 */                       sslContext.init(null, null, null);
-/* 568 */                       defaultSslSocketFactory = sslContext.getSocketFactory();
+                       SSLContext sslContext = SSLContext.getInstance("TLS");
+                       sslContext.init(null, null, null);
+                       defaultSslSocketFactory = sslContext.getSocketFactory();
                             } catch (GeneralSecurityException e) {
-/* 570 */                       throw new AssertionError();
+                       throw new AssertionError();
                             }
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
-/* 573 */           return defaultSslSocketFactory;
+           return defaultSslSocketFactory;
                 }
 
-/* 578 */       public final OkHttpClient clone() {
+       public final OkHttpClient clone() {
                     try {
-/* 579 */               return (OkHttpClient) super.clone();
+               return (OkHttpClient) super.clone();
                     } catch (CloneNotSupportedException e) {
-/* 581 */               throw new AssertionError();
+               throw new AssertionError();
                     }
                 }
             }

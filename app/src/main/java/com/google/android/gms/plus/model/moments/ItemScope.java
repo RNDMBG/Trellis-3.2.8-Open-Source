@@ -6,172 +6,172 @@
             import java.util.List;
             import java.util.Set;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface ItemScope extends Freezable<ItemScope> {
 
                 public static class Builder {
 
-                    /* JADX INFO: renamed from: hN */
+                    
                     private String f2391hN;
                     private String mName;
 
-                    /* JADX INFO: renamed from: mo */
+                    
                     private String f2392mo;
 
-                    /* JADX INFO: renamed from: oE */
+                    
                     private double f2393oE;
 
-                    /* JADX INFO: renamed from: oF */
+                    
                     private double f2394oF;
 
-                    /* JADX INFO: renamed from: rI */
+                    
                     private final Set<Integer> f2395rI = new HashSet();
 
-                    /* JADX INFO: renamed from: rJ */
+                    
                     private C1086fq f2396rJ;
 
-                    /* JADX INFO: renamed from: rK */
+                    
                     private List<String> f2397rK;
 
-                    /* JADX INFO: renamed from: rL */
+                    
                     private C1086fq f2398rL;
 
-                    /* JADX INFO: renamed from: rM */
+                    
                     private String f2399rM;
 
-                    /* JADX INFO: renamed from: rN */
+                    
                     private String f2400rN;
 
-                    /* JADX INFO: renamed from: rO */
+                    
                     private String f2401rO;
 
-                    /* JADX INFO: renamed from: rP */
+                    
                     private List<C1086fq> f2402rP;
 
-                    /* JADX INFO: renamed from: rQ */
+                    
                     private int f2403rQ;
 
-                    /* JADX INFO: renamed from: rR */
+                    
                     private List<C1086fq> f2404rR;
 
-                    /* JADX INFO: renamed from: rS */
+                    
                     private C1086fq f2405rS;
 
-                    /* JADX INFO: renamed from: rT */
+                    
                     private List<C1086fq> f2406rT;
 
-                    /* JADX INFO: renamed from: rU */
+                    
                     private String f2407rU;
 
-                    /* JADX INFO: renamed from: rV */
+                    
                     private String f2408rV;
 
-                    /* JADX INFO: renamed from: rW */
+                    
                     private C1086fq f2409rW;
 
-                    /* JADX INFO: renamed from: rX */
+                    
                     private String f2410rX;
 
-                    /* JADX INFO: renamed from: rY */
+                    
                     private String f2411rY;
 
-                    /* JADX INFO: renamed from: rZ */
+                    
                     private String f2412rZ;
 
-                    /* JADX INFO: renamed from: sA */
+                    
                     private C1086fq f2413sA;
 
-                    /* JADX INFO: renamed from: sB */
+                    
                     private String f2414sB;
 
-                    /* JADX INFO: renamed from: sC */
+                    
                     private String f2415sC;
 
-                    /* JADX INFO: renamed from: sD */
+                    
                     private String f2416sD;
 
-                    /* JADX INFO: renamed from: sE */
+                    
                     private String f2417sE;
 
-                    /* JADX INFO: renamed from: sF */
+                    
                     private String f2418sF;
 
-                    /* JADX INFO: renamed from: sa */
+                    
                     private List<C1086fq> f2419sa;
 
-                    /* JADX INFO: renamed from: sb */
+                    
                     private String f2420sb;
 
-                    /* JADX INFO: renamed from: sc */
+                    
                     private String f2421sc;
 
-                    /* JADX INFO: renamed from: sd */
+                    
                     private String f2422sd;
 
-                    /* JADX INFO: renamed from: se */
+                    
                     private String f2423se;
 
-                    /* JADX INFO: renamed from: sf */
+                    
                     private String f2424sf;
 
-                    /* JADX INFO: renamed from: sg */
+                    
                     private String f2425sg;
 
-                    /* JADX INFO: renamed from: sh */
+                    
                     private String f2426sh;
 
-                    /* JADX INFO: renamed from: si */
+                    
                     private String f2427si;
 
-                    /* JADX INFO: renamed from: sj */
+                    
                     private C1086fq f2428sj;
 
-                    /* JADX INFO: renamed from: sk */
+                    
                     private String f2429sk;
 
-                    /* JADX INFO: renamed from: sl */
+                    
                     private String f2430sl;
 
-                    /* JADX INFO: renamed from: sm */
+                    
                     private String f2431sm;
 
-                    /* JADX INFO: renamed from: sn */
+                    
                     private String f2432sn;
 
-                    /* JADX INFO: renamed from: so */
+                    
                     private C1086fq f2433so;
 
-                    /* JADX INFO: renamed from: sp */
+                    
                     private C1086fq f2434sp;
 
-                    /* JADX INFO: renamed from: sq */
+                    
                     private C1086fq f2435sq;
 
-                    /* JADX INFO: renamed from: sr */
+                    
                     private List<C1086fq> f2436sr;
 
-                    /* JADX INFO: renamed from: ss */
+                    
                     private String f2437ss;
 
-                    /* JADX INFO: renamed from: st */
+                    
                     private String f2438st;
 
-                    /* JADX INFO: renamed from: su */
+                    
                     private String f2439su;
 
-                    /* JADX INFO: renamed from: sv */
+                    
                     private String f2440sv;
 
-                    /* JADX INFO: renamed from: sw */
+                    
                     private C1086fq f2441sw;
 
-                    /* JADX INFO: renamed from: sx */
+                    
                     private String f2442sx;
 
-                    /* JADX INFO: renamed from: sy */
+                    
                     private String f2443sy;
 
-                    /* JADX INFO: renamed from: sz */
+                    
                     private String f2444sz;
 
                     public ItemScope build() {
@@ -214,7 +214,7 @@
                         return this;
                     }
 
-                    /* JADX WARN: Multi-variable type inference failed */
+                    
                     public Builder setAssociated_media(List<ItemScope> list) {
                         this.f2402rP = list;
                         this.f2395rI.add(8);
@@ -227,7 +227,7 @@
                         return this;
                     }
 
-                    /* JADX WARN: Multi-variable type inference failed */
+                    
                     public Builder setAttendees(List<ItemScope> list) {
                         this.f2404rR = list;
                         this.f2395rI.add(10);
@@ -240,7 +240,7 @@
                         return this;
                     }
 
-                    /* JADX WARN: Multi-variable type inference failed */
+                    
                     public Builder setAuthor(List<ItemScope> list) {
                         this.f2406rT = list;
                         this.f2395rI.add(12);
@@ -283,7 +283,7 @@
                         return this;
                     }
 
-                    /* JADX WARN: Multi-variable type inference failed */
+                    
                     public Builder setContributor(List<ItemScope> list) {
                         this.f2419sa = list;
                         this.f2395rI.add(19);
@@ -410,7 +410,7 @@
                         return this;
                     }
 
-                    /* JADX WARN: Multi-variable type inference failed */
+                    
                     public Builder setPerformers(List<ItemScope> list) {
                         this.f2436sr = list;
                         this.f2395rI.add(41);

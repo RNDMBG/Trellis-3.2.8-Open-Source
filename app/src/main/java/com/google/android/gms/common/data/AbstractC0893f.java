@@ -2,14 +2,14 @@
 
             import java.util.ArrayList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.common.data.f */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public abstract class AbstractC0893f<T> extends DataBuffer<T> {
 
-                /* JADX INFO: renamed from: jA */
+                
                 private boolean f973jA;
 
-                /* JADX INFO: renamed from: jB */
+                
                 private ArrayList<Integer> f974jB;
 
                 protected AbstractC0893f(C0891d c0891d) {
@@ -17,7 +17,7 @@
                     this.f973jA = false;
                 }
 
-                /* JADX INFO: renamed from: aN */
+                
                 private void m1056aN() {
                     synchronized (this) {
                         try {
@@ -48,7 +48,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: u */
+                
                 private int m1057u(int i) {
                     if (i < 0 || i == this.f974jB.size()) {
                         return 0;
@@ -56,16 +56,16 @@
                     return i == this.f974jB.size() + (-1) ? this.f948jf.getCount() - this.f974jB.get(i).intValue() : this.f974jB.get(i + 1).intValue() - this.f974jB.get(i).intValue();
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 protected abstract T mo1058a(int i, int i2);
 
-                @Override // com.google.android.gms.common.data.DataBuffer
+                @Override 
                 public final T get(int position) {
                     m1056aN();
                     return mo1058a(m1059t(position), m1057u(position));
                 }
 
-                @Override // com.google.android.gms.common.data.DataBuffer
+                @Override 
                 public int getCount() {
                     m1056aN();
                     return this.f974jB.size();
@@ -73,7 +73,7 @@
 
                 protected abstract String getPrimaryDataMarkerColumn();
 
-                /* JADX INFO: renamed from: t */
+                
                 int m1059t(int i) {
                     if (i < 0 || i >= this.f974jB.size()) {
                         throw new IllegalArgumentException("Position " + i + " is out of bounds for this buffer");

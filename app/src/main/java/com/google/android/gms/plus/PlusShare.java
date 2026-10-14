@@ -18,7 +18,7 @@
             import java.util.ArrayList;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class PlusShare {
                 public static final String EXTRA_CALL_TO_ACTION = "com.google.android.apps.plus.CALL_TO_ACTION";
                 public static final String EXTRA_CONTENT_DEEP_LINK_ID = "com.google.android.apps.plus.CONTENT_DEEP_LINK_ID";
@@ -38,13 +38,13 @@
                     private final Context mContext;
                     private final Intent mIntent;
 
-                    /* JADX INFO: renamed from: rl */
+                    
                     private boolean f2388rl;
 
-                    /* JADX INFO: renamed from: rm */
+                    
                     private ArrayList<Uri> f2389rm;
 
-                    /* JADX INFO: renamed from: rn */
+                    
                     protected boolean f2390rn;
 
                     public Builder(Activity launchingActivity) {
@@ -103,7 +103,7 @@
                         return this;
                     }
 
-                    /* JADX INFO: renamed from: cV */
+                    
                     protected boolean m2341cV() {
                         PackageManager packageManager = this.mContext.getPackageManager();
                         if (packageManager == null) {
@@ -225,7 +225,7 @@
                     throw new AssertionError();
                 }
 
-                /* JADX INFO: renamed from: V */
+                
                 protected static boolean m2339V(String str) {
                     if (TextUtils.isEmpty(str)) {
                         Log.e("GooglePlusPlatform", "The provided deep-link ID is empty.");
@@ -238,7 +238,7 @@
                     return false;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static Bundle m2340a(String str, String str2, Uri uri) {
                     Bundle bundle = new Bundle();
                     bundle.putString("title", str);

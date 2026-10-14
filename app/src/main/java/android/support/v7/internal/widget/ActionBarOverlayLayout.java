@@ -10,8 +10,8 @@
             import android.view.View;
             import android.widget.FrameLayout;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 48 */    public class ActionBarOverlayLayout extends FrameLayout {
+            
+    public class ActionBarOverlayLayout extends FrameLayout {
                 static final int[] mActionBarSizeAttr = {C0084R.attr.actionBarSize};
                 private ActionBar mActionBar;
                 private View mActionBarBottom;
@@ -22,60 +22,60 @@
                 private View mContent;
                 private final Rect mZeroRect;
 
-/* 49 */        public ActionBarOverlayLayout(Context context) {
-/* 50 */            super(context);
-/* 43 */            this.mZeroRect = new Rect(0, 0, 0, 0);
-/* 51 */            init(context);
+        public ActionBarOverlayLayout(Context context) {
+            super(context);
+            this.mZeroRect = new Rect(0, 0, 0, 0);
+            init(context);
                 }
 
-/* 54 */        public ActionBarOverlayLayout(Context context, AttributeSet attrs) {
-/* 55 */            super(context, attrs);
-/* 43 */            this.mZeroRect = new Rect(0, 0, 0, 0);
-/* 56 */            init(context);
+        public ActionBarOverlayLayout(Context context, AttributeSet attrs) {
+            super(context, attrs);
+            this.mZeroRect = new Rect(0, 0, 0, 0);
+            init(context);
                 }
 
-/* 59 */        private void init(Context context) {
-/* 60 */            TypedArray ta = getContext().getTheme().obtainStyledAttributes(mActionBarSizeAttr);
-/* 61 */            this.mActionBarHeight = ta.getDimensionPixelSize(0, 0);
-/* 62 */            ta.recycle();
+        private void init(Context context) {
+            TypedArray ta = getContext().getTheme().obtainStyledAttributes(mActionBarSizeAttr);
+            this.mActionBarHeight = ta.getDimensionPixelSize(0, 0);
+            ta.recycle();
                 }
 
-/* 65 */        public void setActionBar(ActionBar impl) {
-/* 66 */            this.mActionBar = impl;
+        public void setActionBar(ActionBar impl) {
+            this.mActionBar = impl;
                 }
 
-/* 70 */        private boolean applyInsets(View view, Rect insets, boolean left, boolean top, boolean bottom, boolean right) {
-/* 71 */            boolean changed = false;
-/* 72 */            FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) view.getLayoutParams();
-/* 73 */            if (left && lp.leftMargin != insets.left) {
-/* 74 */                changed = true;
-/* 75 */                lp.leftMargin = insets.left;
+        private boolean applyInsets(View view, Rect insets, boolean left, boolean top, boolean bottom, boolean right) {
+            boolean changed = false;
+            FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) view.getLayoutParams();
+            if (left && lp.leftMargin != insets.left) {
+                changed = true;
+                lp.leftMargin = insets.left;
                     }
-/* 77 */            if (top && lp.topMargin != insets.top) {
-/* 78 */                changed = true;
-/* 79 */                lp.topMargin = insets.top;
+            if (top && lp.topMargin != insets.top) {
+                changed = true;
+                lp.topMargin = insets.top;
                     }
-/* 81 */            if (right && lp.rightMargin != insets.right) {
-/* 82 */                changed = true;
-/* 83 */                lp.rightMargin = insets.right;
+            if (right && lp.rightMargin != insets.right) {
+                changed = true;
+                lp.rightMargin = insets.right;
                     }
-/* 85 */            if (bottom && lp.bottomMargin != insets.bottom) {
-/* 87 */                lp.bottomMargin = insets.bottom;
-/* 86 */                return true;
+            if (bottom && lp.bottomMargin != insets.bottom) {
+                lp.bottomMargin = insets.bottom;
+                return true;
                     }
-/* 89 */            return changed;
+            return changed;
                 }
 
-/* 92 */        void pullChildren() {
-/* 93 */            if (this.mContent == null) {
-/* 94 */                this.mContent = findViewById(C0084R.id.action_bar_activity_content);
-/* 95 */                if (this.mContent == null) {
-/* 96 */                    this.mContent = findViewById(R.id.content);
+        void pullChildren() {
+            if (this.mContent == null) {
+                this.mContent = findViewById(C0084R.id.action_bar_activity_content);
+                if (this.mContent == null) {
+                    this.mContent = findViewById(R.id.content);
                         }
-/* 98 */                this.mActionBarTop = findViewById(C0084R.id.top_action_bar);
-/* 99 */                this.mContainerView = (ActionBarContainer) findViewById(C0084R.id.action_bar_container);
-/* 100 */               this.mActionView = (ActionBarView) findViewById(C0084R.id.action_bar);
-/* 101 */               this.mActionBarBottom = findViewById(C0084R.id.split_action_bar);
+                this.mActionBarTop = findViewById(C0084R.id.top_action_bar);
+                this.mContainerView = (ActionBarContainer) findViewById(C0084R.id.action_bar_container);
+               this.mActionView = (ActionBarView) findViewById(C0084R.id.action_bar);
+               this.mActionBarBottom = findViewById(C0084R.id.split_action_bar);
                     }
                 }
             }

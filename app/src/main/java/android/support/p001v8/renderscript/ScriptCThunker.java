@@ -7,133 +7,133 @@
             import android.renderscript.Script;
             import android.renderscript.ScriptC;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 37 */    class ScriptCThunker extends ScriptC {
+            
+    class ScriptCThunker extends ScriptC {
                 private static final String TAG = "ScriptC";
 
-/* 38 */        protected ScriptCThunker(RenderScriptThunker rs, Resources resources, int resourceID) {
-/* 39 */            super(rs.f54mN, resources, resourceID);
+        protected ScriptCThunker(RenderScriptThunker rs, Resources resources, int resourceID) {
+            super(rs.f54mN, resources, resourceID);
                 }
 
-/* 44 */        Script.KernelID thunkCreateKernelID(int slot, int sig, Element ein, Element eout) {
-/* 45 */            Element nein = null;
-/* 46 */            Element neout = null;
-/* 47 */            if (ein != null) {
-/* 48 */                nein = ((ElementThunker) ein).f24mN;
+        Script.KernelID thunkCreateKernelID(int slot, int sig, Element ein, Element eout) {
+            Element nein = null;
+            Element neout = null;
+            if (ein != null) {
+                nein = ((ElementThunker) ein).f24mN;
                     }
-/* 50 */            if (eout != null) {
-/* 51 */                neout = ((ElementThunker) eout).f24mN;
+            if (eout != null) {
+                neout = ((ElementThunker) eout).f24mN;
                     }
-/* 53 */            return createKernelID(slot, sig, nein, neout);
+            return createKernelID(slot, sig, nein, neout);
                 }
 
-/* 57 */        void thunkInvoke(int slot) {
-/* 58 */            invoke(slot);
+        void thunkInvoke(int slot) {
+            invoke(slot);
                 }
 
-/* 61 */        void thunkBindAllocation(Allocation va, int slot) {
-/* 62 */            Allocation nva = null;
-/* 63 */            if (va != null) {
-/* 64 */                nva = ((AllocationThunker) va).f3mN;
+        void thunkBindAllocation(Allocation va, int slot) {
+            Allocation nva = null;
+            if (va != null) {
+                nva = ((AllocationThunker) va).f3mN;
                     }
-/* 66 */            bindAllocation(nva, slot);
+            bindAllocation(nva, slot);
                 }
 
-/* 69 */        void thunkSetTimeZone(String timeZone) {
-/* 70 */            setTimeZone(timeZone);
+        void thunkSetTimeZone(String timeZone) {
+            setTimeZone(timeZone);
                 }
 
-/* 73 */        void thunkInvoke(int slot, FieldPacker v) {
-/* 74 */            FieldPacker nfp = new FieldPacker(v.getData());
-/* 76 */            invoke(slot, nfp);
+        void thunkInvoke(int slot, FieldPacker v) {
+            FieldPacker nfp = new FieldPacker(v.getData());
+            invoke(slot, nfp);
                 }
 
-/* 79 */        void thunkForEach(int slot, Allocation ain, Allocation aout, FieldPacker v) {
-/* 80 */            Allocation nin = null;
-/* 81 */            Allocation nout = null;
-/* 82 */            FieldPacker nfp = null;
-/* 83 */            if (ain != null) {
-/* 84 */                nin = ((AllocationThunker) ain).f3mN;
+        void thunkForEach(int slot, Allocation ain, Allocation aout, FieldPacker v) {
+            Allocation nin = null;
+            Allocation nout = null;
+            FieldPacker nfp = null;
+            if (ain != null) {
+                nin = ((AllocationThunker) ain).f3mN;
                     }
-/* 86 */            if (aout != null) {
-/* 87 */                nout = ((AllocationThunker) aout).f3mN;
+            if (aout != null) {
+                nout = ((AllocationThunker) aout).f3mN;
                     }
-/* 89 */            if (v != null) {
-/* 90 */                nfp = new FieldPacker(v.getData());
+            if (v != null) {
+                nfp = new FieldPacker(v.getData());
                     }
-/* 92 */            forEach(slot, nin, nout, nfp);
+            forEach(slot, nin, nout, nfp);
                 }
 
-/* 96 */        void thunkForEach(int slot, Allocation ain, Allocation aout, FieldPacker v, Script.LaunchOptions sc) {
-/* 97 */            Script.LaunchOptions lo = null;
-/* 98 */            if (sc != null) {
-/* 99 */                lo = new Script.LaunchOptions();
-/* 100 */               if (sc.getXEnd() > 0) {
+        void thunkForEach(int slot, Allocation ain, Allocation aout, FieldPacker v, Script.LaunchOptions sc) {
+            Script.LaunchOptions lo = null;
+            if (sc != null) {
+                lo = new Script.LaunchOptions();
+               if (sc.getXEnd() > 0) {
                             lo.setX(sc.getXStart(), sc.getXEnd());
                         }
-/* 101 */               if (sc.getYEnd() > 0) {
+               if (sc.getYEnd() > 0) {
                             lo.setY(sc.getYStart(), sc.getYEnd());
                         }
-/* 102 */               if (sc.getZEnd() > 0) {
+               if (sc.getZEnd() > 0) {
                             lo.setZ(sc.getZStart(), sc.getZEnd());
                         }
                     }
-/* 105 */           Allocation nin = null;
-/* 106 */           Allocation nout = null;
-/* 107 */           FieldPacker nfp = null;
-/* 108 */           if (ain != null) {
-/* 109 */               nin = ((AllocationThunker) ain).f3mN;
+           Allocation nin = null;
+           Allocation nout = null;
+           FieldPacker nfp = null;
+           if (ain != null) {
+               nin = ((AllocationThunker) ain).f3mN;
                     }
-/* 111 */           if (aout != null) {
-/* 112 */               nout = ((AllocationThunker) aout).f3mN;
+           if (aout != null) {
+               nout = ((AllocationThunker) aout).f3mN;
                     }
-/* 114 */           if (v != null) {
-/* 115 */               nfp = new FieldPacker(v.getData());
+           if (v != null) {
+               nfp = new FieldPacker(v.getData());
                     }
-/* 117 */           forEach(slot, nin, nout, nfp, lo);
+           forEach(slot, nin, nout, nfp, lo);
                 }
 
-/* 120 */       void thunkSetVar(int index, float v) {
-/* 121 */           setVar(index, v);
+       void thunkSetVar(int index, float v) {
+           setVar(index, v);
                 }
 
-/* 123 */       void thunkSetVar(int index, double v) {
-/* 124 */           setVar(index, v);
+       void thunkSetVar(int index, double v) {
+           setVar(index, v);
                 }
 
-/* 126 */       void thunkSetVar(int index, int v) {
-/* 127 */           setVar(index, v);
+       void thunkSetVar(int index, int v) {
+           setVar(index, v);
                 }
 
-/* 129 */       void thunkSetVar(int index, long v) {
-/* 130 */           setVar(index, v);
+       void thunkSetVar(int index, long v) {
+           setVar(index, v);
                 }
 
-/* 132 */       void thunkSetVar(int index, boolean v) {
-/* 133 */           setVar(index, v);
+       void thunkSetVar(int index, boolean v) {
+           setVar(index, v);
                 }
 
-/* 136 */       void thunkSetVar(int index, BaseObj o) {
-/* 137 */           if (o == null) {
-/* 138 */               setVar(index, 0);
+       void thunkSetVar(int index, BaseObj o) {
+           if (o == null) {
+               setVar(index, 0);
                     } else {
-/* 141 */               setVar(index, o.getNObj());
+               setVar(index, o.getNObj());
                     }
                 }
 
-/* 143 */       void thunkSetVar(int index, FieldPacker v) {
-/* 144 */           FieldPacker nfp = new FieldPacker(v.getData());
-/* 146 */           setVar(index, nfp);
+       void thunkSetVar(int index, FieldPacker v) {
+           FieldPacker nfp = new FieldPacker(v.getData());
+           setVar(index, nfp);
                 }
 
-/* 149 */       void thunkSetVar(int index, FieldPacker v, Element e, int[] dims) {
-/* 150 */           FieldPacker nfp = new FieldPacker(v.getData());
-/* 152 */           ElementThunker et = (ElementThunker) e;
-/* 153 */           setVar(index, nfp, et.f24mN, dims);
+       void thunkSetVar(int index, FieldPacker v, Element e, int[] dims) {
+           FieldPacker nfp = new FieldPacker(v.getData());
+           ElementThunker et = (ElementThunker) e;
+           setVar(index, nfp, et.f24mN, dims);
                 }
 
-/* 156 */       Script.FieldID thunkCreateFieldID(int slot, Element e) {
-/* 157 */           ElementThunker et = (ElementThunker) e;
-/* 158 */           return createFieldID(slot, et.getNObj());
+       Script.FieldID thunkCreateFieldID(int slot, Element e) {
+           ElementThunker et = (ElementThunker) e;
+           return createFieldID(slot, et.getNObj());
                 }
             }

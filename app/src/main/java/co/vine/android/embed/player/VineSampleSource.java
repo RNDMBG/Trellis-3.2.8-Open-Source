@@ -15,8 +15,8 @@
             import java.util.Map;
             import org.apache.commons.io.IOUtils;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 32 */    public class VineSampleSource {
+            
+    public class VineSampleSource {
                 private static final int DEFAULT_FILE_SIZE = 5242880;
                 private static final int MINIUM_FRAME_SIZE = 2073600;
                 private static final String TAG = "VineSampleSource";
@@ -28,113 +28,113 @@
                 private byte[] mVideoData;
                 private MediaCodec.BufferInfo[] mVideoFrames;
 
-/* 33 */        public static class EncodedAudioSamples {
+        public static class EncodedAudioSamples {
                     public final byte[] data;
                     public final long estimatedDuration;
                     public final AudioFrame[] frames;
                     public final AudioSampleTrack track;
 
-/* 34 */            public EncodedAudioSamples(byte[] data, AudioSampleTrack track, AudioFrame[] frames, long estimatedDuration) {
-/* 36 */                this.data = data;
-/* 37 */                this.track = track;
-/* 38 */                this.frames = frames;
-/* 39 */                this.estimatedDuration = estimatedDuration;
+            public EncodedAudioSamples(byte[] data, AudioSampleTrack track, AudioFrame[] frames, long estimatedDuration) {
+                this.data = data;
+                this.track = track;
+                this.frames = frames;
+                this.estimatedDuration = estimatedDuration;
                     }
                 }
 
-/* 45 */        public static class EncodedVideoSamples {
+        public static class EncodedVideoSamples {
                     public final byte[] data;
                     public final MediaCodec.BufferInfo[] frames;
 
-/* 46 */            public EncodedVideoSamples(byte[] array, MediaCodec.BufferInfo[] videoFrames) {
-/* 48 */                this.data = array;
-/* 49 */                this.frames = videoFrames;
+            public EncodedVideoSamples(byte[] array, MediaCodec.BufferInfo[] videoFrames) {
+                this.data = array;
+                this.frames = videoFrames;
                     }
                 }
 
-/* 58 */        public VineSampleSource(Uri uri) {
-/* 60 */            this.mMediaExtractor = new VineMediaExtractor(uri);
+        public VineSampleSource(Uri uri) {
+            this.mMediaExtractor = new VineMediaExtractor(uri);
                 }
 
-/* 63 */        public void prepare(Context context) throws IOException {
-/* 64 */            long start = System.currentTimeMillis();
-/* 65 */            this.mMediaExtractor.open(context);
-/* 66 */            Log.i(TAG, this.mMediaExtractor.printTrackInfo());
-/* 67 */            this.mHasAudioTrack = this.mMediaExtractor.hasAudioTrack();
-/* 68 */            if (this.mHasAudioTrack) {
-/* 69 */                prepareAudio(this.mMediaExtractor);
+        public void prepare(Context context) throws IOException {
+            long start = System.currentTimeMillis();
+            this.mMediaExtractor.open(context);
+            Log.i(TAG, this.mMediaExtractor.printTrackInfo());
+            this.mHasAudioTrack = this.mMediaExtractor.hasAudioTrack();
+            if (this.mHasAudioTrack) {
+                prepareAudio(this.mMediaExtractor);
                     }
-/* 71 */            if (this.mMediaExtractor.hasVideoTrack()) {
-/* 72 */                prepareVideo(this.mMediaExtractor);
+            if (this.mMediaExtractor.hasVideoTrack()) {
+                prepareVideo(this.mMediaExtractor);
                     }
-/* 74 */            Log.i(TAG, "prepare took " + (System.currentTimeMillis() - start));
+            Log.i(TAG, "prepare took " + (System.currentTimeMillis() - start));
                 }
 
-/* 77 */        public void release() {
-/* 78 */            AudioPreparingThread thread = this.mAudioPrepareThread;
-/* 79 */            if (thread != null) {
-/* 80 */                thread.cancel();
+        public void release() {
+            AudioPreparingThread thread = this.mAudioPrepareThread;
+            if (thread != null) {
+                thread.cancel();
                         try {
-/* 82 */                    thread.join();
+                    thread.join();
                         } catch (InterruptedException e) {
                         }
-/* 86 */                this.mError = thread.getError();
-/* 87 */                this.mAudioPrepareThread = null;
+                this.mError = thread.getError();
+                this.mAudioPrepareThread = null;
                     }
-/* 89 */            this.mMediaExtractor.release();
-/* 90 */            this.mAudioTrack = null;
-/* 91 */            this.mVideoData = null;
-/* 92 */            this.mVideoFrames = null;
+            this.mMediaExtractor.release();
+            this.mAudioTrack = null;
+            this.mVideoData = null;
+            this.mVideoFrames = null;
                 }
 
-/* 95 */        public boolean hasAudioTrack() {
-/* 96 */            return this.mHasAudioTrack;
+        public boolean hasAudioTrack() {
+            return this.mHasAudioTrack;
                 }
 
-/* 99 */        private void prepareAudio(VineMediaExtractor extractor) throws IOException {
-/* 100 */           this.mAudioTrack = extractor.getAudioSamples().track;
-/* 101 */           this.mAudioPrepareThread = new AudioPreparingThread(extractor);
-/* 102 */           this.mAudioPrepareThread.start();
+        private void prepareAudio(VineMediaExtractor extractor) throws IOException {
+           this.mAudioTrack = extractor.getAudioSamples().track;
+           this.mAudioPrepareThread = new AudioPreparingThread(extractor);
+           this.mAudioPrepareThread.start();
                 }
 
-/* 105 */       public AudioSampleTrack getAudioTrack() {
-/* 106 */           return this.mAudioTrack;
+       public AudioSampleTrack getAudioTrack() {
+           return this.mAudioTrack;
                 }
 
-/* 109 */       public ByteBuffer getPreparedAudioSamples() {
-/* 110 */           if (this.mAudioPrepareThread != null) {
+       public ByteBuffer getPreparedAudioSamples() {
+           if (this.mAudioPrepareThread != null) {
                         return this.mAudioPrepareThread.getPreparedSamples();
                     }
                     return null;
                 }
 
-/* 113 */       public ByteBuffer getUnpreparedAudioSamples() {
-/* 114 */           if (this.mAudioPrepareThread != null) {
+       public ByteBuffer getUnpreparedAudioSamples() {
+           if (this.mAudioPrepareThread != null) {
                         return this.mAudioPrepareThread.getUnpreparedSamples();
                     }
                     return null;
                 }
 
-/* 117 */       private void prepareVideo(VineMediaExtractor extractor) {
-/* 118 */           if (VineMediaExtractor.access$000(extractor) != null) {
-/* 119 */               this.mVideoData = VineMediaExtractor.access$000(extractor).data;
-/* 120 */               this.mVideoFrames = VineMediaExtractor.access$000(extractor).frames;
+       private void prepareVideo(VineMediaExtractor extractor) {
+           if (VineMediaExtractor.access$000(extractor) != null) {
+               this.mVideoData = VineMediaExtractor.access$000(extractor).data;
+               this.mVideoFrames = VineMediaExtractor.access$000(extractor).frames;
                     }
                 }
 
-/* 124 */       public MediaFormat getVideoTrackFormat() {
-/* 125 */           return this.mMediaExtractor.getVideoTrackFormat();
+       public MediaFormat getVideoTrackFormat() {
+           return this.mMediaExtractor.getVideoTrackFormat();
                 }
 
-/* 128 */       public byte[] getVideoFrames() {
-/* 129 */           return this.mVideoData;
+       public byte[] getVideoFrames() {
+           return this.mVideoData;
                 }
 
-/* 132 */       public MediaCodec.BufferInfo[] getVideoFrameInfo() {
-/* 133 */           return this.mVideoFrames;
+       public MediaCodec.BufferInfo[] getVideoFrameInfo() {
+           return this.mVideoFrames;
                 }
 
-/* 134 */       public static class VineMediaExtractor {
+       public static class VineMediaExtractor {
                     private EncodedAudioSamples mAudioSamples;
                     private AudioSampleTrack mAudioTrack;
                     private final int mEstimatedFileSize;
@@ -143,21 +143,21 @@
                     private EncodedVideoSamples mVideoSamples;
                     private int mVideoTrackIndex;
 
-/* 135 */           static /* synthetic */ EncodedVideoSamples access$000(VineMediaExtractor x0) {
-/* 136 */               return x0.mVideoSamples;
+           static  EncodedVideoSamples access$000(VineMediaExtractor x0) {
+               return x0.mVideoSamples;
                     }
 
-/* 145 */           public VineMediaExtractor(Uri uri) {
-/* 147 */               this.mUri = uri;
-/* 148 */               String scheme = uri.getScheme();
-/* 149 */               if (CommonUtil.FILE.equals(scheme)) {
-/* 150 */                   this.mEstimatedFileSize = (int) (new File(uri.getPath()).length() * 1.5d);
+           public VineMediaExtractor(Uri uri) {
+               this.mUri = uri;
+               String scheme = uri.getScheme();
+               if (CommonUtil.FILE.equals(scheme)) {
+                   this.mEstimatedFileSize = (int) (new File(uri.getPath()).length() * 1.5d);
                         } else {
-/* 152 */                   this.mEstimatedFileSize = VineSampleSource.DEFAULT_FILE_SIZE;
+                   this.mEstimatedFileSize = VineSampleSource.DEFAULT_FILE_SIZE;
                         }
                     }
 
-/* 156 */           public synchronized void release() {
+           public synchronized void release() {
                         try {
                             this.mAudioSamples = null;
                         } catch (Throwable th) {
@@ -165,101 +165,101 @@
                         }
                     }
 
-/* 160 */           public synchronized void open(Context context) throws IOException {
+           public synchronized void open(Context context) throws IOException {
                         try {
                             long startTime = System.currentTimeMillis();
-/* 162 */                   MediaExtractor extractor = new MediaExtractor();
+                   MediaExtractor extractor = new MediaExtractor();
                             try {
                                 try {
-/* 164 */                           extractor.setDataSource(context, this.mUri, (Map<String, String>) null);
-/* 165 */                           int trackCount = extractor.getTrackCount();
-/* 166 */                           this.mAudioTrack = null;
-/* 167 */                           int videoTrackIndex = -1;
+                           extractor.setDataSource(context, this.mUri, (Map<String, String>) null);
+                           int trackCount = extractor.getTrackCount();
+                           this.mAudioTrack = null;
+                           int videoTrackIndex = -1;
                                     for (int i = 0; i < trackCount; i++) {
-/* 169 */                               extractor.selectTrack(i);
-/* 170 */                               MediaFormat format = extractor.getTrackFormat(i);
-/* 171 */                               String mime = format.getString("mime");
-/* 172 */                               if (this.mAudioTrack == null && isAudio(mime)) {
-/* 173 */                                   int sampleRate = -1;
-/* 174 */                                   if (format.containsKey("sample-rate")) {
-/* 175 */                                       sampleRate = format.getInteger("sample-rate");
+                               extractor.selectTrack(i);
+                               MediaFormat format = extractor.getTrackFormat(i);
+                               String mime = format.getString("mime");
+                               if (this.mAudioTrack == null && isAudio(mime)) {
+                                   int sampleRate = -1;
+                                   if (format.containsKey("sample-rate")) {
+                                       sampleRate = format.getInteger("sample-rate");
                                             }
-/* 177 */                                   this.mAudioTrack = new AudioSampleTrack(mime, i, sampleRate, format);
+                                   this.mAudioTrack = new AudioSampleTrack(mime, i, sampleRate, format);
                                         } else if (isVideo(mime)) {
-/* 179 */                                   videoTrackIndex = i;
-/* 180 */                                   this.mVideoFormat = extractor.getTrackFormat(videoTrackIndex);
+                                   videoTrackIndex = i;
+                                   this.mVideoFormat = extractor.getTrackFormat(videoTrackIndex);
                                         }
-/* 182 */                               if (videoTrackIndex != -1 && this.mAudioTrack != null) {
+                               if (videoTrackIndex != -1 && this.mAudioTrack != null) {
                                             break;
                                         }
                                     }
-/* 186 */                           this.mVideoTrackIndex = videoTrackIndex;
-/* 188 */                           byte[] audioData = new byte[VineSampleSource.DEFAULT_FILE_SIZE];
-/* 189 */                           ArrayList<AudioFrame> audioFrames = new ArrayList<>();
-/* 190 */                           ByteBuffer audioBuffer = ByteBuffer.wrap(audioData);
-/* 191 */                           ByteBuffer videoBuffer = ByteBuffer.allocate((int) (((double) this.mEstimatedFileSize) * 1.5d));
-/* 192 */                           long lastTimestamp = 0;
-/* 193 */                           ArrayList<MediaCodec.BufferInfo> frames = new ArrayList<>();
-/* 194 */                           int offsetAudio = 0;
-/* 195 */                           int offsetVideo = 0;
-/* 197 */                           for (int trackIndex = extractor.getSampleTrackIndex(); trackIndex >= 0; trackIndex = extractor.getSampleTrackIndex()) {
-/* 198 */                               MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
-/* 199 */                               if (trackIndex == this.mVideoTrackIndex) {
-/* 200 */                                   bufferInfo.offset = offsetVideo;
-/* 201 */                                   bufferInfo.size = extractor.readSampleData(videoBuffer, offsetVideo);
-/* 202 */                                   if (bufferInfo.size < 0) {
-/* 203 */                                       bufferInfo.size = 0;
-/* 204 */                                       Log.i(VineSampleSource.TAG, "EOS reached? ");
+                           this.mVideoTrackIndex = videoTrackIndex;
+                           byte[] audioData = new byte[VineSampleSource.DEFAULT_FILE_SIZE];
+                           ArrayList<AudioFrame> audioFrames = new ArrayList<>();
+                           ByteBuffer audioBuffer = ByteBuffer.wrap(audioData);
+                           ByteBuffer videoBuffer = ByteBuffer.allocate((int) (((double) this.mEstimatedFileSize) * 1.5d));
+                           long lastTimestamp = 0;
+                           ArrayList<MediaCodec.BufferInfo> frames = new ArrayList<>();
+                           int offsetAudio = 0;
+                           int offsetVideo = 0;
+                           for (int trackIndex = extractor.getSampleTrackIndex(); trackIndex >= 0; trackIndex = extractor.getSampleTrackIndex()) {
+                               MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
+                               if (trackIndex == this.mVideoTrackIndex) {
+                                   bufferInfo.offset = offsetVideo;
+                                   bufferInfo.size = extractor.readSampleData(videoBuffer, offsetVideo);
+                                   if (bufferInfo.size < 0) {
+                                       bufferInfo.size = 0;
+                                       Log.i(VineSampleSource.TAG, "EOS reached? ");
                                             } else {
-/* 206 */                                       offsetVideo += bufferInfo.size;
-/* 207 */                                       if (videoBuffer.capacity() - offsetVideo < VineSampleSource.MINIUM_FRAME_SIZE) {
-/* 208 */                                           Log.w(VineSampleSource.TAG, "Processing large file?");
-/* 209 */                                           ByteBuffer newBuffer = ByteBuffer.allocate(videoBuffer.capacity() * 2);
-/* 210 */                                           videoBuffer.position(0);
-/* 211 */                                           newBuffer.put(videoBuffer);
-/* 212 */                                           videoBuffer = newBuffer;
+                                       offsetVideo += bufferInfo.size;
+                                       if (videoBuffer.capacity() - offsetVideo < VineSampleSource.MINIUM_FRAME_SIZE) {
+                                           Log.w(VineSampleSource.TAG, "Processing large file?");
+                                           ByteBuffer newBuffer = ByteBuffer.allocate(videoBuffer.capacity() * 2);
+                                           videoBuffer.position(0);
+                                           newBuffer.put(videoBuffer);
+                                           videoBuffer = newBuffer;
                                                 }
-/* 214 */                                       bufferInfo.presentationTimeUs = extractor.getSampleTime();
-/* 215 */                                       bufferInfo.flags = extractor.getSampleFlags();
-/* 216 */                                       frames.add(bufferInfo);
+                                       bufferInfo.presentationTimeUs = extractor.getSampleTime();
+                                       bufferInfo.flags = extractor.getSampleFlags();
+                                       frames.add(bufferInfo);
                                                 if (bufferInfo.presentationTimeUs > lastTimestamp) {
-/* 218 */                                           lastTimestamp = bufferInfo.presentationTimeUs;
+                                           lastTimestamp = bufferInfo.presentationTimeUs;
                                                 }
                                             }
                                         } else if (this.mAudioTrack != null && trackIndex == this.mAudioTrack.index) {
-/* 222 */                                   bufferInfo.offset = offsetAudio;
-/* 223 */                                   bufferInfo.size = extractor.readSampleData(audioBuffer, offsetAudio);
-/* 224 */                                   if (bufferInfo.size < 0) {
-/* 225 */                                       bufferInfo.size = 0;
-/* 226 */                                       Log.i(VineSampleSource.TAG, "EOS reached? ");
+                                   bufferInfo.offset = offsetAudio;
+                                   bufferInfo.size = extractor.readSampleData(audioBuffer, offsetAudio);
+                                   if (bufferInfo.size < 0) {
+                                       bufferInfo.size = 0;
+                                       Log.i(VineSampleSource.TAG, "EOS reached? ");
                                             } else {
-/* 228 */                                       offsetAudio += bufferInfo.size;
-/* 229 */                                       if (audioBuffer.capacity() - offsetAudio < VineSampleSource.MINIUM_FRAME_SIZE) {
-/* 230 */                                           Log.w(VineSampleSource.TAG, "Processing large file?");
-/* 231 */                                           audioData = new byte[audioBuffer.capacity() * 2];
-/* 232 */                                           ByteBuffer newBuffer2 = ByteBuffer.wrap(audioData);
-/* 233 */                                           audioBuffer.position(0);
-/* 234 */                                           newBuffer2.put(audioBuffer);
-/* 235 */                                           audioBuffer = newBuffer2;
+                                       offsetAudio += bufferInfo.size;
+                                       if (audioBuffer.capacity() - offsetAudio < VineSampleSource.MINIUM_FRAME_SIZE) {
+                                           Log.w(VineSampleSource.TAG, "Processing large file?");
+                                           audioData = new byte[audioBuffer.capacity() * 2];
+                                           ByteBuffer newBuffer2 = ByteBuffer.wrap(audioData);
+                                           audioBuffer.position(0);
+                                           newBuffer2.put(audioBuffer);
+                                           audioBuffer = newBuffer2;
                                                 }
-/* 237 */                                       bufferInfo.presentationTimeUs = extractor.getSampleTime();
-/* 238 */                                       bufferInfo.flags = extractor.getSampleFlags();
-/* 239 */                                       audioFrames.add(new AudioFrame(this.mAudioTrack, (bufferInfo.flags & 1) > 0, trackIndex, bufferInfo));
+                                       bufferInfo.presentationTimeUs = extractor.getSampleTime();
+                                       bufferInfo.flags = extractor.getSampleFlags();
+                                       audioFrames.add(new AudioFrame(this.mAudioTrack, (bufferInfo.flags & 1) > 0, trackIndex, bufferInfo));
                                                 if (bufferInfo.presentationTimeUs > lastTimestamp) {
-/* 242 */                                           lastTimestamp = bufferInfo.presentationTimeUs;
+                                           lastTimestamp = bufferInfo.presentationTimeUs;
                                                 }
                                             }
                                         }
-/* 246 */                               extractor.advance();
+                               extractor.advance();
                                     }
-/* 249 */                           MediaCodec.BufferInfo[] videoFrames = new MediaCodec.BufferInfo[frames.size()];
-/* 250 */                           frames.toArray(videoFrames);
-/* 252 */                           this.mVideoSamples = new EncodedVideoSamples(videoBuffer.array(), videoFrames);
-/* 254 */                           Log.i(VineSampleSource.TAG, "Reading samples took " + (System.currentTimeMillis() - startTime) + "ms");
-/* 255 */                           this.mAudioSamples = new EncodedAudioSamples(audioData, this.mAudioTrack, (AudioFrame[]) audioFrames.toArray(new AudioFrame[audioFrames.size()]), 1000 + lastTimestamp);
-/* 260 */                           extractor.release();
+                           MediaCodec.BufferInfo[] videoFrames = new MediaCodec.BufferInfo[frames.size()];
+                           frames.toArray(videoFrames);
+                           this.mVideoSamples = new EncodedVideoSamples(videoBuffer.array(), videoFrames);
+                           Log.i(VineSampleSource.TAG, "Reading samples took " + (System.currentTimeMillis() - startTime) + "ms");
+                           this.mAudioSamples = new EncodedAudioSamples(audioData, this.mAudioTrack, (AudioFrame[]) audioFrames.toArray(new AudioFrame[audioFrames.size()]), 1000 + lastTimestamp);
+                           extractor.release();
                                 } catch (Exception e) {
-/* 258 */                           throw new IOException(e);
+                           throw new IOException(e);
                                 }
                             } catch (Throwable th) {
                                 extractor.release();
@@ -270,57 +270,57 @@
                         }
                     }
 
-/* 264 */           public EncodedAudioSamples getAudioSamples() {
-/* 265 */               return this.mAudioSamples;
+           public EncodedAudioSamples getAudioSamples() {
+               return this.mAudioSamples;
                     }
 
-/* 268 */           private boolean isAudio(String mimeType) {
-/* 269 */               int indexOfSlash = mimeType.indexOf(47);
-/* 270 */               if (indexOfSlash == -1) {
-/* 271 */                   throw new IllegalArgumentException("Invalid mime type: " + mimeType);
+           private boolean isAudio(String mimeType) {
+               int indexOfSlash = mimeType.indexOf(47);
+               if (indexOfSlash == -1) {
+                   throw new IllegalArgumentException("Invalid mime type: " + mimeType);
                         }
-/* 273 */               return MimeTypes.BASE_TYPE_AUDIO.equals(mimeType.substring(0, indexOfSlash));
+               return MimeTypes.BASE_TYPE_AUDIO.equals(mimeType.substring(0, indexOfSlash));
                     }
 
-/* 276 */           private boolean isVideo(String mimeType) {
-/* 277 */               int indexOfSlash = mimeType.indexOf(47);
-/* 278 */               if (indexOfSlash == -1) {
-/* 279 */                   throw new IllegalArgumentException("Invalid mime type: " + mimeType);
+           private boolean isVideo(String mimeType) {
+               int indexOfSlash = mimeType.indexOf(47);
+               if (indexOfSlash == -1) {
+                   throw new IllegalArgumentException("Invalid mime type: " + mimeType);
                         }
-/* 281 */               return MimeTypes.BASE_TYPE_VIDEO.equals(mimeType.substring(0, indexOfSlash));
+               return MimeTypes.BASE_TYPE_VIDEO.equals(mimeType.substring(0, indexOfSlash));
                     }
 
-/* 284 */           public boolean hasAudioTrack() {
+           public boolean hasAudioTrack() {
                         return this.mAudioTrack != null;
                     }
 
-/* 288 */           public boolean hasVideoTrack() {
+           public boolean hasVideoTrack() {
                         return this.mVideoTrackIndex >= 0;
                     }
 
-/* 292 */           public MediaFormat getVideoTrackFormat() {
-/* 293 */               return this.mVideoFormat;
+           public MediaFormat getVideoTrackFormat() {
+               return this.mVideoFormat;
                     }
 
-/* 296 */           public String printTrackInfo() {
-/* 297 */               StringBuilder trackInfo = new StringBuilder();
-/* 298 */               if (this.mAudioTrack != null) {
-/* 299 */                   trackInfo.append("\nTrack Index " + this.mAudioTrack.index);
-/* 300 */                   trackInfo.append("\nAudio " + this.mAudioTrack.mime);
-/* 301 */                   trackInfo.append("\nChannel Count: " + this.mAudioTrack.channelCount);
-/* 302 */                   trackInfo.append(IOUtils.LINE_SEPARATOR_UNIX);
+           public String printTrackInfo() {
+               StringBuilder trackInfo = new StringBuilder();
+               if (this.mAudioTrack != null) {
+                   trackInfo.append("\nTrack Index " + this.mAudioTrack.index);
+                   trackInfo.append("\nAudio " + this.mAudioTrack.mime);
+                   trackInfo.append("\nChannel Count: " + this.mAudioTrack.channelCount);
+                   trackInfo.append(IOUtils.LINE_SEPARATOR_UNIX);
                         }
-/* 304 */               if (this.mVideoTrackIndex >= 0) {
-/* 305 */                   trackInfo.append("\nTrack Index " + this.mVideoTrackIndex);
-/* 306 */                   trackInfo.append("\nVideo " + this.mVideoFormat.getString("mime"));
-/* 307 */                   trackInfo.append("\nSize: " + this.mVideoFormat.getInteger("width") + " x " + this.mVideoFormat.getInteger("height"));
-/* 309 */                   trackInfo.append("\n\n");
+               if (this.mVideoTrackIndex >= 0) {
+                   trackInfo.append("\nTrack Index " + this.mVideoTrackIndex);
+                   trackInfo.append("\nVideo " + this.mVideoFormat.getString("mime"));
+                   trackInfo.append("\nSize: " + this.mVideoFormat.getInteger("width") + " x " + this.mVideoFormat.getInteger("height"));
+                   trackInfo.append("\n\n");
                         }
-/* 311 */               return trackInfo.toString();
+               return trackInfo.toString();
                     }
                 }
 
-/* 315 */       public Exception getError() {
-/* 316 */           return this.mError;
+       public Exception getError() {
+           return this.mError;
                 }
             }

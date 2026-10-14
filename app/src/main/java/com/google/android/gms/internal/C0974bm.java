@@ -7,14 +7,14 @@
             import com.google.android.gms.dynamic.AbstractC0907e;
             import com.google.android.gms.dynamic.BinderC0905c;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bm */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0974bm extends AbstractC0907e<InterfaceC0976bo> {
 
-                /* JADX INFO: renamed from: gl */
+                
                 private static final C0974bm f1467gl = new C0974bm();
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bm$a */
+                
                 private static final class a extends Exception {
                     public a(String str) {
                         super(str);
@@ -25,7 +25,7 @@
                     super("com.google.android.gms.ads.AdOverlayCreatorImpl");
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static InterfaceC0975bn m1338a(Activity activity) {
                     InterfaceC0975bn interfaceC0975bnM1340c;
                     try {
@@ -42,7 +42,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static boolean m1339b(Activity activity) throws a {
                     Intent intent = activity.getIntent();
                     if (intent.hasExtra("com.google.android.gms.ads.internal.overlay.useClientJar")) {
@@ -51,7 +51,7 @@
                     throw new a("Ad overlay requires the useClientJar flag in intent extras.");
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 private InterfaceC0975bn m1340c(Activity activity) {
                     try {
                         return InterfaceC0975bn.a.m1342m(m1168t(activity).mo1343a(BinderC0905c.m1166g(activity)));
@@ -64,13 +64,13 @@
                     }
                 }
 
-                @Override // com.google.android.gms.dynamic.AbstractC0907e
-                /* JADX INFO: renamed from: d */
-                protected /* synthetic */ InterfaceC0976bo mo1167d(IBinder iBinder) {
+                @Override 
+                
+                protected  InterfaceC0976bo mo1167d(IBinder iBinder) {
                     return m1341l(iBinder);
                 }
 
-                /* JADX INFO: renamed from: l */
+                
                 protected InterfaceC0976bo m1341l(IBinder iBinder) {
                     return InterfaceC0976bo.a.m1344n(iBinder);
                 }

@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.h */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1214h implements Parcelable.Creator<MaskedWalletRequest> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2363a(MaskedWalletRequest maskedWalletRequest, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, maskedWalletRequest.getVersionCode());
@@ -25,7 +25,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: U */
+                
                 public MaskedWalletRequest m2364U(Parcel parcel) {
                     Cart cart = null;
                     boolean zM1102c = false;
@@ -86,18 +86,18 @@
                     return new MaskedWalletRequest(iM1105f, strM1113l4, zM1102c5, zM1102c4, zM1102c3, strM1113l3, strM1113l2, strM1113l, cart, zM1102c2, zM1102c);
                 }
 
-                /* JADX INFO: renamed from: az */
+                
                 public MaskedWalletRequest[] m2365az(int i) {
                     return new MaskedWalletRequest[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ MaskedWalletRequest createFromParcel(Parcel x0) {
+                @Override 
+                public  MaskedWalletRequest createFromParcel(Parcel x0) {
                     return m2364U(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ MaskedWalletRequest[] newArray(int x0) {
+                @Override 
+                public  MaskedWalletRequest[] newArray(int x0) {
                     return m2365az(x0);
                 }
             }

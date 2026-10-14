@@ -5,18 +5,18 @@
             import com.google.android.gms.internal.C1126x;
             import com.googlecode.javacv.cpp.avcodec;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class AdSize {
                 public static final int AUTO_HEIGHT = -2;
                 public static final int FULL_WIDTH = -1;
 
-                /* JADX INFO: renamed from: dP */
+                
                 private final int f892dP;
 
-                /* JADX INFO: renamed from: dQ */
+                
                 private final int f893dQ;
 
-                /* JADX INFO: renamed from: dR */
+                
                 private final String f894dR;
                 public static final AdSize BANNER = new AdSize(320, 50, "320x50_mb");
                 public static final AdSize FULL_BANNER = new AdSize(468, 60, "468x60_as");

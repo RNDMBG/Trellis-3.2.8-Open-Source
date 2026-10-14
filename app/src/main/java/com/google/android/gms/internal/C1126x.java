@@ -6,15 +6,15 @@
             import com.google.android.gms.ads.AdSize;
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.x */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C1126x implements SafeParcelable {
                 public static final C1127y CREATOR = new C1127y();
 
-                /* JADX INFO: renamed from: ew */
+                
                 public final String f2163ew;
 
-                /* JADX INFO: renamed from: ex */
+                
                 public final boolean f2164ex;
                 public final int height;
                 public final int heightPixels;
@@ -62,17 +62,17 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static int m2178a(DisplayMetrics displayMetrics) {
                     return displayMetrics.widthPixels;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 public static int m2179b(DisplayMetrics displayMetrics) {
                     return (int) (m2180c(displayMetrics) * displayMetrics.density);
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 private static int m2180c(DisplayMetrics displayMetrics) {
                     int i = (int) (displayMetrics.heightPixels / displayMetrics.density);
                     if (i <= 400) {
@@ -81,12 +81,12 @@
                     return i <= 720 ? 50 : 90;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C1127y.m2181a(this, out, flags);
                 }

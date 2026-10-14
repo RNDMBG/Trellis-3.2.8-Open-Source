@@ -2,8 +2,8 @@
 
             import com.google.android.exoplayer.util.Assertions;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 93 */    public abstract class TrackRenderer implements ExoPlayer.ExoPlayerComponent {
+            
+    public abstract class TrackRenderer implements ExoPlayer.ExoPlayerComponent {
                 public static final long END_OF_TRACK_US = -3;
                 public static final long MATCH_LONGEST_US = -2;
                 protected static final int STATE_ENABLED = 2;
@@ -31,67 +31,67 @@
 
                 protected abstract void seekTo(long j) throws ExoPlaybackException;
 
-/* 94 */        protected boolean isTimeSource() {
-/* 95 */            return false;
+        protected boolean isTimeSource() {
+            return false;
                 }
 
-/* 103 */       protected final int getState() {
-/* 104 */           return this.state;
+       protected final int getState() {
+           return this.state;
                 }
 
-/* 113 */       final int prepare() throws ExoPlaybackException {
-/* 114 */           Assertions.checkState(this.state == 0);
-/* 115 */           this.state = doPrepare();
-/* 116 */           Assertions.checkState(this.state == 0 || this.state == 1 || this.state == -1);
-/* 119 */           return this.state;
+       final int prepare() throws ExoPlaybackException {
+           Assertions.checkState(this.state == 0);
+           this.state = doPrepare();
+           Assertions.checkState(this.state == 0 || this.state == 1 || this.state == -1);
+           return this.state;
                 }
 
-/* 144 */       final void enable(long timeUs, boolean joining) throws ExoPlaybackException {
-/* 145 */           Assertions.checkState(this.state == 1);
-/* 146 */           this.state = 2;
-/* 147 */           onEnabled(timeUs, joining);
+       final void enable(long timeUs, boolean joining) throws ExoPlaybackException {
+           Assertions.checkState(this.state == 1);
+           this.state = 2;
+           onEnabled(timeUs, joining);
                 }
 
-/* 162 */       protected void onEnabled(long timeUs, boolean joining) throws ExoPlaybackException {
+       protected void onEnabled(long timeUs, boolean joining) throws ExoPlaybackException {
                 }
 
-/* 169 */       final void start() throws ExoPlaybackException {
-/* 170 */           Assertions.checkState(this.state == 2);
-/* 171 */           this.state = 3;
-/* 172 */           onStarted();
+       final void start() throws ExoPlaybackException {
+           Assertions.checkState(this.state == 2);
+           this.state = 3;
+           onStarted();
                 }
 
-/* 183 */       protected void onStarted() throws ExoPlaybackException {
+       protected void onStarted() throws ExoPlaybackException {
                 }
 
-/* 189 */       final void stop() throws ExoPlaybackException {
-/* 190 */           Assertions.checkState(this.state == 3);
-/* 191 */           this.state = 2;
-/* 192 */           onStopped();
+       final void stop() throws ExoPlaybackException {
+           Assertions.checkState(this.state == 3);
+           this.state = 2;
+           onStopped();
                 }
 
-/* 203 */       protected void onStopped() throws ExoPlaybackException {
+       protected void onStopped() throws ExoPlaybackException {
                 }
 
-/* 209 */       final void disable() throws ExoPlaybackException {
-/* 210 */           Assertions.checkState(this.state == 2);
-/* 211 */           this.state = 1;
-/* 212 */           onDisabled();
+       final void disable() throws ExoPlaybackException {
+           Assertions.checkState(this.state == 2);
+           this.state = 1;
+           onDisabled();
                 }
 
-/* 223 */       protected void onDisabled() throws ExoPlaybackException {
+       protected void onDisabled() throws ExoPlaybackException {
                 }
 
-/* 229 */       final void release() throws ExoPlaybackException {
-/* 230 */           Assertions.checkState((this.state == 2 || this.state == 3 || this.state == -2) ? false : true);
-/* 233 */           this.state = -2;
-/* 234 */           onReleased();
+       final void release() throws ExoPlaybackException {
+           Assertions.checkState((this.state == 2 || this.state == 3 || this.state == -2) ? false : true);
+           this.state = -2;
+           onReleased();
                 }
 
-/* 245 */       protected void onReleased() throws ExoPlaybackException {
+       protected void onReleased() throws ExoPlaybackException {
                 }
 
-                @Override // com.google.android.exoplayer.ExoPlayer.ExoPlayerComponent
-/* 344 */       public void handleMessage(int what, Object object) throws ExoPlaybackException {
+                @Override 
+       public void handleMessage(int what, Object object) throws ExoPlaybackException {
                 }
             }

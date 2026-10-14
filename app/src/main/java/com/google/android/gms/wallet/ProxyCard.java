@@ -4,23 +4,23 @@
             import android.os.Parcelable;
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class ProxyCard implements SafeParcelable {
                 public static final Parcelable.Creator<ProxyCard> CREATOR = new C1217k();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2522iM;
 
-                /* JADX INFO: renamed from: um */
+                
                 String f2523um;
 
-                /* JADX INFO: renamed from: un */
+                
                 String f2524un;
 
-                /* JADX INFO: renamed from: uo */
+                
                 int f2525uo;
 
-                /* JADX INFO: renamed from: up */
+                
                 int f2526up;
 
                 ProxyCard(int versionCode, String pan, String cvn, int expirationMonth, int expirationYear) {
@@ -39,7 +39,7 @@
                     this.f2526up = expirationYear;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -64,7 +64,7 @@
                     return this.f2522iM;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C1217k.m2372a(this, out, flags);
                 }

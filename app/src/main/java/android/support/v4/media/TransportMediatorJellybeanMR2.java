@@ -12,8 +12,8 @@
             import android.view.View;
             import android.view.ViewTreeObserver;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 39 */    class TransportMediatorJellybeanMR2 implements RemoteControlClient.OnGetPlaybackPositionListener, RemoteControlClient.OnPlaybackPositionUpdateListener {
+            
+    class TransportMediatorJellybeanMR2 implements RemoteControlClient.OnGetPlaybackPositionListener, RemoteControlClient.OnPlaybackPositionUpdateListener {
                 boolean mAudioFocused;
                 final AudioManager mAudioManager;
                 final Context mContext;
@@ -31,180 +31,180 @@
                 AudioManager.OnAudioFocusChangeListener mAudioFocusChangeListener = new C00304();
                 int mPlayState = 0;
 
-                /* JADX INFO: renamed from: android.support.v4.media.TransportMediatorJellybeanMR2$1 */
-/* 40 */        class ViewTreeObserverOnWindowAttachListenerC00271 implements ViewTreeObserver.OnWindowAttachListener {
-/* 41 */            ViewTreeObserverOnWindowAttachListenerC00271() {
+                
+        class ViewTreeObserverOnWindowAttachListenerC00271 implements ViewTreeObserver.OnWindowAttachListener {
+            ViewTreeObserverOnWindowAttachListenerC00271() {
                     }
 
-                    @Override // android.view.ViewTreeObserver.OnWindowAttachListener
-/* 44 */            public void onWindowAttached() {
-/* 45 */                TransportMediatorJellybeanMR2.this.windowAttached();
+                    @Override 
+            public void onWindowAttached() {
+                TransportMediatorJellybeanMR2.this.windowAttached();
                     }
 
-                    @Override // android.view.ViewTreeObserver.OnWindowAttachListener
-/* 48 */            public void onWindowDetached() {
-/* 49 */                TransportMediatorJellybeanMR2.this.windowDetached();
+                    @Override 
+            public void onWindowDetached() {
+                TransportMediatorJellybeanMR2.this.windowDetached();
                     }
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.media.TransportMediatorJellybeanMR2$2 */
-/* 51 */        class ViewTreeObserverOnWindowFocusChangeListenerC00282 implements ViewTreeObserver.OnWindowFocusChangeListener {
-/* 52 */            ViewTreeObserverOnWindowFocusChangeListenerC00282() {
+                
+        class ViewTreeObserverOnWindowFocusChangeListenerC00282 implements ViewTreeObserver.OnWindowFocusChangeListener {
+            ViewTreeObserverOnWindowFocusChangeListenerC00282() {
                     }
 
-                    @Override // android.view.ViewTreeObserver.OnWindowFocusChangeListener
-/* 55 */            public void onWindowFocusChanged(boolean hasFocus) {
-/* 56 */                if (!hasFocus) {
-/* 57 */                    TransportMediatorJellybeanMR2.this.loseFocus();
+                    @Override 
+            public void onWindowFocusChanged(boolean hasFocus) {
+                if (!hasFocus) {
+                    TransportMediatorJellybeanMR2.this.loseFocus();
                         } else {
                             TransportMediatorJellybeanMR2.this.gainFocus();
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.media.TransportMediatorJellybeanMR2$3 */
-/* 58 */        class C00293 extends BroadcastReceiver {
-/* 59 */            C00293() {
+                
+        class C00293 extends BroadcastReceiver {
+            C00293() {
                     }
 
-                    @Override // android.content.BroadcastReceiver
-/* 63 */            public void onReceive(Context context, Intent intent) {
+                    @Override 
+            public void onReceive(Context context, Intent intent) {
                         try {
-/* 64 */                    KeyEvent event = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT");
-/* 65 */                    TransportMediatorJellybeanMR2.this.mTransportCallback.handleKey(event);
+                    KeyEvent event = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT");
+                    TransportMediatorJellybeanMR2.this.mTransportCallback.handleKey(event);
                         } catch (ClassCastException e) {
-/* 67 */                    Log.w("TransportController", e);
+                    Log.w("TransportController", e);
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.media.TransportMediatorJellybeanMR2$4 */
-/* 70 */        class C00304 implements AudioManager.OnAudioFocusChangeListener {
-/* 71 */            C00304() {
+                
+        class C00304 implements AudioManager.OnAudioFocusChangeListener {
+            C00304() {
                     }
 
-                    @Override // android.media.AudioManager.OnAudioFocusChangeListener
-/* 74 */            public void onAudioFocusChange(int focusChange) {
-/* 75 */                TransportMediatorJellybeanMR2.this.mTransportCallback.handleAudioFocusChange(focusChange);
+                    @Override 
+            public void onAudioFocusChange(int focusChange) {
+                TransportMediatorJellybeanMR2.this.mTransportCallback.handleAudioFocusChange(focusChange);
                     }
                 }
 
-/* 85 */        public TransportMediatorJellybeanMR2(Context context, AudioManager audioManager, View view, TransportMediatorCallback transportCallback) {
-/* 87 */            this.mContext = context;
-/* 88 */            this.mAudioManager = audioManager;
-/* 89 */            this.mTargetView = view;
-/* 90 */            this.mTransportCallback = transportCallback;
-/* 91 */            this.mReceiverAction = context.getPackageName() + ":transport:" + System.identityHashCode(this);
-/* 92 */            this.mIntent = new Intent(this.mReceiverAction);
-/* 93 */            this.mIntent.setPackage(context.getPackageName());
-/* 94 */            this.mReceiverFilter = new IntentFilter();
-/* 95 */            this.mReceiverFilter.addAction(this.mReceiverAction);
-/* 96 */            this.mTargetView.getViewTreeObserver().addOnWindowAttachListener(this.mWindowAttachListener);
-/* 97 */            this.mTargetView.getViewTreeObserver().addOnWindowFocusChangeListener(this.mWindowFocusListener);
+        public TransportMediatorJellybeanMR2(Context context, AudioManager audioManager, View view, TransportMediatorCallback transportCallback) {
+            this.mContext = context;
+            this.mAudioManager = audioManager;
+            this.mTargetView = view;
+            this.mTransportCallback = transportCallback;
+            this.mReceiverAction = context.getPackageName() + ":transport:" + System.identityHashCode(this);
+            this.mIntent = new Intent(this.mReceiverAction);
+            this.mIntent.setPackage(context.getPackageName());
+            this.mReceiverFilter = new IntentFilter();
+            this.mReceiverFilter.addAction(this.mReceiverAction);
+            this.mTargetView.getViewTreeObserver().addOnWindowAttachListener(this.mWindowAttachListener);
+            this.mTargetView.getViewTreeObserver().addOnWindowFocusChangeListener(this.mWindowFocusListener);
                 }
 
-/* 100 */       public Object getRemoteControlClient() {
-/* 101 */           return this.mRemoteControl;
+       public Object getRemoteControlClient() {
+           return this.mRemoteControl;
                 }
 
-/* 104 */       public void destroy() {
-/* 105 */           windowDetached();
-/* 106 */           this.mTargetView.getViewTreeObserver().removeOnWindowAttachListener(this.mWindowAttachListener);
-/* 107 */           this.mTargetView.getViewTreeObserver().removeOnWindowFocusChangeListener(this.mWindowFocusListener);
+       public void destroy() {
+           windowDetached();
+           this.mTargetView.getViewTreeObserver().removeOnWindowAttachListener(this.mWindowAttachListener);
+           this.mTargetView.getViewTreeObserver().removeOnWindowFocusChangeListener(this.mWindowFocusListener);
                 }
 
-/* 110 */       void windowAttached() {
-/* 111 */           this.mContext.registerReceiver(this.mMediaButtonReceiver, this.mReceiverFilter);
-/* 112 */           this.mPendingIntent = PendingIntent.getBroadcast(this.mContext, 0, this.mIntent, 268435456);
-/* 114 */           this.mRemoteControl = new RemoteControlClient(this.mPendingIntent);
-/* 115 */           this.mRemoteControl.setOnGetPlaybackPositionListener(this);
-/* 116 */           this.mRemoteControl.setPlaybackPositionUpdateListener(this);
+       void windowAttached() {
+           this.mContext.registerReceiver(this.mMediaButtonReceiver, this.mReceiverFilter);
+           this.mPendingIntent = PendingIntent.getBroadcast(this.mContext, 0, this.mIntent, 268435456);
+           this.mRemoteControl = new RemoteControlClient(this.mPendingIntent);
+           this.mRemoteControl.setOnGetPlaybackPositionListener(this);
+           this.mRemoteControl.setPlaybackPositionUpdateListener(this);
                 }
 
-/* 119 */       void gainFocus() {
-/* 120 */           if (!this.mFocused) {
-/* 121 */               this.mFocused = true;
-/* 122 */               this.mAudioManager.registerMediaButtonEventReceiver(this.mPendingIntent);
-/* 123 */               this.mAudioManager.registerRemoteControlClient(this.mRemoteControl);
-/* 124 */               if (this.mPlayState == 3) {
-/* 125 */                   takeAudioFocus();
+       void gainFocus() {
+           if (!this.mFocused) {
+               this.mFocused = true;
+               this.mAudioManager.registerMediaButtonEventReceiver(this.mPendingIntent);
+               this.mAudioManager.registerRemoteControlClient(this.mRemoteControl);
+               if (this.mPlayState == 3) {
+                   takeAudioFocus();
                         }
                     }
                 }
 
-/* 130 */       void takeAudioFocus() {
-/* 131 */           if (!this.mAudioFocused) {
-/* 132 */               this.mAudioFocused = true;
-/* 133 */               this.mAudioManager.requestAudioFocus(this.mAudioFocusChangeListener, 3, 1);
+       void takeAudioFocus() {
+           if (!this.mAudioFocused) {
+               this.mAudioFocused = true;
+               this.mAudioManager.requestAudioFocus(this.mAudioFocusChangeListener, 3, 1);
                     }
                 }
 
-/* 138 */       public void startPlaying() {
-/* 139 */           if (this.mPlayState != 3) {
-/* 140 */               this.mPlayState = 3;
-/* 141 */               this.mRemoteControl.setPlaybackState(3);
+       public void startPlaying() {
+           if (this.mPlayState != 3) {
+               this.mPlayState = 3;
+               this.mRemoteControl.setPlaybackState(3);
                     }
-/* 143 */           if (this.mFocused) {
-/* 144 */               takeAudioFocus();
-                    }
-                }
-
-                @Override // android.media.RemoteControlClient.OnGetPlaybackPositionListener
-/* 149 */       public long onGetPlaybackPosition() {
-/* 150 */           return this.mTransportCallback.getPlaybackPosition();
-                }
-
-                @Override // android.media.RemoteControlClient.OnPlaybackPositionUpdateListener
-/* 154 */       public void onPlaybackPositionUpdate(long newPositionMs) {
-/* 155 */           this.mTransportCallback.playbackPositionUpdate(newPositionMs);
-                }
-
-/* 158 */       public void refreshState(boolean playing, long position, int transportControls) {
-/* 159 */           if (this.mRemoteControl != null) {
-/* 160 */               this.mRemoteControl.setPlaybackState(playing ? 3 : 1, position, playing ? 1.0f : 0.0f);
-/* 162 */               this.mRemoteControl.setTransportControlFlags(transportControls);
+           if (this.mFocused) {
+               takeAudioFocus();
                     }
                 }
 
-/* 166 */       public void pausePlaying() {
-/* 167 */           if (this.mPlayState == 3) {
-/* 168 */               this.mPlayState = 2;
-/* 169 */               this.mRemoteControl.setPlaybackState(2);
-                    }
-/* 171 */           dropAudioFocus();
+                @Override 
+       public long onGetPlaybackPosition() {
+           return this.mTransportCallback.getPlaybackPosition();
                 }
 
-/* 174 */       public void stopPlaying() {
-/* 175 */           if (this.mPlayState != 1) {
-/* 176 */               this.mPlayState = 1;
-/* 177 */               this.mRemoteControl.setPlaybackState(1);
-                    }
-/* 179 */           dropAudioFocus();
+                @Override 
+       public void onPlaybackPositionUpdate(long newPositionMs) {
+           this.mTransportCallback.playbackPositionUpdate(newPositionMs);
                 }
 
-/* 182 */       void dropAudioFocus() {
-/* 183 */           if (this.mAudioFocused) {
-/* 184 */               this.mAudioFocused = false;
-/* 185 */               this.mAudioManager.abandonAudioFocus(this.mAudioFocusChangeListener);
+       public void refreshState(boolean playing, long position, int transportControls) {
+           if (this.mRemoteControl != null) {
+               this.mRemoteControl.setPlaybackState(playing ? 3 : 1, position, playing ? 1.0f : 0.0f);
+               this.mRemoteControl.setTransportControlFlags(transportControls);
                     }
                 }
 
-/* 189 */       void loseFocus() {
-/* 190 */           dropAudioFocus();
-/* 191 */           if (this.mFocused) {
-/* 192 */               this.mFocused = false;
-/* 193 */               this.mAudioManager.unregisterRemoteControlClient(this.mRemoteControl);
-/* 194 */               this.mAudioManager.unregisterMediaButtonEventReceiver(this.mPendingIntent);
+       public void pausePlaying() {
+           if (this.mPlayState == 3) {
+               this.mPlayState = 2;
+               this.mRemoteControl.setPlaybackState(2);
+                    }
+           dropAudioFocus();
+                }
+
+       public void stopPlaying() {
+           if (this.mPlayState != 1) {
+               this.mPlayState = 1;
+               this.mRemoteControl.setPlaybackState(1);
+                    }
+           dropAudioFocus();
+                }
+
+       void dropAudioFocus() {
+           if (this.mAudioFocused) {
+               this.mAudioFocused = false;
+               this.mAudioManager.abandonAudioFocus(this.mAudioFocusChangeListener);
                     }
                 }
 
-/* 198 */       void windowDetached() {
-/* 199 */           loseFocus();
-/* 200 */           if (this.mPendingIntent != null) {
-/* 201 */               this.mContext.unregisterReceiver(this.mMediaButtonReceiver);
-/* 202 */               this.mPendingIntent.cancel();
-/* 203 */               this.mPendingIntent = null;
-/* 204 */               this.mRemoteControl = null;
+       void loseFocus() {
+           dropAudioFocus();
+           if (this.mFocused) {
+               this.mFocused = false;
+               this.mAudioManager.unregisterRemoteControlClient(this.mRemoteControl);
+               this.mAudioManager.unregisterMediaButtonEventReceiver(this.mPendingIntent);
+                    }
+                }
+
+       void windowDetached() {
+           loseFocus();
+           if (this.mPendingIntent != null) {
+               this.mContext.unregisterReceiver(this.mMediaButtonReceiver);
+               this.mPendingIntent.cancel();
+               this.mPendingIntent = null;
+               this.mRemoteControl = null;
                     }
                 }
             }

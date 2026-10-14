@@ -7,10 +7,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             import java.util.ArrayList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.w */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1125w implements Parcelable.Creator<C1124v> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2175a(C1124v c1124v, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, c1124v.versionCode);
@@ -23,7 +23,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public C1124v m2176a(Parcel parcel) {
                     ArrayList<String> arrayListM1125x = null;
                     int iM1105f = 0;
@@ -68,18 +68,18 @@
                     return new C1124v(iM1105f3, jM1106g, bundleM1115n, iM1105f2, arrayListM1125x, zM1102c, iM1105f);
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 public C1124v[] m2177b(int i) {
                     return new C1124v[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1124v createFromParcel(Parcel x0) {
+                @Override 
+                public  C1124v createFromParcel(Parcel x0) {
                     return m2176a(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1124v[] newArray(int x0) {
+                @Override 
+                public  C1124v[] newArray(int x0) {
                     return m2177b(x0);
                 }
             }

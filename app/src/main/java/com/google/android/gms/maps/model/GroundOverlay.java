@@ -4,10 +4,10 @@
             import com.google.android.gms.internal.C1028dm;
             import com.google.android.gms.maps.model.internal.InterfaceC1189c;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class GroundOverlay {
 
-                /* JADX INFO: renamed from: qm */
+                
                 private final InterfaceC1189c f2298qm;
 
                 public GroundOverlay(InterfaceC1189c delegate) {

@@ -72,8 +72,8 @@
             import java.lang.ref.WeakReference;
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 86 */    public class HomeTabActivity extends BaseTimelineActivity implements TabHost.OnTabChangeListener, IconTabHost.OnTabClickedListener, View.OnLongClickListener {
+            
+    public class HomeTabActivity extends BaseTimelineActivity implements TabHost.OnTabChangeListener, IconTabHost.OnTabClickedListener, View.OnLongClickListener {
                 public static final String ACTION_VM_SENT = "co.vine.android.VM_SENT";
                 public static final int DIALOG_STORE_CONTACTS = 1;
                 public static final String HOST_POST = "post";
@@ -114,186 +114,186 @@
                 private final BroadcastReceiver mExploreRefreshReciver = new C02172();
                 private boolean mScrollAwayNavEnabled = true;
 
-/* 87 */        static /* synthetic */ int access$002(HomeTabActivity x0, int x1) {
-/* 88 */            x0.mMessageCount = x1;
+        static  int access$002(HomeTabActivity x0, int x1) {
+            x0.mMessageCount = x1;
                     return x1;
                 }
 
-/* 87 */        static /* synthetic */ int access$102(HomeTabActivity x0, int x1) {
-/* 88 */            x0.mActivityCount = x1;
+        static  int access$102(HomeTabActivity x0, int x1) {
+            x0.mActivityCount = x1;
                     return x1;
                 }
 
-/* 87 */        static /* synthetic */ void access$200(HomeTabActivity x0) {
-/* 88 */            x0.invalidateMessagesBadge();
+        static  void access$200(HomeTabActivity x0) {
+            x0.invalidateMessagesBadge();
                 }
 
-/* 87 */        static /* synthetic */ TabsAdapter access$300(HomeTabActivity x0) {
-/* 88 */            return x0.mTabsAdapter;
+        static  TabsAdapter access$300(HomeTabActivity x0) {
+            return x0.mTabsAdapter;
                 }
 
-/* 87 */        static /* synthetic */ ViewPager access$400(HomeTabActivity x0) {
-/* 88 */            return x0.mViewPager;
+        static  ViewPager access$400(HomeTabActivity x0) {
+            return x0.mViewPager;
                 }
 
-/* 87 */        static /* synthetic */ Thread access$502(HomeTabActivity x0, Thread x1) {
-/* 88 */            x0.mStartUploadServiceThread = x1;
+        static  Thread access$502(HomeTabActivity x0, Thread x1) {
+            x0.mStartUploadServiceThread = x1;
                     return x1;
                 }
 
-/* 87 */        static /* synthetic */ LongSparseArray access$600(HomeTabActivity x0) {
-/* 88 */            return x0.mLastMessageMap;
+        static  LongSparseArray access$600(HomeTabActivity x0) {
+            return x0.mLastMessageMap;
                 }
 
-/* 87 */        static /* synthetic */ boolean access$700(HomeTabActivity x0) {
-/* 88 */            return x0.mIsNewUser;
+        static  boolean access$700(HomeTabActivity x0) {
+            return x0.mIsNewUser;
                 }
 
                 static {
-/* 127 */           ACTIVITY_COUNT_FILTER.addAction(VineService.BC_ACTIVITY_COUNTS);
+           ACTIVITY_COUNT_FILTER.addAction(VineService.BC_ACTIVITY_COUNTS);
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.HomeTabActivity$1 */
-/* 130 */       class C02161 extends BroadcastReceiver {
-/* 131 */           C02161() {
+                
+       class C02161 extends BroadcastReceiver {
+           C02161() {
                     }
 
-                    @Override // android.content.BroadcastReceiver
-/* 135 */           public void onReceive(Context context, Intent intent) {
-/* 136 */               HomeTabActivity.access$002(HomeTabActivity.this, intent.getIntExtra(VineService.EXTRA_MESSAGES_COUNT, 0));
-/* 137 */               HomeTabActivity.access$102(HomeTabActivity.this, intent.getIntExtra(VineService.EXTRA_NOTIFICATIONS_COUNT, 0));
-/* 138 */               HomeTabActivity.access$200(HomeTabActivity.this);
-/* 139 */               HomeTabActivity.this.invalidateActivityBadge();
+                    @Override 
+           public void onReceive(Context context, Intent intent) {
+               HomeTabActivity.access$002(HomeTabActivity.this, intent.getIntExtra(VineService.EXTRA_MESSAGES_COUNT, 0));
+               HomeTabActivity.access$102(HomeTabActivity.this, intent.getIntExtra(VineService.EXTRA_NOTIFICATIONS_COUNT, 0));
+               HomeTabActivity.access$200(HomeTabActivity.this);
+               HomeTabActivity.this.invalidateActivityBadge();
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.HomeTabActivity$2 */
-/* 145 */       class C02172 extends BroadcastReceiver {
-/* 146 */           C02172() {
+                
+       class C02172 extends BroadcastReceiver {
+           C02172() {
                     }
 
-                    @Override // android.content.BroadcastReceiver
-/* 150 */           public void onReceive(Context context, Intent intent) {
-/* 151 */               TabInfo tab = HomeTabActivity.access$300(HomeTabActivity.this).getTab(2);
-/* 152 */               if (tab != null) {
-/* 153 */                   Fragment fragment = tab.fragment();
-/* 154 */                   if (fragment instanceof ExploreFragment) {
-/* 155 */                       ((ExploreFragment) fragment).reloadWebView(false);
+                    @Override 
+           public void onReceive(Context context, Intent intent) {
+               TabInfo tab = HomeTabActivity.access$300(HomeTabActivity.this).getTab(2);
+               if (tab != null) {
+                   Fragment fragment = tab.fragment();
+                   if (fragment instanceof ExploreFragment) {
+                       ((ExploreFragment) fragment).reloadWebView(false);
                             }
                         }
                     }
                 }
 
-                @Override // co.vine.android.BaseTimelineActivity
-/* 172 */       protected boolean isAutoCaptureIconEnabled() {
-/* 173 */           return false;
+                @Override 
+       protected boolean isAutoCaptureIconEnabled() {
+           return false;
                 }
 
-                @Override // co.vine.android.BaseControllerActionBarActivity
-/* 177 */       public boolean isConversationSideMenuEnabled() {
-/* 178 */           return true;
+                @Override 
+       public boolean isConversationSideMenuEnabled() {
+           return true;
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper.MenuStateHandler.MenuStateListener
-/* 182 */       public void onMenuClose() {
-/* 183 */           if (!MuteUtil.isMuted(this)) {
-/* 184 */               sendBroadcast(new Intent(MuteUtil.ACTION_CHANGED_TO_UNMUTE), CrossConstants.BROADCAST_PERMISSION);
+                @Override 
+       public void onMenuClose() {
+           if (!MuteUtil.isMuted(this)) {
+               sendBroadcast(new Intent(MuteUtil.ACTION_CHANGED_TO_UNMUTE), CrossConstants.BROADCAST_PERMISSION);
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper.MenuStateHandler.MenuStateListener
-/* 189 */       public void onMenuOpened() {
-/* 190 */           super.onMenuOpened();
-/* 191 */           invalidateMessagesBadge();
+                @Override 
+       public void onMenuOpened() {
+           super.onMenuOpened();
+           invalidateMessagesBadge();
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 195 */       public void onCreate(Bundle savedInstanceState) {
-/* 196 */           super.onCreate(savedInstanceState, C0257R.layout.main, true);
-/* 198 */           if (BuildUtil.isExplore()) {
-/* 199 */               setupTabs();
+                @Override 
+       public void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState, C0257R.layout.main, true);
+           if (BuildUtil.isExplore()) {
+               setupTabs();
                     }
-/* 202 */           if (SLog.sLogsOn) {
-/* 203 */               sendBroadcast(new Intent("co.vine.android.debug_receiver"));
+           if (SLog.sLogsOn) {
+               sendBroadcast(new Intent("co.vine.android.debug_receiver"));
                     }
-/* 206 */           SLog.m465i("HomeTabActivity pid: {}", Integer.valueOf(Process.myPid()));
-/* 208 */           setRequestedOrientation(1);
-/* 210 */           setupActionBar((Boolean) false, (Boolean) null, (String) null, (Boolean) null, (Boolean) true);
-/* 211 */           hideOuterDuplicateActionBar(getWindow().getDecorView());
-/* 212 */           positionHomeLogo();
-/* 212 */           this.mAppSessionListener = new HomeTabSessionListener();
-/* 213 */           this.mLastMessageMap = new LongSparseArray<>();
-/* 215 */           Intent intent = getIntent();
-/* 216 */           if (intent.getExtras() != null) {
-/* 217 */               this.mIsNewUser = intent.getBooleanExtra(StartActivity.EXTRA_IS_NEW_USER, false);
+           SLog.m465i("HomeTabActivity pid: {}", Integer.valueOf(Process.myPid()));
+           setRequestedOrientation(1);
+           setupActionBar((Boolean) false, (Boolean) null, (String) null, (Boolean) null, (Boolean) true);
+           hideOuterDuplicateActionBar(getWindow().getDecorView());
+           positionHomeLogo();
+           this.mAppSessionListener = new HomeTabSessionListener();
+           this.mLastMessageMap = new LongSparseArray<>();
+           Intent intent = getIntent();
+           if (intent.getExtras() != null) {
+               this.mIsNewUser = intent.getBooleanExtra(StartActivity.EXTRA_IS_NEW_USER, false);
         }
 
-/* 220 */           if (this.mAppController == null) {
-/* 221 */               this.mAppController = AppController.getInstance(this);
+           if (this.mAppController == null) {
+               this.mAppController = AppController.getInstance(this);
                     }
-/* 224 */           AppController appController = this.mAppController;
-/* 226 */           if (appController.isLoggedIn()) {
-/* 230 */               AccountManager am = AccountManager.get(this);
-/* 231 */               Account acc = VineAccountHelper.getActiveAccountReadOnly(this);
-/* 232 */               VineAccountHelper.migratePassword(am, acc, this);
-/* 235 */               SharedPreferences prefs = Util.getDefaultSharedPrefs(this);
-/* 237 */               IconTabHost tabHost = this.mTabHost;
-/* 239 */               this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
-/* 240 */               this.mViewPager.setPageMargin(getResources().getDimensionPixelSize(C0257R.dimen.home_pager_margin));
-/* 241 */               this.mViewPager.setPageMarginDrawable(C0257R.color.bg_grouped_list);
-/* 242 */               this.mViewPager.setOffscreenPageLimit(3);
-/* 244 */               this.mTabsAdapter = new HomeTabTabsAdapter(tabHost);
-/* 246 */               LayoutInflater inflater = getLayoutInflater();
-/* 247 */               tabHost.setOnTabChangedListener(this);
-/* 248 */               tabHost.setOnTabClickedListener(this);
-/* 250 */               processStartIntent(intent);
-/* 252 */               Resources res = getResources();
-/* 254 */               this.mDisabledTabColor = res.getColor(C0257R.color.solid_dark_gray);
-/* 255 */               this.mEnabledTabColor = res.getColor(C0257R.color.vine_green);
-/* 258 */               Bundle timelineBundle = new Bundle();
-/* 259 */               timelineBundle.putInt("empty_desc", C0257R.string.failed_to_load_posts);
-/* 261 */               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.activity_tab_indicator, C0257R.drawable.ic_home, "home"), HomeTimelineFragment.class, timelineBundle);
-/* 264 */               restoreActivityState();
-/* 267 */               Bundle activityBundle = new Bundle();
-/* 268 */               activityBundle.putBoolean("take_focus", this.mShowActivityFeed);
-/* 269 */               activityBundle.putInt("empty_desc", C0257R.string.activity_empty);
-/* 271 */               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.activity_tab_indicator, C0257R.drawable.ic_activity, TAG_ACTIVITY), ActivityFragment.class, activityBundle);
-/* 274 */               Bundle exploreBundle = new Bundle();
-/* 275 */               if (TextUtils.equals(this.mRecentTab, TAG_EXPLORE)) {
-/* 276 */                   exploreBundle.putBoolean("take_focus", true);
+           AppController appController = this.mAppController;
+           if (appController.isLoggedIn()) {
+               AccountManager am = AccountManager.get(this);
+               Account acc = VineAccountHelper.getActiveAccountReadOnly(this);
+               VineAccountHelper.migratePassword(am, acc, this);
+               SharedPreferences prefs = Util.getDefaultSharedPrefs(this);
+               IconTabHost tabHost = this.mTabHost;
+               this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
+               this.mViewPager.setPageMargin(getResources().getDimensionPixelSize(C0257R.dimen.home_pager_margin));
+               this.mViewPager.setPageMarginDrawable(C0257R.color.bg_grouped_list);
+               this.mViewPager.setOffscreenPageLimit(3);
+               this.mTabsAdapter = new HomeTabTabsAdapter(tabHost);
+               LayoutInflater inflater = getLayoutInflater();
+               tabHost.setOnTabChangedListener(this);
+               tabHost.setOnTabClickedListener(this);
+               processStartIntent(intent);
+               Resources res = getResources();
+               this.mDisabledTabColor = res.getColor(C0257R.color.solid_dark_gray);
+               this.mEnabledTabColor = res.getColor(C0257R.color.vine_green);
+               Bundle timelineBundle = new Bundle();
+               timelineBundle.putInt("empty_desc", C0257R.string.failed_to_load_posts);
+               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.activity_tab_indicator, C0257R.drawable.ic_home, "home"), HomeTimelineFragment.class, timelineBundle);
+               restoreActivityState();
+               Bundle activityBundle = new Bundle();
+               activityBundle.putBoolean("take_focus", this.mShowActivityFeed);
+               activityBundle.putInt("empty_desc", C0257R.string.activity_empty);
+               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.activity_tab_indicator, C0257R.drawable.ic_activity, TAG_ACTIVITY), ActivityFragment.class, activityBundle);
+               Bundle exploreBundle = new Bundle();
+               if (TextUtils.equals(this.mRecentTab, TAG_EXPLORE)) {
+                   exploreBundle.putBoolean("take_focus", true);
                         }
-/* 280 */               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.home_tab_indicator, C0257R.drawable.ic_explore, TAG_EXPLORE), ExploreFragment.class, exploreBundle);
-/* 284 */               Bundle profileBundle = new Bundle();
-/* 285 */               if (TextUtils.equals(this.mRecentTab, "profile")) {
-/* 286 */                   profileBundle.putBoolean("take_focus", true);
+               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.home_tab_indicator, C0257R.drawable.ic_explore, TAG_EXPLORE), ExploreFragment.class, exploreBundle);
+               Bundle profileBundle = new Bundle();
+               if (TextUtils.equals(this.mRecentTab, "profile")) {
+                   profileBundle.putBoolean("take_focus", true);
                         }
-/* 289 */               profileBundle.putLong("user_id", appController.getActiveId());
-/* 290 */               profileBundle.putBoolean("refresh", true);
-/* 291 */               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.home_tab_indicator, C0257R.drawable.ic_profile, "profile"), ProfileFragment.class, profileBundle);
-/* 294 */               Session session = this.mAppController.getActiveSession();
-/* 296 */               this.mAppController.determineCleanup(session);
-/* 298 */               this.mActivityCount = prefs.getInt(Settings.PREF_UNREAD_NOTIFICATION_COUNT, 0);
-/* 300 */               DelayHandler handler = new DelayHandler(this);
-/* 301 */               if (handler.hasMessages(1)) {
-/* 302 */                   handler.removeMessages(1);
+               profileBundle.putLong("user_id", appController.getActiveId());
+               profileBundle.putBoolean("refresh", true);
+               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.home_tab_indicator, C0257R.drawable.ic_profile, "profile"), ProfileFragment.class, profileBundle);
+               Session session = this.mAppController.getActiveSession();
+               this.mAppController.determineCleanup(session);
+               this.mActivityCount = prefs.getInt(Settings.PREF_UNREAD_NOTIFICATION_COUNT, 0);
+               DelayHandler handler = new DelayHandler(this);
+               if (handler.hasMessages(1)) {
+                   handler.removeMessages(1);
                         }
-/* 304 */               if (handler.hasMessages(2)) {
-/* 305 */                   handler.removeMessages(2);
+               if (handler.hasMessages(2)) {
+                   handler.removeMessages(2);
                         }
-/* 308 */               handler.sendMessageDelayed(handler.obtainMessage(1, null), CommonUtil.MINUTE_MILLIS);
-/* 310 */               handler.sendMessageDelayed(handler.obtainMessage(2, null), CommonUtil.MINUTE_MILLIS);
-/* 312 */               handler.sendMessageDelayed(handler.obtainMessage(3, null), CommonUtil.MINUTE_MILLIS);
-/* 315 */               AppImpl.getInstance().startCameraService(this);
-/* 317 */               VineAccountHelper.syncNormalVideoPlayable(this);
-/* 319 */               PrefetchManager.getInstance(this).delayNextPrefetch();
+               handler.sendMessageDelayed(handler.obtainMessage(1, null), CommonUtil.MINUTE_MILLIS);
+               handler.sendMessageDelayed(handler.obtainMessage(2, null), CommonUtil.MINUTE_MILLIS);
+               handler.sendMessageDelayed(handler.obtainMessage(3, null), CommonUtil.MINUTE_MILLIS);
+               AppImpl.getInstance().startCameraService(this);
+               VineAccountHelper.syncNormalVideoPlayable(this);
+               PrefetchManager.getInstance(this).delayNextPrefetch();
                UpdateManager.checkOnStartup(this);
                         try {
-/* 322 */                   int errorCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
-/* 323 */                   if (errorCode == 0) {
-/* 325 */                       startService(GCMRegistrationService.getRegisterIntent(this, this.mAppController.getActiveId()));
+                   int errorCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+                   if (errorCode == 0) {
+                       startService(GCMRegistrationService.getRegisterIntent(this, this.mAppController.getActiveId()));
                             }
                         } catch (Throwable e) {
-/* 328 */                   CrashUtil.logException(e, "Failed to validate Google Player Service status.", new Object[0]);
+                   CrashUtil.logException(e, "Failed to validate Google Player Service status.", new Object[0]);
                         }
                     }
                 }
@@ -347,237 +347,237 @@
             return false;
         }
 
-/* 332 */       private TabHost.TabSpec newTabSpec(LayoutInflater inflater, int layout, int icon, String tag) {
-/* 333 */           TabIndicator indicator = TabIndicator.newIconIndicator(inflater, layout, this.mTabHost, icon, 0);
-/* 334 */           indicator.setColor(this.mDisabledTabColor);
-/* 335 */           return this.mTabHost.newTabSpec(tag).setIndicator(indicator);
+       private TabHost.TabSpec newTabSpec(LayoutInflater inflater, int layout, int icon, String tag) {
+           TabIndicator indicator = TabIndicator.newIconIndicator(inflater, layout, this.mTabHost, icon, 0);
+           indicator.setColor(this.mDisabledTabColor);
+           return this.mTabHost.newTabSpec(tag).setIndicator(indicator);
                 }
 
-/* 338 */       private String trimSegment(String segment) {
-/* 339 */           return segment.replaceAll("\\s+", "").replace("\\", "");
+       private String trimSegment(String segment) {
+           return segment.replaceAll("\\s+", "").replace("\\", "");
                 }
 
-                @Override // co.vine.android.BaseTimelineActivity, co.vine.android.BaseControllerActionBarActivity, co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 343 */       protected void onPause() {
-/* 344 */           super.onPause();
-/* 345 */           if (!this.mExploreRefreshReciverIsRegistered) {
-/* 346 */               this.mExploreRefreshReciverIsRegistered = true;
-/* 347 */               registerReceiver(this.mExploreRefreshReciver, AppController.ACTION_UPDATED_FILTER, CrossConstants.BROADCAST_PERMISSION, null);
+                @Override 
+       protected void onPause() {
+           super.onPause();
+           if (!this.mExploreRefreshReciverIsRegistered) {
+               this.mExploreRefreshReciverIsRegistered = true;
+               registerReceiver(this.mExploreRefreshReciver, AppController.ACTION_UPDATED_FILTER, CrossConstants.BROADCAST_PERMISSION, null);
                     }
                     try {
-/* 350 */               unregisterReceiver(this.mActivityCountReceiver);
+               unregisterReceiver(this.mActivityCountReceiver);
                     } catch (IllegalArgumentException e) {
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 357 */       protected void onStart() {
-/* 358 */           super.onStart();
-/* 359 */           ClientFlagsHelper.fetchClientFlags(this, true, true);
-/* 360 */           if (ClientFlagsHelper.zeroRatingIsEnabled(this)) {
-/* 361 */               FlurryUtils.trackZeroRatedSessionStarted(true);
+                @Override 
+       protected void onStart() {
+           super.onStart();
+           ClientFlagsHelper.fetchClientFlags(this, true, true);
+           if (ClientFlagsHelper.zeroRatingIsEnabled(this)) {
+               FlurryUtils.trackZeroRatedSessionStarted(true);
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 366 */       protected void onStop() {
-/* 367 */           super.onStop();
+                @Override 
+       protected void onStop() {
+           super.onStop();
                 }
 
-                @Override // co.vine.android.BaseControllerActionBarActivity, co.vine.android.ScrollListener
-/* 370 */       public void onScroll(int delta) {
-/* 371 */           if (this.mScrollAwayNavEnabled) {
-/* 372 */               ScrollAwayTabWidget tabWidget = (ScrollAwayTabWidget) this.mTabHost.getTabWidget();
-/* 373 */               tabWidget.onScroll(delta);
-/* 374 */               Fragment fragment = this.mTabsAdapter.getCurrentFragment();
-/* 375 */               if (fragment instanceof BaseArrayListFragment) {
-/* 376 */                   ((BaseArrayListFragment) fragment).setNavBottom(tabWidget.getNavBottom());
+                @Override 
+       public void onScroll(int delta) {
+           if (this.mScrollAwayNavEnabled) {
+               ScrollAwayTabWidget tabWidget = (ScrollAwayTabWidget) this.mTabHost.getTabWidget();
+               tabWidget.onScroll(delta);
+               Fragment fragment = this.mTabsAdapter.getCurrentFragment();
+               if (fragment instanceof BaseArrayListFragment) {
+                   ((BaseArrayListFragment) fragment).setNavBottom(tabWidget.getNavBottom());
                         }
                     }
                 }
 
-/* 381 */       public void setScrollAwayNavEnabled(boolean enabled) {
-/* 382 */           this.mScrollAwayNavEnabled = enabled;
+       public void setScrollAwayNavEnabled(boolean enabled) {
+           this.mScrollAwayNavEnabled = enabled;
                 }
 
-/* 385 */       public boolean shouldChangeActionBarColor() {
+       public boolean shouldChangeActionBarColor() {
                     return this.mViewPager != null && this.mViewPager.getCurrentItem() == 3;
                 }
 
-/* 389 */       private class HomeTabTabsAdapter extends TabsAdapter {
-/* 390 */           public HomeTabTabsAdapter(TabHost tabHost) {
-/* 392 */               super(HomeTabActivity.this, tabHost, HomeTabActivity.access$400(HomeTabActivity.this), null);
+       private class HomeTabTabsAdapter extends TabsAdapter {
+           public HomeTabTabsAdapter(TabHost tabHost) {
+               super(HomeTabActivity.this, tabHost, HomeTabActivity.access$400(HomeTabActivity.this), null);
                     }
 
-                    @Override // co.vine.android.widget.tabs.TabsAdapter, android.support.v4.view.ViewPager.OnPageChangeListener
-/* 396 */           public void onPageSelected(int position) {
-/* 397 */               super.onPageSelected(position);
-/* 398 */               HomeTabActivity.this.resetNav();
-/* 399 */               if (position == 1) {
-/* 400 */                   Util.getDefaultSharedPrefs(HomeTabActivity.this.getApplicationContext()).edit().putInt(Settings.PREF_UNREAD_NOTIFICATION_COUNT, 0).commit();
-/* 402 */                   HomeTabActivity.access$102(HomeTabActivity.this, 0);
-/* 403 */                   HomeTabActivity.this.invalidateActivityBadge();
+                    @Override 
+           public void onPageSelected(int position) {
+               super.onPageSelected(position);
+               HomeTabActivity.this.resetNav();
+               if (position == 1) {
+                   Util.getDefaultSharedPrefs(HomeTabActivity.this.getApplicationContext()).edit().putInt(Settings.PREF_UNREAD_NOTIFICATION_COUNT, 0).commit();
+                   HomeTabActivity.access$102(HomeTabActivity.this, 0);
+                   HomeTabActivity.this.invalidateActivityBadge();
                         }
                     }
                 }
 
-                @Override // android.support.v4.app.FragmentActivity, android.app.Activity
-/* 409 */       protected void onNewIntent(Intent intent) {
-/* 410 */           super.onNewIntent(intent);
-/* 411 */           processStartIntent(intent);
+                @Override 
+       protected void onNewIntent(Intent intent) {
+           super.onNewIntent(intent);
+           processStartIntent(intent);
                 }
 
-/* 414 */       public void showPage(int position, Fragment fragment) {
-/* 415 */           if (this.mTabsAdapter != null && this.mViewPager != null) {
-/* 416 */               this.mViewPager.setCurrentItem(position);
-/* 417 */               if (fragment instanceof BaseArrayListFragment) {
-/* 418 */                   ((BaseArrayListFragment) fragment).onMoveTo(1);
+       public void showPage(int position, Fragment fragment) {
+           if (this.mTabsAdapter != null && this.mViewPager != null) {
+               this.mViewPager.setCurrentItem(position);
+               if (fragment instanceof BaseArrayListFragment) {
+                   ((BaseArrayListFragment) fragment).onMoveTo(1);
                         }
-/* 420 */               TabInfo tab = this.mTabsAdapter.getTab(this.mViewPager.getCurrentItem());
-/* 421 */               if (tab != null) {
-/* 422 */                   Fragment current = tab.fragment();
-/* 423 */                   if (current instanceof BaseArrayListFragment) {
-/* 424 */                       ((BaseArrayListFragment) current).onMoveAway(-1);
+               TabInfo tab = this.mTabsAdapter.getTab(this.mViewPager.getCurrentItem());
+               if (tab != null) {
+                   Fragment current = tab.fragment();
+                   if (current instanceof BaseArrayListFragment) {
+                       ((BaseArrayListFragment) current).onMoveAway(-1);
                             }
-/* 426 */                   resetNav();
-/* 427 */                   logTabChange(fragment.getTag());
+                   resetNav();
+                   logTabChange(fragment.getTag());
                         }
                     }
                 }
 
-/* 432 */       public void resetNav() {
+       public void resetNav() {
                     ScrollAwayTabWidget widget;
-/* 433 */           if (this.mTabHost != null && (widget = (ScrollAwayTabWidget) this.mTabHost.getTabWidget()) != null) {
-/* 436 */               widget.resetScroll();
-/* 437 */               widget.invalidate();
-/* 438 */               int navBottom = widget.getNavBottom();
-/* 440 */               Fragment fragment = this.mTabsAdapter.getCurrentFragment();
-/* 441 */               if (fragment != null && (fragment instanceof BaseArrayListFragment)) {
-/* 442 */                   ((BaseArrayListFragment) fragment).setNavBottom(navBottom);
+           if (this.mTabHost != null && (widget = (ScrollAwayTabWidget) this.mTabHost.getTabWidget()) != null) {
+               widget.resetScroll();
+               widget.invalidate();
+               int navBottom = widget.getNavBottom();
+               Fragment fragment = this.mTabsAdapter.getCurrentFragment();
+               if (fragment != null && (fragment instanceof BaseArrayListFragment)) {
+                   ((BaseArrayListFragment) fragment).setNavBottom(navBottom);
                         }
-/* 445 */               this.mScrollAwayNavEnabled = true;
+               this.mScrollAwayNavEnabled = true;
                     }
                 }
 
-/* 451 */       public void onNotifyClick() {
-/* 452 */           getSlidingMenu().toggle(true);
+       public void onNotifyClick() {
+           getSlidingMenu().toggle(true);
                 }
 
-/* 455 */       public void markMessagesAsDismissed() {
-/* 456 */           Util.getDefaultSharedPrefs(this).edit().putBoolean(Settings.PREF_UNREAD_MESSAGES_DISMISSED, true);
+       public void markMessagesAsDismissed() {
+           Util.getDefaultSharedPrefs(this).edit().putBoolean(Settings.PREF_UNREAD_MESSAGES_DISMISSED, true);
                 }
 
-/* 464 */       public static final class DelayHandler extends Handler {
+       public static final class DelayHandler extends Handler {
                     public static final int DETERMINE_SERVER_STATUS = 3;
                     public static final int FETCH_FOLLOWERS = 2;
                     public static final int FETCH_ME = 1;
                     private final WeakReference<Context> mContextRef;
 
-/* 465 */           public DelayHandler(Context context) {
-/* 467 */               this.mContextRef = new WeakReference<>(context.getApplicationContext());
+           public DelayHandler(Context context) {
+               this.mContextRef = new WeakReference<>(context.getApplicationContext());
                     }
 
-                    @Override // android.os.Handler
-/* 471 */           public void handleMessage(Message msg) {
-/* 472 */               Context context = this.mContextRef.get();
-/* 473 */               if (context != null) {
-/* 476 */                   AppController appController = AppController.getInstance(context);
+                    @Override 
+           public void handleMessage(Message msg) {
+               Context context = this.mContextRef.get();
+               if (context != null) {
+                   AppController appController = AppController.getInstance(context);
                             switch (msg.what) {
                                 case 1:
-/* 479 */                           appController.fetchUsersMe(appController.getActiveId(), UrlCachePolicy.NETWORK_THEN_CACHE);
+                           appController.fetchUsersMe(appController.getActiveId(), UrlCachePolicy.NETWORK_THEN_CACHE);
                                     break;
                                 case 2:
-/* 483 */                           appController.fetchFollowing(appController.getActiveId(), 1, 0L);
+                           appController.fetchFollowing(appController.getActiveId(), 1, 0L);
                                     break;
                                 case 3:
-/* 488 */                           appController.determineServerStatus();
+                           appController.determineServerStatus();
                                     break;
                             }
                         }
                     }
                 }
 
-/* 495 */       public void markActivitiesRead() {
-/* 496 */           Util.getDefaultSharedPrefs(this).edit().putInt(Settings.PREF_UNREAD_NOTIFICATION_COUNT, 0).commit();
-/* 498 */           this.mActivityCount = 0;
-/* 499 */           invalidateActivityBadge();
+       public void markActivitiesRead() {
+           Util.getDefaultSharedPrefs(this).edit().putInt(Settings.PREF_UNREAD_NOTIFICATION_COUNT, 0).commit();
+           this.mActivityCount = 0;
+           invalidateActivityBadge();
                 }
 
-                @Override // android.widget.TabHost.OnTabChangeListener
-/* 503 */       public void onTabChanged(String tag) {
-/* 504 */           if (SLog.sLogsOn) {
+                @Override 
+       public void onTabChanged(String tag) {
+           if (SLog.sLogsOn) {
                     try {
-/* 505 */                   SLog.m446d(Util.printCursorWindowStats());
+                   SLog.m446d(Util.printCursorWindowStats());
                     } catch (Throwable ignored) {
                     }
                     }
-/* 507 */           changeTabColor(this.mLastItem);
-/* 508 */           int tab = this.mTabHost.getCurrentTab();
-/* 509 */           this.mViewPager.setCurrentItem(tab);
-/* 510 */           this.mLastItem = tab;
-/* 511 */           this.mRecentTab = tag;
-/* 512 */           if (TAG_ACTIVITY.equals(tag)) {
-/* 513 */               markActivitiesRead();
+           changeTabColor(this.mLastItem);
+           int tab = this.mTabHost.getCurrentTab();
+           this.mViewPager.setCurrentItem(tab);
+           this.mLastItem = tab;
+           this.mRecentTab = tag;
+           if (TAG_ACTIVITY.equals(tag)) {
+               markActivitiesRead();
                     }
-/* 515 */           if ("home".equals(tag)) {
-/* 516 */               setHomeNewCount(0);
+           if ("home".equals(tag)) {
+               setHomeNewCount(0);
                     }
                     switch (tab) {
                         case 0:
-/* 520 */                   getSlidingMenu().setTouchModeAbove(1);
+                   getSlidingMenu().setTouchModeAbove(1);
                             break;
                         default:
-/* 523 */                   getSlidingMenu().setTouchModeAbove(0);
+                   getSlidingMenu().setTouchModeAbove(0);
                             break;
                     }
-/* 526 */           logTabChange(tag);
+           logTabChange(tag);
                 }
 
-/* 529 */       private void logTabChange(String tag) {
-/* 530 */           CrashUtil.set("Current Tab", tag + " - " + System.currentTimeMillis());
-/* 531 */           if (tag != null && !tag.contains("switcher")) {
-/* 532 */               FlurryUtils.trackTabChange(tag);
+       private void logTabChange(String tag) {
+           CrashUtil.set("Current Tab", tag + " - " + System.currentTimeMillis());
+           if (tag != null && !tag.contains("switcher")) {
+               FlurryUtils.trackTabChange(tag);
                     }
                 }
 
-/* 536 */       public void showMenuIfNeeded() {
-/* 537 */           if (this.mShouldShowMenu) {
-/* 538 */               SLog.m446d("Menu requested.");
-/* 539 */               this.mShouldShowMenu = false;
-/* 540 */               getSlidingMenu().showMenu(false);
+       public void showMenuIfNeeded() {
+           if (this.mShouldShowMenu) {
+               SLog.m446d("Menu requested.");
+               this.mShouldShowMenu = false;
+               getSlidingMenu().showMenu(false);
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 545 */       protected void onDestroy() {
-/* 546 */           super.onDestroy();
-/* 547 */           if (this.mExploreRefreshReciverIsRegistered) {
-/* 548 */               this.mExploreRefreshReciverIsRegistered = false;
-/* 549 */               unregisterReceiver(this.mExploreRefreshReciver);
+                @Override 
+       protected void onDestroy() {
+           super.onDestroy();
+           if (this.mExploreRefreshReciverIsRegistered) {
+               this.mExploreRefreshReciverIsRegistered = false;
+               unregisterReceiver(this.mExploreRefreshReciver);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.HomeTabActivity$3 */
-/* 553 */       class RunnableC02183 implements Runnable {
-/* 554 */           RunnableC02183() {
+                
+       class RunnableC02183 implements Runnable {
+           RunnableC02183() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 557 */           public void run() {
-/* 558 */               Intent i = AppImpl.getInstance().getNotifyFailedIntent(HomeTabActivity.this);
-/* 559 */               if (i != null) {
-/* 560 */                   HomeTabActivity.this.startService(i);
+                    @Override 
+           public void run() {
+               Intent i = AppImpl.getInstance().getNotifyFailedIntent(HomeTabActivity.this);
+               if (i != null) {
+                   HomeTabActivity.this.startService(i);
                         }
-/* 562 */               HomeTabActivity.access$502(HomeTabActivity.this, null);
+               HomeTabActivity.access$502(HomeTabActivity.this, null);
                     }
                 }
 
-/* 553 */       private synchronized Thread getUploadServiceThread() {
+       private synchronized Thread getUploadServiceThread() {
                     Thread thread;
                     try {
                         if (this.mStartUploadServiceThread == null) {
-/* 555 */                   this.mStartUploadServiceThread = new Thread(new RunnableC02183());
-/* 565 */                   thread = this.mStartUploadServiceThread;
+                   this.mStartUploadServiceThread = new Thread(new RunnableC02183());
+                   thread = this.mStartUploadServiceThread;
                         } else {
                             thread = null;
                         }
@@ -587,75 +587,75 @@
                     return thread;
                 }
 
-                @Override // co.vine.android.BaseControllerActionBarActivity, co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 571 */       protected void onResume() {
-/* 572 */           super.onResume();
-/* 573 */           if (this.mTabsAdapter != null && this.mTabHost != null) {
-/* 574 */               this.mTabsAdapter.previousTab = this.mTabHost.getCurrentTab();
+                @Override 
+       protected void onResume() {
+           super.onResume();
+           if (this.mTabsAdapter != null && this.mTabHost != null) {
+               this.mTabsAdapter.previousTab = this.mTabHost.getCurrentTab();
                     }
-/* 576 */           Thread startUploadServiceThread = getUploadServiceThread();
-/* 577 */           if (startUploadServiceThread != null) {
-/* 578 */               startUploadServiceThread.start();
+           Thread startUploadServiceThread = getUploadServiceThread();
+           if (startUploadServiceThread != null) {
+               startUploadServiceThread.start();
                     }
-/* 580 */           TabWidget tabWidget = this.mTabHost.getTabWidget();
-/* 581 */           int tabCount = tabWidget == null ? 0 : tabWidget.getTabCount();
+           TabWidget tabWidget = this.mTabHost.getTabWidget();
+           int tabCount = tabWidget == null ? 0 : tabWidget.getTabCount();
                     for (int j = 0; j < tabCount; j++) {
-/* 583 */               View tabView = tabWidget.getChildAt(j);
-/* 584 */               if (tabView != null) {
-/* 585 */                   tabView.setTag(Integer.valueOf(j + 1));
-/* 586 */                   tabView.setOnLongClickListener(this);
+               View tabView = tabWidget.getChildAt(j);
+               if (tabView != null) {
+                   tabView.setTag(Integer.valueOf(j + 1));
+                   tabView.setOnLongClickListener(this);
                         }
                     }
-/* 589 */           registerReceiver(this.mActivityCountReceiver, ACTIVITY_COUNT_FILTER, CrossConstants.BROADCAST_PERMISSION, null);
-/* 590 */           this.mAppController.fetchActivityCounts();
-/* 591 */           invalidateActivityBadge();
-/* 592 */           invalidateMessagesBadge();
+           registerReceiver(this.mActivityCountReceiver, ACTIVITY_COUNT_FILTER, CrossConstants.BROADCAST_PERMISSION, null);
+           this.mAppController.fetchActivityCounts();
+           invalidateActivityBadge();
+           invalidateMessagesBadge();
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 596 */       protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-/* 597 */           if (this.mTabsAdapter != null) {
-/* 598 */               ArrayList<TabInfo> tabs = this.mTabsAdapter.getTabs();
-/* 599 */               if (requestCode == 0) {
-/* 600 */                   SharedPreferences sp = Util.getDefaultSharedPrefs(this);
-/* 601 */                   sp.edit().putBoolean(HomeTimelineFragment.PREF_INVITE_BANNER_CLICKED, true).apply();
-/* 602 */                   int followCount = sp.getInt(Settings.PREF_FOLLOWING_COUNT, 0);
-/* 604 */                   Fragment homeTimeline = tabs.get(this.mTabHost.getCurrentTab()).fragment();
-/* 605 */                   if (followCount > 5 && (homeTimeline instanceof HomeTimelineFragment)) {
-/* 606 */                       ((HomeTimelineFragment) homeTimeline).removeBanner();
-/* 627 */                       return;
+                @Override 
+       protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+           if (this.mTabsAdapter != null) {
+               ArrayList<TabInfo> tabs = this.mTabsAdapter.getTabs();
+               if (requestCode == 0) {
+                   SharedPreferences sp = Util.getDefaultSharedPrefs(this);
+                   sp.edit().putBoolean(HomeTimelineFragment.PREF_INVITE_BANNER_CLICKED, true).apply();
+                   int followCount = sp.getInt(Settings.PREF_FOLLOWING_COUNT, 0);
+                   Fragment homeTimeline = tabs.get(this.mTabHost.getCurrentTab()).fragment();
+                   if (followCount > 5 && (homeTimeline instanceof HomeTimelineFragment)) {
+                       ((HomeTimelineFragment) homeTimeline).removeBanner();
+                       return;
                             }
-/* 627 */                   return;
+                   return;
                         }
-/* 608 */               if (requestCode == 1 && resultCode == 1) {
+               if (requestCode == 1 && resultCode == 1) {
                             for (TabInfo tab : tabs) {
-/* 611 */                       Fragment fragment = tab.fragment();
-/* 612 */                       if (fragment instanceof BaseTimelineFragment) {
-/* 613 */                           fragment.onActivityResult(requestCode, resultCode, data);
+                       Fragment fragment = tab.fragment();
+                       if (fragment instanceof BaseTimelineFragment) {
+                           fragment.onActivityResult(requestCode, resultCode, data);
                                 }
                             }
-/* 627 */                   return;
+                   return;
                         }
-/* 616 */               if (requestCode == 1 && resultCode == -1) {
-/* 617 */                   if (BuildUtil.isExplore() && this.mMenu != null) {
-/* 618 */                       this.mMenu.removeItem(C0257R.id.capture);
-/* 627 */                       return;
+               if (requestCode == 1 && resultCode == -1) {
+                   if (BuildUtil.isExplore() && this.mMenu != null) {
+                       this.mMenu.removeItem(C0257R.id.capture);
+                       return;
                             }
-/* 627 */                   return;
+                   return;
                         }
-/* 621 */               Fragment frag = tabs.get(this.mTabHost.getCurrentTab()).fragment();
-/* 622 */               if (frag != null) {
-/* 623 */                   frag.onActivityResult(requestCode, resultCode, data);
+               Fragment frag = tabs.get(this.mTabHost.getCurrentTab()).fragment();
+               if (frag != null) {
+                   frag.onActivityResult(requestCode, resultCode, data);
                         }
                     }
                 }
 
-                @Override // co.vine.android.BaseTimelineActivity
-/* 631 */       protected BaseTimelineFragment getCurrentTimeLineFragment() {
+                @Override 
+       protected BaseTimelineFragment getCurrentTimeLineFragment() {
                     try {
-/* 632 */               Fragment frag = this.mTabsAdapter.getCurrentFragment();
-/* 633 */               if (frag instanceof BaseTimelineFragment) {
-/* 634 */                   return (BaseTimelineFragment) frag;
+               Fragment frag = this.mTabsAdapter.getCurrentFragment();
+               if (frag instanceof BaseTimelineFragment) {
+                   return (BaseTimelineFragment) frag;
                         }
                         return null;
                     } catch (Exception e) {
@@ -663,385 +663,385 @@
                     }
                 }
 
-                @Override // android.support.v7.app.ActionBarActivity
-/* 644 */       public void onSupportContentChanged() {
-/* 645 */           super.onSupportContentChanged();
-/* 646 */           if (!BuildUtil.isExplore()) {
-/* 647 */               setupTabs();
+                @Override 
+       public void onSupportContentChanged() {
+           super.onSupportContentChanged();
+           if (!BuildUtil.isExplore()) {
+               setupTabs();
                     }
                 }
 
-/* 651 */       private void setupTabs() {
-/* 652 */           this.mTabHost = (IconTabHost) findViewById(android.R.id.tabhost);
-/* 653 */           if (this.mTabHost == null) {
-/* 654 */               throw new RuntimeException("Your content must have a TabHost whose id attribute is 'android.R.id.tabhost'");
+       private void setupTabs() {
+           this.mTabHost = (IconTabHost) findViewById(android.R.id.tabhost);
+           if (this.mTabHost == null) {
+               throw new RuntimeException("Your content must have a TabHost whose id attribute is 'android.R.id.tabhost'");
                     }
-/* 659 */           this.mTabHost.setup();
-/* 660 */           this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
+           this.mTabHost.setup();
+           this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
                 }
 
-/* 663 */       public static void start(Activity activity, String tag) {
-/* 664 */           Intent intent = new Intent(activity, (Class<?>) HomeTabActivity.class).addFlags(avformat.AVFMT_SEEK_TO_PTS);
-/* 666 */           activity.startActivity(intent);
-/* 667 */           activity.finish();
+       public static void start(Activity activity, String tag) {
+           Intent intent = new Intent(activity, (Class<?>) HomeTabActivity.class).addFlags(avformat.AVFMT_SEEK_TO_PTS);
+           activity.startActivity(intent);
+           activity.finish();
                 }
 
-                @Override // co.vine.android.BaseTimelineActivity, co.vine.android.BaseActionBarActivity, android.app.Activity
-/* 671 */       public boolean onCreateOptionsMenu(Menu menu) {
-/* 672 */           getMenuInflater().inflate(C0257R.menu.home, menu);
-/* 673 */           SharedPreferences prefs = Util.getDefaultSharedPrefs(this);
-/* 674 */           if (BuildUtil.isExplore() && prefs.getBoolean(Settings.PREF_GINGERBREAD_NOTIF_DISMISSED, false)) {
-/* 676 */               menu.removeItem(C0257R.id.capture);
+                @Override 
+       public boolean onCreateOptionsMenu(Menu menu) {
+           getMenuInflater().inflate(C0257R.menu.home, menu);
+           SharedPreferences prefs = Util.getDefaultSharedPrefs(this);
+           if (BuildUtil.isExplore() && prefs.getBoolean(Settings.PREF_GINGERBREAD_NOTIF_DISMISSED, false)) {
+               menu.removeItem(C0257R.id.capture);
                     }
-/* 678 */           this.mInboxMenu = menu.findItem(C0257R.id.inbox);
-/* 679 */           invalidateMessagesBadge();
-/* 680 */           this.mMenu = menu;
-/* 681 */           return super.onCreateOptionsMenu(menu);
+           this.mInboxMenu = menu.findItem(C0257R.id.inbox);
+           invalidateMessagesBadge();
+           this.mMenu = menu;
+           return super.onCreateOptionsMenu(menu);
                 }
 
-/* 684 */       private void invalidateMessagesBadge() {
-/* 685 */           Resources res = getResources();
-/* 686 */           if (res != null && this.mInboxMenu != null) {
-/* 687 */               Drawable currentDrawable = this.mInboxMenu.getIcon();
-/* 688 */               CenteredTextDrawable inboxBadgeDrawable = null;
-/* 689 */               if (currentDrawable instanceof CenteredTextDrawable) {
-/* 690 */                   inboxBadgeDrawable = (CenteredTextDrawable) currentDrawable;
+       private void invalidateMessagesBadge() {
+           Resources res = getResources();
+           if (res != null && this.mInboxMenu != null) {
+               Drawable currentDrawable = this.mInboxMenu.getIcon();
+               CenteredTextDrawable inboxBadgeDrawable = null;
+               if (currentDrawable instanceof CenteredTextDrawable) {
+                   inboxBadgeDrawable = (CenteredTextDrawable) currentDrawable;
                         }
-/* 692 */               if (inboxBadgeDrawable == null) {
-/* 693 */                   inboxBadgeDrawable = new CenteredTextDrawable(res, C0257R.drawable.vm_bubble_outline, C0257R.drawable.vm_bubble_fill);
-/* 694 */                   inboxBadgeDrawable.setColorFilter(1, new PorterDuffColorFilter(Util.getProfileColor(this) | (-16777216), PorterDuff.Mode.SRC_IN));
-/* 695 */                   int padding = (int) (6.0f * res.getDisplayMetrics().density);
-/* 696 */                   inboxBadgeDrawable.setTextPadding(new Rect(padding, padding, padding, padding));
-/* 697 */                   inboxBadgeDrawable.setTextColor(-1);
-/* 698 */                   inboxBadgeDrawable.setTypeFace(Typefaces.get(this).boldContentBold);
-/* 699 */                   inboxBadgeDrawable.setTextSize(TypedValue.applyDimension(2, 12.0f, res.getDisplayMetrics()));
+               if (inboxBadgeDrawable == null) {
+                   inboxBadgeDrawable = new CenteredTextDrawable(res, C0257R.drawable.vm_bubble_outline, C0257R.drawable.vm_bubble_fill);
+                   inboxBadgeDrawable.setColorFilter(1, new PorterDuffColorFilter(Util.getProfileColor(this) | (-16777216), PorterDuff.Mode.SRC_IN));
+                   int padding = (int) (6.0f * res.getDisplayMetrics().density);
+                   inboxBadgeDrawable.setTextPadding(new Rect(padding, padding, padding, padding));
+                   inboxBadgeDrawable.setTextColor(-1);
+                   inboxBadgeDrawable.setTypeFace(Typefaces.get(this).boldContentBold);
+                   inboxBadgeDrawable.setTextSize(TypedValue.applyDimension(2, 12.0f, res.getDisplayMetrics()));
                         }
-/* 702 */               if (this.mMessageCount == 0) {
-/* 703 */                   this.mInboxMenu.setIcon(C0257R.drawable.ic_action_inbox);
+               if (this.mMessageCount == 0) {
+                   this.mInboxMenu.setIcon(C0257R.drawable.ic_action_inbox);
                         } else {
-/* 705 */                   inboxBadgeDrawable.setText(this.mMessageCount > 99 ? "99+" : String.valueOf(this.mMessageCount));
-/* 707 */                   this.mInboxMenu.setIcon(inboxBadgeDrawable);
+                   inboxBadgeDrawable.setText(this.mMessageCount > 99 ? "99+" : String.valueOf(this.mMessageCount));
+                   this.mInboxMenu.setIcon(inboxBadgeDrawable);
                         }
                     }
                 }
 
-/* 712 */       public void setHomeNewCount(int newCount) {
-/* 713 */           if (this.mTabsAdapter != null) {
-/* 714 */               SLog.m465i("Set home badge count: {}", Integer.valueOf(newCount));
-/* 715 */               this.mTabsAdapter.setNew(0, newCount > 0);
-/* 716 */               ImageView indicator = this.mTabsAdapter.getNewIndicatorForTab(0);
-/* 717 */               Resources res = getResources();
-/* 718 */               if (res != null && indicator != null) {
-/* 719 */                   Drawable drawable = indicator.getDrawable();
-/* 720 */                   CenteredTextDrawable textDrawable = null;
-/* 721 */                   if (drawable instanceof CenteredTextDrawable) {
-/* 722 */                       textDrawable = (CenteredTextDrawable) drawable;
+       public void setHomeNewCount(int newCount) {
+           if (this.mTabsAdapter != null) {
+               SLog.m465i("Set home badge count: {}", Integer.valueOf(newCount));
+               this.mTabsAdapter.setNew(0, newCount > 0);
+               ImageView indicator = this.mTabsAdapter.getNewIndicatorForTab(0);
+               Resources res = getResources();
+               if (res != null && indicator != null) {
+                   Drawable drawable = indicator.getDrawable();
+                   CenteredTextDrawable textDrawable = null;
+                   if (drawable instanceof CenteredTextDrawable) {
+                       textDrawable = (CenteredTextDrawable) drawable;
                             }
-/* 724 */                   if (textDrawable == null) {
-/* 725 */                       textDrawable = makeAcitivytNewIndicator(res);
-/* 726 */                       indicator.setImageDrawable(textDrawable);
+                   if (textDrawable == null) {
+                       textDrawable = makeAcitivytNewIndicator(res);
+                       indicator.setImageDrawable(textDrawable);
                             }
-/* 728 */                   int padding = (int) (6.0f * res.getDisplayMetrics().density);
-/* 729 */                   textDrawable.setTextPadding(new Rect(padding, padding, padding, padding));
-/* 730 */                   textDrawable.setText(newCount < 10 ? String.valueOf(newCount) : "9+");
+                   int padding = (int) (6.0f * res.getDisplayMetrics().density);
+                   textDrawable.setTextPadding(new Rect(padding, padding, padding, padding));
+                   textDrawable.setText(newCount < 10 ? String.valueOf(newCount) : "9+");
                         }
                     }
                 }
 
-/* 735 */       public void invalidateActivityBadge() {
-/* 736 */           if (this.mTabsAdapter != null) {
-/* 737 */               this.mTabsAdapter.setNew(1, this.mActivityCount > 0);
-/* 738 */               ImageView indicator = this.mTabsAdapter.getNewIndicatorForTab(1);
-/* 739 */               Resources res = getResources();
-/* 740 */               if (res != null && indicator != null) {
-/* 741 */                   Drawable drawable = indicator.getDrawable();
-/* 742 */                   CenteredTextDrawable textDrawable = null;
-/* 743 */                   if (drawable instanceof CenteredTextDrawable) {
-/* 744 */                       textDrawable = (CenteredTextDrawable) drawable;
+       public void invalidateActivityBadge() {
+           if (this.mTabsAdapter != null) {
+               this.mTabsAdapter.setNew(1, this.mActivityCount > 0);
+               ImageView indicator = this.mTabsAdapter.getNewIndicatorForTab(1);
+               Resources res = getResources();
+               if (res != null && indicator != null) {
+                   Drawable drawable = indicator.getDrawable();
+                   CenteredTextDrawable textDrawable = null;
+                   if (drawable instanceof CenteredTextDrawable) {
+                       textDrawable = (CenteredTextDrawable) drawable;
                             }
-/* 746 */                   if (textDrawable == null) {
-/* 747 */                       textDrawable = makeAcitivytNewIndicator(res);
-/* 748 */                       indicator.setImageDrawable(textDrawable);
+                   if (textDrawable == null) {
+                       textDrawable = makeAcitivytNewIndicator(res);
+                       indicator.setImageDrawable(textDrawable);
                             }
-/* 750 */                   int minus = 0;
-/* 751 */                   if (this.mActivityCount > 9) {
-/* 752 */                       minus = 0 + 1;
+                   int minus = 0;
+                   if (this.mActivityCount > 9) {
+                       minus = 0 + 1;
                             }
-/* 754 */                   if (this.mActivityCount > 99) {
-/* 755 */                       minus++;
+                   if (this.mActivityCount > 99) {
+                       minus++;
                             }
-/* 757 */                   int paddingVertical = (int) (6.0f * res.getDisplayMetrics().density);
-/* 758 */                   int paddingSides = (int) ((6 - (minus * 2)) * res.getDisplayMetrics().density);
-/* 759 */                   textDrawable.setTextPadding(new Rect(paddingSides, paddingVertical, paddingSides, paddingVertical));
-/* 760 */                   textDrawable.setText(this.mActivityCount > 99 ? "99+" : String.valueOf(this.mActivityCount));
+                   int paddingVertical = (int) (6.0f * res.getDisplayMetrics().density);
+                   int paddingSides = (int) ((6 - (minus * 2)) * res.getDisplayMetrics().density);
+                   textDrawable.setTextPadding(new Rect(paddingSides, paddingVertical, paddingSides, paddingVertical));
+                   textDrawable.setText(this.mActivityCount > 99 ? "99+" : String.valueOf(this.mActivityCount));
                         }
                     }
                 }
 
-/* 766 */       private CenteredTextDrawable makeAcitivytNewIndicator(Resources res) {
-/* 767 */           float density = res.getDisplayMetrics().density;
-/* 768 */           GradientDrawable drawable1 = new GradientDrawable();
-/* 769 */           drawable1.setStroke((int) (2.0f * density), -14408668);
-/* 770 */           drawable1.setShape(0);
-/* 771 */           drawable1.setCornerRadius(4.0f * density);
-/* 772 */           drawable1.setColor(res.getColor(C0257R.color.vine_green));
-/* 773 */           drawable1.setSize((int) (19.0f * density), (int) (20.0f * density));
-/* 774 */           CenteredTextDrawable textDrawable = new CenteredTextDrawable(drawable1);
-/* 775 */           textDrawable.setTextColor(-1);
-/* 776 */           textDrawable.setTypeFace(Typefaces.get(this).boldContentBold);
-/* 777 */           textDrawable.setTextSize(TypedValue.applyDimension(2, 12.0f, res.getDisplayMetrics()));
-/* 779 */           return textDrawable;
+       private CenteredTextDrawable makeAcitivytNewIndicator(Resources res) {
+           float density = res.getDisplayMetrics().density;
+           GradientDrawable drawable1 = new GradientDrawable();
+           drawable1.setStroke((int) (2.0f * density), -14408668);
+           drawable1.setShape(0);
+           drawable1.setCornerRadius(4.0f * density);
+           drawable1.setColor(res.getColor(C0257R.color.vine_green));
+           drawable1.setSize((int) (19.0f * density), (int) (20.0f * density));
+           CenteredTextDrawable textDrawable = new CenteredTextDrawable(drawable1);
+           textDrawable.setTextColor(-1);
+           textDrawable.setTypeFace(Typefaces.get(this).boldContentBold);
+           textDrawable.setTextSize(TypedValue.applyDimension(2, 12.0f, res.getDisplayMetrics()));
+           return textDrawable;
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.app.Activity
-/* 783 */       public boolean onOptionsItemSelected(MenuItem item) {
-/* 784 */           int id = item.getItemId();
-/* 785 */           if (id == C0257R.id.find_friends) {
-/* 786 */               FlurryUtils.trackVisitFindFriends("Menu");
-/* 787 */               startActivity(new Intent(this, (Class<?>) FindFriendsActivity.class));
+                @Override 
+       public boolean onOptionsItemSelected(MenuItem item) {
+           int id = item.getItemId();
+           if (id == C0257R.id.find_friends) {
+               FlurryUtils.trackVisitFindFriends("Menu");
+               startActivity(new Intent(this, (Class<?>) FindFriendsActivity.class));
                         return true;
                     }
-/* 789 */           if (id == C0257R.id.settings) {
-/* 790 */               FlurryUtils.trackVisitSettings("Menu");
-/* 791 */               startActivityForResult(new Intent(this, (Class<?>) SettingsActivity.class), 1);
+           if (id == C0257R.id.settings) {
+               FlurryUtils.trackVisitSettings("Menu");
+               startActivityForResult(new Intent(this, (Class<?>) SettingsActivity.class), 1);
                         return true;
                     }
-/* 794 */           if (id == C0257R.id.search) {
-/* 795 */               FlurryUtils.trackVisitSearch("Menu");
-/* 796 */               startActivity(new Intent(this, (Class<?>) SearchActivity.class));
+           if (id == C0257R.id.search) {
+               FlurryUtils.trackVisitSearch("Menu");
+               startActivity(new Intent(this, (Class<?>) SearchActivity.class));
                         return true;
                     }
-/* 798 */           if (id == C0257R.id.inbox) {
-/* 799 */               FlurryUtils.trackVisitInbox("Menu");
-/* 800 */               getSlidingMenu().toggle(true);
+           if (id == C0257R.id.inbox) {
+               FlurryUtils.trackVisitInbox("Menu");
+               getSlidingMenu().toggle(true);
                         return true;
                     }
-/* 802 */           if (id == C0257R.id.gingerbread_notif_button && BuildUtil.isExplore()) {
-/* 804 */               Intent intent = ViewOverlayActivity.getIntent(this, C0257R.layout.main_gb_notif, C0257R.id.gingerbread_notif_button, 0);
-/* 806 */               startActivityForResult(intent, 1);
+           if (id == C0257R.id.gingerbread_notif_button && BuildUtil.isExplore()) {
+               Intent intent = ViewOverlayActivity.getIntent(this, C0257R.layout.main_gb_notif, C0257R.id.gingerbread_notif_button, 0);
+               startActivityForResult(intent, 1);
                         return true;
                     }
-/* 810 */           return super.onOptionsItemSelected(item);
+           return super.onOptionsItemSelected(item);
                 }
 
-                @Override // android.view.View.OnLongClickListener
-/* 814 */       public boolean onLongClick(View view) {
-/* 815 */           int toastResId = -1;
+                @Override 
+       public boolean onLongClick(View view) {
+           int toastResId = -1;
                     switch (((Integer) view.getTag()).intValue()) {
                         case 1:
-/* 818 */                   toastResId = C0257R.string.tab_title_timeline;
+                   toastResId = C0257R.string.tab_title_timeline;
                             break;
                         case 2:
-/* 822 */                   toastResId = C0257R.string.tab_title_activity;
+                   toastResId = C0257R.string.tab_title_activity;
                             break;
                         case 3:
-/* 826 */                   toastResId = C0257R.string.tab_title_explore;
+                   toastResId = C0257R.string.tab_title_explore;
                             break;
                         case 4:
-/* 830 */                   toastResId = C0257R.string.tab_title_profile;
+                   toastResId = C0257R.string.tab_title_profile;
                             break;
                     }
-/* 838 */           if (toastResId > 0) {
-/* 839 */               int xOffset = view.getLeft();
-/* 840 */               int yOffset = view.getBottom() + view.getMeasuredHeight();
-/* 841 */               Toast toast = Toast.makeText(this, toastResId, 0);
-/* 842 */               toast.setGravity(51, xOffset, yOffset);
-/* 843 */               toast.show();
+           if (toastResId > 0) {
+               int xOffset = view.getLeft();
+               int yOffset = view.getBottom() + view.getMeasuredHeight();
+               Toast toast = Toast.makeText(this, toastResId, 0);
+               toast.setGravity(51, xOffset, yOffset);
+               toast.show();
                     }
-/* 847 */           if (view.getClass().equals(TabIndicator.class)) {
-/* 848 */               view.performHapticFeedback(0);
-/* 850 */               return true;
+           if (view.getClass().equals(TabIndicator.class)) {
+               view.performHapticFeedback(0);
+               return true;
                     }
-/* 850 */           return true;
+           return true;
                 }
 
-                @Override // co.vine.android.widget.tabs.IconTabHost.OnTabClickedListener
-/* 854 */       public void onCurrentTabClicked() {
-/* 855 */           scrollTop();
+                @Override 
+       public void onCurrentTabClicked() {
+           scrollTop();
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-/* 858 */       public void scrollTop() {
+                
+       public void scrollTop() {
                     TopScrollable list;
-/* 859 */           Fragment currentFragment = this.mTabsAdapter.getCurrentFragment();
-/* 860 */           resetNav();
-/* 861 */           if (currentFragment instanceof BaseArrayListFragment) {
-/* 862 */               View view = currentFragment.getView();
-/* 863 */               if (view != null && (list = (TopScrollable) view.findViewById(android.R.id.list)) != null && !list.scrollTop()) {
-/* 870 */                   ((BaseArrayListFragment) currentFragment).invokeScrollFirstItem();
-/* 877 */                   return;
+           Fragment currentFragment = this.mTabsAdapter.getCurrentFragment();
+           resetNav();
+           if (currentFragment instanceof BaseArrayListFragment) {
+               View view = currentFragment.getView();
+               if (view != null && (list = (TopScrollable) view.findViewById(android.R.id.list)) != null && !list.scrollTop()) {
+                   ((BaseArrayListFragment) currentFragment).invokeScrollFirstItem();
+                   return;
                         }
-/* 877 */               return;
+               return;
                     }
-/* 873 */           if (currentFragment instanceof TopScrollable) {
-/* 874 */               ((TopScrollable) currentFragment).scrollTop();
-                    }
-                }
-
-/* 879 */       private void changeTabColor(int lastItem) {
-/* 880 */           if (lastItem >= 0) {
-/* 881 */               ((TabIndicator) this.mTabHost.getTabWidget().getChildTabViewAt(lastItem)).setColor(this.mDisabledTabColor);
-                    }
-/* 883 */           int newItem = this.mTabHost.getCurrentTab();
-/* 884 */           if (newItem != 3) {
-/* 885 */               ((TabIndicator) this.mTabHost.getTabWidget().getChildTabViewAt(newItem)).setColor(this.mEnabledTabColor);
+           if (currentFragment instanceof TopScrollable) {
+               ((TopScrollable) currentFragment).scrollTop();
                     }
                 }
 
-/* 889 */       public void setProfileColor(int color) {
-/* 890 */           int current = this.mTabHost.getCurrentTab();
-/* 891 */           if (current == 3) {
-/* 892 */               ((TabIndicator) this.mTabHost.getTabWidget().getChildTabViewAt(current)).setColor(color);
+       private void changeTabColor(int lastItem) {
+           if (lastItem >= 0) {
+               ((TabIndicator) this.mTabHost.getTabWidget().getChildTabViewAt(lastItem)).setColor(this.mDisabledTabColor);
+                    }
+           int newItem = this.mTabHost.getCurrentTab();
+           if (newItem != 3) {
+               ((TabIndicator) this.mTabHost.getTabWidget().getChildTabViewAt(newItem)).setColor(this.mEnabledTabColor);
                     }
                 }
 
-/* 894 */       class HomeTabSessionListener extends AppSessionListener {
-/* 895 */           HomeTabSessionListener() {
+       public void setProfileColor(int color) {
+           int current = this.mTabHost.getCurrentTab();
+           if (current == 3) {
+               ((TabIndicator) this.mTabHost.getTabWidget().getChildTabViewAt(current)).setColor(color);
+                    }
+                }
+
+       class HomeTabSessionListener extends AppSessionListener {
+           HomeTabSessionListener() {
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 899 */           public void onVerifyEmailComplete(String reqId, int statusCode, String reasonPhrase) {
-/* 900 */               if (statusCode == 200) {
-/* 901 */                   Intent intent = new Intent(HomeTabActivity.this, (Class<?>) SettingsActivity.class);
-/* 902 */                   intent.setAction(HomeTabActivity.ACTION_VERIFICATION_COMPLETE);
-/* 903 */                   HomeTabActivity.this.startActivityForResult(intent, 1);
+                    @Override 
+           public void onVerifyEmailComplete(String reqId, int statusCode, String reasonPhrase) {
+               if (statusCode == 200) {
+                   Intent intent = new Intent(HomeTabActivity.this, (Class<?>) SettingsActivity.class);
+                   intent.setAction(HomeTabActivity.ACTION_VERIFICATION_COMPLETE);
+                   HomeTabActivity.this.startActivityForResult(intent, 1);
                         } else {
-/* 905 */                   Context applicationContext = HomeTabActivity.this.getApplicationContext();
+                   Context applicationContext = HomeTabActivity.this.getApplicationContext();
                             if (reasonPhrase == null) {
                                 reasonPhrase = HomeTabActivity.this.getString(C0257R.string.generic_error);
                             }
                             Util.showCenteredToast(applicationContext, reasonPhrase);
                         }
-/* 908 */               HomeTabActivity.this.dismissDialog();
+               HomeTabActivity.this.dismissDialog();
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 913 */           public void onGetPendingNotificationCountComplete(String reqId, int statusCode, String reasonPhrase, int count) {
-/* 914 */               if (statusCode == 200) {
-/* 915 */                   HomeTabActivity.access$102(HomeTabActivity.this, count);
-/* 916 */                   HomeTabActivity.this.invalidateActivityBadge();
+                    @Override 
+           public void onGetPendingNotificationCountComplete(String reqId, int statusCode, String reasonPhrase, int count) {
+               if (statusCode == 200) {
+                   HomeTabActivity.access$102(HomeTabActivity.this, count);
+                   HomeTabActivity.this.invalidateActivityBadge();
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 924 */           public void onGetActivityCountComplete(String reqId, int statusCode, String reasonPhrase, int activityCount, int followRequestCount, int messagesCount, UrlCachePolicy policyUsed) {
-/* 925 */               if (statusCode == 200) {
-/* 926 */                   SharedPreferences pref = Util.getDefaultSharedPrefs(HomeTabActivity.this);
-/* 927 */                   int mostRecent = pref.getInt(Settings.PREF_MOST_RECENT_UNREAD_MESSAGES_COUNT, 0);
-/* 928 */                   boolean dismissed = pref.getBoolean(Settings.PREF_UNREAD_MESSAGES_DISMISSED, false);
-/* 930 */                   if (dismissed) {
-/* 932 */                       if (mostRecent != messagesCount) {
-/* 933 */                           pref.edit().putBoolean(Settings.PREF_UNREAD_MESSAGES_DISMISSED, false).apply();
-/* 934 */                           HomeTabActivity.access$002(HomeTabActivity.this, messagesCount);
-/* 935 */                           HomeTabActivity.access$200(HomeTabActivity.this);
-/* 943 */                           return;
+                    @Override 
+           public void onGetActivityCountComplete(String reqId, int statusCode, String reasonPhrase, int activityCount, int followRequestCount, int messagesCount, UrlCachePolicy policyUsed) {
+               if (statusCode == 200) {
+                   SharedPreferences pref = Util.getDefaultSharedPrefs(HomeTabActivity.this);
+                   int mostRecent = pref.getInt(Settings.PREF_MOST_RECENT_UNREAD_MESSAGES_COUNT, 0);
+                   boolean dismissed = pref.getBoolean(Settings.PREF_UNREAD_MESSAGES_DISMISSED, false);
+                   if (dismissed) {
+                       if (mostRecent != messagesCount) {
+                           pref.edit().putBoolean(Settings.PREF_UNREAD_MESSAGES_DISMISSED, false).apply();
+                           HomeTabActivity.access$002(HomeTabActivity.this, messagesCount);
+                           HomeTabActivity.access$200(HomeTabActivity.this);
+                           return;
                                 }
-/* 943 */                       return;
+                       return;
                             }
-/* 939 */                   HomeTabActivity.access$002(HomeTabActivity.this, messagesCount);
-/* 940 */                   HomeTabActivity.access$200(HomeTabActivity.this);
+                   HomeTabActivity.access$002(HomeTabActivity.this, messagesCount);
+                   HomeTabActivity.access$200(HomeTabActivity.this);
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 946 */           public void onReceiveRTCMessage(ArrayList<VineRTCConversation> data) {
+                    @Override 
+           public void onReceiveRTCMessage(ArrayList<VineRTCConversation> data) {
                         for (VineRTCConversation conversation : data) {
                             for (VineRTCParticipant participant : conversation.participants) {
-/* 949 */                       long lastMessageId = participant.lastMessageId;
+                       long lastMessageId = participant.lastMessageId;
                                 if (lastMessageId > 0) {
-/* 951 */                           Long participantLast = (Long) HomeTabActivity.access$600(HomeTabActivity.this).get(participant.userId);
-/* 952 */                           if (participantLast != null && lastMessageId > participantLast.longValue()) {
-/* 953 */                               HomeTabActivity.this.mAppController.fetchConversation(1, false, conversation.conversationId, 0L, true);
-/* 955 */                               if (!HomeTabActivity.this.getSlidingMenu().isMenuShowing()) {
-/* 956 */                                   HomeTabActivity.this.mAppController.fetchActivityCounts();
+                           Long participantLast = (Long) HomeTabActivity.access$600(HomeTabActivity.this).get(participant.userId);
+                           if (participantLast != null && lastMessageId > participantLast.longValue()) {
+                               HomeTabActivity.this.mAppController.fetchConversation(1, false, conversation.conversationId, 0L, true);
+                               if (!HomeTabActivity.this.getSlidingMenu().isMenuShowing()) {
+                                   HomeTabActivity.this.mAppController.fetchActivityCounts();
                                         }
                                     } else {
-/* 959 */                               HomeTabActivity.access$600(HomeTabActivity.this).put(participant.userId, Long.valueOf(lastMessageId));
+                               HomeTabActivity.access$600(HomeTabActivity.this).put(participant.userId, Long.valueOf(lastMessageId));
                                     }
                                 }
                             }
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 967 */           public void onAbortAllRequestsComplete() {
-/* 968 */               super.onAbortAllRequestsComplete();
-/* 969 */               HomeTabActivity.this.mAppController.fetchActivityCounts();
+                    @Override 
+           public void onAbortAllRequestsComplete() {
+               super.onAbortAllRequestsComplete();
+               HomeTabActivity.this.mAppController.fetchActivityCounts();
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 977 */           public void onGetTimeLineComplete(String reqId, int statusCode, String reasonPhrase, int type, int count, boolean memory, ArrayList<VinePost> posts, String tag, int pageType, int next, int previous, long anchor, boolean userInitiated, int size, String title, UrlCachePolicy cachePolicy, Bundle bundle) {
-/* 978 */               if (!HomeTabActivity.access$700(HomeTabActivity.this) && !OnboardHelper.hasShownFavoriteUserOverlay(HomeTabActivity.this) && type == 1) {
-/* 980 */                   HomeTabActivity.this.mAppController.fetchOnboardingSuggestedFavoriteUsers();
+                    @Override 
+           public void onGetTimeLineComplete(String reqId, int statusCode, String reasonPhrase, int type, int count, boolean memory, ArrayList<VinePost> posts, String tag, int pageType, int next, int previous, long anchor, boolean userInitiated, int size, String title, UrlCachePolicy cachePolicy, Bundle bundle) {
+               if (!HomeTabActivity.access$700(HomeTabActivity.this) && !OnboardHelper.hasShownFavoriteUserOverlay(HomeTabActivity.this) && type == 1) {
+                   HomeTabActivity.this.mAppController.fetchOnboardingSuggestedFavoriteUsers();
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 986 */           public void onFetchOnboardingSuggestedFavoritesComplete(String reqId, int statusCode, String reasonPhrase, ArrayList<VineUser> users) {
-/* 987 */               if (users != null && !users.isEmpty()) {
-/* 988 */                   FavoritePeopleOnboardActivity.start(HomeTabActivity.this, users);
-/* 989 */                   OnboardHelper.setFavoriteUserOverlayShown(HomeTabActivity.this);
+                    @Override 
+           public void onFetchOnboardingSuggestedFavoritesComplete(String reqId, int statusCode, String reasonPhrase, ArrayList<VineUser> users) {
+               if (users != null && !users.isEmpty()) {
+                   FavoritePeopleOnboardActivity.start(HomeTabActivity.this, users);
+                   OnboardHelper.setFavoriteUserOverlayShown(HomeTabActivity.this);
                         }
                     }
                 }
 
-/* 994 */       private void processStartIntent(Intent intent) {
-/* 995 */           Uri data = intent.getData();
-/* 996 */           String action = intent.getAction();
-/* 997 */           VineSingleNotification notification = (VineSingleNotification) intent.getParcelableExtra("notification");
-/* 999 */           if ("android.intent.action.VIEW".equals(action) && data != null) {
-/* 1001 */              ArrayList<String> pathSegments = new ArrayList<>(data.getPathSegments());
-/* 1002 */              String scheme = data.getScheme();
-/* 1003 */              String host = data.getHost();
-/* 1005 */              if (host != null) {
-/* 1006 */                  if (host.contains(VineAPI.HOST_VINE) && !pathSegments.isEmpty()) {
-/* 1007 */                      String pathPrefix = pathSegments.get(0);
-/* 1008 */                      if (PREFIX_SHARED_VIDEO.equals(pathPrefix) && pathSegments.size() > 1) {
-/* 1010 */                          String shareId = trimSegment(pathSegments.get(1));
-/* 1011 */                          SingleActivity.start(this, shareId);
+       private void processStartIntent(Intent intent) {
+           Uri data = intent.getData();
+           String action = intent.getAction();
+           VineSingleNotification notification = (VineSingleNotification) intent.getParcelableExtra("notification");
+           if ("android.intent.action.VIEW".equals(action) && data != null) {
+              ArrayList<String> pathSegments = new ArrayList<>(data.getPathSegments());
+              String scheme = data.getScheme();
+              String host = data.getHost();
+              if (host != null) {
+                  if (host.contains(VineAPI.HOST_VINE) && !pathSegments.isEmpty()) {
+                      String pathPrefix = pathSegments.get(0);
+                      if (PREFIX_SHARED_VIDEO.equals(pathPrefix) && pathSegments.size() > 1) {
+                          String shareId = trimSegment(pathSegments.get(1));
+                          SingleActivity.start(this, shareId);
                                 } else if (PREFIX_USER_ID.equals(pathPrefix)) {
                                     try {
-/* 1015 */                              String userId = trimSegment(data.getLastPathSegment());
-/* 1016 */                              ProfileActivity.start(this, Long.parseLong(userId), "Deep Link: /u/<userId>");
+                              String userId = trimSegment(data.getLastPathSegment());
+                              ProfileActivity.start(this, Long.parseLong(userId), "Deep Link: /u/<userId>");
                                     } catch (NumberFormatException e) {
-/* 1018 */                              Util.showCenteredToast(this, C0257R.string.invalid_link);
-/* 1019 */                              finish();
+                              Util.showCenteredToast(this, C0257R.string.invalid_link);
+                              finish();
                                     }
                                 } else if (PREFIX_CONFIRM_EMAIL.equals(pathPrefix)) {
-/* 1023 */                          this.mAppController.verifyEmail(this.mAppController.getActiveSession(), data.getLastPathSegment());
-/* 1024 */                          this.mProgressDialog = new ProgressDialog(this);
-/* 1025 */                          this.mProgressDialog.setMessage(getString(C0257R.string.login_validating));
+                          this.mAppController.verifyEmail(this.mAppController.getActiveSession(), data.getLastPathSegment());
+                          this.mProgressDialog = new ProgressDialog(this);
+                          this.mProgressDialog.setMessage(getString(C0257R.string.login_validating));
                                     try {
-/* 1027 */                              this.mProgressDialog.show();
+                              this.mProgressDialog.show();
                                     } catch (Exception e2) {
-/* 1029 */                              SLog.m459e("Failed to show pd.", (Throwable) e2);
+                              SLog.m459e("Failed to show pd.", (Throwable) e2);
                                     }
                                 } else {
-/* 1033 */                          ProfileActivity.start(this, pathSegments, "Deep Link: Vanity URL");
+                          ProfileActivity.start(this, pathSegments, "Deep Link: Vanity URL");
                                 }
                             } else if (SCHEME_VINE.equals(scheme)) {
-/* 1036 */                      LinkDispatcher.dispatch(data, this);
+                      LinkDispatcher.dispatch(data, this);
                             }
                         }
                     } else if (StartActivity.ACTION_ACTIVITY_NOTIFICATION_PRESSED.equals(action) && notification != null) {
-/* 1041 */              if (notification.notificationTypeId == 33 && notification.postId > 0) {
-/* 1043 */                  Intent singleIntent = SingleActivity.getIntent(this, notification.postId);
-/* 1044 */                  singleIntent.putExtra(SingleFragment.ARG_IS_FAVORITE, true);
-/* 1045 */                  startActivity(singleIntent);
+              if (notification.notificationTypeId == 33 && notification.postId > 0) {
+                  Intent singleIntent = SingleActivity.getIntent(this, notification.postId);
+                  singleIntent.putExtra(SingleFragment.ARG_IS_FAVORITE, true);
+                  startActivity(singleIntent);
                         } else {
-/* 1048 */                  this.mShowActivityFeed = true;
+                  this.mShowActivityFeed = true;
                         }
                     } else if (StartActivity.ACTION_ONBOARD_NOTIFICATION_PRESSED.equals(action)) {
-/* 1051 */              if (notification != null && GCMNotificationService.ONBOARD_VALUE_FAVORITES.equals(notification.onboard) && OnboardHelper.hasShownFavoriteUserOverlay(this)) {
-/* 1053 */                  FavoritePeopleActivity.start(this, 0);
+              if (notification != null && GCMNotificationService.ONBOARD_VALUE_FAVORITES.equals(notification.onboard) && OnboardHelper.hasShownFavoriteUserOverlay(this)) {
+                  FavoritePeopleActivity.start(this, 0);
                         }
                     } else if (StartActivity.ACTION_MESSAGE_NOTIFICATION_PRESSED.equals(action)) {
-/* 1058 */              this.mShouldShowMenu = true;
+              this.mShouldShowMenu = true;
                     } else if (StartActivity.ACTION_VIEW_UPLOAD_LIST.equals(action)) {
-/* 1061 */              AppImpl.getInstance().startUploadsListActivity(this);
+              AppImpl.getInstance().startUploadsListActivity(this);
                     }
-/* 1064 */          if (notification != null) {
-/* 1065 */              FlurryUtils.trackNotificationClicked(notification.toString());
+          if (notification != null) {
+              FlurryUtils.trackNotificationClicked(notification.toString());
                     }
                 }
             }

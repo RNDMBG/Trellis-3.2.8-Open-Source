@@ -22,8 +22,8 @@
             import com.twitter.android.widget.RefreshListener;
             import com.twitter.android.widget.RefreshableListView;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 73 */    public class BaseCursorListFragment extends BaseCursorAdapterFragment implements AbsListView.OnScrollListener, OnTabChangedListener, RefreshListener {
+            
+    public class BaseCursorListFragment extends BaseCursorAdapterFragment implements AbsListView.OnScrollListener, OnTabChangedListener, RefreshListener {
                 public static final String ARG_BG_COLOR = "bg_color";
                 public static final String ARG_CHOICE_MODE = "chmode";
                 public static final String ARG_DATA = "data";
@@ -55,238 +55,238 @@
                 private final AdapterView.OnItemLongClickListener mOnItemLongClickListenerClickListener = new C01552();
                 private final Runnable mRequestFocus = new RunnableC01563();
 
-                /* JADX INFO: renamed from: co.vine.android.BaseCursorListFragment$1 */
-/* 74 */        class C01541 implements AdapterView.OnItemClickListener {
-/* 75 */            C01541() {
+                
+        class C01541 implements AdapterView.OnItemClickListener {
+            C01541() {
                     }
 
-                    @Override // android.widget.AdapterView.OnItemClickListener
-/* 77 */            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
-/* 78 */                BaseCursorListFragment.this.onListItemClick((ListView) parent, view, i, l);
-                    }
-                }
-
-                /* JADX INFO: renamed from: co.vine.android.BaseCursorListFragment$2 */
-/* 80 */        class C01552 implements AdapterView.OnItemLongClickListener {
-/* 81 */            C01552() {
-                    }
-
-                    @Override // android.widget.AdapterView.OnItemLongClickListener
-/* 84 */            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-/* 85 */                return BaseCursorListFragment.this.onListItemLongClick((ListView) parent, view, position, id);
+                    @Override 
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                BaseCursorListFragment.this.onListItemClick((ListView) parent, view, i, l);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.BaseCursorListFragment$3 */
-/* 87 */        class RunnableC01563 implements Runnable {
-/* 88 */            RunnableC01563() {
+                
+        class C01552 implements AdapterView.OnItemLongClickListener {
+            C01552() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 90 */            public void run() {
-/* 91 */                BaseCursorListFragment.this.mListView.focusableViewAvailable(BaseCursorListFragment.this.mListView);
+                    @Override 
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                return BaseCursorListFragment.this.onListItemLongClick((ListView) parent, view, position, id);
                     }
                 }
 
-                @Override // co.vine.android.widget.OnTabChangedListener
-/* 100 */       public void onMoveAway(int newPosition) {
-/* 101 */           this.mFocused = false;
+                
+        class RunnableC01563 implements Runnable {
+            RunnableC01563() {
+                    }
+
+                    @Override 
+            public void run() {
+                BaseCursorListFragment.this.mListView.focusableViewAvailable(BaseCursorListFragment.this.mListView);
+                    }
                 }
 
-                @Override // co.vine.android.widget.OnTabChangedListener
-/* 105 */       public void onMoveTo(int oldPosition) {
-/* 106 */           this.mFocused = true;
+                @Override 
+       public void onMoveAway(int newPosition) {
+           this.mFocused = false;
                 }
 
-/* 109 */       protected boolean isFocused() {
-/* 110 */           return this.mFocused;
+                @Override 
+       public void onMoveTo(int oldPosition) {
+           this.mFocused = true;
                 }
 
-/* 113 */       public void setFocused(boolean focused) {
-/* 114 */           this.mFocused = focused;
+       protected boolean isFocused() {
+           return this.mFocused;
                 }
 
-/* 117 */       protected void onListItemClick(ListView l, View v, int position, long id) {
+       public void setFocused(boolean focused) {
+           this.mFocused = focused;
                 }
 
-/* 120 */       protected boolean onListItemLongClick(ListView parent, View view, int position, long id) {
-/* 121 */           return false;
+       protected void onListItemClick(ListView l, View v, int position, long id) {
                 }
 
-/* 124 */       public boolean isSadFacePartOfHeader() {
-/* 125 */           return this.mIsSadFacePartOfHeader;
+       protected boolean onListItemLongClick(ListView parent, View view, int position, long id) {
+           return false;
                 }
 
-                @Override // co.vine.android.BaseAdapterFragment, co.vine.android.BaseControllerFragment, android.support.v4.app.Fragment
-/* 130 */       public void onCreate(Bundle savedInstanceState) {
-/* 131 */           super.onCreate(savedInstanceState);
-/* 133 */           this.mListState = new ListState();
-/* 135 */           if (savedInstanceState != null) {
-/* 136 */               this.mScrollPos = savedInstanceState.getInt(STATE_SCROLL_POS_KEY);
-/* 137 */               this.mScrollOffset = savedInstanceState.getInt(STATE_SCROLL_OFF_KEY);
-/* 138 */               this.mPendingRequestHelper.restorePendingCaptchaRequest(savedInstanceState);
+       public boolean isSadFacePartOfHeader() {
+           return this.mIsSadFacePartOfHeader;
+                }
+
+                @Override 
+       public void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState);
+           this.mListState = new ListState();
+           if (savedInstanceState != null) {
+               this.mScrollPos = savedInstanceState.getInt(STATE_SCROLL_POS_KEY);
+               this.mScrollOffset = savedInstanceState.getInt(STATE_SCROLL_OFF_KEY);
+               this.mPendingRequestHelper.restorePendingCaptchaRequest(savedInstanceState);
                     } else {
-/* 140 */               this.mScrollPos = 0;
-/* 141 */               this.mScrollOffset = 0;
+               this.mScrollPos = 0;
+               this.mScrollOffset = 0;
                     }
-/* 144 */           Bundle args = getArguments();
-/* 145 */           if (args != null) {
-/* 146 */               this.mRefreshable = args.getBoolean("refresh", true);
-/* 147 */               this.mOwnerId = args.getLong("owner_id", this.mAppController.getActiveId());
-/* 149 */               if (args.containsKey("chmode")) {
-/* 150 */                   this.mChoiceMode = args.getInt("chmode", 0);
+           Bundle args = getArguments();
+           if (args != null) {
+               this.mRefreshable = args.getBoolean("refresh", true);
+               this.mOwnerId = args.getLong("owner_id", this.mAppController.getActiveId());
+               if (args.containsKey("chmode")) {
+                   this.mChoiceMode = args.getInt("chmode", 0);
                         }
-/* 152 */               this.mBgColor = args.getInt("bg_color", 0);
-/* 153 */               this.mEmptyTextStringRes = args.getInt("empty_desc", 0);
-/* 160 */               return;
+               this.mBgColor = args.getInt("bg_color", 0);
+               this.mEmptyTextStringRes = args.getInt("empty_desc", 0);
+               return;
                     }
-/* 155 */           this.mRefreshable = true;
-/* 156 */           this.mOwnerId = this.mAppController.getActiveId();
-/* 157 */           this.mChoiceMode = 0;
-/* 158 */           this.mBgColor = 0;
+           this.mRefreshable = true;
+           this.mOwnerId = this.mAppController.getActiveId();
+           this.mChoiceMode = 0;
+           this.mBgColor = 0;
                 }
 
-/* 162 */       public View getRootView() {
-/* 163 */           return this.mRootView;
+       public View getRootView() {
+           return this.mRootView;
                 }
 
-/* 166 */       public View createView(LayoutInflater inflater, int layout, ViewGroup container) {
-/* 167 */           View v = inflater.inflate(layout, container, false);
-/* 169 */           this.mRootView = v;
-/* 171 */           ListView listView = (ListView) v.findViewById(android.R.id.list);
-/* 172 */           listView.setOnItemClickListener(this.mOnItemClickListener);
-/* 173 */           listView.setOnItemLongClickListener(this.mOnItemLongClickListenerClickListener);
-/* 174 */           listView.setScrollbarFadingEnabled(true);
-/* 175 */           listView.setOnScrollListener(this);
-/* 176 */           listView.setChoiceMode(this.mChoiceMode);
-/* 177 */           int bgColor = this.mBgColor;
-/* 178 */           if (bgColor != 0) {
-/* 179 */               listView.setBackgroundColor(bgColor);
-/* 180 */               listView.setCacheColorHint(bgColor);
+       public View createView(LayoutInflater inflater, int layout, ViewGroup container) {
+           View v = inflater.inflate(layout, container, false);
+           this.mRootView = v;
+           ListView listView = (ListView) v.findViewById(android.R.id.list);
+           listView.setOnItemClickListener(this.mOnItemClickListener);
+           listView.setOnItemLongClickListener(this.mOnItemLongClickListenerClickListener);
+           listView.setScrollbarFadingEnabled(true);
+           listView.setOnScrollListener(this);
+           listView.setChoiceMode(this.mChoiceMode);
+           int bgColor = this.mBgColor;
+           if (bgColor != 0) {
+               listView.setBackgroundColor(bgColor);
+               listView.setCacheColorHint(bgColor);
                     }
-/* 183 */           View emptyView = v.findViewById(android.R.id.empty);
-/* 184 */           if (emptyView != null) {
-/* 185 */               listView.setEmptyView(emptyView);
-/* 186 */               this.mEmptyProgress = (ProgressBar) emptyView.findViewById(C0257R.id.list_empty_progress);
+           View emptyView = v.findViewById(android.R.id.empty);
+           if (emptyView != null) {
+               listView.setEmptyView(emptyView);
+               this.mEmptyProgress = (ProgressBar) emptyView.findViewById(C0257R.id.list_empty_progress);
                     }
-/* 189 */           this.mEmptyView = emptyView;
-/* 191 */           this.mEmptyText = (TextView) v.findViewById(C0257R.id.empty_text);
-/* 192 */           if (this.mEmptyTextStringRes > 0 && this.mEmptyText != null) {
-/* 194 */               this.mEmptyText.setText(this.mEmptyTextStringRes);
+           this.mEmptyView = emptyView;
+           this.mEmptyText = (TextView) v.findViewById(C0257R.id.empty_text);
+           if (this.mEmptyTextStringRes > 0 && this.mEmptyText != null) {
+               this.mEmptyText.setText(this.mEmptyTextStringRes);
                     }
-/* 198 */           this.mSadface = v.findViewById(C0257R.id.real_sadface);
-/* 200 */           if (this.mRefreshable) {
-/* 201 */               ((RefreshableListView) listView).setRefreshListener(this);
+           this.mSadface = v.findViewById(C0257R.id.real_sadface);
+           if (this.mRefreshable) {
+               ((RefreshableListView) listView).setRefreshListener(this);
                     }
-/* 204 */           this.mListView = listView;
-/* 206 */           return v;
+           this.mListView = listView;
+           return v;
                 }
 
-/* 209 */       protected View createDefaultView(LayoutInflater inflater, ViewGroup container) {
-/* 210 */           return createView(inflater, C0257R.layout.msg_list_fragment, container);
+       protected View createDefaultView(LayoutInflater inflater, ViewGroup container) {
+           return createView(inflater, C0257R.layout.msg_list_fragment, container);
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 216 */       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-/* 217 */           return createDefaultView(inflater, container);
+                @Override 
+       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+           return createDefaultView(inflater, container);
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 221 */       public void onViewCreated(View view, Bundle savedInstanceState) {
-/* 222 */           super.onViewCreated(view, savedInstanceState);
-/* 223 */           this.mHandler.post(this.mRequestFocus);
+                @Override 
+       public void onViewCreated(View view, Bundle savedInstanceState) {
+           super.onViewCreated(view, savedInstanceState);
+           this.mHandler.post(this.mRequestFocus);
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 227 */       public void onDestroyView() {
-/* 228 */           this.mHandler.removeCallbacks(this.mRequestFocus);
-/* 229 */           super.onDestroyView();
+                @Override 
+       public void onDestroyView() {
+           this.mHandler.removeCallbacks(this.mRequestFocus);
+           super.onDestroyView();
                 }
 
-                @Override // co.vine.android.BaseAdapterFragment, co.vine.android.BaseControllerFragment, co.vine.android.BaseFragment, android.support.v4.app.Fragment
-/* 233 */       public void onResume() {
-/* 234 */           super.onResume();
-/* 235 */           restorePosition();
-/* 236 */           this.mPendingRequestHelper.handlePendingCaptchaRequest();
+                @Override 
+       public void onResume() {
+           super.onResume();
+           restorePosition();
+           this.mPendingRequestHelper.handlePendingCaptchaRequest();
                 }
 
-                @Override // co.vine.android.BaseAdapterFragment, co.vine.android.BaseControllerFragment, android.support.v4.app.Fragment
-/* 240 */       public void onPause() {
-/* 241 */           super.onPause();
-/* 242 */           savePosition();
+                @Override 
+       public void onPause() {
+           super.onPause();
+           savePosition();
                 }
 
-                @Override // co.vine.android.BaseAdapterFragment, android.support.v4.app.Fragment
-/* 246 */       public void onSaveInstanceState(Bundle outState) {
-/* 247 */           super.onSaveInstanceState(outState);
-/* 248 */           savePosition();
-/* 249 */           outState.putInt(STATE_SCROLL_POS_KEY, this.mScrollPos);
-/* 250 */           outState.putInt(STATE_SCROLL_OFF_KEY, this.mScrollOffset);
+                @Override 
+       public void onSaveInstanceState(Bundle outState) {
+           super.onSaveInstanceState(outState);
+           savePosition();
+           outState.putInt(STATE_SCROLL_POS_KEY, this.mScrollPos);
+           outState.putInt(STATE_SCROLL_OFF_KEY, this.mScrollOffset);
                 }
 
-                @Override // android.widget.AbsListView.OnScrollListener
-/* 256 */       public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                @Override 
+       public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                     Cursor cursor;
-/* 257 */           this.mListState.firstVisibleItem = firstVisibleItem;
-/* 258 */           this.mListState.visibleItemCount = visibleItemCount;
-/* 259 */           this.mListState.totalItemCount = totalItemCount;
-/* 261 */           if (visibleItemCount != 0) {
-/* 265 */               if (firstVisibleItem == 0 && this.mScrollListener != null) {
-/* 267 */                   this.mScrollListener.onScrollFirstItem();
+           this.mListState.firstVisibleItem = firstVisibleItem;
+           this.mListState.visibleItemCount = visibleItemCount;
+           this.mListState.totalItemCount = totalItemCount;
+           if (visibleItemCount != 0) {
+               if (firstVisibleItem == 0 && this.mScrollListener != null) {
+                   this.mScrollListener.onScrollFirstItem();
                         }
-/* 271 */               if (firstVisibleItem > 0 && this.mCursorAdapter != null) {
-/* 272 */                   int position = firstVisibleItem + visibleItemCount;
-/* 274 */                   if (position >= totalItemCount - 1 && this.mCursorAdapter.getCount() > 0 && (cursor = this.mCursorAdapter.getCursor()) != null && cursor.moveToLast() && this.mListState.hasNewScrollState) {
-/* 278 */                       this.mListState.hasNewScrollState = false;
-/* 279 */                       onScrollLastItem(cursor);
+               if (firstVisibleItem > 0 && this.mCursorAdapter != null) {
+                   int position = firstVisibleItem + visibleItemCount;
+                   if (position >= totalItemCount - 1 && this.mCursorAdapter.getCount() > 0 && (cursor = this.mCursorAdapter.getCursor()) != null && cursor.moveToLast() && this.mListState.hasNewScrollState) {
+                       this.mListState.hasNewScrollState = false;
+                       onScrollLastItem(cursor);
                             }
                         }
                     }
                 }
 
-/* 286 */       public void setRefreshableHeaderOffset(int offset) {
-/* 287 */           if (this.mRefreshable) {
-/* 288 */               ((RefreshableListView) this.mListView).setViewYOffset(offset);
+       public void setRefreshableHeaderOffset(int offset) {
+           if (this.mRefreshable) {
+               ((RefreshableListView) this.mListView).setViewYOffset(offset);
                     }
                 }
 
-                @Override // android.widget.AbsListView.OnScrollListener
-/* 293 */       public void onScrollStateChanged(AbsListView view, int scrollState) {
-/* 294 */           this.mListState.hasNewScrollState = true;
-/* 295 */           this.mListState.setScrollState(scrollState);
-/* 298 */           if (scrollState == 0) {
-/* 299 */               onScroll(view, this.mListState.firstVisibleItem, this.mListState.visibleItemCount, this.mListState.totalItemCount);
+                @Override 
+       public void onScrollStateChanged(AbsListView view, int scrollState) {
+           this.mListState.hasNewScrollState = true;
+           this.mListState.setScrollState(scrollState);
+           if (scrollState == 0) {
+               onScroll(view, this.mListState.firstVisibleItem, this.mListState.visibleItemCount, this.mListState.totalItemCount);
                     }
                 }
 
-/* 309 */       protected void refresh() {
+       protected void refresh() {
                 }
 
-/* 312 */       public synchronized void makeSadFaceHeaderView() {
+       public synchronized void makeSadFaceHeaderView() {
                     try {
                         if (!this.mIsSadFacePartOfHeader) {
-/* 314 */                   this.mIsSadFacePartOfHeader = true;
-/* 315 */                   this.mIsSadFaceHeaderAdded = true;
-/* 316 */                   if (this.mSadface != null) {
-/* 317 */                       boolean alreadyAttached = false;
-/* 318 */                       ViewParent parent = this.mSadface.getParent();
-/* 319 */                       if (parent != null) {
-/* 320 */                           if (parent instanceof ViewGroup) {
-/* 321 */                               if (parent != this.mListView) {
-/* 322 */                                   ((ViewGroup) parent).removeView(this.mSadface);
+                   this.mIsSadFacePartOfHeader = true;
+                   this.mIsSadFaceHeaderAdded = true;
+                   if (this.mSadface != null) {
+                       boolean alreadyAttached = false;
+                       ViewParent parent = this.mSadface.getParent();
+                       if (parent != null) {
+                           if (parent instanceof ViewGroup) {
+                               if (parent != this.mListView) {
+                                   ((ViewGroup) parent).removeView(this.mSadface);
                                         } else {
-/* 324 */                                   alreadyAttached = true;
+                                   alreadyAttached = true;
                                         }
                                     } else {
-/* 327 */                               throw new IllegalStateException("The sad face does not belong to a valid parent: " + parent);
+                               throw new IllegalStateException("The sad face does not belong to a valid parent: " + parent);
                                     }
                                 }
-/* 330 */                       if (!alreadyAttached) {
-/* 331 */                           ViewGroup.LayoutParams params = this.mSadface.getLayoutParams();
-/* 332 */                           if (params != null) {
-/* 334 */                               this.mSadface.setLayoutParams(new AbsListView.LayoutParams(params.width, params.height));
+                       if (!alreadyAttached) {
+                           ViewGroup.LayoutParams params = this.mSadface.getLayoutParams();
+                           if (params != null) {
+                               this.mSadface.setLayoutParams(new AbsListView.LayoutParams(params.width, params.height));
                                     }
-/* 336 */                           this.mListView.addHeaderView(this.mSadface, null, false);
+                           this.mListView.addHeaderView(this.mSadface, null, false);
                                 }
                             }
                         }
@@ -295,282 +295,282 @@
                     }
                 }
 
-/* 345 */       protected void onScrollLastItem(Cursor cursor) {
+       protected void onScrollLastItem(Cursor cursor) {
                 }
 
-                @Override // co.vine.android.BaseAdapterFragment
-/* 353 */       protected void showProgress(int progressType) {
+                @Override 
+       protected void showProgress(int progressType) {
                     switch (progressType) {
                         case 1:
                         case 7:
-/* 357 */                   if (this.mRefreshable) {
-/* 358 */                       ((RefreshableListView) this.mListView).refreshMore(true);
+                   if (this.mRefreshable) {
+                       ((RefreshableListView) this.mListView).refreshMore(true);
                             }
                             break;
                         case 2:
                         case 4:
-/* 365 */                   if (this.mRefreshable) {
-/* 366 */                       ((RefreshableListView) this.mListView).startRefresh();
-/* 367 */                       this.mRefreshing = true;
+                   if (this.mRefreshable) {
+                       ((RefreshableListView) this.mListView).startRefresh();
+                       this.mRefreshing = true;
                             }
                             break;
                         case 3:
                         case 5:
-/* 374 */                   showLoading(true);
+                   showLoading(true);
                             break;
                     }
                 }
 
-                @Override // co.vine.android.BaseAdapterFragment
-/* 384 */       protected void hideProgress(int progressType) {
+                @Override 
+       protected void hideProgress(int progressType) {
                     switch (progressType) {
                         case 1:
-/* 403 */                   if (this.mRefreshable) {
-/* 404 */                       ((RefreshableListView) this.mListView).refreshMore(false);
+                   if (this.mRefreshable) {
+                       ((RefreshableListView) this.mListView).refreshMore(false);
                             }
                             break;
                         case 2:
                         case 4:
-/* 394 */                   showLoading(false);
-/* 395 */                   if (this.mRefreshable) {
-/* 396 */                       ((RefreshableListView) this.mListView).stopRefresh();
-/* 397 */                       this.mRefreshing = false;
+                   showLoading(false);
+                   if (this.mRefreshable) {
+                       ((RefreshableListView) this.mListView).stopRefresh();
+                       this.mRefreshing = false;
                             }
                             break;
                         case 3:
                         case 5:
-/* 388 */                   showLoading(false);
+                   showLoading(false);
                             break;
                     }
                 }
 
-/* 415 */       protected void processPostOptionsResult(PostOptionsDialogActivity.Result result) {
-/* 416 */           if (result.request != null) {
-/* 417 */               addRequest(result.request);
+       protected void processPostOptionsResult(PostOptionsDialogActivity.Result result) {
+           if (result.request != null) {
+               addRequest(result.request);
                     }
-/* 419 */           if (result.intent != null) {
-/* 420 */               startActivity(result.intent);
+           if (result.intent != null) {
+               startActivity(result.intent);
                     }
                 }
 
-/* 424 */       protected boolean isEmpty() {
-/* 425 */           ListView l = this.mListView;
+       protected boolean isEmpty() {
+           ListView l = this.mListView;
                     return (l.getCount() - l.getHeaderViewsCount()) - l.getFooterViewsCount() == 0;
                 }
 
-/* 429 */       private void showLoading(boolean show) {
-/* 430 */           if (show) {
-/* 431 */               ListView l = this.mListView;
-/* 432 */               l.setVisibility(8);
-/* 433 */               if (this.mSadface != null) {
-/* 434 */                   this.mSadface.setVisibility(8);
+       private void showLoading(boolean show) {
+           if (show) {
+               ListView l = this.mListView;
+               l.setVisibility(8);
+               if (this.mSadface != null) {
+                   this.mSadface.setVisibility(8);
                         }
-/* 436 */               if (this.mEmptyProgress != null) {
-/* 437 */                   this.mEmptyProgress.setVisibility(0);
-/* 449 */                   return;
+               if (this.mEmptyProgress != null) {
+                   this.mEmptyProgress.setVisibility(0);
+                   return;
                         }
-/* 449 */               return;
+               return;
                     }
-/* 440 */           ListView l2 = this.mListView;
-/* 441 */           if (!isEmpty()) {
-/* 442 */               l2.setVisibility(0);
+           ListView l2 = this.mListView;
+           if (!isEmpty()) {
+               l2.setVisibility(0);
                     } else if (this.mEmptyProgress != null) {
-/* 445 */               this.mEmptyProgress.setVisibility(8);
+               this.mEmptyProgress.setVisibility(8);
                     }
                 }
 
-/* 451 */       protected void showSadface(boolean show) {
-/* 452 */           showSadface(show, show);
+       protected void showSadface(boolean show) {
+           showSadface(show, show);
                 }
 
-/* 455 */       protected void showSadface(boolean show, boolean showFrown) {
-/* 456 */           if (show) {
-/* 457 */               if (this.mListView != null && this.mSadface != null) {
-/* 458 */                   if (!this.mIsSadFacePartOfHeader) {
-/* 459 */                       this.mListView.setVisibility(8);
+       protected void showSadface(boolean show, boolean showFrown) {
+           if (show) {
+               if (this.mListView != null && this.mSadface != null) {
+                   if (!this.mIsSadFacePartOfHeader) {
+                       this.mListView.setVisibility(8);
                             } else {
-/* 461 */                       this.mListView.setVisibility(0);
-/* 462 */                       if (!this.mIsSadFaceHeaderAdded) {
-/* 463 */                           this.mListView.addHeaderView(this.mSadface);
-/* 464 */                           this.mIsSadFaceHeaderAdded = true;
+                       this.mListView.setVisibility(0);
+                       if (!this.mIsSadFaceHeaderAdded) {
+                           this.mListView.addHeaderView(this.mSadface);
+                           this.mIsSadFaceHeaderAdded = true;
                                 }
                             }
-/* 467 */                   this.mSadface.setVisibility(0);
-/* 470 */                   View sadFace = this.mSadface.findViewById(C0257R.id.sadface);
-/* 471 */                   if (sadFace != null) {
-/* 472 */                       sadFace.setVisibility(showFrown ? 0 : 8);
-/* 489 */                       return;
+                   this.mSadface.setVisibility(0);
+                   View sadFace = this.mSadface.findViewById(C0257R.id.sadface);
+                   if (sadFace != null) {
+                       sadFace.setVisibility(showFrown ? 0 : 8);
+                       return;
                             }
-/* 489 */                   return;
+                   return;
                         }
-/* 489 */               return;
+               return;
                     }
-/* 476 */           if (this.mListView != null && this.mSadface != null) {
-/* 477 */               this.mListView.setVisibility(0);
-/* 478 */               if (this.mIsSadFacePartOfHeader) {
-/* 479 */                   if (this.mIsSadFaceHeaderAdded) {
-/* 480 */                       this.mListView.removeHeaderView(this.mSadface);
-/* 481 */                       this.mSadface.setVisibility(8);
-/* 482 */                       this.mIsSadFacePartOfHeader = false;
-/* 489 */                       return;
+           if (this.mListView != null && this.mSadface != null) {
+               this.mListView.setVisibility(0);
+               if (this.mIsSadFacePartOfHeader) {
+                   if (this.mIsSadFaceHeaderAdded) {
+                       this.mListView.removeHeaderView(this.mSadface);
+                       this.mSadface.setVisibility(8);
+                       this.mIsSadFacePartOfHeader = false;
+                       return;
                             }
-/* 489 */                   return;
+                   return;
                         }
-/* 485 */               this.mSadface.setVisibility(8);
+               this.mSadface.setVisibility(8);
                     }
                 }
 
-/* 491 */       protected void setEmptyStringMessage(int res) {
-/* 492 */           this.mEmptyText.setText(getString(res));
+       protected void setEmptyStringMessage(int res) {
+           this.mEmptyText.setText(getString(res));
                 }
 
-                @Override // com.twitter.android.widget.RefreshListener
-/* 496 */       public void onRefreshPulled() {
+                @Override 
+       public void onRefreshPulled() {
                 }
 
-                @Override // com.twitter.android.widget.RefreshListener
-/* 500 */       public void onRefreshCancelled() {
+                @Override 
+       public void onRefreshCancelled() {
                 }
 
-                @Override // com.twitter.android.widget.RefreshListener
-/* 503 */       public void onRefreshReleased(boolean shouldStartRefresh) {
-/* 504 */           if (shouldStartRefresh) {
-/* 505 */               FlurryUtils.trackValidPullToRefreshRelease(getClass().getName());
-/* 506 */               refresh();
+                @Override 
+       public void onRefreshReleased(boolean shouldStartRefresh) {
+           if (shouldStartRefresh) {
+               FlurryUtils.trackValidPullToRefreshRelease(getClass().getName());
+               refresh();
                     }
                 }
 
-                @Override // com.twitter.android.widget.RefreshListener
-/* 510 */       public void onRefreshFinishedNewData() {
+                @Override 
+       public void onRefreshFinishedNewData() {
                 }
 
-                @Override // com.twitter.android.widget.RefreshListener
-/* 513 */       public void onRefreshFinishedNoChange() {
+                @Override 
+       public void onRefreshFinishedNoChange() {
                 }
 
-                @Override // com.twitter.android.widget.RefreshListener
-/* 516 */       public void onRefreshFinished() {
-/* 517 */           CursorAdapter adapter = this.mCursorAdapter;
-/* 519 */           if (adapter != null) {
-/* 520 */               Cursor cursor = adapter.getCursor();
-/* 521 */               if (cursor != null) {
+                @Override 
+       public void onRefreshFinished() {
+           CursorAdapter adapter = this.mCursorAdapter;
+           if (adapter != null) {
+               Cursor cursor = adapter.getCursor();
+               if (cursor != null) {
                         }
                     }
                 }
 
-                @Override // co.vine.android.BaseCursorAdapterFragment
-/* 533 */       protected void handleContentChanged() {
-/* 534 */           onContentChanged();
+                @Override 
+       protected void handleContentChanged() {
+           onContentChanged();
                 }
 
-/* 541 */       protected void onContentChanged() {
-/* 542 */           onRefreshFinished();
+       protected void onContentChanged() {
+           onRefreshFinished();
                 }
 
-                @Override // com.twitter.android.widget.RefreshListener
-/* 545 */       public int getPositionForItemId(long id) {
+                @Override 
+       public int getPositionForItemId(long id) {
                     Cursor cursor;
-/* 546 */           int idColumnIndex = getIdColumnIndex();
-/* 548 */           if (idColumnIndex >= 0 && (cursor = this.mCursorAdapter.getCursor()) != null && cursor.moveToFirst()) {
+           int idColumnIndex = getIdColumnIndex();
+           if (idColumnIndex >= 0 && (cursor = this.mCursorAdapter.getCursor()) != null && cursor.moveToFirst()) {
                         while (cursor.getLong(idColumnIndex) != id) {
-/* 564 */                   if (!cursor.moveToNext()) {
+                   if (!cursor.moveToNext()) {
                             }
                         }
-/* 554 */               int pos = cursor.getPosition() + this.mListView.getHeaderViewsCount();
-/* 559 */               if (this.mRefreshing) {
-/* 560 */                   return pos + 1;
+               int pos = cursor.getPosition() + this.mListView.getHeaderViewsCount();
+               if (this.mRefreshing) {
+                   return pos + 1;
                         }
-/* 569 */               return pos;
+               return pos;
                     }
-/* 569 */           return 0;
+           return 0;
                 }
 
-/* 580 */       protected int getIdColumnIndex() {
-/* 581 */           return -1;
+       protected int getIdColumnIndex() {
+           return -1;
                 }
 
-/* 591 */       protected void saveItemPosition(ItemPosition itemPosition) {
+       protected void saveItemPosition(ItemPosition itemPosition) {
                 }
 
-/* 605 */       protected void restorePosition() {
-/* 606 */           this.mListView.setSelectionFromTop(this.mScrollPos, this.mScrollOffset);
+       protected void restorePosition() {
+           this.mListView.setSelectionFromTop(this.mScrollPos, this.mScrollOffset);
                 }
 
-/* 611 */       protected void savePosition() {
+       protected void savePosition() {
                     int offset;
-/* 612 */           ListView l = this.mListView;
-/* 613 */           if (l != null) {
-/* 615 */               View v = l.getChildAt(0);
-/* 617 */               if (v != null) {
-/* 618 */                   offset = v.getTop();
+           ListView l = this.mListView;
+           if (l != null) {
+               View v = l.getChildAt(0);
+               if (v != null) {
+                   offset = v.getTop();
                         } else {
-/* 620 */                   offset = 0;
+                   offset = 0;
                         }
-/* 623 */               this.mScrollPos = l.getFirstVisiblePosition();
-/* 624 */               this.mScrollOffset = offset;
+               this.mScrollPos = l.getFirstVisiblePosition();
+               this.mScrollOffset = offset;
                     }
                 }
 
-                @Override // com.twitter.android.widget.RefreshListener
-/* 628 */       public ItemPosition getFirstItemPosition() {
+                @Override 
+       public ItemPosition getFirstItemPosition() {
                     int position;
                     View child;
-/* 629 */           ListView l = this.mListView;
-/* 630 */           if (l.getCount() < 1) {
+           ListView l = this.mListView;
+           if (l.getCount() < 1) {
                         return null;
                     }
-/* 631 */           int firstPos = l.getFirstVisiblePosition();
-/* 632 */           int headerCount = l.getHeaderViewsCount();
-/* 634 */           if (this.mRefreshing) {
-/* 635 */               headerCount++;
+           int firstPos = l.getFirstVisiblePosition();
+           int headerCount = l.getHeaderViewsCount();
+           if (this.mRefreshing) {
+               headerCount++;
                     }
-/* 641 */           if (firstPos < headerCount) {
-/* 642 */               position = headerCount;
-/* 643 */               child = l.getChildAt(position - firstPos);
+           if (firstPos < headerCount) {
+               position = headerCount;
+               child = l.getChildAt(position - firstPos);
                     } else {
-/* 645 */               position = firstPos;
-/* 646 */               child = l.getChildAt(0);
+               position = firstPos;
+               child = l.getChildAt(0);
                     }
-/* 649 */           return new ItemPosition(position, l.getItemIdAtPosition(position), child != null ? child.getTop() : 0);
+           return new ItemPosition(position, l.getItemIdAtPosition(position), child != null ? child.getTop() : 0);
                 }
 
-/* 653 */       void invokeScrollFirstItem() {
-/* 654 */           if (this.mScrollListener != null) {
-/* 655 */               this.mScrollListener.onScrollFirstItem();
-                    }
-                }
-
-/* 666 */       public static Bundle prepareArguments(Intent intent, boolean refreshable) {
-/* 667 */           Bundle args = intent.getExtras();
-/* 668 */           if (args == null) {
-/* 669 */               args = new Bundle();
-                    }
-/* 671 */           args.putParcelable("data", intent.getData());
-/* 672 */           args.putBoolean("refresh", refreshable);
-/* 673 */           return args;
-                }
-
-/* 676 */       public void setScrollListener(TabScrollListener listener) {
-/* 677 */           this.mScrollListener = listener;
-                }
-
-/* 686 */       protected Dialog onCreateDialog(int dialog) {
-/* 687 */           return null;
-                }
-
-/* 695 */       public void showDialog(int dialog) {
-/* 696 */           Dialog d = onCreateDialog(dialog);
-/* 697 */           if (d != null) {
-/* 698 */               d.show();
+       void invokeScrollFirstItem() {
+           if (this.mScrollListener != null) {
+               this.mScrollListener.onScrollFirstItem();
                     }
                 }
 
-/* 702 */       public void setOwnerId(long ownerId) {
-/* 703 */           this.mOwnerId = ownerId;
+       public static Bundle prepareArguments(Intent intent, boolean refreshable) {
+           Bundle args = intent.getExtras();
+           if (args == null) {
+               args = new Bundle();
+                    }
+           args.putParcelable("data", intent.getData());
+           args.putBoolean("refresh", refreshable);
+           return args;
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 707 */       public void onActivityResult(int requestCode, int resultCode, Intent data) {
-/* 708 */           this.mPendingRequestHelper.onActivityResult(requestCode, resultCode, data);
+       public void setScrollListener(TabScrollListener listener) {
+           this.mScrollListener = listener;
+                }
+
+       protected Dialog onCreateDialog(int dialog) {
+           return null;
+                }
+
+       public void showDialog(int dialog) {
+           Dialog d = onCreateDialog(dialog);
+           if (d != null) {
+               d.show();
+                    }
+                }
+
+       public void setOwnerId(long ownerId) {
+           this.mOwnerId = ownerId;
+                }
+
+                @Override 
+       public void onActivityResult(int requestCode, int resultCode, Intent data) {
+           this.mPendingRequestHelper.onActivityResult(requestCode, resultCode, data);
                 }
             }

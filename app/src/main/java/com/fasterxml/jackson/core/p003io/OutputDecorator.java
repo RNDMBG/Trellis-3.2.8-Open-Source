@@ -5,7 +5,7 @@
             import java.io.Serializable;
             import java.io.Writer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public abstract class OutputDecorator implements Serializable {
                 private static final long serialVersionUID = 1;
 

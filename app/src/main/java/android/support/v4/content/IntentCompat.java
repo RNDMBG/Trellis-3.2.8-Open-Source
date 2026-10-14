@@ -4,8 +4,8 @@
             import android.content.Intent;
             import android.os.Build;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 33 */    public class IntentCompat {
+            
+    public class IntentCompat {
                 public static final String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE = "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE";
                 public static final String ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE = "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE";
                 public static final String EXTRA_CHANGED_PACKAGE_LIST = "android.intent.extra.changed_package_list";
@@ -23,81 +23,81 @@
                     Intent makeRestartActivityTask(ComponentName componentName);
                 }
 
-/* 34 */        static class IntentCompatImplBase implements IntentCompatImpl {
-/* 35 */            IntentCompatImplBase() {
+        static class IntentCompatImplBase implements IntentCompatImpl {
+            IntentCompatImplBase() {
                     }
 
-                    @Override // android.support.v4.content.IntentCompat.IntentCompatImpl
-/* 38 */            public Intent makeMainActivity(ComponentName componentName) {
-/* 39 */                Intent intent = new Intent("android.intent.action.MAIN");
-/* 40 */                intent.setComponent(componentName);
-/* 41 */                intent.addCategory("android.intent.category.LAUNCHER");
-/* 42 */                return intent;
+                    @Override 
+            public Intent makeMainActivity(ComponentName componentName) {
+                Intent intent = new Intent("android.intent.action.MAIN");
+                intent.setComponent(componentName);
+                intent.addCategory("android.intent.category.LAUNCHER");
+                return intent;
                     }
 
-                    @Override // android.support.v4.content.IntentCompat.IntentCompatImpl
-/* 50 */            public Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
-/* 51 */                Intent intent = new Intent(selectorAction);
-/* 52 */                intent.addCategory(selectorCategory);
-/* 53 */                return intent;
+                    @Override 
+            public Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
+                Intent intent = new Intent(selectorAction);
+                intent.addCategory(selectorCategory);
+                return intent;
                     }
 
-                    @Override // android.support.v4.content.IntentCompat.IntentCompatImpl
-/* 57 */            public Intent makeRestartActivityTask(ComponentName mainActivity) {
-/* 58 */                Intent intent = makeMainActivity(mainActivity);
-/* 59 */                intent.addFlags(268468224);
-/* 61 */                return intent;
-                    }
-                }
-
-/* 63 */        static class IntentCompatImplHC extends IntentCompatImplBase {
-/* 64 */            IntentCompatImplHC() {
-                    }
-
-                    @Override // android.support.v4.content.IntentCompat.IntentCompatImplBase, android.support.v4.content.IntentCompat.IntentCompatImpl
-/* 67 */            public Intent makeMainActivity(ComponentName componentName) {
-/* 68 */                return IntentCompatHoneycomb.makeMainActivity(componentName);
-                    }
-
-                    @Override // android.support.v4.content.IntentCompat.IntentCompatImplBase, android.support.v4.content.IntentCompat.IntentCompatImpl
-/* 71 */            public Intent makeRestartActivityTask(ComponentName componentName) {
-/* 72 */                return IntentCompatHoneycomb.makeRestartActivityTask(componentName);
+                    @Override 
+            public Intent makeRestartActivityTask(ComponentName mainActivity) {
+                Intent intent = makeMainActivity(mainActivity);
+                intent.addFlags(268468224);
+                return intent;
                     }
                 }
 
-/* 74 */        static class IntentCompatImplIcsMr1 extends IntentCompatImplHC {
-/* 75 */            IntentCompatImplIcsMr1() {
+        static class IntentCompatImplHC extends IntentCompatImplBase {
+            IntentCompatImplHC() {
                     }
 
-                    @Override // android.support.v4.content.IntentCompat.IntentCompatImplBase, android.support.v4.content.IntentCompat.IntentCompatImpl
-/* 78 */            public Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
-/* 79 */                return IntentCompatIcsMr1.makeMainSelectorActivity(selectorAction, selectorCategory);
+                    @Override 
+            public Intent makeMainActivity(ComponentName componentName) {
+                return IntentCompatHoneycomb.makeMainActivity(componentName);
+                    }
+
+                    @Override 
+            public Intent makeRestartActivityTask(ComponentName componentName) {
+                return IntentCompatHoneycomb.makeRestartActivityTask(componentName);
+                    }
+                }
+
+        static class IntentCompatImplIcsMr1 extends IntentCompatImplHC {
+            IntentCompatImplIcsMr1() {
+                    }
+
+                    @Override 
+            public Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
+                return IntentCompatIcsMr1.makeMainSelectorActivity(selectorAction, selectorCategory);
                     }
                 }
 
                 static {
-/* 85 */            int version = Build.VERSION.SDK_INT;
-/* 86 */            if (version >= 15) {
-/* 87 */                IMPL = new IntentCompatImplIcsMr1();
+            int version = Build.VERSION.SDK_INT;
+            if (version >= 15) {
+                IMPL = new IntentCompatImplIcsMr1();
                     } else if (version >= 11) {
-/* 89 */                IMPL = new IntentCompatImplHC();
+                IMPL = new IntentCompatImplHC();
                     } else {
-/* 91 */                IMPL = new IntentCompatImplBase();
+                IMPL = new IntentCompatImplBase();
                     }
                 }
 
-/* 94 */        private IntentCompat() {
+        private IntentCompat() {
                 }
 
-/* 220 */       public static Intent makeMainActivity(ComponentName mainActivity) {
-/* 221 */           return IMPL.makeMainActivity(mainActivity);
+       public static Intent makeMainActivity(ComponentName mainActivity) {
+           return IMPL.makeMainActivity(mainActivity);
                 }
 
-/* 248 */       public static Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
-/* 249 */           return IMPL.makeMainSelectorActivity(selectorAction, selectorCategory);
+       public static Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
+           return IMPL.makeMainSelectorActivity(selectorAction, selectorCategory);
                 }
 
-/* 265 */       public static Intent makeRestartActivityTask(ComponentName mainActivity) {
-/* 266 */           return IMPL.makeRestartActivityTask(mainActivity);
+       public static Intent makeRestartActivityTask(ComponentName mainActivity) {
+           return IMPL.makeRestartActivityTask(mainActivity);
                 }
             }

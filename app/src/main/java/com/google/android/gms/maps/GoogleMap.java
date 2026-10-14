@@ -41,7 +41,7 @@
             import com.google.android.gms.maps.model.internal.InterfaceC1190d;
             import com.google.android.gms.maps.model.internal.InterfaceC1192f;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class GoogleMap {
                 public static final int MAP_TYPE_HYBRID = 4;
                 public static final int MAP_TYPE_NONE = 0;
@@ -49,29 +49,29 @@
                 public static final int MAP_TYPE_SATELLITE = 2;
                 public static final int MAP_TYPE_TERRAIN = 3;
 
-                /* JADX INFO: renamed from: pf */
+                
                 private final IGoogleMapDelegate f2194pf;
 
-                /* JADX INFO: renamed from: pg */
+                
                 private UiSettings f2195pg;
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$1 */
+                
                 class BinderC11301 extends ILocationSourceDelegate.AbstractBinderC1152a {
 
-                    /* JADX INFO: renamed from: ph */
-                    final /* synthetic */ LocationSource f2196ph;
+                    
+                    final  LocationSource f2196ph;
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$1$1, reason: invalid class name */
+                    
                     class AnonymousClass1 implements LocationSource.OnLocationChangedListener {
 
-                        /* JADX INFO: renamed from: pj */
-                        final /* synthetic */ InterfaceC1163g f2198pj;
+                        
+                        final  InterfaceC1163g f2198pj;
 
                         AnonymousClass1(InterfaceC1163g interfaceC1163g) {
                             this.f2198pj = interfaceC1163g;
                         }
 
-                        @Override // com.google.android.gms.maps.LocationSource.OnLocationChangedListener
+                        @Override 
                         public void onLocationChanged(Location location) {
                             try {
                                 this.f2198pj.mo2247g(BinderC0905c.m1166g(location));
@@ -85,217 +85,217 @@
                         this.f2196ph = locationSource;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.ILocationSourceDelegate
+                    @Override 
                     public void activate(InterfaceC1163g listener) {
                         this.f2196ph.activate(new AnonymousClass1(listener));
                     }
 
-                    @Override // com.google.android.gms.maps.internal.ILocationSourceDelegate
+                    @Override 
                     public void deactivate() {
                         this.f2196ph.deactivate();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$10 */
+                
                 class BinderC113110 extends InterfaceC1162f.a {
 
-                    /* JADX INFO: renamed from: pt */
-                    final /* synthetic */ OnInfoWindowClickListener f2201pt;
+                    
+                    final  OnInfoWindowClickListener f2201pt;
 
                     BinderC113110(OnInfoWindowClickListener onInfoWindowClickListener) {
                         this.f2201pt = onInfoWindowClickListener;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1162f
-                    /* JADX INFO: renamed from: e */
+                    @Override 
+                    
                     public void mo2198e(InterfaceC1190d interfaceC1190d) {
                         this.f2201pt.onInfoWindowClick(new Marker(interfaceC1190d));
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$11 */
+                
                 class BinderC113211 extends InterfaceC1160d.a {
 
-                    /* JADX INFO: renamed from: pu */
-                    final /* synthetic */ InfoWindowAdapter f2203pu;
+                    
+                    final  InfoWindowAdapter f2203pu;
 
                     BinderC113211(InfoWindowAdapter infoWindowAdapter) {
                         this.f2203pu = infoWindowAdapter;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1160d
-                    /* JADX INFO: renamed from: f */
+                    @Override 
+                    
                     public InterfaceC0904b mo2199f(InterfaceC1190d interfaceC1190d) {
                         return BinderC0905c.m1166g(this.f2203pu.getInfoWindow(new Marker(interfaceC1190d)));
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1160d
-                    /* JADX INFO: renamed from: g */
+                    @Override 
+                    
                     public InterfaceC0904b mo2200g(InterfaceC1190d interfaceC1190d) {
                         return BinderC0905c.m1166g(this.f2203pu.getInfoContents(new Marker(interfaceC1190d)));
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$12 */
+                
                 class BinderC113312 extends InterfaceC1170n.a {
 
-                    /* JADX INFO: renamed from: pv */
-                    final /* synthetic */ OnMyLocationChangeListener f2205pv;
+                    
+                    final  OnMyLocationChangeListener f2205pv;
 
                     BinderC113312(OnMyLocationChangeListener onMyLocationChangeListener) {
                         this.f2205pv = onMyLocationChangeListener;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1170n
-                    /* JADX INFO: renamed from: d */
+                    @Override 
+                    
                     public void mo2201d(InterfaceC0904b interfaceC0904b) {
                         this.f2205pv.onMyLocationChange((Location) BinderC0905c.m1165b(interfaceC0904b));
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$2 */
+                
                 class BinderC11342 extends InterfaceC1169m.a {
 
-                    /* JADX INFO: renamed from: pl */
-                    final /* synthetic */ OnMyLocationButtonClickListener f2207pl;
+                    
+                    final  OnMyLocationButtonClickListener f2207pl;
 
                     BinderC11342(OnMyLocationButtonClickListener onMyLocationButtonClickListener) {
                         this.f2207pl = onMyLocationButtonClickListener;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1169m
+                    @Override 
                     public boolean onMyLocationButtonClick() throws RemoteException {
                         return this.f2207pl.onMyLocationButtonClick();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$3 */
+                
                 class BinderC11353 extends InterfaceC1165i.a {
 
-                    /* JADX INFO: renamed from: pm */
-                    final /* synthetic */ OnMapLoadedCallback f2209pm;
+                    
+                    final  OnMapLoadedCallback f2209pm;
 
                     BinderC11353(OnMapLoadedCallback onMapLoadedCallback) {
                         this.f2209pm = onMapLoadedCallback;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1165i
+                    @Override 
                     public void onMapLoaded() throws RemoteException {
                         this.f2209pm.onMapLoaded();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$4 */
+                
                 class BinderC11364 extends InterfaceC1171o.a {
 
-                    /* JADX INFO: renamed from: pn */
-                    final /* synthetic */ SnapshotReadyCallback f2211pn;
+                    
+                    final  SnapshotReadyCallback f2211pn;
 
                     BinderC11364(SnapshotReadyCallback snapshotReadyCallback) {
                         this.f2211pn = snapshotReadyCallback;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1171o
-                    /* JADX INFO: renamed from: c */
+                    @Override 
+                    
                     public void mo2202c(InterfaceC0904b interfaceC0904b) throws RemoteException {
                         this.f2211pn.onSnapshotReady((Bitmap) BinderC0905c.m1165b(interfaceC0904b));
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1171o
+                    @Override 
                     public void onSnapshotReady(Bitmap snapshot) throws RemoteException {
                         this.f2211pn.onSnapshotReady(snapshot);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$5 */
+                
                 class BinderC11375 extends InterfaceC1161e.a {
 
-                    /* JADX INFO: renamed from: po */
-                    final /* synthetic */ OnCameraChangeListener f2213po;
+                    
+                    final  OnCameraChangeListener f2213po;
 
                     BinderC11375(OnCameraChangeListener onCameraChangeListener) {
                         this.f2213po = onCameraChangeListener;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1161e
+                    @Override 
                     public void onCameraChange(CameraPosition position) {
                         this.f2213po.onCameraChange(position);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$6 */
+                
                 class BinderC11386 extends InterfaceC1164h.a {
 
-                    /* JADX INFO: renamed from: pp */
-                    final /* synthetic */ OnMapClickListener f2215pp;
+                    
+                    final  OnMapClickListener f2215pp;
 
                     BinderC11386(OnMapClickListener onMapClickListener) {
                         this.f2215pp = onMapClickListener;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1164h
+                    @Override 
                     public void onMapClick(LatLng point) {
                         this.f2215pp.onMapClick(point);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$7 */
+                
                 class BinderC11397 extends InterfaceC1166j.a {
 
-                    /* JADX INFO: renamed from: pq */
-                    final /* synthetic */ OnMapLongClickListener f2217pq;
+                    
+                    final  OnMapLongClickListener f2217pq;
 
                     BinderC11397(OnMapLongClickListener onMapLongClickListener) {
                         this.f2217pq = onMapLongClickListener;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1166j
+                    @Override 
                     public void onMapLongClick(LatLng point) {
                         this.f2217pq.onMapLongClick(point);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$8 */
+                
                 class BinderC11408 extends InterfaceC1167k.a {
 
-                    /* JADX INFO: renamed from: pr */
-                    final /* synthetic */ OnMarkerClickListener f2219pr;
+                    
+                    final  OnMarkerClickListener f2219pr;
 
                     BinderC11408(OnMarkerClickListener onMarkerClickListener) {
                         this.f2219pr = onMarkerClickListener;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1167k
-                    /* JADX INFO: renamed from: a */
+                    @Override 
+                    
                     public boolean mo2203a(InterfaceC1190d interfaceC1190d) {
                         return this.f2219pr.onMarkerClick(new Marker(interfaceC1190d));
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$9 */
+                
                 class BinderC11419 extends InterfaceC1168l.a {
 
-                    /* JADX INFO: renamed from: ps */
-                    final /* synthetic */ OnMarkerDragListener f2221ps;
+                    
+                    final  OnMarkerDragListener f2221ps;
 
                     BinderC11419(OnMarkerDragListener onMarkerDragListener) {
                         this.f2221ps = onMarkerDragListener;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1168l
-                    /* JADX INFO: renamed from: b */
+                    @Override 
+                    
                     public void mo2204b(InterfaceC1190d interfaceC1190d) {
                         this.f2221ps.onMarkerDragStart(new Marker(interfaceC1190d));
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1168l
-                    /* JADX INFO: renamed from: c */
+                    @Override 
+                    
                     public void mo2205c(InterfaceC1190d interfaceC1190d) {
                         this.f2221ps.onMarkerDragEnd(new Marker(interfaceC1190d));
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1168l
-                    /* JADX INFO: renamed from: d */
+                    @Override 
+                    
                     public void mo2206d(InterfaceC1190d interfaceC1190d) {
                         this.f2221ps.onMarkerDrag(new Marker(interfaceC1190d));
                     }
@@ -358,22 +358,22 @@
                     void onSnapshotReady(Bitmap bitmap);
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.GoogleMap$a */
+                
                 private static final class BinderC1142a extends InterfaceC1158b.a {
 
-                    /* JADX INFO: renamed from: pw */
+                    
                     private final CancelableCallback f2222pw;
 
                     BinderC1142a(CancelableCallback cancelableCallback) {
                         this.f2222pw = cancelableCallback;
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1158b
+                    @Override 
                     public void onCancel() {
                         this.f2222pw.onCancel();
                     }
 
-                    @Override // com.google.android.gms.maps.internal.InterfaceC1158b
+                    @Override 
                     public void onFinish() {
                         this.f2222pw.onFinish();
                     }
@@ -475,7 +475,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: cu */
+                
                 IGoogleMapDelegate m2197cu() {
                     return this.f2194pf;
                 }

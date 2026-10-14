@@ -7,10 +7,10 @@
             import com.google.android.gms.games.GameEntity;
             import java.util.ArrayList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.games.multiplayer.a */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C0923a implements Parcelable.Creator<InvitationEntity> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m1215a(InvitationEntity invitationEntity, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1139a(parcel, 1, (Parcelable) invitationEntity.getGame(), i, false);
@@ -24,22 +24,22 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: S */
+                
                 public InvitationEntity[] m1216S(int i) {
                     return new InvitationEntity[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ InvitationEntity createFromParcel(Parcel x0) {
+                @Override 
+                public  InvitationEntity createFromParcel(Parcel x0) {
                     return mo1205v(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ InvitationEntity[] newArray(int x0) {
+                @Override 
+                public  InvitationEntity[] newArray(int x0) {
                     return m1216S(x0);
                 }
 
-                /* JADX INFO: renamed from: v */
+                
                 public InvitationEntity mo1205v(Parcel parcel) {
                     int iM1105f = 0;
                     ArrayList arrayListM1101c = null;

@@ -6,14 +6,14 @@
             import android.content.Intent;
             import android.util.Log;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.dc */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class DialogInterfaceOnClickListenerC1018dc implements DialogInterface.OnClickListener {
 
-                /* JADX INFO: renamed from: fD */
+                
                 private final Activity f1670fD;
 
-                /* JADX INFO: renamed from: ky */
+                
                 private final int f1671ky;
                 private final Intent mIntent;
 
@@ -23,7 +23,7 @@
                     this.f1671ky = i;
                 }
 
-                @Override // android.content.DialogInterface.OnClickListener
+                @Override 
                 public void onClick(DialogInterface dialog, int which) {
                     try {
                         if (this.mIntent != null) {

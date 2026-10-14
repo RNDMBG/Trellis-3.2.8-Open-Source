@@ -8,25 +8,25 @@
             import android.os.RemoteException;
             import com.google.android.gms.dynamic.InterfaceC0904b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.a */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1187a extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.a$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1187a {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.a$a$a, reason: collision with other inner class name */
+                    
                     private static class C1363a implements InterfaceC1187a {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2364dG;
 
                         C1363a(IBinder iBinder) {
                             this.f2364dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1187a
-                        /* JADX INFO: renamed from: S */
+                        @Override 
+                        
                         public InterfaceC0904b mo2305S(String str) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -46,8 +46,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1187a
-                        /* JADX INFO: renamed from: T */
+                        @Override 
+                        
                         public InterfaceC0904b mo2306T(String str) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -67,8 +67,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1187a
-                        /* JADX INFO: renamed from: U */
+                        @Override 
+                        
                         public InterfaceC0904b mo2307U(String str) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -88,8 +88,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1187a
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public InterfaceC0904b mo2308a(Bitmap bitmap) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -114,8 +114,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1187a
-                        /* JADX INFO: renamed from: ad */
+                        @Override 
+                        
                         public InterfaceC0904b mo2309ad(int i) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -135,13 +135,13 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2364dG;
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1187a
-                        /* JADX INFO: renamed from: c */
+                        @Override 
+                        
                         public InterfaceC0904b mo2310c(float f) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -161,8 +161,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1187a
-                        /* JADX INFO: renamed from: cQ */
+                        @Override 
+                        
                         public InterfaceC0904b mo2311cQ() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -182,7 +182,7 @@
                         }
                     }
 
-                    /* JADX INFO: renamed from: ac */
+                    
                     public static InterfaceC1187a m2312ac(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -191,7 +191,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1187a)) ? new C1363a(iBinder) : (InterfaceC1187a) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:
@@ -245,24 +245,24 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: S */
+                
                 InterfaceC0904b mo2305S(String str) throws RemoteException;
 
-                /* JADX INFO: renamed from: T */
+                
                 InterfaceC0904b mo2306T(String str) throws RemoteException;
 
-                /* JADX INFO: renamed from: U */
+                
                 InterfaceC0904b mo2307U(String str) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 InterfaceC0904b mo2308a(Bitmap bitmap) throws RemoteException;
 
-                /* JADX INFO: renamed from: ad */
+                
                 InterfaceC0904b mo2309ad(int i) throws RemoteException;
 
-                /* JADX INFO: renamed from: c */
+                
                 InterfaceC0904b mo2310c(float f) throws RemoteException;
 
-                /* JADX INFO: renamed from: cQ */
+                
                 InterfaceC0904b mo2311cQ() throws RemoteException;
             }

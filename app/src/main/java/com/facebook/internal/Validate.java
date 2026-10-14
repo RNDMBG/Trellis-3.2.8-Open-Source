@@ -2,50 +2,50 @@
 
             import java.util.Collection;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 26 */    public final class Validate {
-/* 27 */        public static void notNull(Object arg, String name) {
-/* 28 */            if (arg == null) {
-/* 29 */                throw new NullPointerException("Argument '" + name + "' cannot be null");
+            
+    public final class Validate {
+        public static void notNull(Object arg, String name) {
+            if (arg == null) {
+                throw new NullPointerException("Argument '" + name + "' cannot be null");
                     }
                 }
 
-/* 33 */        public static <T> void notEmpty(Collection<T> container, String name) {
-/* 34 */            if (container.isEmpty()) {
-/* 35 */                throw new IllegalArgumentException("Container '" + name + "' cannot be empty");
+        public static <T> void notEmpty(Collection<T> container, String name) {
+            if (container.isEmpty()) {
+                throw new IllegalArgumentException("Container '" + name + "' cannot be empty");
                     }
                 }
 
-/* 39 */        public static <T> void containsNoNulls(Collection<T> container, String name) {
-/* 40 */            notNull(container, name);
+        public static <T> void containsNoNulls(Collection<T> container, String name) {
+            notNull(container, name);
                     for (T item : container) {
-/* 42 */                if (item == null) {
-/* 43 */                    throw new NullPointerException("Container '" + name + "' cannot contain null values");
+                if (item == null) {
+                    throw new NullPointerException("Container '" + name + "' cannot contain null values");
                         }
                     }
                 }
 
-/* 48 */        public static <T> void notEmptyAndContainsNoNulls(Collection<T> container, String name) {
-/* 49 */            containsNoNulls(container, name);
-/* 50 */            notEmpty(container, name);
+        public static <T> void notEmptyAndContainsNoNulls(Collection<T> container, String name) {
+            containsNoNulls(container, name);
+            notEmpty(container, name);
                 }
 
-/* 53 */        public static void notNullOrEmpty(String arg, String name) {
-/* 54 */            if (Utility.isNullOrEmpty(arg)) {
-/* 55 */                throw new IllegalArgumentException("Argument '" + name + "' cannot be null or empty");
+        public static void notNullOrEmpty(String arg, String name) {
+            if (Utility.isNullOrEmpty(arg)) {
+                throw new IllegalArgumentException("Argument '" + name + "' cannot be null or empty");
                     }
                 }
 
-/* 59 */        public static void oneOf(Object arg, String name, Object... values) {
+        public static void oneOf(Object arg, String name, Object... values) {
                     for (Object value : values) {
-/* 61 */                if (value != null) {
-/* 62 */                    if (value.equals(arg)) {
-/* 67 */                        return;
+                if (value != null) {
+                    if (value.equals(arg)) {
+                        return;
                             }
                         } else if (arg == null) {
-/* 67 */                    return;
+                    return;
                         }
                     }
-/* 71 */            throw new IllegalArgumentException("Argument '" + name + "' was not one of the allowed values");
+            throw new IllegalArgumentException("Argument '" + name + "' was not one of the allowed values");
                 }
             }

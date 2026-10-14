@@ -8,29 +8,29 @@
             import java.util.Iterator;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class PolylineOptions implements SafeParcelable {
                 public static final PolylineOptionsCreator CREATOR = new PolylineOptionsCreator();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2342iM;
 
-                /* JADX INFO: renamed from: jc */
+                
                 private int f2343jc;
 
-                /* JADX INFO: renamed from: qK */
+                
                 private final List<LatLng> f2344qK;
 
-                /* JADX INFO: renamed from: qM */
+                
                 private boolean f2345qM;
 
-                /* JADX INFO: renamed from: qk */
+                
                 private float f2346qk;
 
-                /* JADX INFO: renamed from: ql */
+                
                 private boolean f2347ql;
 
-                /* JADX INFO: renamed from: qp */
+                
                 private float f2348qp;
 
                 public PolylineOptions() {
@@ -81,7 +81,7 @@
                     return this;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -129,7 +129,7 @@
                     return this;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     if (C1174r.m2265cK()) {
                         C1184h.m2302a(this, out, flags);

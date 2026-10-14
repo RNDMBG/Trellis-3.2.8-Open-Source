@@ -5,39 +5,39 @@
             import com.google.android.gms.location.Geofence;
             import java.util.Locale;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.fa */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1070fa implements SafeParcelable, Geofence {
                 public static final C1071fb CREATOR = new C1071fb();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f1890iM;
 
-                /* JADX INFO: renamed from: oA */
+                
                 private final String f1891oA;
 
-                /* JADX INFO: renamed from: oB */
+                
                 private final int f1892oB;
 
-                /* JADX INFO: renamed from: oD */
+                
                 private final short f1893oD;
 
-                /* JADX INFO: renamed from: oE */
+                
                 private final double f1894oE;
 
-                /* JADX INFO: renamed from: oF */
+                
                 private final double f1895oF;
 
-                /* JADX INFO: renamed from: oG */
+                
                 private final float f1896oG;
 
-                /* JADX INFO: renamed from: oH */
+                
                 private final int f1897oH;
 
-                /* JADX INFO: renamed from: oI */
+                
                 private final int f1898oI;
 
-                /* JADX INFO: renamed from: pc */
+                
                 private final long f1899pc;
 
                 public C1070fa(int i, String str, int i2, short s, double d, double d2, float f, long j, int i3, int i4) {
@@ -61,14 +61,14 @@
                     this(1, str, i, s, d, d2, f, j, i2, i3);
                 }
 
-                /* JADX INFO: renamed from: R */
+                
                 private static void m1926R(String str) {
                     if (str == null || str.length() > 100) {
                         throw new IllegalArgumentException("requestId is null or too long: " + str);
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static void m1927a(double d, double d2) {
                     if (d > 90.0d || d < -90.0d) {
                         throw new IllegalArgumentException("invalid latitude: " + d);
@@ -78,7 +78,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: aa */
+                
                 private static int m1928aa(int i) {
                     int i2 = i & 7;
                     if (i2 == 0) {
@@ -87,7 +87,7 @@
                     return i2;
                 }
 
-                /* JADX INFO: renamed from: ab */
+                
                 private static String m1929ab(int i) {
                     switch (i) {
                         case 1:
@@ -97,14 +97,14 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static void m1930b(float f) {
                     if (f <= 0.0f) {
                         throw new IllegalArgumentException("invalid radius: " + f);
                     }
                 }
 
-                /* JADX INFO: renamed from: d */
+                
                 public static C1070fa m1931d(byte[] bArr) {
                     Parcel parcelObtain = Parcel.obtain();
                     parcelObtain.unmarshall(bArr, 0, bArr.length);
@@ -114,27 +114,27 @@
                     return c1070faM1938z;
                 }
 
-                /* JADX INFO: renamed from: co */
+                
                 public short m1932co() {
                     return this.f1893oD;
                 }
 
-                /* JADX INFO: renamed from: cp */
+                
                 public float m1933cp() {
                     return this.f1896oG;
                 }
 
-                /* JADX INFO: renamed from: cq */
+                
                 public int m1934cq() {
                     return this.f1892oB;
                 }
 
-                /* JADX INFO: renamed from: cr */
+                
                 public int m1935cr() {
                     return this.f1898oI;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     C1071fb c1071fb = CREATOR;
                     return 0;
@@ -167,7 +167,7 @@
                     return this.f1897oH;
                 }
 
-                @Override // com.google.android.gms.location.Geofence
+                @Override 
                 public String getRequestId() {
                     return this.f1891oA;
                 }
@@ -187,7 +187,7 @@
                     return String.format(Locale.US, "Geofence[%s id:%s transitions:%d %.6f, %.6f %.0fm, resp=%ds, dwell=%dms, @%d]", m1929ab(this.f1893oD), this.f1891oA, Integer.valueOf(this.f1892oB), Double.valueOf(this.f1894oE), Double.valueOf(this.f1895oF), Float.valueOf(this.f1896oG), Integer.valueOf(this.f1897oH / 1000), Integer.valueOf(this.f1898oI), Long.valueOf(this.f1899pc));
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel parcel, int flags) {
                     C1071fb c1071fb = CREATOR;
                     C1071fb.m1936a(this, parcel, flags);

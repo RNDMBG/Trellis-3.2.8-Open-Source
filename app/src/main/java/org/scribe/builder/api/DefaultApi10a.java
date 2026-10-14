@@ -17,48 +17,48 @@
             import org.scribe.services.TimestampService;
             import org.scribe.services.TimestampServiceImpl;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 31 */    public abstract class DefaultApi10a implements Api {
+            
+    public abstract class DefaultApi10a implements Api {
                 public abstract String getAccessTokenEndpoint();
 
                 public abstract String getAuthorizationUrl(Token token);
 
                 public abstract String getRequestTokenEndpoint();
 
-/* 32 */        public AccessTokenExtractor getAccessTokenExtractor() {
-/* 33 */            return new TokenExtractorImpl();
+        public AccessTokenExtractor getAccessTokenExtractor() {
+            return new TokenExtractorImpl();
                 }
 
-/* 42 */        public BaseStringExtractor getBaseStringExtractor() {
-/* 43 */            return new BaseStringExtractorImpl();
+        public BaseStringExtractor getBaseStringExtractor() {
+            return new BaseStringExtractorImpl();
                 }
 
-/* 52 */        public HeaderExtractor getHeaderExtractor() {
-/* 53 */            return new HeaderExtractorImpl();
+        public HeaderExtractor getHeaderExtractor() {
+            return new HeaderExtractorImpl();
                 }
 
-/* 62 */        public RequestTokenExtractor getRequestTokenExtractor() {
-/* 63 */            return new TokenExtractorImpl();
+        public RequestTokenExtractor getRequestTokenExtractor() {
+            return new TokenExtractorImpl();
                 }
 
-/* 72 */        public SignatureService getSignatureService() {
-/* 73 */            return new HMACSha1SignatureService();
+        public SignatureService getSignatureService() {
+            return new HMACSha1SignatureService();
                 }
 
-/* 82 */        public TimestampService getTimestampService() {
-/* 83 */            return new TimestampServiceImpl();
+        public TimestampService getTimestampService() {
+            return new TimestampServiceImpl();
                 }
 
-/* 92 */        public Verb getAccessTokenVerb() {
-/* 93 */            return Verb.POST;
+        public Verb getAccessTokenVerb() {
+            return Verb.POST;
                 }
 
-/* 102 */       public Verb getRequestTokenVerb() {
-/* 103 */           return Verb.POST;
+       public Verb getRequestTokenVerb() {
+           return Verb.POST;
                 }
 
-                @Override // org.scribe.builder.api.Api
-/* 138 */       public OAuthService createService(OAuthConfig config) {
-/* 139 */           return new OAuth10aServiceImpl(this, config);
+                @Override 
+       public OAuthService createService(OAuthConfig config) {
+           return new OAuth10aServiceImpl(this, config);
                 }
             }

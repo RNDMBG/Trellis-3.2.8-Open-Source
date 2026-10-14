@@ -15,118 +15,118 @@
             import android.widget.LinearLayout;
             import android.widget.TextView;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.cs */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1007cs extends WebChromeClient {
 
-                /* JADX INFO: renamed from: fG */
+                
                 private final C1005cq f1621fG;
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.cs$1, reason: invalid class name */
+                
                 static class AnonymousClass1 implements DialogInterface.OnCancelListener {
 
-                    /* JADX INFO: renamed from: ii */
-                    final /* synthetic */ JsResult f1622ii;
+                    
+                    final  JsResult f1622ii;
 
                     AnonymousClass1(JsResult jsResult) {
                         this.f1622ii = jsResult;
                     }
 
-                    @Override // android.content.DialogInterface.OnCancelListener
+                    @Override 
                     public void onCancel(DialogInterface dialog) {
                         this.f1622ii.cancel();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.cs$2, reason: invalid class name */
+                
                 static class AnonymousClass2 implements DialogInterface.OnClickListener {
 
-                    /* JADX INFO: renamed from: ii */
-                    final /* synthetic */ JsResult f1623ii;
+                    
+                    final  JsResult f1623ii;
 
                     AnonymousClass2(JsResult jsResult) {
                         this.f1623ii = jsResult;
                     }
 
-                    @Override // android.content.DialogInterface.OnClickListener
+                    @Override 
                     public void onClick(DialogInterface dialog, int which) {
                         this.f1623ii.cancel();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.cs$3, reason: invalid class name */
+                
                 static class AnonymousClass3 implements DialogInterface.OnClickListener {
 
-                    /* JADX INFO: renamed from: ii */
-                    final /* synthetic */ JsResult f1624ii;
+                    
+                    final  JsResult f1624ii;
 
                     AnonymousClass3(JsResult jsResult) {
                         this.f1624ii = jsResult;
                     }
 
-                    @Override // android.content.DialogInterface.OnClickListener
+                    @Override 
                     public void onClick(DialogInterface dialog, int which) {
                         this.f1624ii.confirm();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.cs$4, reason: invalid class name */
+                
                 static class AnonymousClass4 implements DialogInterface.OnCancelListener {
 
-                    /* JADX INFO: renamed from: ij */
-                    final /* synthetic */ JsPromptResult f1625ij;
+                    
+                    final  JsPromptResult f1625ij;
 
                     AnonymousClass4(JsPromptResult jsPromptResult) {
                         this.f1625ij = jsPromptResult;
                     }
 
-                    @Override // android.content.DialogInterface.OnCancelListener
+                    @Override 
                     public void onCancel(DialogInterface dialog) {
                         this.f1625ij.cancel();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.cs$5, reason: invalid class name */
+                
                 static class AnonymousClass5 implements DialogInterface.OnClickListener {
 
-                    /* JADX INFO: renamed from: ij */
-                    final /* synthetic */ JsPromptResult f1626ij;
+                    
+                    final  JsPromptResult f1626ij;
 
                     AnonymousClass5(JsPromptResult jsPromptResult) {
                         this.f1626ij = jsPromptResult;
                     }
 
-                    @Override // android.content.DialogInterface.OnClickListener
+                    @Override 
                     public void onClick(DialogInterface dialog, int which) {
                         this.f1626ij.cancel();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.cs$6, reason: invalid class name */
+                
                 static class AnonymousClass6 implements DialogInterface.OnClickListener {
 
-                    /* JADX INFO: renamed from: ij */
-                    final /* synthetic */ JsPromptResult f1627ij;
+                    
+                    final  JsPromptResult f1627ij;
 
-                    /* JADX INFO: renamed from: ik */
-                    final /* synthetic */ EditText f1628ik;
+                    
+                    final  EditText f1628ik;
 
                     AnonymousClass6(JsPromptResult jsPromptResult, EditText editText) {
                         this.f1627ij = jsPromptResult;
                         this.f1628ik = editText;
                     }
 
-                    @Override // android.content.DialogInterface.OnClickListener
+                    @Override 
                     public void onClick(DialogInterface dialog, int which) {
                         this.f1627ij.confirm(this.f1628ik.getText().toString());
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.cs$7, reason: invalid class name */
-                static /* synthetic */ class AnonymousClass7 {
+                
+                static  class AnonymousClass7 {
 
-                    /* JADX INFO: renamed from: il */
-                    static final /* synthetic */ int[] f1629il = new int[ConsoleMessage.MessageLevel.values().length];
+                    
+                    static final  int[] f1629il = new int[ConsoleMessage.MessageLevel.values().length];
 
                     static {
                         try {
@@ -156,12 +156,12 @@
                     this.f1621fG = c1005cq;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static void m1491a(AlertDialog.Builder builder, String str, JsResult jsResult) {
                     builder.setMessage(str).setPositiveButton(R.string.ok, new AnonymousClass3(jsResult)).setNegativeButton(R.string.cancel, new AnonymousClass2(jsResult)).setOnCancelListener(new AnonymousClass1(jsResult)).create().show();
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static void m1492a(Context context, AlertDialog.Builder builder, String str, String str2, JsPromptResult jsPromptResult) {
                     LinearLayout linearLayout = new LinearLayout(context);
                     linearLayout.setOrientation(1);
@@ -174,7 +174,7 @@
                     builder.setView(linearLayout).setPositiveButton(R.string.ok, new AnonymousClass6(jsPromptResult, editText)).setNegativeButton(R.string.cancel, new AnonymousClass5(jsPromptResult)).setOnCancelListener(new AnonymousClass4(jsPromptResult)).create().show();
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static boolean m1493a(Context context, String str, String str2, String str3, JsResult jsResult, JsPromptResult jsPromptResult, boolean z) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
                     builder.setTitle(str);
@@ -186,7 +186,7 @@
                     return true;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 protected final void m1494a(View view, int i, WebChromeClient.CustomViewCallback customViewCallback) {
                     BinderC0967bf binderC0967bfM1471au = this.f1621fG.m1471au();
                     if (binderC0967bfM1471au == null) {
@@ -198,7 +198,7 @@
                     }
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final void onCloseWindow(WebView webView) {
                     if (!(webView instanceof C1005cq)) {
                         C1002cn.m1458q("Tried to close a WebView that wasn't an AdWebView.");
@@ -212,7 +212,7 @@
                     }
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final boolean onConsoleMessage(ConsoleMessage consoleMessage) {
                     String str = "JS: " + consoleMessage.message() + " (" + consoleMessage.sourceId() + ":" + consoleMessage.lineNumber() + ")";
                     switch (AnonymousClass7.f1629il[consoleMessage.messageLevel().ordinal()]) {
@@ -236,7 +236,7 @@
                     return super.onConsoleMessage(consoleMessage);
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final void onExceededDatabaseQuota(String url, String databaseIdentifier, long currentQuota, long estimatedSize, long totalUsedQuota, WebStorage.QuotaUpdater quotaUpdater) {
                     long j = 5242880 - totalUsedQuota;
                     if (j <= 0) {
@@ -258,7 +258,7 @@
                     quotaUpdater.updateQuota(estimatedSize);
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final void onHideCustomView() {
                     BinderC0967bf binderC0967bfM1471au = this.f1621fG.m1471au();
                     if (binderC0967bfM1471au == null) {
@@ -268,22 +268,22 @@
                     }
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final boolean onJsAlert(WebView webView, String url, String message, JsResult result) {
                     return m1493a(webView.getContext(), url, message, null, result, null, false);
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final boolean onJsBeforeUnload(WebView webView, String url, String message, JsResult result) {
                     return m1493a(webView.getContext(), url, message, null, result, null, false);
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final boolean onJsConfirm(WebView webView, String url, String message, JsResult result) {
                     return m1493a(webView.getContext(), url, message, null, result, null, false);
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final boolean onJsPrompt(WebView webView, String url, String message, String defaultValue, JsPromptResult result) {
                     return m1493a(webView.getContext(), url, message, defaultValue, null, result, true);
                 }
@@ -297,7 +297,7 @@
                     }
                 }
 
-                @Override // android.webkit.WebChromeClient
+                @Override 
                 public final void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {
                     m1494a(view, -1, customViewCallback);
                 }

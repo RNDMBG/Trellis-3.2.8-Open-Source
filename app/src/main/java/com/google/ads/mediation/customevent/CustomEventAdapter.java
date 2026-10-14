@@ -14,25 +14,25 @@
             import com.google.android.gms.ads.mediation.customevent.CustomEventExtras;
             import com.google.android.gms.internal.C1002cn;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class CustomEventAdapter implements MediationBannerAdapter<CustomEventExtras, CustomEventServerParameters>, MediationInterstitialAdapter<CustomEventExtras, CustomEventServerParameters> {
 
-                /* JADX INFO: renamed from: m */
+                
                 private View f866m;
 
-                /* JADX INFO: renamed from: n */
+                
                 private CustomEventBanner f867n;
 
-                /* JADX INFO: renamed from: o */
+                
                 private CustomEventInterstitial f868o;
 
-                /* JADX INFO: renamed from: com.google.ads.mediation.customevent.CustomEventAdapter$a */
+                
                 private static final class C0848a implements CustomEventBannerListener {
 
-                    /* JADX INFO: renamed from: k */
+                    
                     private final MediationBannerListener f869k;
 
-                    /* JADX INFO: renamed from: p */
+                    
                     private final CustomEventAdapter f870p;
 
                     public C0848a(CustomEventAdapter customEventAdapter, MediationBannerListener mediationBannerListener) {
@@ -40,37 +40,37 @@
                         this.f869k = mediationBannerListener;
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventBannerListener
+                    @Override 
                     public void onClick() {
                         C1002cn.m1454m("Custom event adapter called onFailedToReceiveAd.");
                         this.f869k.onClick(this.f870p);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventListener
+                    @Override 
                     public void onDismissScreen() {
                         C1002cn.m1454m("Custom event adapter called onFailedToReceiveAd.");
                         this.f869k.onDismissScreen(this.f870p);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventListener
+                    @Override 
                     public void onFailedToReceiveAd() {
                         C1002cn.m1454m("Custom event adapter called onFailedToReceiveAd.");
                         this.f869k.onFailedToReceiveAd(this.f870p, AdRequest.ErrorCode.NO_FILL);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventListener
+                    @Override 
                     public void onLeaveApplication() {
                         C1002cn.m1454m("Custom event adapter called onFailedToReceiveAd.");
                         this.f869k.onLeaveApplication(this.f870p);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventListener
+                    @Override 
                     public void onPresentScreen() {
                         C1002cn.m1454m("Custom event adapter called onFailedToReceiveAd.");
                         this.f869k.onPresentScreen(this.f870p);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventBannerListener
+                    @Override 
                     public void onReceivedAd(View view) {
                         C1002cn.m1454m("Custom event adapter called onReceivedAd.");
                         CustomEventAdapter.m981a(this.f870p, view);
@@ -78,13 +78,13 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.ads.mediation.customevent.CustomEventAdapter$b */
+                
                 private class C0849b implements CustomEventInterstitialListener {
 
-                    /* JADX INFO: renamed from: l */
+                    
                     private final MediationInterstitialListener f871l;
 
-                    /* JADX INFO: renamed from: p */
+                    
                     private final CustomEventAdapter f872p;
 
                     public C0849b(CustomEventAdapter customEventAdapter, MediationInterstitialListener mediationInterstitialListener) {
@@ -92,38 +92,38 @@
                         this.f871l = mediationInterstitialListener;
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventListener
+                    @Override 
                     public void onDismissScreen() {
                         C1002cn.m1454m("Custom event adapter called onDismissScreen.");
                         this.f871l.onDismissScreen(this.f872p);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventListener
+                    @Override 
                     public void onFailedToReceiveAd() {
                         C1002cn.m1454m("Custom event adapter called onFailedToReceiveAd.");
                         this.f871l.onFailedToReceiveAd(this.f872p, AdRequest.ErrorCode.NO_FILL);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventListener
+                    @Override 
                     public void onLeaveApplication() {
                         C1002cn.m1454m("Custom event adapter called onLeaveApplication.");
                         this.f871l.onLeaveApplication(this.f872p);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventListener
+                    @Override 
                     public void onPresentScreen() {
                         C1002cn.m1454m("Custom event adapter called onPresentScreen.");
                         this.f871l.onPresentScreen(this.f872p);
                     }
 
-                    @Override // com.google.ads.mediation.customevent.CustomEventInterstitialListener
+                    @Override 
                     public void onReceivedAd() {
                         C1002cn.m1454m("Custom event adapter called onReceivedAd.");
                         this.f871l.onReceivedAd(CustomEventAdapter.this);
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static <T> T m979a(String str) {
                     try {
                         return (T) Class.forName(str).newInstance();
@@ -133,17 +133,17 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m980a(View view) {
                     this.f866m = view;
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ void m981a(CustomEventAdapter customEventAdapter, View view) {
+                
+                static  void m981a(CustomEventAdapter customEventAdapter, View view) {
                     customEventAdapter.m980a(view);
                 }
 
-                @Override // com.google.ads.mediation.MediationAdapter
+                @Override 
                 public void destroy() {
                     if (this.f867n != null) {
                         this.f867n.destroy();
@@ -153,17 +153,17 @@
                     }
                 }
 
-                @Override // com.google.ads.mediation.MediationAdapter
+                @Override 
                 public Class<CustomEventExtras> getAdditionalParametersType() {
                     return CustomEventExtras.class;
                 }
 
-                @Override // com.google.ads.mediation.MediationBannerAdapter
+                @Override 
                 public View getBannerView() {
                     return this.f866m;
                 }
 
-                @Override // com.google.ads.mediation.MediationAdapter
+                @Override 
                 public Class<CustomEventServerParameters> getServerParametersType() {
                     return CustomEventServerParameters.class;
                 }
@@ -188,7 +188,7 @@
                     }
                 }
 
-                @Override // com.google.ads.mediation.MediationInterstitialAdapter
+                @Override 
                 public void showInterstitial() {
                     this.f868o.showInterstitial();
                 }

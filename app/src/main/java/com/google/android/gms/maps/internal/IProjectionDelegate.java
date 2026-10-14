@@ -9,28 +9,28 @@
             import com.google.android.gms.maps.model.LatLng;
             import com.google.android.gms.maps.model.VisibleRegion;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface IProjectionDelegate extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.internal.IProjectionDelegate$a */
+                
                 public static abstract class AbstractBinderC1155a extends Binder implements IProjectionDelegate {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.internal.IProjectionDelegate$a$a */
+                    
                     private static class a implements IProjectionDelegate {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2263dG;
 
                         a(IBinder iBinder) {
                             this.f2263dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2263dG;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IProjectionDelegate
+                        @Override 
                         public LatLng fromScreenLocation(InterfaceC0904b point) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -50,7 +50,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IProjectionDelegate
+                        @Override 
                         public VisibleRegion getVisibleRegion() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -69,7 +69,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IProjectionDelegate
+                        @Override 
                         public InterfaceC0904b toScreenLocation(LatLng location) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -95,7 +95,7 @@
                         }
                     }
 
-                    /* JADX INFO: renamed from: Z */
+                    
                     public static IProjectionDelegate m2232Z(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -104,7 +104,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IProjectionDelegate)) ? new a(iBinder) : (IProjectionDelegate) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:

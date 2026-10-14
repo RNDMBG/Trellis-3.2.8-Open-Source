@@ -21,8 +21,8 @@
             import java.util.HashMap;
             import java.util.LinkedHashSet;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 27 */    public class VideoCache<T> extends UrlResourceCache<VideoKey, UrlVideo, File, T> {
+            
+    public class VideoCache<T> extends UrlResourceCache<VideoKey, UrlVideo, File, T> {
                 private static final String CACHE_NAME = "video_cache";
                 private static final int INDEX_TIMESTAMP = 1;
                 private static final int INDEX_VIDEO_BYTES = 0;
@@ -45,91 +45,91 @@
 
 
 
-/* 48 */        public static void resetAverageSpeed() {
+        public static void resetAverageSpeed() {
                     synchronized (AVG_LOCK) {
                         try {
-/* 50 */                    averagePosition = 0;
-/* 51 */                    numberRecorded = 0;
+                    averagePosition = 0;
+                    numberRecorded = 0;
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
                 }
 
-/* 55 */        private static void reportAverageSpeed(int speed) {
+        private static void reportAverageSpeed(int speed) {
                     synchronized (AVG_LOCK) {
                         try {
-/* 57 */                    SLog.m447d("Latest download speed: {}", Integer.valueOf(speed));
-/* 58 */                    int nextPos = averagePosition % 5;
-/* 59 */                    averages[nextPos] = speed;
-/* 60 */                    averagePosition = (nextPos + 1) % 5;
-/* 61 */                    numberRecorded++;
+                    SLog.m447d("Latest download speed: {}", Integer.valueOf(speed));
+                    int nextPos = averagePosition % 5;
+                    averages[nextPos] = speed;
+                    averagePosition = (nextPos + 1) % 5;
+                    numberRecorded++;
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
                 }
 
-/* 65 */        public static int getCurrentAverageSpeed() {
+        public static int getCurrentAverageSpeed() {
                     int i;
                     synchronized (AVG_LOCK) {
-/* 67 */                int total = 0;
+                int total = 0;
                         try {
-/* 68 */                    if (numberRecorded == 0) {
-/* 69 */                        i = Integer.MAX_VALUE;
+                    if (numberRecorded == 0) {
+                        i = Integer.MAX_VALUE;
                             } else {
-/* 71 */                        int count = Math.min(numberRecorded, 5);
+                        int count = Math.min(numberRecorded, 5);
                                 for (int i2 = 0; i2 < count; i2++) {
-/* 73 */                            total += averages[i2];
+                            total += averages[i2];
                                 }
-/* 75 */                        i = total / count;
+                        i = total / count;
                             }
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
-/* 75 */            return i;
+            return i;
                 }
 
-/* 87 */        public VideoCache(Context context, T networkContext, NetworkOperationFactory<T> factory) {
-/* 88 */            super(context, 0, networkContext, factory);
-/* 89 */            this.mListeners = new ArrayList<>();
+        public VideoCache(Context context, T networkContext, NetworkOperationFactory<T> factory) {
+            super(context, 0, networkContext, factory);
+            this.mListeners = new ArrayList<>();
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-/* 102 */       public String getFile(long ownerId, VideoKey key, boolean peekOnly) {
-/* 103 */           UrlVideo video = get(ownerId, key, key.url, true, peekOnly);
-/* 104 */           if (video != null) {
-/* 105 */               return ((File) video.value).getAbsolutePath();
+                
+       public String getFile(long ownerId, VideoKey key, boolean peekOnly) {
+           UrlVideo video = get(ownerId, key, key.url, true, peekOnly);
+           if (video != null) {
+               return ((File) video.value).getAbsolutePath();
                     }
                     return null;
                 }
 
-/* 121 */       public UrlVideo get(long ownerId, VideoKey key) {
-/* 122 */           return (UrlVideo) super.get(ownerId, key, key.url, true);
+       public UrlVideo get(long ownerId, VideoKey key) {
+           return (UrlVideo) super.get(ownerId, key, key.url, true);
                 }
 
-/* 125 */       private static DiskLruCache getCacheInstance(Context context) {
+       private static DiskLruCache getCacheInstance(Context context) {
                     DiskLruCache diskLruCache;
                     synchronized (LOCK) {
                         try {
-/* 127 */                   if (!sIsCacheInitialized) {
-/* 128 */                       DiskLruCache diskCache = null;
+                   if (!sIsCacheInitialized) {
+                       DiskLruCache diskCache = null;
                                 try {
-/* 130 */                           File cacheDir = CommonUtil.getExternalCacheDir(context);
-/* 131 */                           if (cacheDir != null) {
-/* 132 */                               diskCache = prepareCache(cacheDir, 157286400L, false);
+                           File cacheDir = CommonUtil.getExternalCacheDir(context);
+                           if (cacheDir != null) {
+                               diskCache = prepareCache(cacheDir, 157286400L, false);
                                     } else if (Build.VERSION.SDK_INT < 14) {
-/* 135 */                               diskCache = prepareCache(context.getDir(CACHE_NAME, 1), 52428800L, false);
+                               diskCache = prepareCache(context.getDir(CACHE_NAME, 1), 52428800L, false);
                                     } else {
-/* 139 */                               diskCache = prepareCache(context.getCacheDir(), 52428800L, false);
+                               diskCache = prepareCache(context.getCacheDir(), 52428800L, false);
                                     }
                                 } catch (IOException e) {
                                 }
-/* 145 */                       sDiskCache = diskCache;
-/* 146 */                       sIsCacheInitialized = true;
+                       sDiskCache = diskCache;
+                       sIsCacheInitialized = true;
                             }
-/* 148 */                   diskLruCache = sDiskCache;
+                   diskLruCache = sDiskCache;
                         } catch (Throwable th) {
                             throw th;
                         }
@@ -137,112 +137,112 @@
                     return diskLruCache;
                 }
 
-/* 152 */       public static void invalidateCache() {
+       public static void invalidateCache() {
                     synchronized (LOCK) {
                         try {
-/* 154 */                   sDiskCache = null;
-/* 155 */                   sIsCacheInitialized = false;
+                   sDiskCache = null;
+                   sIsCacheInitialized = false;
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
                 }
 
-/* 164 */       public static void evictExpiredEntries(Context context, int lifetime) {
-/* 165 */           DiskLruCache diskCache = getCacheInstance(context);
-/* 166 */           LinkedHashSet<String> entrySet = new LinkedHashSet<>(diskCache.getLruEntries().keySet());
-/* 169 */           for (String key : entrySet) {
+       public static void evictExpiredEntries(Context context, int lifetime) {
+           DiskLruCache diskCache = getCacheInstance(context);
+           LinkedHashSet<String> entrySet = new LinkedHashSet<>(diskCache.getLruEntries().keySet());
+           for (String key : entrySet) {
                         try {
-/* 171 */                   DiskLruCache.Snapshot snapshot = diskCache.get(key, true);
-/* 172 */                   if (snapshot != null) {
-/* 177 */                       ByteBuffer buffer = ByteBuffer.allocate(8);
-/* 178 */                       InputStream is = snapshot.getInputStream(1);
-/* 179 */                       byte[] b = new byte[8];
-/* 180 */                       if (is.read(b, 0, 8) > 0) {
-/* 181 */                           buffer.put(b).flip();
-/* 182 */                           long age = System.currentTimeMillis() - buffer.getLong();
+                   DiskLruCache.Snapshot snapshot = diskCache.get(key, true);
+                   if (snapshot != null) {
+                       ByteBuffer buffer = ByteBuffer.allocate(8);
+                       InputStream is = snapshot.getInputStream(1);
+                       byte[] b = new byte[8];
+                       if (is.read(b, 0, 8) > 0) {
+                           buffer.put(b).flip();
+                           long age = System.currentTimeMillis() - buffer.getLong();
                                     if (age > ((long) lifetime) * CommonUtil.HOUR_MILLIS) {
-/* 184 */                               diskCache.remove(key);
+                               diskCache.remove(key);
                                     } else {
-/* 193 */                               return;
+                               return;
                                     }
                                 } else {
                                     continue;
                                 }
                             }
                         } catch (IOException e) {
-/* 193 */                   return;
+                   return;
                         }
                     }
                 }
 
-/* 196 */       private static DiskLruCache prepareCache(File dir, long absMax, boolean appendCacheName) throws IOException {
-/* 197 */           long available = -1;
+       private static DiskLruCache prepareCache(File dir, long absMax, boolean appendCacheName) throws IOException {
+           long available = -1;
                     try {
-/* 199 */               StatFs stat = new StatFs(dir.getPath());
-/* 201 */               if (Build.VERSION.SDK_INT >= 18) {
+               StatFs stat = new StatFs(dir.getPath());
+               if (Build.VERSION.SDK_INT >= 18) {
                             try {
-/* 203 */                       available = stat.getBlockSizeLong() * stat.getAvailableBlocksLong();
+                       available = stat.getBlockSizeLong() * stat.getAvailableBlocksLong();
                             } catch (NoSuchMethodError e) {
                             }
                         }
                         if (available < 0) {
-/* 210 */                   available = ((long) stat.getBlockSize()) * ((long) stat.getAvailableBlocks());
+                   available = ((long) stat.getBlockSize()) * ((long) stat.getAvailableBlocks());
                         }
                     } catch (Exception e2) {
-/* 214 */               CrashUtil.log("Failed to statf, but it is ok, we will get the aval size in other ways on this phone.");
+               CrashUtil.log("Failed to statf, but it is ok, we will get the aval size in other ways on this phone.");
                     }
                     if (available < 0) {
-/* 217 */               available = dir.getUsableSpace();
+               available = dir.getUsableSpace();
                     }
-/* 221 */           long maxSize = (available <= 0 || available > absMax) ? absMax : available / 10;
-/* 225 */           SLog.m449d("Preparing a DiskLruCache with absMax={}, available={}, maxSize={}", Long.valueOf(absMax), Long.valueOf(available), Long.valueOf(maxSize));
-/* 227 */           if (appendCacheName) {
+           long maxSize = (available <= 0 || available > absMax) ? absMax : available / 10;
+           SLog.m449d("Preparing a DiskLruCache with absMax={}, available={}, maxSize={}", Long.valueOf(absMax), Long.valueOf(available), Long.valueOf(maxSize));
+           if (appendCacheName) {
                         dir = new File(dir, CACHE_NAME);
                     }
                     return DiskLruCache.open(dir, 2, 2, maxSize);
                 }
 
-/* 230 */       protected static File getCacheDir() {
+       protected static File getCacheDir() {
                     File directory;
                     synchronized (LOCK) {
                         try {
-/* 233 */                   directory = sDiskCache != null ? sDiskCache.getDirectory() : null;
+                   directory = sDiskCache != null ? sDiskCache.getDirectory() : null;
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
-/* 235 */           return directory;
+           return directory;
                 }
 
-/* 245 */       public void addListener(VideoListener listener) {
-/* 246 */           this.mListeners.add(listener);
+       public void addListener(VideoListener listener) {
+           this.mListeners.add(listener);
                 }
 
-/* 254 */       public void removeListener(VideoListener listener) {
-/* 255 */           this.mListeners.remove(listener);
+       public void removeListener(VideoListener listener) {
+           this.mListeners.remove(listener);
                 }
 
-/* 259 */       protected UrlVideo loadResource(long ownerId, VideoKey key, String url) {
+       protected UrlVideo loadResource(long ownerId, VideoKey key, String url) {
                     UrlVideo urlVideoInstantiateResource = null;
-/* 260 */           String diskCacheKey = CommonUtil.md5Digest(url);
-/* 261 */           if (diskCacheKey != null) {
+           String diskCacheKey = CommonUtil.md5Digest(url);
+           if (diskCacheKey != null) {
                         synchronized (LOCK) {
                             try {
-/* 266 */                       DiskLruCache diskCache = getCacheInstance(this.mContext);
-/* 267 */                       if (diskCache != null && !diskCache.isClosed()) {
+                       DiskLruCache diskCache = getCacheInstance(this.mContext);
+                       if (diskCache != null && !diskCache.isClosed()) {
                                     try {
-/* 269 */                               DiskLruCache.Snapshot snapshot = diskCache.get(diskCacheKey);
-/* 270 */                               if (snapshot == null) {
-/* 276 */                                   CommonUtil.closeSilently(snapshot);
+                               DiskLruCache.Snapshot snapshot = diskCache.get(diskCacheKey);
+                               if (snapshot == null) {
+                                   CommonUtil.closeSilently(snapshot);
                                         } else {
-/* 273 */                                   urlVideoInstantiateResource = instantiateResource(key, url, new File(snapshot.getPath(0)));
-/* 276 */                                   CommonUtil.closeSilently(snapshot);
+                                   urlVideoInstantiateResource = instantiateResource(key, url, new File(snapshot.getPath(0)));
+                                   CommonUtil.closeSilently(snapshot);
                                         }
                                     } catch (IOException e) {
-/* 276 */                               CommonUtil.closeSilently(null);
+                               CommonUtil.closeSilently(null);
                                     } catch (Throwable th) {
-/* 264 */                               CommonUtil.closeSilently(null);
+                               CommonUtil.closeSilently(null);
                                         throw th;
                                     }
                                 }
@@ -251,65 +251,65 @@
                             }
                         }
                     }
-/* 280 */           return urlVideoInstantiateResource;
+           return urlVideoInstantiateResource;
                 }
 
-/* 283 */       public void prepopulateVideoCacheForUrl(long ownerId, VideoKey key, String url, InputStream is) {
-/* 284 */           saveResource(ownerId, key, url, is, false);
-/* 285 */           instantiateResource(key, url, (File) null);
+       public void prepopulateVideoCacheForUrl(long ownerId, VideoKey key, String url, InputStream is) {
+           saveResource(ownerId, key, url, is, false);
+           instantiateResource(key, url, (File) null);
                 }
 
-/* 289 */       protected UrlVideo saveResource(long ownerId, VideoKey key, String url, InputStream is, boolean reportSpeed) {
-/* 290 */           String diskCacheKey = CommonUtil.md5Digest(url);
-/* 291 */           DiskLruCache.Editor editor = null;
-/* 292 */           UrlVideo ret = null;
+       protected UrlVideo saveResource(long ownerId, VideoKey key, String url, InputStream is, boolean reportSpeed) {
+           String diskCacheKey = CommonUtil.md5Digest(url);
+           DiskLruCache.Editor editor = null;
+           UrlVideo ret = null;
                     synchronized (LOCK) {
                         try {
-/* 294 */                   DiskLruCache diskCache = getCacheInstance(this.mContext);
-/* 295 */                   if (diskCache != null && !diskCache.isClosed()) {
-/* 296 */                       boolean success = false;
+                   DiskLruCache diskCache = getCacheInstance(this.mContext);
+                   if (diskCache != null && !diskCache.isClosed()) {
+                       boolean success = false;
                                 try {
-/* 298 */                           editor = diskCache.edit(diskCacheKey);
-/* 299 */                           if (editor != null) {
-/* 300 */                               long startTime = System.currentTimeMillis();
-/* 301 */                               int bytesLen = CommonUtil.readFullyWriteTo(is, editor.newOutputStream(0), 4096);
-/* 303 */                               success = bytesLen > 0;
-/* 304 */                               long time = (System.currentTimeMillis() - startTime) / 1000;
-/* 306 */                               SLog.m448d("Bytes {} Download time: {}.", Integer.valueOf(bytesLen), Long.valueOf(time));
-/* 307 */                               if (bytesLen > 0 && reportSpeed) {
-/* 308 */                                   reportAverageSpeed((int) Math.round(((double) (bytesLen / 1024)) / Math.max(1L, time)));
+                           editor = diskCache.edit(diskCacheKey);
+                           if (editor != null) {
+                               long startTime = System.currentTimeMillis();
+                               int bytesLen = CommonUtil.readFullyWriteTo(is, editor.newOutputStream(0), 4096);
+                               success = bytesLen > 0;
+                               long time = (System.currentTimeMillis() - startTime) / 1000;
+                               SLog.m448d("Bytes {} Download time: {}.", Integer.valueOf(bytesLen), Long.valueOf(time));
+                               if (bytesLen > 0 && reportSpeed) {
+                                   reportAverageSpeed((int) Math.round(((double) (bytesLen / 1024)) / Math.max(1L, time)));
                                         }
-/* 311 */                               ByteBuffer buffer = ByteBuffer.allocate(8);
-/* 312 */                               buffer.putLong(System.currentTimeMillis());
-/* 313 */                               editor.newOutputStream(1).write(buffer.array());
+                               ByteBuffer buffer = ByteBuffer.allocate(8);
+                               buffer.putLong(System.currentTimeMillis());
+                               editor.newOutputStream(1).write(buffer.array());
                                     }
-/* 318 */                           if (editor != null) {
+                           if (editor != null) {
                                         try {
-/* 322 */                                   if (success) {
-/* 323 */                                       editor.commit();
-/* 324 */                                       diskCache.flush();
-/* 325 */                                       File f = new File(diskCache.get(diskCacheKey, false).getPath(0));
-/* 327 */                                       ret = new UrlVideo(url, f);
+                                   if (success) {
+                                       editor.commit();
+                                       diskCache.flush();
+                                       File f = new File(diskCache.get(diskCacheKey, false).getPath(0));
+                                       ret = new UrlVideo(url, f);
                                             } else {
-/* 329 */                                       editor.abort();
-/* 330 */                                       ret = obtainResource(key, url, is);
-/* 331 */                                       CrashUtil.log("Failed to save a video to DiskLruCache");
+                                       editor.abort();
+                                       ret = obtainResource(key, url, is);
+                                       CrashUtil.log("Failed to save a video to DiskLruCache");
                                             }
                                         } catch (IOException e) {
                                         }
                                     }
                                 } catch (IOException e2) {
-/* 318 */                           if (editor != null) {
+                           if (editor != null) {
                                         try {
-/* 322 */                                   if (0 != 0) {
-/* 323 */                                       editor.commit();
-/* 324 */                                       diskCache.flush();
-/* 325 */                                       File f2 = new File(diskCache.get(diskCacheKey, false).getPath(0));
-/* 327 */                                       ret = new UrlVideo(url, f2);
+                                   if (0 != 0) {
+                                       editor.commit();
+                                       diskCache.flush();
+                                       File f2 = new File(diskCache.get(diskCacheKey, false).getPath(0));
+                                       ret = new UrlVideo(url, f2);
                                             } else {
-/* 329 */                                       editor.abort();
-/* 330 */                                       ret = obtainResource(key, url, is);
-/* 331 */                                       CrashUtil.log("Failed to save a video to DiskLruCache");
+                                       editor.abort();
+                                       ret = obtainResource(key, url, is);
+                                       CrashUtil.log("Failed to save a video to DiskLruCache");
                                             }
                                         } catch (IOException e3) {
                                         }
@@ -317,24 +317,24 @@
                                 } catch (Throwable th) {
                                     if (editor != null) {
                                         try {
-/* 322 */                                   if (success) {
-/* 323 */                                       editor.commit();
-/* 324 */                                       diskCache.flush();
-/* 325 */                                       File f3 = new File(diskCache.get(diskCacheKey, false).getPath(0));
-/* 327 */                                       new UrlVideo(url, f3);
+                                   if (success) {
+                                       editor.commit();
+                                       diskCache.flush();
+                                       File f3 = new File(diskCache.get(diskCacheKey, false).getPath(0));
+                                       new UrlVideo(url, f3);
                                             } else {
-/* 329 */                                       editor.abort();
-/* 330 */                                       obtainResource(key, url, is);
-/* 331 */                                       CrashUtil.log("Failed to save a video to DiskLruCache");
+                                       editor.abort();
+                                       obtainResource(key, url, is);
+                                       CrashUtil.log("Failed to save a video to DiskLruCache");
                                             }
                                         } catch (IOException e4) {
                                         }
                                     }
-/* 334 */                           throw new RuntimeException(th);
+                           throw new RuntimeException(th);
                                 }
                             } else {
-/* 339 */                       ret = obtainResource(key, url, is);
-/* 340 */                       CrashUtil.log("Videos DiskLruCache could not be opened");
+                       ret = obtainResource(key, url, is);
+                       CrashUtil.log("Videos DiskLruCache could not be opened");
                             }
                         } catch (RuntimeException e) {
                             throw e;
@@ -342,61 +342,61 @@
                             throw e;
                         }
                     }
-/* 343 */           return ret;
+           return ret;
                 }
 
-/* 347 */       protected UrlVideo instantiateResource(VideoKey key, String url, File file) {
-/* 348 */           return new UrlVideo(url, file);
+       protected UrlVideo instantiateResource(VideoKey key, String url, File file) {
+           return new UrlVideo(url, file);
                 }
 
-                @Override // co.vine.android.cache.UrlResourceCache
-/* 353 */       protected void onResourceLoaded(HashMap<VideoKey, UrlVideo> resources) {
+                @Override 
+       protected void onResourceLoaded(HashMap<VideoKey, UrlVideo> resources) {
                     for (int i = this.mListeners.size() - 1; i >= 0; i--) {
-/* 355 */               this.mListeners.get(i).onVideoPathObtained(this, resources);
+               this.mListeners.get(i).onVideoPathObtained(this, resources);
                     }
                 }
 
-/* 360 */       protected void onResourceError(VideoKey key, HttpResult result) {
+       protected void onResourceError(VideoKey key, HttpResult result) {
                     for (int i = this.mListeners.size() - 1; i >= 0; i--) {
-/* 362 */               this.mListeners.get(i).onVideoPathError(this, key, result);
+               this.mListeners.get(i).onVideoPathError(this, key, result);
                     }
                 }
 
-/* 367 */       protected UrlVideo obtainResource(VideoKey key, String url, InputStream is) {
-/* 368 */           File cacheDir = CommonUtil.getCacheDir(this.mContext);
-/* 370 */           if (cacheDir != null) {
-/* 371 */               String md5 = CommonUtil.md5Digest(url);
-/* 372 */               if (md5 == null) {
-/* 373 */                   md5 = CommonUtil.randomString(10);
+       protected UrlVideo obtainResource(VideoKey key, String url, InputStream is) {
+           File cacheDir = CommonUtil.getCacheDir(this.mContext);
+           if (cacheDir != null) {
+               String md5 = CommonUtil.md5Digest(url);
+               if (md5 == null) {
+                   md5 = CommonUtil.randomString(10);
                         }
-/* 375 */               File f = new File(cacheDir, md5);
-/* 380 */               FileOutputStream out = null;
+               File f = new File(cacheDir, md5);
+               FileOutputStream out = null;
                         try {
                             try {
-/* 382 */                       long startTime = System.currentTimeMillis();
-/* 383 */                       FileOutputStream out2 = new FileOutputStream(f);
+                       long startTime = System.currentTimeMillis();
+                       FileOutputStream out2 = new FileOutputStream(f);
                                 try {
-/* 384 */                           int bytesLen = CommonUtil.readFullyWriteTo(is, out2, 4096);
-/* 385 */                           if (bytesLen != 0) {
-/* 388 */                               long time = (System.currentTimeMillis() - startTime) / 1000;
-/* 389 */                               if (bytesLen > 0) {
-/* 390 */                                   SLog.m447d("Download time: {}.", Long.valueOf(time));
-/* 391 */                                   reportAverageSpeed((int) Math.round(((double) (bytesLen / 1024)) / Math.max(1L, time)));
+                           int bytesLen = CommonUtil.readFullyWriteTo(is, out2, 4096);
+                           if (bytesLen != 0) {
+                               long time = (System.currentTimeMillis() - startTime) / 1000;
+                               if (bytesLen > 0) {
+                                   SLog.m447d("Download time: {}.", Long.valueOf(time));
+                                   reportAverageSpeed((int) Math.round(((double) (bytesLen / 1024)) / Math.max(1L, time)));
                                         } else {
-/* 393 */                                   SLog.m447d("Invalid bytesLen or time: {}", Integer.valueOf(bytesLen));
+                                   SLog.m447d("Invalid bytesLen or time: {}", Integer.valueOf(bytesLen));
                                         }
-/* 395 */                               out2.flush();
-/* 400 */                               CommonUtil.closeSilently(out2);
-/* 402 */                               return new UrlVideo(url, f);
+                               out2.flush();
+                               CommonUtil.closeSilently(out2);
+                               return new UrlVideo(url, f);
                                     }
-/* 400 */                           CommonUtil.closeSilently(out2);
-/* 386 */                           return null;
+                           CommonUtil.closeSilently(out2);
+                           return null;
                                 } catch (IOException e) {
-/* 396 */                           e = e;
+                           e = e;
                                     out = out2;
-/* 397 */                           SLog.m480w("Failed to download file.", (Throwable) e);
-/* 400 */                           CommonUtil.closeSilently(out);
-/* 398 */                           return null;
+                           SLog.m480w("Failed to download file.", (Throwable) e);
+                           CommonUtil.closeSilently(out);
+                           return null;
                                 } catch (Throwable th) {
                                     th = th;
                                     out = out2;
@@ -411,15 +411,15 @@
                             throw new RuntimeException(th2);
                         }
                     } else {
-/* 377 */               SLog.m477w("cache dir is null.");
-/* 378 */               return null;
+               SLog.m477w("cache dir is null.");
+               return null;
                     }
                 }
 
-/* 411 */       public String peekPath(VideoKey key) {
-/* 412 */           UrlVideo video = (UrlVideo) super.peek(key);
-/* 413 */           if (video != null) {
-/* 414 */               return video.url;
+       public String peekPath(VideoKey key) {
+           UrlVideo video = (UrlVideo) super.peek(key);
+           if (video != null) {
+               return video.url;
                     }
                     return null;
                 }

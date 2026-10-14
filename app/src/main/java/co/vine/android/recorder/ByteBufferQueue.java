@@ -8,8 +8,8 @@
             import java.nio.ByteBuffer;
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 33 */    public class ByteBufferQueue {
+            
+    public class ByteBufferQueue {
                 private static final ArrayList<WeakReference<ByteBufferQueue>> sQueues = new ArrayList<>();
                 private final int[] LOCK = new int[0];
                 private AllocatedByteBuffer mAllocatedByteBuffer;
@@ -25,145 +25,145 @@
                     void requestForMoreMemory();
                 }
 
-/* 34 */        public ByteBufferQueue(int count, int singleCapacity, MemoryResponder memoryResponder) {
-/* 36 */            if (sQueues.size() > 20) {
-/* 37 */                sQueues.clear();
+        public ByteBufferQueue(int count, int singleCapacity, MemoryResponder memoryResponder) {
+            if (sQueues.size() > 20) {
+                sQueues.clear();
                     }
-/* 39 */            sQueues.add(new WeakReference<>(this));
-/* 40 */            int n = 0;
+            sQueues.add(new WeakReference<>(this));
+            int n = 0;
                     for (WeakReference<ByteBufferQueue> queue : sQueues) {
-/* 42 */                if (queue.get() != null) {
-/* 43 */                    n++;
+                if (queue.get() != null) {
+                    n++;
                         }
                     }
-/* 46 */            CrashUtil.log("[mem] Current byte buffer queue count: {}.", Integer.valueOf(n));
-/* 48 */            if (SLog.sLogsOn) {
-/* 49 */                Runtime runtime = Runtime.getRuntime();
-/* 50 */                long usedMem = (runtime.totalMemory() - runtime.freeMemory()) / 1048576;
-/* 51 */                long maxHeap = runtime.maxMemory() / 1048576;
-/* 53 */                SLog.m447d("[mem] Allocating: {}.", Long.valueOf(((long) (singleCapacity * count)) / 1048576));
-/* 54 */                SLog.m447d("[mem] Free: {}.", Long.valueOf(runtime.freeMemory() / 1048576));
-/* 55 */                SLog.m447d("[mem] Used mem: {}.", Long.valueOf(usedMem));
-/* 56 */                SLog.m447d("[mem] Max mem: {}.", Long.valueOf(maxHeap));
+            CrashUtil.log("[mem] Current byte buffer queue count: {}.", Integer.valueOf(n));
+            if (SLog.sLogsOn) {
+                Runtime runtime = Runtime.getRuntime();
+                long usedMem = (runtime.totalMemory() - runtime.freeMemory()) / 1048576;
+                long maxHeap = runtime.maxMemory() / 1048576;
+                SLog.m447d("[mem] Allocating: {}.", Long.valueOf(((long) (singleCapacity * count)) / 1048576));
+                SLog.m447d("[mem] Free: {}.", Long.valueOf(runtime.freeMemory() / 1048576));
+                SLog.m447d("[mem] Used mem: {}.", Long.valueOf(usedMem));
+                SLog.m447d("[mem] Max mem: {}.", Long.valueOf(maxHeap));
                     }
                     try {
-/* 59 */                reset(count, singleCapacity);
+                reset(count, singleCapacity);
                     } catch (OutOfMemoryError e) {
-/* 61 */                if (memoryResponder != null) {
-/* 62 */                    memoryResponder.requestForMoreMemory();
+                if (memoryResponder != null) {
+                    memoryResponder.requestForMoreMemory();
                         }
-/* 64 */                System.gc();
-/* 65 */                reset(count, singleCapacity);
+                System.gc();
+                reset(count, singleCapacity);
                     }
                 }
 
-/* 69 */        public void reset(int count, int capacity) {
+        public void reset(int count, int capacity) {
                     synchronized (this.LOCK) {
                         try {
-/* 71 */                    this.mSpaceLeft = count;
-/* 72 */                    this.mInitialCount = count;
-/* 73 */                    if (this.mAllocatedByteBuffer == null || this.mAllocatedByteBuffer.capacity() < capacity * count) {
-/* 74 */                        release();
-/* 75 */                        this.mAllocatedByteBuffer = AllocatedByteBuffer.allocate(capacity * count);
+                    this.mSpaceLeft = count;
+                    this.mInitialCount = count;
+                    if (this.mAllocatedByteBuffer == null || this.mAllocatedByteBuffer.capacity() < capacity * count) {
+                        release();
+                        this.mAllocatedByteBuffer = AllocatedByteBuffer.allocate(capacity * count);
                             }
-/* 77 */                    if (this.mGetBuffer == null || this.mGetBuffer.length != capacity) {
-/* 78 */                        this.mGetBuffer = new byte[capacity];
+                    if (this.mGetBuffer == null || this.mGetBuffer.length != capacity) {
+                        this.mGetBuffer = new byte[capacity];
                             }
-/* 80 */                    this.mAllocatedByteBuffer.getBuffer().position(0);
-/* 81 */                    this.mStarts = new ArrayList<>();
-/* 82 */                    this.mTags = new ArrayList<>();
-/* 83 */                    this.mPutHasEnded = false;
-/* 84 */                    this.mStartIndex = 0;
+                    this.mAllocatedByteBuffer.getBuffer().position(0);
+                    this.mStarts = new ArrayList<>();
+                    this.mTags = new ArrayList<>();
+                    this.mPutHasEnded = false;
+                    this.mStartIndex = 0;
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
                 }
 
-/* 89 */        protected void finalize() throws Throwable {
-/* 90 */            super.finalize();
-/* 91 */            release();
+        protected void finalize() throws Throwable {
+            super.finalize();
+            release();
                 }
 
-/* 94 */        public void release() {
-/* 95 */            if (this.mAllocatedByteBuffer != null) {
-/* 96 */                this.mAllocatedByteBuffer.deallocate();
-/* 97 */                this.mAllocatedByteBuffer = null;
+        public void release() {
+            if (this.mAllocatedByteBuffer != null) {
+                this.mAllocatedByteBuffer.deallocate();
+                this.mAllocatedByteBuffer = null;
                     }
                 }
 
-/* 101 */       public boolean put(QueueItem item) {
+       public boolean put(QueueItem item) {
                     boolean z = false;
                     synchronized (this.LOCK) {
                         try {
-/* 103 */                   this.mSpaceLeft--;
-/* 104 */                   if (this.mSpaceLeft >= 0) {
-/* 107 */                       ByteBuffer buffer = this.mAllocatedByteBuffer.getBuffer();
-/* 108 */                       this.mStarts.add(Integer.valueOf(buffer.position()));
-/* 109 */                       this.mTags.add(new WeakReference<>(item.tag));
-/* 110 */                       buffer.put(item.bytes);
-/* 111 */                       if (buffer.position() == buffer.limit()) {
-/* 112 */                           buffer.position(0);
+                   this.mSpaceLeft--;
+                   if (this.mSpaceLeft >= 0) {
+                       ByteBuffer buffer = this.mAllocatedByteBuffer.getBuffer();
+                       this.mStarts.add(Integer.valueOf(buffer.position()));
+                       this.mTags.add(new WeakReference<>(item.tag));
+                       buffer.put(item.bytes);
+                       if (buffer.position() == buffer.limit()) {
+                           buffer.position(0);
                                 }
-/* 114 */                       z = true;
+                       z = true;
                             }
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
-/* 114 */           return z;
+           return z;
                 }
 
-/* 120 */       public void endOfPut() {
-/* 121 */           this.mPutHasEnded = true;
+       public void endOfPut() {
+           this.mPutHasEnded = true;
                 }
 
-/* 124 */       public boolean isEndOfPut() {
-/* 125 */           return this.mPutHasEnded;
+       public boolean isEndOfPut() {
+           return this.mPutHasEnded;
                 }
 
-/* 132 */       public static class QueueItem {
+       public static class QueueItem {
                     final byte[] bytes;
 
                     @Nullable
                     final Object tag;
 
-/* 133 */           public QueueItem(byte[] bytes, Object tag) {
-/* 135 */               this.bytes = bytes;
-/* 136 */               this.tag = tag;
+           public QueueItem(byte[] bytes, Object tag) {
+               this.bytes = bytes;
+               this.tag = tag;
                     }
                 }
 
-/* 140 */       public QueueItem get() {
+       public QueueItem get() {
                     QueueItem queueItem;
                     synchronized (this.LOCK) {
                         try {
-/* 142 */                   if (this.mStartIndex == this.mStarts.size()) {
-/* 143 */                       queueItem = null;
+                   if (this.mStartIndex == this.mStarts.size()) {
+                       queueItem = null;
                             } else {
-/* 145 */                       Integer next = this.mStarts.get(this.mStartIndex);
-/* 146 */                       Object tag = this.mTags.get(this.mStartIndex).get();
-/* 147 */                       this.mStartIndex++;
-/* 148 */                       this.mSpaceLeft++;
-/* 149 */                       ByteBuffer buffer = this.mAllocatedByteBuffer.getBuffer();
-/* 150 */                       int originalPosition = buffer.position();
-/* 151 */                       buffer.position(next.intValue());
-/* 152 */                       buffer.get(this.mGetBuffer);
-/* 153 */                       buffer.position(originalPosition);
-/* 154 */                       queueItem = new QueueItem(this.mGetBuffer, tag);
+                       Integer next = this.mStarts.get(this.mStartIndex);
+                       Object tag = this.mTags.get(this.mStartIndex).get();
+                       this.mStartIndex++;
+                       this.mSpaceLeft++;
+                       ByteBuffer buffer = this.mAllocatedByteBuffer.getBuffer();
+                       int originalPosition = buffer.position();
+                       buffer.position(next.intValue());
+                       buffer.get(this.mGetBuffer);
+                       buffer.position(originalPosition);
+                       queueItem = new QueueItem(this.mGetBuffer, tag);
                             }
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
-/* 154 */           return queueItem;
+           return queueItem;
                 }
 
-/* 159 */       public int size() {
-/* 160 */           return this.mInitialCount - this.mSpaceLeft;
+       public int size() {
+           return this.mInitialCount - this.mSpaceLeft;
                 }
 
-/* 163 */       public boolean isFresh() {
+       public boolean isFresh() {
                     return this.mStarts.size() == 0;
                 }
             }

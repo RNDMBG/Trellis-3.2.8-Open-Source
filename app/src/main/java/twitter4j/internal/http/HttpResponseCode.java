@@ -1,6 +1,6 @@
             package twitter4j.internal.http;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface HttpResponseCode {
                 public static final int BAD_GATEWAY = 502;
                 public static final int BAD_REQUEST = 400;
@@ -14,7 +14,7 @@
                 public static final int NOT_FOUND = 404;
                 public static final int NOT_MODIFIED = 304;
 
-                /* JADX INFO: renamed from: OK */
+                
                 public static final int f2543OK = 200;
                 public static final int SERVICE_UNAVAILABLE = 503;
                 public static final int TOO_MANY_REQUESTS = 429;

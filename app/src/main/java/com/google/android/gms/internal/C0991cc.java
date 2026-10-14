@@ -4,41 +4,41 @@
             import java.util.List;
             import java.util.Map;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.cc */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0991cc {
 
-                /* JADX INFO: renamed from: gX */
+                
                 private String f1534gX;
 
-                /* JADX INFO: renamed from: gY */
+                
                 private String f1535gY;
 
-                /* JADX INFO: renamed from: gZ */
+                
                 private List<String> f1536gZ;
 
-                /* JADX INFO: renamed from: ha */
+                
                 private List<String> f1537ha;
 
-                /* JADX INFO: renamed from: he */
+                
                 private List<String> f1541he;
 
-                /* JADX INFO: renamed from: hb */
+                
                 private long f1538hb = -1;
 
-                /* JADX INFO: renamed from: hc */
+                
                 private boolean f1539hc = false;
 
-                /* JADX INFO: renamed from: hd */
+                
                 private final long f1540hd = -1;
 
-                /* JADX INFO: renamed from: hf */
+                
                 private long f1542hf = -1;
 
-                /* JADX INFO: renamed from: hg */
+                
                 private int f1543hg = -1;
 
-                /* JADX INFO: renamed from: a */
+                
                 private static long m1393a(Map<String, List<String>> map, String str) {
                     List<String> list = map.get(str);
                     if (list != null && !list.isEmpty()) {
@@ -52,7 +52,7 @@
                     return -1L;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static List<String> m1394b(Map<String, List<String>> map, String str) {
                     String str2;
                     List<String> list = map.get(str);
@@ -62,7 +62,7 @@
                     return Arrays.asList(str2.trim().split("\\s+"));
                 }
 
-                /* JADX INFO: renamed from: e */
+                
                 private void m1395e(Map<String, List<String>> map) {
                     List<String> listM1394b = m1394b(map, "X-Afma-Click-Tracking-Urls");
                     if (listM1394b != null) {
@@ -70,7 +70,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: f */
+                
                 private void m1396f(Map<String, List<String>> map) {
                     List<String> listM1394b = m1394b(map, "X-Afma-Tracking-Urls");
                     if (listM1394b != null) {
@@ -78,7 +78,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: g */
+                
                 private void m1397g(Map<String, List<String>> map) {
                     long jM1393a = m1393a(map, "X-Afma-Interstitial-Timeout");
                     if (jM1393a != -1) {
@@ -86,7 +86,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: h */
+                
                 private void m1398h(Map<String, List<String>> map) {
                     List<String> list = map.get("X-Afma-Mediation");
                     if (list == null || list.isEmpty()) {
@@ -95,7 +95,7 @@
                     this.f1539hc = Boolean.valueOf(list.get(0)).booleanValue();
                 }
 
-                /* JADX INFO: renamed from: i */
+                
                 private void m1399i(Map<String, List<String>> map) {
                     List<String> listM1394b = m1394b(map, "X-Afma-Manual-Tracking-Urls");
                     if (listM1394b != null) {
@@ -103,7 +103,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: j */
+                
                 private void m1400j(Map<String, List<String>> map) {
                     long jM1393a = m1393a(map, "X-Afma-Refresh-Rate");
                     if (jM1393a != -1) {
@@ -111,7 +111,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: k */
+                
                 private void m1401k(Map<String, List<String>> map) {
                     List<String> list = map.get("X-Afma-Orientation");
                     if (list == null || list.isEmpty()) {
@@ -125,19 +125,19 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1402a(String str, Map<String, List<String>> map, String str2) {
                     this.f1534gX = str;
                     this.f1535gY = str2;
                     m1404d(map);
                 }
 
-                /* JADX INFO: renamed from: ak */
+                
                 public C0984bw m1403ak() {
                     return new C0984bw(this.f1534gX, this.f1535gY, this.f1536gZ, this.f1537ha, this.f1538hb, this.f1539hc, -1L, this.f1541he, this.f1542hf, this.f1543hg);
                 }
 
-                /* JADX INFO: renamed from: d */
+                
                 public void m1404d(Map<String, List<String>> map) {
                     m1395e(map);
                     m1396f(map);

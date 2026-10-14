@@ -12,8 +12,8 @@
             import java.util.ArrayList;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 30 */    final class NativeProtocol {
+            
+    final class NativeProtocol {
                 static final String ACTION_LOGIN_DIALOG = "com.facebook.platform.action.request.LOGIN_DIALOG";
                 static final String ACTION_LOGIN_DIALOG_REPLY = "com.facebook.platform.action.reply.LOGIN_DIALOG";
                 static final String AUDIENCE_EVERYONE = "EVERYONE";
@@ -51,16 +51,16 @@
                 static final String STATUS_ERROR_SUBCODE = "com.facebook.platform.status.ERROR_SUBCODE";
                 static final String STATUS_ERROR_TYPE = "com.facebook.platform.status.ERROR_TYPE";
 
-/* 31 */        NativeProtocol() {
+        NativeProtocol() {
                 }
 
-/* 61 */        static final boolean validateSignature(Context context, String packageName) {
+        static final boolean validateSignature(Context context, String packageName) {
                     try {
-/* 64 */                PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 64);
-/* 70 */                Signature[] arr$ = packageInfo.signatures;
+                PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 64);
+                Signature[] arr$ = packageInfo.signatures;
                         for (Signature signature : arr$) {
-/* 71 */                    if (signature.toCharsString().equals(KATANA_SIGNATURE)) {
-/* 72 */                        return true;
+                    if (signature.toCharsString().equals(KATANA_SIGNATURE)) {
+                        return true;
                             }
                         }
                         return false;
@@ -69,76 +69,76 @@
                     }
                 }
 
-/* 79 */        static Intent validateKatanaActivityIntent(Context context, Intent intent) {
+        static Intent validateKatanaActivityIntent(Context context, Intent intent) {
                     ResolveInfo resolveInfo;
-/* 80 */            if (intent == null || (resolveInfo = context.getPackageManager().resolveActivity(intent, 0)) == null || !validateSignature(context, resolveInfo.activityInfo.packageName)) {
+            if (intent == null || (resolveInfo = context.getPackageManager().resolveActivity(intent, 0)) == null || !validateSignature(context, resolveInfo.activityInfo.packageName)) {
                         return null;
                     }
-/* 93 */            return intent;
+            return intent;
                 }
 
-/* 96 */        static Intent validateKatanaServiceIntent(Context context, Intent intent) {
+        static Intent validateKatanaServiceIntent(Context context, Intent intent) {
                     ResolveInfo resolveInfo;
-/* 97 */            if (intent != null && (resolveInfo = context.getPackageManager().resolveService(intent, 0)) != null) {
-/* 105 */               intent.setClassName(resolveInfo.serviceInfo.packageName, resolveInfo.serviceInfo.name);
-/* 108 */               if (validateSignature(context, resolveInfo.serviceInfo.packageName)) {
-/* 112 */                   return intent;
+            if (intent != null && (resolveInfo = context.getPackageManager().resolveService(intent, 0)) != null) {
+               intent.setClassName(resolveInfo.serviceInfo.packageName, resolveInfo.serviceInfo.name);
+               if (validateSignature(context, resolveInfo.serviceInfo.packageName)) {
+                   return intent;
                         }
                         return null;
                     }
                     return null;
                 }
 
-/* 115 */       static Intent createProxyAuthIntent(Context context, String applicationId, List<String> permissions) {
-/* 116 */           Intent intent = new Intent().setClassName(KATANA_PACKAGE, KATANA_PROXY_AUTH_ACTIVITY).putExtra("client_id", applicationId);
-/* 120 */           if (!Utility.isNullOrEmpty(permissions)) {
-/* 121 */               intent.putExtra("scope", TextUtils.join(",", permissions));
+       static Intent createProxyAuthIntent(Context context, String applicationId, List<String> permissions) {
+           Intent intent = new Intent().setClassName(KATANA_PACKAGE, KATANA_PROXY_AUTH_ACTIVITY).putExtra("client_id", applicationId);
+           if (!Utility.isNullOrEmpty(permissions)) {
+               intent.putExtra("scope", TextUtils.join(",", permissions));
                     }
-/* 124 */           return validateKatanaActivityIntent(context, intent);
+           return validateKatanaActivityIntent(context, intent);
                 }
 
-/* 127 */       static Intent createTokenRefreshIntent(Context context) {
-/* 128 */           Intent intent = new Intent();
-/* 129 */           intent.setClassName(KATANA_PACKAGE, KATANA_TOKEN_REFRESH_ACTIVITY);
-/* 131 */           return validateKatanaServiceIntent(context, intent);
+       static Intent createTokenRefreshIntent(Context context) {
+           Intent intent = new Intent();
+           intent.setClassName(KATANA_PACKAGE, KATANA_TOKEN_REFRESH_ACTIVITY);
+           return validateKatanaServiceIntent(context, intent);
                 }
 
-/* 200 */       static Intent createLoginDialog20121101Intent(Context context, String applicationId, ArrayList<String> permissions, String audience) {
-/* 201 */           Intent intent = new Intent().setAction(INTENT_ACTION_PLATFORM_ACTIVITY).addCategory("android.intent.category.DEFAULT").putExtra(EXTRA_PROTOCOL_VERSION, PROTOCOL_VERSION_20121101).putExtra(EXTRA_PROTOCOL_ACTION, ACTION_LOGIN_DIALOG).putExtra(EXTRA_APPLICATION_ID, applicationId).putStringArrayListExtra(EXTRA_PERMISSIONS, ensureDefaultPermissions(permissions)).putExtra(EXTRA_WRITE_PRIVACY, ensureDefaultAudience(audience));
-/* 209 */           return validateKatanaActivityIntent(context, intent);
+       static Intent createLoginDialog20121101Intent(Context context, String applicationId, ArrayList<String> permissions, String audience) {
+           Intent intent = new Intent().setAction(INTENT_ACTION_PLATFORM_ACTIVITY).addCategory("android.intent.category.DEFAULT").putExtra(EXTRA_PROTOCOL_VERSION, PROTOCOL_VERSION_20121101).putExtra(EXTRA_PROTOCOL_ACTION, ACTION_LOGIN_DIALOG).putExtra(EXTRA_APPLICATION_ID, applicationId).putStringArrayListExtra(EXTRA_PERMISSIONS, ensureDefaultPermissions(permissions)).putExtra(EXTRA_WRITE_PRIVACY, ensureDefaultAudience(audience));
+           return validateKatanaActivityIntent(context, intent);
                 }
 
-/* 212 */       private static String ensureDefaultAudience(String audience) {
-/* 213 */           if (Utility.isNullOrEmpty(audience)) {
-/* 214 */               return AUDIENCE_ME;
+       private static String ensureDefaultAudience(String audience) {
+           if (Utility.isNullOrEmpty(audience)) {
+               return AUDIENCE_ME;
                     }
-/* 216 */           return audience;
+           return audience;
                 }
 
-/* 223 */       private static ArrayList<String> ensureDefaultPermissions(ArrayList<String> permissions) {
+       private static ArrayList<String> ensureDefaultPermissions(ArrayList<String> permissions) {
                     ArrayList<String> updated;
-/* 224 */           if (Utility.isNullOrEmpty(permissions)) {
-/* 225 */               updated = new ArrayList<>();
+           if (Utility.isNullOrEmpty(permissions)) {
+               updated = new ArrayList<>();
                     } else {
                         for (String permission : permissions) {
-/* 228 */                   if (Session.isPublishPermission(permission) || BASIC_INFO.equals(permission)) {
-/* 236 */                       return permissions;
+                   if (Session.isPublishPermission(permission) || BASIC_INFO.equals(permission)) {
+                       return permissions;
                             }
                         }
-/* 232 */               updated = new ArrayList<>(permissions);
+               updated = new ArrayList<>(permissions);
                     }
-/* 235 */           updated.add(BASIC_INFO);
+           updated.add(BASIC_INFO);
                     return updated;
                 }
 
-/* 239 */       static boolean isServiceDisabledResult20121101(Intent data) {
-/* 240 */           int protocolVersion = data.getIntExtra(EXTRA_PROTOCOL_VERSION, 0);
-/* 241 */           String errorType = data.getStringExtra(STATUS_ERROR_TYPE);
+       static boolean isServiceDisabledResult20121101(Intent data) {
+           int protocolVersion = data.getIntExtra(EXTRA_PROTOCOL_VERSION, 0);
+           String errorType = data.getStringExtra(STATUS_ERROR_TYPE);
                     return PROTOCOL_VERSION_20121101 == protocolVersion && ERROR_SERVICE_DISABLED.equals(errorType);
                 }
 
-/* 246 */       static AccessTokenSource getAccessTokenSourceFromNative(Bundle extras) {
-/* 248 */           long actual = extras.getInt(EXTRA_PROTOCOL_VERSION, 0);
+       static AccessTokenSource getAccessTokenSourceFromNative(Bundle extras) {
+           long actual = extras.getInt(EXTRA_PROTOCOL_VERSION, 0);
                     return 20121101 == actual ? AccessTokenSource.FACEBOOK_APPLICATION_NATIVE : AccessTokenSource.FACEBOOK_APPLICATION_WEB;
                 }
             }

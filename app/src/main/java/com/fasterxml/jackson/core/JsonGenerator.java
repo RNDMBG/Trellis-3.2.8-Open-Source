@@ -12,18 +12,18 @@
             import java.util.concurrent.atomic.AtomicInteger;
             import java.util.concurrent.atomic.AtomicLong;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 176 */   public abstract class JsonGenerator implements Closeable, Flushable, Versioned {
+            
+   public abstract class JsonGenerator implements Closeable, Flushable, Versioned {
                 protected PrettyPrinter _cfgPrettyPrinter;
 
-                @Override // java.io.Closeable, java.lang.AutoCloseable
+                @Override 
                 public abstract void close() throws IOException;
 
                 public abstract JsonGenerator disable(Feature feature);
 
                 public abstract JsonGenerator enable(Feature feature);
 
-                @Override // java.io.Flushable
+                @Override 
                 public abstract void flush() throws IOException;
 
                 public abstract ObjectCodec getCodec();
@@ -42,7 +42,7 @@
 
                 public abstract JsonGenerator useDefaultPrettyPrinter();
 
-                @Override // com.fasterxml.jackson.core.Versioned
+                @Override 
                 public abstract Version version();
 
                 public abstract int writeBinary(Base64Variant base64Variant, InputStream inputStream, int i) throws IOException;
@@ -107,7 +107,7 @@
 
                 public abstract void writeUTF8String(byte[] bArr, int i, int i2) throws IOException;
 
-/* 177 */       public enum Feature {
+       public enum Feature {
                     AUTO_CLOSE_TARGET(true),
                     AUTO_CLOSE_JSON_CONTENT(true),
                     QUOTE_FIELD_NAMES(true),
@@ -121,379 +121,379 @@
                     private final boolean _defaultState;
                     private final int _mask = 1 << ordinal();
 
-/* 178 */           public static int collectDefaults() {
+           public static int collectDefaults() {
                         int mask = 0;
                         for (Feature feature : values()) {
-/* 180 */                   if (feature.enabledByDefault()) {
-/* 181 */                       mask |= feature.getMask();
+                   if (feature.enabledByDefault()) {
+                       mask |= feature.getMask();
                             }
                         }
-/* 184 */               return mask;
+               return mask;
                     }
 
-/* 186 */           Feature(boolean z) {
-/* 189 */               this._defaultState = z;
+           Feature(boolean z) {
+               this._defaultState = z;
                     }
 
-/* 191 */           public boolean enabledByDefault() {
-/* 192 */               return this._defaultState;
+           public boolean enabledByDefault() {
+               return this._defaultState;
                     }
 
-/* 196 */           public boolean enabledIn(int i) {
+           public boolean enabledIn(int i) {
                         return (this._mask & i) != 0;
                     }
 
-/* 198 */           public int getMask() {
-/* 199 */               return this._mask;
+           public int getMask() {
+               return this._mask;
                     }
                 }
 
-/* 220 */       protected JsonGenerator() {
+       protected JsonGenerator() {
                 }
 
-/* 260 */       public Object getOutputTarget() {
-/* 261 */           return null;
+       public Object getOutputTarget() {
+           return null;
                 }
 
-/* 293 */       public final JsonGenerator configure(Feature feature, boolean z) {
-/* 294 */           if (z) {
-/* 295 */               enable(feature);
+       public final JsonGenerator configure(Feature feature, boolean z) {
+           if (z) {
+               enable(feature);
                     } else {
-/* 297 */               disable(feature);
+               disable(feature);
                     }
-/* 299 */           return this;
+           return this;
                 }
 
-/* 349 */       public void setSchema(FormatSchema formatSchema) {
-/* 350 */           throw new UnsupportedOperationException("Generator of type " + getClass().getName() + " does not support schema of type '" + formatSchema.getSchemaType() + "'");
+       public void setSchema(FormatSchema formatSchema) {
+           throw new UnsupportedOperationException("Generator of type " + getClass().getName() + " does not support schema of type '" + formatSchema.getSchemaType() + "'");
                 }
 
-/* 360 */       public FormatSchema getSchema() {
-/* 361 */           return null;
+       public FormatSchema getSchema() {
+           return null;
                 }
 
-/* 381 */       public JsonGenerator setPrettyPrinter(PrettyPrinter prettyPrinter) {
-/* 382 */           this._cfgPrettyPrinter = prettyPrinter;
-/* 383 */           return this;
+       public JsonGenerator setPrettyPrinter(PrettyPrinter prettyPrinter) {
+           this._cfgPrettyPrinter = prettyPrinter;
+           return this;
                 }
 
-/* 392 */       public PrettyPrinter getPrettyPrinter() {
-/* 393 */           return this._cfgPrettyPrinter;
+       public PrettyPrinter getPrettyPrinter() {
+           return this._cfgPrettyPrinter;
                 }
 
-/* 426 */       public JsonGenerator setHighestNonEscapedChar(int i) {
-/* 427 */           return this;
+       public JsonGenerator setHighestNonEscapedChar(int i) {
+           return this;
                 }
 
-/* 442 */       public int getHighestEscapedChar() {
-/* 443 */           return 0;
+       public int getHighestEscapedChar() {
+           return 0;
                 }
 
-/* 450 */       public CharacterEscapes getCharacterEscapes() {
-/* 451 */           return null;
+       public CharacterEscapes getCharacterEscapes() {
+           return null;
                 }
 
-/* 458 */       public JsonGenerator setCharacterEscapes(CharacterEscapes characterEscapes) {
-/* 459 */           return this;
+       public JsonGenerator setCharacterEscapes(CharacterEscapes characterEscapes) {
+           return this;
                 }
 
-/* 471 */       public JsonGenerator setRootValueSeparator(SerializableString serializableString) {
-/* 472 */           throw new UnsupportedOperationException();
+       public JsonGenerator setRootValueSeparator(SerializableString serializableString) {
+           throw new UnsupportedOperationException();
                 }
 
-/* 489 */       public boolean canUseSchema(FormatSchema formatSchema) {
-/* 490 */           return false;
+       public boolean canUseSchema(FormatSchema formatSchema) {
+           return false;
                 }
 
-/* 507 */       public boolean canWriteObjectId() {
-/* 508 */           return false;
+       public boolean canWriteObjectId() {
+           return false;
                 }
 
-/* 525 */       public boolean canWriteTypeId() {
-/* 526 */           return false;
+       public boolean canWriteTypeId() {
+           return false;
                 }
 
-/* 539 */       public boolean canWriteBinaryNatively() {
-/* 540 */           return false;
+       public boolean canWriteBinaryNatively() {
+           return false;
                 }
 
-/* 551 */       public boolean canOmitFields() {
-/* 552 */           return true;
+       public boolean canOmitFields() {
+           return true;
                 }
 
-/* 798 */       public void writeRaw(SerializableString serializableString) throws IOException {
-/* 799 */           writeRaw(serializableString.getValue());
+       public void writeRaw(SerializableString serializableString) throws IOException {
+           writeRaw(serializableString.getValue());
                 }
 
-/* 851 */       public void writeBinary(byte[] bArr, int i, int i2) throws IOException {
-/* 852 */           writeBinary(Base64Variants.getDefaultVariant(), bArr, i, i2);
+       public void writeBinary(byte[] bArr, int i, int i2) throws IOException {
+           writeBinary(Base64Variants.getDefaultVariant(), bArr, i, i2);
                 }
 
-/* 863 */       public void writeBinary(byte[] bArr) throws IOException {
-/* 864 */           writeBinary(Base64Variants.getDefaultVariant(), bArr, 0, bArr.length);
+       public void writeBinary(byte[] bArr) throws IOException {
+           writeBinary(Base64Variants.getDefaultVariant(), bArr, 0, bArr.length);
                 }
 
-/* 881 */       public int writeBinary(InputStream inputStream, int i) throws IOException {
-/* 882 */           return writeBinary(Base64Variants.getDefaultVariant(), inputStream, i);
+       public int writeBinary(InputStream inputStream, int i) throws IOException {
+           return writeBinary(Base64Variants.getDefaultVariant(), inputStream, i);
                 }
 
-/* 925 */       public void writeNumber(short s) throws IOException {
-/* 926 */           writeNumber((int) s);
+       public void writeNumber(short s) throws IOException {
+           writeNumber((int) s);
                 }
 
-/* 1049 */      public void writeObjectId(Object obj) throws IOException {
-/* 1050 */          throw new JsonGenerationException("No native support for writing Object Ids");
+      public void writeObjectId(Object obj) throws IOException {
+          throw new JsonGenerationException("No native support for writing Object Ids");
                 }
 
-/* 1063 */      public void writeObjectRef(Object obj) throws IOException {
-/* 1064 */          throw new JsonGenerationException("No native support for writing Object Ids");
+      public void writeObjectRef(Object obj) throws IOException {
+          throw new JsonGenerationException("No native support for writing Object Ids");
                 }
 
-/* 1079 */      public void writeTypeId(Object obj) throws IOException {
-/* 1080 */          throw new JsonGenerationException("No native support for writing Type Ids");
+      public void writeTypeId(Object obj) throws IOException {
+          throw new JsonGenerationException("No native support for writing Type Ids");
                 }
 
-/* 1132 */      public void writeStringField(String str, String str2) throws IOException {
-/* 1133 */          writeFieldName(str);
-/* 1134 */          writeString(str2);
+      public void writeStringField(String str, String str2) throws IOException {
+          writeFieldName(str);
+          writeString(str2);
                 }
 
-/* 1147 */      public final void writeBooleanField(String str, boolean z) throws IOException {
-/* 1148 */          writeFieldName(str);
-/* 1149 */          writeBoolean(z);
+      public final void writeBooleanField(String str, boolean z) throws IOException {
+          writeFieldName(str);
+          writeBoolean(z);
                 }
 
-/* 1162 */      public final void writeNullField(String str) throws IOException {
-/* 1163 */          writeFieldName(str);
-/* 1164 */          writeNull();
+      public final void writeNullField(String str) throws IOException {
+          writeFieldName(str);
+          writeNull();
                 }
 
-/* 1177 */      public final void writeNumberField(String str, int i) throws IOException {
-/* 1178 */          writeFieldName(str);
-/* 1179 */          writeNumber(i);
+      public final void writeNumberField(String str, int i) throws IOException {
+          writeFieldName(str);
+          writeNumber(i);
                 }
 
-/* 1192 */      public final void writeNumberField(String str, long j) throws IOException {
-/* 1193 */          writeFieldName(str);
-/* 1194 */          writeNumber(j);
+      public final void writeNumberField(String str, long j) throws IOException {
+          writeFieldName(str);
+          writeNumber(j);
                 }
 
-/* 1207 */      public final void writeNumberField(String str, double d) throws IOException {
-/* 1208 */          writeFieldName(str);
-/* 1209 */          writeNumber(d);
+      public final void writeNumberField(String str, double d) throws IOException {
+          writeFieldName(str);
+          writeNumber(d);
                 }
 
-/* 1222 */      public final void writeNumberField(String str, float f) throws IOException {
-/* 1223 */          writeFieldName(str);
-/* 1224 */          writeNumber(f);
+      public final void writeNumberField(String str, float f) throws IOException {
+          writeFieldName(str);
+          writeNumber(f);
                 }
 
-/* 1238 */      public final void writeNumberField(String str, BigDecimal bigDecimal) throws IOException {
-/* 1239 */          writeFieldName(str);
-/* 1240 */          writeNumber(bigDecimal);
+      public final void writeNumberField(String str, BigDecimal bigDecimal) throws IOException {
+          writeFieldName(str);
+          writeNumber(bigDecimal);
                 }
 
-/* 1254 */      public final void writeBinaryField(String str, byte[] bArr) throws IOException {
-/* 1255 */          writeFieldName(str);
-/* 1256 */          writeBinary(bArr);
+      public final void writeBinaryField(String str, byte[] bArr) throws IOException {
+          writeFieldName(str);
+          writeBinary(bArr);
                 }
 
-/* 1274 */      public final void writeArrayFieldStart(String str) throws IOException {
-/* 1275 */          writeFieldName(str);
-/* 1276 */          writeStartArray();
+      public final void writeArrayFieldStart(String str) throws IOException {
+          writeFieldName(str);
+          writeStartArray();
                 }
 
-/* 1294 */      public final void writeObjectFieldStart(String str) throws IOException {
-/* 1295 */          writeFieldName(str);
-/* 1296 */          writeStartObject();
+      public final void writeObjectFieldStart(String str) throws IOException {
+          writeFieldName(str);
+          writeStartObject();
                 }
 
-/* 1310 */      public final void writeObjectField(String str, Object obj) throws IOException {
-/* 1311 */          writeFieldName(str);
-/* 1312 */          writeObject(obj);
+      public final void writeObjectField(String str, Object obj) throws IOException {
+          writeFieldName(str);
+          writeObject(obj);
                 }
 
-/* 1327 */      public void writeOmittedField(String str) throws IOException {
+      public void writeOmittedField(String str) throws IOException {
                 }
 
-/* 1348 */      public void copyCurrentEvent(JsonParser jsonParser) throws IOException {
-/* 1349 */          JsonToken currentToken = jsonParser.getCurrentToken();
-/* 1351 */          if (currentToken == null) {
-/* 1352 */              _reportError("No current event to copy");
+      public void copyCurrentEvent(JsonParser jsonParser) throws IOException {
+          JsonToken currentToken = jsonParser.getCurrentToken();
+          if (currentToken == null) {
+              _reportError("No current event to copy");
                     }
                     switch (currentToken.m524id()) {
                         case -1:
-/* 1356 */                  _reportError("No current event to copy");
+                  _reportError("No current event to copy");
                             break;
                         case 0:
                         default:
-/* 1416 */                  _throwInternal();
-/* 1418 */                  return;
+                  _throwInternal();
+                  return;
                         case 1:
                             break;
                         case 2:
-/* 1361 */                  writeEndObject();
-/* 1418 */                  return;
+                  writeEndObject();
+                  return;
                         case 3:
-/* 1364 */                  writeStartArray();
-/* 1418 */                  return;
+                  writeStartArray();
+                  return;
                         case 4:
-/* 1367 */                  writeEndArray();
-/* 1418 */                  return;
+                  writeEndArray();
+                  return;
                         case 5:
-/* 1370 */                  writeFieldName(jsonParser.getCurrentName());
-/* 1418 */                  return;
+                  writeFieldName(jsonParser.getCurrentName());
+                  return;
                         case 6:
-/* 1373 */                  if (jsonParser.hasTextCharacters()) {
-/* 1374 */                      writeString(jsonParser.getTextCharacters(), jsonParser.getTextOffset(), jsonParser.getTextLength());
-/* 1418 */                      return;
+                  if (jsonParser.hasTextCharacters()) {
+                      writeString(jsonParser.getTextCharacters(), jsonParser.getTextOffset(), jsonParser.getTextLength());
+                      return;
                             } else {
-/* 1376 */                      writeString(jsonParser.getText());
-/* 1418 */                      return;
+                      writeString(jsonParser.getText());
+                      return;
                             }
                         case 7:
-/* 1381 */                  JsonParser.NumberType numberType = jsonParser.getNumberType();
-/* 1382 */                  if (numberType == JsonParser.NumberType.INT) {
-/* 1383 */                      writeNumber(jsonParser.getIntValue());
-/* 1418 */                      return;
+                  JsonParser.NumberType numberType = jsonParser.getNumberType();
+                  if (numberType == JsonParser.NumberType.INT) {
+                      writeNumber(jsonParser.getIntValue());
+                      return;
                             } else if (numberType == JsonParser.NumberType.BIG_INTEGER) {
-/* 1385 */                      writeNumber(jsonParser.getBigIntegerValue());
-/* 1418 */                      return;
+                      writeNumber(jsonParser.getBigIntegerValue());
+                      return;
                             } else {
-/* 1387 */                      writeNumber(jsonParser.getLongValue());
-/* 1418 */                      return;
+                      writeNumber(jsonParser.getLongValue());
+                      return;
                             }
                         case 8:
-/* 1393 */                  JsonParser.NumberType numberType2 = jsonParser.getNumberType();
-/* 1394 */                  if (numberType2 == JsonParser.NumberType.BIG_DECIMAL) {
-/* 1395 */                      writeNumber(jsonParser.getDecimalValue());
-/* 1418 */                      return;
+                  JsonParser.NumberType numberType2 = jsonParser.getNumberType();
+                  if (numberType2 == JsonParser.NumberType.BIG_DECIMAL) {
+                      writeNumber(jsonParser.getDecimalValue());
+                      return;
                             } else if (numberType2 == JsonParser.NumberType.FLOAT) {
-/* 1397 */                      writeNumber(jsonParser.getFloatValue());
-/* 1418 */                      return;
+                      writeNumber(jsonParser.getFloatValue());
+                      return;
                             } else {
-/* 1399 */                      writeNumber(jsonParser.getDoubleValue());
-/* 1418 */                      return;
+                      writeNumber(jsonParser.getDoubleValue());
+                      return;
                             }
                         case 9:
-/* 1404 */                  writeBoolean(true);
-/* 1418 */                  return;
+                  writeBoolean(true);
+                  return;
                         case 10:
-/* 1407 */                  writeBoolean(false);
-/* 1418 */                  return;
+                  writeBoolean(false);
+                  return;
                         case 11:
-/* 1410 */                  writeNull();
-/* 1418 */                  return;
+                  writeNull();
+                  return;
                         case 12:
-/* 1413 */                  writeObject(jsonParser.getEmbeddedObject());
-/* 1418 */                  return;
+                  writeObject(jsonParser.getEmbeddedObject());
+                  return;
                     }
-/* 1358 */          writeStartObject();
+          writeStartObject();
                 }
 
-/* 1452 */      public void copyCurrentStructure(JsonParser jsonParser) throws IOException {
-/* 1453 */          JsonToken currentToken = jsonParser.getCurrentToken();
-/* 1454 */          if (currentToken == null) {
-/* 1455 */              _reportError("No current event to copy");
+      public void copyCurrentStructure(JsonParser jsonParser) throws IOException {
+          JsonToken currentToken = jsonParser.getCurrentToken();
+          if (currentToken == null) {
+              _reportError("No current event to copy");
                     }
-/* 1458 */          int iM524id = currentToken.m524id();
-/* 1459 */          if (iM524id == 5) {
-/* 1460 */              writeFieldName(jsonParser.getCurrentName());
-/* 1462 */              iM524id = jsonParser.nextToken().m524id();
+          int iM524id = currentToken.m524id();
+          if (iM524id == 5) {
+              writeFieldName(jsonParser.getCurrentName());
+              iM524id = jsonParser.nextToken().m524id();
                     }
                     switch (iM524id) {
                         case 1:
-/* 1467 */                  writeStartObject();
-/* 1468 */                  while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
-/* 1469 */                      copyCurrentStructure(jsonParser);
+                  writeStartObject();
+                  while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
+                      copyCurrentStructure(jsonParser);
                             }
-/* 1471 */                  writeEndObject();
+                  writeEndObject();
                             break;
                         case 2:
                         default:
-/* 1481 */                  copyCurrentEvent(jsonParser);
+                  copyCurrentEvent(jsonParser);
                             break;
                         case 3:
-/* 1474 */                  writeStartArray();
-/* 1475 */                  while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
-/* 1476 */                      copyCurrentStructure(jsonParser);
+                  writeStartArray();
+                  while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
+                      copyCurrentStructure(jsonParser);
                             }
-/* 1478 */                  writeEndArray();
+                  writeEndArray();
                             break;
                     }
                 }
 
-/* 1553 */      protected void _reportError(String str) throws JsonGenerationException {
-/* 1554 */          throw new JsonGenerationException(str);
+      protected void _reportError(String str) throws JsonGenerationException {
+          throw new JsonGenerationException(str);
                 }
 
-/* 1557 */      protected final void _throwInternal() {
-/* 1558 */          VersionUtil.throwInternal();
+      protected final void _throwInternal() {
+          VersionUtil.throwInternal();
                 }
 
-/* 1561 */      protected void _reportUnsupportedOperation() {
-/* 1562 */          throw new UnsupportedOperationException("Operation not supported by generator of type " + getClass().getName());
+      protected void _reportUnsupportedOperation() {
+          throw new UnsupportedOperationException("Operation not supported by generator of type " + getClass().getName());
                 }
 
-/* 1578 */      protected void _writeSimpleObject(Object obj) throws IOException {
-/* 1579 */          if (obj == null) {
-/* 1580 */              writeNull();
-/* 1631 */              return;
+      protected void _writeSimpleObject(Object obj) throws IOException {
+          if (obj == null) {
+              writeNull();
+              return;
                     }
-/* 1583 */          if (obj instanceof String) {
-/* 1584 */              writeString((String) obj);
-/* 1631 */              return;
+          if (obj instanceof String) {
+              writeString((String) obj);
+              return;
                     }
-/* 1587 */          if (obj instanceof Number) {
-/* 1588 */              Number number = (Number) obj;
-/* 1589 */              if (number instanceof Integer) {
-/* 1590 */                  writeNumber(number.intValue());
-/* 1631 */                  return;
+          if (obj instanceof Number) {
+              Number number = (Number) obj;
+              if (number instanceof Integer) {
+                  writeNumber(number.intValue());
+                  return;
                         }
-/* 1592 */              if (number instanceof Long) {
-/* 1593 */                  writeNumber(number.longValue());
-/* 1631 */                  return;
+              if (number instanceof Long) {
+                  writeNumber(number.longValue());
+                  return;
                         }
-/* 1595 */              if (number instanceof Double) {
-/* 1596 */                  writeNumber(number.doubleValue());
-/* 1631 */                  return;
+              if (number instanceof Double) {
+                  writeNumber(number.doubleValue());
+                  return;
                         }
-/* 1598 */              if (number instanceof Float) {
-/* 1599 */                  writeNumber(number.floatValue());
-/* 1631 */                  return;
+              if (number instanceof Float) {
+                  writeNumber(number.floatValue());
+                  return;
                         }
-/* 1601 */              if (number instanceof Short) {
-/* 1602 */                  writeNumber(number.shortValue());
-/* 1631 */                  return;
+              if (number instanceof Short) {
+                  writeNumber(number.shortValue());
+                  return;
                         }
-/* 1604 */              if (number instanceof Byte) {
-/* 1605 */                  writeNumber(number.byteValue());
-/* 1631 */                  return;
+              if (number instanceof Byte) {
+                  writeNumber(number.byteValue());
+                  return;
                         }
-/* 1607 */              if (number instanceof BigInteger) {
-/* 1608 */                  writeNumber((BigInteger) number);
-/* 1631 */                  return;
+              if (number instanceof BigInteger) {
+                  writeNumber((BigInteger) number);
+                  return;
                         }
-/* 1610 */              if (number instanceof BigDecimal) {
-/* 1611 */                  writeNumber((BigDecimal) number);
-/* 1631 */                  return;
+              if (number instanceof BigDecimal) {
+                  writeNumber((BigDecimal) number);
+                  return;
                         } else if (number instanceof AtomicInteger) {
-/* 1617 */                  writeNumber(((AtomicInteger) number).get());
-/* 1631 */                  return;
+                  writeNumber(((AtomicInteger) number).get());
+                  return;
                         } else if (number instanceof AtomicLong) {
-/* 1620 */                  writeNumber(((AtomicLong) number).get());
-/* 1631 */                  return;
+                  writeNumber(((AtomicLong) number).get());
+                  return;
                         }
                     } else if (obj instanceof byte[]) {
-/* 1624 */              writeBinary((byte[]) obj);
-/* 1631 */              return;
+              writeBinary((byte[]) obj);
+              return;
                     } else if (obj instanceof Boolean) {
-/* 1627 */              writeBoolean(((Boolean) obj).booleanValue());
-/* 1631 */              return;
+              writeBoolean(((Boolean) obj).booleanValue());
+              return;
                     } else if (obj instanceof AtomicBoolean) {
-/* 1630 */              writeBoolean(((AtomicBoolean) obj).get());
-/* 1631 */              return;
+              writeBoolean(((AtomicBoolean) obj).get());
+              return;
                     }
-/* 1633 */          throw new IllegalStateException("No ObjectCodec defined for the generator, can only serialize simple wrapper types (type passed " + obj.getClass().getName() + ")");
+          throw new IllegalStateException("No ObjectCodec defined for the generator, can only serialize simple wrapper types (type passed " + obj.getClass().getName() + ")");
                 }
             }

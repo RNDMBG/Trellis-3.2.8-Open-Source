@@ -17,8 +17,8 @@ import android.util.Log;
             import com.google.gdata.util.common.base.PercentEscaper;
             import java.util.Locale;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 117 */   public class VineAPI implements HeaderInjecter {
+            
+   public class VineAPI implements HeaderInjecter {
                 public static final String ACCEPT_LANGUAGE_HEADER = "Accept-Language";
                 private static PercentEscaper ENCODER = null;
                 public static final int ERROR_VERIFICATION_REQURED = 616;
@@ -100,240 +100,240 @@ import android.util.Log;
                 private String mTwitterUrl;
                 private String mXVineClientHeader;
 
-/* 118 */       private VineAPI(Context context, Resources res) {
+       private VineAPI(Context context, Resources res) {
                     String clientSuffix;
-/* 120 */           this.mContext = context;
-/* 121 */           this.mApiResponseCache = Util.newTextCache(context, this);
-/* 122 */           refreshHostUrls(null, res);
-/* 123 */           refreshLocale();
-/* 125 */           String versionName = BuildUtil.getVersionName(context);
-/* 126 */           if (!TextUtils.isEmpty(versionName)) {
-/* 128 */               if (BuildUtil.isExplore()) {
-/* 129 */                   clientSuffix = "-gb";
+           this.mContext = context;
+           this.mApiResponseCache = Util.newTextCache(context, this);
+           refreshHostUrls(null, res);
+           refreshLocale();
+           String versionName = BuildUtil.getVersionName(context);
+           if (!TextUtils.isEmpty(versionName)) {
+               if (BuildUtil.isExplore()) {
+                   clientSuffix = "-gb";
                         } else if (!ClientFlagsHelper.getUseVinePlayer(context)) {
-/* 131 */                   clientSuffix = "-ns";
+                   clientSuffix = "-ns";
                         } else {
-/* 133 */                   clientSuffix = "";
+                   clientSuffix = "";
                         }
-/* 135 */               this.mXVineClientHeader = "android" + clientSuffix + "/" + versionName;
-/* 139 */               return;
+               this.mXVineClientHeader = "android" + clientSuffix + "/" + versionName;
+               return;
                     }
-/* 137 */           this.mXVineClientHeader = null;
+           this.mXVineClientHeader = null;
                 }
 
-/* 141 */       public void refreshHostUrls(VineClientFlags clientFlags, Resources resources) {
+       public void refreshHostUrls(VineClientFlags clientFlags, Resources resources) {
                     String savedBaseHost;
                     String savedRtcHost;
                     String savedMediaHost;
                     String savedExploreHost;
-/* 142 */           Context context = this.mContext;
-/* 143 */           if (resources == null) {
-/* 144 */               resources = this.mContext.getResources();
+           Context context = this.mContext;
+           if (resources == null) {
+               resources = this.mContext.getResources();
                     }
-/* 151 */           if (clientFlags == null) {
-/* 152 */               SharedPreferences prefs = Util.getDefaultSharedPrefs(context);
-/* 153 */               savedBaseHost = prefs.getString(ClientFlagsHelper.PREF_API_HOST, null);
-/* 154 */               savedRtcHost = prefs.getString(ClientFlagsHelper.PREF_RTC_HOST, null);
-/* 155 */               savedMediaHost = prefs.getString(ClientFlagsHelper.PREF_MEDIA_HOST, null);
-/* 156 */               savedExploreHost = prefs.getString(ClientFlagsHelper.PREF_EXPLORE_HOST, null);
+           if (clientFlags == null) {
+               SharedPreferences prefs = Util.getDefaultSharedPrefs(context);
+               savedBaseHost = prefs.getString(ClientFlagsHelper.PREF_API_HOST, null);
+               savedRtcHost = prefs.getString(ClientFlagsHelper.PREF_RTC_HOST, null);
+               savedMediaHost = prefs.getString(ClientFlagsHelper.PREF_MEDIA_HOST, null);
+               savedExploreHost = prefs.getString(ClientFlagsHelper.PREF_EXPLORE_HOST, null);
                     } else {
-/* 158 */               savedBaseHost = clientFlags.apiHost;
-/* 159 */               savedRtcHost = clientFlags.rtcHost;
-/* 160 */               savedMediaHost = clientFlags.mediaHost;
-/* 161 */               savedExploreHost = clientFlags.exploreHost;
+               savedBaseHost = clientFlags.apiHost;
+               savedRtcHost = clientFlags.rtcHost;
+               savedMediaHost = clientFlags.mediaHost;
+               savedExploreHost = clientFlags.exploreHost;
                     }
-/* 164 */           // Keep the packaged API host authoritative.  Older client-flags
-/* 165 */           // responses can leave a stale host (for example trls.uk) in
-/* 166 */           // preferences and prevent timeline requests from completing.
-/* 167 */           this.mBaseUrl = BuildUtil.getBaseUrl(resources);
-/* 165 */           this.mAmazonUrl = resources.getString(C0257R.string.amazon_s3);
-/* 166 */           this.mTwitterUrl = resources.getString(C0257R.string.twitter_api);
-/* 167 */           this.mRtcUrl = savedRtcHost != null ? SCHEME_HTTPS + savedRtcHost : BuildUtil.getRtcUrl(resources);
-/* 168 */           this.mMediaUrl = savedMediaHost != null ? SCHEME_HTTPS + savedMediaHost : BuildUtil.getMediaUrl(resources);
-/* 169 */           this.mExploreUrl = savedExploreHost != null ? SCHEME_HTTP + savedExploreHost : BuildUtil.getExploreUrl(resources);
-/* 170 */           this.mExploreUrl += BuildUtil.getExplorePath(resources);
-/* 171 */           this.mConfigUrl = BuildUtil.getConfigUrl(resources);
-/* 173 */           SLog.m446d("hosts=" + this.mBaseUrl + ", " + this.mRtcUrl + ", " + this.mExploreUrl + ", " + this.mMediaUrl);
+           
+           
+           
+           this.mBaseUrl = BuildUtil.getBaseUrl(resources);
+           this.mAmazonUrl = resources.getString(C0257R.string.amazon_s3);
+           this.mTwitterUrl = resources.getString(C0257R.string.twitter_api);
+           this.mRtcUrl = savedRtcHost != null ? SCHEME_HTTPS + savedRtcHost : BuildUtil.getRtcUrl(resources);
+           this.mMediaUrl = savedMediaHost != null ? SCHEME_HTTPS + savedMediaHost : BuildUtil.getMediaUrl(resources);
+           this.mExploreUrl = savedExploreHost != null ? SCHEME_HTTP + savedExploreHost : BuildUtil.getExploreUrl(resources);
+           this.mExploreUrl += BuildUtil.getExplorePath(resources);
+           this.mConfigUrl = BuildUtil.getConfigUrl(resources);
+           SLog.m446d("hosts=" + this.mBaseUrl + ", " + this.mRtcUrl + ", " + this.mExploreUrl + ", " + this.mMediaUrl);
                 }
 
-/* 176 */       public static VineAPI getInstance(Context context) {
-/* 177 */           if (mApi == null) {
-/* 178 */               Resources res = context.getApplicationContext().getResources();
-/* 179 */               if (res == null) {
-/* 180 */                   res = context.getResources();
+       public static VineAPI getInstance(Context context) {
+           if (mApi == null) {
+               Resources res = context.getApplicationContext().getResources();
+               if (res == null) {
+                   res = context.getResources();
                         }
-/* 182 */               if (res == null) {
-/* 183 */                   throw new InvalidContextForInitializationException("Context does not have resources attached, Application Context is: " + context.getApplicationContext().getClass().getName());
+               if (res == null) {
+                   throw new InvalidContextForInitializationException("Context does not have resources attached, Application Context is: " + context.getApplicationContext().getClass().getName());
                         }
-/* 186 */               mApi = new VineAPI(context.getApplicationContext(), res);
+               mApi = new VineAPI(context.getApplicationContext(), res);
                     }
-/* 188 */           return mApi;
+           return mApi;
                 }
 
-/* 191 */       public TextCache getCacheStorage() {
-/* 192 */           return this.mApiResponseCache;
+       public TextCache getCacheStorage() {
+           return this.mApiResponseCache;
                 }
 
-/* 196 */       public static class InvalidContextForInitializationException extends IllegalStateException {
-/* 197 */           public InvalidContextForInitializationException(String s) {
-/* 198 */               super(s);
+       public static class InvalidContextForInitializationException extends IllegalStateException {
+           public InvalidContextForInitializationException(String s) {
+               super(s);
                     }
                 }
 
-/* 202 */       public void refreshLocale() {
-/* 203 */           String locale = Locale.getDefault().getCountry();
-/* 205 */           if (!TextUtils.isEmpty(locale)) {
-/* 206 */               this.mLocale = locale;
+       public void refreshLocale() {
+           String locale = Locale.getDefault().getCountry();
+           if (!TextUtils.isEmpty(locale)) {
+               this.mLocale = locale;
                     } else {
-/* 208 */               this.mLocale = null;
+               this.mLocale = null;
                     }
                 }
 
-/* 212 */       public String getBaseUrl() {
-/* 213 */           return this.mBaseUrl;
+       public String getBaseUrl() {
+           return this.mBaseUrl;
                 }
 
-/* 216 */       public String getAmazonUrl() {
-/* 217 */           return this.mAmazonUrl;
+       public String getAmazonUrl() {
+           return this.mAmazonUrl;
                 }
 
-/* 220 */       public String getTwitterUrl() {
-/* 221 */           return this.mTwitterUrl;
+       public String getTwitterUrl() {
+           return this.mTwitterUrl;
                 }
 
-/* 224 */       public String getRtcUrl() {
-/* 225 */           return this.mRtcUrl;
+       public String getRtcUrl() {
+           return this.mRtcUrl;
                 }
 
-/* 228 */       public String getMediaUrl() {
-/* 229 */           return this.mMediaUrl;
+       public String getMediaUrl() {
+           return this.mMediaUrl;
                 }
 
-/* 232 */       public String getExploreUrl() {
-/* 233 */           return this.mExploreUrl;
+       public String getExploreUrl() {
+           return this.mExploreUrl;
                 }
 
-/* 236 */       public String getConfigUrl() {
-/* 237 */           return this.mConfigUrl;
+       public String getConfigUrl() {
+           return this.mConfigUrl;
                 }
 
-                @Override // co.vine.android.network.HeaderInjecter
-/* 241 */       public void addClientHeaders(NetworkOperation request) {
-/* 242 */           if (!TextUtils.isEmpty(this.mXVineClientHeader)) {
-/* 245 */               request.addHeader(X_VINE_CLIENT, this.mXVineClientHeader);
-/* 246 */               String language = Util.getLocale();
-/* 247 */               if (!TextUtils.isEmpty(language)) {
-/* 248 */                   request.addHeader(ACCEPT_LANGUAGE_HEADER, language);
+                @Override 
+       public void addClientHeaders(NetworkOperation request) {
+           if (!TextUtils.isEmpty(this.mXVineClientHeader)) {
+               request.addHeader(X_VINE_CLIENT, this.mXVineClientHeader);
+               String language = Util.getLocale();
+               if (!TextUtils.isEmpty(language)) {
+                   request.addHeader(ACCEPT_LANGUAGE_HEADER, language);
                         }
-/* 250 */               if (!BuildUtil.isProduction()) {
-/* 251 */                   request.addHeader(SECRET_AUTH_HEADER, getAuthHeaderSecret());
+               if (!BuildUtil.isProduction()) {
+                   request.addHeader(SECRET_AUTH_HEADER, getAuthHeaderSecret());
                         }
                     }
                 }
 
-/* 255 */       public String getVineClientHeader() {
-/* 256 */           return this.mXVineClientHeader;
+       public String getVineClientHeader() {
+           return this.mXVineClientHeader;
                 }
 
-/* 259 */       public void addSessionKeyAuthHeader(NetworkOperation op) {
-/* 260 */           String key = getSessionKey();
-/* 261 */           op.addHeader("vine-session-id", key);
-/* 262 */           Log.d("VineNetwork", "auth header attached; present=" + (key != null && key.length() > 0) + ", length=" + (key == null ? 0 : key.length()) + ", userId=" + AppController.getInstance(this.mContext).getActiveSessionReadOnly().getUserId());
+       public void addSessionKeyAuthHeader(NetworkOperation op) {
+           String key = getSessionKey();
+           op.addHeader("vine-session-id", key);
+           Log.d("VineNetwork", "auth header attached; present=" + (key != null && key.length() > 0) + ", length=" + (key == null ? 0 : key.length()) + ", userId=" + AppController.getInstance(this.mContext).getActiveSessionReadOnly().getUserId());
                 }
 
-/* 263 */       public static void addSessionKeyAuthHeader(NetworkOperation op, String key) {
-/* 264 */           op.addHeader("vine-session-id", key);
+       public static void addSessionKeyAuthHeader(NetworkOperation op, String key) {
+           op.addHeader("vine-session-id", key);
                 }
 
-/* 274 */       public static void addContentTypeHeader(NetworkOperation op, String contentType) {
-/* 275 */           op.addHeader("content-type", contentType);
+       public static void addContentTypeHeader(NetworkOperation op, String contentType) {
+           op.addHeader("content-type", contentType);
                 }
 
-/* 278 */       public static void addPollingHeader(NetworkOperation op, boolean isPolling) {
-/* 279 */           op.addHeader("X-Vine-Polling", String.valueOf(isPolling));
+       public static void addPollingHeader(NetworkOperation op, boolean isPolling) {
+           op.addHeader("X-Vine-Polling", String.valueOf(isPolling));
                 }
 
-/* 282 */       private String getSessionKey() {
-/* 283 */           return AppController.getInstance(this.mContext).getActiveSessionReadOnly().getSessionKey();
+       private String getSessionKey() {
+           return AppController.getInstance(this.mContext).getActiveSessionReadOnly().getSessionKey();
                 }
 
-/* 286 */       public String getAuthHeaderSecret() {
-/* 287 */           return this.mContext.getResources().getString(C0257R.string.app_secret);
+       public String getAuthHeaderSecret() {
+           return this.mContext.getResources().getString(C0257R.string.app_secret);
                 }
 
-/* 297 */       public StringBuilder buildUrl(Object... paths) {
-/* 298 */           return buildUponUrl(this.mBaseUrl, paths);
+       public StringBuilder buildUrl(Object... paths) {
+           return buildUponUrl(this.mBaseUrl, paths);
                 }
 
-/* 311 */       public static StringBuilder buildUponUrl(String baseUrl, Object... paths) {
-/* 312 */           StringBuilder sb = new StringBuilder(baseUrl);
-/* 313 */           if (paths != null) {
+       public static StringBuilder buildUponUrl(String baseUrl, Object... paths) {
+           StringBuilder sb = new StringBuilder(baseUrl);
+           if (paths != null) {
                         for (Object path : paths) {
-/* 315 */                   sb.append('/');
-/* 316 */                   sb.append(path);
+                   sb.append('/');
+                   sb.append(path);
                         }
                     }
-/* 319 */           return sb;
+           return sb;
                 }
 
-/* 329 */       public static void addParam(StringBuilder sb, String name, boolean value) {
-/* 330 */           prefixParam(sb, name).append(value);
+       public static void addParam(StringBuilder sb, String name, boolean value) {
+           prefixParam(sb, name).append(value);
                 }
 
-/* 340 */       public static void addParam(StringBuilder sb, String name, int value) {
-/* 341 */           prefixParam(sb, name).append(value);
+       public static void addParam(StringBuilder sb, String name, int value) {
+           prefixParam(sb, name).append(value);
                 }
 
-/* 351 */       public static void addParam(StringBuilder sb, String name, long value) {
-/* 352 */           prefixParam(sb, name).append(value);
+       public static void addParam(StringBuilder sb, String name, long value) {
+           prefixParam(sb, name).append(value);
                 }
 
-/* 362 */       public static void addParam(StringBuilder sb, String name, double value) {
-/* 363 */           prefixParam(sb, name).append(value);
+       public static void addParam(StringBuilder sb, String name, double value) {
+           prefixParam(sb, name).append(value);
                 }
 
-/* 373 */       public static void addParam(StringBuilder sb, String name, String value) {
-/* 374 */           prefixParam(sb, name).append(encode(value));
+       public static void addParam(StringBuilder sb, String name, String value) {
+           prefixParam(sb, name).append(encode(value));
                 }
 
-/* 378 */       public static int addParam(StringBuilder sb, String name, long[] values, int start, int max) {
-/* 379 */           if (values == null || start >= values.length || max <= 0) {
+       public static int addParam(StringBuilder sb, String name, long[] values, int start, int max) {
+           if (values == null || start >= values.length || max <= 0) {
                         return 0;
                     }
-/* 380 */           prefixParam(sb, name);
-/* 381 */           int end = Math.min(start + max, values.length);
+           prefixParam(sb, name);
+           int end = Math.min(start + max, values.length);
                     for (int i = start; i < end; i++) {
-/* 383 */               sb.append(values[i]);
-/* 384 */               if (i < end - 1) {
-/* 385 */                   sb.append(',');
+               sb.append(values[i]);
+               if (i < end - 1) {
+                   sb.append(',');
                         }
                     }
-/* 388 */           return end - start;
+           return end - start;
                 }
 
-/* 394 */       private static StringBuilder prefixParam(StringBuilder sb, String name) {
-/* 395 */           if (sb.indexOf("?") == -1) {
-/* 396 */               sb.append('?');
+       private static StringBuilder prefixParam(StringBuilder sb, String name) {
+           if (sb.indexOf("?") == -1) {
+               sb.append('?');
                     } else {
-/* 398 */               sb.append('&');
+               sb.append('&');
                     }
-/* 400 */           return sb.append(name).append('=');
+           return sb.append(name).append('=');
                 }
 
-/* 404 */       public static String encode(String text) {
-/* 405 */           if (text == null) {
-/* 406 */               return "";
+       public static String encode(String text) {
+           if (text == null) {
+               return "";
                     }
-/* 408 */           if (ENCODER == null) {
-/* 409 */               ENCODER = new PercentEscaper("-._~", false);
+           if (ENCODER == null) {
+               ENCODER = new PercentEscaper("-._~", false);
                     }
-/* 411 */           return ENCODER.escape(text);
+           return ENCODER.escape(text);
                 }
 
-/* 414 */       public static StringBuilder addAnchor(StringBuilder url, long anchor) {
+       public static StringBuilder addAnchor(StringBuilder url, long anchor) {
                     if (anchor > 0) {
-/* 416 */               addParam(url, "anchor", anchor);
+               addParam(url, "anchor", anchor);
                     }
-/* 418 */           return url;
+           return url;
                 }
             }

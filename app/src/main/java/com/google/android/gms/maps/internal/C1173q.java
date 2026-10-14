@@ -10,17 +10,17 @@
             import com.google.android.gms.internal.C1028dm;
             import com.google.android.gms.maps.model.RuntimeRemoteException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.maps.internal.q */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1173q {
 
-                /* JADX INFO: renamed from: pW */
+                
                 private static Context f2279pW;
 
-                /* JADX INFO: renamed from: pX */
+                
                 private static InterfaceC1159c f2280pX;
 
-                /* JADX INFO: renamed from: a */
+                
                 private static <T> T m2258a(ClassLoader classLoader, String str) {
                     try {
                         return (T) m2259c(((ClassLoader) C1028dm.m1605e(classLoader)).loadClass(str));
@@ -29,7 +29,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 private static <T> T m2259c(Class<?> cls) {
                     try {
                         return (T) cls.newInstance();
@@ -40,12 +40,12 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: cI */
+                
                 private static boolean m2260cI() {
                     return m2261cJ() != null;
                 }
 
-                /* JADX INFO: renamed from: cJ */
+                
                 private static Class<?> m2261cJ() {
                     try {
                         return Class.forName("com.google.android.gms.maps.internal.CreatorImpl");
@@ -65,7 +65,7 @@
                     return f2279pW;
                 }
 
-                /* JADX INFO: renamed from: u */
+                
                 public static InterfaceC1159c m2262u(Context context) throws GooglePlayServicesNotAvailableException {
                     C1028dm.m1605e(context);
                     if (f2280pX != null) {
@@ -81,7 +81,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: v */
+                
                 private static void m2263v(Context context) throws GooglePlayServicesNotAvailableException {
                     int iIsGooglePlayServicesAvailable = GooglePlayServicesUtil.isGooglePlayServicesAvailable(context);
                     switch (iIsGooglePlayServicesAvailable) {
@@ -92,7 +92,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: w */
+                
                 private static InterfaceC1159c m2264w(Context context) {
                     if (!m2260cI()) {
                         return InterfaceC1159c.a.m2243J((IBinder) m2258a(getRemoteContext(context).getClassLoader(), "com.google.android.gms.maps.internal.CreatorImpl"));

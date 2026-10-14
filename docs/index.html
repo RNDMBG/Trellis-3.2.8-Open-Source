@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trellis — Vine 3.2.8 for Android</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <span class="wordmark">Trellis</span>
+    <nav>
+      <a href="#download">Download</a>
+      <a href="#story">How it was made</a>
+      <a href="https://github.com/RNDMBG/Trellis-3.2.8-Open-Source">Code</a>
+    </nav>
+  </div>
+</header>
+<div class="navstrip">
+  <div class="wrap navstrip-in">
+    <span class="navdot on"></span>
+    <span class="navdot"></span>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Vine 3.2.8, back on Android.</h1>
+    <p class="sub">Trellis is the old Vine app recovered from its APK and fixed up so it installs and runs today. Same app, same look, same six seconds.</p>
+    <p class="ver" id="versionLine">Checking latest build…</p>
+    <p class="cta-row">
+      <a class="btn" id="dlBtn" href="https://github.com/RNDMBG/Trellis-3.2.8-Open-Source/releases/latest">Download latest APK</a>
+      <a class="btn ghost" href="https://github.com/RNDMBG/Trellis-3.2.8-Open-Source/releases">All releases</a>
+    </p>
+    <p class="note">Version stays 3.2.8. New builds keep coming with higher build numbers. Turn on Automatic updates in the app and it will tell you.</p>
+  </section>
+
+  <section class="card" id="download">
+    <h2>Get the app</h2>
+    <ol>
+      <li>Tap <b>Download latest APK</b> above on your phone.</li>
+      <li>Open the file. Android will ask if you want to install it. Say yes.</li>
+      <li>If you already have Trellis, install right over it. Your login stays.</li>
+    </ol>
+    <p class="note">First install only: if your phone blocks installs from the browser, allow it once when asked. Builds are signed with the Trellis key, so updates install over each other.</p>
+  </section>
+
+  <section class="card" id="story">
+    <h2>How it was brought back</h2>
+    <p>There is no official Vine source code. What we had was the original Vine 3.2.8 APK from an old phone. That file holds compiled code, not source, so the first step was taking it apart.</p>
+    <p>We ran it through <b>JADX</b>, a decompiler that turns compiled Android apps back into Java. Out came more than 5,000 files: every screen, the video player, the chat code, the upload code, all of it. It looked like source code, but it did not compile. Not even close.</p>
+    <h3>The hard parts</h3>
+    <ul>
+      <li><b>Decompiler junk.</b> JADX invents fake helper methods (bridge and synthetic methods) and mangles generic types like <span class="mono">ArrayList&lt;T&gt;</span>. Hundreds of files had to be cleaned by hand and with small scripts before the compiler accepted them.</li>
+      <li><b>Missing pieces.</b> Some SDKs inside the app (Flurry, old Google Play bits, Crashlytics) are proprietary and cannot ship in a rebuild. We wrote small stand-in classes with the same shape so the app compiles and runs without them.</li>
+      <li><b>Old Android vs new Android.</b> The app targets Android 6 era APIs and the original ARM32 video libraries. It now builds against a modern SDK with a compatibility layer, plus a 64-bit build flavor so it installs on today's phones.</li>
+      <li><b>The resource trap.</b> Android refers to every layout, string and icon by number. Those numbers live in a frozen file (<span class="mono">C0257R.java</span>). Every time a resource is added, the numbers shift and the whole file has to be regenerated from the build, or the app opens the wrong screens and crashes. We learned that one the hard way.</li>
+      <li><b>A living server.</b> Vine's old servers are gone, so the app talks to a compatible community server. Endpoints move and responses differ slightly, and each difference shows up as an empty tab or a stuck spinner that has to be chased down.</li>
+    </ul>
+    <p>All of that is in the open. The full code, the fixes and the build history are in the repo. Nothing hidden.</p>
+    <p><a class="btn ghost" href="https://github.com/RNDMBG/Trellis-3.2.8-Open-Source">Browse the code</a></p>
+  </section>
+
+  <footer>
+    <p>Trellis is a fan recovery, not affiliated with Vine or Twitter. Recovered code, art and libraries belong to their owners. See NOTICE-DECOMP.md.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

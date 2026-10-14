@@ -21,28 +21,28 @@
             import java.util.Arrays;
             import java.util.Collection;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.fl */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1081fl extends AbstractC1020de<InterfaceC1080fk> implements GooglePlayServicesClient {
 
-                /* JADX INFO: renamed from: ro */
+                
                 private Person f1916ro;
 
-                /* JADX INFO: renamed from: rp */
+                
                 private C1083fn f1917rp;
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.fl$a */
+                
                 final class a extends AbstractBinderC1076fg {
 
-                    /* JADX INFO: renamed from: rq */
+                    
                     private final PlusClient.OnMomentsLoadedListener f1918rq;
 
                     public a(PlusClient.OnMomentsLoadedListener onMomentsLoadedListener) {
                         this.f1918rq = onMomentsLoadedListener;
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractBinderC1076fg, com.google.android.gms.internal.InterfaceC1077fh
-                    /* JADX INFO: renamed from: a */
+                    @Override 
+                    
                     public void mo1952a(C0891d c0891d, String str, String str2) {
                         C0891d c0891d2;
                         ConnectionResult connectionResult = new ConnectionResult(c0891d.getStatusCode(), c0891d.m1042aM() != null ? (PendingIntent) c0891d.m1042aM().getParcelable("pendingIntent") : null);
@@ -58,16 +58,16 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.fl$b */
+                
                 final class b extends AbstractC1020de<InterfaceC1080fk>.c<PlusClient.OnMomentsLoadedListener> {
 
-                    /* JADX INFO: renamed from: rs */
+                    
                     private final ConnectionResult f1921rs;
 
-                    /* JADX INFO: renamed from: rt */
+                    
                     private final String f1922rt;
 
-                    /* JADX INFO: renamed from: ru */
+                    
                     private final String f1923ru;
 
                     public b(PlusClient.OnMomentsLoadedListener onMomentsLoadedListener, ConnectionResult connectionResult, C0891d c0891d, String str, String str2) {
@@ -77,25 +77,25 @@
                         this.f1923ru = str2;
                     }
 
-                    /* JADX INFO: renamed from: a, reason: avoid collision after fix types in other method */
+                    
                     protected void a2(PlusClient.OnMomentsLoadedListener onMomentsLoadedListener, C0891d c0891d) {
                         onMomentsLoadedListener.onMomentsLoaded(this.f1921rs, c0891d != null ? new MomentBuffer(c0891d) : null, this.f1922rt, this.f1923ru);
                     }
 
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.fl$c */
+                
                 final class c extends AbstractBinderC1076fg {
 
-                    /* JADX INFO: renamed from: rv */
+                    
                     private final PlusClient.OnPeopleLoadedListener f1925rv;
 
                     public c(PlusClient.OnPeopleLoadedListener onPeopleLoadedListener) {
                         this.f1925rv = onPeopleLoadedListener;
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractBinderC1076fg, com.google.android.gms.internal.InterfaceC1077fh
-                    /* JADX INFO: renamed from: a */
+                    @Override 
+                    
                     public void mo1951a(C0891d c0891d, String str) {
                         C0891d c0891d2;
                         ConnectionResult connectionResult = new ConnectionResult(c0891d.getStatusCode(), c0891d.m1042aM() != null ? (PendingIntent) c0891d.m1042aM().getParcelable("pendingIntent") : null);
@@ -111,13 +111,13 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.fl$d */
+                
                 final class d extends AbstractC1020de<InterfaceC1080fk>.c<PlusClient.OnPeopleLoadedListener> {
 
-                    /* JADX INFO: renamed from: rs */
+                    
                     private final ConnectionResult f1927rs;
 
-                    /* JADX INFO: renamed from: rt */
+                    
                     private final String f1928rt;
 
                     public d(PlusClient.OnPeopleLoadedListener onPeopleLoadedListener, ConnectionResult connectionResult, C0891d c0891d, String str) {
@@ -126,34 +126,34 @@
                         this.f1928rt = str;
                     }
 
-                    /* JADX INFO: renamed from: a, reason: avoid collision after fix types in other method */
+                    
                     protected void a2(PlusClient.OnPeopleLoadedListener onPeopleLoadedListener, C0891d c0891d) {
                         onPeopleLoadedListener.onPeopleLoaded(this.f1927rs, c0891d != null ? new PersonBuffer(c0891d) : null, this.f1928rt);
                     }
 
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.fl$e */
+                
                 final class e extends AbstractBinderC1076fg {
 
-                    /* JADX INFO: renamed from: rw */
+                    
                     private final PlusClient.OnAccessRevokedListener f1930rw;
 
                     public e(PlusClient.OnAccessRevokedListener onAccessRevokedListener) {
                         this.f1930rw = onAccessRevokedListener;
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractBinderC1076fg, com.google.android.gms.internal.InterfaceC1077fh
-                    /* JADX INFO: renamed from: b */
+                    @Override 
+                    
                     public void mo1953b(int i, Bundle bundle) {
                         C1081fl.this.m1543a(C1081fl.this.new f(this.f1930rw, new ConnectionResult(i, bundle != null ? (PendingIntent) bundle.getParcelable("pendingIntent") : null)));
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.fl$f */
+                
                 final class f extends AbstractC1020de<InterfaceC1080fk>.b<PlusClient.OnAccessRevokedListener> {
 
-                    /* JADX INFO: renamed from: rs */
+                    
                     private final ConnectionResult f1932rs;
 
                     public f(PlusClient.OnAccessRevokedListener onAccessRevokedListener, ConnectionResult connectionResult) {
@@ -161,7 +161,7 @@
                         this.f1932rs = connectionResult;
                     }
 
-                    /* JADX INFO: renamed from: a, reason: avoid collision after fix types in other method */
+                    
                     protected void a2(PlusClient.OnAccessRevokedListener onAccessRevokedListener) {
                         C1081fl.this.disconnect();
                         if (onAccessRevokedListener != null) {
@@ -169,8 +169,8 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC1020de.b
-                    /* JADX INFO: renamed from: aF */
+                    @Override 
+                    
                     protected void mo1503aF() {
                     }
                 }
@@ -180,13 +180,13 @@
                     this.f1917rp = c1083fn;
                 }
 
-                /* JADX INFO: renamed from: Y */
+                
                 public boolean m1975Y(String str) {
                     return Arrays.asList(m1544aY()).contains(str);
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 protected void mo1541a(int i, IBinder iBinder, Bundle bundle) {
                     if (i == 0 && bundle != null && bundle.containsKey("loaded_person")) {
                         this.f1916ro = C1091fv.m2026e(bundle.getByteArray("loaded_person"));
@@ -194,8 +194,8 @@
                     super.mo1541a(i, iBinder, bundle);
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 protected void mo1365a(InterfaceC1025dj interfaceC1025dj, AbstractC1020de.d dVar) throws RemoteException {
                     Bundle bundle = new Bundle();
                     bundle.putString("client_id", this.f1917rp.m1988df());
@@ -203,7 +203,7 @@
                     interfaceC1025dj.mo1585a(dVar, GooglePlayServicesUtil.GOOGLE_PLAY_SERVICES_VERSION_CODE, this.f1917rp.m1986dd(), this.f1917rp.m1985dc(), m1544aY(), this.f1917rp.getAccountName(), bundle);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1976a(PlusClient.OnPeopleLoadedListener onPeopleLoadedListener, Collection<String> collection) {
                     m1548bc();
                     c cVar = new c(onPeopleLoadedListener);
@@ -214,24 +214,24 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1977a(PlusClient.OnPeopleLoadedListener onPeopleLoadedListener, String[] strArr) {
                     m1976a(onPeopleLoadedListener, Arrays.asList(strArr));
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: ag */
+                @Override 
+                
                 protected String mo1366ag() {
                     return "com.google.android.gms.plus.service.START";
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: ah */
+                @Override 
+                
                 protected String mo1367ah() {
                     return "com.google.android.gms.plus.internal.IPlusService";
                 }
 
-                /* JADX INFO: renamed from: ar */
+                
                 protected InterfaceC1080fk m1978ar(IBinder iBinder) {
                     return InterfaceC1080fk.a.m1974aq(iBinder);
                 }
@@ -288,9 +288,9 @@
                     loadVisiblePeople(listener, 0, pageToken);
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1020de
-                /* JADX INFO: renamed from: p */
-                protected /* synthetic */ IInterface mo1370p(IBinder iBinder) {
+                @Override 
+                
+                protected  IInterface mo1370p(IBinder iBinder) {
                     return m1978ar(iBinder);
                 }
 

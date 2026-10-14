@@ -9,33 +9,33 @@
             import java.util.Iterator;
             import java.util.Set;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.fs */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C1088fs extends AbstractC1038dw implements SafeParcelable, Moment {
                 public static final C1089ft CREATOR = new C1089ft();
 
-                /* JADX INFO: renamed from: rH */
+                
                 private static final HashMap<String, AbstractC1038dw.a<?, ?>> f2008rH = new HashMap<>();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2009iM;
 
-                /* JADX INFO: renamed from: rI */
+                
                 private final Set<Integer> f2010rI;
 
-                /* JADX INFO: renamed from: sD */
+                
                 private String f2011sD;
 
-                /* JADX INFO: renamed from: sG */
+                
                 private C1086fq f2012sG;
 
-                /* JADX INFO: renamed from: sH */
+                
                 private C1086fq f2013sH;
 
-                /* JADX INFO: renamed from: sm */
+                
                 private String f2014sm;
 
-                /* JADX INFO: renamed from: sx */
+                
                 private String f2015sx;
 
                 static {
@@ -71,26 +71,26 @@
                     this.f2011sD = str3;
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: D */
+                @Override 
+                
                 protected Object mo1641D(String str) {
                     return null;
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: E */
+                @Override 
+                
                 protected boolean mo1642E(String str) {
                     return false;
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 protected boolean mo1646a(AbstractC1038dw.a aVar) {
                     return this.f2010rI.contains(Integer.valueOf(aVar.m1669bw()));
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: b */
+                @Override 
+                
                 protected Object mo1647b(AbstractC1038dw.a aVar) {
                     switch (aVar.m1669bw()) {
                         case 2:
@@ -109,34 +109,34 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: bp */
+                @Override 
+                
                 public HashMap<String, AbstractC1038dw.a<?, ?>> mo1648bp() {
                     return f2008rH;
                 }
 
-                /* JADX INFO: renamed from: dA */
+                
                 C1086fq m2017dA() {
                     return this.f2013sH;
                 }
 
-                /* JADX INFO: renamed from: dB */
+                
                 public C1088fs m2018dB() {
                     return this;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     C1089ft c1089ft = CREATOR;
                     return 0;
                 }
 
-                /* JADX INFO: renamed from: di */
+                
                 Set<Integer> m2019di() {
                     return this.f2010rI;
                 }
 
-                /* JADX INFO: renamed from: dz */
+                
                 C1086fq m2020dz() {
                     return this.f2012sG;
                 }
@@ -162,32 +162,32 @@
                     return true;
                 }
 
-                @Override // com.google.android.gms.common.data.Freezable
-                public /* synthetic */ Moment freeze() {
+                @Override 
+                public  Moment freeze() {
                     return m2018dB();
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public String getId() {
                     return this.f2014sm;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public ItemScope getResult() {
                     return this.f2012sG;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public String getStartDate() {
                     return this.f2015sx;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public ItemScope getTarget() {
                     return this.f2013sH;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public String getType() {
                     return this.f2011sD;
                 }
@@ -196,27 +196,27 @@
                     return this.f2009iM;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public boolean hasId() {
                     return this.f2010rI.contains(2);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public boolean hasResult() {
                     return this.f2010rI.contains(4);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public boolean hasStartDate() {
                     return this.f2010rI.contains(5);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public boolean hasTarget() {
                     return this.f2010rI.contains(6);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.Moment
+                @Override 
                 public boolean hasType() {
                     return this.f2010rI.contains(7);
                 }
@@ -238,12 +238,12 @@
                     }
                 }
 
-                @Override // com.google.android.gms.common.data.Freezable
+                @Override 
                 public boolean isDataValid() {
                     return true;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C1089ft c1089ft = CREATOR;
                     C1089ft.m2021a(this, out, flags);

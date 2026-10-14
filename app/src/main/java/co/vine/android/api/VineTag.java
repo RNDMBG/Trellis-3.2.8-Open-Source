@@ -4,53 +4,53 @@
             import android.os.Parcelable;
             import java.io.Serializable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 14 */    public class VineTag implements Parcelable, Serializable {
+            
+    public class VineTag implements Parcelable, Serializable {
                 public static final Parcelable.Creator<VineTag> CREATOR = new C03591();
                 public long tagId;
                 public String tagName;
 
-/* 15 */        public VineTag() {
+        public VineTag() {
                 }
 
-/* 18 */        public VineTag(String tagName, long tagId) {
-/* 20 */            this.tagName = tagName;
-/* 21 */            this.tagId = tagId;
+        public VineTag(String tagName, long tagId) {
+            this.tagName = tagName;
+            this.tagId = tagId;
                 }
 
-/* 23 */        public VineTag(Parcel in) {
-/* 25 */            this.tagName = in.readString();
-/* 26 */            this.tagId = in.readLong();
+        public VineTag(Parcel in) {
+            this.tagName = in.readString();
+            this.tagId = in.readLong();
                 }
 
-                @Override // android.os.Parcelable
-/* 30 */        public int describeContents() {
-/* 31 */            return 0;
+                @Override 
+        public int describeContents() {
+            return 0;
                 }
 
-                @Override // android.os.Parcelable
-/* 35 */        public void writeToParcel(Parcel dest, int flags) {
-/* 36 */            dest.writeString(this.tagName);
-/* 37 */            dest.writeLong(this.tagId);
+                @Override 
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(this.tagName);
+            dest.writeLong(this.tagId);
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineTag$1 */
-/* 38 */        static class C03591 implements Parcelable.Creator<VineTag> {
-/* 39 */            C03591() {
+                
+        static class C03591 implements Parcelable.Creator<VineTag> {
+            C03591() {
                     }
 
 
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // android.os.Parcelable.Creator
-/* 41 */            public VineTag createFromParcel(Parcel in) {
-/* 42 */                return new VineTag(in);
+                    
+                    @Override 
+            public VineTag createFromParcel(Parcel in) {
+                return new VineTag(in);
                     }
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // android.os.Parcelable.Creator
-/* 45 */            public VineTag[] newArray(int size) {
-/* 46 */                return new VineTag[size];
+                    
+                    @Override 
+            public VineTag[] newArray(int size) {
+                return new VineTag[size];
                     }
                 }
             }

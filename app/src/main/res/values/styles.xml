@@ -891,8 +891,6 @@
     </style>
     <style name="VineTheme" parent="@style/Theme.AppCompat.Light">
         <item name="android:windowBackground">@color/solid_white</item>
-        <!-- Use the AppCompat action bar only.  The reconstructed theme was
-             allowing the platform Holo bar and AppCompat bar to coexist. -->
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="windowActionBar">true</item>

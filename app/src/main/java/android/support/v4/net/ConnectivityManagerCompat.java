@@ -5,85 +5,85 @@
             import android.net.NetworkInfo;
             import android.os.Build;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 34 */    public class ConnectivityManagerCompat {
+            
+    public class ConnectivityManagerCompat {
                 private static final ConnectivityManagerCompatImpl IMPL;
 
                 interface ConnectivityManagerCompatImpl {
                     boolean isActiveNetworkMetered(ConnectivityManager connectivityManager);
                 }
 
-/* 35 */        static class BaseConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
-/* 36 */            BaseConnectivityManagerCompatImpl() {
+        static class BaseConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
+            BaseConnectivityManagerCompatImpl() {
                     }
 
-                    @Override // android.support.v4.net.ConnectivityManagerCompat.ConnectivityManagerCompatImpl
-/* 39 */            public boolean isActiveNetworkMetered(ConnectivityManager cm) {
-/* 40 */                NetworkInfo info = cm.getActiveNetworkInfo();
-/* 41 */                if (info == null) {
+                    @Override 
+            public boolean isActiveNetworkMetered(ConnectivityManager cm) {
+                NetworkInfo info = cm.getActiveNetworkInfo();
+                if (info == null) {
                             return true;
                         }
-/* 46 */                int type = info.getType();
+                int type = info.getType();
                         switch (type) {
                             case 0:
                             default:
                                 return true;
                             case 1:
-/* 51 */                        return false;
+                        return false;
                         }
                     }
                 }
 
-/* 57 */        static class GingerbreadConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
-/* 58 */            GingerbreadConnectivityManagerCompatImpl() {
+        static class GingerbreadConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
+            GingerbreadConnectivityManagerCompatImpl() {
                     }
 
-                    @Override // android.support.v4.net.ConnectivityManagerCompat.ConnectivityManagerCompatImpl
-/* 61 */            public boolean isActiveNetworkMetered(ConnectivityManager cm) {
-/* 62 */                return ConnectivityManagerCompatGingerbread.isActiveNetworkMetered(cm);
-                    }
-                }
-
-/* 64 */        static class HoneycombMR2ConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
-/* 65 */            HoneycombMR2ConnectivityManagerCompatImpl() {
-                    }
-
-                    @Override // android.support.v4.net.ConnectivityManagerCompat.ConnectivityManagerCompatImpl
-/* 69 */            public boolean isActiveNetworkMetered(ConnectivityManager cm) {
-/* 70 */                return ConnectivityManagerCompatHoneycombMR2.isActiveNetworkMetered(cm);
+                    @Override 
+            public boolean isActiveNetworkMetered(ConnectivityManager cm) {
+                return ConnectivityManagerCompatGingerbread.isActiveNetworkMetered(cm);
                     }
                 }
 
-/* 72 */        static class JellyBeanConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
-/* 73 */            JellyBeanConnectivityManagerCompatImpl() {
+        static class HoneycombMR2ConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
+            HoneycombMR2ConnectivityManagerCompatImpl() {
                     }
 
-                    @Override // android.support.v4.net.ConnectivityManagerCompat.ConnectivityManagerCompatImpl
-/* 76 */            public boolean isActiveNetworkMetered(ConnectivityManager cm) {
-/* 77 */                return ConnectivityManagerCompatJellyBean.isActiveNetworkMetered(cm);
+                    @Override 
+            public boolean isActiveNetworkMetered(ConnectivityManager cm) {
+                return ConnectivityManagerCompatHoneycombMR2.isActiveNetworkMetered(cm);
+                    }
+                }
+
+        static class JellyBeanConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
+            JellyBeanConnectivityManagerCompatImpl() {
+                    }
+
+                    @Override 
+            public boolean isActiveNetworkMetered(ConnectivityManager cm) {
+                return ConnectivityManagerCompatJellyBean.isActiveNetworkMetered(cm);
                     }
                 }
 
                 static {
-/* 84 */            if (Build.VERSION.SDK_INT >= 16) {
-/* 85 */                IMPL = new JellyBeanConnectivityManagerCompatImpl();
-/* 93 */                return;
+            if (Build.VERSION.SDK_INT >= 16) {
+                IMPL = new JellyBeanConnectivityManagerCompatImpl();
+                return;
                     }
-/* 86 */            if (Build.VERSION.SDK_INT >= 13) {
-/* 87 */                IMPL = new HoneycombMR2ConnectivityManagerCompatImpl();
+            if (Build.VERSION.SDK_INT >= 13) {
+                IMPL = new HoneycombMR2ConnectivityManagerCompatImpl();
                     } else if (Build.VERSION.SDK_INT >= 8) {
-/* 89 */                IMPL = new GingerbreadConnectivityManagerCompatImpl();
+                IMPL = new GingerbreadConnectivityManagerCompatImpl();
                     } else {
-/* 91 */                IMPL = new BaseConnectivityManagerCompatImpl();
+                IMPL = new BaseConnectivityManagerCompatImpl();
                     }
                 }
 
-/* 102 */       public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
-/* 103 */           return IMPL.isActiveNetworkMetered(cm);
+       public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
+           return IMPL.isActiveNetworkMetered(cm);
                 }
 
-/* 113 */       public static NetworkInfo getNetworkInfoFromBroadcast(ConnectivityManager cm, Intent intent) {
-/* 114 */           NetworkInfo info = (NetworkInfo) intent.getParcelableExtra("networkInfo");
-/* 115 */           return cm.getNetworkInfo(info.getType());
+       public static NetworkInfo getNetworkInfoFromBroadcast(ConnectivityManager cm, Intent intent) {
+           NetworkInfo info = (NetworkInfo) intent.getParcelableExtra("networkInfo");
+           return cm.getNetworkInfo(info.getType());
                 }
             }

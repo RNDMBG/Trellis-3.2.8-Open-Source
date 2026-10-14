@@ -4,32 +4,32 @@
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             import com.google.android.gms.maps.internal.C1174r;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class CircleOptions implements SafeParcelable {
                 public static final CircleOptionsCreator CREATOR = new CircleOptionsCreator();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2290iM;
 
-                /* JADX INFO: renamed from: qf */
+                
                 private LatLng f2291qf;
 
-                /* JADX INFO: renamed from: qg */
+                
                 private double f2292qg;
 
-                /* JADX INFO: renamed from: qh */
+                
                 private float f2293qh;
 
-                /* JADX INFO: renamed from: qi */
+                
                 private int f2294qi;
 
-                /* JADX INFO: renamed from: qj */
+                
                 private int f2295qj;
 
-                /* JADX INFO: renamed from: qk */
+                
                 private float f2296qk;
 
-                /* JADX INFO: renamed from: ql */
+                
                 private boolean f2297ql;
 
                 public CircleOptions() {
@@ -66,7 +66,7 @@
                     return this;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -128,7 +128,7 @@
                     return this;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     if (C1174r.m2265cK()) {
                         C1178b.m2296a(this, out, flags);

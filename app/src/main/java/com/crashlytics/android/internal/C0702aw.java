@@ -1,11 +1,11 @@
             package com.crashlytics.android.internal;
             
-            /* JADX INFO: renamed from: com.crashlytics.android.internal.aw */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 63 */    final /* synthetic */ class C0702aw {
+            
+            
+    final  class C0702aw {
 
-                /* JADX INFO: renamed from: a */
-                static final /* synthetic */ int[] f417a = new int[EnumC0703ax.values().length];
+                
+                static final  int[] f417a = new int[EnumC0703ax.values().length];
 
                 static {
                     try {

@@ -3,17 +3,17 @@
             import android.net.ConnectivityManager;
             import android.net.NetworkInfo;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 33 */    class ConnectivityManagerCompatHoneycombMR2 {
-/* 34 */        ConnectivityManagerCompatHoneycombMR2() {
+            
+    class ConnectivityManagerCompatHoneycombMR2 {
+        ConnectivityManagerCompatHoneycombMR2() {
                 }
 
-/* 36 */        public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
-/* 37 */            NetworkInfo info = cm.getActiveNetworkInfo();
-/* 38 */            if (info == null) {
+        public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
+            NetworkInfo info = cm.getActiveNetworkInfo();
+            if (info == null) {
                         return true;
                     }
-/* 43 */            int type = info.getType();
+            int type = info.getType();
                     switch (type) {
                         case 0:
                         case 2:
@@ -27,7 +27,7 @@
                         case 1:
                         case 7:
                         case 9:
-/* 55 */                    return false;
+                    return false;
                     }
                 }
             }

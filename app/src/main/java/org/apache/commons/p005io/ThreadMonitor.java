@@ -1,41 +1,41 @@
             package org.apache.commons.p005io;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 53 */    class ThreadMonitor implements Runnable {
+            
+    class ThreadMonitor implements Runnable {
                 private final Thread thread;
                 private final long timeout;
 
-/* 54 */        public static Thread start(long timeout) {
-/* 55 */            return start(Thread.currentThread(), timeout);
+        public static Thread start(long timeout) {
+            return start(Thread.currentThread(), timeout);
                 }
 
-/* 67 */        public static Thread start(Thread thread, long timeout) {
+        public static Thread start(Thread thread, long timeout) {
                     if (timeout <= 0) {
-/* 68 */                return null;
+                return null;
                     }
-/* 70 */            ThreadMonitor timout = new ThreadMonitor(thread, timeout);
-/* 71 */            Thread monitor = new Thread(timout, ThreadMonitor.class.getSimpleName());
-/* 72 */            monitor.setDaemon(true);
-/* 73 */            monitor.start();
-/* 75 */            return monitor;
+            ThreadMonitor timout = new ThreadMonitor(thread, timeout);
+            Thread monitor = new Thread(timout, ThreadMonitor.class.getSimpleName());
+            monitor.setDaemon(true);
+            monitor.start();
+            return monitor;
                 }
 
-/* 83 */        public static void stop(Thread thread) {
-/* 84 */            if (thread != null) {
-/* 85 */                thread.interrupt();
+        public static void stop(Thread thread) {
+            if (thread != null) {
+                thread.interrupt();
                     }
                 }
 
-/* 94 */        private ThreadMonitor(Thread thread, long timeout) {
-/* 96 */            this.thread = thread;
-/* 97 */            this.timeout = timeout;
+        private ThreadMonitor(Thread thread, long timeout) {
+            this.thread = thread;
+            this.timeout = timeout;
                 }
 
-                @Override // java.lang.Runnable
-/* 107 */       public void run() {
+                @Override 
+       public void run() {
                     try {
-/* 108 */               Thread.sleep(this.timeout);
-/* 109 */               this.thread.interrupt();
+               Thread.sleep(this.timeout);
+               this.thread.interrupt();
                     } catch (InterruptedException e) {
                     }
                 }

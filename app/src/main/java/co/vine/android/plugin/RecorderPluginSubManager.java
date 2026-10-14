@@ -10,8 +10,8 @@
             import java.util.ArrayList;
             import java.util.Iterator;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 24 */    public abstract class RecorderPluginSubManager<T extends View, K extends BasicVineRecorder> extends BaseRecorderPluginManager<K> implements RecorderPlugin<T, K> {
+            
+    public abstract class RecorderPluginSubManager<T extends View, K extends BasicVineRecorder> extends BaseRecorderPluginManager<K> implements RecorderPlugin<T, K> {
                 private WeakReference<Fragment> mFragment;
                 public int mId;
                 private RecorderPluginManager<K> mParent;
@@ -21,74 +21,74 @@
 
                 public abstract T onLayout(ViewGroup viewGroup, LayoutInflater layoutInflater, Fragment fragment);
 
-/* 25 */        public RecorderPluginSubManager(String name, ArrayList<RecorderPlugin<?, K>> plugins) {
-/* 27 */            this.name = name;
-/* 28 */            this.plugins = plugins;
+        public RecorderPluginSubManager(String name, ArrayList<RecorderPlugin<?, K>> plugins) {
+            this.name = name;
+            this.plugins = plugins;
                 }
 
-                @Override // co.vine.android.plugin.BaseRecorderPluginManager, co.vine.android.plugin.RecorderPluginManager
-/* 31 */        public K getRecorder() {
-/* 32 */            return (K) this.mParent.getRecorder();
+                @Override 
+        public K getRecorder() {
+            return (K) this.mParent.getRecorder();
                 }
 
-                @Override // co.vine.android.plugin.Plugin
-/* 36 */        public int onAdded(PluginManager manager, int id) {
-/* 37 */            super.addPlugins(id, this.plugins);
-/* 38 */            this.mId = this.mNextPluginId;
-/* 39 */            this.mParent = (RecorderPluginManager) manager;
-/* 40 */            return (this.mId - id) + 1;
+                @Override 
+        public int onAdded(PluginManager manager, int id) {
+            super.addPlugins(id, this.plugins);
+            this.mId = this.mNextPluginId;
+            this.mParent = (RecorderPluginManager) manager;
+            return (this.mId - id) + 1;
                 }
 
-                @Override // co.vine.android.plugin.Plugin
-/* 44 */        public String getName() {
-/* 45 */            return this.name;
+                @Override 
+        public String getName() {
+            return this.name;
                 }
 
-                @Override // co.vine.android.plugin.Plugin
-/* 49 */        public int getId() {
-/* 50 */            return this.mId;
+                @Override 
+        public int getId() {
+            return this.mId;
                 }
 
-                @Override // co.vine.android.plugin.RecorderPlugin
-/* 54 */        public void createLayout(ViewGroup parent, LayoutInflater inflater, Fragment fragment) {
-/* 55 */            this.mFragment = new WeakReference<>(fragment);
-/* 56 */            T viewOnLayout = onLayout(parent, inflater, fragment);
-/* 57 */            if (viewOnLayout != null) {
-/* 58 */                parent.addView(viewOnLayout);
-/* 59 */                this.mView = new WeakReference<>(viewOnLayout);
+                @Override 
+        public void createLayout(ViewGroup parent, LayoutInflater inflater, Fragment fragment) {
+            this.mFragment = new WeakReference<>(fragment);
+            T viewOnLayout = onLayout(parent, inflater, fragment);
+            if (viewOnLayout != null) {
+                parent.addView(viewOnLayout);
+                this.mView = new WeakReference<>(viewOnLayout);
                     } else {
-/* 61 */                this.mView = null;
+                this.mView = null;
                     }
                 }
 
-                @Override // co.vine.android.plugin.RecorderPlugin
+                @Override 
                 @Nullable
-/* 67 */        public Fragment getFragment() {
-/* 68 */            if (this.mFragment != null) {
+        public Fragment getFragment() {
+            if (this.mFragment != null) {
                         return this.mFragment.get();
                     }
                     return null;
                 }
 
-                @Override // co.vine.android.plugin.RecorderPlugin
+                @Override 
                 @Nullable
-/* 73 */        public T getView() {
-/* 74 */            if (this.mView != null) {
+        public T getView() {
+            if (this.mView != null) {
                         return this.mView.get();
                     }
                     return null;
                 }
 
-                @Override // co.vine.android.plugin.RecorderPlugin
-/* 82 */        public void onRecorderSet(BasicVineRecorder recorder) {
+                @Override 
+        public void onRecorderSet(BasicVineRecorder recorder) {
                 }
 
-                @Override // co.vine.android.plugin.RecorderPlugin
-/* 86 */        public boolean onBackButtonPressed(boolean isEditing) {
-/* 87 */            Iterator<RecorderPlugin<?, K>> it = this.plugins.iterator();
+                @Override 
+        public boolean onBackButtonPressed(boolean isEditing) {
+            Iterator<RecorderPlugin<?, K>> it = this.plugins.iterator();
                     while (it.hasNext()) {
-/* 88 */                if (it.next().onBackButtonPressed(isEditing)) {
-/* 89 */                    return true;
+                if (it.next().onBackButtonPressed(isEditing)) {
+                    return true;
                         }
                     }
                     return false;

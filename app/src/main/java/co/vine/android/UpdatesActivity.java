@@ -7,10 +7,10 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import co.vine.android.views.SwitchInterface;
 
-/**
- * Updates section: manual check, result status and the automatic-updates
- * switch (checked on every app startup when enabled).
- */
+
+
+
+
 public class UpdatesActivity extends BaseControllerActionBarActivity implements View.OnClickListener {
 
     private TextView mStatus;

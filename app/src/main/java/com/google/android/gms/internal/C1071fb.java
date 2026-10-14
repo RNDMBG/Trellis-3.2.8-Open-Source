@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.fb */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1071fb implements Parcelable.Creator<C1070fa> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m1936a(C1070fa c1070fa, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1140a(parcel, 1, c1070fa.getRequestId(), false);
@@ -24,22 +24,22 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: ac */
+                
                 public C1070fa[] m1937ac(int i) {
                     return new C1070fa[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1070fa createFromParcel(Parcel x0) {
+                @Override 
+                public  C1070fa createFromParcel(Parcel x0) {
                     return m1938z(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C1070fa[] newArray(int x0) {
+                @Override 
+                public  C1070fa[] newArray(int x0) {
                     return m1937ac(x0);
                 }
 
-                /* JADX INFO: renamed from: z */
+                
                 public C1070fa m1938z(Parcel parcel) {
                     int iM1111j = C0901a.m1111j(parcel);
                     int iM1105f = 0;

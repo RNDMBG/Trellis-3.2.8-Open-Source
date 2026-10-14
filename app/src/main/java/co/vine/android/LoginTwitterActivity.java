@@ -31,8 +31,8 @@
             import co.vine.android.widget.Typefaces;
             import co.vine.android.widgets.PromptDialogSupportFragment;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 39 */    public class LoginTwitterActivity extends BaseControllerActionBarActivity implements SpanClickListener {
+            
+    public class LoginTwitterActivity extends BaseControllerActionBarActivity implements SpanClickListener {
                 private static final int DIALOG_ACTIVATE_ACCOUNT = 1;
                 public static final String EXTRA_FINISH = "finish";
                 public static final String EXTRA_SCREEN_NAME = "screen_name";
@@ -48,244 +48,244 @@
                 private EditText mUsername;
                 private VineLogin mVineLogin;
 
-/* 40 */        static /* synthetic */ boolean access$000(LoginTwitterActivity x0) {
-/* 41 */            return x0.validateAndDisplayToastIfCredentialsInvalid();
+        static  boolean access$000(LoginTwitterActivity x0) {
+            return x0.validateAndDisplayToastIfCredentialsInvalid();
                 }
 
-/* 40 */        static /* synthetic */ void access$100(LoginTwitterActivity x0, boolean x1) {
-/* 41 */            x0.login(x1);
+        static  void access$100(LoginTwitterActivity x0, boolean x1) {
+            x0.login(x1);
                 }
 
-/* 40 */        static /* synthetic */ boolean access$300(LoginTwitterActivity x0) {
-/* 41 */            return x0.mFinish;
+        static  boolean access$300(LoginTwitterActivity x0) {
+            return x0.mFinish;
                 }
 
-/* 40 */        static /* synthetic */ VineLogin access$402(LoginTwitterActivity x0, VineLogin x1) {
-/* 41 */            x0.mVineLogin = x1;
+        static  VineLogin access$402(LoginTwitterActivity x0, VineLogin x1) {
+            x0.mVineLogin = x1;
                     return x1;
                 }
 
-/* 40 */        static /* synthetic */ PromptDialogSupportFragment.OnDialogDoneListener access$500(LoginTwitterActivity x0) {
-/* 41 */            return x0.mActivateAccountDialogDoneListener;
+        static  PromptDialogSupportFragment.OnDialogDoneListener access$500(LoginTwitterActivity x0) {
+            return x0.mActivateAccountDialogDoneListener;
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 67 */        public void onCreate(Bundle savedInstanceState) {
-/* 68 */            super.onCreate(savedInstanceState, C0257R.layout.xauth, false);
-/* 70 */            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.login_xauth_title, (Boolean) true, (Boolean) true);
-/* 72 */            this.mUsername = (EditText) findViewById(C0257R.id.login_username);
-/* 73 */            this.mUsername.setTypeface(Typefaces.get(this).getContentTypeface(0, 2));
-/* 74 */            this.mPassword = (EditText) findViewById(C0257R.id.login_password);
-/* 75 */            this.mPassword.setTypeface(Typefaces.get(this).getContentTypeface(0, 2));
-/* 76 */            this.mPassword.setOnEditorActionListener(new C02431());
-/* 87 */            this.mFinish = getIntent().getBooleanExtra("finish", false);
-/* 89 */            this.mAppSessionListener = new LoginTwitterListener(this, null);
-/* 91 */            TextView mTos = (TextView) findViewById(C0257R.id.tos_line_2);
-/* 92 */            StyleSpan[] boldStyle = {new StyleSpan(1), new StyleSpan(1)};
-/* 93 */            Spanned spanned = Util.getSpannedText(boldStyle, getString(C0257R.string.login_xauth_tos_line_2), CommonUtil.MARKER_QUOTES);
-/* 94 */            mTos.setText(spanned);
-/* 95 */            mTos.setMovementMethod(LinkMovementMethod.getInstance());
-/* 97 */            Spannable clickSpannable = (Spannable) mTos.getText();
-/* 98 */            StyleSpan[] spans = (StyleSpan[]) spanned.getSpans(0, spanned.length(), StyleSpan.class);
-/* 99 */            Resources res = getResources();
-/* 102 */           int start = spanned.getSpanStart(spans[0]);
-/* 103 */           int end = spanned.getSpanEnd(spans[0]);
-/* 104 */           StyledClickableSpan clickableSpan = new StyledClickableSpan(2, null, this);
-/* 105 */           clickableSpan.setColor(res.getColor(C0257R.color.text_fineprint));
-/* 106 */           Util.safeSetSpan(clickSpannable, clickableSpan, start, end, 33);
-/* 108 */           if (savedInstanceState != null && savedInstanceState.containsKey(STATE_VINE_LOGIN)) {
-/* 109 */               this.mVineLogin = (VineLogin) savedInstanceState.getParcelable(STATE_VINE_LOGIN);
+                @Override 
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState, C0257R.layout.xauth, false);
+            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.login_xauth_title, (Boolean) true, (Boolean) true);
+            this.mUsername = (EditText) findViewById(C0257R.id.login_username);
+            this.mUsername.setTypeface(Typefaces.get(this).getContentTypeface(0, 2));
+            this.mPassword = (EditText) findViewById(C0257R.id.login_password);
+            this.mPassword.setTypeface(Typefaces.get(this).getContentTypeface(0, 2));
+            this.mPassword.setOnEditorActionListener(new C02431());
+            this.mFinish = getIntent().getBooleanExtra("finish", false);
+            this.mAppSessionListener = new LoginTwitterListener(this, null);
+            TextView mTos = (TextView) findViewById(C0257R.id.tos_line_2);
+            StyleSpan[] boldStyle = {new StyleSpan(1), new StyleSpan(1)};
+            Spanned spanned = Util.getSpannedText(boldStyle, getString(C0257R.string.login_xauth_tos_line_2), CommonUtil.MARKER_QUOTES);
+            mTos.setText(spanned);
+            mTos.setMovementMethod(LinkMovementMethod.getInstance());
+            Spannable clickSpannable = (Spannable) mTos.getText();
+            StyleSpan[] spans = (StyleSpan[]) spanned.getSpans(0, spanned.length(), StyleSpan.class);
+            Resources res = getResources();
+           int start = spanned.getSpanStart(spans[0]);
+           int end = spanned.getSpanEnd(spans[0]);
+           StyledClickableSpan clickableSpan = new StyledClickableSpan(2, null, this);
+           clickableSpan.setColor(res.getColor(C0257R.color.text_fineprint));
+           Util.safeSetSpan(clickSpannable, clickableSpan, start, end, 33);
+           if (savedInstanceState != null && savedInstanceState.containsKey(STATE_VINE_LOGIN)) {
+               this.mVineLogin = (VineLogin) savedInstanceState.getParcelable(STATE_VINE_LOGIN);
                     }
-/* 113 */           int start2 = spanned.getSpanStart(spans[1]);
-/* 114 */           int end2 = spanned.getSpanEnd(spans[1]);
-/* 115 */           StyledClickableSpan clickableSpan2 = new StyledClickableSpan(1, null, this);
-/* 116 */           clickableSpan2.setColor(res.getColor(C0257R.color.text_fineprint));
-/* 117 */           Util.safeSetSpan(clickSpannable, clickableSpan2, start2, end2, 33);
-/* 118 */           FlurryUtils.trackNuxStarted("twitter-xauth");
+           int start2 = spanned.getSpanStart(spans[1]);
+           int end2 = spanned.getSpanEnd(spans[1]);
+           StyledClickableSpan clickableSpan2 = new StyledClickableSpan(1, null, this);
+           clickableSpan2.setColor(res.getColor(C0257R.color.text_fineprint));
+           Util.safeSetSpan(clickSpannable, clickableSpan2, start2, end2, 33);
+           FlurryUtils.trackNuxStarted("twitter-xauth");
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.LoginTwitterActivity$1 */
-/* 74 */        class C02431 implements TextView.OnEditorActionListener {
-/* 75 */            C02431() {
+                
+        class C02431 implements TextView.OnEditorActionListener {
+            C02431() {
                     }
 
-                    @Override // android.widget.TextView.OnEditorActionListener
-/* 78 */            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-/* 79 */                if ((event != null && event.getKeyCode() == 66) || (actionId == 6 && LoginTwitterActivity.access$000(LoginTwitterActivity.this))) {
-/* 81 */                    LoginTwitterActivity.access$100(LoginTwitterActivity.this, false);
+                    @Override 
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && event.getKeyCode() == 66) || (actionId == 6 && LoginTwitterActivity.access$000(LoginTwitterActivity.this))) {
+                    LoginTwitterActivity.access$100(LoginTwitterActivity.this, false);
                         }
                         return false;
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 122 */       public void onSaveInstanceState(Bundle outState) {
-/* 123 */           super.onSaveInstanceState(outState);
-/* 124 */           if (this.mVineLogin != null) {
-/* 125 */               outState.putParcelable(STATE_VINE_LOGIN, this.mVineLogin);
+                @Override 
+       public void onSaveInstanceState(Bundle outState) {
+           super.onSaveInstanceState(outState);
+           if (this.mVineLogin != null) {
+               outState.putParcelable(STATE_VINE_LOGIN, this.mVineLogin);
                     }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.app.Activity
-/* 130 */       public boolean onCreateOptionsMenu(Menu menu) {
-/* 131 */           getMenuInflater().inflate(C0257R.menu.login, menu);
-/* 132 */           return true;
+                @Override 
+       public boolean onCreateOptionsMenu(Menu menu) {
+           getMenuInflater().inflate(C0257R.menu.login, menu);
+           return true;
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.app.Activity
-/* 136 */       public boolean onOptionsItemSelected(MenuItem item) {
-/* 137 */           if (item.getItemId() != 2131427943 || !validateAndDisplayToastIfCredentialsInvalid()) {
+                @Override 
+       public boolean onOptionsItemSelected(MenuItem item) {
+           if (item.getItemId() != 2131427943 || !validateAndDisplayToastIfCredentialsInvalid()) {
                         return super.onOptionsItemSelected(item);
                     }
-/* 138 */           login(false);
-/* 139 */           return true;
+           login(false);
+           return true;
                 }
 
-                @Override // co.vine.android.widget.SpanClickListener
-/* 146 */       public void onSpanClicked(View view, int type, Object tag) {
-/* 147 */           Intent intent = new Intent(this, (Class<?>) WebViewActivity.class);
+                @Override 
+       public void onSpanClicked(View view, int type, Object tag) {
+           Intent intent = new Intent(this, (Class<?>) WebViewActivity.class);
                     switch (type) {
                         case 1:
-/* 150 */                   intent.putExtra("type", 1);
+                   intent.putExtra("type", 1);
                             break;
                         case 2:
-/* 153 */                   intent.putExtra("type", 2);
+                   intent.putExtra("type", 2);
                             break;
                         default:
-/* 159 */                   return;
+                   return;
                     }
-/* 158 */           startActivity(intent);
+           startActivity(intent);
                 }
 
-/* 161 */       private boolean validateAndDisplayToastIfCredentialsInvalid() {
-/* 162 */           if (this.mUsername.getText().toString().isEmpty()) {
-/* 163 */               Util.showCenteredToast(this, C0257R.string.login_twitter_empty_username_email);
+       private boolean validateAndDisplayToastIfCredentialsInvalid() {
+           if (this.mUsername.getText().toString().isEmpty()) {
+               Util.showCenteredToast(this, C0257R.string.login_twitter_empty_username_email);
                         return false;
                     }
-/* 165 */           if (this.mPassword.getText().toString().isEmpty()) {
-/* 166 */               Util.showCenteredToast(this, C0257R.string.login_empty_password);
+           if (this.mPassword.getText().toString().isEmpty()) {
+               Util.showCenteredToast(this, C0257R.string.login_empty_password);
                         return false;
                     }
-/* 169 */           return true;
+           return true;
                 }
 
-/* 178 */       private void login(boolean reactivate) {
-/* 179 */           ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
-/* 180 */           dialog.setMessage(getString(C0257R.string.sign_up_authorizing));
-/* 181 */           dialog.setProgress(0);
-/* 183 */           DialogUtils.showDialogUnsafe(dialog);
-/* 184 */           this.mProgressDialog = dialog;
-/* 185 */           if (!reactivate) {
-/* 186 */               this.mAppController.loginWithxAuth(this.mUsername.getText().toString(), this.mPassword.getText().toString());
+       private void login(boolean reactivate) {
+           ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
+           dialog.setMessage(getString(C0257R.string.sign_up_authorizing));
+           dialog.setProgress(0);
+           DialogUtils.showDialogUnsafe(dialog);
+           this.mProgressDialog = dialog;
+           if (!reactivate) {
+               this.mAppController.loginWithxAuth(this.mUsername.getText().toString(), this.mPassword.getText().toString());
                     } else if (this.mVineLogin != null) {
-/* 188 */               VineLogin login = this.mVineLogin;
-/* 189 */               this.mAppController.loginCheckTwitter(login.twitterUsername, login.twitterToken, login.twitterSecret, login.twitterUserId, true);
+               VineLogin login = this.mVineLogin;
+               this.mAppController.loginCheckTwitter(login.twitterUsername, login.twitterToken, login.twitterSecret, login.twitterUserId, true);
                     } else {
-/* 191 */               Util.showCenteredToast(this, C0257R.string.error_xauth);
+               Util.showCenteredToast(this, C0257R.string.error_xauth);
                     }
                 }
 
-/* 193 */       private class LoginTwitterListener extends AppSessionListener {
-/* 194 */           private LoginTwitterListener() {
+       private class LoginTwitterListener extends AppSessionListener {
+           private LoginTwitterListener() {
                     }
 
-/* 194 */           /* synthetic */ LoginTwitterListener(LoginTwitterActivity x0, C02431 x1) {
-/* 195 */               this();
+            LoginTwitterListener(LoginTwitterActivity x0, C02431 x1) {
+               this();
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 198 */           public void onTwitterxAuthComplete(String reqId, int statusCode, String reasonPhrase, VineLogin login) {
-/* 199 */               if (LoginTwitterActivity.access$300(LoginTwitterActivity.this)) {
-/* 200 */                   if (statusCode == 200) {
-/* 204 */                       if (!LoginTwitterActivity.this.mAppController.isLoggedIn()) {
-/* 205 */                           LoginTwitterActivity.this.mAppController.loginCheckTwitter(login.twitterUsername, login.twitterToken, login.twitterSecret, login.twitterUserId, false);
-/* 234 */                           return;
+                    @Override 
+           public void onTwitterxAuthComplete(String reqId, int statusCode, String reasonPhrase, VineLogin login) {
+               if (LoginTwitterActivity.access$300(LoginTwitterActivity.this)) {
+                   if (statusCode == 200) {
+                       if (!LoginTwitterActivity.this.mAppController.isLoggedIn()) {
+                           LoginTwitterActivity.this.mAppController.loginCheckTwitter(login.twitterUsername, login.twitterToken, login.twitterSecret, login.twitterUserId, false);
+                           return;
                                 }
-/* 208 */                       Intent intent = new Intent();
-/* 209 */                       intent.putExtra("token", login.twitterToken);
-/* 210 */                       intent.putExtra("secret", login.twitterSecret);
-/* 211 */                       intent.putExtra("user_id", login.twitterUserId);
-/* 212 */                       intent.putExtra("screen_name", login.twitterUsername);
-/* 213 */                       LoginTwitterActivity.this.setResult(-1, intent);
-/* 214 */                       LoginTwitterActivity.this.finish();
-/* 234 */                       return;
+                       Intent intent = new Intent();
+                       intent.putExtra("token", login.twitterToken);
+                       intent.putExtra("secret", login.twitterSecret);
+                       intent.putExtra("user_id", login.twitterUserId);
+                       intent.putExtra("screen_name", login.twitterUsername);
+                       LoginTwitterActivity.this.setResult(-1, intent);
+                       LoginTwitterActivity.this.finish();
+                       return;
                             }
-/* 217 */                   LoginTwitterActivity.this.dismissDialog();
-/* 218 */                   Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.find_friends_twitter_xauth_error);
-/* 234 */                   return;
+                   LoginTwitterActivity.this.dismissDialog();
+                   Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.find_friends_twitter_xauth_error);
+                   return;
                         }
-/* 221 */               if (statusCode == 200 && login != null) {
-/* 222 */                   LoginTwitterActivity.access$402(LoginTwitterActivity.this, login);
-/* 223 */                   LoginTwitterActivity.this.mAppController.loginCheckTwitter(login.twitterUsername, login.twitterToken, login.twitterSecret, login.twitterUserId, false);
-/* 234 */                   return;
+               if (statusCode == 200 && login != null) {
+                   LoginTwitterActivity.access$402(LoginTwitterActivity.this, login);
+                   LoginTwitterActivity.this.mAppController.loginCheckTwitter(login.twitterUsername, login.twitterToken, login.twitterSecret, login.twitterUserId, false);
+                   return;
                         }
-/* 226 */               LoginTwitterActivity.this.dismissDialog();
-/* 227 */               if (!TextUtils.isEmpty(reasonPhrase)) {
-/* 228 */                   Util.showCenteredToast(LoginTwitterActivity.this, reasonPhrase);
+               LoginTwitterActivity.this.dismissDialog();
+               if (!TextUtils.isEmpty(reasonPhrase)) {
+                   Util.showCenteredToast(LoginTwitterActivity.this, reasonPhrase);
                         } else {
-/* 230 */                   Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.error_xauth);
+                   Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.error_xauth);
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 239 */           public void onCheckTwitterComplete(String reqId, int statusCode, String reasonPhrase, int errorCode, boolean accountExists, VineUser user, VineLogin login) {
-/* 240 */               if (accountExists && statusCode == 200) {
+                    @Override 
+           public void onCheckTwitterComplete(String reqId, int statusCode, String reasonPhrase, int errorCode, boolean accountExists, VineUser user, VineLogin login) {
+               if (accountExists && statusCode == 200) {
                             try {
-/* 243 */                       LoginTwitterActivity.this.mAppController.loginComplete(LoginTwitterActivity.this.mAppController.getActiveSession(), statusCode, user.username, null, login, user.avatarUrl);
-/* 245 */                       if (LoginTwitterActivity.access$300(LoginTwitterActivity.this)) {
-/* 246 */                           LoginTwitterActivity.this.finish();
+                       LoginTwitterActivity.this.mAppController.loginComplete(LoginTwitterActivity.this.mAppController.getActiveSession(), statusCode, user.username, null, login, user.avatarUrl);
+                       if (LoginTwitterActivity.access$300(LoginTwitterActivity.this)) {
+                           LoginTwitterActivity.this.finish();
                                 } else {
-/* 248 */                           StartActivity.toStart(LoginTwitterActivity.this);
+                           StartActivity.toStart(LoginTwitterActivity.this);
                                 }
-/* 274 */                       return;
+                       return;
                             } catch (VineLoggingException e) {
-/* 251 */                       Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.failed_to_add_account_on_device);
-/* 252 */                       CrashUtil.logException(e);
-/* 253 */                       LoginTwitterActivity.this.finish();
-/* 274 */                       return;
+                       Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.failed_to_add_account_on_device);
+                       CrashUtil.logException(e);
+                       LoginTwitterActivity.this.finish();
+                       return;
                             }
                         }
-/* 256 */               LoginTwitterActivity.this.dismissDialog();
-/* 257 */               if (errorCode == VineKnownErrors.BAD_CREDENTIALS.code) {
-/* 259 */                   Bundle extras = new Bundle();
-/* 260 */                   extras.putParcelable("user", login);
-/* 261 */                   LoginTwitterActivity.this.startActivity(SignUpPagerActivity.getIntent(LoginTwitterActivity.this, extras));
+               LoginTwitterActivity.this.dismissDialog();
+               if (errorCode == VineKnownErrors.BAD_CREDENTIALS.code) {
+                   Bundle extras = new Bundle();
+                   extras.putParcelable("user", login);
+                   LoginTwitterActivity.this.startActivity(SignUpPagerActivity.getIntent(LoginTwitterActivity.this, extras));
                         } else {
-/* 262 */                   if (errorCode == VineKnownErrors.ACCOUNT_DEACTIVATED.code) {
-/* 263 */                       PromptDialogSupportFragment dialogFragment = PromptDialogSupportFragment.newInstance(1);
-/* 264 */                       dialogFragment.setMessage(C0257R.string.settings_activate_account_dialog);
-/* 265 */                       dialogFragment.setTitle(C0257R.string.settings_activate_account_title);
-/* 266 */                       dialogFragment.setNegativeButton(C0257R.string.cancel);
-/* 267 */                       dialogFragment.setPositiveButton(C0257R.string.settings_activate_account_confirm);
-/* 268 */                       dialogFragment.setListener(LoginTwitterActivity.access$500(LoginTwitterActivity.this));
-/* 269 */                       dialogFragment.show(LoginTwitterActivity.this.getSupportFragmentManager());
-/* 274 */                       return;
+                   if (errorCode == VineKnownErrors.ACCOUNT_DEACTIVATED.code) {
+                       PromptDialogSupportFragment dialogFragment = PromptDialogSupportFragment.newInstance(1);
+                       dialogFragment.setMessage(C0257R.string.settings_activate_account_dialog);
+                       dialogFragment.setTitle(C0257R.string.settings_activate_account_title);
+                       dialogFragment.setNegativeButton(C0257R.string.cancel);
+                       dialogFragment.setPositiveButton(C0257R.string.settings_activate_account_confirm);
+                       dialogFragment.setListener(LoginTwitterActivity.access$500(LoginTwitterActivity.this));
+                       dialogFragment.show(LoginTwitterActivity.this.getSupportFragmentManager());
+                       return;
                             }
-/* 271 */                   Util.showCenteredToast(LoginTwitterActivity.this, reasonPhrase);
+                   Util.showCenteredToast(LoginTwitterActivity.this, reasonPhrase);
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.LoginTwitterActivity$2 */
-/* 276 */       class C02442 implements PromptDialogSupportFragment.OnDialogDoneListener {
-/* 277 */           C02442() {
+                
+       class C02442 implements PromptDialogSupportFragment.OnDialogDoneListener {
+           C02442() {
                     }
 
-                    @Override // co.vine.android.widgets.PromptDialogFragment.OnDialogDoneListener
-/* 280 */           public void onDialogDone(DialogInterface dialog, int id, int which) {
-/* 281 */               if (which == -1) {
-/* 282 */                   LoginTwitterActivity.access$100(LoginTwitterActivity.this, true);
+                    @Override 
+           public void onDialogDone(DialogInterface dialog, int id, int which) {
+               if (which == -1) {
+                   LoginTwitterActivity.access$100(LoginTwitterActivity.this, true);
                         }
                     }
                 }
 
-/* 287 */       public static Intent getIntent(Context context) {
-/* 288 */           return new Intent(context, (Class<?>) LoginTwitterActivity.class);
+       public static Intent getIntent(Context context) {
+           return new Intent(context, (Class<?>) LoginTwitterActivity.class);
                 }
 
-/* 291 */       public static Intent getIntentWithFinish(Context context) {
-/* 292 */           Intent intent = new Intent(context, (Class<?>) LoginTwitterActivity.class);
-/* 293 */           intent.putExtra("finish", true);
-/* 294 */           return intent;
+       public static Intent getIntentWithFinish(Context context) {
+           Intent intent = new Intent(context, (Class<?>) LoginTwitterActivity.class);
+           intent.putExtra("finish", true);
+           return intent;
                 }
             }

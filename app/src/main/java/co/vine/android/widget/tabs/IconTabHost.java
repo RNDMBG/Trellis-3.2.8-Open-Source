@@ -4,42 +4,42 @@
             import android.util.AttributeSet;
             import android.widget.TabHost;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 14 */    public class IconTabHost extends TabHost {
+            
+    public class IconTabHost extends TabHost {
                 private OnTabClickedListener mOnTabClickedListener;
 
                 public interface OnTabClickedListener {
                     void onCurrentTabClicked();
                 }
 
-/* 15 */        public IconTabHost(Context context, AttributeSet attrs) {
-/* 16 */            super(context, attrs);
+        public IconTabHost(Context context, AttributeSet attrs) {
+            super(context, attrs);
                 }
 
-/* 19 */        public void setOnTabClickedListener(OnTabClickedListener listener) {
-/* 20 */            this.mOnTabClickedListener = listener;
+        public void setOnTabClickedListener(OnTabClickedListener listener) {
+            this.mOnTabClickedListener = listener;
                 }
 
-                @Override // android.widget.TabHost, android.view.ViewGroup, android.view.View
-/* 25 */        public void dispatchWindowFocusChanged(boolean hasFocus) {
-/* 26 */            if (getCurrentView() != null) {
-/* 27 */                super.dispatchWindowFocusChanged(hasFocus);
+                @Override 
+        public void dispatchWindowFocusChanged(boolean hasFocus) {
+            if (getCurrentView() != null) {
+                super.dispatchWindowFocusChanged(hasFocus);
                     }
                 }
 
-                @Override // android.widget.TabHost
-/* 32 */        public void setCurrentTab(int index) {
-/* 33 */            if (index == getCurrentTab()) {
-/* 34 */                if (this.mOnTabClickedListener != null) {
-/* 35 */                    this.mOnTabClickedListener.onCurrentTabClicked();
-/* 40 */                    return;
+                @Override 
+        public void setCurrentTab(int index) {
+            if (index == getCurrentTab()) {
+                if (this.mOnTabClickedListener != null) {
+                    this.mOnTabClickedListener.onCurrentTabClicked();
+                    return;
                         }
-/* 40 */                return;
+                return;
                     }
-/* 38 */            super.setCurrentTab(index);
+            super.setCurrentTab(index);
                 }
 
-/* 42 */        public void setTabExplicit(int index) {
-/* 43 */            super.setCurrentTab(index);
+        public void setTabExplicit(int index) {
+            super.setCurrentTab(index);
                 }
             }

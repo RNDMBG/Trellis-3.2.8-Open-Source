@@ -9,25 +9,25 @@
             import com.google.android.gms.games.GamesClient;
             import com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.eq */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1059eq extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.eq$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1059eq {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.internal.eq$a$a, reason: collision with other inner class name */
+                    
                     private static class C1333a implements InterfaceC1059eq {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f1848dG;
 
                         C1333a(IBinder iBinder) {
                             this.f1848dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: M */
+                        @Override 
+                        
                         public void mo1742M(int i) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -45,8 +45,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: N */
+                        @Override 
+                        
                         public void mo1743N(int i) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -64,8 +64,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: O */
+                        @Override 
+                        
                         public void mo1744O(int i) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -83,8 +83,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: P */
+                        @Override 
+                        
                         public void mo1745P(int i) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -102,8 +102,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo1746a(int i, int i2, String str) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -123,8 +123,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo1747a(int i, String str, boolean z) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -144,8 +144,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo1748a(C0891d c0891d, C0891d c0891d2) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -174,8 +174,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo1749a(C0891d c0891d, String[] strArr) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -199,13 +199,13 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f1848dG;
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: b */
+                        @Override 
+                        
                         public void mo1750b(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -228,8 +228,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: b */
+                        @Override 
+                        
                         public void mo1751b(C0891d c0891d, String[] strArr) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -253,8 +253,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: c */
+                        @Override 
+                        
                         public void mo1752c(int i, String str) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -273,8 +273,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: c */
+                        @Override 
+                        
                         public void mo1753c(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -297,8 +297,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: c */
+                        @Override 
+                        
                         public void mo1754c(C0891d c0891d, String[] strArr) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -322,8 +322,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: d */
+                        @Override 
+                        
                         public void mo1755d(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -346,8 +346,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: d */
+                        @Override 
+                        
                         public void mo1756d(C0891d c0891d, String[] strArr) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -371,8 +371,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: e */
+                        @Override 
+                        
                         public void mo1757e(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -395,8 +395,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: e */
+                        @Override 
+                        
                         public void mo1758e(C0891d c0891d, String[] strArr) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -420,8 +420,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: f */
+                        @Override 
+                        
                         public void mo1759f(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -444,8 +444,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: f */
+                        @Override 
+                        
                         public void mo1760f(C0891d c0891d, String[] strArr) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -469,8 +469,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: g */
+                        @Override 
+                        
                         public void mo1761g(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -493,8 +493,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: h */
+                        @Override 
+                        
                         public void mo1762h(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -517,8 +517,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: i */
+                        @Override 
+                        
                         public void mo1763i(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -541,8 +541,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: j */
+                        @Override 
+                        
                         public void mo1764j(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -565,8 +565,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: k */
+                        @Override 
+                        
                         public void mo1765k(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -589,8 +589,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: l */
+                        @Override 
+                        
                         public void mo1766l(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -613,8 +613,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: m */
+                        @Override 
+                        
                         public void mo1767m(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -637,8 +637,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: n */
+                        @Override 
+                        
                         public void mo1768n(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -661,8 +661,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: o */
+                        @Override 
+                        
                         public void mo1769o(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -685,7 +685,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
+                        @Override 
                         public void onAchievementUpdated(int statusCode, String achievementId) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -704,7 +704,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
+                        @Override 
                         public void onLeftRoom(int statusCode, String roomId) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -723,7 +723,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
+                        @Override 
                         public void onP2PConnected(String participantId) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -741,7 +741,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
+                        @Override 
                         public void onP2PDisconnected(String participantId) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -759,7 +759,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
+                        @Override 
                         public void onRealTimeMessageReceived(RealTimeMessage message) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -782,7 +782,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
+                        @Override 
                         public void onSignOutComplete() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -799,8 +799,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: p */
+                        @Override 
+                        
                         public void mo1770p(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -823,8 +823,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: q */
+                        @Override 
+                        
                         public void mo1771q(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -847,8 +847,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: r */
+                        @Override 
+                        
                         public void mo1772r(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -871,8 +871,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: s */
+                        @Override 
+                        
                         public void mo1773s(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -895,8 +895,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: t */
+                        @Override 
+                        
                         public void mo1774t(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -919,8 +919,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: u */
+                        @Override 
+                        
                         public void mo1775u(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -943,8 +943,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: v */
+                        @Override 
+                        
                         public void mo1776v(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -967,8 +967,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1059eq
-                        /* JADX INFO: renamed from: w */
+                        @Override 
+                        
                         public void mo1777w(C0891d c0891d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -996,7 +996,7 @@
                         attachInterface(this, "com.google.android.gms.games.internal.IGamesCallbacks");
                     }
 
-                    /* JADX INFO: renamed from: B */
+                    
                     public static InterfaceC1059eq m1805B(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -1005,12 +1005,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1059eq)) ? new C1333a(iBinder) : (InterfaceC1059eq) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
                         switch (i) {
                             case 5001:
@@ -1213,7 +1213,7 @@
                                 mo1745P(parcel.readInt());
                                 parcel2.writeNoException();
                                 return true;
-                            case GamesClient.STATUS_MULTIPLAYER_ERROR_NOT_TRUSTED_TESTER /* 6001 */:
+                            case GamesClient.STATUS_MULTIPLAYER_ERROR_NOT_TRUSTED_TESTER :
                                 parcel.enforceInterface("com.google.android.gms.games.internal.IGamesCallbacks");
                                 onP2PConnected(parcel.readString());
                                 parcel2.writeNoException();
@@ -1232,88 +1232,88 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: M */
+                
                 void mo1742M(int i) throws RemoteException;
 
-                /* JADX INFO: renamed from: N */
+                
                 void mo1743N(int i) throws RemoteException;
 
-                /* JADX INFO: renamed from: O */
+                
                 void mo1744O(int i) throws RemoteException;
 
-                /* JADX INFO: renamed from: P */
+                
                 void mo1745P(int i) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo1746a(int i, int i2, String str) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo1747a(int i, String str, boolean z) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo1748a(C0891d c0891d, C0891d c0891d2) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo1749a(C0891d c0891d, String[] strArr) throws RemoteException;
 
-                /* JADX INFO: renamed from: b */
+                
                 void mo1750b(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: b */
+                
                 void mo1751b(C0891d c0891d, String[] strArr) throws RemoteException;
 
-                /* JADX INFO: renamed from: c */
+                
                 void mo1752c(int i, String str) throws RemoteException;
 
-                /* JADX INFO: renamed from: c */
+                
                 void mo1753c(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: c */
+                
                 void mo1754c(C0891d c0891d, String[] strArr) throws RemoteException;
 
-                /* JADX INFO: renamed from: d */
+                
                 void mo1755d(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: d */
+                
                 void mo1756d(C0891d c0891d, String[] strArr) throws RemoteException;
 
-                /* JADX INFO: renamed from: e */
+                
                 void mo1757e(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: e */
+                
                 void mo1758e(C0891d c0891d, String[] strArr) throws RemoteException;
 
-                /* JADX INFO: renamed from: f */
+                
                 void mo1759f(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: f */
+                
                 void mo1760f(C0891d c0891d, String[] strArr) throws RemoteException;
 
-                /* JADX INFO: renamed from: g */
+                
                 void mo1761g(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: h */
+                
                 void mo1762h(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: i */
+                
                 void mo1763i(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: j */
+                
                 void mo1764j(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: k */
+                
                 void mo1765k(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: l */
+                
                 void mo1766l(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: m */
+                
                 void mo1767m(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: n */
+                
                 void mo1768n(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: o */
+                
                 void mo1769o(C0891d c0891d) throws RemoteException;
 
                 void onAchievementUpdated(int i, String str) throws RemoteException;
@@ -1328,27 +1328,27 @@
 
                 void onSignOutComplete() throws RemoteException;
 
-                /* JADX INFO: renamed from: p */
+                
                 void mo1770p(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: q */
+                
                 void mo1771q(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: r */
+                
                 void mo1772r(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: s */
+                
                 void mo1773s(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: t */
+                
                 void mo1774t(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: u */
+                
                 void mo1775u(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: v */
+                
                 void mo1776v(C0891d c0891d) throws RemoteException;
 
-                /* JADX INFO: renamed from: w */
+                
                 void mo1777w(C0891d c0891d) throws RemoteException;
             }

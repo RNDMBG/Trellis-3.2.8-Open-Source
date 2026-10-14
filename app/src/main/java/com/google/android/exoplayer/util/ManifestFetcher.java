@@ -7,8 +7,8 @@
             import java.net.HttpURLConnection;
             import java.net.URL;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 31 */    public abstract class ManifestFetcher<T> extends AsyncTask<String, Void, T> {
+            
+    public abstract class ManifestFetcher<T> extends AsyncTask<String, Void, T> {
                 public static final int DEFAULT_HTTP_TIMEOUT_MILLIS = 8000;
                 private final ManifestCallback<T> callback;
                 private volatile String contentId;
@@ -24,59 +24,59 @@
                 protected abstract T parse(InputStream inputStream, String str, String str2, Uri uri) throws IOException;
 
 
-/* 71 */        public ManifestFetcher(ManifestCallback<T> callback) {
-/* 72 */            this(callback, 8000);
+        public ManifestFetcher(ManifestCallback<T> callback) {
+            this(callback, 8000);
                 }
 
-/* 78 */        public ManifestFetcher(ManifestCallback<T> callback, int timeoutMillis) {
-/* 80 */            this.callback = callback;
-/* 81 */            this.timeoutMillis = timeoutMillis;
+        public ManifestFetcher(ManifestCallback<T> callback, int timeoutMillis) {
+            this.callback = callback;
+            this.timeoutMillis = timeoutMillis;
                 }
 
-                /* JADX INFO: renamed from: doInBackground, reason: avoid collision after fix types in other method */
-/* 86 */        protected final T doInBackground(String... data) {
+                
+        protected final T doInBackground(String... data) {
                     try {
-/* 87 */                this.contentId = data.length > 1 ? data[1] : null;
-/* 88 */                String urlString = data[0];
-/* 90 */                InputStream inputStream = null;
+                this.contentId = data.length > 1 ? data[1] : null;
+                String urlString = data[0];
+                InputStream inputStream = null;
                         try {
-/* 92 */                    Uri baseUrl = Util.parseBaseUri(urlString);
-/* 93 */                    HttpURLConnection connection = configureHttpConnection(new URL(urlString));
-/* 94 */                    inputStream = connection.getInputStream();
-/* 95 */                    String inputEncoding = connection.getContentEncoding();
-/* 96 */                    T t = parse(inputStream, inputEncoding, this.contentId, baseUrl);
-/* 98 */                    if (inputStream != null) {
-/* 99 */                        inputStream.close();
-/* 104 */                       return t;
+                    Uri baseUrl = Util.parseBaseUri(urlString);
+                    HttpURLConnection connection = configureHttpConnection(new URL(urlString));
+                    inputStream = connection.getInputStream();
+                    String inputEncoding = connection.getContentEncoding();
+                    T t = parse(inputStream, inputEncoding, this.contentId, baseUrl);
+                    if (inputStream != null) {
+                        inputStream.close();
+                       return t;
                             }
-/* 104 */                   return t;
+                   return t;
                         } catch (Throwable th) {
                             if (inputStream != null) {
-/* 99 */                        inputStream.close();
+                        inputStream.close();
                             }
                             throw th;
                         }
                     } catch (Exception e) {
-/* 103 */               this.exception = e;
+               this.exception = e;
                         return null;
                     }
                 }
 
-                @Override // android.os.AsyncTask
-/* 109 */       protected final void onPostExecute(T manifest) {
-/* 110 */           if (this.exception != null) {
-/* 111 */               this.callback.onManifestError(this.contentId, this.exception);
+                @Override 
+       protected final void onPostExecute(T manifest) {
+           if (this.exception != null) {
+               this.callback.onManifestError(this.contentId, this.exception);
                     } else {
-/* 113 */               this.callback.onManifest(this.contentId, manifest);
+               this.callback.onManifest(this.contentId, manifest);
                     }
                 }
 
-/* 132 */       private HttpURLConnection configureHttpConnection(URL url) throws IOException {
-/* 133 */           HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-/* 134 */           connection.setConnectTimeout(this.timeoutMillis);
-/* 135 */           connection.setReadTimeout(this.timeoutMillis);
-/* 136 */           connection.setDoOutput(false);
-/* 137 */           connection.connect();
-/* 138 */           return connection;
+       private HttpURLConnection configureHttpConnection(URL url) throws IOException {
+           HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+           connection.setConnectTimeout(this.timeoutMillis);
+           connection.setReadTimeout(this.timeoutMillis);
+           connection.setDoOutput(false);
+           connection.connect();
+           return connection;
                 }
             }

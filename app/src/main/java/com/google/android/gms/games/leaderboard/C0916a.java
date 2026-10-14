@@ -7,11 +7,11 @@
             import com.google.android.gms.internal.C1027dl;
             import java.util.ArrayList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.games.leaderboard.a */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0916a extends AbstractC0889b implements Leaderboard {
 
-                /* JADX INFO: renamed from: nu */
+                
                 private final int f1066nu;
 
                 C0916a(C0891d c0891d, int i, int i2) {
@@ -19,32 +19,32 @@
                     this.f1066nu = i2;
                 }
 
-                @Override // com.google.android.gms.games.leaderboard.Leaderboard
+                @Override 
                 public String getDisplayName() {
                     return getString("name");
                 }
 
-                @Override // com.google.android.gms.games.leaderboard.Leaderboard
+                @Override 
                 public void getDisplayName(CharArrayBuffer dataOut) {
                     m1029a("name", dataOut);
                 }
 
-                @Override // com.google.android.gms.games.leaderboard.Leaderboard
+                @Override 
                 public Uri getIconImageUri() {
                     return m1030u("board_icon_image_uri");
                 }
 
-                @Override // com.google.android.gms.games.leaderboard.Leaderboard
+                @Override 
                 public String getLeaderboardId() {
                     return getString("external_leaderboard_id");
                 }
 
-                @Override // com.google.android.gms.games.leaderboard.Leaderboard
+                @Override 
                 public int getScoreOrder() {
                     return getInteger("score_order");
                 }
 
-                @Override // com.google.android.gms.games.leaderboard.Leaderboard
+                @Override 
                 public ArrayList<LeaderboardVariant> getVariants() {
                     ArrayList<LeaderboardVariant> arrayList = new ArrayList<>(this.f1066nu);
                     for (int i = 0; i < this.f1066nu; i++) {

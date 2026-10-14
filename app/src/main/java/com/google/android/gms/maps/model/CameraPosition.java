@@ -10,12 +10,12 @@
             import com.google.android.gms.internal.C1028dm;
             import com.google.android.gms.maps.internal.C1174r;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class CameraPosition implements SafeParcelable {
                 public static final CameraPositionCreator CREATOR = new CameraPositionCreator();
                 public final float bearing;
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2284iM;
                 public final LatLng target;
                 public final float tilt;
@@ -23,16 +23,16 @@
 
                 public static final class Builder {
 
-                    /* JADX INFO: renamed from: qa */
+                    
                     private LatLng f2285qa;
 
-                    /* JADX INFO: renamed from: qb */
+                    
                     private float f2286qb;
 
-                    /* JADX INFO: renamed from: qc */
+                    
                     private float f2287qc;
 
-                    /* JADX INFO: renamed from: qd */
+                    
                     private float f2288qd;
 
                     public Builder() {
@@ -116,7 +116,7 @@
                     return new CameraPosition(target, zoom, 0.0f, 0.0f);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -144,7 +144,7 @@
                     return C1027dl.m1599d(this).m1600a("target", this.target).m1600a("zoom", Float.valueOf(this.zoom)).m1600a("tilt", Float.valueOf(this.tilt)).m1600a("bearing", Float.valueOf(this.bearing)).toString();
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     if (C1174r.m2265cK()) {
                         C1177a.m2295a(this, out, flags);

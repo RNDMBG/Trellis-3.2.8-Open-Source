@@ -1,6 +1,6 @@
             package com.google.ads;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Deprecated
             public final class AdRequest {
                 public static final String LOGTAG = "Ads";
@@ -19,7 +19,7 @@
                         this.description = description;
                     }
 
-                    @Override // java.lang.Enum
+                    @Override 
                     public String toString() {
                         return this.description;
                     }

@@ -1,7 +1,7 @@
             package org.scribe.model;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 23 */    public class OAuthConstants {
+            
+    public class OAuthConstants {
                 public static final String ACCESS_TOKEN = "access_token";
                 public static final String CALLBACK = "oauth_callback";
                 public static final String CLIENT_ID = "client_id";
@@ -24,6 +24,6 @@
                 public static final String VERIFIER = "oauth_verifier";
                 public static final String VERSION = "oauth_version";
 
-/* 24 */        private OAuthConstants() {
+        private OAuthConstants() {
                 }
             }

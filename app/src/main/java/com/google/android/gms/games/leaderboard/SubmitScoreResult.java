@@ -6,22 +6,22 @@
             import com.google.android.gms.internal.C1064ev;
             import java.util.HashMap;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class SubmitScoreResult {
 
-                /* JADX INFO: renamed from: nI */
+                
                 private static final String[] f1061nI = {"leaderboardId", "playerId", "timeSpan", "hasResult", "rawScore", "formattedScore", "newBest", "scoreTag"};
 
-                /* JADX INFO: renamed from: iC */
+                
                 private int f1062iC;
 
-                /* JADX INFO: renamed from: mD */
+                
                 private String f1063mD;
 
-                /* JADX INFO: renamed from: nJ */
+                
                 private String f1064nJ;
 
-                /* JADX INFO: renamed from: nK */
+                
                 private HashMap<Integer, Result> f1065nK;
 
                 public static final class Result {
@@ -70,7 +70,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1188a(Result result, int i) {
                     this.f1065nK.put(Integer.valueOf(i), result);
                 }

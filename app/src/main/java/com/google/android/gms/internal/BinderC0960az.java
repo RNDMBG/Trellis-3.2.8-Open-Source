@@ -14,14 +14,14 @@
             import java.util.Iterator;
             import org.json.JSONObject;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.az */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class BinderC0960az<NETWORK_EXTRAS extends NetworkExtras, SERVER_PARAMETERS extends MediationServerParameters> extends InterfaceC0958ax.a {
 
-                /* JADX INFO: renamed from: fr */
+                
                 private final MediationAdapter<NETWORK_EXTRAS, SERVER_PARAMETERS> f1197fr;
 
-                /* JADX INFO: renamed from: fs */
+                
                 private final NETWORK_EXTRAS f1198fs;
 
                 public BinderC0960az(MediationAdapter<NETWORK_EXTRAS, SERVER_PARAMETERS> mediationAdapter, NETWORK_EXTRAS network_extras) {
@@ -29,7 +29,7 @@
                     this.f1198fs = network_extras;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private SERVER_PARAMETERS m1286a(String str, int i) throws RemoteException {
                     HashMap map;
                     try {
@@ -62,9 +62,9 @@
                     }
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-                @Override // com.google.android.gms.internal.InterfaceC0958ax
-                /* JADX INFO: renamed from: a */
+                
+                @Override 
+                
                 public void mo1282a(InterfaceC0904b interfaceC0904b, C1124v c1124v, String str, InterfaceC0959ay interfaceC0959ay) throws RemoteException {
                     if (!(this.f1197fr instanceof MediationInterstitialAdapter)) {
                         C1002cn.m1458q("MediationAdapter is not a MediationInterstitialAdapter: " + this.f1197fr.getClass().getCanonicalName());
@@ -79,9 +79,9 @@
                     }
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-                @Override // com.google.android.gms.internal.InterfaceC0958ax
-                /* JADX INFO: renamed from: a */
+                
+                @Override 
+                
                 public void mo1283a(InterfaceC0904b interfaceC0904b, C1126x c1126x, C1124v c1124v, String str, InterfaceC0959ay interfaceC0959ay) throws RemoteException {
                     if (!(this.f1197fr instanceof MediationBannerAdapter)) {
                         C1002cn.m1458q("MediationAdapter is not a MediationBannerAdapter: " + this.f1197fr.getClass().getCanonicalName());
@@ -96,7 +96,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0958ax
+                @Override 
                 public void destroy() throws RemoteException {
                     try {
                         this.f1197fr.destroy();
@@ -106,7 +106,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0958ax
+                @Override 
                 public InterfaceC0904b getView() throws RemoteException {
                     if (!(this.f1197fr instanceof MediationBannerAdapter)) {
                         C1002cn.m1458q("MediationAdapter is not a MediationBannerAdapter: " + this.f1197fr.getClass().getCanonicalName());
@@ -120,7 +120,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0958ax
+                @Override 
                 public void showInterstitial() throws RemoteException {
                     if (!(this.f1197fr instanceof MediationInterstitialAdapter)) {
                         C1002cn.m1458q("MediationAdapter is not a MediationInterstitialAdapter: " + this.f1197fr.getClass().getCanonicalName());

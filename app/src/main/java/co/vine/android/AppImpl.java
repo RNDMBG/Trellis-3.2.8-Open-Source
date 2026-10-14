@@ -19,49 +19,49 @@ import android.Manifest;
             import co.vine.android.util.Util;
             import org.json.JSONObject;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 26 */    public class AppImpl implements AppInterface {
+            
+    public class AppImpl implements AppInterface {
                 public static final int REQUEST_RECORDING_PERMISSIONS = 1601;
                 private static AppImpl sInstance;
 
-/* 27 */        private AppImpl() {
+        private AppImpl() {
                 }
 
-/* 32 */        public static AppImpl getInstance() {
-/* 33 */            if (sInstance == null) {
-/* 34 */                sInstance = new AppImpl();
+        public static AppImpl getInstance() {
+            if (sInstance == null) {
+                sInstance = new AppImpl();
                     }
-/* 36 */            return sInstance;
+            return sInstance;
                 }
 
-/* 39 */        public void updateClientProfile(Context context, AppController appController, boolean record) {
-/* 40 */            if (RecordConfigUtils.RecordConfig.needsUpdate(context) && !record) {
-/* 41 */                appController.updateClientProfile();
+        public void updateClientProfile(Context context, AppController appController, boolean record) {
+            if (RecordConfigUtils.RecordConfig.needsUpdate(context) && !record) {
+                appController.updateClientProfile();
                     }
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 46 */        public Intent getRecordingIntent(Activity activity, int flags, String callingActivity) {
-/* 47 */            return AbstractRecordingActivity.getIntentForGeneric(activity, flags, callingActivity);
+                @Override 
+        public Intent getRecordingIntent(Activity activity, int flags, String callingActivity) {
+            return AbstractRecordingActivity.getIntentForGeneric(activity, flags, callingActivity);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 51 */        public Intent getClearNotificationsIntent(Context c) {
-/* 52 */            return VineUploadService.getClearNotificationsIntent(c);
+                @Override 
+        public Intent getClearNotificationsIntent(Context c) {
+            return VineUploadService.getClearNotificationsIntent(c);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 56 */        public Intent getDiscardAllIntent(Context c) {
-/* 57 */            return VineUploadService.getDiscardAllIntent(c);
+                @Override 
+        public Intent getDiscardAllIntent(Context c) {
+            return VineUploadService.getDiscardAllIntent(c);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 61 */        public Intent getNotifyFailedIntent(Context c) {
-/* 62 */            return VineUploadService.getNotifyFailedIntent(c);
+                @Override 
+        public Intent getNotifyFailedIntent(Context c) {
+            return VineUploadService.getNotifyFailedIntent(c);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 66 */        public void startCapture(Activity activity) {
+                @Override 
+        public void startCapture(Activity activity) {
                     if (activity == null || activity.isFinishing()) {
                         return;
                     }
@@ -85,64 +85,64 @@ import android.Manifest;
                             && activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED;
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 74 */        public void appendDebugInfo(Context c, StringBuilder debugInfo, boolean hideSensitiveData) {
-/* 75 */            RecordConfigUtils.RecordConfig config = RecordConfigUtils.getGenericConfig(c);
-/* 77 */            debugInfo.append("\n\nDefault Recording Configuration: ");
-/* 78 */            debugInfo.append("\nRecording enabled: " + config.recordingEnabled);
-/* 79 */            debugInfo.append("\nZoom enabled: " + config.zoomEnabled);
-/* 80 */            debugInfo.append("\nCamera Switch enabled: " + config.cameraSwitchEnabled);
-/* 81 */            debugInfo.append("\nFlash Switch enabled: " + config.flashSwitchEnabled);
-/* 82 */            debugInfo.append("\nBuffer Pre-allocation enabled: " + config.preAllocateBuffer);
-/* 83 */            debugInfo.append("\nBuffer count: " + config.bufferCount);
-/* 84 */            debugInfo.append("\nPreview width: " + config.previewWidth);
-/* 85 */            debugInfo.append("\nTarget Frame Rate: " + config.targetFrameRate);
-/* 86 */            if (!hideSensitiveData) {
-/* 87 */                debugInfo.append("\nProcess path: " + config.processDir.getPath());
+                @Override 
+        public void appendDebugInfo(Context c, StringBuilder debugInfo, boolean hideSensitiveData) {
+            RecordConfigUtils.RecordConfig config = RecordConfigUtils.getGenericConfig(c);
+            debugInfo.append("\n\nDefault Recording Configuration: ");
+            debugInfo.append("\nRecording enabled: " + config.recordingEnabled);
+            debugInfo.append("\nZoom enabled: " + config.zoomEnabled);
+            debugInfo.append("\nCamera Switch enabled: " + config.cameraSwitchEnabled);
+            debugInfo.append("\nFlash Switch enabled: " + config.flashSwitchEnabled);
+            debugInfo.append("\nBuffer Pre-allocation enabled: " + config.preAllocateBuffer);
+            debugInfo.append("\nBuffer count: " + config.bufferCount);
+            debugInfo.append("\nPreview width: " + config.previewWidth);
+            debugInfo.append("\nTarget Frame Rate: " + config.targetFrameRate);
+            if (!hideSensitiveData) {
+                debugInfo.append("\nProcess path: " + config.processDir.getPath());
                     }
-/* 89 */            debugInfo.append("\nTarget Size: " + config.targetSize);
-/* 91 */            RecordConfigUtils.RecordConfig config2 = RecordConfigUtils.getGenericConfig(c);
-/* 93 */            debugInfo.append("\n\nDefault Message Recording Configuration: ");
-/* 94 */            debugInfo.append("\nBuffer count: " + config2.bufferCount);
-/* 95 */            debugInfo.append("\nPreview width: " + config2.previewWidth);
-/* 96 */            debugInfo.append("\nPreview height: " + config2.previewHeight);
-/* 97 */            debugInfo.append("\nTarget Frame Rate: " + config2.targetFrameRate);
-/* 98 */            debugInfo.append("\nTarget Size: " + config2.targetSize);
+            debugInfo.append("\nTarget Size: " + config.targetSize);
+            RecordConfigUtils.RecordConfig config2 = RecordConfigUtils.getGenericConfig(c);
+            debugInfo.append("\n\nDefault Message Recording Configuration: ");
+            debugInfo.append("\nBuffer count: " + config2.bufferCount);
+            debugInfo.append("\nPreview width: " + config2.previewWidth);
+            debugInfo.append("\nPreview height: " + config2.previewHeight);
+            debugInfo.append("\nTarget Frame Rate: " + config2.targetFrameRate);
+            debugInfo.append("\nTarget Size: " + config2.targetSize);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 102 */       public boolean doAddWidget(Context c, AccountManager am, Account acc) {
+                @Override 
+       public boolean doAddWidget(Context c, AccountManager am, Account acc) {
                     return RecordConfigUtils.loadWasEverSuccessful(c) && VineAccountHelper.needsAddwidget(am, acc);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 108 */       public void startUploadsListActivity(Activity a) {
-/* 109 */           UploadsListActivity.start(a);
+                @Override 
+       public void startUploadsListActivity(Activity a) {
+           UploadsListActivity.start(a);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 113 */       public void startCameraService(Activity parent) {
-/* 114 */           parent.startService(new Intent(parent, (Class<?>) ResourceService.class));
+                @Override 
+       public void startCameraService(Activity parent) {
+           parent.startService(new Intent(parent, (Class<?>) ResourceService.class));
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 118 */       public void setupWidget(Activity a) {
-/* 119 */           CameraWidgetConfigureActivity.setupShortcut(a);
+                @Override 
+       public void setupWidget(Activity a) {
+           CameraWidgetConfigureActivity.setupShortcut(a);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 123 */       public void updateRecordConfigs(Context applicationContext, JSONObject object) {
-/* 124 */           RecordConfigUtils.RecordConfig.update(applicationContext, object);
+                @Override 
+       public void updateRecordConfigs(Context applicationContext, JSONObject object) {
+           RecordConfigUtils.RecordConfig.update(applicationContext, object);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 129 */       public void startConversationActivity(Activity parent, long conversationId, String username, long recipientId, boolean isRecipientExternal, boolean amFollowing) {
-/* 130 */           Intent i = ConversationActivity.getIntent(parent, conversationId, username, recipientId, isRecipientExternal, amFollowing, false);
-/* 131 */           parent.startActivity(i);
+                @Override 
+       public void startConversationActivity(Activity parent, long conversationId, String username, long recipientId, boolean isRecipientExternal, boolean amFollowing) {
+           Intent i = ConversationActivity.getIntent(parent, conversationId, username, recipientId, isRecipientExternal, amFollowing, false);
+           parent.startActivity(i);
                 }
 
-                @Override // co.vine.android.AppInterface
-/* 134 */       public void clearUploadCaptchas(Context applicationContext) {
-/* 135 */           UploadManager.clearUploadCaptchas(applicationContext);
+                @Override 
+       public void clearUploadCaptchas(Context applicationContext) {
+           UploadManager.clearUploadCaptchas(applicationContext);
                 }
             }

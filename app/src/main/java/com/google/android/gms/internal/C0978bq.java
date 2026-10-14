@@ -7,69 +7,69 @@
             import com.vandalsoftware.p004io.IoUtils;
             import org.json.JSONException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bq */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0978bq extends AbstractC0995cg implements C0979br.a, C1006cr.a {
 
-                /* JADX INFO: renamed from: dZ */
+                
                 private final InterfaceC0957aw f1470dZ;
 
-                /* JADX INFO: renamed from: eK */
+                
                 private C0950ap f1472eK;
 
-                /* JADX INFO: renamed from: fG */
+                
                 private final C1005cq f1473fG;
 
-                /* JADX INFO: renamed from: gm */
+                
                 private final C0977bp.a f1474gm;
 
-                /* JADX INFO: renamed from: gn */
+                
                 private final C0982bu.a f1475gn;
 
-                /* JADX INFO: renamed from: go */
+                
                 private final C1110h f1476go;
 
-                /* JADX INFO: renamed from: gp */
+                
                 private AbstractC0995cg f1477gp;
 
-                /* JADX INFO: renamed from: gq */
+                
                 private C0984bw f1478gq;
 
-                /* JADX INFO: renamed from: gs */
+                
                 private C0948an f1480gs;
 
-                /* JADX INFO: renamed from: gt */
+                
                 private C0954at f1481gt;
                 private final Context mContext;
 
-                /* JADX INFO: renamed from: eJ */
+                
                 private final Object f1471eJ = new Object();
 
-                /* JADX INFO: renamed from: gr */
+                
                 private boolean f1479gr = false;
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bq$1, reason: invalid class name */
+                
                 class AnonymousClass1 implements Runnable {
                     AnonymousClass1() {
                     }
 
-                    @Override // java.lang.Runnable
+                    @Override 
                     public void run() {
                         C0978bq.this.onStop();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bq$2, reason: invalid class name */
+                
                 class AnonymousClass2 implements Runnable {
 
-                    /* JADX INFO: renamed from: gv */
-                    final /* synthetic */ C0993ce f1484gv;
+                    
+                    final  C0993ce f1484gv;
 
                     AnonymousClass2(C0993ce c0993ce) {
                         this.f1484gv = c0993ce;
                     }
 
-                    @Override // java.lang.Runnable
+                    @Override 
                     public void run() {
                         synchronized (C0978bq.m1347a(C0978bq.this)) {
                             try {
@@ -81,12 +81,12 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bq$3, reason: invalid class name */
+                
                 class AnonymousClass3 implements Runnable {
                     AnonymousClass3() {
                     }
 
-                    @Override // java.lang.Runnable
+                    @Override 
                     public void run() {
                         synchronized (C0978bq.m1347a(C0978bq.this)) {
                             try {
@@ -108,10 +108,10 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bq$a */
+                
                 private static final class a extends Exception {
 
-                    /* JADX INFO: renamed from: gw */
+                    
                     private final int f1486gw;
 
                     public a(String str, int i) {
@@ -133,12 +133,12 @@
                     this.f1476go = c1110h;
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ Object m1347a(C0978bq c0978bq) {
+                
+                static  Object m1347a(C0978bq c0978bq) {
                     return c0978bq.f1471eJ;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1348a(C0982bu c0982bu, long j) throws a {
                     this.f1480gs = new C0948an(this.mContext, c0982bu, this.f1470dZ, this.f1472eK);
                     this.f1481gt = this.f1480gs.m1255a(j, CommonUtil.MINUTE_MILLIS);
@@ -152,7 +152,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: ad */
+                
                 private void m1349ad() throws a {
                     if (this.f1478gq.errorCode == -3) {
                         return;
@@ -169,23 +169,23 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: b */
-                static /* synthetic */ C0977bp.a m1350b(C0978bq c0978bq) {
+                
+                static  C0977bp.a m1350b(C0978bq c0978bq) {
                     return c0978bq.f1474gm;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private void m1351b(long j) throws a {
                     C1001cm.f1595hO.post(new AnonymousClass3());
                     m1355d(j);
                 }
 
-                /* JADX INFO: renamed from: c */
-                static /* synthetic */ C0984bw m1352c(C0978bq c0978bq) {
+                
+                static  C0984bw m1352c(C0978bq c0978bq) {
                     return c0978bq.f1478gq;
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 private void m1353c(long j) throws a {
                     while (m1356e(j)) {
                         if (this.f1478gq != null) {
@@ -199,12 +199,12 @@
                     throw new a("Timed out waiting for ad response.", 2);
                 }
 
-                /* JADX INFO: renamed from: d */
-                static /* synthetic */ C1005cq m1354d(C0978bq c0978bq) {
+                
+                static  C1005cq m1354d(C0978bq c0978bq) {
                     return c0978bq.f1473fG;
                 }
 
-                /* JADX INFO: renamed from: d */
+                
                 private void m1355d(long j) throws a {
                     while (m1356e(j)) {
                         if (this.f1479gr) {
@@ -214,7 +214,7 @@
                     throw new a("Timed out waiting for WebView to finish loading.", 2);
                 }
 
-                /* JADX INFO: renamed from: e */
+                
                 private boolean m1356e(long j) throws a {
                     long jElapsedRealtime = CommonUtil.MINUTE_MILLIS - (SystemClock.elapsedRealtime() - j);
                     if (jElapsedRealtime <= 0) {
@@ -228,8 +228,8 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.C0979br.a
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 public void mo1357a(C0984bw c0984bw) {
                     synchronized (this.f1471eJ) {
                         try {
@@ -242,8 +242,8 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.C1006cr.a
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 public void mo1312a(C1005cq c1005cq) {
                     synchronized (this.f1471eJ) {
                         try {
@@ -256,8 +256,8 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC0995cg
-                /* JADX INFO: renamed from: ac */
+                @Override 
+                
                 public void mo1358ac() {
                     synchronized (this.f1471eJ) {
                         try {
@@ -294,7 +294,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC0995cg
+                @Override 
                 public void onStop() {
                     synchronized (this.f1471eJ) {
                         try {

@@ -5,10 +5,10 @@
             import com.google.android.gms.maps.model.internal.IPolylineDelegate;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class Polyline {
 
-                /* JADX INFO: renamed from: qN */
+                
                 private final IPolylineDelegate f2341qN;
 
                 public Polyline(IPolylineDelegate delegate) {

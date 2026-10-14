@@ -6,27 +6,27 @@
             import java.util.HashSet;
             import java.util.Set;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface Moment extends Freezable<Moment> {
 
                 public static class Builder {
 
-                    /* JADX INFO: renamed from: rI */
+                    
                     private final Set<Integer> f2445rI = new HashSet();
 
-                    /* JADX INFO: renamed from: sD */
+                    
                     private String f2446sD;
 
-                    /* JADX INFO: renamed from: sG */
+                    
                     private C1086fq f2447sG;
 
-                    /* JADX INFO: renamed from: sH */
+                    
                     private C1086fq f2448sH;
 
-                    /* JADX INFO: renamed from: sm */
+                    
                     private String f2449sm;
 
-                    /* JADX INFO: renamed from: sx */
+                    
                     private String f2450sx;
 
                     public Moment build() {

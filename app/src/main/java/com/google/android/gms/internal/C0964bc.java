@@ -6,10 +6,10 @@
             import android.net.Uri;
             import android.text.TextUtils;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bc */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0964bc {
-                /* JADX INFO: renamed from: a */
+                
                 public static boolean m1296a(Context context, C0966be c0966be, InterfaceC0973bl interfaceC0973bl) {
                     if (c0966be == null) {
                         C1002cn.m1458q("No intent data for launcher overlay.");

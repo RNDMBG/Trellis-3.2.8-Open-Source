@@ -38,8 +38,8 @@
             import java.util.LinkedList;
             import java.util.Set;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 69 */    public class CommentsAdapter extends BaseAdapter {
+            
+    public class CommentsAdapter extends BaseAdapter {
                 private static final String SPAM_COMMENTS_PREFS_NAME = "spam_comment_ids";
                 private static final int SPAN_FLAGS = 33;
                 private AppController mAppController;
@@ -55,201 +55,201 @@
                 final ArrayList<WeakReference<CommentViewHolder>> mViewHolders = new ArrayList<>();
                 private HashMap<String, Editable> mCommentSbs = new HashMap<>();
 
-/* 70 */        public CommentsAdapter(Context context, long postId, AppController appController, SpanClickListener listener) {
-/* 72 */            this.mContext = context;
-/* 73 */            this.mPostId = postId;
-/* 74 */            loadSpamCommentIds(context, postId);
-/* 75 */            this.mBoldSpan = new TypefacesSpan(null, Typefaces.get(context).getContentTypeface(1, 3));
-/* 77 */            this.mAppController = appController;
-/* 78 */            this.mListener = listener;
-/* 79 */            this.mVineGreen = context.getResources().getColor(C0257R.color.vine_green);
+        public CommentsAdapter(Context context, long postId, AppController appController, SpanClickListener listener) {
+            this.mContext = context;
+            this.mPostId = postId;
+            loadSpamCommentIds(context, postId);
+            this.mBoldSpan = new TypefacesSpan(null, Typefaces.get(context).getContentTypeface(1, 3));
+            this.mAppController = appController;
+            this.mListener = listener;
+            this.mVineGreen = context.getResources().getColor(C0257R.color.vine_green);
                 }
 
-/* 82 */        private void loadSpamCommentIds(Context context, long postId) {
-/* 83 */            SharedPreferences sp = Util.getSharedPrefs(context, SPAM_COMMENTS_PREFS_NAME);
-/* 85 */            if (sp != null) {
-/* 88 */                Set<String> spamCommentIds = sp.getStringSet(String.valueOf(postId), new HashSet());
-/* 90 */                this.mEditor = sp.edit();
-/* 91 */                if (spamCommentIds != null && spamCommentIds.size() != 0) {
-/* 92 */                    this.mSpamCommentIds.addAll(spamCommentIds);
+        private void loadSpamCommentIds(Context context, long postId) {
+            SharedPreferences sp = Util.getSharedPrefs(context, SPAM_COMMENTS_PREFS_NAME);
+            if (sp != null) {
+                Set<String> spamCommentIds = sp.getStringSet(String.valueOf(postId), new HashSet());
+                this.mEditor = sp.edit();
+                if (spamCommentIds != null && spamCommentIds.size() != 0) {
+                    this.mSpamCommentIds.addAll(spamCommentIds);
                         }
                     }
                 }
 
-/* 95 */        public View newView() {
-/* 96 */            RelativeLayout layout = (RelativeLayout) LayoutInflater.from(this.mContext).inflate(C0257R.layout.comment_row_view, (ViewGroup) null, false);
-/* 98 */            CommentViewHolder h = new CommentViewHolder();
-/* 99 */            h.profileImage = (ImageView) layout.findViewById(C0257R.id.profile_image);
-/* 100 */           h.content = (TextView) layout.findViewById(C0257R.id.content);
-/* 101 */           h.content.setMovementMethod(LinkMovementMethod.getInstance());
-/* 102 */           h.timestamp = (TextView) layout.findViewById(C0257R.id.timestamp);
-/* 103 */           layout.setTag(h);
-/* 104 */           this.mViewHolders.add(new WeakReference<>(h));
-/* 105 */           return layout;
+        public View newView() {
+            RelativeLayout layout = (RelativeLayout) LayoutInflater.from(this.mContext).inflate(C0257R.layout.comment_row_view, (ViewGroup) null, false);
+            CommentViewHolder h = new CommentViewHolder();
+            h.profileImage = (ImageView) layout.findViewById(C0257R.id.profile_image);
+           h.content = (TextView) layout.findViewById(C0257R.id.content);
+           h.content.setMovementMethod(LinkMovementMethod.getInstance());
+           h.timestamp = (TextView) layout.findViewById(C0257R.id.timestamp);
+           layout.setTag(h);
+           this.mViewHolders.add(new WeakReference<>(h));
+           return layout;
                 }
 
-/* 108 */       public void bindView(View view, VineComment comment) {
-/* 109 */           CommentViewHolder h = (CommentViewHolder) view.getTag();
-/* 110 */           String username = comment.username;
-/* 111 */           String commentString = comment.comment;
-/* 113 */           ArrayList<VineEntity> entities = comment.entities;
-/* 114 */           if (username == null) {
-/* 115 */               username = "";
-/* 116 */               CrashUtil.logException(new VineLoggingException(), "Username is null for " + comment.commentId, new Object[0]);
+       public void bindView(View view, VineComment comment) {
+           CommentViewHolder h = (CommentViewHolder) view.getTag();
+           String username = comment.username;
+           String commentString = comment.comment;
+           ArrayList<VineEntity> entities = comment.entities;
+           if (username == null) {
+               username = "";
+               CrashUtil.logException(new VineLoggingException(), "Username is null for " + comment.commentId, new Object[0]);
                     }
-/* 120 */           h.content.setMovementMethod(LinkMovementMethod.getInstance());
-/* 122 */           h.timestamp.setText(Util.getRelativeTimeString(this.mContext, comment.timestamp, false));
-/* 124 */           h.commentId = String.valueOf(comment.commentId);
-/* 125 */           h.username = username;
-/* 126 */           h.userId = comment.userId;
-/* 128 */           Editable commentSb = this.mCommentSbs.get(h.commentId);
-/* 130 */           if (commentSb == null) {
-/* 131 */               commentSb = new SpannableStringBuilder(username).append((CharSequence) MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR).append((CharSequence) commentString);
-/* 132 */               this.mCommentSbs.put(h.commentId, commentSb);
-/* 135 */               Util.safeSetSpan(commentSb, this.mBoldSpan, 0, username.length(), 33);
-/* 136 */               StyledClickableSpan styledClickableSpan = new StyledClickableSpan(1, Long.valueOf(h.userId), this.mListener);
-/* 139 */               styledClickableSpan.setColor(this.mVineGreen);
-/* 140 */               Util.safeSetSpan(commentSb, styledClickableSpan, 0, username.length(), 33);
-/* 143 */               if (entities != null) {
+           h.content.setMovementMethod(LinkMovementMethod.getInstance());
+           h.timestamp.setText(Util.getRelativeTimeString(this.mContext, comment.timestamp, false));
+           h.commentId = String.valueOf(comment.commentId);
+           h.username = username;
+           h.userId = comment.userId;
+           Editable commentSb = this.mCommentSbs.get(h.commentId);
+           if (commentSb == null) {
+               commentSb = new SpannableStringBuilder(username).append((CharSequence) MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR).append((CharSequence) commentString);
+               this.mCommentSbs.put(h.commentId, commentSb);
+               Util.safeSetSpan(commentSb, this.mBoldSpan, 0, username.length(), 33);
+               StyledClickableSpan styledClickableSpan = new StyledClickableSpan(1, Long.valueOf(h.userId), this.mListener);
+               styledClickableSpan.setColor(this.mVineGreen);
+               Util.safeSetSpan(commentSb, styledClickableSpan, 0, username.length(), 33);
+               if (entities != null) {
                             try {
-/* 145 */                       Util.adjustEntities(entities, commentSb, username.length() + 1, false);
+                       Util.adjustEntities(entities, commentSb, username.length() + 1, false);
                                 for (VineEntity entity : entities) {
-/* 147 */                           if (entity.isUserType()) {
-/* 148 */                               StyledClickableSpan usernameSpan = new StyledClickableSpan(1, Long.valueOf(entity.f96id), this.mListener);
-/* 151 */                               usernameSpan.setColor(this.mVineGreen);
-/* 152 */                               Util.safeSetSpan(commentSb, usernameSpan, entity.start, entity.end, 33);
+                           if (entity.isUserType()) {
+                               StyledClickableSpan usernameSpan = new StyledClickableSpan(1, Long.valueOf(entity.f96id), this.mListener);
+                               usernameSpan.setColor(this.mVineGreen);
+                               Util.safeSetSpan(commentSb, usernameSpan, entity.start, entity.end, 33);
                                     } else if (entity.isTagType()) {
-/* 154 */                               StyledClickableSpan usernameSpan2 = new StyledClickableSpan(3, entity.title, this.mListener);
-/* 157 */                               usernameSpan2.setColor(this.mVineGreen);
-/* 158 */                               Util.safeSetSpan(commentSb, usernameSpan2, entity.start, entity.end, 33);
+                               StyledClickableSpan usernameSpan2 = new StyledClickableSpan(3, entity.title, this.mListener);
+                               usernameSpan2.setColor(this.mVineGreen);
+                               Util.safeSetSpan(commentSb, usernameSpan2, entity.start, entity.end, 33);
                                     }
                                 }
                             } catch (IndexOutOfBoundsException e) {
-/* 162 */                       CrashUtil.logException(e);
+                       CrashUtil.logException(e);
                             }
                         }
                     }
-/* 167 */           h.content.setText(commentSb);
-/* 169 */           String url = comment.avatarUrl;
+           h.content.setText(commentSb);
+           String url = comment.avatarUrl;
                     if (TextUtils.isEmpty(url) && comment.user != null) {
                         url = comment.user.avatarUrl;
                     }
-/* 170 */           if (TextUtils.isEmpty(url) || Util.isDefaultAvatarUrl(url)) {
-/* 171 */               Util.safeSetDefaultAvatar(h.profileImage, Util.ProfileImageSize.MEDIUM, (-16777216) | this.mVineGreen);
-/* 172 */               ViewUtil.setBackground(h.profileImage, null);
-/* 185 */               return;
+           if (TextUtils.isEmpty(url) || Util.isDefaultAvatarUrl(url)) {
+               Util.safeSetDefaultAvatar(h.profileImage, Util.ProfileImageSize.MEDIUM, (-16777216) | this.mVineGreen);
+               ViewUtil.setBackground(h.profileImage, null);
+               return;
                     }
-/* 174 */           h.profileImage.setColorFilter((ColorFilter) null);
-/* 175 */           ImageKey key = new ImageKey(url, true);
-/* 176 */           h.imageKey = key;
-/* 177 */           Bitmap profileImage = this.mAppController.getPhotoBitmap(key);
-/* 178 */           if (profileImage != null) {
-/* 179 */               h.profileImage.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), profileImage));
+           h.profileImage.setColorFilter((ColorFilter) null);
+           ImageKey key = new ImageKey(url, true);
+           h.imageKey = key;
+           Bitmap profileImage = this.mAppController.getPhotoBitmap(key);
+           if (profileImage != null) {
+               h.profileImage.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), profileImage));
                     } else {
-/* 181 */               ViewUtil.setBackground(h.profileImage, this.mContext.getResources().getDrawable(C0257R.drawable.circle_shape_light));
-/* 182 */               h.profileImage.setImageDrawable(null);
+               ViewUtil.setBackground(h.profileImage, this.mContext.getResources().getDrawable(C0257R.drawable.circle_shape_light));
+               h.profileImage.setImageDrawable(null);
                     }
                 }
 
-/* 187 */       public void updateProfileImages(HashMap<ImageKey, UrlImage> images) {
+       public void updateProfileImages(HashMap<ImageKey, UrlImage> images) {
                     if (images == null || images.isEmpty()) {
                         return;
                     }
                     UrlImage image;
-/* 188 */           ArrayList<WeakReference<CommentViewHolder>> toRemove = new ArrayList<>();
+           ArrayList<WeakReference<CommentViewHolder>> toRemove = new ArrayList<>();
                     for (int i = this.mViewHolders.size() - 1; i >= 0; i--) {
-/* 191 */               WeakReference<CommentViewHolder> wf = this.mViewHolders.get(i);
-/* 192 */               CommentViewHolder vh = wf.get();
-/* 193 */               if (vh == null) {
-/* 194 */                   toRemove.add(wf);
+               WeakReference<CommentViewHolder> wf = this.mViewHolders.get(i);
+               CommentViewHolder vh = wf.get();
+               if (vh == null) {
+                   toRemove.add(wf);
                         } else if (vh.imageKey != null && (image = images.get(vh.imageKey)) != null && image.bitmap != null) {
-/* 198 */                   vh.profileImage.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), image.bitmap));
+                   vh.profileImage.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), image.bitmap));
                         }
                     }
-/* 202 */           Iterator<WeakReference<CommentViewHolder>> it = toRemove.iterator();
+           Iterator<WeakReference<CommentViewHolder>> it = toRemove.iterator();
                     while (it.hasNext()) {
-/* 203 */               this.mViewHolders.remove(it.next());
+               this.mViewHolders.remove(it.next());
                     }
                 }
 
-                @Override // android.widget.Adapter
-/* 208 */       public int getCount() {
-/* 209 */           return this.mComments.size();
+                @Override 
+       public int getCount() {
+           return this.mComments.size();
                 }
 
-                @Override // android.widget.Adapter
-/* 213 */       public Object getItem(int position) {
-/* 214 */           return this.mComments.get(position);
+                @Override 
+       public Object getItem(int position) {
+           return this.mComments.get(position);
                 }
 
-                @Override // android.widget.Adapter
-/* 218 */       public long getItemId(int pos) {
-/* 219 */           return this.mComments.get(pos).commentId;
+                @Override 
+       public long getItemId(int pos) {
+           return this.mComments.get(pos).commentId;
                 }
 
-                @Override // android.widget.Adapter
+                @Override 
                 @Nullable
-/* 224 */       public View getView(int position, View convertView, ViewGroup parent) {
-/* 225 */           if (convertView == null) {
-/* 226 */               convertView = newView();
+       public View getView(int position, View convertView, ViewGroup parent) {
+           if (convertView == null) {
+               convertView = newView();
                     }
-/* 228 */           bindView(convertView, (VineComment) getItem(position));
-/* 229 */           return convertView;
+           bindView(convertView, (VineComment) getItem(position));
+           return convertView;
                 }
 
-/* 232 */       public int getPositionForId(long id) {
-/* 233 */           if (this.mIdToPositionMap == null || this.mIdToPositionMap.get(Long.valueOf(id)) == null) {
+       public int getPositionForId(long id) {
+           if (this.mIdToPositionMap == null || this.mIdToPositionMap.get(Long.valueOf(id)) == null) {
                         return -1;
                     }
-/* 234 */           return this.mIdToPositionMap.get(Long.valueOf(id)).intValue();
+           return this.mIdToPositionMap.get(Long.valueOf(id)).intValue();
                 }
 
-/* 240 */       public void mergeComments(ArrayList<VineComment> comments) {
+       public void mergeComments(ArrayList<VineComment> comments) {
                     if (comments == null || comments.isEmpty()) {
                         return;
                     }
-/* 241 */           LinkedList<VineComment> filtered = new LinkedList<>();
+           LinkedList<VineComment> filtered = new LinkedList<>();
                     for (VineComment comment : comments) {
-/* 243 */               if (!this.mSpamCommentIds.contains(String.valueOf(comment.commentId))) {
-/* 244 */                   filtered.add(comment);
+               if (!this.mSpamCommentIds.contains(String.valueOf(comment.commentId))) {
+                   filtered.add(comment);
                         }
                     }
-/* 248 */           this.mComments.addAll(0, filtered);
-/* 249 */           rebuildIdToPositionMap();
-/* 250 */           notifyDataSetChanged();
+           this.mComments.addAll(0, filtered);
+           rebuildIdToPositionMap();
+           notifyDataSetChanged();
                 }
 
-/* 253 */       private void rebuildIdToPositionMap() {
-/* 254 */           this.mIdToPositionMap.clear();
+       private void rebuildIdToPositionMap() {
+           this.mIdToPositionMap.clear();
                     for (int i = 0; i < this.mComments.size(); i++) {
-/* 257 */               VineComment comment = this.mComments.get(i);
-/* 258 */               this.mIdToPositionMap.put(Long.valueOf(comment.commentId), Integer.valueOf(i));
+               VineComment comment = this.mComments.get(i);
+               this.mIdToPositionMap.put(Long.valueOf(comment.commentId), Integer.valueOf(i));
                     }
                 }
 
-/* 263 */       public void addMyComment(VineComment commentToMerge) {
-/* 264 */           this.mComments.add(commentToMerge);
-/* 265 */           rebuildIdToPositionMap();
-/* 266 */           notifyDataSetChanged();
+       public void addMyComment(VineComment commentToMerge) {
+           this.mComments.add(commentToMerge);
+           rebuildIdToPositionMap();
+           notifyDataSetChanged();
                 }
 
-/* 269 */       public void deleteComment(long commentId) {
-/* 270 */           int position = getPositionForId(commentId);
-/* 271 */           if (position >= 0) {
-/* 272 */               this.mComments.remove(position);
-/* 273 */               rebuildIdToPositionMap();
-/* 274 */               notifyDataSetChanged();
+       public void deleteComment(long commentId) {
+           int position = getPositionForId(commentId);
+           if (position >= 0) {
+               this.mComments.remove(position);
+               rebuildIdToPositionMap();
+               notifyDataSetChanged();
                     }
                 }
 
-/* 278 */       public void spamComment(long commentId) {
-/* 279 */           int position = getPositionForId(commentId);
-/* 280 */           if (position >= 0) {
-/* 281 */               this.mComments.remove(position);
-/* 282 */               this.mSpamCommentIds.add(String.valueOf(commentId));
-/* 283 */               this.mEditor.putStringSet(String.valueOf(this.mPostId), this.mSpamCommentIds).apply();
-/* 284 */               rebuildIdToPositionMap();
-/* 285 */               notifyDataSetChanged();
+       public void spamComment(long commentId) {
+           int position = getPositionForId(commentId);
+           if (position >= 0) {
+               this.mComments.remove(position);
+               this.mSpamCommentIds.add(String.valueOf(commentId));
+               this.mEditor.putStringSet(String.valueOf(this.mPostId), this.mSpamCommentIds).apply();
+               rebuildIdToPositionMap();
+               notifyDataSetChanged();
                     }
                 }
             }

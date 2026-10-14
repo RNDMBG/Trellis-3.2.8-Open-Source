@@ -25,8 +25,8 @@
             import java.io.FileDescriptor;
             import java.io.PrintWriter;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 306 */   public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuListener {
+            
+   public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuListener {
                 static final int ACTIVITY_CREATED = 2;
                 static final int CREATED = 1;
                 static final int INITIALIZING = 0;
@@ -76,880 +76,880 @@
                 boolean mMenuVisible = true;
                 boolean mUserVisibleHint = true;
 
-/* 307 */       public static class SavedState implements Parcelable {
+       public static class SavedState implements Parcelable {
                     public static final Parcelable.Creator<SavedState> CREATOR = new C00061();
                     final Bundle mState;
 
-/* 308 */           SavedState(Bundle state) {
-/* 310 */               this.mState = state;
+           SavedState(Bundle state) {
+               this.mState = state;
                     }
 
-/* 312 */           SavedState(Parcel in, ClassLoader loader) {
-/* 314 */               this.mState = in.readBundle();
-/* 315 */               if (loader != null && this.mState != null) {
-/* 316 */                   this.mState.setClassLoader(loader);
+           SavedState(Parcel in, ClassLoader loader) {
+               this.mState = in.readBundle();
+               if (loader != null && this.mState != null) {
+                   this.mState.setClassLoader(loader);
                         }
                     }
 
-                    @Override // android.os.Parcelable
-/* 321 */           public int describeContents() {
-/* 322 */               return 0;
+                    @Override 
+           public int describeContents() {
+               return 0;
                     }
 
-                    @Override // android.os.Parcelable
-/* 326 */           public void writeToParcel(Parcel dest, int flags) {
-/* 327 */               dest.writeBundle(this.mState);
+                    @Override 
+           public void writeToParcel(Parcel dest, int flags) {
+               dest.writeBundle(this.mState);
                     }
 
-                    /* JADX INFO: renamed from: android.support.v4.app.Fragment$SavedState$1 */
-/* 329 */           static class C00061 implements Parcelable.Creator<SavedState> {
-/* 330 */               C00061() {
+                    
+           static class C00061 implements Parcelable.Creator<SavedState> {
+               C00061() {
                         }
 
-                        @Override // android.os.Parcelable.Creator
-/* 330 */               public /* bridge */ /* synthetic */ SavedState createFromParcel(Parcel x0) {
-/* 331 */                   return createFromParcel(x0);
+                        @Override 
+               public   SavedState createFromParcel(Parcel x0) {
+                   return createFromParcel(x0);
                         }
 
-                        @Override // android.os.Parcelable.Creator
-/* 330 */               public /* bridge */ /* synthetic */ SavedState[] newArray(int x0) {
-/* 331 */                   return newArray(x0);
+                        @Override 
+               public   SavedState[] newArray(int x0) {
+                   return newArray(x0);
                         }
 
-                        /* JADX WARN: Can't rename method to resolve collision */
-                        @Override // android.os.Parcelable.Creator
-/* 332 */               public SavedState createFromParcel(Parcel in) {
-/* 333 */                   return new SavedState(in, null);
+                        
+                        @Override 
+               public SavedState createFromParcel(Parcel in) {
+                   return new SavedState(in, null);
                         }
 
-                        /* JADX WARN: Can't rename method to resolve collision */
-                        @Override // android.os.Parcelable.Creator
-/* 336 */               public SavedState[] newArray(int size) {
-/* 337 */                   return new SavedState[size];
+                        
+                        @Override 
+               public SavedState[] newArray(int size) {
+                   return new SavedState[size];
                         }
                     }
                 }
 
-/* 346 */       public static class InstantiationException extends RuntimeException {
-/* 347 */           public InstantiationException(String msg, Exception cause) {
-/* 348 */               super(msg, cause);
+       public static class InstantiationException extends RuntimeException {
+           public InstantiationException(String msg, Exception cause) {
+               super(msg, cause);
                     }
                 }
 
-/* 376 */       public static Fragment instantiate(Context context, String fname) {
-/* 377 */           return instantiate(context, fname, null);
+       public static Fragment instantiate(Context context, String fname) {
+           return instantiate(context, fname, null);
                 }
 
-/* 395 */       public static Fragment instantiate(Context context, String fname, Bundle args) {
+       public static Fragment instantiate(Context context, String fname, Bundle args) {
                     try {
-/* 396 */               Class<?> clazz = sClassMap.get(fname);
-/* 397 */               if (clazz == null) {
-/* 399 */                   clazz = context.getClassLoader().loadClass(fname);
-/* 400 */                   sClassMap.put(fname, clazz);
+               Class<?> clazz = sClassMap.get(fname);
+               if (clazz == null) {
+                   clazz = context.getClassLoader().loadClass(fname);
+                   sClassMap.put(fname, clazz);
                         }
-/* 402 */               Fragment f = (Fragment) clazz.newInstance();
-/* 403 */               if (args != null) {
-/* 404 */                   args.setClassLoader(f.getClass().getClassLoader());
-/* 405 */                   f.mArguments = args;
+               Fragment f = (Fragment) clazz.newInstance();
+               if (args != null) {
+                   args.setClassLoader(f.getClass().getClassLoader());
+                   f.mArguments = args;
                         }
-/* 407 */               return f;
+               return f;
                     } catch (ClassNotFoundException e) {
-/* 409 */               throw new InstantiationException("Unable to instantiate fragment " + fname + ": make sure class name exists, is public, and has an empty constructor that is public", e);
+               throw new InstantiationException("Unable to instantiate fragment " + fname + ": make sure class name exists, is public, and has an empty constructor that is public", e);
                     } catch (IllegalAccessException e2) {
-/* 417 */               throw new InstantiationException("Unable to instantiate fragment " + fname + ": make sure class name exists, is public, and has an empty constructor that is public", e2);
+               throw new InstantiationException("Unable to instantiate fragment " + fname + ": make sure class name exists, is public, and has an empty constructor that is public", e2);
                     } catch (java.lang.InstantiationException e3) {
-/* 413 */               throw new InstantiationException("Unable to instantiate fragment " + fname + ": make sure class name exists, is public, and has an empty constructor that is public", e3);
+               throw new InstantiationException("Unable to instantiate fragment " + fname + ": make sure class name exists, is public, and has an empty constructor that is public", e3);
                     }
                 }
 
-/* 432 */       static boolean isSupportFragmentClass(Context context, String fname) {
+       static boolean isSupportFragmentClass(Context context, String fname) {
                     try {
-/* 433 */               Class<?> clazz = sClassMap.get(fname);
-/* 434 */               if (clazz == null) {
-/* 436 */                   clazz = context.getClassLoader().loadClass(fname);
-/* 437 */                   sClassMap.put(fname, clazz);
+               Class<?> clazz = sClassMap.get(fname);
+               if (clazz == null) {
+                   clazz = context.getClassLoader().loadClass(fname);
+                   sClassMap.put(fname, clazz);
                         }
-/* 439 */               return Fragment.class.isAssignableFrom(clazz);
+               return Fragment.class.isAssignableFrom(clazz);
                     } catch (ClassNotFoundException e) {
-/* 441 */               return false;
+               return false;
                     }
                 }
 
-/* 445 */       final void restoreViewState(Bundle savedInstanceState) {
-/* 446 */           if (this.mSavedViewState != null) {
-/* 447 */               this.mInnerView.restoreHierarchyState(this.mSavedViewState);
-/* 448 */               this.mSavedViewState = null;
+       final void restoreViewState(Bundle savedInstanceState) {
+           if (this.mSavedViewState != null) {
+               this.mInnerView.restoreHierarchyState(this.mSavedViewState);
+               this.mSavedViewState = null;
                     }
-/* 450 */           this.mCalled = false;
-/* 451 */           onViewStateRestored(savedInstanceState);
-/* 452 */           if (!this.mCalled) {
-/* 453 */               throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onViewStateRestored()");
+           this.mCalled = false;
+           onViewStateRestored(savedInstanceState);
+           if (!this.mCalled) {
+               throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onViewStateRestored()");
                     }
                 }
 
-/* 458 */       final void setIndex(int index, Fragment parent) {
-/* 459 */           this.mIndex = index;
-/* 460 */           if (parent != null) {
-/* 461 */               this.mWho = parent.mWho + ":" + this.mIndex;
+       final void setIndex(int index, Fragment parent) {
+           this.mIndex = index;
+           if (parent != null) {
+               this.mWho = parent.mWho + ":" + this.mIndex;
                     } else {
-/* 463 */               this.mWho = "android:fragment:" + this.mIndex;
+               this.mWho = "android:fragment:" + this.mIndex;
                     }
                 }
 
-/* 467 */       final boolean isInBackStack() {
+       final boolean isInBackStack() {
                     return this.mBackStackNesting > 0;
                 }
 
-/* 474 */       public final boolean equals(Object o) {
-/* 475 */           return super.equals(o);
+       public final boolean equals(Object o) {
+           return super.equals(o);
                 }
 
-/* 481 */       public final int hashCode() {
-/* 482 */           return super.hashCode();
+       public final int hashCode() {
+           return super.hashCode();
                 }
 
-/* 486 */       public String toString() {
-/* 487 */           StringBuilder sb = new StringBuilder(128);
-/* 488 */           DebugUtils.buildShortClassTag(this, sb);
-/* 489 */           if (this.mIndex >= 0) {
-/* 490 */               sb.append(" #");
-/* 491 */               sb.append(this.mIndex);
+       public String toString() {
+           StringBuilder sb = new StringBuilder(128);
+           DebugUtils.buildShortClassTag(this, sb);
+           if (this.mIndex >= 0) {
+               sb.append(" #");
+               sb.append(this.mIndex);
                     }
-/* 493 */           if (this.mFragmentId != 0) {
-/* 494 */               sb.append(" id=0x");
-/* 495 */               sb.append(Integer.toHexString(this.mFragmentId));
+           if (this.mFragmentId != 0) {
+               sb.append(" id=0x");
+               sb.append(Integer.toHexString(this.mFragmentId));
                     }
-/* 497 */           if (this.mTag != null) {
-/* 498 */               sb.append(MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR);
-/* 499 */               sb.append(this.mTag);
+           if (this.mTag != null) {
+               sb.append(MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR);
+               sb.append(this.mTag);
                     }
-/* 501 */           sb.append('}');
-/* 502 */           return sb.toString();
+           sb.append('}');
+           return sb.toString();
                 }
 
-/* 510 */       public final int getId() {
-/* 511 */           return this.mFragmentId;
+       public final int getId() {
+           return this.mFragmentId;
                 }
 
-/* 517 */       public final String getTag() {
-/* 518 */           return this.mTag;
+       public final String getTag() {
+           return this.mTag;
                 }
 
-/* 528 */       public void setArguments(Bundle args) {
-/* 529 */           if (this.mIndex >= 0) {
-/* 530 */               throw new IllegalStateException("Fragment already active");
+       public void setArguments(Bundle args) {
+           if (this.mIndex >= 0) {
+               throw new IllegalStateException("Fragment already active");
                     }
-/* 532 */           this.mArguments = args;
+           this.mArguments = args;
                 }
 
-/* 539 */       public final Bundle getArguments() {
-/* 540 */           return this.mArguments;
+       public final Bundle getArguments() {
+           return this.mArguments;
                 }
 
-/* 551 */       public void setInitialSavedState(SavedState state) {
-/* 552 */           if (this.mIndex >= 0) {
-/* 553 */               throw new IllegalStateException("Fragment already active");
+       public void setInitialSavedState(SavedState state) {
+           if (this.mIndex >= 0) {
+               throw new IllegalStateException("Fragment already active");
                     }
-/* 555 */           this.mSavedFragmentState = (state == null || state.mState == null) ? null : state.mState;
+           this.mSavedFragmentState = (state == null || state.mState == null) ? null : state.mState;
                 }
 
-/* 570 */       public void setTargetFragment(Fragment fragment, int requestCode) {
-/* 571 */           this.mTarget = fragment;
-/* 572 */           this.mTargetRequestCode = requestCode;
+       public void setTargetFragment(Fragment fragment, int requestCode) {
+           this.mTarget = fragment;
+           this.mTargetRequestCode = requestCode;
                 }
 
-/* 578 */       public final Fragment getTargetFragment() {
-/* 579 */           return this.mTarget;
+       public final Fragment getTargetFragment() {
+           return this.mTarget;
                 }
 
-/* 585 */       public final int getTargetRequestCode() {
-/* 586 */           return this.mTargetRequestCode;
+       public final int getTargetRequestCode() {
+           return this.mTargetRequestCode;
                 }
 
-/* 592 */       public final FragmentActivity getActivity() {
-/* 593 */           return this.mActivity;
+       public final FragmentActivity getActivity() {
+           return this.mActivity;
                 }
 
-/* 599 */       public final Resources getResources() {
-/* 600 */           if (this.mActivity == null) {
-/* 601 */               throw new IllegalStateException("Fragment " + this + " not attached to Activity");
+       public final Resources getResources() {
+           if (this.mActivity == null) {
+               throw new IllegalStateException("Fragment " + this + " not attached to Activity");
                     }
-/* 603 */           return this.mActivity.getResources();
+           return this.mActivity.getResources();
                 }
 
-/* 612 */       public final CharSequence getText(int resId) {
-/* 613 */           return getResources().getText(resId);
+       public final CharSequence getText(int resId) {
+           return getResources().getText(resId);
                 }
 
-/* 622 */       public final String getString(int resId) {
-/* 623 */           return getResources().getString(resId);
+       public final String getString(int resId) {
+           return getResources().getString(resId);
                 }
 
-/* 635 */       public final String getString(int resId, Object... formatArgs) {
-/* 636 */           return getResources().getString(resId, formatArgs);
+       public final String getString(int resId, Object... formatArgs) {
+           return getResources().getString(resId, formatArgs);
                 }
 
-/* 649 */       public final FragmentManager getFragmentManager() {
-/* 650 */           return this.mFragmentManager;
+       public final FragmentManager getFragmentManager() {
+           return this.mFragmentManager;
                 }
 
-/* 657 */       public final FragmentManager getChildFragmentManager() {
-/* 658 */           if (this.mChildFragmentManager == null) {
-/* 659 */               instantiateChildFragmentManager();
-/* 660 */               if (this.mState >= 5) {
-/* 661 */                   this.mChildFragmentManager.dispatchResume();
+       public final FragmentManager getChildFragmentManager() {
+           if (this.mChildFragmentManager == null) {
+               instantiateChildFragmentManager();
+               if (this.mState >= 5) {
+                   this.mChildFragmentManager.dispatchResume();
                         } else if (this.mState >= 4) {
-/* 663 */                   this.mChildFragmentManager.dispatchStart();
+                   this.mChildFragmentManager.dispatchStart();
                         } else if (this.mState >= 2) {
-/* 665 */                   this.mChildFragmentManager.dispatchActivityCreated();
+                   this.mChildFragmentManager.dispatchActivityCreated();
                         } else if (this.mState >= 1) {
-/* 667 */                   this.mChildFragmentManager.dispatchCreate();
+                   this.mChildFragmentManager.dispatchCreate();
                         }
                     }
-/* 670 */           return this.mChildFragmentManager;
+           return this.mChildFragmentManager;
                 }
 
-/* 677 */       public final Fragment getParentFragment() {
-/* 678 */           return this.mParentFragment;
+       public final Fragment getParentFragment() {
+           return this.mParentFragment;
                 }
 
-/* 684 */       public final boolean isAdded() {
+       public final boolean isAdded() {
                     return this.mActivity != null && this.mAdded;
                 }
 
-/* 693 */       public final boolean isDetached() {
-/* 694 */           return this.mDetached;
+       public final boolean isDetached() {
+           return this.mDetached;
                 }
 
-/* 702 */       public final boolean isRemoving() {
-/* 703 */           return this.mRemoving;
+       public final boolean isRemoving() {
+           return this.mRemoving;
                 }
 
-/* 713 */       public final boolean isInLayout() {
-/* 714 */           return this.mInLayout;
+       public final boolean isInLayout() {
+           return this.mInLayout;
                 }
 
-/* 721 */       public final boolean isResumed() {
-/* 722 */           return this.mResumed;
+       public final boolean isResumed() {
+           return this.mResumed;
                 }
 
-/* 730 */       public final boolean isVisible() {
+       public final boolean isVisible() {
                     return (!isAdded() || isHidden() || this.mView == null || this.mView.getWindowToken() == null || this.mView.getVisibility() != 0) ? false : true;
                 }
 
-/* 742 */       public final boolean isHidden() {
-/* 743 */           return this.mHidden;
+       public final boolean isHidden() {
+           return this.mHidden;
                 }
 
-/* 747 */       public final boolean hasOptionsMenu() {
-/* 748 */           return this.mHasMenu;
+       public final boolean hasOptionsMenu() {
+           return this.mHasMenu;
                 }
 
-/* 752 */       public final boolean isMenuVisible() {
-/* 753 */           return this.mMenuVisible;
+       public final boolean isMenuVisible() {
+           return this.mMenuVisible;
                 }
 
-/* 763 */       public void onHiddenChanged(boolean hidden) {
+       public void onHiddenChanged(boolean hidden) {
                 }
 
-/* 780 */       public void setRetainInstance(boolean retain) {
-/* 781 */           if (retain && this.mParentFragment != null) {
-/* 782 */               throw new IllegalStateException("Can't retain fragements that are nested in other fragments");
+       public void setRetainInstance(boolean retain) {
+           if (retain && this.mParentFragment != null) {
+               throw new IllegalStateException("Can't retain fragements that are nested in other fragments");
                     }
-/* 785 */           this.mRetainInstance = retain;
+           this.mRetainInstance = retain;
                 }
 
-/* 788 */       public final boolean getRetainInstance() {
-/* 789 */           return this.mRetainInstance;
+       public final boolean getRetainInstance() {
+           return this.mRetainInstance;
                 }
 
-/* 799 */       public void setHasOptionsMenu(boolean hasMenu) {
-/* 800 */           if (this.mHasMenu != hasMenu) {
-/* 801 */               this.mHasMenu = hasMenu;
-/* 802 */               if (isAdded() && !isHidden()) {
-/* 803 */                   this.mActivity.supportInvalidateOptionsMenu();
+       public void setHasOptionsMenu(boolean hasMenu) {
+           if (this.mHasMenu != hasMenu) {
+               this.mHasMenu = hasMenu;
+               if (isAdded() && !isHidden()) {
+                   this.mActivity.supportInvalidateOptionsMenu();
                         }
                     }
                 }
 
-/* 817 */       public void setMenuVisibility(boolean menuVisible) {
-/* 818 */           if (this.mMenuVisible != menuVisible) {
-/* 819 */               this.mMenuVisible = menuVisible;
-/* 820 */               if (this.mHasMenu && isAdded() && !isHidden()) {
-/* 821 */                   this.mActivity.supportInvalidateOptionsMenu();
+       public void setMenuVisibility(boolean menuVisible) {
+           if (this.mMenuVisible != menuVisible) {
+               this.mMenuVisible = menuVisible;
+               if (this.mHasMenu && isAdded() && !isHidden()) {
+                   this.mActivity.supportInvalidateOptionsMenu();
                         }
                     }
                 }
 
-/* 839 */       public void setUserVisibleHint(boolean isVisibleToUser) {
-/* 840 */           if (!this.mUserVisibleHint && isVisibleToUser && this.mState < 4) {
-/* 841 */               this.mFragmentManager.performPendingDeferredStart(this);
+       public void setUserVisibleHint(boolean isVisibleToUser) {
+           if (!this.mUserVisibleHint && isVisibleToUser && this.mState < 4) {
+               this.mFragmentManager.performPendingDeferredStart(this);
                     }
-/* 843 */           this.mUserVisibleHint = isVisibleToUser;
-/* 844 */           this.mDeferStart = !isVisibleToUser;
+           this.mUserVisibleHint = isVisibleToUser;
+           this.mDeferStart = !isVisibleToUser;
                 }
 
-/* 851 */       public boolean getUserVisibleHint() {
-/* 852 */           return this.mUserVisibleHint;
+       public boolean getUserVisibleHint() {
+           return this.mUserVisibleHint;
                 }
 
-/* 858 */       public LoaderManager getLoaderManager() {
-/* 859 */           if (this.mLoaderManager != null) {
-/* 860 */               return this.mLoaderManager;
+       public LoaderManager getLoaderManager() {
+           if (this.mLoaderManager != null) {
+               return this.mLoaderManager;
                     }
-/* 862 */           if (this.mActivity == null) {
-/* 863 */               throw new IllegalStateException("Fragment " + this + " not attached to Activity");
+           if (this.mActivity == null) {
+               throw new IllegalStateException("Fragment " + this + " not attached to Activity");
                     }
-/* 865 */           this.mCheckedForLoaderManager = true;
-/* 866 */           this.mLoaderManager = this.mActivity.getLoaderManager(this.mWho, this.mLoadersStarted, true);
-/* 867 */           return this.mLoaderManager;
+           this.mCheckedForLoaderManager = true;
+           this.mLoaderManager = this.mActivity.getLoaderManager(this.mWho, this.mLoadersStarted, true);
+           return this.mLoaderManager;
                 }
 
-/* 874 */       public void startActivity(Intent intent) {
-/* 875 */           if (this.mActivity == null) {
-/* 876 */               throw new IllegalStateException("Fragment " + this + " not attached to Activity");
+       public void startActivity(Intent intent) {
+           if (this.mActivity == null) {
+               throw new IllegalStateException("Fragment " + this + " not attached to Activity");
                     }
-/* 878 */           this.mActivity.startActivityFromFragment(this, intent, -1);
+           this.mActivity.startActivityFromFragment(this, intent, -1);
                 }
 
-/* 885 */       public void startActivityForResult(Intent intent, int requestCode) {
-/* 886 */           if (this.mActivity == null) {
-/* 887 */               throw new IllegalStateException("Fragment " + this + " not attached to Activity");
+       public void startActivityForResult(Intent intent, int requestCode) {
+           if (this.mActivity == null) {
+               throw new IllegalStateException("Fragment " + this + " not attached to Activity");
                     }
-/* 889 */           this.mActivity.startActivityFromFragment(this, intent, requestCode);
+           this.mActivity.startActivityFromFragment(this, intent, requestCode);
                 }
 
-/* 906 */       public void onActivityResult(int requestCode, int resultCode, Intent data) {
+       public void onActivityResult(int requestCode, int resultCode, Intent data) {
                 }
 
-/* 914 */       public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
-/* 915 */           return this.mActivity.getLayoutInflater();
+       public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
+           return this.mActivity.getLayoutInflater();
                 }
 
-/* 960 */       public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
-/* 961 */           this.mCalled = true;
+       public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
+           this.mCalled = true;
                 }
 
-/* 968 */       public void onAttach(Activity activity) {
-/* 969 */           this.mCalled = true;
+       public void onAttach(Activity activity) {
+           this.mCalled = true;
                 }
 
-/* 975 */       public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
-/* 976 */           return null;
+       public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
+           return null;
                 }
 
-/* 993 */       public void onCreate(Bundle savedInstanceState) {
-/* 994 */           this.mCalled = true;
+       public void onCreate(Bundle savedInstanceState) {
+           this.mCalled = true;
                 }
 
-/* 1017 */      public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-/* 1018 */          return null;
+      public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+          return null;
                 }
 
-/* 1031 */      public void onViewCreated(View view, Bundle savedInstanceState) {
+      public void onViewCreated(View view, Bundle savedInstanceState) {
                 }
 
-/* 1040 */      public View getView() {
-/* 1041 */          return this.mView;
+      public View getView() {
+          return this.mView;
                 }
 
-/* 1057 */      public void onActivityCreated(Bundle savedInstanceState) {
-/* 1058 */          this.mCalled = true;
+      public void onActivityCreated(Bundle savedInstanceState) {
+          this.mCalled = true;
                 }
 
-/* 1072 */      public void onViewStateRestored(Bundle savedInstanceState) {
-/* 1073 */          this.mCalled = true;
+      public void onViewStateRestored(Bundle savedInstanceState) {
+          this.mCalled = true;
                 }
 
-/* 1081 */      public void onStart() {
-/* 1082 */          this.mCalled = true;
-/* 1084 */          if (!this.mLoadersStarted) {
-/* 1085 */              this.mLoadersStarted = true;
-/* 1086 */              if (!this.mCheckedForLoaderManager) {
-/* 1087 */                  this.mCheckedForLoaderManager = true;
-/* 1088 */                  this.mLoaderManager = this.mActivity.getLoaderManager(this.mWho, this.mLoadersStarted, false);
+      public void onStart() {
+          this.mCalled = true;
+          if (!this.mLoadersStarted) {
+              this.mLoadersStarted = true;
+              if (!this.mCheckedForLoaderManager) {
+                  this.mCheckedForLoaderManager = true;
+                  this.mLoaderManager = this.mActivity.getLoaderManager(this.mWho, this.mLoadersStarted, false);
                         }
-/* 1090 */              if (this.mLoaderManager != null) {
-/* 1091 */                  this.mLoaderManager.doStart();
+              if (this.mLoaderManager != null) {
+                  this.mLoaderManager.doStart();
                         }
                     }
                 }
 
-/* 1102 */      public void onResume() {
-/* 1103 */          this.mCalled = true;
+      public void onResume() {
+          this.mCalled = true;
                 }
 
-/* 1125 */      public void onSaveInstanceState(Bundle outState) {
+      public void onSaveInstanceState(Bundle outState) {
                 }
 
-                @Override // android.content.ComponentCallbacks
-/* 1128 */      public void onConfigurationChanged(Configuration newConfig) {
-/* 1129 */          this.mCalled = true;
+                @Override 
+      public void onConfigurationChanged(Configuration newConfig) {
+          this.mCalled = true;
                 }
 
-/* 1137 */      public void onPause() {
-/* 1138 */          this.mCalled = true;
+      public void onPause() {
+          this.mCalled = true;
                 }
 
-/* 1146 */      public void onStop() {
-/* 1147 */          this.mCalled = true;
+      public void onStop() {
+          this.mCalled = true;
                 }
 
-                @Override // android.content.ComponentCallbacks
-/* 1150 */      public void onLowMemory() {
-/* 1151 */          this.mCalled = true;
+                @Override 
+      public void onLowMemory() {
+          this.mCalled = true;
                 }
 
-/* 1163 */      public void onDestroyView() {
-/* 1164 */          this.mCalled = true;
+      public void onDestroyView() {
+          this.mCalled = true;
                 }
 
-/* 1171 */      public void onDestroy() {
-/* 1172 */          this.mCalled = true;
-/* 1175 */          if (!this.mCheckedForLoaderManager) {
-/* 1176 */              this.mCheckedForLoaderManager = true;
-/* 1177 */              this.mLoaderManager = this.mActivity.getLoaderManager(this.mWho, this.mLoadersStarted, false);
+      public void onDestroy() {
+          this.mCalled = true;
+          if (!this.mCheckedForLoaderManager) {
+              this.mCheckedForLoaderManager = true;
+              this.mLoaderManager = this.mActivity.getLoaderManager(this.mWho, this.mLoadersStarted, false);
                     }
-/* 1179 */          if (this.mLoaderManager != null) {
-/* 1180 */              this.mLoaderManager.doDestroy();
+          if (this.mLoaderManager != null) {
+              this.mLoaderManager.doDestroy();
                     }
                 }
 
-/* 1190 */      void initState() {
-/* 1191 */          this.mIndex = -1;
-/* 1192 */          this.mWho = null;
-/* 1193 */          this.mAdded = false;
-/* 1194 */          this.mRemoving = false;
-/* 1195 */          this.mResumed = false;
-/* 1196 */          this.mFromLayout = false;
-/* 1197 */          this.mInLayout = false;
-/* 1198 */          this.mRestored = false;
-/* 1199 */          this.mBackStackNesting = 0;
-/* 1200 */          this.mFragmentManager = null;
-/* 1201 */          this.mActivity = null;
-/* 1202 */          this.mFragmentId = 0;
-/* 1203 */          this.mContainerId = 0;
-/* 1204 */          this.mTag = null;
-/* 1205 */          this.mHidden = false;
-/* 1206 */          this.mDetached = false;
-/* 1207 */          this.mRetaining = false;
-/* 1208 */          this.mLoaderManager = null;
-/* 1209 */          this.mLoadersStarted = false;
-/* 1210 */          this.mCheckedForLoaderManager = false;
+      void initState() {
+          this.mIndex = -1;
+          this.mWho = null;
+          this.mAdded = false;
+          this.mRemoving = false;
+          this.mResumed = false;
+          this.mFromLayout = false;
+          this.mInLayout = false;
+          this.mRestored = false;
+          this.mBackStackNesting = 0;
+          this.mFragmentManager = null;
+          this.mActivity = null;
+          this.mFragmentId = 0;
+          this.mContainerId = 0;
+          this.mTag = null;
+          this.mHidden = false;
+          this.mDetached = false;
+          this.mRetaining = false;
+          this.mLoaderManager = null;
+          this.mLoadersStarted = false;
+          this.mCheckedForLoaderManager = false;
                 }
 
-/* 1217 */      public void onDetach() {
-/* 1218 */          this.mCalled = true;
+      public void onDetach() {
+          this.mCalled = true;
                 }
 
-/* 1234 */      public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+      public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
                 }
 
-/* 1251 */      public void onPrepareOptionsMenu(Menu menu) {
+      public void onPrepareOptionsMenu(Menu menu) {
                 }
 
-/* 1261 */      public void onDestroyOptionsMenu() {
+      public void onDestroyOptionsMenu() {
                 }
 
-/* 1282 */      public boolean onOptionsItemSelected(MenuItem item) {
-/* 1283 */          return false;
+      public boolean onOptionsItemSelected(MenuItem item) {
+          return false;
                 }
 
-/* 1293 */      public void onOptionsMenuClosed(Menu menu) {
+      public void onOptionsMenuClosed(Menu menu) {
                 }
 
-                @Override // android.view.View.OnCreateContextMenuListener
-/* 1313 */      public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-/* 1314 */          getActivity().onCreateContextMenu(menu, v, menuInfo);
+                @Override 
+      public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+          getActivity().onCreateContextMenu(menu, v, menuInfo);
                 }
 
-/* 1327 */      public void registerForContextMenu(View view) {
-/* 1328 */          view.setOnCreateContextMenuListener(this);
+      public void registerForContextMenu(View view) {
+          view.setOnCreateContextMenuListener(this);
                 }
 
-/* 1338 */      public void unregisterForContextMenu(View view) {
-/* 1339 */          view.setOnCreateContextMenuListener(null);
+      public void unregisterForContextMenu(View view) {
+          view.setOnCreateContextMenuListener(null);
                 }
 
-/* 1359 */      public boolean onContextItemSelected(MenuItem item) {
-/* 1360 */          return false;
+      public boolean onContextItemSelected(MenuItem item) {
+          return false;
                 }
 
-/* 1372 */      public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
-/* 1373 */          writer.print(prefix);
+      public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
+          writer.print(prefix);
                     writer.print("mFragmentId=#");
-/* 1374 */          writer.print(Integer.toHexString(this.mFragmentId));
-/* 1375 */          writer.print(" mContainerId=#");
-/* 1376 */          writer.print(Integer.toHexString(this.mContainerId));
-/* 1377 */          writer.print(" mTag=");
+          writer.print(Integer.toHexString(this.mFragmentId));
+          writer.print(" mContainerId=#");
+          writer.print(Integer.toHexString(this.mContainerId));
+          writer.print(" mTag=");
                     writer.println(this.mTag);
-/* 1378 */          writer.print(prefix);
+          writer.print(prefix);
                     writer.print("mState=");
                     writer.print(this.mState);
-/* 1379 */          writer.print(" mIndex=");
+          writer.print(" mIndex=");
                     writer.print(this.mIndex);
-/* 1380 */          writer.print(" mWho=");
+          writer.print(" mWho=");
                     writer.print(this.mWho);
-/* 1381 */          writer.print(" mBackStackNesting=");
+          writer.print(" mBackStackNesting=");
                     writer.println(this.mBackStackNesting);
-/* 1382 */          writer.print(prefix);
+          writer.print(prefix);
                     writer.print("mAdded=");
                     writer.print(this.mAdded);
-/* 1383 */          writer.print(" mRemoving=");
+          writer.print(" mRemoving=");
                     writer.print(this.mRemoving);
-/* 1384 */          writer.print(" mResumed=");
+          writer.print(" mResumed=");
                     writer.print(this.mResumed);
-/* 1385 */          writer.print(" mFromLayout=");
+          writer.print(" mFromLayout=");
                     writer.print(this.mFromLayout);
-/* 1386 */          writer.print(" mInLayout=");
+          writer.print(" mInLayout=");
                     writer.println(this.mInLayout);
-/* 1387 */          writer.print(prefix);
+          writer.print(prefix);
                     writer.print("mHidden=");
                     writer.print(this.mHidden);
-/* 1388 */          writer.print(" mDetached=");
+          writer.print(" mDetached=");
                     writer.print(this.mDetached);
-/* 1389 */          writer.print(" mMenuVisible=");
+          writer.print(" mMenuVisible=");
                     writer.print(this.mMenuVisible);
-/* 1390 */          writer.print(" mHasMenu=");
+          writer.print(" mHasMenu=");
                     writer.println(this.mHasMenu);
-/* 1391 */          writer.print(prefix);
+          writer.print(prefix);
                     writer.print("mRetainInstance=");
                     writer.print(this.mRetainInstance);
-/* 1392 */          writer.print(" mRetaining=");
+          writer.print(" mRetaining=");
                     writer.print(this.mRetaining);
-/* 1393 */          writer.print(" mUserVisibleHint=");
+          writer.print(" mUserVisibleHint=");
                     writer.println(this.mUserVisibleHint);
-/* 1394 */          if (this.mFragmentManager != null) {
-/* 1395 */              writer.print(prefix);
+          if (this.mFragmentManager != null) {
+              writer.print(prefix);
                         writer.print("mFragmentManager=");
-/* 1396 */              writer.println(this.mFragmentManager);
+              writer.println(this.mFragmentManager);
                     }
-/* 1398 */          if (this.mActivity != null) {
-/* 1399 */              writer.print(prefix);
+          if (this.mActivity != null) {
+              writer.print(prefix);
                         writer.print("mActivity=");
-/* 1400 */              writer.println(this.mActivity);
+              writer.println(this.mActivity);
                     }
-/* 1402 */          if (this.mParentFragment != null) {
-/* 1403 */              writer.print(prefix);
+          if (this.mParentFragment != null) {
+              writer.print(prefix);
                         writer.print("mParentFragment=");
-/* 1404 */              writer.println(this.mParentFragment);
+              writer.println(this.mParentFragment);
                     }
-/* 1406 */          if (this.mArguments != null) {
-/* 1407 */              writer.print(prefix);
+          if (this.mArguments != null) {
+              writer.print(prefix);
                         writer.print("mArguments=");
                         writer.println(this.mArguments);
                     }
-/* 1409 */          if (this.mSavedFragmentState != null) {
-/* 1410 */              writer.print(prefix);
+          if (this.mSavedFragmentState != null) {
+              writer.print(prefix);
                         writer.print("mSavedFragmentState=");
-/* 1411 */              writer.println(this.mSavedFragmentState);
+              writer.println(this.mSavedFragmentState);
                     }
-/* 1413 */          if (this.mSavedViewState != null) {
-/* 1414 */              writer.print(prefix);
+          if (this.mSavedViewState != null) {
+              writer.print(prefix);
                         writer.print("mSavedViewState=");
-/* 1415 */              writer.println(this.mSavedViewState);
+              writer.println(this.mSavedViewState);
                     }
-/* 1417 */          if (this.mTarget != null) {
-/* 1418 */              writer.print(prefix);
+          if (this.mTarget != null) {
+              writer.print(prefix);
                         writer.print("mTarget=");
                         writer.print(this.mTarget);
-/* 1419 */              writer.print(" mTargetRequestCode=");
-/* 1420 */              writer.println(this.mTargetRequestCode);
+              writer.print(" mTargetRequestCode=");
+              writer.println(this.mTargetRequestCode);
                     }
-/* 1422 */          if (this.mNextAnim != 0) {
-/* 1423 */              writer.print(prefix);
+          if (this.mNextAnim != 0) {
+              writer.print(prefix);
                         writer.print("mNextAnim=");
                         writer.println(this.mNextAnim);
                     }
-/* 1425 */          if (this.mContainer != null) {
-/* 1426 */              writer.print(prefix);
+          if (this.mContainer != null) {
+              writer.print(prefix);
                         writer.print("mContainer=");
                         writer.println(this.mContainer);
                     }
-/* 1428 */          if (this.mView != null) {
-/* 1429 */              writer.print(prefix);
+          if (this.mView != null) {
+              writer.print(prefix);
                         writer.print("mView=");
                         writer.println(this.mView);
                     }
-/* 1431 */          if (this.mInnerView != null) {
-/* 1432 */              writer.print(prefix);
+          if (this.mInnerView != null) {
+              writer.print(prefix);
                         writer.print("mInnerView=");
                         writer.println(this.mView);
                     }
-/* 1434 */          if (this.mAnimatingAway != null) {
-/* 1435 */              writer.print(prefix);
+          if (this.mAnimatingAway != null) {
+              writer.print(prefix);
                         writer.print("mAnimatingAway=");
                         writer.println(this.mAnimatingAway);
-/* 1436 */              writer.print(prefix);
+              writer.print(prefix);
                         writer.print("mStateAfterAnimating=");
-/* 1437 */              writer.println(this.mStateAfterAnimating);
+              writer.println(this.mStateAfterAnimating);
                     }
-/* 1439 */          if (this.mLoaderManager != null) {
-/* 1440 */              writer.print(prefix);
+          if (this.mLoaderManager != null) {
+              writer.print(prefix);
                         writer.println("Loader Manager:");
-/* 1441 */              this.mLoaderManager.dump(prefix + "  ", fd, writer, args);
+              this.mLoaderManager.dump(prefix + "  ", fd, writer, args);
                     }
-/* 1443 */          if (this.mChildFragmentManager != null) {
-/* 1444 */              writer.print(prefix);
+          if (this.mChildFragmentManager != null) {
+              writer.print(prefix);
                         writer.println("Child " + this.mChildFragmentManager + ":");
-/* 1445 */              this.mChildFragmentManager.dump(prefix + "  ", fd, writer, args);
+              this.mChildFragmentManager.dump(prefix + "  ", fd, writer, args);
                     }
                 }
 
-/* 1449 */      Fragment findFragmentByWho(String who) {
-/* 1450 */          if (!who.equals(this.mWho)) {
-/* 1453 */              if (this.mChildFragmentManager != null) {
-/* 1454 */                  return this.mChildFragmentManager.findFragmentByWho(who);
+      Fragment findFragmentByWho(String who) {
+          if (!who.equals(this.mWho)) {
+              if (this.mChildFragmentManager != null) {
+                  return this.mChildFragmentManager.findFragmentByWho(who);
                         }
-/* 1456 */              return null;
+              return null;
                     }
-/* 1456 */          return this;
+          return this;
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.app.Fragment$1 */
-/* 1459 */      class C00051 implements FragmentContainer {
-/* 1460 */          C00051() {
+                
+      class C00051 implements FragmentContainer {
+          C00051() {
                     }
 
-                    @Override // android.support.v4.app.FragmentContainer
-/* 1463 */          public View findViewById(int id) {
-/* 1464 */              if (Fragment.this.mView == null) {
-/* 1465 */                  throw new IllegalStateException("Fragment does not have a view");
+                    @Override 
+          public View findViewById(int id) {
+              if (Fragment.this.mView == null) {
+                  throw new IllegalStateException("Fragment does not have a view");
                         }
-/* 1467 */              return Fragment.this.mView.findViewById(id);
+              return Fragment.this.mView.findViewById(id);
                     }
                 }
 
-/* 1459 */      void instantiateChildFragmentManager() {
-/* 1460 */          this.mChildFragmentManager = new FragmentManagerImpl();
-/* 1461 */          this.mChildFragmentManager.attachActivity(this.mActivity, new C00051(), this);
+      void instantiateChildFragmentManager() {
+          this.mChildFragmentManager = new FragmentManagerImpl();
+          this.mChildFragmentManager.attachActivity(this.mActivity, new C00051(), this);
                 }
 
-/* 1472 */      void performCreate(Bundle savedInstanceState) {
+      void performCreate(Bundle savedInstanceState) {
                     Parcelable p;
-/* 1473 */          if (this.mChildFragmentManager != null) {
-/* 1474 */              this.mChildFragmentManager.noteStateNotSaved();
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.noteStateNotSaved();
                     }
-/* 1476 */          this.mCalled = false;
-/* 1477 */          onCreate(savedInstanceState);
-/* 1478 */          if (!this.mCalled) {
-/* 1479 */              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onCreate()");
+          this.mCalled = false;
+          onCreate(savedInstanceState);
+          if (!this.mCalled) {
+              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onCreate()");
                     }
-/* 1482 */          if (savedInstanceState != null && (p = savedInstanceState.getParcelable("android:support:fragments")) != null) {
-/* 1486 */              if (this.mChildFragmentManager == null) {
-/* 1487 */                  instantiateChildFragmentManager();
+          if (savedInstanceState != null && (p = savedInstanceState.getParcelable("android:support:fragments")) != null) {
+              if (this.mChildFragmentManager == null) {
+                  instantiateChildFragmentManager();
                         }
-/* 1489 */              this.mChildFragmentManager.restoreAllState(p, null);
-/* 1490 */              this.mChildFragmentManager.dispatchCreate();
+              this.mChildFragmentManager.restoreAllState(p, null);
+              this.mChildFragmentManager.dispatchCreate();
                     }
                 }
 
-/* 1496 */      View performCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-/* 1497 */          if (this.mChildFragmentManager != null) {
-/* 1498 */              this.mChildFragmentManager.noteStateNotSaved();
+      View performCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.noteStateNotSaved();
                     }
-/* 1500 */          return onCreateView(inflater, container, savedInstanceState);
+          return onCreateView(inflater, container, savedInstanceState);
                 }
 
-/* 1503 */      void performActivityCreated(Bundle savedInstanceState) {
-/* 1504 */          if (this.mChildFragmentManager != null) {
-/* 1505 */              this.mChildFragmentManager.noteStateNotSaved();
+      void performActivityCreated(Bundle savedInstanceState) {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.noteStateNotSaved();
                     }
-/* 1507 */          this.mCalled = false;
-/* 1508 */          onActivityCreated(savedInstanceState);
-/* 1509 */          if (!this.mCalled) {
-/* 1510 */              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onActivityCreated()");
+          this.mCalled = false;
+          onActivityCreated(savedInstanceState);
+          if (!this.mCalled) {
+              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onActivityCreated()");
                     }
-/* 1513 */          if (this.mChildFragmentManager != null) {
-/* 1514 */              this.mChildFragmentManager.dispatchActivityCreated();
-                    }
-                }
-
-/* 1518 */      void performStart() {
-/* 1519 */          if (this.mChildFragmentManager != null) {
-/* 1520 */              this.mChildFragmentManager.noteStateNotSaved();
-/* 1521 */              this.mChildFragmentManager.execPendingActions();
-                    }
-/* 1523 */          this.mCalled = false;
-/* 1524 */          onStart();
-/* 1525 */          if (!this.mCalled) {
-/* 1526 */              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onStart()");
-                    }
-/* 1529 */          if (this.mChildFragmentManager != null) {
-/* 1530 */              this.mChildFragmentManager.dispatchStart();
-                    }
-/* 1532 */          if (this.mLoaderManager != null) {
-/* 1533 */              this.mLoaderManager.doReportStart();
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchActivityCreated();
                     }
                 }
 
-/* 1537 */      void performResume() {
-/* 1538 */          if (this.mChildFragmentManager != null) {
-/* 1539 */              this.mChildFragmentManager.noteStateNotSaved();
-/* 1540 */              this.mChildFragmentManager.execPendingActions();
+      void performStart() {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.noteStateNotSaved();
+              this.mChildFragmentManager.execPendingActions();
                     }
-/* 1542 */          this.mCalled = false;
-/* 1543 */          onResume();
-/* 1544 */          if (!this.mCalled) {
-/* 1545 */              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onResume()");
+          this.mCalled = false;
+          onStart();
+          if (!this.mCalled) {
+              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onStart()");
                     }
-/* 1548 */          if (this.mChildFragmentManager != null) {
-/* 1549 */              this.mChildFragmentManager.dispatchResume();
-/* 1550 */              this.mChildFragmentManager.execPendingActions();
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchStart();
                     }
-                }
-
-/* 1554 */      void performConfigurationChanged(Configuration newConfig) {
-/* 1555 */          onConfigurationChanged(newConfig);
-/* 1556 */          if (this.mChildFragmentManager != null) {
-/* 1557 */              this.mChildFragmentManager.dispatchConfigurationChanged(newConfig);
+          if (this.mLoaderManager != null) {
+              this.mLoaderManager.doReportStart();
                     }
                 }
 
-/* 1561 */      void performLowMemory() {
-/* 1562 */          onLowMemory();
-/* 1563 */          if (this.mChildFragmentManager != null) {
-/* 1564 */              this.mChildFragmentManager.dispatchLowMemory();
+      void performResume() {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.noteStateNotSaved();
+              this.mChildFragmentManager.execPendingActions();
+                    }
+          this.mCalled = false;
+          onResume();
+          if (!this.mCalled) {
+              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onResume()");
+                    }
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchResume();
+              this.mChildFragmentManager.execPendingActions();
                     }
                 }
 
-/* 1577 */      boolean performCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-/* 1578 */          boolean show = false;
-/* 1579 */          if (this.mHidden) {
-/* 1578 */              return false;
+      void performConfigurationChanged(Configuration newConfig) {
+          onConfigurationChanged(newConfig);
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchConfigurationChanged(newConfig);
                     }
-/* 1580 */          if (this.mHasMenu && this.mMenuVisible) {
-/* 1581 */              show = true;
-/* 1582 */              onCreateOptionsMenu(menu, inflater);
-                    }
-/* 1584 */          if (this.mChildFragmentManager != null) {
-/* 1585 */              return show | this.mChildFragmentManager.dispatchCreateOptionsMenu(menu, inflater);
-                    }
-/* 1588 */          return show;
                 }
 
-/* 1591 */      boolean performPrepareOptionsMenu(Menu menu) {
-/* 1592 */          boolean show = false;
-/* 1593 */          if (this.mHidden) {
-/* 1592 */              return false;
+      void performLowMemory() {
+          onLowMemory();
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchLowMemory();
                     }
-/* 1594 */          if (this.mHasMenu && this.mMenuVisible) {
-/* 1595 */              show = true;
-/* 1596 */              onPrepareOptionsMenu(menu);
-                    }
-/* 1598 */          if (this.mChildFragmentManager != null) {
-/* 1599 */              return show | this.mChildFragmentManager.dispatchPrepareOptionsMenu(menu);
-                    }
-/* 1602 */          return show;
                 }
 
-/* 1605 */      boolean performOptionsItemSelected(MenuItem item) {
-/* 1606 */          if (!this.mHidden) {
-/* 1607 */              if (this.mHasMenu && this.mMenuVisible && onOptionsItemSelected(item)) {
+      boolean performCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+          boolean show = false;
+          if (this.mHidden) {
+              return false;
+                    }
+          if (this.mHasMenu && this.mMenuVisible) {
+              show = true;
+              onCreateOptionsMenu(menu, inflater);
+                    }
+          if (this.mChildFragmentManager != null) {
+              return show | this.mChildFragmentManager.dispatchCreateOptionsMenu(menu, inflater);
+                    }
+          return show;
+                }
+
+      boolean performPrepareOptionsMenu(Menu menu) {
+          boolean show = false;
+          if (this.mHidden) {
+              return false;
+                    }
+          if (this.mHasMenu && this.mMenuVisible) {
+              show = true;
+              onPrepareOptionsMenu(menu);
+                    }
+          if (this.mChildFragmentManager != null) {
+              return show | this.mChildFragmentManager.dispatchPrepareOptionsMenu(menu);
+                    }
+          return show;
+                }
+
+      boolean performOptionsItemSelected(MenuItem item) {
+          if (!this.mHidden) {
+              if (this.mHasMenu && this.mMenuVisible && onOptionsItemSelected(item)) {
                             return true;
                         }
-/* 1612 */              if (this.mChildFragmentManager != null && this.mChildFragmentManager.dispatchOptionsItemSelected(item)) {
-                            return true;
-                        }
-                    }
-/* 1618 */          return false;
-                }
-
-/* 1621 */      boolean performContextItemSelected(MenuItem item) {
-/* 1622 */          if (!this.mHidden) {
-/* 1623 */              if (onContextItemSelected(item)) {
-                            return true;
-                        }
-/* 1626 */              if (this.mChildFragmentManager != null && this.mChildFragmentManager.dispatchContextItemSelected(item)) {
+              if (this.mChildFragmentManager != null && this.mChildFragmentManager.dispatchOptionsItemSelected(item)) {
                             return true;
                         }
                     }
-/* 1632 */          return false;
+          return false;
                 }
 
-/* 1635 */      void performOptionsMenuClosed(Menu menu) {
-/* 1636 */          if (!this.mHidden) {
-/* 1637 */              if (this.mHasMenu && this.mMenuVisible) {
-/* 1638 */                  onOptionsMenuClosed(menu);
+      boolean performContextItemSelected(MenuItem item) {
+          if (!this.mHidden) {
+              if (onContextItemSelected(item)) {
+                            return true;
                         }
-/* 1640 */              if (this.mChildFragmentManager != null) {
-/* 1641 */                  this.mChildFragmentManager.dispatchOptionsMenuClosed(menu);
+              if (this.mChildFragmentManager != null && this.mChildFragmentManager.dispatchContextItemSelected(item)) {
+                            return true;
+                        }
+                    }
+          return false;
+                }
+
+      void performOptionsMenuClosed(Menu menu) {
+          if (!this.mHidden) {
+              if (this.mHasMenu && this.mMenuVisible) {
+                  onOptionsMenuClosed(menu);
+                        }
+              if (this.mChildFragmentManager != null) {
+                  this.mChildFragmentManager.dispatchOptionsMenuClosed(menu);
                         }
                     }
                 }
 
-/* 1646 */      void performSaveInstanceState(Bundle outState) {
+      void performSaveInstanceState(Bundle outState) {
                     Parcelable p;
-/* 1647 */          onSaveInstanceState(outState);
-/* 1648 */          if (this.mChildFragmentManager != null && (p = this.mChildFragmentManager.saveAllState()) != null) {
-/* 1651 */              outState.putParcelable("android:support:fragments", p);
+          onSaveInstanceState(outState);
+          if (this.mChildFragmentManager != null && (p = this.mChildFragmentManager.saveAllState()) != null) {
+              outState.putParcelable("android:support:fragments", p);
                     }
                 }
 
-/* 1656 */      void performPause() {
-/* 1657 */          if (this.mChildFragmentManager != null) {
-/* 1658 */              this.mChildFragmentManager.dispatchPause();
+      void performPause() {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchPause();
                     }
-/* 1660 */          this.mCalled = false;
-/* 1661 */          onPause();
-/* 1662 */          if (!this.mCalled) {
-/* 1663 */              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onPause()");
-                    }
-                }
-
-/* 1668 */      void performStop() {
-/* 1669 */          if (this.mChildFragmentManager != null) {
-/* 1670 */              this.mChildFragmentManager.dispatchStop();
-                    }
-/* 1672 */          this.mCalled = false;
-/* 1673 */          onStop();
-/* 1674 */          if (!this.mCalled) {
-/* 1675 */              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onStop()");
+          this.mCalled = false;
+          onPause();
+          if (!this.mCalled) {
+              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onPause()");
                     }
                 }
 
-/* 1680 */      void performReallyStop() {
-/* 1681 */          if (this.mChildFragmentManager != null) {
-/* 1682 */              this.mChildFragmentManager.dispatchReallyStop();
+      void performStop() {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchStop();
                     }
-/* 1684 */          if (this.mLoadersStarted) {
-/* 1685 */              this.mLoadersStarted = false;
-/* 1686 */              if (!this.mCheckedForLoaderManager) {
-/* 1687 */                  this.mCheckedForLoaderManager = true;
-/* 1688 */                  this.mLoaderManager = this.mActivity.getLoaderManager(this.mWho, this.mLoadersStarted, false);
+          this.mCalled = false;
+          onStop();
+          if (!this.mCalled) {
+              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onStop()");
+                    }
+                }
+
+      void performReallyStop() {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchReallyStop();
+                    }
+          if (this.mLoadersStarted) {
+              this.mLoadersStarted = false;
+              if (!this.mCheckedForLoaderManager) {
+                  this.mCheckedForLoaderManager = true;
+                  this.mLoaderManager = this.mActivity.getLoaderManager(this.mWho, this.mLoadersStarted, false);
                         }
-/* 1690 */              if (this.mLoaderManager != null) {
-/* 1691 */                  if (!this.mActivity.mRetaining) {
-/* 1692 */                      this.mLoaderManager.doStop();
+              if (this.mLoaderManager != null) {
+                  if (!this.mActivity.mRetaining) {
+                      this.mLoaderManager.doStop();
                             } else {
-/* 1694 */                      this.mLoaderManager.doRetain();
+                      this.mLoaderManager.doRetain();
                             }
                         }
                     }
                 }
 
-/* 1700 */      void performDestroyView() {
-/* 1701 */          if (this.mChildFragmentManager != null) {
-/* 1702 */              this.mChildFragmentManager.dispatchDestroyView();
+      void performDestroyView() {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchDestroyView();
                     }
-/* 1704 */          this.mCalled = false;
-/* 1705 */          onDestroyView();
-/* 1706 */          if (!this.mCalled) {
-/* 1707 */              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onDestroyView()");
+          this.mCalled = false;
+          onDestroyView();
+          if (!this.mCalled) {
+              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onDestroyView()");
                     }
-/* 1710 */          if (this.mLoaderManager != null) {
-/* 1711 */              this.mLoaderManager.doReportNextStart();
+          if (this.mLoaderManager != null) {
+              this.mLoaderManager.doReportNextStart();
                     }
                 }
 
-/* 1715 */      void performDestroy() {
-/* 1716 */          if (this.mChildFragmentManager != null) {
-/* 1717 */              this.mChildFragmentManager.dispatchDestroy();
+      void performDestroy() {
+          if (this.mChildFragmentManager != null) {
+              this.mChildFragmentManager.dispatchDestroy();
                     }
-/* 1719 */          this.mCalled = false;
-/* 1720 */          onDestroy();
-/* 1721 */          if (!this.mCalled) {
-/* 1722 */              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onDestroy()");
+          this.mCalled = false;
+          onDestroy();
+          if (!this.mCalled) {
+              throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onDestroy()");
                     }
                 }
             }

@@ -1,16 +1,16 @@
             package com.google.android.gms.internal;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.gk */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1107gk {
 
-                /* JADX INFO: renamed from: uu */
+                
                 private final byte[] f2110uu = new byte[256];
 
-                /* JADX INFO: renamed from: uv */
+                
                 private int f2111uv;
 
-                /* JADX INFO: renamed from: uw */
+                
                 private int f2112uw;
 
                 public C1107gk(byte[] bArr) {
@@ -28,7 +28,7 @@
                     this.f2112uw = 0;
                 }
 
-                /* JADX INFO: renamed from: f */
+                
                 public void m2107f(byte[] bArr) {
                     int i = this.f2111uv;
                     int i2 = this.f2112uw;

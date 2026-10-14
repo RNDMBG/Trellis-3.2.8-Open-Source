@@ -2,7 +2,7 @@
 
             import java.io.IOException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface SampleSource {
                 public static final int DISCONTINUITY_READ = -5;
                 public static final int END_OF_STREAM = -1;

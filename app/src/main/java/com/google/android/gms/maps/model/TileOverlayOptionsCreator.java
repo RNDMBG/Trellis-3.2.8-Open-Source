@@ -6,11 +6,11 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class TileOverlayOptionsCreator implements Parcelable.Creator<TileOverlayOptions> {
                 public static final int CONTENT_DESCRIPTION = 0;
 
-                /* JADX INFO: renamed from: a */
+                
                 static void m2291a(TileOverlayOptions tileOverlayOptions, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, tileOverlayOptions.getVersionCode());
@@ -20,8 +20,8 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // android.os.Parcelable.Creator
+                
+                @Override 
                 public TileOverlayOptions createFromParcel(Parcel parcel) {
                     boolean zM1102c = false;
                     int iM1111j = C0901a.m1111j(parcel);
@@ -55,8 +55,8 @@
                 }
 
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // android.os.Parcelable.Creator
+                
+                @Override 
                 public TileOverlayOptions[] newArray(int size) {
                     return new TileOverlayOptions[size];
                 }

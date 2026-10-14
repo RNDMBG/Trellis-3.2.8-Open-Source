@@ -59,8 +59,8 @@ import android.widget.ImageView;
             import java.util.ArrayList;
             import java.util.Collection;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 60 */    public abstract class BaseActionBarActivity extends ActionBarActivity implements SlidingActivityHelper.MenuStateHandler.MenuStateListener {
+            
+    public abstract class BaseActionBarActivity extends ActionBarActivity implements SlidingActivityHelper.MenuStateHandler.MenuStateListener {
                 public static final String FINISH_BROADCAST_ACTION = "co.vine.android.FINISH";
                 private static IntentFilter FINISH_INTENT_FILTER = new IntentFilter();
                 private static final String TAG = "BaseActionBarActivity";
@@ -72,254 +72,254 @@ import android.widget.ImageView;
                 private SlidingActivityHelper mSlidingMenuHelper;
                 private int mVineGreen;
 
-/* 61 */        public BaseActionBarActivity() {
-/* 84 */            this.mDefaultPluginManager.addPlugin(new AnalyticsPlugin());
-/* 106 */           this.mFinishReceiver = new C01501();
+        public BaseActionBarActivity() {
+            this.mDefaultPluginManager.addPlugin(new AnalyticsPlugin());
+           this.mFinishReceiver = new C01501();
                 }
 
                 static {
-/* 103 */           FINISH_INTENT_FILTER.addAction(FINISH_BROADCAST_ACTION);
+           FINISH_INTENT_FILTER.addAction(FINISH_BROADCAST_ACTION);
                 }
 
-                @Override // android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity, android.view.Window.Callback
-/* 89 */        public boolean onCreatePanelMenu(int featureId, Menu menu) {
+                @Override 
+        public boolean onCreatePanelMenu(int featureId, Menu menu) {
                     try {
-/* 90 */                return super.onCreatePanelMenu(featureId, menu);
+                return super.onCreatePanelMenu(featureId, menu);
                     } catch (Exception e) {
-/* 92 */                CrashUtil.logException(e);
-/* 94 */                return false;
+                CrashUtil.logException(e);
+                return false;
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.BaseActionBarActivity$1 */
-/* 104 */       class C01501 extends BroadcastReceiver {
-/* 105 */           C01501() {
+                
+       class C01501 extends BroadcastReceiver {
+           C01501() {
                     }
 
-                    @Override // android.content.BroadcastReceiver
-/* 108 */           public void onReceive(Context context, Intent intent) {
-/* 109 */               if (intent != null && BaseActionBarActivity.FINISH_BROADCAST_ACTION.equals(intent.getAction())) {
-/* 110 */                   BaseActionBarActivity.this.finish();
+                    @Override 
+           public void onReceive(Context context, Intent intent) {
+               if (intent != null && BaseActionBarActivity.FINISH_BROADCAST_ACTION.equals(intent.getAction())) {
+                   BaseActionBarActivity.this.finish();
                         }
                     }
                 }
 
-                @Override // android.support.v4.app.FragmentActivity, android.app.Activity
-/* 116 */       protected void onStart() {
-/* 117 */           super.onStart();
-/* 118 */           FlurryUtils.start(this);
-/* 119 */           this.mDefaultPluginManager.onStart(this);
+                @Override 
+       protected void onStart() {
+           super.onStart();
+           FlurryUtils.start(this);
+           this.mDefaultPluginManager.onStart(this);
                 }
 
-                @Override // android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 123 */       protected void onStop() {
-/* 124 */           super.onStop();
-/* 125 */           FlurryUtils.stop(this);
-/* 126 */           this.mDefaultPluginManager.onStop(this);
+                @Override 
+       protected void onStop() {
+           super.onStop();
+           FlurryUtils.stop(this);
+           this.mDefaultPluginManager.onStop(this);
                 }
 
-/* 129 */       public boolean isFakeActionBarEnabled() {
-/* 130 */           return false;
+       public boolean isFakeActionBarEnabled() {
+           return false;
                 }
 
-                @Override // android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 134 */       protected void onCreate(Bundle savedInstanceState) {
-/* 135 */           throw new IllegalArgumentException("If extending BaseActivity, please use multiple parameter version of this method.");
+                @Override 
+       protected void onCreate(Bundle savedInstanceState) {
+           throw new IllegalArgumentException("If extending BaseActivity, please use multiple parameter version of this method.");
                 }
 
-/* 142 */       protected void restoreActivityState() {
-/* 143 */           if (BuildUtil.isLogsOn()) {
-/* 144 */               Log.d(TAG, "Restoring activity " + getClass().getName());
+       protected void restoreActivityState() {
+           if (BuildUtil.isLogsOn()) {
+               Log.d(TAG, "Restoring activity " + getClass().getName());
                     }
                 }
 
-/* 148 */       public void preSetContentView() {
+       public void preSetContentView() {
                 }
 
-                @Override // android.app.Activity
-/* 152 */       public void onPostCreate(Bundle savedInstanceState) {
-/* 153 */           super.onPostCreate(savedInstanceState);
-/* 154 */           if (this.mFakeActionBar != null) {
-/* 155 */               this.mFakeActionBar.onPostCreate(savedInstanceState);
-/* 156 */               applyDefaultTitleViewStylingToFakeActionBar();
+                @Override 
+       public void onPostCreate(Bundle savedInstanceState) {
+           super.onPostCreate(savedInstanceState);
+           if (this.mFakeActionBar != null) {
+               this.mFakeActionBar.onPostCreate(savedInstanceState);
+               applyDefaultTitleViewStylingToFakeActionBar();
                     }
-/* 158 */           if (this.mSlidingMenuHelper != null) {
-/* 159 */               this.mSlidingMenuHelper.onPostCreate(savedInstanceState);
+           if (this.mSlidingMenuHelper != null) {
+               this.mSlidingMenuHelper.onPostCreate(savedInstanceState);
                     }
                 }
 
-/* 163 */       protected void applyDefaultTitleViewStylingToFakeActionBar() {
-/* 164 */           Resources res = getResources();
-/* 165 */           FakeActionBar fakeActionBar = getFakeActionBar();
-/* 166 */           fakeActionBar.getTitleView().setTextColor(res.getColor(C0257R.color.primary_text));
-/* 167 */           fakeActionBar.getTitleView().setTypeface(Typefaces.get(this).mediumContent);
-/* 168 */           fakeActionBar.getTitleView().setTextSize(0, res.getDimensionPixelSize(C0257R.dimen.font_size_large));
+       protected void applyDefaultTitleViewStylingToFakeActionBar() {
+           Resources res = getResources();
+           FakeActionBar fakeActionBar = getFakeActionBar();
+           fakeActionBar.getTitleView().setTextColor(res.getColor(C0257R.color.primary_text));
+           fakeActionBar.getTitleView().setTypeface(Typefaces.get(this).mediumContent);
+           fakeActionBar.getTitleView().setTextSize(0, res.getDimensionPixelSize(C0257R.dimen.font_size_large));
                 }
 
-                @Override // android.app.Activity
-/* 173 */       public View findViewById(int id) {
-/* 174 */           View v = super.findViewById(id);
-/* 175 */           if (v == null) {
-/* 177 */               if (this.mSlidingMenuHelper != null) {
-/* 178 */                   return this.mSlidingMenuHelper.findViewById(id);
+                @Override 
+       public View findViewById(int id) {
+           View v = super.findViewById(id);
+           if (v == null) {
+               if (this.mSlidingMenuHelper != null) {
+                   return this.mSlidingMenuHelper.findViewById(id);
                         }
-/* 180 */               return null;
+               return null;
                     }
-/* 180 */           return v;
+           return v;
                 }
 
-                @Override // android.support.v7.app.ActionBarActivity, android.app.Activity
-/* 185 */       public void setContentView(int layoutResID) {
-/* 186 */           if (this.mSlidingMenuHelper != null || this.mFakeActionBar != null) {
-/* 187 */               setContentView(getLayoutInflater().inflate(layoutResID, (ViewGroup) null));
+                @Override 
+       public void setContentView(int layoutResID) {
+           if (this.mSlidingMenuHelper != null || this.mFakeActionBar != null) {
+               setContentView(getLayoutInflater().inflate(layoutResID, (ViewGroup) null));
                     } else {
-/* 189 */               super.setContentView(layoutResID);
+               super.setContentView(layoutResID);
                     }
                 }
 
-                @Override // android.support.v7.app.ActionBarActivity, android.app.Activity
-/* 194 */       public void setContentView(View v) {
-/* 195 */           if (this.mSlidingMenuHelper != null || this.mFakeActionBar != null) {
-/* 196 */               setContentView(v, new ViewGroup.LayoutParams(-1, -1));
+                @Override 
+       public void setContentView(View v) {
+           if (this.mSlidingMenuHelper != null || this.mFakeActionBar != null) {
+               setContentView(v, new ViewGroup.LayoutParams(-1, -1));
                     } else {
-/* 198 */               super.setContentView(v);
+               super.setContentView(v);
                     }
                 }
 
-                @Override // android.support.v7.app.ActionBarActivity, android.app.Activity
-/* 203 */       public void setContentView(View v, ViewGroup.LayoutParams params) {
-/* 204 */           if (this.mFakeActionBar != null) {
-/* 205 */               this.mFakeActionBar.setContentView(v, params);
-/* 206 */               v = this.mFakeActionBar.getRoot();
+                @Override 
+       public void setContentView(View v, ViewGroup.LayoutParams params) {
+           if (this.mFakeActionBar != null) {
+               this.mFakeActionBar.setContentView(v, params);
+               v = this.mFakeActionBar.getRoot();
                     }
-/* 208 */           super.setContentView(v, params);
-/* 209 */           if (this.mSlidingMenuHelper != null) {
-/* 210 */               this.mSlidingMenuHelper.registerAboveContentView(v, params);
+           super.setContentView(v, params);
+           if (this.mSlidingMenuHelper != null) {
+               this.mSlidingMenuHelper.registerAboveContentView(v, params);
                     }
                 }
 
-/* 214 */       public SlidingMenu getSlidingMenu() {
-/* 215 */           if (this.mSlidingMenuHelper != null) {
+       public SlidingMenu getSlidingMenu() {
+           if (this.mSlidingMenuHelper != null) {
                         return this.mSlidingMenuHelper.getSlidingMenu();
                     }
                     return null;
                 }
 
-/* 218 */       public SlidingActivityHelper getSlidingMenuHelper() {
-/* 219 */           return this.mSlidingMenuHelper;
+       public SlidingActivityHelper getSlidingMenuHelper() {
+           return this.mSlidingMenuHelper;
                 }
 
-                @Override // android.app.Activity, android.view.KeyEvent.Callback
-/* 223 */       public boolean onKeyUp(int keyCode, @NonNull KeyEvent event) {
-/* 224 */           if (this.mSlidingMenuHelper != null) {
-/* 225 */               boolean b = this.mSlidingMenuHelper.onKeyUp(keyCode, event);
-/* 226 */               if (b) {
+                @Override 
+       public boolean onKeyUp(int keyCode, @NonNull KeyEvent event) {
+           if (this.mSlidingMenuHelper != null) {
+               boolean b = this.mSlidingMenuHelper.onKeyUp(keyCode, event);
+               if (b) {
                             return true;
                         }
                     }
-/* 228 */           if (this.mDefaultPluginManager.onKeyUp(keyCode, event)) {
+           if (this.mDefaultPluginManager.onKeyUp(keyCode, event)) {
                         return true;
                     }
-/* 231 */           return super.onKeyUp(keyCode, event);
+           return super.onKeyUp(keyCode, event);
                 }
 
-                @Override // android.support.v4.app.FragmentActivity, android.app.Activity, android.view.KeyEvent.Callback
-/* 235 */       public boolean onKeyDown(int keyCode, KeyEvent event) {
-/* 236 */           if (this.mDefaultPluginManager.onKeyDown(keyCode, event)) {
-/* 237 */               return true;
+                @Override 
+       public boolean onKeyDown(int keyCode, KeyEvent event) {
+           if (this.mDefaultPluginManager.onKeyDown(keyCode, event)) {
+               return true;
                     }
                     return super.onKeyDown(keyCode, event);
                 }
 
-/* 242 */       public View setBehindContentView(View v) {
-/* 243 */           setBehindContentView(v, new ViewGroup.LayoutParams(-1, -1));
-/* 244 */           return v;
+       public View setBehindContentView(View v) {
+           setBehindContentView(v, new ViewGroup.LayoutParams(-1, -1));
+           return v;
                 }
 
-/* 247 */       public View setBehindContentView(View v, ViewGroup.LayoutParams params) {
-/* 248 */           this.mSlidingMenuHelper.setBehindContentView(v, params);
-/* 249 */           return v;
+       public View setBehindContentView(View v, ViewGroup.LayoutParams params) {
+           this.mSlidingMenuHelper.setBehindContentView(v, params);
+           return v;
                 }
 
-/* 252 */       public View setBehindContentView(int id) {
-/* 253 */           View backView = getLayoutInflater().inflate(id, (ViewGroup) null);
-/* 254 */           setBehindContentView(backView);
-/* 255 */           return backView;
+       public View setBehindContentView(int id) {
+           View backView = getLayoutInflater().inflate(id, (ViewGroup) null);
+           setBehindContentView(backView);
+           return backView;
                 }
 
-/* 260 */       public void onCreate(Bundle savedInstanceState, int layout, boolean loginRequired, boolean readOnly) {
+       public void onCreate(Bundle savedInstanceState, int layout, boolean loginRequired, boolean readOnly) {
                     try {
-/* 261 */               super.onCreate(savedInstanceState);
+               super.onCreate(savedInstanceState);
                     } catch (AndroidRuntimeException e) {
-/* 263 */               CrashUtil.logException(e);
+               CrashUtil.logException(e);
                     } catch (NoSuchFieldError e2) {
-/* 266 */               CrashUtil.logException(e2);
+               CrashUtil.logException(e2);
                     }
-/* 269 */           if (isFakeActionBarEnabled()) {
-/* 270 */               this.mFakeActionBar = new FakeActionBar(this);
-/* 271 */               this.mFakeActionBar.onCreate();
-/* 272 */               requestWindowFeature(1);
+           if (isFakeActionBarEnabled()) {
+               this.mFakeActionBar = new FakeActionBar(this);
+               this.mFakeActionBar.onCreate();
+               requestWindowFeature(1);
                     }
-/* 275 */           this.mVineGreen = getResources().getColor(C0257R.color.vine_green);
-/* 277 */           if (isSlidingMenuEnabled()) {
-/* 278 */               SLog.m464i("Sliding menu is enabled.");
-/* 279 */               this.mSlidingMenuHelper = createSlidingMenuHelper();
-/* 280 */               this.mSlidingMenuHelper.onCreate(savedInstanceState);
-/* 281 */               this.mSlidingMenuHelper.setMenuStateListener(this);
+           this.mVineGreen = getResources().getColor(C0257R.color.vine_green);
+           if (isSlidingMenuEnabled()) {
+               SLog.m464i("Sliding menu is enabled.");
+               this.mSlidingMenuHelper = createSlidingMenuHelper();
+               this.mSlidingMenuHelper.onCreate(savedInstanceState);
+               this.mSlidingMenuHelper.setMenuStateListener(this);
                     }
-/* 283 */           preSetContentView();
-/* 284 */           setContentView(layout);
-/* 285 */           Activity parent = getParent();
-/* 287 */           boolean needsToLogin = loginRequired && !VineAccountHelper.isLoggedIn(this, readOnly);
-/* 290 */           if (needsToLogin && parent == null) {
-/* 291 */               StartActivity.toStart(this);
+           preSetContentView();
+           setContentView(layout);
+           Activity parent = getParent();
+           boolean needsToLogin = loginRequired && !VineAccountHelper.isLoggedIn(this, readOnly);
+           if (needsToLogin && parent == null) {
+               StartActivity.toStart(this);
                     }
-/* 294 */           if (SystemUtil.isViewServerEnabled(this)) {
-/* 295 */               ViewServer.get(this).addWindow(this);
+           if (SystemUtil.isViewServerEnabled(this)) {
+               ViewServer.get(this).addWindow(this);
                     }
-/* 297 */           registerReceiver(this.mFinishReceiver, FINISH_INTENT_FILTER, CrossConstants.BROADCAST_PERMISSION, null);
-/* 299 */           this.mDefaultPluginManager.addPlugin(new DebugSubPluginManager(onCreateDebugPlugins()));
-/* 300 */           this.mDefaultPluginManager.addPlugins(onCraeteDefaultPlugins());
-/* 301 */           this.mDefaultPluginManager.onActivityCreated(this);
+           registerReceiver(this.mFinishReceiver, FINISH_INTENT_FILTER, CrossConstants.BROADCAST_PERMISSION, null);
+           this.mDefaultPluginManager.addPlugin(new DebugSubPluginManager(onCreateDebugPlugins()));
+           this.mDefaultPluginManager.addPlugins(onCraeteDefaultPlugins());
+           this.mDefaultPluginManager.onActivityCreated(this);
                 }
 
-/* 304 */       protected Collection<Plugin> onCreateDebugPlugins() {
-/* 305 */           ArrayList<Plugin> debugPlugins = new ArrayList<>();
-/* 306 */           debugPlugins.add(new DebugReceiverPlugin());
-/* 307 */           if (SLog.sLogsOn) {
-/* 308 */               debugPlugins.add(new DebugTasksPlugin());
+       protected Collection<Plugin> onCreateDebugPlugins() {
+           ArrayList<Plugin> debugPlugins = new ArrayList<>();
+           debugPlugins.add(new DebugReceiverPlugin());
+           if (SLog.sLogsOn) {
+               debugPlugins.add(new DebugTasksPlugin());
                     }
-/* 310 */           return debugPlugins;
+           return debugPlugins;
                 }
 
-/* 313 */       protected ArrayList<Plugin> onCraeteDefaultPlugins() {
-/* 314 */           return new ArrayList<>();
+       protected ArrayList<Plugin> onCraeteDefaultPlugins() {
+           return new ArrayList<>();
                 }
 
-/* 317 */       protected SlidingActivityHelper createSlidingMenuHelper() {
-/* 318 */           return new SlidingActivityHelper(this);
+       protected SlidingActivityHelper createSlidingMenuHelper() {
+           return new SlidingActivityHelper(this);
                 }
 
-                @Override // android.support.v4.app.FragmentActivity, android.app.Activity
-/* 322 */       protected void onSaveInstanceState(Bundle outState) {
-/* 323 */           super.onSaveInstanceState(outState);
-/* 324 */           if (this.mSlidingMenuHelper != null) {
-/* 325 */               this.mSlidingMenuHelper.onSaveInstanceState(outState);
+                @Override 
+       protected void onSaveInstanceState(Bundle outState) {
+           super.onSaveInstanceState(outState);
+           if (this.mSlidingMenuHelper != null) {
+               this.mSlidingMenuHelper.onSaveInstanceState(outState);
                     }
                 }
 
-/* 329 */       public ArrayList<Plugin> getEnabledPlugins() {
-/* 330 */           return this.mDefaultPluginManager.getEnabledPlugins();
+       public ArrayList<Plugin> getEnabledPlugins() {
+           return this.mDefaultPluginManager.getEnabledPlugins();
                 }
 
-                @Override // android.app.Activity
-/* 334 */       public boolean onCreateOptionsMenu(Menu menu) {
-/* 335 */           updateMuteActionState(menu.findItem(C0257R.id.audio));
-/* 336 */           this.mMenu = menu;
-/* 337 */           if (this.mFakeActionBar != null) {
-/* 338 */               this.mFakeActionBar.onCreateOptionsMenu(this.mMenu, true);
+                @Override 
+       public boolean onCreateOptionsMenu(Menu menu) {
+           updateMuteActionState(menu.findItem(C0257R.id.audio));
+           this.mMenu = menu;
+           if (this.mFakeActionBar != null) {
+               this.mFakeActionBar.onCreateOptionsMenu(this.mMenu, true);
                     }
-/* 340 */           this.mDefaultPluginManager.onCreateOptionsMenu(menu);
+           this.mDefaultPluginManager.onCreateOptionsMenu(menu);
                     if (getWindow() != null && getWindow().getDecorView() != null) {
                         getWindow().getDecorView().post(new Runnable() {
                             @Override
@@ -331,24 +331,24 @@ import android.widget.ImageView;
                     return true;
                 }
 
-                @Override // android.support.v4.app.FragmentActivity, android.app.Activity
-/* 345 */       protected void onResume() {
-/* 346 */           super.onResume();
-/* 347 */           if (getSlidingMenu() != null && getSlidingMenu().isMenuShowing()) {
-/* 348 */               sendBroadcast(new Intent(MuteUtil.ACTION_CHANGED_TO_MUTE), CrossConstants.BROADCAST_PERMISSION);
+                @Override 
+       protected void onResume() {
+           super.onResume();
+           if (getSlidingMenu() != null && getSlidingMenu().isMenuShowing()) {
+               sendBroadcast(new Intent(MuteUtil.ACTION_CHANGED_TO_MUTE), CrossConstants.BROADCAST_PERMISSION);
                     } else if (!MuteUtil.isMuted(this)) {
-/* 351 */               sendBroadcast(new Intent(MuteUtil.ACTION_CHANGED_TO_UNMUTE), CrossConstants.BROADCAST_PERMISSION);
+               sendBroadcast(new Intent(MuteUtil.ACTION_CHANGED_TO_UNMUTE), CrossConstants.BROADCAST_PERMISSION);
                     }
-/* 354 */           CrashUtil.set("Activity", getClass().getName() + " - " + System.currentTimeMillis());
-/* 356 */           if (BuildUtil.isLogsOn() && SystemUtil.isViewServerEnabled(this)) {
-/* 358 */               ViewServer.get(this).setFocusedWindow(this);
+           CrashUtil.set("Activity", getClass().getName() + " - " + System.currentTimeMillis());
+           if (BuildUtil.isLogsOn() && SystemUtil.isViewServerEnabled(this)) {
+               ViewServer.get(this).setFocusedWindow(this);
                     }
-/* 361 */           if (this.mMenu != null) {
-/* 362 */               updateMuteActionState(this.mMenu.findItem(C0257R.id.audio));
+           if (this.mMenu != null) {
+               updateMuteActionState(this.mMenu.findItem(C0257R.id.audio));
                     }
-/* 364 */           this.mDefaultPluginManager.onResume(this);
+           this.mDefaultPluginManager.onResume(this);
                     registerReceiver(this.mFinishReceiver, FINISH_INTENT_FILTER, CrossConstants.BROADCAST_PERMISSION, null);
-                    // Re-apply 48dp + centered back after return (Sync, Comments, etc).
+                    
                     if (getWindow() != null && getWindow().getDecorView() != null) {
                         getWindow().getDecorView().post(new Runnable() {
                             @Override
@@ -359,10 +359,10 @@ import android.widget.ImageView;
                     }
                 }
 
-                @Override // android.support.v4.app.FragmentActivity, android.app.Activity
-/* 369 */       protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-/* 370 */           if (!this.mDefaultPluginManager.onActivityResult(this, requestCode, resultCode, data)) {
-/* 371 */               super.onActivityResult(requestCode, resultCode, data);
+                @Override 
+       protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+           if (!this.mDefaultPluginManager.onActivityResult(this, requestCode, resultCode, data)) {
+               super.onActivityResult(requestCode, resultCode, data);
                     }
                 }
 
@@ -380,115 +380,115 @@ import android.widget.ImageView;
                     AppImpl.getInstance().startCapture(this);
                 }
 
-                @Override // android.support.v4.app.FragmentActivity, android.app.Activity
-/* 376 */       protected void onPause() {
-/* 377 */           super.onPause();
-/* 378 */           dismissDialog();
-/* 379 */           this.mDefaultPluginManager.onPause();
+                @Override 
+       protected void onPause() {
+           super.onPause();
+           dismissDialog();
+           this.mDefaultPluginManager.onPause();
                 }
 
-                @Override // android.app.Activity
-/* 383 */       public boolean onPrepareOptionsMenu(Menu menu) {
-/* 384 */           boolean r = super.onPrepareOptionsMenu(menu);
-/* 385 */           if (this.mFakeActionBar != null) {
-/* 386 */               this.mFakeActionBar.onPrepareOptionsMenu(menu, r);
+                @Override 
+       public boolean onPrepareOptionsMenu(Menu menu) {
+           boolean r = super.onPrepareOptionsMenu(menu);
+           if (this.mFakeActionBar != null) {
+               this.mFakeActionBar.onPrepareOptionsMenu(menu, r);
                     }
-/* 388 */           return r;
+           return r;
                 }
 
-                @Override // android.support.v4.app.FragmentActivity, android.app.Activity
-/* 392 */       protected void onDestroy() {
-/* 393 */           super.onDestroy();
-/* 394 */           if (SystemUtil.isViewServerEnabled(this)) {
-/* 395 */               ViewServer.get(this).removeWindow(this);
+                @Override 
+       protected void onDestroy() {
+           super.onDestroy();
+           if (SystemUtil.isViewServerEnabled(this)) {
+               ViewServer.get(this).removeWindow(this);
                     }
-/* 397 */           this.mDefaultPluginManager.onDestroy();
-/* 398 */           unregisterReceiver(this.mFinishReceiver);
+           this.mDefaultPluginManager.onDestroy();
+           unregisterReceiver(this.mFinishReceiver);
                 }
 
-/* 401 */       public void updateMuteActionState(MenuItem menu) {
-/* 402 */           if (menu != null) {
-/* 403 */               boolean isMuted = MuteUtil.isMuted(this);
-/* 404 */               SLog.m447d("Is muted? {}", Boolean.valueOf(isMuted));
-/* 405 */               menu.setTitle(isMuted ? C0257R.string.unmute : C0257R.string.mute);
+       public void updateMuteActionState(MenuItem menu) {
+           if (menu != null) {
+               boolean isMuted = MuteUtil.isMuted(this);
+               SLog.m447d("Is muted? {}", Boolean.valueOf(isMuted));
+               menu.setTitle(isMuted ? C0257R.string.unmute : C0257R.string.mute);
                     }
                 }
 
                 @TargetApi(14)
-/* 411 */       private void setupActionBarJBOnly(Boolean setHomeButtonEnabled, Boolean setDisplayShowTitleEnabled, Boolean setDisplayHomeAsUpEnabled) {
-/* 412 */           ActionBar actionBar = getActionBar();
-/* 413 */           if (actionBar != null) {
-/* 414 */               if (setHomeButtonEnabled != null) {
-/* 415 */                   actionBar.setHomeButtonEnabled(setHomeButtonEnabled.booleanValue());
+       private void setupActionBarJBOnly(Boolean setHomeButtonEnabled, Boolean setDisplayShowTitleEnabled, Boolean setDisplayHomeAsUpEnabled) {
+           ActionBar actionBar = getActionBar();
+           if (actionBar != null) {
+               if (setHomeButtonEnabled != null) {
+                   actionBar.setHomeButtonEnabled(setHomeButtonEnabled.booleanValue());
                         }
-/* 417 */               if (setDisplayShowTitleEnabled != null) {
-/* 418 */                   actionBar.setDisplayShowTitleEnabled(setDisplayShowTitleEnabled.booleanValue());
+               if (setDisplayShowTitleEnabled != null) {
+                   actionBar.setDisplayShowTitleEnabled(setDisplayShowTitleEnabled.booleanValue());
                         }
-/* 420 */               if (setDisplayHomeAsUpEnabled != null) {
-/* 421 */                   actionBar.setDisplayHomeAsUpEnabled(setDisplayHomeAsUpEnabled.booleanValue());
+               if (setDisplayHomeAsUpEnabled != null) {
+                   actionBar.setDisplayHomeAsUpEnabled(setDisplayHomeAsUpEnabled.booleanValue());
                         }
                     }
                 }
 
-                @Override // android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 428 */       public void onBackPressed() {
+                @Override 
+       public void onBackPressed() {
                     try {
-/* 429 */               if (!this.mDefaultPluginManager.onBackPressed()) {
-/* 430 */                   super.onBackPressed();
+               if (!this.mDefaultPluginManager.onBackPressed()) {
+                   super.onBackPressed();
                         }
                     } catch (IllegalStateException e) {
-/* 433 */               CrashUtil.logException(e);
+               CrashUtil.logException(e);
                     }
                 }
 
-/* 447 */       protected void setupActionBar(Boolean setHomeButtonEnabled, Boolean setDisplayShowTitleEnabled, int titleRes, Boolean setDisplayHomeAsUpEnabled, Boolean setDisplayLogoEnabled) {
-/* 448 */           String title = titleRes > 0 ? getString(titleRes) : null;
-/* 449 */           setupActionBar(setHomeButtonEnabled, setDisplayShowTitleEnabled, title, setDisplayHomeAsUpEnabled, setDisplayLogoEnabled);
+       protected void setupActionBar(Boolean setHomeButtonEnabled, Boolean setDisplayShowTitleEnabled, int titleRes, Boolean setDisplayHomeAsUpEnabled, Boolean setDisplayLogoEnabled) {
+           String title = titleRes > 0 ? getString(titleRes) : null;
+           setupActionBar(setHomeButtonEnabled, setDisplayShowTitleEnabled, title, setDisplayHomeAsUpEnabled, setDisplayLogoEnabled);
                 }
 
-/* 456 */       protected void setupActionBar(Boolean setHomeButtonEnabled, Boolean setDisplayShowTitleEnabled, String title, Boolean setDisplayHomeAsUpEnabled, Boolean setDisplayLogoEnabled) {
-/* 457 */           if (this.mFakeActionBar != null) {
-/* 458 */               if (setHomeButtonEnabled != null) {
-/* 459 */                   this.mFakeActionBar.setHomeButtonEnabled(setHomeButtonEnabled);
+       protected void setupActionBar(Boolean setHomeButtonEnabled, Boolean setDisplayShowTitleEnabled, String title, Boolean setDisplayHomeAsUpEnabled, Boolean setDisplayLogoEnabled) {
+           if (this.mFakeActionBar != null) {
+               if (setHomeButtonEnabled != null) {
+                   this.mFakeActionBar.setHomeButtonEnabled(setHomeButtonEnabled);
                         }
-/* 461 */               if (setDisplayShowTitleEnabled != null) {
-/* 462 */                   this.mFakeActionBar.setDisplayShowTitleEnabled(setDisplayShowTitleEnabled);
+               if (setDisplayShowTitleEnabled != null) {
+                   this.mFakeActionBar.setDisplayShowTitleEnabled(setDisplayShowTitleEnabled);
                         }
-/* 464 */               if (setDisplayHomeAsUpEnabled != null) {
-/* 465 */                   this.mFakeActionBar.setDisplayHomeAsUpEnabled(setDisplayHomeAsUpEnabled);
+               if (setDisplayHomeAsUpEnabled != null) {
+                   this.mFakeActionBar.setDisplayHomeAsUpEnabled(setDisplayHomeAsUpEnabled);
                         }
-/* 467 */               if (!TextUtils.isEmpty(title)) {
-/* 468 */                   this.mFakeActionBar.setTitle(title);
+               if (!TextUtils.isEmpty(title)) {
+                   this.mFakeActionBar.setTitle(title);
                         }
-/* 470 */               if (setDisplayLogoEnabled != null) {
-/* 471 */                   this.mFakeActionBar.setDisplayLogoEnabled(setDisplayLogoEnabled);
-/* 506 */                   return;
+               if (setDisplayLogoEnabled != null) {
+                   this.mFakeActionBar.setDisplayLogoEnabled(setDisplayLogoEnabled);
+                   return;
                         }
-/* 506 */               return;
+               return;
                     }
-/* 474 */           android.support.v7.app.ActionBar ab = getSupportActionBar();
-/* 475 */           if (ab != null) {
-/* 476 */               if (setHomeButtonEnabled != null) {
-/* 477 */                   ab.setHomeButtonEnabled(setHomeButtonEnabled.booleanValue());
+           android.support.v7.app.ActionBar ab = getSupportActionBar();
+           if (ab != null) {
+               if (setHomeButtonEnabled != null) {
+                   ab.setHomeButtonEnabled(setHomeButtonEnabled.booleanValue());
                         }
-/* 479 */               if (setDisplayShowTitleEnabled != null) {
-/* 480 */                   ab.setDisplayShowTitleEnabled(setDisplayShowTitleEnabled.booleanValue());
+               if (setDisplayShowTitleEnabled != null) {
+                   ab.setDisplayShowTitleEnabled(setDisplayShowTitleEnabled.booleanValue());
                         }
-/* 482 */               if (setDisplayHomeAsUpEnabled != null) {
-/* 483 */                   ab.setDisplayHomeAsUpEnabled(setDisplayHomeAsUpEnabled.booleanValue());
+               if (setDisplayHomeAsUpEnabled != null) {
+                   ab.setDisplayHomeAsUpEnabled(setDisplayHomeAsUpEnabled.booleanValue());
                         }
-/* 485 */               if (!TextUtils.isEmpty(title) && Build.VERSION.SDK_INT >= 19) {
-/* 489 */                   SpannableString spannable = new SpannableString(title);
-/* 490 */                   TypefacesSpan medium = new TypefacesSpan(Typefaces.get(this).getContentTypeface(0, 3));
-/* 492 */                   spannable.setSpan(medium, 0, title.length(), 33);
-/* 493 */                   ab.setTitle(spannable);
+               if (!TextUtils.isEmpty(title) && Build.VERSION.SDK_INT >= 19) {
+                   SpannableString spannable = new SpannableString(title);
+                   TypefacesSpan medium = new TypefacesSpan(Typefaces.get(this).getContentTypeface(0, 3));
+                   spannable.setSpan(medium, 0, title.length(), 33);
+                   ab.setTitle(spannable);
                         }
-/* 496 */               if (!setDisplayLogoEnabled.booleanValue()) {
-/* 497 */                   ab.setIcon(android.R.color.transparent);
+               if (!setDisplayLogoEnabled.booleanValue()) {
+                   ab.setIcon(android.R.color.transparent);
                         }
                     }
-/* 501 */           if (Build.VERSION.SDK_INT >= 14) {
-/* 502 */               setupActionBarJBOnly(setHomeButtonEnabled, setDisplayShowTitleEnabled, setDisplayHomeAsUpEnabled);
+           if (Build.VERSION.SDK_INT >= 14) {
+               setupActionBarJBOnly(setHomeButtonEnabled, setDisplayShowTitleEnabled, setDisplayHomeAsUpEnabled);
                     }
                     getWindow().getDecorView().postDelayed(new Runnable() {
                         @Override
@@ -504,12 +504,12 @@ import android.widget.ImageView;
                     }, 800L);
                 }
 
-                /**
-                 * Unified Vine toolbar style: 48dp bar (matches On The Rise),
-                 * centered < icon, big back hitbox (< + logo + title) with
-                 * pressed darkening. Applied to Sync, Comments, Followers,
-                 * Popular Now and every other setupActionBar screen.
-                 */
+                
+
+
+
+
+
                 protected void applyVineToolbarStyle() {
                     float density = getResources().getDisplayMetrics().density;
                     int barHeight = (int) (48.0f * density + 0.5f);
@@ -555,9 +555,9 @@ import android.widget.ImageView;
                         final ImageView image = (ImageView) view;
                         image.setScaleType(ImageView.ScaleType.CENTER);
                         image.setPadding(0, 0, 0, 0);
-                        // Fixed 24dp square everywhere so < renders the 48px
-                        // asset at full resolution, no downscale - Sync was
-                        // blowing up to 84x126 and Settings down to 42x42.
+                        
+                        
+                        
                         float density = getResources().getDisplayMetrics().density;
                         int upSize = (int) (24.0f * density + 0.5f);
                         ViewGroup.LayoutParams params = image.getLayoutParams();
@@ -573,8 +573,8 @@ import android.widget.ImageView;
                         }
                         image.setMinimumWidth(0);
                         image.setMinimumHeight(0);
-                        // No per-view background - the unified overlay draws the
-                        // single pressed rectangle. Clear any old separate box.
+                        
+                        
                         try {
                             image.setBackgroundDrawable(null);
                         } catch (Exception ignored) {
@@ -614,7 +614,7 @@ import android.widget.ImageView;
                         return;
                     }
                     final ViewGroup bar = (ViewGroup) actionBarView;
-                    // Only on screens with a back arrow - never hijack home tabs.
+                    
                     boolean hasUp = false;
                     for (int i = 0; i < bar.getChildCount(); i++) {
                         if (isVineUpView(bar.getChildAt(i))) {
@@ -625,8 +625,8 @@ import android.widget.ImageView;
                     if (!hasUp) {
                         return;
                     }
-                    // Clear old separate pressed boxes so only the unified
-                    // rectangle shows.
+                    
+                    
                     for (int i = 0; i < bar.getChildCount(); i++) {
                         View child = bar.getChildAt(i);
                         if (child instanceof ImageView || child instanceof android.widget.TextView) {
@@ -636,8 +636,8 @@ import android.widget.ImageView;
                             }
                         }
                     }
-                    // Single equal rectangle covering < + logo + title text.
-                    // Built after layout so title width is known.
+                    
+                    
                     bar.post(new Runnable() {
                         @Override
                         public void run() {
@@ -761,26 +761,26 @@ import android.widget.ImageView;
                             view.setClickable(true);
                         }
                     } catch (Exception e) {
-                        // Pressed feedback is best-effort; never crash toolbar.
+                        
                         CrashUtil.logException(e);
                     }
                 }
 
-                /**
-                 * The legacy Vine action bar treats the arrow, logo, and title as
-                 * one visual home/back control. AppCompat exposes only the small
-                 * arrow ImageButton as clickable in the reconstructed sources,
-                 * which leaves the rest of the pressed home region inert.
-                 */
+                
+
+
+
+
+
                 private void installActionBarHomeControl(View view) {
                     int upId = getResources().getIdentifier("up", "id", getPackageName());
                     int titleId = getResources().getIdentifier("action_bar_title", "id", getPackageName());
                     if (view.getId() == upId && view.getParent() instanceof ViewGroup) {
-                        // ActionBarView already owns the real legacy back listener.
-                        // Reconstructed AppCompat builds do not reliably expose that
-                        // listener, so restore it on the entire HomeView.  The HomeView
-                        // already carries the legacy actionBarItemBackground selector,
-                        // which supplies the darker rectangular pressed state.
+                        
+                        
+                        
+                        
+                        
                         ViewGroup home = (ViewGroup) view.getParent();
                         home.setClickable(true);
                         home.setFocusable(true);
@@ -866,106 +866,106 @@ import android.widget.ImageView;
                     }
                 }
 
-                @Override // android.app.Activity
-/* 509 */       public boolean onOptionsItemSelected(MenuItem item) {
-/* 510 */           if (this.mDefaultPluginManager.onOptionsItemSelected(item)) {
+                @Override 
+       public boolean onOptionsItemSelected(MenuItem item) {
+           if (this.mDefaultPluginManager.onOptionsItemSelected(item)) {
                         return true;
                     }
-/* 513 */           int id = item.getItemId();
-/* 514 */           if (id == 16908332) {
-/* 515 */               if (this.mSlidingMenuHelper != null) {
-/* 516 */                   this.mSlidingMenuHelper.toggle();
+           int id = item.getItemId();
+           if (id == 16908332) {
+               if (this.mSlidingMenuHelper != null) {
+                   this.mSlidingMenuHelper.toggle();
                             return true;
                         }
                         try {
-/* 519 */                   super.onBackPressed();
+                   super.onBackPressed();
                             return true;
                         } catch (IllegalStateException e) {
                             return true;
                         }
                     }
-/* 525 */           if (id == C0257R.id.capture) {
-/* 526 */               AppImpl.getInstance().startCapture(this);
+           if (id == C0257R.id.capture) {
+               AppImpl.getInstance().startCapture(this);
                         return true;
                     }
-/* 528 */           if (id == C0257R.id.audio) {
-/* 529 */               MuteUtil.setMuted(this, !MuteUtil.isMuted(this));
-/* 530 */               updateMuteActionState(item);
+           if (id == C0257R.id.audio) {
+               MuteUtil.setMuted(this, !MuteUtil.isMuted(this));
+               updateMuteActionState(item);
                         return true;
                     }
-/* 533 */           return super.onOptionsItemSelected(item);
+           return super.onOptionsItemSelected(item);
                 }
 
-/* 537 */       public FakeActionBar getFakeActionBar() {
-/* 538 */           return this.mFakeActionBar;
+       public FakeActionBar getFakeActionBar() {
+           return this.mFakeActionBar;
                 }
 
-/* 541 */       public void setActionBarColor(int profileBackground) {
-/* 542 */           if (profileBackground != 0) {
-/* 543 */               if (this.mFakeActionBar != null) {
-/* 544 */                   this.mFakeActionBar.setActionBarColor(profileBackground | (-16777216));
-/* 545 */                   this.mFakeActionBar.getActionBar().invalidate();
+       public void setActionBarColor(int profileBackground) {
+           if (profileBackground != 0) {
+               if (this.mFakeActionBar != null) {
+                   this.mFakeActionBar.setActionBarColor(profileBackground | (-16777216));
+                   this.mFakeActionBar.getActionBar().invalidate();
                         } else {
-/* 547 */                   getSupportActionBar().setBackgroundDrawable(new ColorDrawable(profileBackground | (-16777216)));
+                   getSupportActionBar().setBackgroundDrawable(new ColorDrawable(profileBackground | (-16777216)));
                         }
-/* 550 */               if (this instanceof HomeTabActivity) {
-/* 551 */                   if (profileBackground == Settings.DEFAULT_PROFILE_COLOR || profileBackground <= 0 || profileBackground == (Settings.DEFAULT_PROFILE_COLOR | (-16777216))) {
-/* 553 */                       ((HomeTabActivity) this).setProfileColor(getResources().getColor(C0257R.color.vine_green));
+               if (this instanceof HomeTabActivity) {
+                   if (profileBackground == Settings.DEFAULT_PROFILE_COLOR || profileBackground <= 0 || profileBackground == (Settings.DEFAULT_PROFILE_COLOR | (-16777216))) {
+                       ((HomeTabActivity) this).setProfileColor(getResources().getColor(C0257R.color.vine_green));
                             } else {
-/* 555 */                       ((HomeTabActivity) this).setProfileColor(profileBackground | (-16777216));
+                       ((HomeTabActivity) this).setProfileColor(profileBackground | (-16777216));
                             }
                         }
                     } else if (this.mVineGreen != 0) {
-/* 560 */               setActionBarColor(this.mVineGreen);
+               setActionBarColor(this.mVineGreen);
                     }
-/* 563 */           invalidateOptionsMenu();
+           invalidateOptionsMenu();
                 }
 
-/* 566 */       public void setActionBarColor() {
-/* 567 */           setActionBarColor(this.mVineGreen);
+       public void setActionBarColor() {
+           setActionBarColor(this.mVineGreen);
                 }
 
-/* 570 */       protected void dismissDialog() {
-/* 571 */           if (this.mProgressDialog != null) {
-/* 572 */               this.mProgressDialog.dismiss();
-/* 573 */               this.mProgressDialog = null;
+       protected void dismissDialog() {
+           if (this.mProgressDialog != null) {
+               this.mProgressDialog.dismiss();
+               this.mProgressDialog = null;
                     }
                 }
 
-/* 577 */       protected boolean isSlidingMenuEnabled() {
-/* 578 */           return false;
+       protected boolean isSlidingMenuEnabled() {
+           return false;
                 }
 
-                @Override // com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper.MenuStateHandler.MenuStateListener
-/* 582 */       public boolean onMenuDrag(View v, DragEvent event) {
-/* 583 */           return false;
+                @Override 
+       public boolean onMenuDrag(View v, DragEvent event) {
+           return false;
                 }
 
-                @Override // com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper.MenuStateHandler.MenuStateListener
-/* 588 */       public void onMenuClosed() {
+                @Override 
+       public void onMenuClosed() {
                 }
 
-                @Override // com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper.MenuStateHandler.MenuStateListener
-/* 593 */       public void onMenuClose() {
+                @Override 
+       public void onMenuClose() {
                 }
 
-                @Override // com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper.MenuStateHandler.MenuStateListener
-/* 598 */       public void onMenuOpened() {
+                @Override 
+       public void onMenuOpened() {
                 }
 
-                @Override // com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper.MenuStateHandler.MenuStateListener
-/* 603 */       public void onMenuOpen() {
+                @Override 
+       public void onMenuOpen() {
                 }
 
-                @Override // com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper.MenuStateHandler.MenuStateListener
-/* 608 */       public void onMenuClick(View v) {
+                @Override 
+       public void onMenuClick(View v) {
                 }
 
                 @Nullable
-/* 612 */       protected View getWindowDecorView() {
-/* 613 */           View decor = getWindow().getDecorView();
-/* 614 */           if (decor instanceof ViewGroup) {
-/* 617 */               return decor;
+       protected View getWindowDecorView() {
+           View decor = getWindow().getDecorView();
+           if (decor instanceof ViewGroup) {
+               return decor;
                     }
                     return null;
                 }

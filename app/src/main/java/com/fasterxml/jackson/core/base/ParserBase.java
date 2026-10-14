@@ -18,8 +18,8 @@
             import java.math.BigDecimal;
             import java.math.BigInteger;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 19 */    public abstract class ParserBase extends ParserMinimalBase {
+            
+    public abstract class ParserBase extends ParserMinimalBase {
                 protected static final char CHAR_NULL = 0;
                 protected static final int INT_0 = 48;
                 protected static final int INT_9 = 57;
@@ -80,43 +80,43 @@
                 protected abstract boolean loadMore() throws IOException;
 
 
-/* 285 */       protected ParserBase(IOContext iOContext, int i) {
-/* 287 */           this._features = i;
-/* 288 */           this._ioContext = iOContext;
-/* 289 */           this._textBuffer = iOContext.constructTextBuffer();
-/* 293 */           this._parsingContext = JsonReadContext.createRootContext(JsonParser.Feature.STRICT_DUPLICATE_DETECTION.enabledIn(i) ? DupDetector.rootDetector(this) : null);
+       protected ParserBase(IOContext iOContext, int i) {
+           this._features = i;
+           this._ioContext = iOContext;
+           this._textBuffer = iOContext.constructTextBuffer();
+           this._parsingContext = JsonReadContext.createRootContext(JsonParser.Feature.STRICT_DUPLICATE_DETECTION.enabledIn(i) ? DupDetector.rootDetector(this) : null);
                 }
 
-                @Override // com.fasterxml.jackson.core.base.ParserMinimalBase, com.fasterxml.jackson.core.JsonParser, com.fasterxml.jackson.core.Versioned
-/* 297 */       public Version version() {
-/* 298 */           return PackageVersion.VERSION;
+                @Override 
+       public Version version() {
+           return PackageVersion.VERSION;
                 }
 
-                @Override // com.fasterxml.jackson.core.base.ParserMinimalBase, com.fasterxml.jackson.core.JsonParser
-/* 315 */       public String getCurrentName() throws IOException {
+                @Override 
+       public String getCurrentName() throws IOException {
                     return (this._currToken == JsonToken.START_OBJECT || this._currToken == JsonToken.START_ARRAY) ? this._parsingContext.getParent().getCurrentName() : this._parsingContext.getCurrentName();
                 }
 
-                @Override // com.fasterxml.jackson.core.base.ParserMinimalBase, com.fasterxml.jackson.core.JsonParser
-/* 326 */       public void overrideCurrentName(String str) {
-/* 327 */           JsonReadContext parent = this._parsingContext;
-/* 328 */           if (this._currToken == JsonToken.START_OBJECT || this._currToken == JsonToken.START_ARRAY) {
-/* 329 */               parent = parent.getParent();
+                @Override 
+       public void overrideCurrentName(String str) {
+           JsonReadContext parent = this._parsingContext;
+           if (this._currToken == JsonToken.START_OBJECT || this._currToken == JsonToken.START_ARRAY) {
+               parent = parent.getParent();
                     }
                     try {
-/* 335 */               parent.setCurrentName(str);
+               parent.setCurrentName(str);
                     } catch (IOException e) {
-/* 337 */               throw new IllegalStateException(e);
+               throw new IllegalStateException(e);
                     }
                 }
 
-                @Override // com.fasterxml.jackson.core.base.ParserMinimalBase, com.fasterxml.jackson.core.JsonParser, java.io.Closeable, java.lang.AutoCloseable
-/* 343 */       public void close() throws IOException {
-/* 344 */           if (!this._closed) {
-/* 345 */               this._closed = true;
+                @Override 
+       public void close() throws IOException {
+           if (!this._closed) {
+               this._closed = true;
                         try {
-/* 347 */                   _closeInput();
-/* 351 */                   _releaseBuffers();
+                   _closeInput();
+                   _releaseBuffers();
                         } catch (Throwable th) {
                             _releaseBuffers();
                             throw th;
@@ -124,482 +124,482 @@
                     }
                 }
 
-                @Override // com.fasterxml.jackson.core.base.ParserMinimalBase, com.fasterxml.jackson.core.JsonParser
-/* 356 */       public boolean isClosed() {
-/* 357 */           return this._closed;
+                @Override 
+       public boolean isClosed() {
+           return this._closed;
                 }
 
-                @Override // com.fasterxml.jackson.core.base.ParserMinimalBase, com.fasterxml.jackson.core.JsonParser
-/* 361 */       public JsonReadContext getParsingContext() {
-/* 362 */           return this._parsingContext;
+                @Override 
+       public JsonReadContext getParsingContext() {
+           return this._parsingContext;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 372 */       public JsonLocation getTokenLocation() {
-/* 373 */           return new JsonLocation(this._ioContext.getSourceReference(), -1L, getTokenCharacterOffset(), getTokenLineNr(), getTokenColumnNr());
+                @Override 
+       public JsonLocation getTokenLocation() {
+           return new JsonLocation(this._ioContext.getSourceReference(), -1L, getTokenCharacterOffset(), getTokenLineNr(), getTokenColumnNr());
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 385 */       public JsonLocation getCurrentLocation() {
-/* 387 */           return new JsonLocation(this._ioContext.getSourceReference(), -1L, this._currInputProcessed + ((long) this._inputPtr), this._currInputRow, (this._inputPtr - this._currInputRowStart) + 1);
+                @Override 
+       public JsonLocation getCurrentLocation() {
+           return new JsonLocation(this._ioContext.getSourceReference(), -1L, this._currInputProcessed + ((long) this._inputPtr), this._currInputRow, (this._inputPtr - this._currInputRowStart) + 1);
                 }
 
-                @Override // com.fasterxml.jackson.core.base.ParserMinimalBase, com.fasterxml.jackson.core.JsonParser
-/* 400 */       public boolean hasTextCharacters() {
-/* 401 */           if (this._currToken == JsonToken.VALUE_STRING) {
-/* 402 */               return true;
+                @Override 
+       public boolean hasTextCharacters() {
+           if (this._currToken == JsonToken.VALUE_STRING) {
+               return true;
                     }
-/* 404 */           if (this._currToken == JsonToken.FIELD_NAME) {
-/* 405 */               return this._nameCopied;
+           if (this._currToken == JsonToken.FIELD_NAME) {
+               return this._nameCopied;
                     }
-/* 407 */           return false;
+           return false;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 412 */       public Object getEmbeddedObject() throws IOException {
-/* 413 */           return null;
+                @Override 
+       public Object getEmbeddedObject() throws IOException {
+           return null;
                 }
 
-/* 421 */       public long getTokenCharacterOffset() {
-/* 422 */           return this._tokenInputTotal;
+       public long getTokenCharacterOffset() {
+           return this._tokenInputTotal;
                 }
 
-/* 422 */       public int getTokenLineNr() {
-/* 423 */           return this._tokenInputRow;
+       public int getTokenLineNr() {
+           return this._tokenInputRow;
                 }
 
-/* 425 */       public int getTokenColumnNr() {
-/* 426 */           int i = this._tokenInputCol;
+       public int getTokenColumnNr() {
+           int i = this._tokenInputCol;
                     return i < 0 ? i : i + 1;
                 }
 
-/* 438 */       protected final void loadMoreGuaranteed() throws IOException {
-/* 439 */           if (!loadMore()) {
-/* 440 */               _reportInvalidEOF();
+       protected final void loadMoreGuaranteed() throws IOException {
+           if (!loadMore()) {
+               _reportInvalidEOF();
                     }
                 }
 
-/* 469 */       protected void _releaseBuffers() throws IOException {
-/* 470 */           this._textBuffer.releaseBuffers();
-/* 471 */           char[] cArr = this._nameCopyBuffer;
-/* 472 */           if (cArr != null) {
-/* 473 */               this._nameCopyBuffer = null;
-/* 474 */               this._ioContext.releaseNameCopyBuffer(cArr);
+       protected void _releaseBuffers() throws IOException {
+           this._textBuffer.releaseBuffers();
+           char[] cArr = this._nameCopyBuffer;
+           if (cArr != null) {
+               this._nameCopyBuffer = null;
+               this._ioContext.releaseNameCopyBuffer(cArr);
                     }
                 }
 
-                @Override // com.fasterxml.jackson.core.base.ParserMinimalBase
-/* 485 */       protected void _handleEOF() throws JsonParseException {
-/* 486 */           if (!this._parsingContext.inRoot()) {
-/* 487 */               _reportInvalidEOF(": expected close marker for " + this._parsingContext.getTypeDesc() + " (from " + this._parsingContext.getStartLocation(this._ioContext.getSourceReference()) + ")");
+                @Override 
+       protected void _handleEOF() throws JsonParseException {
+           if (!this._parsingContext.inRoot()) {
+               _reportInvalidEOF(": expected close marker for " + this._parsingContext.getTypeDesc() + " (from " + this._parsingContext.getStartLocation(this._ioContext.getSourceReference()) + ")");
                     }
                 }
 
-/* 499 */       protected void _reportMismatchedEndMarker(int i, char c) throws JsonParseException {
-/* 501 */           _reportError("Unexpected close marker '" + ((char) i) + "': expected '" + c + "' (for " + this._parsingContext.getTypeDesc() + " starting at " + ("" + this._parsingContext.getStartLocation(this._ioContext.getSourceReference())) + ")");
+       protected void _reportMismatchedEndMarker(int i, char c) throws JsonParseException {
+           _reportError("Unexpected close marker '" + ((char) i) + "': expected '" + c + "' (for " + this._parsingContext.getTypeDesc() + " starting at " + ("" + this._parsingContext.getStartLocation(this._ioContext.getSourceReference())) + ")");
                 }
 
-/* 511 */       public ByteArrayBuilder _getByteArrayBuilder() {
-/* 512 */           if (this._byteArrayBuilder == null) {
-/* 513 */               this._byteArrayBuilder = new ByteArrayBuilder();
+       public ByteArrayBuilder _getByteArrayBuilder() {
+           if (this._byteArrayBuilder == null) {
+               this._byteArrayBuilder = new ByteArrayBuilder();
                     } else {
-/* 515 */               this._byteArrayBuilder.reset();
+               this._byteArrayBuilder.reset();
                     }
-/* 517 */           return this._byteArrayBuilder;
+           return this._byteArrayBuilder;
                 }
 
-/* 529 */       protected final JsonToken reset(boolean z, int i, int i2, int i3) {
+       protected final JsonToken reset(boolean z, int i, int i2, int i3) {
                     return (i2 >= 1 || i3 >= 1) ? resetFloat(z, i, i2, i3) : resetInt(z, i);
                 }
 
-/* 537 */       protected final JsonToken resetInt(boolean z, int i) {
-/* 538 */           this._numberNegative = z;
-/* 539 */           this._intLength = i;
-/* 540 */           this._fractLength = 0;
-/* 541 */           this._expLength = 0;
-/* 542 */           this._numTypesValid = 0;
-/* 543 */           return JsonToken.VALUE_NUMBER_INT;
+       protected final JsonToken resetInt(boolean z, int i) {
+           this._numberNegative = z;
+           this._intLength = i;
+           this._fractLength = 0;
+           this._expLength = 0;
+           this._numTypesValid = 0;
+           return JsonToken.VALUE_NUMBER_INT;
                 }
 
-/* 547 */       protected final JsonToken resetFloat(boolean z, int i, int i2, int i3) {
-/* 548 */           this._numberNegative = z;
-/* 549 */           this._intLength = i;
-/* 550 */           this._fractLength = i2;
-/* 551 */           this._expLength = i3;
-/* 552 */           this._numTypesValid = 0;
-/* 553 */           return JsonToken.VALUE_NUMBER_FLOAT;
+       protected final JsonToken resetFloat(boolean z, int i, int i2, int i3) {
+           this._numberNegative = z;
+           this._intLength = i;
+           this._fractLength = i2;
+           this._expLength = i3;
+           this._numTypesValid = 0;
+           return JsonToken.VALUE_NUMBER_FLOAT;
                 }
 
-/* 557 */       protected final JsonToken resetAsNaN(String str, double d) {
-/* 558 */           this._textBuffer.resetWithString(str);
-/* 559 */           this._numberDouble = d;
-/* 560 */           this._numTypesValid = 8;
-/* 561 */           return JsonToken.VALUE_NUMBER_FLOAT;
+       protected final JsonToken resetAsNaN(String str, double d) {
+           this._textBuffer.resetWithString(str);
+           this._numberDouble = d;
+           this._numTypesValid = 8;
+           return JsonToken.VALUE_NUMBER_FLOAT;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 572 */       public Number getNumberValue() throws IOException {
-/* 573 */           if (this._numTypesValid == 0) {
-/* 574 */               _parseNumericValue(0);
+                @Override 
+       public Number getNumberValue() throws IOException {
+           if (this._numTypesValid == 0) {
+               _parseNumericValue(0);
                     }
-/* 577 */           if (this._currToken == JsonToken.VALUE_NUMBER_INT) {
-/* 578 */               if ((this._numTypesValid & 1) != 0) {
-/* 579 */                   return Integer.valueOf(this._numberInt);
+           if (this._currToken == JsonToken.VALUE_NUMBER_INT) {
+               if ((this._numTypesValid & 1) != 0) {
+                   return Integer.valueOf(this._numberInt);
                         }
-/* 581 */               if ((this._numTypesValid & 2) != 0) {
-/* 582 */                   return Long.valueOf(this._numberLong);
+               if ((this._numTypesValid & 2) != 0) {
+                   return Long.valueOf(this._numberLong);
                         }
-/* 584 */               if ((this._numTypesValid & 4) != 0) {
-/* 585 */                   return this._numberBigInt;
+               if ((this._numTypesValid & 4) != 0) {
+                   return this._numberBigInt;
                         }
-/* 588 */               return this._numberBigDecimal;
+               return this._numberBigDecimal;
                     }
-/* 594 */           if ((this._numTypesValid & 16) != 0) {
-/* 595 */               return this._numberBigDecimal;
+           if ((this._numTypesValid & 16) != 0) {
+               return this._numberBigDecimal;
                     }
-/* 597 */           if ((this._numTypesValid & 8) == 0) {
-/* 598 */               _throwInternal();
+           if ((this._numTypesValid & 8) == 0) {
+               _throwInternal();
                     }
-/* 600 */           return Double.valueOf(this._numberDouble);
+           return Double.valueOf(this._numberDouble);
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 605 */       public JsonParser.NumberType getNumberType() throws IOException {
-/* 606 */           if (this._numTypesValid == 0) {
-/* 607 */               _parseNumericValue(0);
+                @Override 
+       public JsonParser.NumberType getNumberType() throws IOException {
+           if (this._numTypesValid == 0) {
+               _parseNumericValue(0);
                     }
-/* 609 */           if (this._currToken == JsonToken.VALUE_NUMBER_INT) {
-/* 610 */               if ((this._numTypesValid & 1) != 0) {
-/* 611 */                   return JsonParser.NumberType.INT;
+           if (this._currToken == JsonToken.VALUE_NUMBER_INT) {
+               if ((this._numTypesValid & 1) != 0) {
+                   return JsonParser.NumberType.INT;
                         }
-/* 613 */               if ((this._numTypesValid & 2) != 0) {
-/* 614 */                   return JsonParser.NumberType.LONG;
+               if ((this._numTypesValid & 2) != 0) {
+                   return JsonParser.NumberType.LONG;
                         }
-/* 616 */               return JsonParser.NumberType.BIG_INTEGER;
+               return JsonParser.NumberType.BIG_INTEGER;
                     }
-/* 625 */           if ((this._numTypesValid & 16) != 0) {
-/* 626 */               return JsonParser.NumberType.BIG_DECIMAL;
+           if ((this._numTypesValid & 16) != 0) {
+               return JsonParser.NumberType.BIG_DECIMAL;
                     }
-/* 628 */           return JsonParser.NumberType.DOUBLE;
+           return JsonParser.NumberType.DOUBLE;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 633 */       public int getIntValue() throws IOException {
-/* 634 */           if ((this._numTypesValid & 1) == 0) {
-/* 635 */               if (this._numTypesValid == 0) {
-/* 636 */                   _parseNumericValue(1);
+                @Override 
+       public int getIntValue() throws IOException {
+           if ((this._numTypesValid & 1) == 0) {
+               if (this._numTypesValid == 0) {
+                   _parseNumericValue(1);
                         }
-/* 638 */               if ((this._numTypesValid & 1) == 0) {
-/* 639 */                   convertNumberToInt();
-                        }
-                    }
-/* 642 */           return this._numberInt;
-                }
-
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 647 */       public long getLongValue() throws IOException {
-/* 648 */           if ((this._numTypesValid & 2) == 0) {
-/* 649 */               if (this._numTypesValid == 0) {
-/* 650 */                   _parseNumericValue(2);
-                        }
-/* 652 */               if ((this._numTypesValid & 2) == 0) {
-/* 653 */                   convertNumberToLong();
+               if ((this._numTypesValid & 1) == 0) {
+                   convertNumberToInt();
                         }
                     }
-/* 656 */           return this._numberLong;
+           return this._numberInt;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 661 */       public BigInteger getBigIntegerValue() throws IOException {
-/* 662 */           if ((this._numTypesValid & 4) == 0) {
-/* 663 */               if (this._numTypesValid == 0) {
-/* 664 */                   _parseNumericValue(4);
+                @Override 
+       public long getLongValue() throws IOException {
+           if ((this._numTypesValid & 2) == 0) {
+               if (this._numTypesValid == 0) {
+                   _parseNumericValue(2);
                         }
-/* 666 */               if ((this._numTypesValid & 4) == 0) {
-/* 667 */                   convertNumberToBigInteger();
+               if ((this._numTypesValid & 2) == 0) {
+                   convertNumberToLong();
                         }
                     }
-/* 670 */           return this._numberBigInt;
+           return this._numberLong;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 675 */       public float getFloatValue() throws IOException {
-/* 685 */           return (float) getDoubleValue();
-                }
-
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 690 */       public double getDoubleValue() throws IOException {
-/* 691 */           if ((this._numTypesValid & 8) == 0) {
-/* 692 */               if (this._numTypesValid == 0) {
-/* 693 */                   _parseNumericValue(8);
+                @Override 
+       public BigInteger getBigIntegerValue() throws IOException {
+           if ((this._numTypesValid & 4) == 0) {
+               if (this._numTypesValid == 0) {
+                   _parseNumericValue(4);
                         }
-/* 695 */               if ((this._numTypesValid & 8) == 0) {
-/* 696 */                   convertNumberToDouble();
+               if ((this._numTypesValid & 4) == 0) {
+                   convertNumberToBigInteger();
                         }
                     }
-/* 699 */           return this._numberDouble;
+           return this._numberBigInt;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonParser
-/* 704 */       public BigDecimal getDecimalValue() throws IOException {
-/* 705 */           if ((this._numTypesValid & 16) == 0) {
-/* 706 */               if (this._numTypesValid == 0) {
-/* 707 */                   _parseNumericValue(16);
+                @Override 
+       public float getFloatValue() throws IOException {
+           return (float) getDoubleValue();
+                }
+
+                @Override 
+       public double getDoubleValue() throws IOException {
+           if ((this._numTypesValid & 8) == 0) {
+               if (this._numTypesValid == 0) {
+                   _parseNumericValue(8);
                         }
-/* 709 */               if ((this._numTypesValid & 16) == 0) {
-/* 710 */                   convertNumberToBigDecimal();
+               if ((this._numTypesValid & 8) == 0) {
+                   convertNumberToDouble();
                         }
                     }
-/* 713 */           return this._numberBigDecimal;
+           return this._numberDouble;
                 }
 
-/* 734 */       protected void _parseNumericValue(int i) throws IOException {
-/* 735 */           if (this._currToken == JsonToken.VALUE_NUMBER_INT) {
-/* 736 */               char[] textBuffer = this._textBuffer.getTextBuffer();
-/* 737 */               int textOffset = this._textBuffer.getTextOffset();
-/* 738 */               int i2 = this._intLength;
-/* 739 */               if (this._numberNegative) {
-/* 740 */                   textOffset++;
+                @Override 
+       public BigDecimal getDecimalValue() throws IOException {
+           if ((this._numTypesValid & 16) == 0) {
+               if (this._numTypesValid == 0) {
+                   _parseNumericValue(16);
                         }
-/* 742 */               if (i2 <= 9) {
-/* 743 */                   int i3 = NumberInput.parseInt(textBuffer, textOffset, i2);
-/* 744 */                   if (this._numberNegative) {
+               if ((this._numTypesValid & 16) == 0) {
+                   convertNumberToBigDecimal();
+                        }
+                    }
+           return this._numberBigDecimal;
+                }
+
+       protected void _parseNumericValue(int i) throws IOException {
+           if (this._currToken == JsonToken.VALUE_NUMBER_INT) {
+               char[] textBuffer = this._textBuffer.getTextBuffer();
+               int textOffset = this._textBuffer.getTextOffset();
+               int i2 = this._intLength;
+               if (this._numberNegative) {
+                   textOffset++;
+                        }
+               if (i2 <= 9) {
+                   int i3 = NumberInput.parseInt(textBuffer, textOffset, i2);
+                   if (this._numberNegative) {
                                 i3 = -i3;
                             }
                             this._numberInt = i3;
-/* 745 */                   this._numTypesValid = 1;
-/* 781 */                   return;
+                   this._numTypesValid = 1;
+                   return;
                         }
-/* 748 */               if (i2 <= 18) {
-/* 749 */                   long j = NumberInput.parseLong(textBuffer, textOffset, i2);
-/* 750 */                   if (this._numberNegative) {
-/* 751 */                       j = -j;
+               if (i2 <= 18) {
+                   long j = NumberInput.parseLong(textBuffer, textOffset, i2);
+                   if (this._numberNegative) {
+                       j = -j;
                             }
-/* 754 */                   if (i2 == 10) {
-/* 755 */                       if (this._numberNegative) {
+                   if (i2 == 10) {
+                       if (this._numberNegative) {
                                     if (j >= MIN_INT_L) {
-/* 757 */                               this._numberInt = (int) j;
-/* 758 */                               this._numTypesValid = 1;
-/* 781 */                               return;
+                               this._numberInt = (int) j;
+                               this._numTypesValid = 1;
+                               return;
                                     }
                                 } else if (j <= MAX_INT_L) {
-/* 763 */                           this._numberInt = (int) j;
-/* 764 */                           this._numTypesValid = 1;
-/* 781 */                           return;
+                           this._numberInt = (int) j;
+                           this._numTypesValid = 1;
+                           return;
                                 }
                             }
-/* 769 */                   this._numberLong = j;
-/* 770 */                   this._numTypesValid = 2;
-/* 781 */                   return;
+                   this._numberLong = j;
+                   this._numTypesValid = 2;
+                   return;
                         }
-/* 773 */               _parseSlowInt(i, textBuffer, textOffset, i2);
-/* 781 */               return;
+               _parseSlowInt(i, textBuffer, textOffset, i2);
+               return;
                     }
-/* 776 */           if (this._currToken == JsonToken.VALUE_NUMBER_FLOAT) {
-/* 777 */               _parseSlowFloat(i);
+           if (this._currToken == JsonToken.VALUE_NUMBER_FLOAT) {
+               _parseSlowFloat(i);
                     } else {
-/* 780 */               _reportError("Current token (" + this._currToken + ") not numeric, can not use numeric value accessors");
+               _reportError("Current token (" + this._currToken + ") not numeric, can not use numeric value accessors");
                     }
                 }
 
-/* 793 */       private void _parseSlowFloat(int i) throws IOException {
+       private void _parseSlowFloat(int i) throws IOException {
                     try {
-/* 794 */               if (i == 16) {
-/* 795 */                   this._numberBigDecimal = this._textBuffer.contentsAsDecimal();
-/* 796 */                   this._numTypesValid = 16;
+               if (i == 16) {
+                   this._numberBigDecimal = this._textBuffer.contentsAsDecimal();
+                   this._numTypesValid = 16;
                         } else {
-/* 799 */                   this._numberDouble = this._textBuffer.contentsAsDouble();
-/* 800 */                   this._numTypesValid = 8;
+                   this._numberDouble = this._textBuffer.contentsAsDouble();
+                   this._numTypesValid = 8;
                         }
                     } catch (NumberFormatException e) {
-/* 804 */               _wrapError("Malformed numeric value '" + this._textBuffer.contentsAsString() + "'", e);
+               _wrapError("Malformed numeric value '" + this._textBuffer.contentsAsString() + "'", e);
                     }
                 }
 
-/* 810 */       private void _parseSlowInt(int i, char[] cArr, int i2, int i3) throws IOException {
-/* 811 */           String strContentsAsString = this._textBuffer.contentsAsString();
+       private void _parseSlowInt(int i, char[] cArr, int i2, int i3) throws IOException {
+           String strContentsAsString = this._textBuffer.contentsAsString();
                     try {
-/* 814 */               if (NumberInput.inLongRange(cArr, i2, i3, this._numberNegative)) {
-/* 816 */                   this._numberLong = Long.parseLong(strContentsAsString);
-/* 817 */                   this._numTypesValid = 2;
+               if (NumberInput.inLongRange(cArr, i2, i3, this._numberNegative)) {
+                   this._numberLong = Long.parseLong(strContentsAsString);
+                   this._numTypesValid = 2;
                         } else {
-/* 820 */                   this._numberBigInt = new BigInteger(strContentsAsString);
-/* 821 */                   this._numTypesValid = 4;
+                   this._numberBigInt = new BigInteger(strContentsAsString);
+                   this._numTypesValid = 4;
                         }
                     } catch (NumberFormatException e) {
-/* 825 */               _wrapError("Malformed numeric value '" + strContentsAsString + "'", e);
+               _wrapError("Malformed numeric value '" + strContentsAsString + "'", e);
                     }
                 }
 
-/* 838 */       protected void convertNumberToInt() throws IOException {
-/* 839 */           if ((this._numTypesValid & 2) != 0) {
-/* 841 */               int i = (int) this._numberLong;
+       protected void convertNumberToInt() throws IOException {
+           if ((this._numTypesValid & 2) != 0) {
+               int i = (int) this._numberLong;
                         if (i != this._numberLong) {
-/* 843 */                   _reportError("Numeric value (" + getText() + ") out of range of int");
+                   _reportError("Numeric value (" + getText() + ") out of range of int");
                         }
-/* 845 */               this._numberInt = i;
+               this._numberInt = i;
                     } else if ((this._numTypesValid & 4) != 0) {
-/* 847 */               if (BI_MIN_INT.compareTo(this._numberBigInt) > 0 || BI_MAX_INT.compareTo(this._numberBigInt) < 0) {
-/* 849 */                   reportOverflowInt();
+               if (BI_MIN_INT.compareTo(this._numberBigInt) > 0 || BI_MAX_INT.compareTo(this._numberBigInt) < 0) {
+                   reportOverflowInt();
                         }
-/* 851 */               this._numberInt = this._numberBigInt.intValue();
+               this._numberInt = this._numberBigInt.intValue();
                     } else if ((this._numTypesValid & 8) != 0) {
                         if (this._numberDouble < MIN_INT_D || this._numberDouble > MAX_INT_D) {
-/* 855 */                   reportOverflowInt();
+                   reportOverflowInt();
                         }
-/* 857 */               this._numberInt = (int) this._numberDouble;
+               this._numberInt = (int) this._numberDouble;
                     } else if ((this._numTypesValid & 16) != 0) {
-/* 859 */               if (BD_MIN_INT.compareTo(this._numberBigDecimal) > 0 || BD_MAX_INT.compareTo(this._numberBigDecimal) < 0) {
-/* 861 */                   reportOverflowInt();
+               if (BD_MIN_INT.compareTo(this._numberBigDecimal) > 0 || BD_MAX_INT.compareTo(this._numberBigDecimal) < 0) {
+                   reportOverflowInt();
                         }
-/* 863 */               this._numberInt = this._numberBigDecimal.intValue();
+               this._numberInt = this._numberBigDecimal.intValue();
                     } else {
-/* 865 */               _throwInternal();
+               _throwInternal();
                     }
-/* 867 */           this._numTypesValid |= 1;
+           this._numTypesValid |= 1;
                 }
 
-/* 872 */       protected void convertNumberToLong() throws IOException {
-/* 873 */           if ((this._numTypesValid & 1) != 0) {
-/* 874 */               this._numberLong = this._numberInt;
+       protected void convertNumberToLong() throws IOException {
+           if ((this._numTypesValid & 1) != 0) {
+               this._numberLong = this._numberInt;
                     } else if ((this._numTypesValid & 4) != 0) {
-/* 876 */               if (BI_MIN_LONG.compareTo(this._numberBigInt) > 0 || BI_MAX_LONG.compareTo(this._numberBigInt) < 0) {
-/* 878 */                   reportOverflowLong();
+               if (BI_MIN_LONG.compareTo(this._numberBigInt) > 0 || BI_MAX_LONG.compareTo(this._numberBigInt) < 0) {
+                   reportOverflowLong();
                         }
-/* 880 */               this._numberLong = this._numberBigInt.longValue();
+               this._numberLong = this._numberBigInt.longValue();
                     } else if ((this._numTypesValid & 8) != 0) {
                         if (this._numberDouble < MIN_LONG_D || this._numberDouble > MAX_LONG_D) {
-/* 884 */                   reportOverflowLong();
+                   reportOverflowLong();
                         }
-/* 886 */               this._numberLong = (long) this._numberDouble;
+               this._numberLong = (long) this._numberDouble;
                     } else if ((this._numTypesValid & 16) != 0) {
-/* 888 */               if (BD_MIN_LONG.compareTo(this._numberBigDecimal) > 0 || BD_MAX_LONG.compareTo(this._numberBigDecimal) < 0) {
-/* 890 */                   reportOverflowLong();
+               if (BD_MIN_LONG.compareTo(this._numberBigDecimal) > 0 || BD_MAX_LONG.compareTo(this._numberBigDecimal) < 0) {
+                   reportOverflowLong();
                         }
-/* 892 */               this._numberLong = this._numberBigDecimal.longValue();
+               this._numberLong = this._numberBigDecimal.longValue();
                     } else {
-/* 894 */               _throwInternal();
+               _throwInternal();
                     }
-/* 896 */           this._numTypesValid |= 2;
+           this._numTypesValid |= 2;
                 }
 
-/* 901 */       protected void convertNumberToBigInteger() throws IOException {
-/* 902 */           if ((this._numTypesValid & 16) != 0) {
-/* 904 */               this._numberBigInt = this._numberBigDecimal.toBigInteger();
+       protected void convertNumberToBigInteger() throws IOException {
+           if ((this._numTypesValid & 16) != 0) {
+               this._numberBigInt = this._numberBigDecimal.toBigInteger();
                     } else if ((this._numTypesValid & 2) != 0) {
-/* 906 */               this._numberBigInt = BigInteger.valueOf(this._numberLong);
+               this._numberBigInt = BigInteger.valueOf(this._numberLong);
                     } else if ((this._numTypesValid & 1) != 0) {
-/* 908 */               this._numberBigInt = BigInteger.valueOf(this._numberInt);
+               this._numberBigInt = BigInteger.valueOf(this._numberInt);
                     } else if ((this._numTypesValid & 8) != 0) {
-/* 910 */               this._numberBigInt = BigDecimal.valueOf(this._numberDouble).toBigInteger();
+               this._numberBigInt = BigDecimal.valueOf(this._numberDouble).toBigInteger();
                     } else {
-/* 912 */               _throwInternal();
+               _throwInternal();
                     }
-/* 914 */           this._numTypesValid |= 4;
+           this._numTypesValid |= 4;
                 }
 
-/* 925 */       protected void convertNumberToDouble() throws IOException {
-/* 926 */           if ((this._numTypesValid & 16) != 0) {
-/* 927 */               this._numberDouble = this._numberBigDecimal.doubleValue();
+       protected void convertNumberToDouble() throws IOException {
+           if ((this._numTypesValid & 16) != 0) {
+               this._numberDouble = this._numberBigDecimal.doubleValue();
                     } else if ((this._numTypesValid & 4) != 0) {
-/* 929 */               this._numberDouble = this._numberBigInt.doubleValue();
+               this._numberDouble = this._numberBigInt.doubleValue();
                     } else if ((this._numTypesValid & 2) != 0) {
-/* 931 */               this._numberDouble = this._numberLong;
+               this._numberDouble = this._numberLong;
                     } else if ((this._numTypesValid & 1) != 0) {
-/* 933 */               this._numberDouble = this._numberInt;
+               this._numberDouble = this._numberInt;
                     } else {
-/* 935 */               _throwInternal();
+               _throwInternal();
                     }
-/* 937 */           this._numTypesValid |= 8;
+           this._numTypesValid |= 8;
                 }
 
-/* 948 */       protected void convertNumberToBigDecimal() throws IOException {
-/* 949 */           if ((this._numTypesValid & 8) != 0) {
-/* 954 */               this._numberBigDecimal = NumberInput.parseBigDecimal(getText());
+       protected void convertNumberToBigDecimal() throws IOException {
+           if ((this._numTypesValid & 8) != 0) {
+               this._numberBigDecimal = NumberInput.parseBigDecimal(getText());
                     } else if ((this._numTypesValid & 4) != 0) {
-/* 956 */               this._numberBigDecimal = new BigDecimal(this._numberBigInt);
+               this._numberBigDecimal = new BigDecimal(this._numberBigInt);
                     } else if ((this._numTypesValid & 2) != 0) {
-/* 958 */               this._numberBigDecimal = BigDecimal.valueOf(this._numberLong);
+               this._numberBigDecimal = BigDecimal.valueOf(this._numberLong);
                     } else if ((this._numTypesValid & 1) != 0) {
-/* 960 */               this._numberBigDecimal = BigDecimal.valueOf(this._numberInt);
+               this._numberBigDecimal = BigDecimal.valueOf(this._numberInt);
                     } else {
-/* 962 */               _throwInternal();
+               _throwInternal();
                     }
-/* 964 */           this._numTypesValid |= 16;
+           this._numTypesValid |= 16;
                 }
 
-/* 975 */       protected void reportUnexpectedNumberChar(int i, String str) throws JsonParseException {
-/* 976 */           String str2 = "Unexpected character (" + _getCharDesc(i) + ") in numeric value";
-/* 977 */           if (str != null) {
-/* 978 */               str2 = str2 + ": " + str;
+       protected void reportUnexpectedNumberChar(int i, String str) throws JsonParseException {
+           String str2 = "Unexpected character (" + _getCharDesc(i) + ") in numeric value";
+           if (str != null) {
+               str2 = str2 + ": " + str;
                     }
-/* 980 */           _reportError(str2);
+           _reportError(str2);
                 }
 
-/* 985 */       protected void reportInvalidNumber(String str) throws JsonParseException {
-/* 986 */           _reportError("Invalid numeric value: " + str);
+       protected void reportInvalidNumber(String str) throws JsonParseException {
+           _reportError("Invalid numeric value: " + str);
                 }
 
-/* 991 */       protected void reportOverflowInt() throws IOException {
-/* 992 */           _reportError("Numeric value (" + getText() + ") out of range of int (-2147483648 - 2147483647)");
+       protected void reportOverflowInt() throws IOException {
+           _reportError("Numeric value (" + getText() + ") out of range of int (-2147483648 - 2147483647)");
                 }
 
-/* 997 */       protected void reportOverflowLong() throws IOException {
-/* 998 */           _reportError("Numeric value (" + getText() + ") out of range of long (-9223372036854775808 - 9223372036854775807)");
+       protected void reportOverflowLong() throws IOException {
+           _reportError("Numeric value (" + getText() + ") out of range of long (-9223372036854775808 - 9223372036854775807)");
                 }
 
-/* 1013 */      protected char _decodeEscaped() throws IOException {
-/* 1014 */          throw new UnsupportedOperationException();
+      protected char _decodeEscaped() throws IOException {
+          throw new UnsupportedOperationException();
                 }
 
-/* 1020 */      protected final int _decodeBase64Escape(Base64Variant base64Variant, int i, int i2) throws IOException {
-/* 1021 */          if (i != 92) {
-/* 1022 */              throw reportInvalidBase64Char(base64Variant, i, i2);
+      protected final int _decodeBase64Escape(Base64Variant base64Variant, int i, int i2) throws IOException {
+          if (i != 92) {
+              throw reportInvalidBase64Char(base64Variant, i, i2);
                     }
-/* 1024 */          char c_decodeEscaped = _decodeEscaped();
-/* 1026 */          if (c_decodeEscaped <= ' ' && i2 == 0) {
-/* 1028 */              return -1;
+          char c_decodeEscaped = _decodeEscaped();
+          if (c_decodeEscaped <= ' ' && i2 == 0) {
+              return -1;
                     }
-/* 1032 */          int iDecodeBase64Char = base64Variant.decodeBase64Char((int) c_decodeEscaped);
-/* 1033 */          if (iDecodeBase64Char < 0) {
-/* 1034 */              throw reportInvalidBase64Char(base64Variant, c_decodeEscaped, i2);
+          int iDecodeBase64Char = base64Variant.decodeBase64Char((int) c_decodeEscaped);
+          if (iDecodeBase64Char < 0) {
+              throw reportInvalidBase64Char(base64Variant, c_decodeEscaped, i2);
                     }
-/* 1036 */          return iDecodeBase64Char;
+          return iDecodeBase64Char;
                 }
 
-/* 1042 */      protected final int _decodeBase64Escape(Base64Variant base64Variant, char c, int i) throws IOException {
-/* 1043 */          if (c != '\\') {
-/* 1044 */              throw reportInvalidBase64Char(base64Variant, c, i);
+      protected final int _decodeBase64Escape(Base64Variant base64Variant, char c, int i) throws IOException {
+          if (c != '\\') {
+              throw reportInvalidBase64Char(base64Variant, c, i);
                     }
-/* 1046 */          char c_decodeEscaped = _decodeEscaped();
-/* 1048 */          if (c_decodeEscaped <= ' ' && i == 0) {
-/* 1050 */              return -1;
+          char c_decodeEscaped = _decodeEscaped();
+          if (c_decodeEscaped <= ' ' && i == 0) {
+              return -1;
                     }
-/* 1054 */          int iDecodeBase64Char = base64Variant.decodeBase64Char(c_decodeEscaped);
-/* 1055 */          if (iDecodeBase64Char < 0) {
-/* 1056 */              throw reportInvalidBase64Char(base64Variant, c_decodeEscaped, i);
+          int iDecodeBase64Char = base64Variant.decodeBase64Char(c_decodeEscaped);
+          if (iDecodeBase64Char < 0) {
+              throw reportInvalidBase64Char(base64Variant, c_decodeEscaped, i);
                     }
-/* 1058 */          return iDecodeBase64Char;
+          return iDecodeBase64Char;
                 }
 
-/* 1063 */      protected IllegalArgumentException reportInvalidBase64Char(Base64Variant base64Variant, int i, int i2) throws IllegalArgumentException {
-/* 1064 */          return reportInvalidBase64Char(base64Variant, i, i2, null);
+      protected IllegalArgumentException reportInvalidBase64Char(Base64Variant base64Variant, int i, int i2) throws IllegalArgumentException {
+          return reportInvalidBase64Char(base64Variant, i, i2, null);
                 }
 
-/* 1074 */      protected IllegalArgumentException reportInvalidBase64Char(Base64Variant base64Variant, int i, int i2, String str) throws IllegalArgumentException {
+      protected IllegalArgumentException reportInvalidBase64Char(Base64Variant base64Variant, int i, int i2, String str) throws IllegalArgumentException {
                     String str2;
-/* 1075 */          if (i <= 32) {
-/* 1076 */              str2 = "Illegal white space character (code 0x" + Integer.toHexString(i) + ") as character #" + (i2 + 1) + " of 4-char base64 unit: can only used between units";
+          if (i <= 32) {
+              str2 = "Illegal white space character (code 0x" + Integer.toHexString(i) + ") as character #" + (i2 + 1) + " of 4-char base64 unit: can only used between units";
                     } else if (base64Variant.usesPaddingChar(i)) {
-/* 1078 */              str2 = "Unexpected padding character ('" + base64Variant.getPaddingChar() + "') as character #" + (i2 + 1) + " of 4-char base64 unit: padding only legal as 3rd or 4th character";
+              str2 = "Unexpected padding character ('" + base64Variant.getPaddingChar() + "') as character #" + (i2 + 1) + " of 4-char base64 unit: padding only legal as 3rd or 4th character";
                     } else if (!Character.isDefined(i) || Character.isISOControl(i)) {
-/* 1081 */              str2 = "Illegal character (code 0x" + Integer.toHexString(i) + ") in base64 content";
+              str2 = "Illegal character (code 0x" + Integer.toHexString(i) + ") in base64 content";
                     } else {
-/* 1083 */              str2 = "Illegal character '" + ((char) i) + "' (code 0x" + Integer.toHexString(i) + ") in base64 content";
+              str2 = "Illegal character '" + ((char) i) + "' (code 0x" + Integer.toHexString(i) + ") in base64 content";
                     }
-/* 1085 */          if (str != null) {
-/* 1086 */              str2 = str2 + ": " + str;
+          if (str != null) {
+              str2 = str2 + ": " + str;
                     }
-/* 1088 */          return new IllegalArgumentException(str2);
+          return new IllegalArgumentException(str2);
                 }
             }

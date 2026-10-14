@@ -4,10 +4,10 @@
             import co.vine.android.api.VineRecipient;
             import java.util.HashMap;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 595 */   public class VineDatabaseSQL {
+            
+   public class VineDatabaseSQL {
 
-                /* JADX INFO: renamed from: AS */
+                
                 public static final String f105AS = " AS ";
                 public static final String CHANNELS_TABLE_SQL = "CREATE TABLE  channels (_id INTEGER PRIMARY KEY,channel_id INT UNIQUE NOT NULL,channel TEXT NOT NULL,timestamp INT,background_color TEXT,font_color TEXT,last_used_timestamp INT,is_last INT,icon_full_url TEXT,retina_icon_full_url TEXT,following INT,retina_explore_icon_full_url TEXT);";
                 public static final String COMMENTS_TABLE_SQL = "CREATE TABLE  comments (_id INTEGER PRIMARY KEY,comment_id INT UNIQUE NOT NULL,post_id INT NOT NULL,avatar_url TEXT,comment TEXT,user_id INT,username TEXT,timestamp INT,location TEXT,verified INT,entities BLOB,is_last INT,last_refresh INT);";
@@ -319,7 +319,7 @@
                     public static final String[] PROJECTION = {"user_id"};
                 }
 
-/* 596 */       public static final class UsersQuery {
+       public static final class UsersQuery {
                     public static final int INDEX_ACCEPT_OOM_CONVERSATIONS = 18;
                     public static final int INDEX_AVATAR_URL = 2;
                     public static final int INDEX_BLOCKED = 3;
@@ -348,18 +348,18 @@
                     public static final int INDEX_VERIFIED = 14;
                     public static final String[] PROJECTION = {"_id", "user_id", "avatar_url", "blocked", Vine.UserColumns.BLOCKING, "description", "location", "explicit", Vine.UserColumns.FOLLOWER_COUNT, Vine.UserColumns.FOLLOWING_COUNT, "following_flag", Vine.UserColumns.LIKE_COUNT, Vine.UserColumns.POST_COUNT, "username", "verified", Vine.UserColumns.FOLLOW_STATUS, Vine.UserGroupColumns.ORDER_ID, "is_last", Vine.UserColumns.ACCEPTS_OON_CONVERSATIONS, "profile_background", Vine.UserSections.SECTION_INDEX, Vine.UserSections.SECTION_TYPE, Vine.UserSections.SECTION_TITLE, Vine.UserSections.LAST_SECTION_REFRESH, "type", Vine.UserColumns.LOOP_COUNT};
 
-/* 597 */           public static VineRecipient getVineRecipient(Cursor cursor) {
-/* 598 */               VineRecipient vr = VineRecipient.fromUser(cursor.getString(13), cursor.getLong(1), cursor.getInt(19), -1L);
-/* 603 */               vr.avatarUrl = cursor.getString(2);
-/* 604 */               vr.lastFriendRefresh = cursor.getLong(23);
-/* 605 */               vr.sectionTitle = cursor.getString(22);
-/* 606 */               vr.friendIndex = cursor.getLong(20);
-/* 607 */               vr.sectionIndex = (int) (vr.friendIndex >> 32);
-/* 608 */               return vr;
+           public static VineRecipient getVineRecipient(Cursor cursor) {
+               VineRecipient vr = VineRecipient.fromUser(cursor.getString(13), cursor.getLong(1), cursor.getInt(19), -1L);
+               vr.avatarUrl = cursor.getString(2);
+               vr.lastFriendRefresh = cursor.getLong(23);
+               vr.sectionTitle = cursor.getString(22);
+               vr.friendIndex = cursor.getLong(20);
+               vr.sectionIndex = (int) (vr.friendIndex >> 32);
+               return vr;
                     }
                 }
 
-/* 785 */       public static final class PostCommentsLikesQuery {
+       public static final class PostCommentsLikesQuery {
                     public static final int INDEX_AVATAR_URL = 15;
                     public static final int INDEX_COMMENT = 35;
                     public static final int INDEX_COMMENTS_COUNT = 26;
@@ -414,56 +414,56 @@
                     public static final HashMap<String, Integer> LOOKUP = new HashMap<>(43);
 
                     static {
-/* 895 */               LOOKUP.put("_id", 0);
-/* 896 */               LOOKUP.put("post_id", 1);
-/* 897 */               LOOKUP.put("my_repost_id", 2);
-/* 898 */               LOOKUP.put("tags", 3);
-/* 899 */               LOOKUP.put("thumbnail_url", 4);
-/* 900 */               LOOKUP.put("share_url", 5);
-/* 901 */               LOOKUP.put(Vine.PostColumns.VIDEO_LOW_URL, 6);
-/* 902 */               LOOKUP.put("video_url", 7);
-/* 903 */               LOOKUP.put("description", 8);
-/* 904 */               LOOKUP.put(Vine.PostColumns.FOURSQUARE_VENUE_ID, 9);
-/* 905 */               LOOKUP.put(Vine.PostColumns.METADATA_FLAGS, 10);
-/* 906 */               LOOKUP.put(Vine.PostColumns.POST_FLAGS, 11);
-/* 907 */               LOOKUP.put(Vine.PostGroupColumns.TYPE, 12);
-/* 908 */               LOOKUP.put("tag", 13);
-/* 909 */               LOOKUP.put(Vine.PostGroupColumns.SORT_ID, 49);
-/* 910 */               LOOKUP.put("is_last", 14);
-/* 911 */               LOOKUP.put("avatar_url", 15);
-/* 912 */               LOOKUP.put("user_id", 16);
-/* 913 */               LOOKUP.put("timestamp", 17);
-/* 914 */               LOOKUP.put("location", 18);
-/* 915 */               LOOKUP.put("username", 19);
-/* 916 */               LOOKUP.put(Vine.PostColumns.VENUE_DATA, 20);
-/* 917 */               LOOKUP.put("entities", 21);
-/* 918 */               LOOKUP.put(Vine.PostGroupColumns.REPOST_DATA, 22);
-/* 919 */               LOOKUP.put(Vine.PostGroupColumns.REPOSTER_ID, 23);
-/* 920 */               LOOKUP.put(Vine.PostColumns.LIKES_COUNT, 24);
-/* 921 */               LOOKUP.put(Vine.PostColumns.REVINERS_COUNT, 25);
-/* 922 */               LOOKUP.put(Vine.PostColumns.COMMENTS_COUNT, 26);
-/* 923 */               LOOKUP.put(Vine.LikesColumns.LIKE_ID, 27);
-/* 924 */               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_AVATAR_URL, 28);
-/* 925 */               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_USER_ID, 29);
-/* 926 */               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_TIMESTAMP, 30);
-/* 927 */               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_LOCATION, 31);
-/* 928 */               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_USERNAME, 32);
-/* 929 */               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_VERIFIED, 33);
-/* 930 */               LOOKUP.put("comment_id", 34);
-/* 931 */               LOOKUP.put("comment", 35);
-/* 932 */               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_AVATAR_URL, 36);
-/* 933 */               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_USER_ID, 37);
-/* 934 */               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_TIMESTAMP, 38);
-/* 935 */               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_LOCATION, 39);
-/* 936 */               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_USERNAME, 40);
-/* 937 */               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_VERIFIED, 41);
-/* 938 */               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_IS_LAST, 42);
-/* 939 */               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_ENTITIES, 43);
-/* 940 */               LOOKUP.put(Vine.PostColumns.USER_BACKGROUND_COLOR, 44);
-/* 941 */               LOOKUP.put("loops", 45);
-/* 942 */               LOOKUP.put(Vine.PostColumns.VELOCITY, 46);
-/* 943 */               LOOKUP.put(Vine.PostColumns.ON_FIRE, 47);
-/* 944 */               LOOKUP.put("last_refresh", 48);
+               LOOKUP.put("_id", 0);
+               LOOKUP.put("post_id", 1);
+               LOOKUP.put("my_repost_id", 2);
+               LOOKUP.put("tags", 3);
+               LOOKUP.put("thumbnail_url", 4);
+               LOOKUP.put("share_url", 5);
+               LOOKUP.put(Vine.PostColumns.VIDEO_LOW_URL, 6);
+               LOOKUP.put("video_url", 7);
+               LOOKUP.put("description", 8);
+               LOOKUP.put(Vine.PostColumns.FOURSQUARE_VENUE_ID, 9);
+               LOOKUP.put(Vine.PostColumns.METADATA_FLAGS, 10);
+               LOOKUP.put(Vine.PostColumns.POST_FLAGS, 11);
+               LOOKUP.put(Vine.PostGroupColumns.TYPE, 12);
+               LOOKUP.put("tag", 13);
+               LOOKUP.put(Vine.PostGroupColumns.SORT_ID, 49);
+               LOOKUP.put("is_last", 14);
+               LOOKUP.put("avatar_url", 15);
+               LOOKUP.put("user_id", 16);
+               LOOKUP.put("timestamp", 17);
+               LOOKUP.put("location", 18);
+               LOOKUP.put("username", 19);
+               LOOKUP.put(Vine.PostColumns.VENUE_DATA, 20);
+               LOOKUP.put("entities", 21);
+               LOOKUP.put(Vine.PostGroupColumns.REPOST_DATA, 22);
+               LOOKUP.put(Vine.PostGroupColumns.REPOSTER_ID, 23);
+               LOOKUP.put(Vine.PostColumns.LIKES_COUNT, 24);
+               LOOKUP.put(Vine.PostColumns.REVINERS_COUNT, 25);
+               LOOKUP.put(Vine.PostColumns.COMMENTS_COUNT, 26);
+               LOOKUP.put(Vine.LikesColumns.LIKE_ID, 27);
+               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_AVATAR_URL, 28);
+               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_USER_ID, 29);
+               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_TIMESTAMP, 30);
+               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_LOCATION, 31);
+               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_USERNAME, 32);
+               LOOKUP.put(Vine.PostCommentsLikesView.LIKE_USER_VERIFIED, 33);
+               LOOKUP.put("comment_id", 34);
+               LOOKUP.put("comment", 35);
+               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_AVATAR_URL, 36);
+               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_USER_ID, 37);
+               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_TIMESTAMP, 38);
+               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_LOCATION, 39);
+               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_USERNAME, 40);
+               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_USER_VERIFIED, 41);
+               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_IS_LAST, 42);
+               LOOKUP.put(Vine.PostCommentsLikesView.COMMENT_ENTITIES, 43);
+               LOOKUP.put(Vine.PostColumns.USER_BACKGROUND_COLOR, 44);
+               LOOKUP.put("loops", 45);
+               LOOKUP.put(Vine.PostColumns.VELOCITY, 46);
+               LOOKUP.put(Vine.PostColumns.ON_FIRE, 47);
+               LOOKUP.put("last_refresh", 48);
                     }
                 }
             }

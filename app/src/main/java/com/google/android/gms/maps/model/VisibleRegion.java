@@ -5,13 +5,13 @@
             import com.google.android.gms.internal.C1027dl;
             import com.google.android.gms.maps.internal.C1174r;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class VisibleRegion implements SafeParcelable {
                 public static final VisibleRegionCreator CREATOR = new VisibleRegionCreator();
                 public final LatLng farLeft;
                 public final LatLng farRight;
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2362iM;
                 public final LatLngBounds latLngBounds;
                 public final LatLng nearLeft;
@@ -30,7 +30,7 @@
                     this(1, nearLeft, nearRight, farLeft, farRight, latLngBounds);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -58,7 +58,7 @@
                     return C1027dl.m1599d(this).m1600a("nearLeft", this.nearLeft).m1600a("nearRight", this.nearRight).m1600a("farLeft", this.farLeft).m1600a("farRight", this.farRight).m1600a("latLngBounds", this.latLngBounds).toString();
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     if (C1174r.m2265cK()) {
                         C1195k.m2328a(this, out, flags);

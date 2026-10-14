@@ -14,44 +14,44 @@
             import com.google.android.gms.internal.C1053ek;
             import java.lang.ref.WeakReference;
             
-            /* JADX INFO: renamed from: com.google.android.gms.common.images.a */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0900a {
 
-                /* JADX INFO: renamed from: jS */
+                
                 final a f995jS;
 
-                /* JADX INFO: renamed from: jT */
+                
                 private int f996jT;
 
-                /* JADX INFO: renamed from: jU */
+                
                 private int f997jU;
 
-                /* JADX INFO: renamed from: jV */
+                
                 int f998jV;
 
-                /* JADX INFO: renamed from: jW */
+                
                 private int f999jW;
 
-                /* JADX INFO: renamed from: jX */
+                
                 private WeakReference<ImageManager.OnImageLoadedListener> f1000jX;
 
-                /* JADX INFO: renamed from: jY */
+                
                 private WeakReference<ImageView> f1001jY;
 
-                /* JADX INFO: renamed from: jZ */
+                
                 private WeakReference<TextView> f1002jZ;
 
-                /* JADX INFO: renamed from: ka */
+                
                 private int f1003ka;
 
-                /* JADX INFO: renamed from: kb */
+                
                 private boolean f1004kb;
 
-                /* JADX INFO: renamed from: kc */
+                
                 private boolean f1005kc;
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.images.a$a */
+                
                 public static final class a {
                     public final Uri uri;
 
@@ -91,7 +91,7 @@
                     this.f997jU = 0;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private C1014cz m1084a(Drawable drawable, Drawable drawable2) {
                     if (drawable == null) {
                         drawable = null;
@@ -101,7 +101,7 @@
                     return new C1014cz(drawable, drawable2);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1085a(Drawable drawable, boolean z, boolean z2, boolean z3) {
                     ImageManager.OnImageLoadedListener onImageLoadedListener;
                     switch (this.f998jV) {
@@ -126,7 +126,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1086a(ImageView imageView, Drawable drawable, boolean z, boolean z2, boolean z3) {
                     boolean z4 = (z2 || z3) ? false : true;
                     if (z4 && (imageView instanceof C1016da)) {
@@ -148,7 +148,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1087a(TextView textView, int i, Drawable drawable, boolean z, boolean z2) {
                     boolean zM1088a = m1088a(z, z2);
                     Drawable[] compoundDrawablesRelative = C1053ek.m1741bO() ? textView.getCompoundDrawablesRelative() : textView.getCompoundDrawables();
@@ -167,18 +167,18 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private boolean m1088a(boolean z, boolean z2) {
                     return this.f1004kb && !z2 && (!z || this.f1005kc);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 void m1089a(Context context, Bitmap bitmap, boolean z) {
                     C1017db.m1524c(bitmap);
                     m1085a(new BitmapDrawable(context.getResources(), bitmap), z, false, true);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1090a(ImageView imageView) {
                     C1017db.m1524c(imageView);
                     this.f1000jX = null;
@@ -189,7 +189,7 @@
                     this.f999jW = imageView.hashCode();
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1091a(ImageManager.OnImageLoadedListener onImageLoadedListener) {
                     C1017db.m1524c(onImageLoadedListener);
                     this.f1000jX = new WeakReference<>(onImageLoadedListener);
@@ -200,7 +200,7 @@
                     this.f999jW = C1027dl.hashCode(onImageLoadedListener, this.f995jS);
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 void m1092b(Context context, boolean z) {
                     m1085a(this.f997jU != 0 ? context.getResources().getDrawable(this.f997jU) : null, z, false, false);
                 }
@@ -216,12 +216,12 @@
                     return this.f999jW;
                 }
 
-                /* JADX INFO: renamed from: r */
+                
                 void m1093r(Context context) {
                     m1085a(this.f996jT != 0 ? context.getResources().getDrawable(this.f996jT) : null, false, true, false);
                 }
 
-                /* JADX INFO: renamed from: v */
+                
                 public void m1094v(int i) {
                     this.f997jU = i;
                 }

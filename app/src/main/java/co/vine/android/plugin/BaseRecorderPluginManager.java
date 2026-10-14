@@ -12,196 +12,196 @@
             import java.util.ArrayList;
             import java.util.Collection;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 23 */    public class BaseRecorderPluginManager<T extends BasicVineRecorder> extends BasePluginManager<RecorderPlugin<?, T>> implements RecorderPluginManager<T> {
+            
+    public class BaseRecorderPluginManager<T extends BasicVineRecorder> extends BasePluginManager<RecorderPlugin<?, T>> implements RecorderPluginManager<T> {
                 private WeakReference<T> mRecorder;
 
-/* 24 */        public BaseRecorderPluginManager() {
+        public BaseRecorderPluginManager() {
                 }
 
-/* 28 */        public BaseRecorderPluginManager(Collection<RecorderPlugin<?, T>> plugins) {
-/* 29 */            super(plugins);
+        public BaseRecorderPluginManager(Collection<RecorderPlugin<?, T>> plugins) {
+            super(plugins);
                 }
 
-/* 32 */        public void setRecorder(T recorder) {
-/* 33 */            this.mRecorder = new WeakReference<>(recorder);
+        public void setRecorder(T recorder) {
+            this.mRecorder = new WeakReference<>(recorder);
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 35 */                plugin.onRecorderSet(recorder);
+                plugin.onRecorderSet(recorder);
                     }
                 }
 
-                @Override // co.vine.android.plugin.RecorderPluginManager
-/* 39 */        public T getRecorder() {
-/* 41 */            if (this.mRecorder == null) {
-/* 40 */                return null;
+                @Override 
+        public T getRecorder() {
+            if (this.mRecorder == null) {
+                return null;
                     }
-/* 42 */            T recorder = this.mRecorder.get();
+            T recorder = this.mRecorder.get();
                     return recorder;
                 }
 
-/* 47 */        public void createLayouts(ViewGroup parentView, LayoutInflater inflater, Fragment fragment) {
+        public void createLayouts(ViewGroup parentView, LayoutInflater inflater, Fragment fragment) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 49 */                plugin.createLayout(parentView, inflater, fragment);
+                plugin.createLayout(parentView, inflater, fragment);
                     }
                 }
 
-/* 53 */        public boolean onBackPressed(boolean isEditing) {
+        public boolean onBackPressed(boolean isEditing) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 55 */                if (plugin.onBackButtonPressed(isEditing)) {
-/* 56 */                    return true;
+                if (plugin.onBackButtonPressed(isEditing)) {
+                    return true;
                         }
                     }
                     return false;
                 }
 
-/* 62 */        public void onStartRelativeTime(T recorder) {
+        public void onStartRelativeTime(T recorder) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 64 */                plugin.onStartRelativeTime(recorder);
+                plugin.onStartRelativeTime(recorder);
                     }
                 }
 
-/* 68 */        public void onEndRelativeTime(T recorder) {
+        public void onEndRelativeTime(T recorder) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 70 */                plugin.onEndRelativeTime(recorder);
+                plugin.onEndRelativeTime(recorder);
                     }
                 }
 
-/* 74 */        public void onCameraReady(boolean frontFacing, boolean autoFocusSet) {
+        public void onCameraReady(boolean frontFacing, boolean autoFocusSet) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 76 */                plugin.onCameraReady(frontFacing, autoFocusSet);
+                plugin.onCameraReady(frontFacing, autoFocusSet);
                     }
                 }
 
-/* 80 */        public boolean onSetEditMode(boolean editing, boolean hasData) {
+        public boolean onSetEditMode(boolean editing, boolean hasData) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 82 */                if (plugin.onSetEditMode(editing, hasData)) {
-/* 83 */                    return true;
+                if (plugin.onSetEditMode(editing, hasData)) {
+                    return true;
                         }
                     }
                     return false;
                 }
 
-/* 89 */        public void onStartEditMode() {
+        public void onStartEditMode() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 91 */                plugin.onStartEditMode();
+                plugin.onStartEditMode();
                     }
                 }
 
-                @Override // co.vine.android.plugin.RecorderPluginManager
-/* 95 */        public void onStartDrafts() {
+                @Override 
+        public void onStartDrafts() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 97 */                plugin.onStartDrafts();
+                plugin.onStartDrafts();
                     }
                 }
 
-/* 101 */       public void onAutoFocus(int x, int y) {
+       public void onAutoFocus(int x, int y) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 103 */               plugin.onAutoFocus(x, y);
+               plugin.onAutoFocus(x, y);
                     }
                 }
 
-/* 107 */       public void onSessionSwapped() {
+       public void onSessionSwapped() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 109 */               plugin.onSessionSwapped();
+               plugin.onSessionSwapped();
                     }
                 }
 
-/* 113 */       public void onHideDrafts() {
+       public void onHideDrafts() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 115 */               plugin.onHideDrafts();
+               plugin.onHideDrafts();
                     }
                 }
 
-/* 119 */       public void onShowDrafts() {
+       public void onShowDrafts() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 121 */               plugin.onShowDrafts();
+               plugin.onShowDrafts();
                     }
                 }
 
-/* 125 */       public void onDraftUpgradeNumberChanged(int count) {
+       public void onDraftUpgradeNumberChanged(int count) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 127 */               plugin.onDraftUpgradeNumberChanged(count);
+               plugin.onDraftUpgradeNumberChanged(count);
                     }
                 }
 
-/* 131 */       public void setMessagingMode(boolean isMessaging) {
+       public void setMessagingMode(boolean isMessaging) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 133 */               plugin.setMessagingMode(isMessaging);
+               plugin.setMessagingMode(isMessaging);
                     }
                 }
 
-/* 137 */       public void onResumeCameraAsyncTaskPostExecute() {
+       public void onResumeCameraAsyncTaskPostExecute() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 139 */               plugin.onResumeCameraAsyncTaskPostExecute();
+               plugin.onResumeCameraAsyncTaskPostExecute();
                     }
                 }
 
-/* 143 */       public void onResumeAsyncTaskPostExecute() {
+       public void onResumeAsyncTaskPostExecute() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 145 */               plugin.onResumeAsyncTaskPostExecute();
+               plugin.onResumeAsyncTaskPostExecute();
                     }
                 }
 
-/* 149 */       public void onZoomUpdated(int zoom, boolean stopped) {
+       public void onZoomUpdated(int zoom, boolean stopped) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 151 */               plugin.onZoomUpdated(zoom, stopped);
+               plugin.onZoomUpdated(zoom, stopped);
                     }
                 }
 
-/* 155 */       public void onOfferLastFrame(byte[] array, CameraSetting cameraSetting) {
+       public void onOfferLastFrame(byte[] array, CameraSetting cameraSetting) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 157 */               plugin.onOfferLastFrame(array, cameraSetting);
+               plugin.onOfferLastFrame(array, cameraSetting);
                     }
                 }
 
-/* 161 */       public void onOfferLastFrame(Bitmap buffer, CameraSetting cameraSetting) {
+       public void onOfferLastFrame(Bitmap buffer, CameraSetting cameraSetting) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 163 */               plugin.onOfferLastFrame(buffer, cameraSetting);
+               plugin.onOfferLastFrame(buffer, cameraSetting);
                     }
                 }
 
-/* 167 */       public void onSegmentDataChanged(ArrayList<RecordSegment> editedSegments) {
+       public void onSegmentDataChanged(ArrayList<RecordSegment> editedSegments) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 169 */               plugin.onSegmentDataChanged(editedSegments);
+               plugin.onSegmentDataChanged(editedSegments);
                     }
                 }
 
-/* 173 */       public void onIndividualSegmentClicked(RecordSegment segment, SdkVideoView player) {
+       public void onIndividualSegmentClicked(RecordSegment segment, SdkVideoView player) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 175 */               plugin.onIndividualSegmentClicked(segment, player);
+               plugin.onIndividualSegmentClicked(segment, player);
                     }
                 }
 
-/* 179 */       public void onOnboardingStepFinished() {
+       public void onOnboardingStepFinished() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 181 */               plugin.onOnboardingStepFinished();
+               plugin.onOnboardingStepFinished();
                     }
                 }
 
-/* 185 */       public void onAnimateEditModeControlsInUI() {
+       public void onAnimateEditModeControlsInUI() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 187 */               plugin.onAnimateEditModeControlsInUI();
+               plugin.onAnimateEditModeControlsInUI();
                     }
                 }
 
-/* 191 */       public void onAnimateEditModeControlsOutUI() {
+       public void onAnimateEditModeControlsOutUI() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 193 */               plugin.onAnimateEditModeControlsOutUI();
+               plugin.onAnimateEditModeControlsOutUI();
                     }
                 }
 
-/* 197 */       public boolean canEdit() {
+       public boolean canEdit() {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 199 */               if (!plugin.canEdit()) {
-/* 200 */                   return false;
+               if (!plugin.canEdit()) {
+                   return false;
                         }
                     }
                     return true;
                 }
 
-/* 206 */       public void onAdjustingLayoutParamsComplete(int topMaskHeightPx, int size) {
+       public void onAdjustingLayoutParamsComplete(int topMaskHeightPx, int size) {
                     for (RecorderPlugin<?, T> plugin : this.mPlugins) {
-/* 208 */               plugin.onAdjustingLayoutParamsComplete(topMaskHeightPx, size);
+               plugin.onAdjustingLayoutParamsComplete(topMaskHeightPx, size);
                     }
                 }
             }

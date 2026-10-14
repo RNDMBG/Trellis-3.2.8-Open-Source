@@ -11,27 +11,27 @@
             import java.util.Map;
             import java.util.Set;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.ec */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1045ec extends AbstractC1038dw implements SafeParcelable {
                 public static final C1046ed CREATOR = new C1046ed();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f1757iM;
 
-                /* JADX INFO: renamed from: lH */
+                
                 private final C1041dz f1758lH;
 
-                /* JADX INFO: renamed from: lP */
+                
                 private final Parcel f1759lP;
 
-                /* JADX INFO: renamed from: lQ */
+                
                 private final int f1760lQ;
 
-                /* JADX INFO: renamed from: lR */
+                
                 private int f1761lR;
 
-                /* JADX INFO: renamed from: lS */
+                
                 private int f1762lS;
                 private final String mClassName;
 
@@ -58,14 +58,14 @@
                     this.f1761lR = 2;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static <T extends AbstractC1038dw & SafeParcelable> C1045ec m1705a(T t) {
                     String canonicalName = t.getClass().getCanonicalName();
                     return new C1045ec(t, m1711b(t), canonicalName);
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-                /* JADX INFO: renamed from: a */
+                
+                
                 private static void m1706a(C1041dz c1041dz, AbstractC1038dw abstractC1038dw) {
                     Class<?> cls = abstractC1038dw.getClass();
                     if (c1041dz.m1683b((Class<? extends AbstractC1038dw>) cls)) {
@@ -89,7 +89,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1707a(StringBuilder sb, int i, Object obj) {
                     switch (i) {
                         case 0:
@@ -121,7 +121,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1708a(StringBuilder sb, AbstractC1038dw.a<?, ?> aVar, Parcel parcel, int i) {
                     switch (aVar.m1664bo()) {
                         case 0:
@@ -162,7 +162,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1709a(StringBuilder sb, String str, AbstractC1038dw.a<?, ?> aVar, Parcel parcel, int i) {
                     sb.append("\"").append(str).append("\":");
                     if (aVar.m1672bz()) {
@@ -172,7 +172,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1710a(StringBuilder sb, HashMap<String, AbstractC1038dw.a<?, ?>> map, Parcel parcel) {
                     HashMap<Integer, Map.Entry<String, AbstractC1038dw.a<?, ?>>> mapM1713b = m1713b(map);
                     sb.append('{');
@@ -195,7 +195,7 @@
                     sb.append('}');
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static C1041dz m1711b(AbstractC1038dw abstractC1038dw) {
                     C1041dz c1041dz = new C1041dz(abstractC1038dw.getClass());
                     m1706a(c1041dz, abstractC1038dw);
@@ -204,7 +204,7 @@
                     return c1041dz;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 public static HashMap<String, String> m1712b(Bundle bundle) {
                     HashMap<String, String> map = new HashMap<>();
                     for (String str : bundle.keySet()) {
@@ -213,7 +213,7 @@
                     return map;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static HashMap<Integer, Map.Entry<String, AbstractC1038dw.a<?, ?>>> m1713b(HashMap<String, AbstractC1038dw.a<?, ?>> map) {
                     HashMap<Integer, Map.Entry<String, AbstractC1038dw.a<?, ?>>> map2 = new HashMap<>();
                     for (Map.Entry<String, AbstractC1038dw.a<?, ?>> entry : map.entrySet()) {
@@ -222,7 +222,7 @@
                     return map2;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private void m1714b(StringBuilder sb, AbstractC1038dw.a<?, ?> aVar, Parcel parcel, int i) {
                     if (aVar.m1667bu()) {
                         sb.append("[");
@@ -331,7 +331,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private void m1715b(StringBuilder sb, AbstractC1038dw.a<?, ?> aVar, Object obj) {
                     if (aVar.m1666bt()) {
                         m1716b(sb, aVar, (ArrayList<?>) obj);
@@ -340,7 +340,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private void m1716b(StringBuilder sb, AbstractC1038dw.a<?, ?> aVar, ArrayList<?> arrayList) {
                     sb.append("[");
                     int size = arrayList.size();
@@ -353,19 +353,19 @@
                     sb.append("]");
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: D */
+                @Override 
+                
                 protected Object mo1641D(String str) {
                     throw new UnsupportedOperationException("Converting to JSON does not require this method.");
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: E */
+                @Override 
+                
                 protected boolean mo1642E(String str) {
                     throw new UnsupportedOperationException("Converting to JSON does not require this method.");
                 }
 
-                /* JADX INFO: renamed from: bH */
+                
                 public Parcel m1717bH() {
                     switch (this.f1761lR) {
                         case 0:
@@ -381,7 +381,7 @@
                     return this.f1759lP;
                 }
 
-                /* JADX INFO: renamed from: bI */
+                
                 C1041dz m1718bI() {
                     switch (this.f1760lQ) {
                         case 0:
@@ -395,8 +395,8 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: bp */
+                @Override 
+                
                 public HashMap<String, AbstractC1038dw.a<?, ?>> mo1648bp() {
                     if (this.f1758lH == null) {
                         return null;
@@ -404,7 +404,7 @@
                     return this.f1758lH.m1681H(this.mClassName);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     C1046ed c1046ed = CREATOR;
                     return 0;
@@ -414,7 +414,7 @@
                     return this.f1757iM;
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
+                @Override 
                 public String toString() {
                     C1028dm.m1601a(this.f1758lH, "Cannot convert to JSON on client side.");
                     Parcel parcelM1717bH = m1717bH();
@@ -424,7 +424,7 @@
                     return sb.toString();
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C1046ed c1046ed = CREATOR;
                     C1046ed.m1719a(this, out, flags);

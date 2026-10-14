@@ -36,8 +36,8 @@
             import org.apache.commons.p005io.filefilter.TrueFileFilter;
             import org.apache.commons.p005io.output.NullOutputStream;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 190 */   public class FileUtils {
+            
+   public class FileUtils {
                 private static final long FILE_COPY_BUFFER_SIZE = 31457280;
                 public static final long ONE_GB = 1073741824;
                 public static final long ONE_MB = 1048576;
@@ -56,451 +56,451 @@
                 public static final File[] EMPTY_FILE_ARRAY = new File[0];
                 private static final Charset UTF8 = Charset.forName(IoUtils.UTF_8);
 
-/* 191 */       public static File getFile(File directory, String... names) {
-/* 192 */           if (directory == null) {
-/* 193 */               throw new NullPointerException("directorydirectory must not be null");
+       public static File getFile(File directory, String... names) {
+           if (directory == null) {
+               throw new NullPointerException("directorydirectory must not be null");
                     }
-/* 195 */           if (names == null) {
-/* 196 */               throw new NullPointerException("names must not be null");
+           if (names == null) {
+               throw new NullPointerException("names must not be null");
                     }
-/* 199 */           int len$ = names.length;
+           int len$ = names.length;
                     int i$ = 0;
-/* 198 */           File file = directory;
+           File file = directory;
                     while (i$ < len$) {
-/* 199 */               String name = names[i$];
-/* 199 */               i$++;
-/* 200 */               file = new File(file, name);
+               String name = names[i$];
+               i$++;
+               file = new File(file, name);
                     }
-/* 202 */           return file;
+           return file;
                 }
 
-/* 212 */       public static File getFile(String... names) {
+       public static File getFile(String... names) {
                     File file;
-/* 213 */           if (names == null) {
-/* 214 */               throw new NullPointerException("names must not be null");
+           if (names == null) {
+               throw new NullPointerException("names must not be null");
                     }
-/* 217 */           int len$ = names.length;
+           int len$ = names.length;
                     int i$ = 0;
-/* 216 */           File file2 = null;
+           File file2 = null;
                     while (i$ < len$) {
-/* 217 */               String name = names[i$];
-/* 218 */               if (file2 == null) {
-/* 219 */                   file = new File(name);
+               String name = names[i$];
+               if (file2 == null) {
+                   file = new File(name);
                         } else {
-/* 221 */                   file = new File(file2, name);
+                   file = new File(file2, name);
                         }
-/* 217 */               i$++;
+               i$++;
                         file2 = file;
                     }
-/* 224 */           return file2;
+           return file2;
                 }
 
-/* 234 */       public static String getTempDirectoryPath() {
-/* 235 */           return System.getProperty("java.io.tmpdir");
+       public static String getTempDirectoryPath() {
+           return System.getProperty("java.io.tmpdir");
                 }
 
-/* 245 */       public static File getTempDirectory() {
-/* 246 */           return new File(getTempDirectoryPath());
+       public static File getTempDirectory() {
+           return new File(getTempDirectoryPath());
                 }
 
-/* 256 */       public static String getUserDirectoryPath() {
-/* 257 */           return System.getProperty("user.home");
+       public static String getUserDirectoryPath() {
+           return System.getProperty("user.home");
                 }
 
-/* 267 */       public static File getUserDirectory() {
-/* 268 */           return new File(getUserDirectoryPath());
+       public static File getUserDirectory() {
+           return new File(getUserDirectoryPath());
                 }
 
-/* 290 */       public static FileInputStream openInputStream(File file) throws IOException {
-/* 291 */           if (file.exists()) {
-/* 292 */               if (file.isDirectory()) {
-/* 293 */                   throw new IOException("File '" + file + "' exists but is a directory");
+       public static FileInputStream openInputStream(File file) throws IOException {
+           if (file.exists()) {
+               if (file.isDirectory()) {
+                   throw new IOException("File '" + file + "' exists but is a directory");
                         }
-/* 295 */               if (!file.canRead()) {
-/* 296 */                   throw new IOException("File '" + file + "' cannot be read");
+               if (!file.canRead()) {
+                   throw new IOException("File '" + file + "' cannot be read");
                         }
-/* 301 */               return new FileInputStream(file);
+               return new FileInputStream(file);
                     }
-/* 299 */           throw new FileNotFoundException("File '" + file + "' does not exist");
+           throw new FileNotFoundException("File '" + file + "' does not exist");
                 }
 
-/* 325 */       public static FileOutputStream openOutputStream(File file) throws IOException {
-/* 326 */           return openOutputStream(file, false);
+       public static FileOutputStream openOutputStream(File file) throws IOException {
+           return openOutputStream(file, false);
                 }
 
-/* 351 */       public static FileOutputStream openOutputStream(File file, boolean append) throws IOException {
-/* 352 */           if (file.exists()) {
-/* 353 */               if (file.isDirectory()) {
-/* 354 */                   throw new IOException("File '" + file + "' exists but is a directory");
+       public static FileOutputStream openOutputStream(File file, boolean append) throws IOException {
+           if (file.exists()) {
+               if (file.isDirectory()) {
+                   throw new IOException("File '" + file + "' exists but is a directory");
                         }
-/* 356 */               if (!file.canWrite()) {
-/* 357 */                   throw new IOException("File '" + file + "' cannot be written to");
+               if (!file.canWrite()) {
+                   throw new IOException("File '" + file + "' cannot be written to");
                         }
                     } else {
-/* 360 */               File parent = file.getParentFile();
-/* 361 */               if (parent != null && !parent.mkdirs() && !parent.isDirectory()) {
-/* 363 */                   throw new IOException("Directory '" + parent + "' could not be created");
+               File parent = file.getParentFile();
+               if (parent != null && !parent.mkdirs() && !parent.isDirectory()) {
+                   throw new IOException("Directory '" + parent + "' could not be created");
                         }
                     }
-/* 367 */           return new FileOutputStream(file, append);
+           return new FileOutputStream(file, append);
                 }
 
-/* 390 */       public static String byteCountToDisplaySize(BigInteger size) {
-/* 391 */           if (size.divide(ONE_EB_BI).compareTo(BigInteger.ZERO) > 0) {
-/* 392 */               String displaySize = String.valueOf(size.divide(ONE_EB_BI)) + " EB";
-/* 406 */               return displaySize;
+       public static String byteCountToDisplaySize(BigInteger size) {
+           if (size.divide(ONE_EB_BI).compareTo(BigInteger.ZERO) > 0) {
+               String displaySize = String.valueOf(size.divide(ONE_EB_BI)) + " EB";
+               return displaySize;
                     }
-/* 393 */           if (size.divide(ONE_PB_BI).compareTo(BigInteger.ZERO) > 0) {
-/* 394 */               String displaySize2 = String.valueOf(size.divide(ONE_PB_BI)) + " PB";
-/* 406 */               return displaySize2;
+           if (size.divide(ONE_PB_BI).compareTo(BigInteger.ZERO) > 0) {
+               String displaySize2 = String.valueOf(size.divide(ONE_PB_BI)) + " PB";
+               return displaySize2;
                     }
-/* 395 */           if (size.divide(ONE_TB_BI).compareTo(BigInteger.ZERO) > 0) {
-/* 396 */               String displaySize3 = String.valueOf(size.divide(ONE_TB_BI)) + " TB";
-/* 406 */               return displaySize3;
+           if (size.divide(ONE_TB_BI).compareTo(BigInteger.ZERO) > 0) {
+               String displaySize3 = String.valueOf(size.divide(ONE_TB_BI)) + " TB";
+               return displaySize3;
                     }
-/* 397 */           if (size.divide(ONE_GB_BI).compareTo(BigInteger.ZERO) > 0) {
-/* 398 */               String displaySize4 = String.valueOf(size.divide(ONE_GB_BI)) + " GB";
-/* 406 */               return displaySize4;
+           if (size.divide(ONE_GB_BI).compareTo(BigInteger.ZERO) > 0) {
+               String displaySize4 = String.valueOf(size.divide(ONE_GB_BI)) + " GB";
+               return displaySize4;
                     }
-/* 399 */           if (size.divide(ONE_MB_BI).compareTo(BigInteger.ZERO) > 0) {
-/* 400 */               String displaySize5 = String.valueOf(size.divide(ONE_MB_BI)) + " MB";
-/* 406 */               return displaySize5;
+           if (size.divide(ONE_MB_BI).compareTo(BigInteger.ZERO) > 0) {
+               String displaySize5 = String.valueOf(size.divide(ONE_MB_BI)) + " MB";
+               return displaySize5;
                     }
-/* 401 */           if (size.divide(ONE_KB_BI).compareTo(BigInteger.ZERO) > 0) {
-/* 402 */               String displaySize6 = String.valueOf(size.divide(ONE_KB_BI)) + " KB";
-/* 406 */               return displaySize6;
+           if (size.divide(ONE_KB_BI).compareTo(BigInteger.ZERO) > 0) {
+               String displaySize6 = String.valueOf(size.divide(ONE_KB_BI)) + " KB";
+               return displaySize6;
                     }
-/* 404 */           String displaySize7 = String.valueOf(size) + " bytes";
-/* 406 */           return displaySize7;
+           String displaySize7 = String.valueOf(size) + " bytes";
+           return displaySize7;
                 }
 
-/* 425 */       public static String byteCountToDisplaySize(long size) {
-/* 426 */           return byteCountToDisplaySize(BigInteger.valueOf(size));
+       public static String byteCountToDisplaySize(long size) {
+           return byteCountToDisplaySize(BigInteger.valueOf(size));
                 }
 
-/* 442 */       public static void touch(File file) throws IOException {
-/* 443 */           if (!file.exists()) {
-/* 444 */               OutputStream out = openOutputStream(file);
-/* 445 */               IOUtils.closeQuietly(out);
+       public static void touch(File file) throws IOException {
+           if (!file.exists()) {
+               OutputStream out = openOutputStream(file);
+               IOUtils.closeQuietly(out);
                     }
-/* 447 */           boolean success = file.setLastModified(System.currentTimeMillis());
-/* 448 */           if (!success) {
-/* 449 */               throw new IOException("Unable to set the last modification time for " + file);
+           boolean success = file.setLastModified(System.currentTimeMillis());
+           if (!success) {
+               throw new IOException("Unable to set the last modification time for " + file);
                     }
                 }
 
-/* 462 */       public static File[] convertFileCollectionToFileArray(Collection<File> files) {
-/* 463 */           return (File[]) files.toArray(new File[files.size()]);
+       public static File[] convertFileCollectionToFileArray(Collection<File> files) {
+           return (File[]) files.toArray(new File[files.size()]);
                 }
 
-/* 477 */       private static void innerListFiles(Collection<File> files, File directory, IOFileFilter filter, boolean includeSubDirectories) {
-/* 478 */           File[] found = directory.listFiles((FileFilter) filter);
-/* 480 */           if (found != null) {
+       private static void innerListFiles(Collection<File> files, File directory, IOFileFilter filter, boolean includeSubDirectories) {
+           File[] found = directory.listFiles((FileFilter) filter);
+           if (found != null) {
                         for (File file : found) {
-/* 482 */                   if (file.isDirectory()) {
-/* 483 */                       if (includeSubDirectories) {
-/* 484 */                           files.add(file);
+                   if (file.isDirectory()) {
+                       if (includeSubDirectories) {
+                           files.add(file);
                                 }
-/* 486 */                       innerListFiles(files, file, filter, includeSubDirectories);
+                       innerListFiles(files, file, filter, includeSubDirectories);
                             } else {
-/* 488 */                       files.add(file);
+                       files.add(file);
                             }
                         }
                     }
                 }
 
-/* 520 */       public static Collection<File> listFiles(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
-/* 521 */           validateListFilesParameters(directory, fileFilter);
-/* 523 */           IOFileFilter effFileFilter = setUpEffectiveFileFilter(fileFilter);
-/* 524 */           IOFileFilter effDirFilter = setUpEffectiveDirFilter(dirFilter);
-/* 527 */           Collection<File> files = new LinkedList<>();
+       public static Collection<File> listFiles(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
+           validateListFilesParameters(directory, fileFilter);
+           IOFileFilter effFileFilter = setUpEffectiveFileFilter(fileFilter);
+           IOFileFilter effDirFilter = setUpEffectiveDirFilter(dirFilter);
+           Collection<File> files = new LinkedList<>();
                     innerListFiles(files, directory, FileFilterUtils.m2470or(effFileFilter, effDirFilter), false);
-/* 530 */           return files;
+           return files;
                 }
 
-/* 543 */       private static void validateListFilesParameters(File directory, IOFileFilter fileFilter) {
-/* 544 */           if (!directory.isDirectory()) {
-/* 545 */               throw new IllegalArgumentException("Parameter 'directory' is not a directory");
+       private static void validateListFilesParameters(File directory, IOFileFilter fileFilter) {
+           if (!directory.isDirectory()) {
+               throw new IllegalArgumentException("Parameter 'directory' is not a directory");
                     }
-/* 547 */           if (fileFilter == null) {
-/* 548 */               throw new NullPointerException("Parameter 'fileFilter' is null");
+           if (fileFilter == null) {
+               throw new NullPointerException("Parameter 'fileFilter' is null");
                     }
                 }
 
-/* 558 */       private static IOFileFilter setUpEffectiveFileFilter(IOFileFilter fileFilter) {
+       private static IOFileFilter setUpEffectiveFileFilter(IOFileFilter fileFilter) {
                     return FileFilterUtils.and(fileFilter, FileFilterUtils.notFileFilter(DirectoryFileFilter.INSTANCE));
                 }
 
-/* 568 */       private static IOFileFilter setUpEffectiveDirFilter(IOFileFilter dirFilter) {
+       private static IOFileFilter setUpEffectiveDirFilter(IOFileFilter dirFilter) {
                     return dirFilter == null ? FalseFileFilter.INSTANCE : FileFilterUtils.and(dirFilter, DirectoryFileFilter.INSTANCE);
                 }
 
-/* 592 */       public static Collection<File> listFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
-/* 593 */           validateListFilesParameters(directory, fileFilter);
-/* 595 */           IOFileFilter effFileFilter = setUpEffectiveFileFilter(fileFilter);
-/* 596 */           IOFileFilter effDirFilter = setUpEffectiveDirFilter(dirFilter);
-/* 599 */           Collection<File> files = new LinkedList<>();
-/* 600 */           if (directory.isDirectory()) {
-/* 601 */               files.add(directory);
+       public static Collection<File> listFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
+           validateListFilesParameters(directory, fileFilter);
+           IOFileFilter effFileFilter = setUpEffectiveFileFilter(fileFilter);
+           IOFileFilter effDirFilter = setUpEffectiveDirFilter(dirFilter);
+           Collection<File> files = new LinkedList<>();
+           if (directory.isDirectory()) {
+               files.add(directory);
                     }
                     innerListFiles(files, directory, FileFilterUtils.m2470or(effFileFilter, effDirFilter), true);
-/* 605 */           return files;
+           return files;
                 }
 
-/* 627 */       public static Iterator<File> iterateFiles(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
-/* 628 */           return listFiles(directory, fileFilter, dirFilter).iterator();
+       public static Iterator<File> iterateFiles(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
+           return listFiles(directory, fileFilter, dirFilter).iterator();
                 }
 
-/* 651 */       public static Iterator<File> iterateFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
-/* 652 */           return listFilesAndDirs(directory, fileFilter, dirFilter).iterator();
+       public static Iterator<File> iterateFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
+           return listFilesAndDirs(directory, fileFilter, dirFilter).iterator();
                 }
 
-/* 663 */       private static String[] toSuffixes(String[] extensions) {
-/* 664 */           String[] suffixes = new String[extensions.length];
+       private static String[] toSuffixes(String[] extensions) {
+           String[] suffixes = new String[extensions.length];
                     for (int i = 0; i < extensions.length; i++) {
-/* 666 */               suffixes[i] = "." + extensions[i];
+               suffixes[i] = "." + extensions[i];
                     }
-/* 668 */           return suffixes;
+           return suffixes;
                 }
 
-/* 684 */       public static Collection<File> listFiles(File directory, String[] extensions, boolean recursive) {
+       public static Collection<File> listFiles(File directory, String[] extensions, boolean recursive) {
                     IOFileFilter filter;
-/* 685 */           if (extensions == null) {
-/* 686 */               filter = TrueFileFilter.INSTANCE;
+           if (extensions == null) {
+               filter = TrueFileFilter.INSTANCE;
                     } else {
-/* 688 */               String[] suffixes = toSuffixes(extensions);
-/* 689 */               filter = new SuffixFileFilter(suffixes);
+               String[] suffixes = toSuffixes(extensions);
+               filter = new SuffixFileFilter(suffixes);
                     }
                     return listFiles(directory, filter, recursive ? TrueFileFilter.INSTANCE : FalseFileFilter.INSTANCE);
                 }
 
-/* 709 */       public static Iterator<File> iterateFiles(File directory, String[] extensions, boolean recursive) {
-/* 710 */           return listFiles(directory, extensions, recursive).iterator();
+       public static Iterator<File> iterateFiles(File directory, String[] extensions, boolean recursive) {
+           return listFiles(directory, extensions, recursive).iterator();
                 }
 
-/* 729 */       public static boolean contentEquals(File file1, File file2) throws Throwable {
-/* 730 */           boolean file1Exists = file1.exists();
-/* 731 */           if (file1Exists != file2.exists()) {
+       public static boolean contentEquals(File file1, File file2) throws Throwable {
+           boolean file1Exists = file1.exists();
+           if (file1Exists != file2.exists()) {
                         return false;
                     }
-/* 735 */           if (!file1Exists) {
+           if (!file1Exists) {
                         return true;
                     }
-/* 740 */           if (file1.isDirectory() || file2.isDirectory()) {
-/* 742 */               throw new IOException("Can't compare directories, only files");
+           if (file1.isDirectory() || file2.isDirectory()) {
+               throw new IOException("Can't compare directories, only files");
                     }
                     if (file1.length() != file2.length()) {
                         return false;
                     }
-/* 750 */           if (file1.getCanonicalFile().equals(file2.getCanonicalFile())) {
+           if (file1.getCanonicalFile().equals(file2.getCanonicalFile())) {
                         return true;
                     }
-/* 755 */           InputStream input1 = null;
-/* 756 */           InputStream input2 = null;
+           InputStream input1 = null;
+           InputStream input2 = null;
                     try {
-/* 758 */               InputStream input3 = new FileInputStream(file1);
+               InputStream input3 = new FileInputStream(file1);
                         try {
-/* 759 */                   InputStream input4 = new FileInputStream(file2);
+                   InputStream input4 = new FileInputStream(file2);
                             try {
-/* 760 */                       boolean zContentEquals = IOUtils.contentEquals(input3, input4);
-/* 763 */                       IOUtils.closeQuietly(input3);
-/* 764 */                       IOUtils.closeQuietly(input4);
-/* 764 */                       return zContentEquals;
+                       boolean zContentEquals = IOUtils.contentEquals(input3, input4);
+                       IOUtils.closeQuietly(input3);
+                       IOUtils.closeQuietly(input4);
+                       return zContentEquals;
                             } catch (Throwable th) {
                                 th = th;
                                 input2 = input4;
                                 input1 = input3;
                                 IOUtils.closeQuietly(input1);
-/* 764 */                       IOUtils.closeQuietly(input2);
+                       IOUtils.closeQuietly(input2);
                                 throw th;
                             }
                         } catch (Throwable th2) {
-/* 763 */                   th = th2;
+                   th = th2;
                             input1 = input3;
                         }
                     } catch (Throwable th3) {
-/* 763 */               th = th3;
+               th = th3;
                     }
                 }
 
-/* 786 */       public static boolean contentEqualsIgnoreEOL(File file1, File file2, String charsetName) throws Throwable {
+       public static boolean contentEqualsIgnoreEOL(File file1, File file2, String charsetName) throws Throwable {
                     Reader input1;
-/* 787 */           boolean file1Exists = file1.exists();
-/* 788 */           if (file1Exists != file2.exists()) {
-/* 789 */               return false;
+           boolean file1Exists = file1.exists();
+           if (file1Exists != file2.exists()) {
+               return false;
                     }
-/* 792 */           if (!file1Exists) {
+           if (!file1Exists) {
                         return true;
                     }
-/* 797 */           if (file1.isDirectory() || file2.isDirectory()) {
-/* 799 */               throw new IOException("Can't compare directories, only files");
+           if (file1.isDirectory() || file2.isDirectory()) {
+               throw new IOException("Can't compare directories, only files");
                     }
-/* 802 */           if (file1.getCanonicalFile().equals(file2.getCanonicalFile())) {
+           if (file1.getCanonicalFile().equals(file2.getCanonicalFile())) {
                         return true;
                     }
-/* 807 */           Reader input2 = null;
-/* 808 */           Reader input3 = null;
+           Reader input2 = null;
+           Reader input3 = null;
                     try {
                         try {
-/* 810 */                   if (charsetName == null) {
-/* 811 */                       input1 = new InputStreamReader(new FileInputStream(file1));
-/* 812 */                       input3 = new InputStreamReader(new FileInputStream(file2));
+                   if (charsetName == null) {
+                       input1 = new InputStreamReader(new FileInputStream(file1));
+                       input3 = new InputStreamReader(new FileInputStream(file2));
                                 input2 = input1;
                             } else {
-/* 814 */                       input1 = new InputStreamReader(new FileInputStream(file1), charsetName);
-/* 815 */                       input3 = new InputStreamReader(new FileInputStream(file2), charsetName);
+                       input1 = new InputStreamReader(new FileInputStream(file1), charsetName);
+                       input3 = new InputStreamReader(new FileInputStream(file2), charsetName);
                                 input2 = input1;
                             }
-/* 817 */                   boolean zContentEqualsIgnoreEOL = IOUtils.contentEqualsIgnoreEOL(input2, input3);
-/* 820 */                   IOUtils.closeQuietly(input2);
-/* 821 */                   IOUtils.closeQuietly(input3);
-/* 821 */                   return zContentEqualsIgnoreEOL;
+                   boolean zContentEqualsIgnoreEOL = IOUtils.contentEqualsIgnoreEOL(input2, input3);
+                   IOUtils.closeQuietly(input2);
+                   IOUtils.closeQuietly(input3);
+                   return zContentEqualsIgnoreEOL;
                         } catch (Throwable th) {
-/* 820 */                   th = th;
+                   th = th;
                             input2 = input1;
                             IOUtils.closeQuietly(input2);
-/* 821 */                   IOUtils.closeQuietly(input3);
+                   IOUtils.closeQuietly(input3);
                             throw th;
                         }
                     } catch (Throwable th2) {
-/* 820 */               th = th2;
+               th = th2;
                         IOUtils.closeQuietly(input2);
-/* 821 */               IOUtils.closeQuietly(input3);
+               IOUtils.closeQuietly(input3);
                         throw th;
                     }
                 }
 
-/* 840 */       public static File toFile(URL url) {
-/* 841 */           if (url == null || !CommonUtil.FILE.equalsIgnoreCase(url.getProtocol())) {
-/* 842 */               return null;
+       public static File toFile(URL url) {
+           if (url == null || !CommonUtil.FILE.equalsIgnoreCase(url.getProtocol())) {
+               return null;
                     }
-/* 844 */           String filename = url.getFile().replace('/', File.separatorChar);
-/* 846 */           return new File(decodeUrl(filename));
+           String filename = url.getFile().replace('/', File.separatorChar);
+           return new File(decodeUrl(filename));
                 }
 
-/* 864 */       static String decodeUrl(String url) {
-/* 866 */           if (url == null || url.indexOf(37) < 0) {
-/* 865 */               return url;
+       static String decodeUrl(String url) {
+           if (url == null || url.indexOf(37) < 0) {
+               return url;
                     }
-/* 867 */           int n = url.length();
-/* 868 */           StringBuffer buffer = new StringBuffer();
-/* 869 */           ByteBuffer bytes = ByteBuffer.allocate(n);
-/* 870 */           int i = 0;
+           int n = url.length();
+           StringBuffer buffer = new StringBuffer();
+           ByteBuffer bytes = ByteBuffer.allocate(n);
+           int i = 0;
                     while (i < n) {
-/* 871 */               if (url.charAt(i) == '%') {
+               if (url.charAt(i) == '%') {
                             do {
                                 try {
-/* 874 */                           byte octet = (byte) Integer.parseInt(url.substring(i + 1, i + 3), 16);
-/* 875 */                           bytes.put(octet);
-/* 876 */                           i += 3;
-/* 877 */                           if (i >= n) {
+                           byte octet = (byte) Integer.parseInt(url.substring(i + 1, i + 3), 16);
+                           bytes.put(octet);
+                           i += 3;
+                           if (i >= n) {
                                         break;
                                     }
                                 } catch (RuntimeException e) {
-/* 883 */                           if (bytes.position() > 0) {
-/* 884 */                               bytes.flip();
-/* 885 */                               buffer.append(UTF8.decode(bytes).toString());
-/* 886 */                               bytes.clear();
+                           if (bytes.position() > 0) {
+                               bytes.flip();
+                               buffer.append(UTF8.decode(bytes).toString());
+                               bytes.clear();
                                     }
                                     buffer.append(url.charAt(i));
-/* 890 */                           i++;
+                           i++;
                                 } catch (Throwable th) {
                                     if (bytes.position() > 0) {
-/* 884 */                               bytes.flip();
-/* 885 */                               buffer.append(UTF8.decode(bytes).toString());
-/* 886 */                               bytes.clear();
+                               bytes.flip();
+                               buffer.append(UTF8.decode(bytes).toString());
+                               bytes.clear();
                                     }
                                     throw th;
                                 }
                             } while (url.charAt(i) == '%');
-/* 883 */                   if (bytes.position() > 0) {
-/* 884 */                       bytes.flip();
-/* 885 */                       buffer.append(UTF8.decode(bytes).toString());
-/* 886 */                       bytes.clear();
+                   if (bytes.position() > 0) {
+                       bytes.flip();
+                       buffer.append(UTF8.decode(bytes).toString());
+                       bytes.clear();
                             }
                         }
                         buffer.append(url.charAt(i));
-/* 890 */               i++;
+               i++;
                     }
-/* 892 */           String decoded = buffer.toString();
-/* 894 */           return decoded;
+           String decoded = buffer.toString();
+           return decoded;
                 }
 
-/* 916 */       public static File[] toFiles(URL[] urls) {
-/* 917 */           if (urls == null || urls.length == 0) {
-/* 918 */               return EMPTY_FILE_ARRAY;
+       public static File[] toFiles(URL[] urls) {
+           if (urls == null || urls.length == 0) {
+               return EMPTY_FILE_ARRAY;
                     }
-/* 920 */           File[] files = new File[urls.length];
+           File[] files = new File[urls.length];
                     for (int i = 0; i < urls.length; i++) {
-/* 922 */               URL url = urls[i];
-/* 923 */               if (url != null) {
-/* 924 */                   if (!url.getProtocol().equals(CommonUtil.FILE)) {
-/* 925 */                       throw new IllegalArgumentException("URL could not be converted to a File: " + url);
+               URL url = urls[i];
+               if (url != null) {
+                   if (!url.getProtocol().equals(CommonUtil.FILE)) {
+                       throw new IllegalArgumentException("URL could not be converted to a File: " + url);
                             }
-/* 928 */                   files[i] = toFile(url);
+                   files[i] = toFile(url);
                         }
                     }
-/* 931 */           return files;
+           return files;
                 }
 
-/* 944 */       public static URL[] toURLs(File[] files) throws IOException {
-/* 945 */           URL[] urls = new URL[files.length];
+       public static URL[] toURLs(File[] files) throws IOException {
+           URL[] urls = new URL[files.length];
                     for (int i = 0; i < urls.length; i++) {
-/* 948 */               urls[i] = files[i].toURI().toURL();
+               urls[i] = files[i].toURI().toURL();
                     }
-/* 951 */           return urls;
+           return urls;
                 }
 
-/* 976 */       public static void copyFileToDirectory(File srcFile, File destDir) throws Throwable {
-/* 977 */           copyFileToDirectory(srcFile, destDir, true);
+       public static void copyFileToDirectory(File srcFile, File destDir) throws Throwable {
+           copyFileToDirectory(srcFile, destDir, true);
                 }
 
-/* 1005 */      public static void copyFileToDirectory(File srcFile, File destDir, boolean preserveFileDate) throws Throwable {
-/* 1006 */          if (destDir == null) {
-/* 1007 */              throw new NullPointerException("Destination must not be null");
+      public static void copyFileToDirectory(File srcFile, File destDir, boolean preserveFileDate) throws Throwable {
+          if (destDir == null) {
+              throw new NullPointerException("Destination must not be null");
                     }
-/* 1009 */          if (destDir.exists() && !destDir.isDirectory()) {
-/* 1010 */              throw new IllegalArgumentException("Destination '" + destDir + "' is not a directory");
+          if (destDir.exists() && !destDir.isDirectory()) {
+              throw new IllegalArgumentException("Destination '" + destDir + "' is not a directory");
                     }
-/* 1012 */          File destFile = new File(destDir, srcFile.getName());
-/* 1013 */          copyFile(srcFile, destFile, preserveFileDate);
+          File destFile = new File(destDir, srcFile.getName());
+          copyFile(srcFile, destFile, preserveFileDate);
                 }
 
-/* 1037 */      public static void copyFile(File srcFile, File destFile) throws Throwable {
-/* 1038 */          copyFile(srcFile, destFile, true);
+      public static void copyFile(File srcFile, File destFile) throws Throwable {
+          copyFile(srcFile, destFile, true);
                 }
 
-/* 1066 */      public static void copyFile(File srcFile, File destFile, boolean preserveFileDate) throws Throwable {
-/* 1067 */          if (srcFile == null) {
-/* 1068 */              throw new NullPointerException("Source must not be null");
+      public static void copyFile(File srcFile, File destFile, boolean preserveFileDate) throws Throwable {
+          if (srcFile == null) {
+              throw new NullPointerException("Source must not be null");
                     }
-/* 1070 */          if (destFile == null) {
-/* 1071 */              throw new NullPointerException("Destination must not be null");
+          if (destFile == null) {
+              throw new NullPointerException("Destination must not be null");
                     }
-/* 1073 */          if (!srcFile.exists()) {
-/* 1074 */              throw new FileNotFoundException("Source '" + srcFile + "' does not exist");
+          if (!srcFile.exists()) {
+              throw new FileNotFoundException("Source '" + srcFile + "' does not exist");
                     }
-/* 1076 */          if (srcFile.isDirectory()) {
-/* 1077 */              throw new IOException("Source '" + srcFile + "' exists but is a directory");
+          if (srcFile.isDirectory()) {
+              throw new IOException("Source '" + srcFile + "' exists but is a directory");
                     }
-/* 1079 */          if (srcFile.getCanonicalPath().equals(destFile.getCanonicalPath())) {
-/* 1080 */              throw new IOException("Source '" + srcFile + "' and destination '" + destFile + "' are the same");
+          if (srcFile.getCanonicalPath().equals(destFile.getCanonicalPath())) {
+              throw new IOException("Source '" + srcFile + "' and destination '" + destFile + "' are the same");
                     }
-/* 1082 */          File parentFile = destFile.getParentFile();
-/* 1083 */          if (parentFile != null && !parentFile.mkdirs() && !parentFile.isDirectory()) {
-/* 1085 */              throw new IOException("Destination '" + parentFile + "' directory cannot be created");
+          File parentFile = destFile.getParentFile();
+          if (parentFile != null && !parentFile.mkdirs() && !parentFile.isDirectory()) {
+              throw new IOException("Destination '" + parentFile + "' directory cannot be created");
                     }
-/* 1088 */          if (destFile.exists() && !destFile.canWrite()) {
-/* 1089 */              throw new IOException("Destination '" + destFile + "' exists but is read-only");
+          if (destFile.exists() && !destFile.canWrite()) {
+              throw new IOException("Destination '" + destFile + "' exists but is read-only");
                     }
-/* 1091 */          doCopyFile(srcFile, destFile, preserveFileDate);
+          doCopyFile(srcFile, destFile, preserveFileDate);
                 }
 
-/* 1111 */      public static long copyFile(File input, OutputStream output) throws IOException {
-/* 1112 */          FileInputStream fis = new FileInputStream(input);
+      public static long copyFile(File input, OutputStream output) throws IOException {
+          FileInputStream fis = new FileInputStream(input);
                     try {
-/* 1114 */              long jCopyLarge = IOUtils.copyLarge(fis, output);
-/* 1116 */              fis.close();
+              long jCopyLarge = IOUtils.copyLarge(fis, output);
+              fis.close();
                         return jCopyLarge;
                     } catch (Throwable th) {
                         fis.close();
@@ -508,167 +508,167 @@
                     }
                 }
 
-/* 1128 */      private static void doCopyFile(File srcFile, File destFile, boolean preserveFileDate) throws Throwable {
-/* 1129 */          if (destFile.exists() && destFile.isDirectory()) {
-/* 1130 */              throw new IOException("Destination '" + destFile + "' exists but is a directory");
+      private static void doCopyFile(File srcFile, File destFile, boolean preserveFileDate) throws Throwable {
+          if (destFile.exists() && destFile.isDirectory()) {
+              throw new IOException("Destination '" + destFile + "' exists but is a directory");
                     }
-/* 1133 */          FileInputStream fis = null;
-/* 1134 */          FileOutputStream fos = null;
-/* 1135 */          FileChannel input = null;
-/* 1136 */          FileChannel output = null;
+          FileInputStream fis = null;
+          FileOutputStream fos = null;
+          FileChannel input = null;
+          FileChannel output = null;
                     try {
-/* 1138 */              FileInputStream fis2 = new FileInputStream(srcFile);
+              FileInputStream fis2 = new FileInputStream(srcFile);
                         try {
-/* 1139 */                  FileOutputStream fos2 = new FileOutputStream(destFile);
+                  FileOutputStream fos2 = new FileOutputStream(destFile);
                             try {
-/* 1140 */                      input = fis2.getChannel();
-/* 1141 */                      output = fos2.getChannel();
-/* 1142 */                      long size = input.size();
-/* 1143 */                      long pos = 0;
+                      input = fis2.getChannel();
+                      output = fos2.getChannel();
+                      long size = input.size();
+                      long pos = 0;
                                 while (pos < size) {
-/* 1146 */                          long count = size - pos > FILE_COPY_BUFFER_SIZE ? FILE_COPY_BUFFER_SIZE : size - pos;
-/* 1147 */                          pos += output.transferFrom(input, pos, count);
+                          long count = size - pos > FILE_COPY_BUFFER_SIZE ? FILE_COPY_BUFFER_SIZE : size - pos;
+                          pos += output.transferFrom(input, pos, count);
                                 }
-/* 1150 */                      IOUtils.closeQuietly(output);
-/* 1151 */                      IOUtils.closeQuietly((OutputStream) fos2);
-/* 1152 */                      IOUtils.closeQuietly(input);
-/* 1153 */                      IOUtils.closeQuietly((InputStream) fis2);
+                      IOUtils.closeQuietly(output);
+                      IOUtils.closeQuietly((OutputStream) fos2);
+                      IOUtils.closeQuietly(input);
+                      IOUtils.closeQuietly((InputStream) fis2);
                                 if (srcFile.length() != destFile.length()) {
-/* 1157 */                          throw new IOException("Failed to copy full contents from '" + srcFile + "' to '" + destFile + "'");
+                          throw new IOException("Failed to copy full contents from '" + srcFile + "' to '" + destFile + "'");
                                 }
-/* 1160 */                      if (preserveFileDate) {
-/* 1161 */                          destFile.setLastModified(srcFile.lastModified());
+                      if (preserveFileDate) {
+                          destFile.setLastModified(srcFile.lastModified());
                                 }
                             } catch (Throwable th) {
                                 th = th;
                                 fos = fos2;
                                 fis = fis2;
                                 IOUtils.closeQuietly(output);
-/* 1151 */                      IOUtils.closeQuietly((OutputStream) fos);
-/* 1152 */                      IOUtils.closeQuietly(input);
-/* 1153 */                      IOUtils.closeQuietly((InputStream) fis);
+                      IOUtils.closeQuietly((OutputStream) fos);
+                      IOUtils.closeQuietly(input);
+                      IOUtils.closeQuietly((InputStream) fis);
                                 throw th;
                             }
                         } catch (Throwable th2) {
-/* 1150 */                  th = th2;
+                  th = th2;
                             fis = fis2;
                         }
                     } catch (Throwable th3) {
-/* 1150 */              th = th3;
+              th = th3;
                     }
                 }
 
-/* 1189 */      public static void copyDirectoryToDirectory(File srcDir, File destDir) throws Throwable {
-/* 1190 */          if (srcDir == null) {
-/* 1191 */              throw new NullPointerException("Source must not be null");
+      public static void copyDirectoryToDirectory(File srcDir, File destDir) throws Throwable {
+          if (srcDir == null) {
+              throw new NullPointerException("Source must not be null");
                     }
-/* 1193 */          if (srcDir.exists() && !srcDir.isDirectory()) {
-/* 1194 */              throw new IllegalArgumentException("Source '" + destDir + "' is not a directory");
+          if (srcDir.exists() && !srcDir.isDirectory()) {
+              throw new IllegalArgumentException("Source '" + destDir + "' is not a directory");
                     }
-/* 1196 */          if (destDir == null) {
-/* 1197 */              throw new NullPointerException("Destination must not be null");
+          if (destDir == null) {
+              throw new NullPointerException("Destination must not be null");
                     }
-/* 1199 */          if (destDir.exists() && !destDir.isDirectory()) {
-/* 1200 */              throw new IllegalArgumentException("Destination '" + destDir + "' is not a directory");
+          if (destDir.exists() && !destDir.isDirectory()) {
+              throw new IllegalArgumentException("Destination '" + destDir + "' is not a directory");
                     }
-/* 1202 */          copyDirectory(srcDir, new File(destDir, srcDir.getName()), true);
+          copyDirectory(srcDir, new File(destDir, srcDir.getName()), true);
                 }
 
-/* 1229 */      public static void copyDirectory(File srcDir, File destDir) throws Throwable {
-/* 1230 */          copyDirectory(srcDir, destDir, true);
+      public static void copyDirectory(File srcDir, File destDir) throws Throwable {
+          copyDirectory(srcDir, destDir, true);
                 }
 
-/* 1260 */      public static void copyDirectory(File srcDir, File destDir, boolean preserveFileDate) throws Throwable {
-/* 1261 */          copyDirectory(srcDir, destDir, null, preserveFileDate);
+      public static void copyDirectory(File srcDir, File destDir, boolean preserveFileDate) throws Throwable {
+          copyDirectory(srcDir, destDir, null, preserveFileDate);
                 }
 
-/* 1309 */      public static void copyDirectory(File srcDir, File destDir, FileFilter filter) throws Throwable {
-/* 1310 */          copyDirectory(srcDir, destDir, filter, true);
+      public static void copyDirectory(File srcDir, File destDir, FileFilter filter) throws Throwable {
+          copyDirectory(srcDir, destDir, filter, true);
                 }
 
-/* 1360 */      public static void copyDirectory(File srcDir, File destDir, FileFilter filter, boolean preserveFileDate) throws Throwable {
-/* 1361 */          if (srcDir == null) {
-/* 1362 */              throw new NullPointerException("Source must not be null");
+      public static void copyDirectory(File srcDir, File destDir, FileFilter filter, boolean preserveFileDate) throws Throwable {
+          if (srcDir == null) {
+              throw new NullPointerException("Source must not be null");
                     }
-/* 1364 */          if (destDir == null) {
-/* 1365 */              throw new NullPointerException("Destination must not be null");
+          if (destDir == null) {
+              throw new NullPointerException("Destination must not be null");
                     }
-/* 1367 */          if (!srcDir.exists()) {
-/* 1368 */              throw new FileNotFoundException("Source '" + srcDir + "' does not exist");
+          if (!srcDir.exists()) {
+              throw new FileNotFoundException("Source '" + srcDir + "' does not exist");
                     }
-/* 1370 */          if (!srcDir.isDirectory()) {
-/* 1371 */              throw new IOException("Source '" + srcDir + "' exists but is not a directory");
+          if (!srcDir.isDirectory()) {
+              throw new IOException("Source '" + srcDir + "' exists but is not a directory");
                     }
-/* 1373 */          if (srcDir.getCanonicalPath().equals(destDir.getCanonicalPath())) {
-/* 1374 */              throw new IOException("Source '" + srcDir + "' and destination '" + destDir + "' are the same");
+          if (srcDir.getCanonicalPath().equals(destDir.getCanonicalPath())) {
+              throw new IOException("Source '" + srcDir + "' and destination '" + destDir + "' are the same");
                     }
-/* 1378 */          List<String> exclusionList = null;
-/* 1379 */          if (destDir.getCanonicalPath().startsWith(srcDir.getCanonicalPath())) {
-/* 1380 */              File[] srcFiles = filter == null ? srcDir.listFiles() : srcDir.listFiles(filter);
-/* 1381 */              if (srcFiles != null && srcFiles.length > 0) {
-/* 1382 */                  exclusionList = new ArrayList<>(srcFiles.length);
-/* 1383 */                  File[] arr$ = srcFiles;
+          List<String> exclusionList = null;
+          if (destDir.getCanonicalPath().startsWith(srcDir.getCanonicalPath())) {
+              File[] srcFiles = filter == null ? srcDir.listFiles() : srcDir.listFiles(filter);
+              if (srcFiles != null && srcFiles.length > 0) {
+                  exclusionList = new ArrayList<>(srcFiles.length);
+                  File[] arr$ = srcFiles;
                             for (File srcFile : arr$) {
-/* 1384 */                      File copiedFile = new File(destDir, srcFile.getName());
-/* 1385 */                      exclusionList.add(copiedFile.getCanonicalPath());
+                      File copiedFile = new File(destDir, srcFile.getName());
+                      exclusionList.add(copiedFile.getCanonicalPath());
                             }
                         }
                     }
-/* 1389 */          doCopyDirectory(srcDir, destDir, filter, preserveFileDate, exclusionList);
+          doCopyDirectory(srcDir, destDir, filter, preserveFileDate, exclusionList);
                 }
 
-/* 1405 */      private static void doCopyDirectory(File srcDir, File destDir, FileFilter filter, boolean preserveFileDate, List<String> exclusionList) throws Throwable {
-/* 1406 */          File[] srcFiles = filter == null ? srcDir.listFiles() : srcDir.listFiles(filter);
-/* 1407 */          if (srcFiles == null) {
-/* 1408 */              throw new IOException("Failed to list contents of " + srcDir);
+      private static void doCopyDirectory(File srcDir, File destDir, FileFilter filter, boolean preserveFileDate, List<String> exclusionList) throws Throwable {
+          File[] srcFiles = filter == null ? srcDir.listFiles() : srcDir.listFiles(filter);
+          if (srcFiles == null) {
+              throw new IOException("Failed to list contents of " + srcDir);
                     }
-/* 1410 */          if (destDir.exists()) {
-/* 1411 */              if (!destDir.isDirectory()) {
-/* 1412 */                  throw new IOException("Destination '" + destDir + "' exists but is not a directory");
+          if (destDir.exists()) {
+              if (!destDir.isDirectory()) {
+                  throw new IOException("Destination '" + destDir + "' exists but is not a directory");
                         }
                     } else if (!destDir.mkdirs() && !destDir.isDirectory()) {
-/* 1416 */              throw new IOException("Destination '" + destDir + "' directory cannot be created");
+              throw new IOException("Destination '" + destDir + "' directory cannot be created");
                     }
-/* 1419 */          if (!destDir.canWrite()) {
-/* 1420 */              throw new IOException("Destination '" + destDir + "' cannot be written to");
+          if (!destDir.canWrite()) {
+              throw new IOException("Destination '" + destDir + "' cannot be written to");
                     }
-/* 1422 */          File[] arr$ = srcFiles;
+          File[] arr$ = srcFiles;
                     for (File srcFile : arr$) {
-/* 1423 */              File dstFile = new File(destDir, srcFile.getName());
-/* 1424 */              if (exclusionList == null || !exclusionList.contains(srcFile.getCanonicalPath())) {
-/* 1425 */                  if (srcFile.isDirectory()) {
-/* 1426 */                      doCopyDirectory(srcFile, dstFile, filter, preserveFileDate, exclusionList);
+              File dstFile = new File(destDir, srcFile.getName());
+              if (exclusionList == null || !exclusionList.contains(srcFile.getCanonicalPath())) {
+                  if (srcFile.isDirectory()) {
+                      doCopyDirectory(srcFile, dstFile, filter, preserveFileDate, exclusionList);
                             } else {
-/* 1428 */                      doCopyFile(srcFile, dstFile, preserveFileDate);
+                      doCopyFile(srcFile, dstFile, preserveFileDate);
                             }
                         }
                     }
-/* 1434 */          if (preserveFileDate) {
-/* 1435 */              destDir.setLastModified(srcDir.lastModified());
+          if (preserveFileDate) {
+              destDir.setLastModified(srcDir.lastModified());
                     }
                 }
 
-/* 1459 */      public static void copyURLToFile(URL source, File destination) throws IOException {
-/* 1460 */          InputStream input = source.openStream();
-/* 1461 */          copyInputStreamToFile(input, destination);
+      public static void copyURLToFile(URL source, File destination) throws IOException {
+          InputStream input = source.openStream();
+          copyInputStreamToFile(input, destination);
                 }
 
-/* 1485 */      public static void copyURLToFile(URL source, File destination, int connectionTimeout, int readTimeout) throws IOException {
-/* 1486 */          URLConnection connection = source.openConnection();
-/* 1487 */          connection.setConnectTimeout(connectionTimeout);
-/* 1488 */          connection.setReadTimeout(readTimeout);
-/* 1489 */          InputStream input = connection.getInputStream();
-/* 1490 */          copyInputStreamToFile(input, destination);
+      public static void copyURLToFile(URL source, File destination, int connectionTimeout, int readTimeout) throws IOException {
+          URLConnection connection = source.openConnection();
+          connection.setConnectTimeout(connectionTimeout);
+          connection.setReadTimeout(readTimeout);
+          InputStream input = connection.getInputStream();
+          copyInputStreamToFile(input, destination);
                 }
 
-/* 1509 */      public static void copyInputStreamToFile(InputStream source, File destination) throws IOException {
+      public static void copyInputStreamToFile(InputStream source, File destination) throws IOException {
                     try {
-/* 1510 */              FileOutputStream output = openOutputStream(destination);
+              FileOutputStream output = openOutputStream(destination);
                         try {
-/* 1512 */                  IOUtils.copy(source, output);
-/* 1513 */                  output.close();
-/* 1515 */                  IOUtils.closeQuietly((OutputStream) output);
-/* 1518 */                  IOUtils.closeQuietly(source);
+                  IOUtils.copy(source, output);
+                  output.close();
+                  IOUtils.closeQuietly((OutputStream) output);
+                  IOUtils.closeQuietly(source);
                         } catch (Throwable th) {
                             IOUtils.closeQuietly((OutputStream) output);
                             throw th;
@@ -679,106 +679,106 @@
                     }
                 }
 
-/* 1529 */      public static void deleteDirectory(File directory) throws IOException {
-/* 1530 */          if (directory.exists()) {
-/* 1534 */              if (!isSymlink(directory)) {
-/* 1535 */                  cleanDirectory(directory);
+      public static void deleteDirectory(File directory) throws IOException {
+          if (directory.exists()) {
+              if (!isSymlink(directory)) {
+                  cleanDirectory(directory);
                         }
-/* 1538 */              if (!directory.delete()) {
-/* 1539 */                  String message = "Unable to delete directory " + directory + ".";
-/* 1541 */                  throw new IOException(message);
+              if (!directory.delete()) {
+                  String message = "Unable to delete directory " + directory + ".";
+                  throw new IOException(message);
                         }
                     }
                 }
 
-/* 1560 */      public static boolean deleteQuietly(File file) {
-/* 1561 */          if (file == null) {
+      public static boolean deleteQuietly(File file) {
+          if (file == null) {
                         return false;
                     }
                     try {
-/* 1565 */              if (file.isDirectory()) {
-/* 1566 */                  cleanDirectory(file);
+              if (file.isDirectory()) {
+                  cleanDirectory(file);
                         }
                     } catch (Exception e) {
                     }
                     try {
-/* 1572 */              return file.delete();
+              return file.delete();
                     } catch (Exception e2) {
                         return false;
                     }
                 }
 
-/* 1604 */      public static boolean directoryContains(File directory, File child) throws IOException {
-/* 1605 */          if (directory == null) {
-/* 1606 */              throw new IllegalArgumentException("Directory must not be null");
+      public static boolean directoryContains(File directory, File child) throws IOException {
+          if (directory == null) {
+              throw new IllegalArgumentException("Directory must not be null");
                     }
-/* 1609 */          if (!directory.isDirectory()) {
-/* 1610 */              throw new IllegalArgumentException("Not a directory: " + directory);
+          if (!directory.isDirectory()) {
+              throw new IllegalArgumentException("Not a directory: " + directory);
                     }
-/* 1613 */          if (child == null || !directory.exists() || !child.exists()) {
+          if (child == null || !directory.exists() || !child.exists()) {
                         return false;
                     }
-/* 1622 */          String canonicalParent = directory.getCanonicalPath();
-/* 1623 */          String canonicalChild = child.getCanonicalPath();
-/* 1625 */          return FilenameUtils.directoryContains(canonicalParent, canonicalChild);
+          String canonicalParent = directory.getCanonicalPath();
+          String canonicalChild = child.getCanonicalPath();
+          return FilenameUtils.directoryContains(canonicalParent, canonicalChild);
                 }
 
-/* 1634 */      public static void cleanDirectory(File directory) throws IOException {
-/* 1635 */          if (!directory.exists()) {
-/* 1636 */              String message = directory + " does not exist";
-/* 1637 */              throw new IllegalArgumentException(message);
+      public static void cleanDirectory(File directory) throws IOException {
+          if (!directory.exists()) {
+              String message = directory + " does not exist";
+              throw new IllegalArgumentException(message);
                     }
-/* 1640 */          if (!directory.isDirectory()) {
-/* 1641 */              String message2 = directory + " is not a directory";
-/* 1642 */              throw new IllegalArgumentException(message2);
+          if (!directory.isDirectory()) {
+              String message2 = directory + " is not a directory";
+              throw new IllegalArgumentException(message2);
                     }
-/* 1645 */          File[] files = directory.listFiles();
-/* 1646 */          if (files == null) {
-/* 1647 */              throw new IOException("Failed to list contents of " + directory);
+          File[] files = directory.listFiles();
+          if (files == null) {
+              throw new IOException("Failed to list contents of " + directory);
                     }
-/* 1650 */          IOException exception = null;
+          IOException exception = null;
                     for (File file : files) {
                         try {
-/* 1653 */                  forceDelete(file);
+                  forceDelete(file);
                         } catch (IOException ioe) {
-/* 1655 */                  exception = ioe;
+                  exception = ioe;
                         }
                     }
-/* 1659 */          if (exception != null) {
-/* 1660 */              throw exception;
+          if (exception != null) {
+              throw exception;
                     }
                 }
 
-/* 1676 */      public static boolean waitFor(File file, int seconds) {
-/* 1677 */          int timeout = 0;
-/* 1678 */          int tick = 0;
-/* 1679 */          while (!file.exists()) {
-/* 1680 */              int tick2 = tick + 1;
+      public static boolean waitFor(File file, int seconds) {
+          int timeout = 0;
+          int tick = 0;
+          while (!file.exists()) {
+              int tick2 = tick + 1;
                         if (tick >= 10) {
-/* 1681 */                  tick = 0;
-/* 1682 */                  int timeout2 = timeout + 1;
+                  tick = 0;
+                  int timeout2 = timeout + 1;
                             if (timeout > seconds) {
-/* 1683 */                      return false;
+                      return false;
                             }
                             timeout = timeout2;
                         } else {
                             tick = tick2;
                         }
                         try {
-/* 1687 */                  Thread.sleep(100L);
+                  Thread.sleep(100L);
                         } catch (InterruptedException e) {
                         } catch (Exception e2) {
                         }
                     }
-/* 1694 */          return true;
+          return true;
                 }
 
-/* 1708 */      public static String readFileToString(File file, Charset encoding) throws IOException {
-/* 1709 */          InputStream in = null;
+      public static String readFileToString(File file, Charset encoding) throws IOException {
+          InputStream in = null;
                     try {
-/* 1711 */              in = openInputStream(file);
-/* 1712 */              String string = IOUtils.toString(in, Charsets.toCharset(encoding));
-/* 1714 */              IOUtils.closeQuietly(in);
+              in = openInputStream(file);
+              String string = IOUtils.toString(in, Charsets.toCharset(encoding));
+              IOUtils.closeQuietly(in);
                         return string;
                     } catch (Throwable th) {
                         IOUtils.closeQuietly(in);
@@ -786,20 +786,20 @@
                     }
                 }
 
-/* 1733 */      public static String readFileToString(File file, String encoding) throws IOException {
-/* 1734 */          return readFileToString(file, Charsets.toCharset(encoding));
+      public static String readFileToString(File file, String encoding) throws IOException {
+          return readFileToString(file, Charsets.toCharset(encoding));
                 }
 
-/* 1747 */      public static String readFileToString(File file) throws IOException {
-/* 1748 */          return readFileToString(file, Charset.defaultCharset());
+      public static String readFileToString(File file) throws IOException {
+          return readFileToString(file, Charset.defaultCharset());
                 }
 
-/* 1760 */      public static byte[] readFileToByteArray(File file) throws IOException {
-/* 1761 */          InputStream in = null;
+      public static byte[] readFileToByteArray(File file) throws IOException {
+          InputStream in = null;
                     try {
-/* 1763 */              in = openInputStream(file);
-/* 1764 */              byte[] byteArray = IOUtils.toByteArray(in, file.length());
-/* 1766 */              IOUtils.closeQuietly(in);
+              in = openInputStream(file);
+              byte[] byteArray = IOUtils.toByteArray(in, file.length());
+              IOUtils.closeQuietly(in);
                         return byteArray;
                     } catch (Throwable th) {
                         IOUtils.closeQuietly(in);
@@ -807,12 +807,12 @@
                     }
                 }
 
-/* 1780 */      public static List<String> readLines(File file, Charset encoding) throws IOException {
-/* 1781 */          InputStream in = null;
+      public static List<String> readLines(File file, Charset encoding) throws IOException {
+          InputStream in = null;
                     try {
-/* 1783 */              in = openInputStream(file);
-/* 1784 */              List<String> lines = IOUtils.readLines(in, Charsets.toCharset(encoding));
-/* 1786 */              IOUtils.closeQuietly(in);
+              in = openInputStream(file);
+              List<String> lines = IOUtils.readLines(in, Charsets.toCharset(encoding));
+              IOUtils.closeQuietly(in);
                         return lines;
                     } catch (Throwable th) {
                         IOUtils.closeQuietly(in);
@@ -820,351 +820,351 @@
                     }
                 }
 
-/* 1805 */      public static List<String> readLines(File file, String encoding) throws IOException {
-/* 1806 */          return readLines(file, Charsets.toCharset(encoding));
+      public static List<String> readLines(File file, String encoding) throws IOException {
+          return readLines(file, Charsets.toCharset(encoding));
                 }
 
-/* 1818 */      public static List<String> readLines(File file) throws IOException {
-/* 1819 */          return readLines(file, Charset.defaultCharset());
+      public static List<String> readLines(File file) throws IOException {
+          return readLines(file, Charset.defaultCharset());
                 }
 
-/* 1853 */      public static LineIterator lineIterator(File file, String encoding) throws IOException {
-/* 1854 */          InputStream in = null;
+      public static LineIterator lineIterator(File file, String encoding) throws IOException {
+          InputStream in = null;
                     try {
-/* 1856 */              in = openInputStream(file);
-/* 1857 */              return IOUtils.lineIterator(in, encoding);
+              in = openInputStream(file);
+              return IOUtils.lineIterator(in, encoding);
                     } catch (IOException ex) {
-/* 1859 */              IOUtils.closeQuietly(in);
-/* 1860 */              throw ex;
+              IOUtils.closeQuietly(in);
+              throw ex;
                     } catch (RuntimeException ex2) {
-/* 1862 */              IOUtils.closeQuietly(in);
-/* 1863 */              throw ex2;
+              IOUtils.closeQuietly(in);
+              throw ex2;
                     }
                 }
 
-/* 1876 */      public static LineIterator lineIterator(File file) throws IOException {
-/* 1877 */          return lineIterator(file, null);
+      public static LineIterator lineIterator(File file) throws IOException {
+          return lineIterator(file, null);
                 }
 
-/* 1894 */      public static void writeStringToFile(File file, String data, Charset encoding) throws IOException {
-/* 1895 */          writeStringToFile(file, data, encoding, false);
+      public static void writeStringToFile(File file, String data, Charset encoding) throws IOException {
+          writeStringToFile(file, data, encoding, false);
                 }
 
-/* 1910 */      public static void writeStringToFile(File file, String data, String encoding) throws IOException {
-/* 1911 */          writeStringToFile(file, data, encoding, false);
+      public static void writeStringToFile(File file, String data, String encoding) throws IOException {
+          writeStringToFile(file, data, encoding, false);
                 }
 
-/* 1925 */      public static void writeStringToFile(File file, String data, Charset encoding, boolean append) throws IOException {
-/* 1926 */          OutputStream out = null;
+      public static void writeStringToFile(File file, String data, Charset encoding, boolean append) throws IOException {
+          OutputStream out = null;
                     try {
-/* 1928 */              out = openOutputStream(file, append);
-/* 1929 */              IOUtils.write(data, out, encoding);
-/* 1930 */              out.close();
-/* 1932 */              IOUtils.closeQuietly(out);
+              out = openOutputStream(file, append);
+              IOUtils.write(data, out, encoding);
+              out.close();
+              IOUtils.closeQuietly(out);
                     } catch (Throwable th) {
                         IOUtils.closeQuietly(out);
                         throw th;
                     }
                 }
 
-/* 1950 */      public static void writeStringToFile(File file, String data, String encoding, boolean append) throws IOException {
-/* 1951 */          writeStringToFile(file, data, Charsets.toCharset(encoding), append);
+      public static void writeStringToFile(File file, String data, String encoding, boolean append) throws IOException {
+          writeStringToFile(file, data, Charsets.toCharset(encoding), append);
                 }
 
-/* 1961 */      public static void writeStringToFile(File file, String data) throws IOException {
-/* 1962 */          writeStringToFile(file, data, Charset.defaultCharset(), false);
+      public static void writeStringToFile(File file, String data) throws IOException {
+          writeStringToFile(file, data, Charset.defaultCharset(), false);
                 }
 
-/* 1975 */      public static void writeStringToFile(File file, String data, boolean append) throws IOException {
-/* 1976 */          writeStringToFile(file, data, Charset.defaultCharset(), append);
+      public static void writeStringToFile(File file, String data, boolean append) throws IOException {
+          writeStringToFile(file, data, Charset.defaultCharset(), append);
                 }
 
-/* 1987 */      public static void write(File file, CharSequence data) throws IOException {
-/* 1988 */          write(file, data, Charset.defaultCharset(), false);
+      public static void write(File file, CharSequence data) throws IOException {
+          write(file, data, Charset.defaultCharset(), false);
                 }
 
-/* 2001 */      public static void write(File file, CharSequence data, boolean append) throws IOException {
-/* 2002 */          write(file, data, Charset.defaultCharset(), append);
+      public static void write(File file, CharSequence data, boolean append) throws IOException {
+          write(file, data, Charset.defaultCharset(), append);
                 }
 
-/* 2014 */      public static void write(File file, CharSequence data, Charset encoding) throws IOException {
-/* 2015 */          write(file, data, encoding, false);
+      public static void write(File file, CharSequence data, Charset encoding) throws IOException {
+          write(file, data, encoding, false);
                 }
 
-/* 2028 */      public static void write(File file, CharSequence data, String encoding) throws IOException {
-/* 2029 */          write(file, data, encoding, false);
+      public static void write(File file, CharSequence data, String encoding) throws IOException {
+          write(file, data, encoding, false);
                 }
 
-/* 2043 */      public static void write(File file, CharSequence data, Charset encoding, boolean append) throws IOException {
-/* 2044 */          String str = data == null ? null : data.toString();
-/* 2045 */          writeStringToFile(file, str, encoding, append);
+      public static void write(File file, CharSequence data, Charset encoding, boolean append) throws IOException {
+          String str = data == null ? null : data.toString();
+          writeStringToFile(file, str, encoding, append);
                 }
 
-/* 2062 */      public static void write(File file, CharSequence data, String encoding, boolean append) throws IOException {
-/* 2063 */          write(file, data, Charsets.toCharset(encoding), append);
+      public static void write(File file, CharSequence data, String encoding, boolean append) throws IOException {
+          write(file, data, Charsets.toCharset(encoding), append);
                 }
 
-/* 2077 */      public static void writeByteArrayToFile(File file, byte[] data) throws IOException {
-/* 2078 */          writeByteArrayToFile(file, data, false);
+      public static void writeByteArrayToFile(File file, byte[] data) throws IOException {
+          writeByteArrayToFile(file, data, false);
                 }
 
-/* 2091 */      public static void writeByteArrayToFile(File file, byte[] data, boolean append) throws IOException {
-/* 2092 */          OutputStream out = null;
+      public static void writeByteArrayToFile(File file, byte[] data, boolean append) throws IOException {
+          OutputStream out = null;
                     try {
-/* 2094 */              out = openOutputStream(file, append);
-/* 2095 */              out.write(data);
-/* 2096 */              out.close();
-/* 2098 */              IOUtils.closeQuietly(out);
+              out = openOutputStream(file, append);
+              out.write(data);
+              out.close();
+              IOUtils.closeQuietly(out);
                     } catch (Throwable th) {
                         IOUtils.closeQuietly(out);
                         throw th;
                     }
                 }
 
-/* 2117 */      public static void writeLines(File file, String encoding, Collection<?> lines) throws IOException {
-/* 2118 */          writeLines(file, encoding, lines, null, false);
+      public static void writeLines(File file, String encoding, Collection<?> lines) throws IOException {
+          writeLines(file, encoding, lines, null, false);
                 }
 
-/* 2135 */      public static void writeLines(File file, String encoding, Collection<?> lines, boolean append) throws IOException {
-/* 2136 */          writeLines(file, encoding, lines, null, append);
+      public static void writeLines(File file, String encoding, Collection<?> lines, boolean append) throws IOException {
+          writeLines(file, encoding, lines, null, append);
                 }
 
-/* 2149 */      public static void writeLines(File file, Collection<?> lines) throws IOException {
-/* 2150 */          writeLines(file, null, lines, null, false);
+      public static void writeLines(File file, Collection<?> lines) throws IOException {
+          writeLines(file, null, lines, null, false);
                 }
 
-/* 2165 */      public static void writeLines(File file, Collection<?> lines, boolean append) throws IOException {
-/* 2166 */          writeLines(file, null, lines, null, append);
+      public static void writeLines(File file, Collection<?> lines, boolean append) throws IOException {
+          writeLines(file, null, lines, null, append);
                 }
 
-/* 2186 */      public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding) throws IOException {
-/* 2187 */          writeLines(file, encoding, lines, lineEnding, false);
+      public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding) throws IOException {
+          writeLines(file, encoding, lines, lineEnding, false);
                 }
 
-/* 2206 */      public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding, boolean append) throws IOException {
-/* 2207 */          FileOutputStream out = null;
+      public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding, boolean append) throws IOException {
+          FileOutputStream out = null;
                     try {
-/* 2209 */              out = openOutputStream(file, append);
-/* 2210 */              BufferedOutputStream buffer = new BufferedOutputStream(out);
-/* 2211 */              IOUtils.writeLines(lines, lineEnding, buffer, encoding);
-/* 2212 */              buffer.flush();
-/* 2213 */              out.close();
-/* 2215 */              IOUtils.closeQuietly((OutputStream) out);
+              out = openOutputStream(file, append);
+              BufferedOutputStream buffer = new BufferedOutputStream(out);
+              IOUtils.writeLines(lines, lineEnding, buffer, encoding);
+              buffer.flush();
+              out.close();
+              IOUtils.closeQuietly((OutputStream) out);
                     } catch (Throwable th) {
                         IOUtils.closeQuietly((OutputStream) out);
                         throw th;
                     }
                 }
 
-/* 2230 */      public static void writeLines(File file, Collection<?> lines, String lineEnding) throws IOException {
-/* 2231 */          writeLines(file, null, lines, lineEnding, false);
+      public static void writeLines(File file, Collection<?> lines, String lineEnding) throws IOException {
+          writeLines(file, null, lines, lineEnding, false);
                 }
 
-/* 2248 */      public static void writeLines(File file, Collection<?> lines, String lineEnding, boolean append) throws IOException {
-/* 2249 */          writeLines(file, null, lines, lineEnding, append);
+      public static void writeLines(File file, Collection<?> lines, String lineEnding, boolean append) throws IOException {
+          writeLines(file, null, lines, lineEnding, append);
                 }
 
-/* 2268 */      public static void forceDelete(File file) throws IOException {
-/* 2269 */          if (file.isDirectory()) {
-/* 2270 */              deleteDirectory(file);
-/* 2282 */              return;
+      public static void forceDelete(File file) throws IOException {
+          if (file.isDirectory()) {
+              deleteDirectory(file);
+              return;
                     }
-/* 2272 */          boolean filePresent = file.exists();
-/* 2273 */          if (!file.delete()) {
-/* 2274 */              if (!filePresent) {
-/* 2275 */                  throw new FileNotFoundException("File does not exist: " + file);
+          boolean filePresent = file.exists();
+          if (!file.delete()) {
+              if (!filePresent) {
+                  throw new FileNotFoundException("File does not exist: " + file);
                         }
-/* 2277 */              String message = "Unable to delete file: " + file;
-/* 2279 */              throw new IOException(message);
+              String message = "Unable to delete file: " + file;
+              throw new IOException(message);
                     }
                 }
 
-/* 2292 */      public static void forceDeleteOnExit(File file) throws IOException {
-/* 2293 */          if (file.isDirectory()) {
-/* 2294 */              deleteDirectoryOnExit(file);
+      public static void forceDeleteOnExit(File file) throws IOException {
+          if (file.isDirectory()) {
+              deleteDirectoryOnExit(file);
                     } else {
-/* 2296 */              file.deleteOnExit();
+              file.deleteOnExit();
                     }
                 }
 
-/* 2307 */      private static void deleteDirectoryOnExit(File directory) throws IOException {
-/* 2308 */          if (directory.exists()) {
-/* 2312 */              directory.deleteOnExit();
-/* 2313 */              if (!isSymlink(directory)) {
-/* 2314 */                  cleanDirectoryOnExit(directory);
+      private static void deleteDirectoryOnExit(File directory) throws IOException {
+          if (directory.exists()) {
+              directory.deleteOnExit();
+              if (!isSymlink(directory)) {
+                  cleanDirectoryOnExit(directory);
                         }
                     }
                 }
 
-/* 2325 */      private static void cleanDirectoryOnExit(File directory) throws IOException {
-/* 2326 */          if (!directory.exists()) {
-/* 2327 */              String message = directory + " does not exist";
-/* 2328 */              throw new IllegalArgumentException(message);
+      private static void cleanDirectoryOnExit(File directory) throws IOException {
+          if (!directory.exists()) {
+              String message = directory + " does not exist";
+              throw new IllegalArgumentException(message);
                     }
-/* 2331 */          if (!directory.isDirectory()) {
-/* 2332 */              String message2 = directory + " is not a directory";
-/* 2333 */              throw new IllegalArgumentException(message2);
+          if (!directory.isDirectory()) {
+              String message2 = directory + " is not a directory";
+              throw new IllegalArgumentException(message2);
                     }
-/* 2336 */          File[] files = directory.listFiles();
-/* 2337 */          if (files == null) {
-/* 2338 */              throw new IOException("Failed to list contents of " + directory);
+          File[] files = directory.listFiles();
+          if (files == null) {
+              throw new IOException("Failed to list contents of " + directory);
                     }
-/* 2341 */          IOException exception = null;
+          IOException exception = null;
                     for (File file : files) {
                         try {
-/* 2344 */                  forceDeleteOnExit(file);
+                  forceDeleteOnExit(file);
                         } catch (IOException ioe) {
-/* 2346 */                  exception = ioe;
+                  exception = ioe;
                         }
                     }
-/* 2350 */          if (exception != null) {
-/* 2351 */              throw exception;
+          if (exception != null) {
+              throw exception;
                     }
                 }
 
-/* 2366 */      public static void forceMkdir(File directory) throws IOException {
-/* 2367 */          if (directory.exists()) {
-/* 2368 */              if (!directory.isDirectory()) {
-/* 2369 */                  String message = "File " + directory + " exists and is not a directory. Unable to create directory.";
-/* 2374 */                  throw new IOException(message);
+      public static void forceMkdir(File directory) throws IOException {
+          if (directory.exists()) {
+              if (!directory.isDirectory()) {
+                  String message = "File " + directory + " exists and is not a directory. Unable to create directory.";
+                  throw new IOException(message);
                         }
                     } else if (!directory.mkdirs() && !directory.isDirectory()) {
-/* 2382 */              String message2 = "Unable to create directory " + directory;
-/* 2384 */              throw new IOException(message2);
+              String message2 = "Unable to create directory " + directory;
+              throw new IOException(message2);
                     }
                 }
 
-/* 2410 */      public static long sizeOf(File file) {
-/* 2411 */          if (file.exists()) {
+      public static long sizeOf(File file) {
+          if (file.exists()) {
                         return file.isDirectory() ? sizeOfDirectory(file) : file.length();
                     }
-/* 2412 */          String message = file + " does not exist";
-/* 2413 */          throw new IllegalArgumentException(message);
+          String message = file + " does not exist";
+          throw new IllegalArgumentException(message);
                 }
 
-/* 2443 */      public static BigInteger sizeOfAsBigInteger(File file) {
-/* 2444 */          if (file.exists()) {
+      public static BigInteger sizeOfAsBigInteger(File file) {
+          if (file.exists()) {
                         return file.isDirectory() ? sizeOfDirectoryAsBigInteger(file) : BigInteger.valueOf(file.length());
                     }
-/* 2445 */          String message = file + " does not exist";
-/* 2446 */          throw new IllegalArgumentException(message);
+          String message = file + " does not exist";
+          throw new IllegalArgumentException(message);
                 }
 
-/* 2467 */      public static long sizeOfDirectory(File directory) {
-/* 2468 */          checkDirectory(directory);
-/* 2470 */          File[] files = directory.listFiles();
-/* 2471 */          if (files == null) {
+      public static long sizeOfDirectory(File directory) {
+          checkDirectory(directory);
+          File[] files = directory.listFiles();
+          if (files == null) {
                         return 0L;
                     }
-/* 2474 */          long size = 0;
+          long size = 0;
                     for (File file : files) {
                         try {
-/* 2478 */                  if (isSymlink(file)) {
+                  if (isSymlink(file)) {
                                 continue;
                             } else {
-/* 2479 */                      size += sizeOf(file);
+                      size += sizeOf(file);
                                 if (size < 0) {
-/* 2489 */                          return size;
+                          return size;
                                 }
                             }
                         } catch (IOException e) {
                         }
                     }
-/* 2489 */          return size;
+          return size;
                 }
 
-/* 2502 */      public static BigInteger sizeOfDirectoryAsBigInteger(File directory) {
-/* 2503 */          checkDirectory(directory);
-/* 2505 */          File[] files = directory.listFiles();
-/* 2506 */          if (files == null) {
-/* 2507 */              return BigInteger.ZERO;
+      public static BigInteger sizeOfDirectoryAsBigInteger(File directory) {
+          checkDirectory(directory);
+          File[] files = directory.listFiles();
+          if (files == null) {
+              return BigInteger.ZERO;
                     }
-/* 2509 */          BigInteger size = BigInteger.ZERO;
+          BigInteger size = BigInteger.ZERO;
                     for (File file : files) {
                         try {
-/* 2513 */                  if (!isSymlink(file)) {
-/* 2514 */                      size = size.add(BigInteger.valueOf(sizeOf(file)));
+                  if (!isSymlink(file)) {
+                      size = size.add(BigInteger.valueOf(sizeOf(file)));
                             }
                         } catch (IOException e) {
                         }
                     }
-/* 2521 */          return size;
+          return size;
                 }
 
-/* 2530 */      private static void checkDirectory(File directory) {
-/* 2531 */          if (!directory.exists()) {
-/* 2532 */              throw new IllegalArgumentException(directory + " does not exist");
+      private static void checkDirectory(File directory) {
+          if (!directory.exists()) {
+              throw new IllegalArgumentException(directory + " does not exist");
                     }
-/* 2534 */          if (!directory.isDirectory()) {
-/* 2535 */              throw new IllegalArgumentException(directory + " is not a directory");
+          if (!directory.isDirectory()) {
+              throw new IllegalArgumentException(directory + " is not a directory");
                     }
                 }
 
-/* 2553 */      public static boolean isFileNewer(File file, File reference) {
-/* 2554 */          if (reference == null) {
-/* 2555 */              throw new IllegalArgumentException("No specified reference file");
+      public static boolean isFileNewer(File file, File reference) {
+          if (reference == null) {
+              throw new IllegalArgumentException("No specified reference file");
                     }
-/* 2557 */          if (!reference.exists()) {
-/* 2558 */              throw new IllegalArgumentException("The reference file '" + reference + "' doesn't exist");
+          if (!reference.exists()) {
+              throw new IllegalArgumentException("The reference file '" + reference + "' doesn't exist");
                     }
-/* 2561 */          return isFileNewer(file, reference.lastModified());
+          return isFileNewer(file, reference.lastModified());
                 }
 
-/* 2576 */      public static boolean isFileNewer(File file, Date date) {
-/* 2577 */          if (date == null) {
-/* 2578 */              throw new IllegalArgumentException("No specified date");
+      public static boolean isFileNewer(File file, Date date) {
+          if (date == null) {
+              throw new IllegalArgumentException("No specified date");
                     }
-/* 2580 */          return isFileNewer(file, date.getTime());
+          return isFileNewer(file, date.getTime());
                 }
 
-/* 2595 */      public static boolean isFileNewer(File file, long timeMillis) {
-/* 2596 */          if (file == null) {
-/* 2597 */              throw new IllegalArgumentException("No specified file");
+      public static boolean isFileNewer(File file, long timeMillis) {
+          if (file == null) {
+              throw new IllegalArgumentException("No specified file");
                     }
                     return file.exists() && file.lastModified() > timeMillis;
                 }
 
-/* 2620 */      public static boolean isFileOlder(File file, File reference) {
-/* 2621 */          if (reference == null) {
-/* 2622 */              throw new IllegalArgumentException("No specified reference file");
+      public static boolean isFileOlder(File file, File reference) {
+          if (reference == null) {
+              throw new IllegalArgumentException("No specified reference file");
                     }
-/* 2624 */          if (!reference.exists()) {
-/* 2625 */              throw new IllegalArgumentException("The reference file '" + reference + "' doesn't exist");
+          if (!reference.exists()) {
+              throw new IllegalArgumentException("The reference file '" + reference + "' doesn't exist");
                     }
-/* 2628 */          return isFileOlder(file, reference.lastModified());
+          return isFileOlder(file, reference.lastModified());
                 }
 
-/* 2643 */      public static boolean isFileOlder(File file, Date date) {
-/* 2644 */          if (date == null) {
-/* 2645 */              throw new IllegalArgumentException("No specified date");
+      public static boolean isFileOlder(File file, Date date) {
+          if (date == null) {
+              throw new IllegalArgumentException("No specified date");
                     }
-/* 2647 */          return isFileOlder(file, date.getTime());
+          return isFileOlder(file, date.getTime());
                 }
 
-/* 2662 */      public static boolean isFileOlder(File file, long timeMillis) {
-/* 2663 */          if (file == null) {
-/* 2664 */              throw new IllegalArgumentException("No specified file");
+      public static boolean isFileOlder(File file, long timeMillis) {
+          if (file == null) {
+              throw new IllegalArgumentException("No specified file");
                     }
                     return file.exists() && file.lastModified() < timeMillis;
                 }
 
-/* 2684 */      public static long checksumCRC32(File file) throws Throwable {
-/* 2685 */          CRC32 crc = new CRC32();
-/* 2686 */          checksum(file, crc);
-/* 2687 */          return crc.getValue();
+      public static long checksumCRC32(File file) throws Throwable {
+          CRC32 crc = new CRC32();
+          checksum(file, crc);
+          return crc.getValue();
                 }
 
-/* 2707 */      public static Checksum checksum(File file, Checksum checksum) throws Throwable {
-/* 2708 */          if (file.isDirectory()) {
-/* 2709 */              throw new IllegalArgumentException("Checksums can't be computed on directories");
+      public static Checksum checksum(File file, Checksum checksum) throws Throwable {
+          if (file.isDirectory()) {
+              throw new IllegalArgumentException("Checksums can't be computed on directories");
                     }
-/* 2711 */          InputStream in = null;
+          InputStream in = null;
                     try {
-/* 2713 */              InputStream in2 = new CheckedInputStream(new FileInputStream(file), checksum);
+              InputStream in2 = new CheckedInputStream(new FileInputStream(file), checksum);
                         try {
-/* 2714 */                  IOUtils.copy(in2, new NullOutputStream());
-/* 2716 */                  IOUtils.closeQuietly(in2);
-/* 2718 */                  return checksum;
+                  IOUtils.copy(in2, new NullOutputStream());
+                  IOUtils.closeQuietly(in2);
+                  return checksum;
                         } catch (Throwable th) {
                             th = th;
                             in = in2;
@@ -1172,136 +1172,136 @@
                             throw th;
                         }
                     } catch (Throwable th2) {
-/* 2716 */              th = th2;
+              th = th2;
                     }
                 }
 
-/* 2734 */      public static void moveDirectory(File srcDir, File destDir) throws Throwable {
-/* 2735 */          if (srcDir == null) {
-/* 2736 */              throw new NullPointerException("Source must not be null");
+      public static void moveDirectory(File srcDir, File destDir) throws Throwable {
+          if (srcDir == null) {
+              throw new NullPointerException("Source must not be null");
                     }
-/* 2738 */          if (destDir == null) {
-/* 2739 */              throw new NullPointerException("Destination must not be null");
+          if (destDir == null) {
+              throw new NullPointerException("Destination must not be null");
                     }
-/* 2741 */          if (!srcDir.exists()) {
-/* 2742 */              throw new FileNotFoundException("Source '" + srcDir + "' does not exist");
+          if (!srcDir.exists()) {
+              throw new FileNotFoundException("Source '" + srcDir + "' does not exist");
                     }
-/* 2744 */          if (!srcDir.isDirectory()) {
-/* 2745 */              throw new IOException("Source '" + srcDir + "' is not a directory");
+          if (!srcDir.isDirectory()) {
+              throw new IOException("Source '" + srcDir + "' is not a directory");
                     }
-/* 2747 */          if (destDir.exists()) {
-/* 2748 */              throw new FileExistsException("Destination '" + destDir + "' already exists");
+          if (destDir.exists()) {
+              throw new FileExistsException("Destination '" + destDir + "' already exists");
                     }
-/* 2750 */          boolean rename = srcDir.renameTo(destDir);
-/* 2751 */          if (!rename) {
-/* 2752 */              if (destDir.getCanonicalPath().startsWith(srcDir.getCanonicalPath())) {
-/* 2753 */                  throw new IOException("Cannot move directory: " + srcDir + " to a subdirectory of itself: " + destDir);
+          boolean rename = srcDir.renameTo(destDir);
+          if (!rename) {
+              if (destDir.getCanonicalPath().startsWith(srcDir.getCanonicalPath())) {
+                  throw new IOException("Cannot move directory: " + srcDir + " to a subdirectory of itself: " + destDir);
                         }
-/* 2755 */              copyDirectory(srcDir, destDir);
-/* 2756 */              deleteDirectory(srcDir);
-/* 2757 */              if (srcDir.exists()) {
-/* 2758 */                  throw new IOException("Failed to delete original directory '" + srcDir + "' after copy to '" + destDir + "'");
-                        }
-                    }
-                }
-
-/* 2777 */      public static void moveDirectoryToDirectory(File src, File destDir, boolean createDestDir) throws Throwable {
-/* 2778 */          if (src == null) {
-/* 2779 */              throw new NullPointerException("Source must not be null");
-                    }
-/* 2781 */          if (destDir == null) {
-/* 2782 */              throw new NullPointerException("Destination directory must not be null");
-                    }
-/* 2784 */          if (!destDir.exists() && createDestDir) {
-/* 2785 */              destDir.mkdirs();
-                    }
-/* 2787 */          if (!destDir.exists()) {
-/* 2788 */              throw new FileNotFoundException("Destination directory '" + destDir + "' does not exist [createDestDir=" + createDestDir + "]");
-                    }
-/* 2791 */          if (!destDir.isDirectory()) {
-/* 2792 */              throw new IOException("Destination '" + destDir + "' is not a directory");
-                    }
-/* 2794 */          moveDirectory(src, new File(destDir, src.getName()));
-                }
-
-/* 2811 */      public static void moveFile(File srcFile, File destFile) throws Throwable {
-/* 2812 */          if (srcFile == null) {
-/* 2813 */              throw new NullPointerException("Source must not be null");
-                    }
-/* 2815 */          if (destFile == null) {
-/* 2816 */              throw new NullPointerException("Destination must not be null");
-                    }
-/* 2818 */          if (!srcFile.exists()) {
-/* 2819 */              throw new FileNotFoundException("Source '" + srcFile + "' does not exist");
-                    }
-/* 2821 */          if (srcFile.isDirectory()) {
-/* 2822 */              throw new IOException("Source '" + srcFile + "' is a directory");
-                    }
-/* 2824 */          if (destFile.exists()) {
-/* 2825 */              throw new FileExistsException("Destination '" + destFile + "' already exists");
-                    }
-/* 2827 */          if (destFile.isDirectory()) {
-/* 2828 */              throw new IOException("Destination '" + destFile + "' is a directory");
-                    }
-/* 2830 */          boolean rename = srcFile.renameTo(destFile);
-/* 2831 */          if (!rename) {
-/* 2832 */              copyFile(srcFile, destFile);
-/* 2833 */              if (!srcFile.delete()) {
-/* 2834 */                  deleteQuietly(destFile);
-/* 2835 */                  throw new IOException("Failed to delete original file '" + srcFile + "' after copy to '" + destFile + "'");
+              copyDirectory(srcDir, destDir);
+              deleteDirectory(srcDir);
+              if (srcDir.exists()) {
+                  throw new IOException("Failed to delete original directory '" + srcDir + "' after copy to '" + destDir + "'");
                         }
                     }
                 }
 
-/* 2854 */      public static void moveFileToDirectory(File srcFile, File destDir, boolean createDestDir) throws Throwable {
-/* 2855 */          if (srcFile == null) {
-/* 2856 */              throw new NullPointerException("Source must not be null");
+      public static void moveDirectoryToDirectory(File src, File destDir, boolean createDestDir) throws Throwable {
+          if (src == null) {
+              throw new NullPointerException("Source must not be null");
                     }
-/* 2858 */          if (destDir == null) {
-/* 2859 */              throw new NullPointerException("Destination directory must not be null");
+          if (destDir == null) {
+              throw new NullPointerException("Destination directory must not be null");
                     }
-/* 2861 */          if (!destDir.exists() && createDestDir) {
-/* 2862 */              destDir.mkdirs();
+          if (!destDir.exists() && createDestDir) {
+              destDir.mkdirs();
                     }
-/* 2864 */          if (!destDir.exists()) {
-/* 2865 */              throw new FileNotFoundException("Destination directory '" + destDir + "' does not exist [createDestDir=" + createDestDir + "]");
+          if (!destDir.exists()) {
+              throw new FileNotFoundException("Destination directory '" + destDir + "' does not exist [createDestDir=" + createDestDir + "]");
                     }
-/* 2868 */          if (!destDir.isDirectory()) {
-/* 2869 */              throw new IOException("Destination '" + destDir + "' is not a directory");
+          if (!destDir.isDirectory()) {
+              throw new IOException("Destination '" + destDir + "' is not a directory");
                     }
-/* 2871 */          moveFile(srcFile, new File(destDir, srcFile.getName()));
+          moveDirectory(src, new File(destDir, src.getName()));
                 }
 
-/* 2889 */      public static void moveToDirectory(File src, File destDir, boolean createDestDir) throws Throwable {
-/* 2890 */          if (src == null) {
-/* 2891 */              throw new NullPointerException("Source must not be null");
+      public static void moveFile(File srcFile, File destFile) throws Throwable {
+          if (srcFile == null) {
+              throw new NullPointerException("Source must not be null");
                     }
-/* 2893 */          if (destDir == null) {
-/* 2894 */              throw new NullPointerException("Destination must not be null");
+          if (destFile == null) {
+              throw new NullPointerException("Destination must not be null");
                     }
-/* 2896 */          if (!src.exists()) {
-/* 2897 */              throw new FileNotFoundException("Source '" + src + "' does not exist");
+          if (!srcFile.exists()) {
+              throw new FileNotFoundException("Source '" + srcFile + "' does not exist");
                     }
-/* 2899 */          if (src.isDirectory()) {
-/* 2900 */              moveDirectoryToDirectory(src, destDir, createDestDir);
+          if (srcFile.isDirectory()) {
+              throw new IOException("Source '" + srcFile + "' is a directory");
+                    }
+          if (destFile.exists()) {
+              throw new FileExistsException("Destination '" + destFile + "' already exists");
+                    }
+          if (destFile.isDirectory()) {
+              throw new IOException("Destination '" + destFile + "' is a directory");
+                    }
+          boolean rename = srcFile.renameTo(destFile);
+          if (!rename) {
+              copyFile(srcFile, destFile);
+              if (!srcFile.delete()) {
+                  deleteQuietly(destFile);
+                  throw new IOException("Failed to delete original file '" + srcFile + "' after copy to '" + destFile + "'");
+                        }
+                    }
+                }
+
+      public static void moveFileToDirectory(File srcFile, File destDir, boolean createDestDir) throws Throwable {
+          if (srcFile == null) {
+              throw new NullPointerException("Source must not be null");
+                    }
+          if (destDir == null) {
+              throw new NullPointerException("Destination directory must not be null");
+                    }
+          if (!destDir.exists() && createDestDir) {
+              destDir.mkdirs();
+                    }
+          if (!destDir.exists()) {
+              throw new FileNotFoundException("Destination directory '" + destDir + "' does not exist [createDestDir=" + createDestDir + "]");
+                    }
+          if (!destDir.isDirectory()) {
+              throw new IOException("Destination '" + destDir + "' is not a directory");
+                    }
+          moveFile(srcFile, new File(destDir, srcFile.getName()));
+                }
+
+      public static void moveToDirectory(File src, File destDir, boolean createDestDir) throws Throwable {
+          if (src == null) {
+              throw new NullPointerException("Source must not be null");
+                    }
+          if (destDir == null) {
+              throw new NullPointerException("Destination must not be null");
+                    }
+          if (!src.exists()) {
+              throw new FileNotFoundException("Source '" + src + "' does not exist");
+                    }
+          if (src.isDirectory()) {
+              moveDirectoryToDirectory(src, destDir, createDestDir);
                     } else {
-/* 2902 */              moveFileToDirectory(src, destDir, createDestDir);
+              moveFileToDirectory(src, destDir, createDestDir);
                     }
                 }
 
-/* 2920 */      public static boolean isSymlink(File file) throws IOException {
+      public static boolean isSymlink(File file) throws IOException {
                     File fileInCanonicalDir;
-/* 2921 */          if (file == null) {
-/* 2922 */              throw new NullPointerException("File must not be null");
+          if (file == null) {
+              throw new NullPointerException("File must not be null");
                     }
-/* 2924 */          if (FilenameUtils.isSystemWindows()) {
+          if (FilenameUtils.isSystemWindows()) {
                         return false;
                     }
-/* 2928 */          if (file.getParent() == null) {
-/* 2929 */              fileInCanonicalDir = file;
+          if (file.getParent() == null) {
+              fileInCanonicalDir = file;
                     } else {
-/* 2931 */              File canonicalDir = file.getParentFile().getCanonicalFile();
-/* 2932 */              fileInCanonicalDir = new File(canonicalDir, file.getName());
+              File canonicalDir = file.getParentFile().getCanonicalFile();
+              fileInCanonicalDir = new File(canonicalDir, file.getName());
                     }
                     return !fileInCanonicalDir.getCanonicalFile().equals(fileInCanonicalDir.getAbsoluteFile());
                 }

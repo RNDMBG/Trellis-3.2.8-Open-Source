@@ -5,7 +5,7 @@
             import android.view.MenuItem;
             import android.view.View;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface SupportMenuItem extends MenuItem {
                 public static final int SHOW_AS_ACTION_ALWAYS = 2;
                 public static final int SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW = 8;
@@ -13,30 +13,30 @@
                 public static final int SHOW_AS_ACTION_NEVER = 0;
                 public static final int SHOW_AS_ACTION_WITH_TEXT = 4;
 
-                @Override // android.view.MenuItem
+                @Override 
                 boolean collapseActionView();
 
-                @Override // android.view.MenuItem
+                @Override 
                 boolean expandActionView();
 
-                @Override // android.view.MenuItem
+                @Override 
                 View getActionView();
 
                 ActionProvider getSupportActionProvider();
 
-                @Override // android.view.MenuItem
+                @Override 
                 boolean isActionViewExpanded();
 
-                @Override // android.view.MenuItem
+                @Override 
                 MenuItem setActionView(int i);
 
-                @Override // android.view.MenuItem
+                @Override 
                 MenuItem setActionView(View view);
 
-                @Override // android.view.MenuItem
+                @Override 
                 void setShowAsAction(int i);
 
-                @Override // android.view.MenuItem
+                @Override 
                 MenuItem setShowAsActionFlags(int i);
 
                 SupportMenuItem setSupportActionProvider(ActionProvider actionProvider);

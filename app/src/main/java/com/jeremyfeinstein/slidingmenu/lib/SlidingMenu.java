@@ -27,8 +27,8 @@
             import co.vine.android.C0257R;
             import java.lang.reflect.Method;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 31 */    public class SlidingMenu extends RelativeLayout {
+            
+    public class SlidingMenu extends RelativeLayout {
                 public static final int LEFT = 0;
                 public static final int LEFT_RIGHT = 2;
                 public static final int RIGHT = 1;
@@ -66,573 +66,573 @@
                     void onOpened();
                 }
 
-/* 32 */        static /* synthetic */ View access$000(SlidingMenu x0) {
-/* 33 */            return x0.mSlidingOverLay;
+        static  View access$000(SlidingMenu x0) {
+            return x0.mSlidingOverLay;
                 }
 
-/* 32 */        static /* synthetic */ OnOpenListener access$100(SlidingMenu x0) {
-/* 33 */            return x0.mOpenListener;
+        static  OnOpenListener access$100(SlidingMenu x0) {
+            return x0.mOpenListener;
                 }
 
-/* 32 */        static /* synthetic */ OnCloseListener access$200(SlidingMenu x0) {
-/* 33 */            return x0.mCloseListener;
+        static  OnCloseListener access$200(SlidingMenu x0) {
+            return x0.mCloseListener;
                 }
 
-/* 32 */        static /* synthetic */ OnOpenListener access$300(SlidingMenu x0) {
-/* 33 */            return x0.mSecondaryOpenListner;
+        static  OnOpenListener access$300(SlidingMenu x0) {
+            return x0.mSecondaryOpenListner;
                 }
 
-/* 32 */        static /* synthetic */ String access$500() {
-/* 33 */            return TAG;
+        static  String access$500() {
+            return TAG;
                 }
 
-/* 84 */        public View getViewBehind() {
-/* 85 */            return this.mViewBehind;
+        public View getViewBehind() {
+            return this.mViewBehind;
                 }
 
-/* 181 */       public SlidingMenu(Context context) {
-/* 182 */           this(context, (AttributeSet) null);
+       public SlidingMenu(Context context) {
+           this(context, (AttributeSet) null);
                 }
 
-/* 191 */       public SlidingMenu(Activity activity, int slideStyle) {
-/* 192 */           this(activity, (AttributeSet) null);
-/* 193 */           attachToActivity(activity, slideStyle);
+       public SlidingMenu(Activity activity, int slideStyle) {
+           this(activity, (AttributeSet) null);
+           attachToActivity(activity, slideStyle);
                 }
 
-/* 202 */       public SlidingMenu(Context context, AttributeSet attrs) {
-/* 203 */           this(context, attrs, 0);
+       public SlidingMenu(Context context, AttributeSet attrs) {
+           this(context, attrs, 0);
                 }
 
-/* 213 */       public SlidingMenu(Context context, AttributeSet attrs, int defStyle) {
-/* 214 */           super(context, attrs, defStyle);
-/* 39 */            this.mActionbarOverlay = false;
-/* 216 */           RelativeLayout.LayoutParams behindParams = new RelativeLayout.LayoutParams(-1, -1);
-/* 217 */           this.mViewBehind = new CustomViewBehind(context);
-/* 218 */           addView(this.mViewBehind, behindParams);
-/* 219 */           RelativeLayout.LayoutParams aboveParams = new RelativeLayout.LayoutParams(-1, -1);
-/* 220 */           this.mViewAbove = new CustomViewAbove(context);
-/* 221 */           addView(this.mViewAbove, aboveParams);
-/* 223 */           this.mViewAbove.setCustomViewBehind(this.mViewBehind);
-/* 224 */           this.mViewBehind.setCustomViewAbove(this.mViewAbove);
-/* 225 */           this.mViewAbove.setOnPageChangeListener(new C12441());
-/* 251 */           TypedArray ta = context.obtainStyledAttributes(attrs, C0257R.styleable.SlidingMenu);
-/* 253 */           int mode = ta.getInt(C0257R.styleable.SlidingMenu_mode, 0);
-/* 254 */           setMode(mode);
-/* 255 */           int viewAbove = ta.getResourceId(C0257R.styleable.SlidingMenu_viewAbove, -1);
-/* 256 */           if (viewAbove != -1) {
-/* 257 */               setContent(viewAbove);
+       public SlidingMenu(Context context, AttributeSet attrs, int defStyle) {
+           super(context, attrs, defStyle);
+            this.mActionbarOverlay = false;
+           RelativeLayout.LayoutParams behindParams = new RelativeLayout.LayoutParams(-1, -1);
+           this.mViewBehind = new CustomViewBehind(context);
+           addView(this.mViewBehind, behindParams);
+           RelativeLayout.LayoutParams aboveParams = new RelativeLayout.LayoutParams(-1, -1);
+           this.mViewAbove = new CustomViewAbove(context);
+           addView(this.mViewAbove, aboveParams);
+           this.mViewAbove.setCustomViewBehind(this.mViewBehind);
+           this.mViewBehind.setCustomViewAbove(this.mViewAbove);
+           this.mViewAbove.setOnPageChangeListener(new C12441());
+           TypedArray ta = context.obtainStyledAttributes(attrs, C0257R.styleable.SlidingMenu);
+           int mode = ta.getInt(C0257R.styleable.SlidingMenu_mode, 0);
+           setMode(mode);
+           int viewAbove = ta.getResourceId(C0257R.styleable.SlidingMenu_viewAbove, -1);
+           if (viewAbove != -1) {
+               setContent(viewAbove);
                     } else {
-/* 259 */               setContent(new FrameLayout(context));
+               setContent(new FrameLayout(context));
                     }
-/* 261 */           int viewBehind = ta.getResourceId(C0257R.styleable.SlidingMenu_viewBehind, -1);
-/* 262 */           if (viewBehind != -1) {
-/* 263 */               setMenu(viewBehind);
+           int viewBehind = ta.getResourceId(C0257R.styleable.SlidingMenu_viewBehind, -1);
+           if (viewBehind != -1) {
+               setMenu(viewBehind);
                     } else {
-/* 265 */               setMenu(new FrameLayout(context));
+               setMenu(new FrameLayout(context));
                     }
-/* 267 */           int touchModeAbove = ta.getInt(C0257R.styleable.SlidingMenu_touchModeAbove, 0);
-/* 268 */           setTouchModeAbove(touchModeAbove);
-/* 269 */           int touchModeBehind = ta.getInt(C0257R.styleable.SlidingMenu_touchModeBehind, 0);
-/* 270 */           setTouchModeBehind(touchModeBehind);
-/* 272 */           int offsetBehind = (int) ta.getDimension(C0257R.styleable.SlidingMenu_behindOffset, -1.0f);
-/* 273 */           int widthBehind = (int) ta.getDimension(C0257R.styleable.SlidingMenu_behindWidth, -1.0f);
-/* 274 */           if (offsetBehind != -1 && widthBehind != -1) {
-/* 275 */               throw new IllegalStateException("Cannot set both behindOffset and behindWidth for a SlidingMenu");
+           int touchModeAbove = ta.getInt(C0257R.styleable.SlidingMenu_touchModeAbove, 0);
+           setTouchModeAbove(touchModeAbove);
+           int touchModeBehind = ta.getInt(C0257R.styleable.SlidingMenu_touchModeBehind, 0);
+           setTouchModeBehind(touchModeBehind);
+           int offsetBehind = (int) ta.getDimension(C0257R.styleable.SlidingMenu_behindOffset, -1.0f);
+           int widthBehind = (int) ta.getDimension(C0257R.styleable.SlidingMenu_behindWidth, -1.0f);
+           if (offsetBehind != -1 && widthBehind != -1) {
+               throw new IllegalStateException("Cannot set both behindOffset and behindWidth for a SlidingMenu");
                     }
-/* 276 */           if (offsetBehind != -1) {
-/* 277 */               setBehindOffset(offsetBehind);
+           if (offsetBehind != -1) {
+               setBehindOffset(offsetBehind);
                     } else if (widthBehind != -1) {
-/* 279 */               setBehindWidth(widthBehind);
+               setBehindWidth(widthBehind);
                     } else {
-/* 281 */               setBehindOffset(0);
+               setBehindOffset(0);
                     }
-/* 282 */           float scrollOffsetBehind = ta.getFloat(C0257R.styleable.SlidingMenu_behindScrollScale, 0.33f);
-/* 283 */           setBehindScrollScale(scrollOffsetBehind);
-/* 284 */           int shadowRes = ta.getResourceId(C0257R.styleable.SlidingMenu_shadowDrawable, -1);
-/* 285 */           if (shadowRes != -1) {
-/* 286 */               setShadowDrawable(shadowRes);
+           float scrollOffsetBehind = ta.getFloat(C0257R.styleable.SlidingMenu_behindScrollScale, 0.33f);
+           setBehindScrollScale(scrollOffsetBehind);
+           int shadowRes = ta.getResourceId(C0257R.styleable.SlidingMenu_shadowDrawable, -1);
+           if (shadowRes != -1) {
+               setShadowDrawable(shadowRes);
                     }
-/* 288 */           int shadowWidth = (int) ta.getDimension(C0257R.styleable.SlidingMenu_shadowWidth, 0.0f);
-/* 289 */           setShadowWidth(shadowWidth);
-/* 290 */           boolean fadeEnabled = ta.getBoolean(C0257R.styleable.SlidingMenu_fadeEnabled, true);
-/* 291 */           setFadeEnabled(fadeEnabled);
-/* 292 */           float fadeDeg = ta.getFloat(C0257R.styleable.SlidingMenu_fadeDegree, 0.33f);
-/* 293 */           setFadeDegree(fadeDeg);
-/* 294 */           boolean selectorEnabled = ta.getBoolean(C0257R.styleable.SlidingMenu_selectorEnabled, false);
-/* 295 */           setSelectorEnabled(selectorEnabled);
-/* 296 */           int selectorRes = ta.getResourceId(C0257R.styleable.SlidingMenu_selectorDrawable, -1);
-/* 297 */           if (selectorRes != -1) {
-/* 298 */               setSelectorDrawable(selectorRes);
+           int shadowWidth = (int) ta.getDimension(C0257R.styleable.SlidingMenu_shadowWidth, 0.0f);
+           setShadowWidth(shadowWidth);
+           boolean fadeEnabled = ta.getBoolean(C0257R.styleable.SlidingMenu_fadeEnabled, true);
+           setFadeEnabled(fadeEnabled);
+           float fadeDeg = ta.getFloat(C0257R.styleable.SlidingMenu_fadeDegree, 0.33f);
+           setFadeDegree(fadeDeg);
+           boolean selectorEnabled = ta.getBoolean(C0257R.styleable.SlidingMenu_selectorEnabled, false);
+           setSelectorEnabled(selectorEnabled);
+           int selectorRes = ta.getResourceId(C0257R.styleable.SlidingMenu_selectorDrawable, -1);
+           if (selectorRes != -1) {
+               setSelectorDrawable(selectorRes);
                     }
-/* 299 */           ta.recycle();
+           ta.recycle();
                 }
 
-                /* JADX INFO: renamed from: com.jeremyfeinstein.slidingmenu.lib.SlidingMenu$1 */
-/* 223 */       class C12441 implements CustomViewAbove.OnPageChangeListener {
+                
+       class C12441 implements CustomViewAbove.OnPageChangeListener {
                     public static final int POSITION_CLOSE = 1;
                     public static final int POSITION_OPEN = 0;
                     public static final int POSITION_SECONDARY_OPEN = 2;
 
-/* 224 */           C12441() {
+           C12441() {
                     }
 
-                    @Override // com.jeremyfeinstein.slidingmenu.lib.CustomViewAbove.OnPageChangeListener
-/* 232 */           public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-/* 233 */               if (SlidingMenu.access$000(SlidingMenu.this) != null) {
-/* 234 */                   SlidingMenu.access$000(SlidingMenu.this).getBackground().setAlpha((int) ((0.0f - positionOffset) * 125.0f));
+                    @Override 
+           public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+               if (SlidingMenu.access$000(SlidingMenu.this) != null) {
+                   SlidingMenu.access$000(SlidingMenu.this).getBackground().setAlpha((int) ((0.0f - positionOffset) * 125.0f));
                         }
                     }
 
-                    @Override // com.jeremyfeinstein.slidingmenu.lib.CustomViewAbove.OnPageChangeListener
-/* 239 */           public void onPageSelected(int position) {
-/* 240 */               if (position == 0 && SlidingMenu.access$100(SlidingMenu.this) != null) {
-/* 241 */                   SlidingMenu.access$100(SlidingMenu.this).onOpen();
-/* 247 */                   return;
+                    @Override 
+           public void onPageSelected(int position) {
+               if (position == 0 && SlidingMenu.access$100(SlidingMenu.this) != null) {
+                   SlidingMenu.access$100(SlidingMenu.this).onOpen();
+                   return;
                         }
-/* 242 */               if (position == 1 && SlidingMenu.access$200(SlidingMenu.this) != null) {
-/* 243 */                   SlidingMenu.access$200(SlidingMenu.this).onClose();
+               if (position == 1 && SlidingMenu.access$200(SlidingMenu.this) != null) {
+                   SlidingMenu.access$200(SlidingMenu.this).onClose();
                         } else if (position == 2 && SlidingMenu.access$300(SlidingMenu.this) != null) {
-/* 245 */                   SlidingMenu.access$300(SlidingMenu.this).onOpen();
+                   SlidingMenu.access$300(SlidingMenu.this).onOpen();
                         }
                     }
                 }
 
-/* 308 */       public void attachToActivity(Activity activity, int slideStyle) {
-/* 309 */           attachToActivity(activity, slideStyle, false);
+       public void attachToActivity(Activity activity, int slideStyle) {
+           attachToActivity(activity, slideStyle, false);
                 }
 
-/* 319 */       public void attachToActivity(Activity activity, int slideStyle, boolean actionbarOverlay) {
-/* 320 */           if (slideStyle != 0 && slideStyle != 1) {
-/* 321 */               throw new IllegalArgumentException("slideStyle must be either SLIDING_WINDOW or SLIDING_CONTENT");
+       public void attachToActivity(Activity activity, int slideStyle, boolean actionbarOverlay) {
+           if (slideStyle != 0 && slideStyle != 1) {
+               throw new IllegalArgumentException("slideStyle must be either SLIDING_WINDOW or SLIDING_CONTENT");
                     }
-/* 323 */           if (getParent() != null) {
-/* 324 */               throw new IllegalStateException("This SlidingMenu appears to already be attached");
+           if (getParent() != null) {
+               throw new IllegalStateException("This SlidingMenu appears to already be attached");
                     }
-/* 327 */           TypedArray a = activity.getTheme().obtainStyledAttributes(new int[]{R.attr.windowBackground});
-/* 328 */           int background = a.getResourceId(0, 0);
-/* 329 */           a.recycle();
+           TypedArray a = activity.getTheme().obtainStyledAttributes(new int[]{R.attr.windowBackground});
+           int background = a.getResourceId(0, 0);
+           a.recycle();
                     switch (slideStyle) {
                         case 0:
-/* 333 */                   this.mActionbarOverlay = false;
-/* 334 */                   ViewGroup decor = (ViewGroup) activity.getWindow().getDecorView();
-/* 335 */                   ViewGroup decorChild = (ViewGroup) decor.getChildAt(0);
-/* 337 */                   decorChild.setBackgroundResource(background);
-/* 338 */                   decor.removeView(decorChild);
-/* 339 */                   decor.addView(this);
-/* 340 */                   setContent(decorChild);
-/* 355 */                   return;
+                   this.mActionbarOverlay = false;
+                   ViewGroup decor = (ViewGroup) activity.getWindow().getDecorView();
+                   ViewGroup decorChild = (ViewGroup) decor.getChildAt(0);
+                   decorChild.setBackgroundResource(background);
+                   decor.removeView(decorChild);
+                   decor.addView(this);
+                   setContent(decorChild);
+                   return;
                         case 1:
-/* 343 */                   this.mActionbarOverlay = actionbarOverlay;
-/* 345 */                   ViewGroup contentParent = (ViewGroup) activity.findViewById(R.id.content);
-/* 346 */                   View content = contentParent.getChildAt(0);
-/* 347 */                   contentParent.removeView(content);
-/* 348 */                   contentParent.addView(this);
-/* 349 */                   setContent(content);
-/* 351 */                   if (content.getBackground() == null) {
-/* 352 */                       content.setBackgroundResource(background);
-/* 355 */                       return;
+                   this.mActionbarOverlay = actionbarOverlay;
+                   ViewGroup contentParent = (ViewGroup) activity.findViewById(R.id.content);
+                   View content = contentParent.getChildAt(0);
+                   contentParent.removeView(content);
+                   contentParent.addView(this);
+                   setContent(content);
+                   if (content.getBackground() == null) {
+                       content.setBackgroundResource(background);
+                       return;
                             }
-/* 355 */                   return;
+                   return;
                         default:
-/* 355 */                   return;
+                   return;
                     }
                 }
 
-/* 363 */       public void setContent(int res) {
-/* 364 */           setContent(LayoutInflater.from(getContext()).inflate(res, (ViewGroup) null));
+       public void setContent(int res) {
+           setContent(LayoutInflater.from(getContext()).inflate(res, (ViewGroup) null));
                 }
 
-/* 374 */       public void setContent(View view) {
-/* 375 */           RelativeLayout r = new RelativeLayout(view.getContext());
-/* 376 */           r.addView(view);
-/* 377 */           View v = new View(view.getContext());
-/* 378 */           ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(-1, -1);
-/* 379 */           v.setLayoutParams(params);
-/* 380 */           v.setBackgroundColor(-16777216);
-/* 381 */           v.getBackground().setAlpha(0);
-/* 382 */           r.addView(v);
-/* 383 */           this.mSlidingOverLay = v;
-/* 384 */           this.mViewAbove.setContent(r);
-/* 385 */           showContent();
+       public void setContent(View view) {
+           RelativeLayout r = new RelativeLayout(view.getContext());
+           r.addView(view);
+           View v = new View(view.getContext());
+           ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(-1, -1);
+           v.setLayoutParams(params);
+           v.setBackgroundColor(-16777216);
+           v.getBackground().setAlpha(0);
+           r.addView(v);
+           this.mSlidingOverLay = v;
+           this.mViewAbove.setContent(r);
+           showContent();
                 }
 
-/* 393 */       public View getContent() {
-/* 394 */           return this.mViewAbove.getContent();
+       public View getContent() {
+           return this.mViewAbove.getContent();
                 }
 
-/* 403 */       public void setMenu(int res) {
-/* 404 */           setMenu(LayoutInflater.from(getContext()).inflate(res, (ViewGroup) null));
+       public void setMenu(int res) {
+           setMenu(LayoutInflater.from(getContext()).inflate(res, (ViewGroup) null));
                 }
 
-/* 412 */       public void setMenu(View v) {
-/* 413 */           this.mViewBehind.setContent(v);
+       public void setMenu(View v) {
+           this.mViewBehind.setContent(v);
                 }
 
-/* 421 */       public View getMenu() {
-/* 422 */           return this.mViewBehind.getContent();
+       public View getMenu() {
+           return this.mViewBehind.getContent();
                 }
 
-/* 431 */       public void setSecondaryMenu(int res) {
-/* 432 */           setSecondaryMenu(LayoutInflater.from(getContext()).inflate(res, (ViewGroup) null));
+       public void setSecondaryMenu(int res) {
+           setSecondaryMenu(LayoutInflater.from(getContext()).inflate(res, (ViewGroup) null));
                 }
 
-/* 440 */       public void setSecondaryMenu(View v) {
-/* 441 */           this.mViewBehind.setSecondaryContent(v);
+       public void setSecondaryMenu(View v) {
+           this.mViewBehind.setSecondaryContent(v);
                 }
 
-/* 450 */       public View getSecondaryMenu() {
-/* 451 */           return this.mViewBehind.getSecondaryContent();
+       public View getSecondaryMenu() {
+           return this.mViewBehind.getSecondaryContent();
                 }
 
-/* 460 */       public void setSlidingEnabled(boolean b) {
-/* 461 */           this.mViewAbove.setSlidingEnabled(b);
+       public void setSlidingEnabled(boolean b) {
+           this.mViewAbove.setSlidingEnabled(b);
                 }
 
-/* 469 */       public boolean isSlidingEnabled() {
-/* 470 */           return this.mViewAbove.isSlidingEnabled();
+       public boolean isSlidingEnabled() {
+           return this.mViewAbove.isSlidingEnabled();
                 }
 
-/* 478 */       public void setMode(int mode) {
-/* 479 */           if (mode != 0 && mode != 1 && mode != 2) {
-/* 480 */               throw new IllegalStateException("SlidingMenu mode must be LEFT, RIGHT, or LEFT_RIGHT");
+       public void setMode(int mode) {
+           if (mode != 0 && mode != 1 && mode != 2) {
+               throw new IllegalStateException("SlidingMenu mode must be LEFT, RIGHT, or LEFT_RIGHT");
                     }
-/* 482 */           this.mViewBehind.setMode(mode);
+           this.mViewBehind.setMode(mode);
                 }
 
-/* 490 */       public int getMode() {
-/* 491 */           return this.mViewBehind.getMode();
+       public int getMode() {
+           return this.mViewBehind.getMode();
                 }
 
-/* 499 */       public void setStatic(boolean b) {
-/* 500 */           if (b) {
-/* 501 */               setSlidingEnabled(false);
-/* 502 */               this.mViewAbove.setCustomViewBehind(null);
-/* 503 */               this.mViewAbove.setCurrentItem(1);
+       public void setStatic(boolean b) {
+           if (b) {
+               setSlidingEnabled(false);
+               this.mViewAbove.setCustomViewBehind(null);
+               this.mViewAbove.setCurrentItem(1);
                     } else {
-/* 506 */               this.mViewAbove.setCurrentItem(1);
-/* 508 */               this.mViewAbove.setCustomViewBehind(this.mViewBehind);
-/* 509 */               setSlidingEnabled(true);
+               this.mViewAbove.setCurrentItem(1);
+               this.mViewAbove.setCustomViewBehind(this.mViewBehind);
+               setSlidingEnabled(true);
                     }
                 }
 
-/* 516 */       public void showMenu() {
-/* 517 */           showMenu(true);
+       public void showMenu() {
+           showMenu(true);
                 }
 
-/* 525 */       public void showMenu(boolean animate) {
-/* 526 */           this.mViewAbove.setCurrentItem(0, animate);
+       public void showMenu(boolean animate) {
+           this.mViewAbove.setCurrentItem(0, animate);
                 }
 
-/* 533 */       public void showSecondaryMenu() {
-/* 534 */           showSecondaryMenu(true);
+       public void showSecondaryMenu() {
+           showSecondaryMenu(true);
                 }
 
-/* 543 */       public void showSecondaryMenu(boolean animate) {
-/* 544 */           this.mViewAbove.setCurrentItem(2, animate);
+       public void showSecondaryMenu(boolean animate) {
+           this.mViewAbove.setCurrentItem(2, animate);
                 }
 
-/* 550 */       public void showContent() {
-/* 551 */           showContent(true);
+       public void showContent() {
+           showContent(true);
                 }
 
-/* 559 */       public void showContent(boolean animate) {
-/* 560 */           this.mViewAbove.setCurrentItem(1, animate);
-/* 561 */           if (this.mSlidingOverLay != null && !animate) {
-/* 562 */               this.mSlidingOverLay.getBackground().setAlpha(0);
+       public void showContent(boolean animate) {
+           this.mViewAbove.setCurrentItem(1, animate);
+           if (this.mSlidingOverLay != null && !animate) {
+               this.mSlidingOverLay.getBackground().setAlpha(0);
                     }
                 }
 
-/* 569 */       public void toggle() {
-/* 570 */           toggle(true);
+       public void toggle() {
+           toggle(true);
                 }
 
-/* 578 */       public void toggle(boolean animate) {
-/* 579 */           if (isMenuShowing()) {
-/* 580 */               showContent(animate);
+       public void toggle(boolean animate) {
+           if (isMenuShowing()) {
+               showContent(animate);
                     } else {
-/* 582 */               showMenu(animate);
+               showMenu(animate);
                     }
                 }
 
-/* 591 */       public boolean isMenuShowing() {
+       public boolean isMenuShowing() {
                     return this.mViewAbove.getCurrentItem() == 0 || this.mViewAbove.getCurrentItem() == 2;
                 }
 
-/* 600 */       public boolean isSecondaryMenuShowing() {
+       public boolean isSecondaryMenuShowing() {
                     return this.mViewAbove.getCurrentItem() == 2;
                 }
 
-/* 609 */       public int getBehindOffset() {
-/* 610 */           return ((RelativeLayout.LayoutParams) this.mViewBehind.getLayoutParams()).rightMargin;
+       public int getBehindOffset() {
+           return ((RelativeLayout.LayoutParams) this.mViewBehind.getLayoutParams()).rightMargin;
                 }
 
-/* 623 */       public void setBehindOffset(int i) {
-/* 624 */           this.mViewBehind.setWidthOffset(i);
+       public void setBehindOffset(int i) {
+           this.mViewBehind.setWidthOffset(i);
                 }
 
-/* 633 */       public void setBehindOffsetRes(int resID) {
-/* 634 */           int i = (int) getContext().getResources().getDimension(resID);
-/* 635 */           setBehindOffset(i);
+       public void setBehindOffsetRes(int resID) {
+           int i = (int) getContext().getResources().getDimension(resID);
+           setBehindOffset(i);
                 }
 
-/* 643 */       public void setAboveOffset(int i) {
-/* 644 */           this.mViewAbove.setAboveOffset(i);
+       public void setAboveOffset(int i) {
+           this.mViewAbove.setAboveOffset(i);
                 }
 
-/* 652 */       public void setAboveOffsetRes(int resID) {
-/* 653 */           int i = (int) getContext().getResources().getDimension(resID);
-/* 654 */           setAboveOffset(i);
+       public void setAboveOffsetRes(int resID) {
+           int i = (int) getContext().getResources().getDimension(resID);
+           setAboveOffset(i);
                 }
 
-/* 664 */       public void setBehindWidth(int i) {
+       public void setBehindWidth(int i) {
                     int width;
-/* 665 */           Display display = ((WindowManager) getContext().getSystemService("window")).getDefaultDisplay();
+           Display display = ((WindowManager) getContext().getSystemService("window")).getDefaultDisplay();
                     try {
-/* 669 */               Class<?>[] parameterTypes = {Point.class};
-/* 670 */               Point parameter = new Point();
-/* 668 */               Method method = Display.class.getMethod("getSize", parameterTypes);
-/* 672 */               method.invoke(display, parameter);
-/* 673 */               width = parameter.x;
+               Class<?>[] parameterTypes = {Point.class};
+               Point parameter = new Point();
+               Method method = Display.class.getMethod("getSize", parameterTypes);
+               method.invoke(display, parameter);
+               width = parameter.x;
                     } catch (Exception e) {
-/* 675 */               width = display.getWidth();
+               width = display.getWidth();
                     }
-/* 677 */           setBehindOffset(width - i);
+           setBehindOffset(width - i);
                 }
 
-/* 686 */       public void setBehindWidthRes(int res) {
-/* 687 */           int i = (int) getContext().getResources().getDimension(res);
-/* 688 */           setBehindWidth(i);
+       public void setBehindWidthRes(int res) {
+           int i = (int) getContext().getResources().getDimension(res);
+           setBehindWidth(i);
                 }
 
-/* 696 */       public float getBehindScrollScale() {
-/* 697 */           return this.mViewBehind.getScrollScale();
+       public float getBehindScrollScale() {
+           return this.mViewBehind.getScrollScale();
                 }
 
-/* 705 */       public int getTouchmodeMarginThreshold() {
-/* 706 */           return this.mViewBehind.getMarginThreshold();
+       public int getTouchmodeMarginThreshold() {
+           return this.mViewBehind.getMarginThreshold();
                 }
 
-/* 714 */       public void setTouchmodeMarginThreshold(int touchmodeMarginThreshold) {
-/* 715 */           this.mViewBehind.setMarginThreshold(touchmodeMarginThreshold);
+       public void setTouchmodeMarginThreshold(int touchmodeMarginThreshold) {
+           this.mViewBehind.setMarginThreshold(touchmodeMarginThreshold);
                 }
 
-/* 724 */       public void setBehindScrollScale(float f) {
+       public void setBehindScrollScale(float f) {
                     if (f < 0.0f && f > 1.0f) {
-/* 726 */               throw new IllegalStateException("ScrollScale must be between 0 and 1");
+               throw new IllegalStateException("ScrollScale must be between 0 and 1");
                     }
-/* 727 */           this.mViewBehind.setScrollScale(f);
+           this.mViewBehind.setScrollScale(f);
                 }
 
-/* 735 */       public void setBehindCanvasTransformer(CanvasTransformer t) {
-/* 736 */           this.mViewBehind.setCanvasTransformer(t);
+       public void setBehindCanvasTransformer(CanvasTransformer t) {
+           this.mViewBehind.setCanvasTransformer(t);
                 }
 
-/* 744 */       public int getTouchModeAbove() {
-/* 745 */           return this.mViewAbove.getTouchMode();
+       public int getTouchModeAbove() {
+           return this.mViewAbove.getTouchMode();
                 }
 
-/* 755 */       public void setTouchModeAbove(int i) {
-/* 756 */           if (i != 1 && i != 0 && i != 2) {
-/* 758 */               throw new IllegalStateException("TouchMode must be set to eitherTOUCHMODE_FULLSCREEN or TOUCHMODE_MARGIN or TOUCHMODE_NONE.");
+       public void setTouchModeAbove(int i) {
+           if (i != 1 && i != 0 && i != 2) {
+               throw new IllegalStateException("TouchMode must be set to eitherTOUCHMODE_FULLSCREEN or TOUCHMODE_MARGIN or TOUCHMODE_NONE.");
                     }
-/* 761 */           this.mViewAbove.setTouchMode(i);
+           this.mViewAbove.setTouchMode(i);
                 }
 
-/* 771 */       public void setTouchModeBehind(int i) {
-/* 772 */           if (i != 1 && i != 0 && i != 2) {
-/* 774 */               throw new IllegalStateException("TouchMode must be set to eitherTOUCHMODE_FULLSCREEN or TOUCHMODE_MARGIN or TOUCHMODE_NONE.");
+       public void setTouchModeBehind(int i) {
+           if (i != 1 && i != 0 && i != 2) {
+               throw new IllegalStateException("TouchMode must be set to eitherTOUCHMODE_FULLSCREEN or TOUCHMODE_MARGIN or TOUCHMODE_NONE.");
                     }
-/* 777 */           this.mViewBehind.setTouchMode(i);
+           this.mViewBehind.setTouchMode(i);
                 }
 
-/* 785 */       public void setShadowDrawable(int resId) {
-/* 786 */           setShadowDrawable(getContext().getResources().getDrawable(resId));
+       public void setShadowDrawable(int resId) {
+           setShadowDrawable(getContext().getResources().getDrawable(resId));
                 }
 
-/* 794 */       public void setShadowDrawable(Drawable d) {
-/* 795 */           this.mViewBehind.setShadowDrawable(d);
+       public void setShadowDrawable(Drawable d) {
+           this.mViewBehind.setShadowDrawable(d);
                 }
 
-/* 803 */       public void setSecondaryShadowDrawable(int resId) {
-/* 804 */           setSecondaryShadowDrawable(getContext().getResources().getDrawable(resId));
+       public void setSecondaryShadowDrawable(int resId) {
+           setSecondaryShadowDrawable(getContext().getResources().getDrawable(resId));
                 }
 
-/* 812 */       public void setSecondaryShadowDrawable(Drawable d) {
-/* 813 */           this.mViewBehind.setSecondaryShadowDrawable(d);
+       public void setSecondaryShadowDrawable(Drawable d) {
+           this.mViewBehind.setSecondaryShadowDrawable(d);
                 }
 
-/* 821 */       public void setShadowWidthRes(int resId) {
-/* 822 */           setShadowWidth((int) getResources().getDimension(resId));
+       public void setShadowWidthRes(int resId) {
+           setShadowWidth((int) getResources().getDimension(resId));
                 }
 
-/* 830 */       public void setShadowWidth(int pixels) {
-/* 831 */           this.mViewBehind.setShadowWidth(pixels);
+       public void setShadowWidth(int pixels) {
+           this.mViewBehind.setShadowWidth(pixels);
                 }
 
-/* 839 */       public void setFadeEnabled(boolean b) {
-/* 840 */           this.mViewBehind.setFadeEnabled(b);
+       public void setFadeEnabled(boolean b) {
+           this.mViewBehind.setFadeEnabled(b);
                 }
 
-/* 849 */       public void setFadeDegree(float f) {
-/* 850 */           this.mViewBehind.setFadeDegree(f);
+       public void setFadeDegree(float f) {
+           this.mViewBehind.setFadeDegree(f);
                 }
 
-/* 858 */       public void setSelectorEnabled(boolean b) {
-/* 859 */           this.mViewBehind.setSelectorEnabled(true);
+       public void setSelectorEnabled(boolean b) {
+           this.mViewBehind.setSelectorEnabled(true);
                 }
 
-/* 867 */       public void setSelectedView(View v) {
-/* 868 */           this.mViewBehind.setSelectedView(v);
+       public void setSelectedView(View v) {
+           this.mViewBehind.setSelectedView(v);
                 }
 
-/* 876 */       public void setSelectorDrawable(int res) {
-/* 877 */           this.mViewBehind.setSelectorBitmap(BitmapFactory.decodeResource(getResources(), res));
+       public void setSelectorDrawable(int res) {
+           this.mViewBehind.setSelectorBitmap(BitmapFactory.decodeResource(getResources(), res));
                 }
 
-/* 885 */       public void setSelectorBitmap(Bitmap b) {
-/* 886 */           this.mViewBehind.setSelectorBitmap(b);
+       public void setSelectorBitmap(Bitmap b) {
+           this.mViewBehind.setSelectorBitmap(b);
                 }
 
-/* 894 */       public void addIgnoredView(View v) {
-/* 895 */           this.mViewAbove.addIgnoredView(v);
+       public void addIgnoredView(View v) {
+           this.mViewAbove.addIgnoredView(v);
                 }
 
-/* 903 */       public void removeIgnoredView(View v) {
-/* 904 */           this.mViewAbove.removeIgnoredView(v);
+       public void removeIgnoredView(View v) {
+           this.mViewAbove.removeIgnoredView(v);
                 }
 
-/* 910 */       public void clearIgnoredViews() {
-/* 911 */           this.mViewAbove.clearIgnoredViews();
+       public void clearIgnoredViews() {
+           this.mViewAbove.clearIgnoredViews();
                 }
 
-/* 920 */       public void setOnOpenListener(OnOpenListener listener) {
-/* 921 */           this.mOpenListener = listener;
+       public void setOnOpenListener(OnOpenListener listener) {
+           this.mOpenListener = listener;
                 }
 
-/* 924 */       public CustomViewAbove getViewAbove() {
-/* 925 */           return this.mViewAbove;
+       public CustomViewAbove getViewAbove() {
+           return this.mViewAbove;
                 }
 
-/* 935 */       public void setSecondaryOnOpenListner(OnOpenListener listener) {
-/* 936 */           this.mSecondaryOpenListner = listener;
+       public void setSecondaryOnOpenListner(OnOpenListener listener) {
+           this.mSecondaryOpenListner = listener;
                 }
 
-/* 945 */       public void setOnCloseListener(OnCloseListener listener) {
-/* 946 */           this.mCloseListener = listener;
+       public void setOnCloseListener(OnCloseListener listener) {
+           this.mCloseListener = listener;
                 }
 
-/* 954 */       public void setOnOpenedListener(OnOpenedListener listener) {
-/* 955 */           this.mViewAbove.setOnOpenedListener(listener);
+       public void setOnOpenedListener(OnOpenedListener listener) {
+           this.mViewAbove.setOnOpenedListener(listener);
                 }
 
-/* 963 */       public void setOnClosedListener(OnClosedListener listener) {
-/* 964 */           this.mViewAbove.setOnClosedListener(listener);
+       public void setOnClosedListener(OnClosedListener listener) {
+           this.mViewAbove.setOnClosedListener(listener);
                 }
 
-/* 965 */       public static class SavedState extends View.BaseSavedState {
+       public static class SavedState extends View.BaseSavedState {
                     public static final Parcelable.Creator<SavedState> CREATOR = new C12461();
                     private final int mItem;
 
-/* 966 */           /* synthetic */ SavedState(Parcel x0, C12441 x1) {
-/* 967 */               this(x0);
+            SavedState(Parcel x0, C12441 x1) {
+               this(x0);
                     }
 
-/* 971 */           public SavedState(Parcelable superState, int item) {
-/* 972 */               super(superState);
-/* 973 */               this.mItem = item;
+           public SavedState(Parcelable superState, int item) {
+               super(superState);
+               this.mItem = item;
                     }
 
-/* 976 */           private SavedState(Parcel in) {
-/* 977 */               super(in);
-/* 978 */               this.mItem = in.readInt();
+           private SavedState(Parcel in) {
+               super(in);
+               this.mItem = in.readInt();
                     }
 
-/* 981 */           public int getItem() {
-/* 982 */               return this.mItem;
+           public int getItem() {
+               return this.mItem;
                     }
 
-                    @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
-/* 988 */           public void writeToParcel(Parcel out, int flags) {
-/* 989 */               super.writeToParcel(out, flags);
-/* 990 */               out.writeInt(this.mItem);
+                    @Override 
+           public void writeToParcel(Parcel out, int flags) {
+               super.writeToParcel(out, flags);
+               out.writeInt(this.mItem);
                     }
 
-                    /* JADX INFO: renamed from: com.jeremyfeinstein.slidingmenu.lib.SlidingMenu$SavedState$1 */
-/* 992 */           static class C12461 implements Parcelable.Creator<SavedState> {
-/* 993 */               C12461() {
+                    
+           static class C12461 implements Parcelable.Creator<SavedState> {
+               C12461() {
                         }
 
 
 
-                        /* JADX WARN: Can't rename method to resolve collision */
-                        @Override // android.os.Parcelable.Creator
-/* 995 */               public SavedState createFromParcel(Parcel in) {
-/* 996 */                   return new SavedState(in, (C12441) null);
+                        
+                        @Override 
+               public SavedState createFromParcel(Parcel in) {
+                   return new SavedState(in, (C12441) null);
                         }
 
-                        /* JADX WARN: Can't rename method to resolve collision */
-                        @Override // android.os.Parcelable.Creator
-/* 999 */               public SavedState[] newArray(int size) {
-/* 1000 */                  return new SavedState[size];
+                        
+                        @Override 
+               public SavedState[] newArray(int size) {
+                  return new SavedState[size];
                         }
                     }
                 }
 
-                @Override // android.view.View
-/* 1010 */      protected Parcelable onSaveInstanceState() {
-/* 1011 */          Parcelable superState = super.onSaveInstanceState();
-/* 1012 */          SavedState ss = new SavedState(superState, this.mViewAbove.getCurrentItem());
-/* 1013 */          return ss;
+                @Override 
+      protected Parcelable onSaveInstanceState() {
+          Parcelable superState = super.onSaveInstanceState();
+          SavedState ss = new SavedState(superState, this.mViewAbove.getCurrentItem());
+          return ss;
                 }
 
-                @Override // android.view.View
-/* 1020 */      protected void onRestoreInstanceState(Parcelable state) {
-/* 1021 */          SavedState ss = (SavedState) state;
-/* 1022 */          super.onRestoreInstanceState(ss.getSuperState());
-/* 1023 */          this.mViewAbove.setCurrentItem(ss.getItem());
+                @Override 
+      protected void onRestoreInstanceState(Parcelable state) {
+          SavedState ss = (SavedState) state;
+          super.onRestoreInstanceState(ss.getSuperState());
+          this.mViewAbove.setCurrentItem(ss.getItem());
                 }
 
-                @Override // android.view.View
+                @Override 
                 @SuppressLint({"NewApi"})
-/* 1031 */      protected boolean fitSystemWindows(Rect insets) {
-/* 1032 */          int leftPadding = insets.left;
-/* 1033 */          int rightPadding = insets.right;
-/* 1034 */          int topPadding = insets.top;
-/* 1035 */          int bottomPadding = insets.bottom;
-/* 1036 */          if (!this.mActionbarOverlay) {
-/* 1037 */              Log.v(TAG, "setting padding!");
-/* 1038 */              setPadding(leftPadding, topPadding, rightPadding, bottomPadding);
-/* 1040 */              return true;
+      protected boolean fitSystemWindows(Rect insets) {
+          int leftPadding = insets.left;
+          int rightPadding = insets.right;
+          int topPadding = insets.top;
+          int bottomPadding = insets.bottom;
+          if (!this.mActionbarOverlay) {
+              Log.v(TAG, "setting padding!");
+              setPadding(leftPadding, topPadding, rightPadding, bottomPadding);
+              return true;
                     }
-/* 1040 */          return true;
+          return true;
                 }
 
                 @TargetApi(11)
-/* 1044 */      public void manageLayers(float percentOpen) {
-/* 1045 */          if (Build.VERSION.SDK_INT >= 11) {
+      public void manageLayers(float percentOpen) {
+          if (Build.VERSION.SDK_INT >= 11) {
                         boolean layer = percentOpen > 0.0f && percentOpen < 1.0f;
-/* 1048 */              int layerType = layer ? 2 : 0;
-/* 1050 */              if (layerType != getContent().getLayerType()) {
-/* 1051 */                  getHandler().post(new RunnableC12452(layerType));
+              int layerType = layer ? 2 : 0;
+              if (layerType != getContent().getLayerType()) {
+                  getHandler().post(new RunnableC12452(layerType));
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: com.jeremyfeinstein.slidingmenu.lib.SlidingMenu$2 */
-/* 1049 */      class RunnableC12452 implements Runnable {
-                    final /* synthetic */ int val$layerType;
+                
+      class RunnableC12452 implements Runnable {
+                    final  int val$layerType;
 
-/* 1050 */          RunnableC12452(int i) {
+          RunnableC12452(int i) {
                         this.val$layerType = i;
                     }
 
-                    @Override // java.lang.Runnable
-/* 1052 */          public void run() {
-/* 1053 */              Log.v(SlidingMenu.access$500(), "changing layerType. hardware? " + (this.val$layerType == 2));
-/* 1054 */              SlidingMenu.this.getContent().setLayerType(this.val$layerType, null);
-/* 1055 */              SlidingMenu.this.getMenu().setLayerType(this.val$layerType, null);
-/* 1056 */              if (SlidingMenu.this.getSecondaryMenu() != null) {
-/* 1057 */                  SlidingMenu.this.getSecondaryMenu().setLayerType(this.val$layerType, null);
+                    @Override 
+          public void run() {
+              Log.v(SlidingMenu.access$500(), "changing layerType. hardware? " + (this.val$layerType == 2));
+              SlidingMenu.this.getContent().setLayerType(this.val$layerType, null);
+              SlidingMenu.this.getMenu().setLayerType(this.val$layerType, null);
+              if (SlidingMenu.this.getSecondaryMenu() != null) {
+                  SlidingMenu.this.getSecondaryMenu().setLayerType(this.val$layerType, null);
                         }
                     }
                 }

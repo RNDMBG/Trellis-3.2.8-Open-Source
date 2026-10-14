@@ -7,8 +7,8 @@
             import android.widget.ImageView;
             import android.widget.TextView;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 61 */    public class SimpleCursorAdapter extends ResourceCursorAdapter {
+            
+    public class SimpleCursorAdapter extends ResourceCursorAdapter {
                 private CursorToStringConverter mCursorToStringConverter;
                 protected int[] mFrom;
                 String[] mOriginalFrom;
@@ -25,126 +25,126 @@
                 }
 
                 @Deprecated
-/* 62 */        public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
-/* 63 */            super(context, layout, c);
-/* 47 */            this.mStringConversionColumn = -1;
-/* 64 */            this.mTo = to;
-/* 65 */            this.mOriginalFrom = from;
-/* 66 */            findColumns(from);
+        public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
+            super(context, layout, c);
+            this.mStringConversionColumn = -1;
+            this.mTo = to;
+            this.mOriginalFrom = from;
+            findColumns(from);
                 }
 
-/* 88 */        public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to, int flags) {
-/* 89 */            super(context, layout, c, flags);
-/* 47 */            this.mStringConversionColumn = -1;
-/* 90 */            this.mTo = to;
-/* 91 */            this.mOriginalFrom = from;
-/* 92 */            findColumns(from);
+        public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to, int flags) {
+            super(context, layout, c, flags);
+            this.mStringConversionColumn = -1;
+            this.mTo = to;
+            this.mOriginalFrom = from;
+            findColumns(from);
                 }
 
-                @Override // android.support.v4.widget.CursorAdapter
-/* 120 */       public void bindView(View view, Context context, Cursor cursor) {
-/* 121 */           ViewBinder binder = this.mViewBinder;
-/* 122 */           int count = this.mTo.length;
-/* 123 */           int[] from = this.mFrom;
-/* 124 */           int[] to = this.mTo;
+                @Override 
+       public void bindView(View view, Context context, Cursor cursor) {
+           ViewBinder binder = this.mViewBinder;
+           int count = this.mTo.length;
+           int[] from = this.mFrom;
+           int[] to = this.mTo;
                     for (int i = 0; i < count; i++) {
-/* 127 */               View v = view.findViewById(to[i]);
-/* 128 */               if (v != null) {
-/* 129 */                   boolean bound = false;
-/* 130 */                   if (binder != null) {
-/* 131 */                       bound = binder.setViewValue(v, cursor, from[i]);
+               View v = view.findViewById(to[i]);
+               if (v != null) {
+                   boolean bound = false;
+                   if (binder != null) {
+                       bound = binder.setViewValue(v, cursor, from[i]);
                             }
-/* 134 */                   if (bound) {
+                   if (bound) {
                                 continue;
                             } else {
-/* 135 */                       String text = cursor.getString(from[i]);
-/* 136 */                       if (text == null) {
-/* 137 */                           text = "";
+                       String text = cursor.getString(from[i]);
+                       if (text == null) {
+                           text = "";
                                 }
-/* 140 */                       if (v instanceof TextView) {
-/* 141 */                           setViewText((TextView) v, text);
+                       if (v instanceof TextView) {
+                           setViewText((TextView) v, text);
                                 } else if (v instanceof ImageView) {
-/* 143 */                           setViewImage((ImageView) v, text);
+                           setViewImage((ImageView) v, text);
                                 } else {
-/* 145 */                           throw new IllegalStateException(v.getClass().getName() + " is not a  view that can be bounds by this SimpleCursorAdapter");
+                           throw new IllegalStateException(v.getClass().getName() + " is not a  view that can be bounds by this SimpleCursorAdapter");
                                 }
                             }
                         }
                     }
                 }
 
-/* 161 */       public ViewBinder getViewBinder() {
-/* 162 */           return this.mViewBinder;
+       public ViewBinder getViewBinder() {
+           return this.mViewBinder;
                 }
 
-/* 174 */       public void setViewBinder(ViewBinder viewBinder) {
-/* 175 */           this.mViewBinder = viewBinder;
+       public void setViewBinder(ViewBinder viewBinder) {
+           this.mViewBinder = viewBinder;
                 }
 
-/* 194 */       public void setViewImage(ImageView v, String value) {
+       public void setViewImage(ImageView v, String value) {
                     try {
-/* 195 */               v.setImageResource(Integer.parseInt(value));
+               v.setImageResource(Integer.parseInt(value));
                     } catch (NumberFormatException e) {
-/* 197 */               v.setImageURI(Uri.parse(value));
+               v.setImageURI(Uri.parse(value));
                     }
                 }
 
-/* 212 */       public void setViewText(TextView v, String text) {
-/* 213 */           v.setText(text);
+       public void setViewText(TextView v, String text) {
+           v.setText(text);
                 }
 
-/* 227 */       public int getStringConversionColumn() {
-/* 228 */           return this.mStringConversionColumn;
+       public int getStringConversionColumn() {
+           return this.mStringConversionColumn;
                 }
 
-/* 245 */       public void setStringConversionColumn(int stringConversionColumn) {
-/* 246 */           this.mStringConversionColumn = stringConversionColumn;
+       public void setStringConversionColumn(int stringConversionColumn) {
+           this.mStringConversionColumn = stringConversionColumn;
                 }
 
-/* 261 */       public CursorToStringConverter getCursorToStringConverter() {
-/* 262 */           return this.mCursorToStringConverter;
+       public CursorToStringConverter getCursorToStringConverter() {
+           return this.mCursorToStringConverter;
                 }
 
-/* 277 */       public void setCursorToStringConverter(CursorToStringConverter cursorToStringConverter) {
-/* 278 */           this.mCursorToStringConverter = cursorToStringConverter;
+       public void setCursorToStringConverter(CursorToStringConverter cursorToStringConverter) {
+           this.mCursorToStringConverter = cursorToStringConverter;
                 }
 
-                @Override // android.support.v4.widget.CursorAdapter, android.support.v4.widget.CursorFilter.CursorFilterClient
-/* 293 */       public CharSequence convertToString(Cursor cursor) {
-/* 294 */           if (this.mCursorToStringConverter != null) {
-/* 295 */               return this.mCursorToStringConverter.convertToString(cursor);
+                @Override 
+       public CharSequence convertToString(Cursor cursor) {
+           if (this.mCursorToStringConverter != null) {
+               return this.mCursorToStringConverter.convertToString(cursor);
                     }
-/* 296 */           if (this.mStringConversionColumn > -1) {
-/* 297 */               return cursor.getString(this.mStringConversionColumn);
+           if (this.mStringConversionColumn > -1) {
+               return cursor.getString(this.mStringConversionColumn);
                     }
-/* 300 */           return super.convertToString(cursor);
+           return super.convertToString(cursor);
                 }
 
-/* 309 */       private void findColumns(String[] from) {
-/* 310 */           if (this.mCursor != null) {
-/* 312 */               int count = from.length;
-/* 313 */               if (this.mFrom == null || this.mFrom.length != count) {
-/* 314 */                   this.mFrom = new int[count];
+       private void findColumns(String[] from) {
+           if (this.mCursor != null) {
+               int count = from.length;
+               if (this.mFrom == null || this.mFrom.length != count) {
+                   this.mFrom = new int[count];
                         }
                         for (int i = 0; i < count; i++) {
-/* 317 */                   this.mFrom[i] = this.mCursor.getColumnIndexOrThrow(from[i]);
+                   this.mFrom[i] = this.mCursor.getColumnIndexOrThrow(from[i]);
                         }
-/* 322 */               return;
+               return;
                     }
-/* 320 */           this.mFrom = null;
+           this.mFrom = null;
                 }
 
-                @Override // android.support.v4.widget.CursorAdapter
-/* 325 */       public Cursor swapCursor(Cursor c) {
-/* 326 */           Cursor res = super.swapCursor(c);
-/* 328 */           findColumns(this.mOriginalFrom);
-/* 329 */           return res;
+                @Override 
+       public Cursor swapCursor(Cursor c) {
+           Cursor res = super.swapCursor(c);
+           findColumns(this.mOriginalFrom);
+           return res;
                 }
 
-/* 343 */       public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
-/* 344 */           this.mOriginalFrom = from;
-/* 345 */           this.mTo = to;
-/* 346 */           super.changeCursor(c);
-/* 347 */           findColumns(this.mOriginalFrom);
+       public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
+           this.mOriginalFrom = from;
+           this.mTo = to;
+           super.changeCursor(c);
+           findColumns(this.mOriginalFrom);
                 }
             }

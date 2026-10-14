@@ -12,23 +12,23 @@
             import com.google.android.gms.internal.C1082fm;
             import com.google.android.gms.internal.InterfaceC1079fj;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class PlusOneButtonWithPopup extends ViewGroup {
 
-                /* JADX INFO: renamed from: hN */
+                
                 private String f2383hN;
 
-                /* JADX INFO: renamed from: it */
+                
                 private String f2384it;
                 private int mSize;
 
-                /* JADX INFO: renamed from: re */
+                
                 private View f2385re;
 
-                /* JADX INFO: renamed from: rf */
+                
                 private int f2386rf;
 
-                /* JADX INFO: renamed from: rk */
+                
                 private View.OnClickListener f2387rk;
 
                 public PlusOneButtonWithPopup(Context context) {
@@ -43,7 +43,7 @@
                     addView(this.f2385re);
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 private int m2334c(int i, int i2) {
                     int mode = View.MeasureSpec.getMode(i);
                     switch (mode) {
@@ -55,7 +55,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: cS */
+                
                 private void m2335cS() {
                     if (this.f2385re != null) {
                         removeView(this.f2385re);
@@ -67,7 +67,7 @@
                     addView(this.f2385re);
                 }
 
-                /* JADX INFO: renamed from: cT */
+                
                 private InterfaceC1079fj m2336cT() throws RemoteException {
                     InterfaceC1079fj interfaceC1079fjM1958ap = InterfaceC1079fj.a.m1958ap((IBinder) this.f2385re.getTag());
                     if (interfaceC1079fjM1958ap != null) {
@@ -105,12 +105,12 @@
                     m2335cS();
                 }
 
-                @Override // android.view.ViewGroup, android.view.View
+                @Override 
                 protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
                     this.f2385re.layout(getPaddingLeft(), getPaddingTop(), (right - left) - getPaddingRight(), (bottom - top) - getPaddingBottom());
                 }
 
-                @Override // android.view.View
+                @Override 
                 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
                     int paddingLeft = getPaddingLeft() + getPaddingRight();
                     int paddingTop = getPaddingTop() + getPaddingBottom();
@@ -132,7 +132,7 @@
                     m2335cS();
                 }
 
-                @Override // android.view.View
+                @Override 
                 public void setOnClickListener(View.OnClickListener onClickListener) {
                     this.f2387rk = onClickListener;
                     this.f2385re.setOnClickListener(onClickListener);

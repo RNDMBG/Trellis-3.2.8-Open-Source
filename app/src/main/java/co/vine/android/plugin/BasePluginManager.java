@@ -12,145 +12,145 @@
             import java.util.ArrayList;
             import java.util.Collection;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 24 */    public class BasePluginManager<T extends Plugin> implements PluginManager<T> {
+            
+    public class BasePluginManager<T extends Plugin> implements PluginManager<T> {
                 protected final Handler mHandler;
                 protected int mNextPluginId;
                 protected final ArrayList<T> mPlugins;
 
-/* 25 */        public BasePluginManager() {
-/* 22 */            this.mPlugins = new ArrayList<>();
-/* 27 */            this.mHandler = new Handler(Looper.getMainLooper());
+        public BasePluginManager() {
+            this.mPlugins = new ArrayList<>();
+            this.mHandler = new Handler(Looper.getMainLooper());
                 }
 
-                @Override // co.vine.android.plugin.PluginManager
-/* 30 */        public int getDialogIdForPlugin(T plugin, int dialogId) {
-/* 31 */            return (plugin.getId() << 10) + dialogId;
+                @Override 
+        public int getDialogIdForPlugin(T plugin, int dialogId) {
+            return (plugin.getId() << 10) + dialogId;
                 }
 
-/* 34 */        public BasePluginManager(Collection<T> plugins) {
-/* 35 */            this();
-/* 36 */            addPlugins(this.mNextPluginId, plugins);
+        public BasePluginManager(Collection<T> plugins) {
+            this();
+            addPlugins(this.mNextPluginId, plugins);
                 }
 
-/* 39 */        public void addPlugins(int startId, Collection<T> plugins) {
-/* 40 */            int id = startId;
+        public void addPlugins(int startId, Collection<T> plugins) {
+            int id = startId;
                     for (T plugin : plugins) {
-/* 42 */                id += plugin.onAdded(this, id);
-/* 43 */                SLog.m466i("Plugin enabled: {}, id {}.", plugin.getName(), Integer.valueOf(plugin.getId()));
+                id += plugin.onAdded(this, id);
+                SLog.m466i("Plugin enabled: {}, id {}.", plugin.getName(), Integer.valueOf(plugin.getId()));
                     }
-/* 45 */            this.mNextPluginId = id;
-/* 46 */            this.mPlugins.addAll(plugins);
+            this.mNextPluginId = id;
+            this.mPlugins.addAll(plugins);
                 }
 
-/* 49 */        public void addPlugins(Collection<T> plugins) {
-/* 50 */            addPlugins(this.mNextPluginId, plugins);
+        public void addPlugins(Collection<T> plugins) {
+            addPlugins(this.mNextPluginId, plugins);
                 }
 
-/* 53 */        public void addPlugin(T plugin) {
-/* 54 */            int id = this.mNextPluginId;
-/* 55 */            int id2 = id + plugin.onAdded(this, id);
-/* 56 */            SLog.m466i("Plugin enabled: {}, id {}.", plugin.getName(), Integer.valueOf(plugin.getId()));
-/* 57 */            this.mNextPluginId = id2;
-/* 58 */            this.mPlugins.add(plugin);
+        public void addPlugin(T plugin) {
+            int id = this.mNextPluginId;
+            int id2 = id + plugin.onAdded(this, id);
+            SLog.m466i("Plugin enabled: {}, id {}.", plugin.getName(), Integer.valueOf(plugin.getId()));
+            this.mNextPluginId = id2;
+            this.mPlugins.add(plugin);
                 }
 
-/* 61 */        public void onResume(Activity activity) {
+        public void onResume(Activity activity) {
                     for (T plugin : this.mPlugins) {
-/* 63 */                plugin.onResume(activity);
-                    }
-                }
-
-/* 67 */        public void onPause() {
-                    for (T plugin : this.mPlugins) {
-/* 69 */                plugin.onPause();
+                plugin.onResume(activity);
                     }
                 }
 
-/* 73 */        public boolean onBackPressed() {
+        public void onPause() {
                     for (T plugin : this.mPlugins) {
-/* 75 */                if (plugin.onBackPressed()) {
-/* 76 */                    return true;
+                plugin.onPause();
+                    }
+                }
+
+        public boolean onBackPressed() {
+                    for (T plugin : this.mPlugins) {
+                if (plugin.onBackPressed()) {
+                    return true;
                         }
                     }
                     return false;
                 }
 
-/* 82 */        public void onDestroy() {
+        public void onDestroy() {
                     for (T plugin : this.mPlugins) {
-/* 84 */                plugin.onDestroy();
+                plugin.onDestroy();
                     }
                 }
 
-/* 88 */        public boolean onCreateOptionsMenu(Menu menu) {
+        public boolean onCreateOptionsMenu(Menu menu) {
                     for (T plugin : this.mPlugins) {
-/* 90 */                if (plugin.onCreateOptionsMenu(menu)) {
-/* 91 */                    return true;
+                if (plugin.onCreateOptionsMenu(menu)) {
+                    return true;
                         }
                     }
                     return false;
                 }
 
-/* 97 */        public boolean onOptionsItemSelected(MenuItem item) {
+        public boolean onOptionsItemSelected(MenuItem item) {
                     for (T plugin : this.mPlugins) {
-/* 99 */                if (plugin.onOptionsItemSelected(item)) {
-/* 100 */                   return true;
+                if (plugin.onOptionsItemSelected(item)) {
+                   return true;
                         }
                     }
                     return false;
                 }
 
-/* 106 */       public void onStart(Activity activity) {
+       public void onStart(Activity activity) {
                     for (T plugin : this.mPlugins) {
-/* 108 */               plugin.onStart(activity);
+               plugin.onStart(activity);
                     }
                 }
 
-/* 112 */       public void onStop(Activity activity) {
+       public void onStop(Activity activity) {
                     for (T plugin : this.mPlugins) {
-/* 114 */               plugin.onStop(activity);
+               plugin.onStop(activity);
                     }
                 }
 
-                @Override // co.vine.android.plugin.PluginManager
-/* 118 */       public Handler getHandler() {
-/* 119 */           return this.mHandler;
+                @Override 
+       public Handler getHandler() {
+           return this.mHandler;
                 }
 
-/* 122 */       public boolean onKeyDown(int keyCode, KeyEvent event) {
+       public boolean onKeyDown(int keyCode, KeyEvent event) {
                     for (T plugin : this.mPlugins) {
-/* 124 */               if (plugin.onKeyDown(keyCode, event)) {
-/* 125 */                   return true;
+               if (plugin.onKeyDown(keyCode, event)) {
+                   return true;
                         }
                     }
                     return false;
                 }
 
-/* 131 */       public boolean onKeyUp(int keyCode, KeyEvent event) {
+       public boolean onKeyUp(int keyCode, KeyEvent event) {
                     for (T plugin : this.mPlugins) {
-/* 133 */               if (plugin.onKeyUp(keyCode, event)) {
-/* 134 */                   return true;
+               if (plugin.onKeyUp(keyCode, event)) {
+                   return true;
                         }
                     }
                     return false;
                 }
 
-/* 140 */       public boolean onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
+       public boolean onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
                     for (T plugin : this.mPlugins) {
-/* 142 */               if (plugin.onActivityResult(activity, requestCode, resultCode, data)) {
-/* 143 */                   return true;
+               if (plugin.onActivityResult(activity, requestCode, resultCode, data)) {
+                   return true;
                         }
                     }
                     return false;
                 }
 
-/* 149 */       public void onActivityCreated(Activity activity) {
+       public void onActivityCreated(Activity activity) {
                     for (T plugin : this.mPlugins) {
-/* 151 */               plugin.onActivityCreated(activity);
+               plugin.onActivityCreated(activity);
                     }
                 }
 
-/* 155 */       public ArrayList<T> getEnabledPlugins() {
-/* 156 */           return this.mPlugins;
+       public ArrayList<T> getEnabledPlugins() {
+           return this.mPlugins;
                 }
             }

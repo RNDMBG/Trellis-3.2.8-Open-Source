@@ -1,7 +1,7 @@
             package com.squareup.okhttp.internal.spdy;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 61 */    public enum ErrorCode {
+            
+    public enum ErrorCode {
                 NO_ERROR(0, -1, 0),
                 PROTOCOL_ERROR(1, 1, 1),
                 INVALID_STREAM(1, 2, -1),
@@ -24,39 +24,39 @@
                 public final int spdyGoAwayCode;
                 public final int spdyRstCode;
 
-/* 62 */        ErrorCode(int httpCode, int spdyRstCode, int spdyGoAwayCode) {
-/* 64 */            this.httpCode = httpCode;
-/* 65 */            this.spdyRstCode = spdyRstCode;
-/* 66 */            this.spdyGoAwayCode = spdyGoAwayCode;
+        ErrorCode(int httpCode, int spdyRstCode, int spdyGoAwayCode) {
+            this.httpCode = httpCode;
+            this.spdyRstCode = spdyRstCode;
+            this.spdyGoAwayCode = spdyGoAwayCode;
                 }
 
-/* 69 */        public static ErrorCode fromSpdy3Rst(int code) {
-/* 70 */            ErrorCode[] arr$ = values();
+        public static ErrorCode fromSpdy3Rst(int code) {
+            ErrorCode[] arr$ = values();
                     for (ErrorCode errorCode : arr$) {
-/* 71 */                if (errorCode.spdyRstCode == code) {
-/* 73 */                    return errorCode;
+                if (errorCode.spdyRstCode == code) {
+                    return errorCode;
                         }
                     }
-/* 73 */            return null;
+            return null;
                 }
 
-/* 76 */        public static ErrorCode fromHttp2(int code) {
-/* 77 */            ErrorCode[] arr$ = values();
+        public static ErrorCode fromHttp2(int code) {
+            ErrorCode[] arr$ = values();
                     for (ErrorCode errorCode : arr$) {
-/* 78 */                if (errorCode.httpCode == code) {
-/* 80 */                    return errorCode;
+                if (errorCode.httpCode == code) {
+                    return errorCode;
                         }
                     }
-/* 80 */            return null;
+            return null;
                 }
 
-/* 83 */        public static ErrorCode fromSpdyGoAway(int code) {
-/* 84 */            ErrorCode[] arr$ = values();
+        public static ErrorCode fromSpdyGoAway(int code) {
+            ErrorCode[] arr$ = values();
                     for (ErrorCode errorCode : arr$) {
-/* 85 */                if (errorCode.spdyGoAwayCode == code) {
-/* 87 */                    return errorCode;
+                if (errorCode.spdyGoAwayCode == code) {
+                    return errorCode;
                         }
                     }
-/* 87 */            return null;
+            return null;
                 }
             }

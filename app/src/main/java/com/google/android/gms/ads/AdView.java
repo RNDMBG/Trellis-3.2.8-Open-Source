@@ -18,25 +18,25 @@
             import com.google.android.gms.internal.C1126x;
             import com.google.android.gms.internal.InterfaceC0937ac;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class AdView extends ViewGroup {
 
-                /* JADX INFO: renamed from: c */
+                
                 private AdSize f895c;
 
-                /* JADX INFO: renamed from: dS */
+                
                 private final BinderC0956av f896dS;
 
-                /* JADX INFO: renamed from: dT */
+                
                 private AdListener f897dT;
 
-                /* JADX INFO: renamed from: dU */
+                
                 private InterfaceC0937ac f898dU;
 
-                /* JADX INFO: renamed from: dV */
+                
                 private String f899dV;
 
-                /* JADX INFO: renamed from: dW */
+                
                 private InterfaceC0883a f900dW;
 
                 public AdView(Context context) {
@@ -63,7 +63,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 private void m990c(String str) throws RemoteException {
                     if (this.f895c == null || this.f899dV == null) {
                         m991d(str);
@@ -79,14 +79,14 @@
                     m992x();
                 }
 
-                /* JADX INFO: renamed from: d */
+                
                 private void m991d(String str) {
                     if (this.f898dU == null) {
                         throw new IllegalStateException("The ad size and ad unit ID must be set on AdView before " + str + " is called.");
                     }
                 }
 
-                /* JADX INFO: renamed from: x */
+                
                 private void m992x() {
                     try {
                         InterfaceC0904b interfaceC0904bMo1243z = this.f898dU.mo1243z();
@@ -134,7 +134,7 @@
                     }
                 }
 
-                @Override // android.view.ViewGroup, android.view.View
+                @Override 
                 protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
                     View childAt = getChildAt(0);
                     if (childAt == null || childAt.getVisibility() == 8) {
@@ -147,7 +147,7 @@
                     childAt.layout(i, i2, measuredWidth + i, measuredHeight + i2);
                 }
 
-                @Override // android.view.View
+                @Override 
                 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
                     int widthInPixels;
                     int heightInPixels = 0;

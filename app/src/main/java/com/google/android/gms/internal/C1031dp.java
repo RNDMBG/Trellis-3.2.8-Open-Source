@@ -6,10 +6,10 @@
             import android.util.Log;
             import android.util.TypedValue;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.dp */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1031dp {
-                /* JADX INFO: renamed from: a */
+                
                 public static String m1618a(String str, String str2, Context context, AttributeSet attributeSet, boolean z, boolean z2, String str3) {
                     String attributeValue = attributeSet == null ? null : attributeSet.getAttributeValue(str, str2);
                     if (attributeValue != null && attributeValue.startsWith("@string/") && z) {

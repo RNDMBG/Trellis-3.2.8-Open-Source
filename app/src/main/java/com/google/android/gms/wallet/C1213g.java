@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.g */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1213g implements Parcelable.Creator<MaskedWallet> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2360a(MaskedWallet maskedWallet, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, maskedWallet.getVersionCode());
@@ -23,7 +23,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: T */
+                
                 public MaskedWallet m2361T(Parcel parcel) {
                     OfferWalletObject[] offerWalletObjectArr = null;
                     int iM1111j = C0901a.m1111j(parcel);
@@ -76,18 +76,18 @@
                     return new MaskedWallet(iM1105f, strM1113l3, strM1113l2, strArrM1124w, strM1113l, address2, address, loyaltyWalletObjectArr, offerWalletObjectArr);
                 }
 
-                /* JADX INFO: renamed from: ay */
+                
                 public MaskedWallet[] m2362ay(int i) {
                     return new MaskedWallet[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ MaskedWallet createFromParcel(Parcel x0) {
+                @Override 
+                public  MaskedWallet createFromParcel(Parcel x0) {
                     return m2361T(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ MaskedWallet[] newArray(int x0) {
+                @Override 
+                public  MaskedWallet[] newArray(int x0) {
                     return m2362ay(x0);
                 }
             }

@@ -6,29 +6,29 @@
             import android.os.Parcel;
             import android.os.RemoteException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.maps.internal.b */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1158b extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.internal.b$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1158b {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.internal.b$a$a, reason: collision with other inner class name */
+                    
                     private static class C1349a implements InterfaceC1158b {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2265dG;
 
                         C1349a(IBinder iBinder) {
                             this.f2265dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2265dG;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.InterfaceC1158b
+                        @Override 
                         public void onCancel() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -45,7 +45,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.InterfaceC1158b
+                        @Override 
                         public void onFinish() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -67,7 +67,7 @@
                         attachInterface(this, "com.google.android.gms.maps.internal.ICancelableCallback");
                     }
 
-                    /* JADX INFO: renamed from: I */
+                    
                     public static InterfaceC1158b m2236I(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -76,12 +76,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1158b)) ? new C1349a(iBinder) : (InterfaceC1158b) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:

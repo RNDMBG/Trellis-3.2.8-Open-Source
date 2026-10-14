@@ -28,8 +28,8 @@
             import java.util.concurrent.Executors;
             import org.apache.http.message.BasicNameValuePair;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 33 */    public class RealTimeChatService extends Service {
+            
+    public class RealTimeChatService extends Service {
                 public static final int ACTION_CODE_ALERT_NEW_PRIVATE_MESSAGE = 8;
                 public static final int ACTION_CODE_CONNECT = 1;
                 public static final int ACTION_CODE_DISCONNECT = 5;
@@ -63,180 +63,180 @@
                 private WebSocketClient.Listener mWebSocketListener = new C05201();
                 private final Runnable mReconnectRunnable = new RunnableC05212();
 
-/* 34 */        static /* synthetic */ void access$000(RealTimeChatService x0) {
-/* 35 */            x0.removeReconnectCallback();
+        static  void access$000(RealTimeChatService x0) {
+            x0.removeReconnectCallback();
                 }
 
-/* 34 */        static /* synthetic */ void access$100(RealTimeChatService x0, int x1, Bundle x2) {
-/* 35 */            x0.broadcastEvent(x1, x2);
+        static  void access$100(RealTimeChatService x0, int x1, Bundle x2) {
+            x0.broadcastEvent(x1, x2);
                 }
 
-/* 34 */        static /* synthetic */ long access$200(RealTimeChatService x0) {
-/* 35 */            return x0.mReconnectDelay;
+        static  long access$200(RealTimeChatService x0) {
+            return x0.mReconnectDelay;
                 }
 
-/* 34 */        static /* synthetic */ long access$202(RealTimeChatService x0, long x1) {
-/* 35 */            x0.mReconnectDelay = x1;
+        static  long access$202(RealTimeChatService x0, long x1) {
+            x0.mReconnectDelay = x1;
                     return x1;
                 }
 
-/* 34 */        static /* synthetic */ WebSocketClient access$300(RealTimeChatService x0) {
-/* 35 */            return x0.mClient;
+        static  WebSocketClient access$300(RealTimeChatService x0) {
+            return x0.mClient;
                 }
 
-/* 34 */        static /* synthetic */ boolean access$400(RealTimeChatService x0) {
-/* 35 */            return x0.clientIsActive();
+        static  boolean access$400(RealTimeChatService x0) {
+            return x0.clientIsActive();
                 }
 
-/* 34 */        static /* synthetic */ Runnable access$500(RealTimeChatService x0) {
-/* 35 */            return x0.mReconnectRunnable;
+        static  Runnable access$500(RealTimeChatService x0) {
+            return x0.mReconnectRunnable;
                 }
 
-/* 34 */        static /* synthetic */ Handler access$600(RealTimeChatService x0) {
-/* 35 */            return x0.mMainHandler;
+        static  Handler access$600(RealTimeChatService x0) {
+            return x0.mMainHandler;
                 }
 
-/* 34 */        static /* synthetic */ ExecutorService access$700(RealTimeChatService x0) {
-/* 35 */            return x0.mExecutor;
+        static  ExecutorService access$700(RealTimeChatService x0) {
+            return x0.mExecutor;
                 }
 
-/* 34 */        static /* synthetic */ void access$800(RealTimeChatService x0, int x1, Bundle x2) {
-/* 35 */            x0.executeAction(x1, x2);
+        static  void access$800(RealTimeChatService x0, int x1, Bundle x2) {
+            x0.executeAction(x1, x2);
                 }
 
-                @Override // android.app.Service
-/* 74 */        public void onCreate() {
-/* 75 */            super.onCreate();
-/* 76 */            this.mMainHandler = new Handler(Looper.getMainLooper());
-/* 77 */            this.mExecutor = Executors.newCachedThreadPool();
-/* 78 */            this.mMessenger = new Messenger(new VineServiceHandler());
-/* 79 */            this.mRtcUrl = VineAPI.getInstance(this).getRtcUrl();
+                @Override 
+        public void onCreate() {
+            super.onCreate();
+            this.mMainHandler = new Handler(Looper.getMainLooper());
+            this.mExecutor = Executors.newCachedThreadPool();
+            this.mMessenger = new Messenger(new VineServiceHandler());
+            this.mRtcUrl = VineAPI.getInstance(this).getRtcUrl();
                 }
 
-                @Override // android.app.Service
-/* 83 */        public int onStartCommand(Intent intent, int flags, int startId) {
-/* 84 */            return 2;
+                @Override 
+        public int onStartCommand(Intent intent, int flags, int startId) {
+            return 2;
                 }
 
-/* 87 */        private synchronized void disconnect() {
+        private synchronized void disconnect() {
                     try {
                         WebSocketClient client = this.mClient;
-/* 89 */                if (client != null) {
-/* 90 */                    client.disconnect();
-/* 91 */                    this.mClient = null;
+                if (client != null) {
+                    client.disconnect();
+                    this.mClient = null;
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
 
-                @Override // android.app.Service
-/* 96 */        public IBinder onBind(Intent intent) {
-/* 97 */            SLog.dWithTag(TAG, "rtc service was bound");
-/* 98 */            return this.mMessenger.getBinder();
+                @Override 
+        public IBinder onBind(Intent intent) {
+            SLog.dWithTag(TAG, "rtc service was bound");
+            return this.mMessenger.getBinder();
                 }
 
-/* 101 */       public synchronized void prepareClient(String sessionKey) {
+       public synchronized void prepareClient(String sessionKey) {
                     try {
                         if (!clientIsActive()) {
-/* 103 */                   SLog.m447d(TAG, "preparing client now");
-/* 104 */                   VineAPI api = VineAPI.getInstance(this);
-/* 105 */                   URI uri = URI.create(this.mRtcUrl);
-/* 106 */                   List<BasicNameValuePair> extraHeaders = Arrays.asList(new BasicNameValuePair("vine-session-id", sessionKey), new BasicNameValuePair(VineAPI.X_VINE_CLIENT, api.getVineClientHeader()));
-/* 110 */                   SLog.dWithTag(TAG, "Creating client: sessionKey=" + sessionKey + ", uri=" + uri.toString());
-/* 111 */                   WebSocketClient client = new WebSocketClient(uri, this.mWebSocketListener, extraHeaders);
-/* 112 */                   this.mClient = client;
+                   SLog.m447d(TAG, "preparing client now");
+                   VineAPI api = VineAPI.getInstance(this);
+                   URI uri = URI.create(this.mRtcUrl);
+                   List<BasicNameValuePair> extraHeaders = Arrays.asList(new BasicNameValuePair("vine-session-id", sessionKey), new BasicNameValuePair(VineAPI.X_VINE_CLIENT, api.getVineClientHeader()));
+                   SLog.dWithTag(TAG, "Creating client: sessionKey=" + sessionKey + ", uri=" + uri.toString());
+                   WebSocketClient client = new WebSocketClient(uri, this.mWebSocketListener, extraHeaders);
+                   this.mClient = client;
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.service.RealTimeChatService$1 */
-/* 114 */       class C05201 implements WebSocketClient.Listener {
-/* 115 */           C05201() {
+                
+       class C05201 implements WebSocketClient.Listener {
+           C05201() {
                     }
 
-                    @Override // com.codebutler.android_websockets.WebSocketClient.Listener
-/* 118 */           public void onConnect() {
-/* 119 */               SLog.dWithTag(RealTimeChatService.TAG, "Connected - now ready to subscribe to conversations.");
-/* 120 */               RealTimeChatService.access$000(RealTimeChatService.this);
-/* 121 */               RealTimeChatService.access$100(RealTimeChatService.this, 1, null);
+                    @Override 
+           public void onConnect() {
+               SLog.dWithTag(RealTimeChatService.TAG, "Connected - now ready to subscribe to conversations.");
+               RealTimeChatService.access$000(RealTimeChatService.this);
+               RealTimeChatService.access$100(RealTimeChatService.this, 1, null);
                     }
 
-                    @Override // com.codebutler.android_websockets.WebSocketClient.Listener
-/* 125 */           public void onMessage(String message) {
-/* 126 */               SLog.dWithTag(RealTimeChatService.TAG, String.format("Got string message: %s", message));
+                    @Override 
+           public void onMessage(String message) {
+               SLog.dWithTag(RealTimeChatService.TAG, String.format("Got string message: %s", message));
                         try {
-/* 129 */                   JsonParser p = VineParsers.createParser(message);
-/* 130 */                   ArrayList<VineRTCConversation> data = VineParsers.parseRTCEvent(p);
-/* 131 */                   Bundle b = new Bundle();
-/* 132 */                   b.putParcelableArrayList("data", data);
-/* 133 */                   RealTimeChatService.access$100(RealTimeChatService.this, 9, b);
+                   JsonParser p = VineParsers.createParser(message);
+                   ArrayList<VineRTCConversation> data = VineParsers.parseRTCEvent(p);
+                   Bundle b = new Bundle();
+                   b.putParcelableArrayList("data", data);
+                   RealTimeChatService.access$100(RealTimeChatService.this, 9, b);
                         } catch (IOException e) {
-/* 135 */                   SLog.m459e("Failed to parse message.", (Throwable) e);
+                   SLog.m459e("Failed to parse message.", (Throwable) e);
                         }
                     }
 
-                    @Override // com.codebutler.android_websockets.WebSocketClient.Listener
-/* 140 */           public void onDisconnect(int code, String reason) {
-/* 141 */               SLog.dWithTag(RealTimeChatService.TAG, String.format("Disconnected with code=%d, reason=%s, delay=%dms", Integer.valueOf(code), reason, Long.valueOf(RealTimeChatService.access$200(RealTimeChatService.this))));
-/* 143 */               Bundle b = new Bundle();
-/* 144 */               b.putInt("code", code);
-/* 145 */               b.putString(RealTimeChatService.EXTRA_REASON, reason);
-/* 146 */               RealTimeChatService.access$100(RealTimeChatService.this, 5, b);
+                    @Override 
+           public void onDisconnect(int code, String reason) {
+               SLog.dWithTag(RealTimeChatService.TAG, String.format("Disconnected with code=%d, reason=%s, delay=%dms", Integer.valueOf(code), reason, Long.valueOf(RealTimeChatService.access$200(RealTimeChatService.this))));
+               Bundle b = new Bundle();
+               b.putInt("code", code);
+               b.putString(RealTimeChatService.EXTRA_REASON, reason);
+               RealTimeChatService.access$100(RealTimeChatService.this, 5, b);
                     }
 
-                    @Override // com.codebutler.android_websockets.WebSocketClient.Listener
-/* 150 */           public void onError(Exception error) {
-/* 151 */               SLog.dWithTag(RealTimeChatService.TAG, "Error: " + error.getMessage());
+                    @Override 
+           public void onError(Exception error) {
+               SLog.dWithTag(RealTimeChatService.TAG, "Error: " + error.getMessage());
                     }
 
-                    @Override // com.codebutler.android_websockets.WebSocketClient.Listener
-/* 155 */           public void onMessage(byte[] data) {
+                    @Override 
+           public void onMessage(byte[] data) {
                     }
                 }
 
-/* 159 */       private synchronized void broadcastEvent(int actionCode, Bundle extras) {
+       private synchronized void broadcastEvent(int actionCode, Bundle extras) {
                     try {
                         Intent intent = new Intent(ACTION_WEBSOCKET_EVENT);
-/* 161 */               if (extras != null) {
+               if (extras != null) {
                             intent.putExtras(extras);
                         }
-/* 162 */               intent.putExtra("action_code", actionCode);
-/* 163 */               sendBroadcast(intent, CrossConstants.BROADCAST_PERMISSION);
+               intent.putExtra("action_code", actionCode);
+               sendBroadcast(intent, CrossConstants.BROADCAST_PERMISSION);
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.service.RealTimeChatService$2 */
-/* 164 */       class RunnableC05212 implements Runnable {
-/* 165 */           RunnableC05212() {
+                
+       class RunnableC05212 implements Runnable {
+           RunnableC05212() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 168 */           public void run() {
-/* 169 */               if (RealTimeChatService.access$300(RealTimeChatService.this) != null && !RealTimeChatService.access$400(RealTimeChatService.this)) {
-/* 170 */                   RealTimeChatService.access$300(RealTimeChatService.this).connect();
-/* 171 */                   RealTimeChatService.access$202(RealTimeChatService.this, RealTimeChatService.access$200(RealTimeChatService.this) < 16000 ? RealTimeChatService.access$200(RealTimeChatService.this) * 2 : RealTimeChatService.access$200(RealTimeChatService.this));
-/* 173 */                   RealTimeChatService.access$600(RealTimeChatService.this).postDelayed(RealTimeChatService.access$500(RealTimeChatService.this), RealTimeChatService.access$200(RealTimeChatService.this));
-/* 174 */                   SLog.dWithTag(RealTimeChatService.TAG, "Posted reconnect with delay=" + RealTimeChatService.access$200(RealTimeChatService.this) + "ms");
+                    @Override 
+           public void run() {
+               if (RealTimeChatService.access$300(RealTimeChatService.this) != null && !RealTimeChatService.access$400(RealTimeChatService.this)) {
+                   RealTimeChatService.access$300(RealTimeChatService.this).connect();
+                   RealTimeChatService.access$202(RealTimeChatService.this, RealTimeChatService.access$200(RealTimeChatService.this) < 16000 ? RealTimeChatService.access$200(RealTimeChatService.this) * 2 : RealTimeChatService.access$200(RealTimeChatService.this));
+                   RealTimeChatService.access$600(RealTimeChatService.this).postDelayed(RealTimeChatService.access$500(RealTimeChatService.this), RealTimeChatService.access$200(RealTimeChatService.this));
+                   SLog.dWithTag(RealTimeChatService.TAG, "Posted reconnect with delay=" + RealTimeChatService.access$200(RealTimeChatService.this) + "ms");
                         }
                     }
                 }
 
-/* 179 */       private synchronized boolean clientIsActive() {
+       private synchronized boolean clientIsActive() {
                     WebSocketClient client;
                     try {
                         client = this.mClient;
                     } catch (Throwable th) {
                         throw th;
                     }
-/* 181 */           return client != null && client.isConnected();
+           return client != null && client.isConnected();
                 }
 
-/* 184 */       private synchronized String getPayload(Long conversationId, Conversation conversation) {
+       private synchronized String getPayload(Long conversationId, Conversation conversation) {
                     try {
                     } catch (Throwable th) {
                         throw th;
@@ -244,108 +244,108 @@
                     return VineWebSocketClient.getPayload(conversationId, conversation);
                 }
 
-                @Override // android.app.Service
-/* 189 */       public void onDestroy() {
-/* 190 */           super.onDestroy();
-/* 191 */           removeReconnectCallback();
-/* 192 */           disconnect();
+                @Override 
+       public void onDestroy() {
+           super.onDestroy();
+           removeReconnectCallback();
+           disconnect();
                 }
 
-/* 196 */       class VineServiceHandler extends Handler {
-/* 197 */           VineServiceHandler() {
+       class VineServiceHandler extends Handler {
+           VineServiceHandler() {
                     }
 
-                    @Override // android.os.Handler
-/* 200 */           public void handleMessage(Message msg) {
-/* 201 */               msg.getData().setClassLoader(RealTimeChatService.this.getClassLoader());
-/* 202 */               RealTimeChatService.access$700(RealTimeChatService.this).execute(RealTimeChatService.this.new ExecutionRunnable(msg.arg1, msg.getData(), msg.replyTo));
+                    @Override 
+           public void handleMessage(Message msg) {
+               msg.getData().setClassLoader(RealTimeChatService.this.getClassLoader());
+               RealTimeChatService.access$700(RealTimeChatService.this).execute(RealTimeChatService.this.new ExecutionRunnable(msg.arg1, msg.getData(), msg.replyTo));
                     }
                 }
 
-/* 209 */       private class ExecutionRunnable implements Runnable {
+       private class ExecutionRunnable implements Runnable {
                     private final int mActionCode;
                     private final Bundle mBundle;
                     private final Messenger mResponder;
 
-/* 210 */           public ExecutionRunnable(int actionCode, Bundle bundle, Messenger messenger) {
-/* 212 */               this.mActionCode = actionCode;
-/* 213 */               this.mBundle = bundle;
-/* 214 */               this.mResponder = messenger;
+           public ExecutionRunnable(int actionCode, Bundle bundle, Messenger messenger) {
+               this.mActionCode = actionCode;
+               this.mBundle = bundle;
+               this.mResponder = messenger;
                     }
 
-                    @Override // java.lang.Runnable
-/* 217 */           public void run() {
-/* 218 */               Process.setThreadPriority(10);
-/* 219 */               RealTimeChatService.access$800(RealTimeChatService.this, this.mActionCode, this.mBundle);
-/* 222 */               if (this.mBundle.getBoolean(RealTimeChatService.EXTRA_RESPOND, true)) {
-/* 223 */                   Message msg = Message.obtain();
-/* 224 */                   msg.what = this.mActionCode;
-/* 225 */                   msg.setData(this.mBundle);
+                    @Override 
+           public void run() {
+               Process.setThreadPriority(10);
+               RealTimeChatService.access$800(RealTimeChatService.this, this.mActionCode, this.mBundle);
+               if (this.mBundle.getBoolean(RealTimeChatService.EXTRA_RESPOND, true)) {
+                   Message msg = Message.obtain();
+                   msg.what = this.mActionCode;
+                   msg.setData(this.mBundle);
                             try {
-/* 227 */                       this.mResponder.send(msg);
+                       this.mResponder.send(msg);
                             } catch (Exception e) {
-/* 229 */                       CrashUtil.logException(e, "Error sending service response", new Object[0]);
+                       CrashUtil.logException(e, "Error sending service response", new Object[0]);
                             }
                         }
                     }
                 }
 
-/* 236 */       private void send(String payload) {
+       private void send(String payload) {
                     try {
-/* 237 */               WebSocketClient client = this.mClient;
-/* 238 */               if (client != null && clientIsActive()) {
-/* 239 */                   client.send(payload);
+               WebSocketClient client = this.mClient;
+               if (client != null && clientIsActive()) {
+                   client.send(payload);
                         }
                     } catch (IllegalStateException e) {
-/* 242 */               CrashUtil.log(e.getMessage());
+               CrashUtil.log(e.getMessage());
                     }
                 }
 
-/* 246 */       private void removeReconnectCallback() {
-/* 247 */           this.mMainHandler.removeCallbacks(this.mReconnectRunnable);
+       private void removeReconnectCallback() {
+           this.mMainHandler.removeCallbacks(this.mReconnectRunnable);
                 }
 
-/* 250 */       private void executeAction(int actionCode, Bundle b) {
+       private void executeAction(int actionCode, Bundle b) {
                     switch (actionCode) {
                         case 1:
-/* 253 */                   String sessionKey = b.getString("s_key");
-/* 254 */                   removeReconnectCallback();
-/* 255 */                   prepareClient(sessionKey);
-/* 256 */                   if (!this.mClient.isConnected()) {
-/* 257 */                       this.mClient.connect();
+                   String sessionKey = b.getString("s_key");
+                   removeReconnectCallback();
+                   prepareClient(sessionKey);
+                   if (!this.mClient.isConnected()) {
+                       this.mClient.connect();
                             }
                             break;
                         case 2:
-/* 262 */                   String sessionKey2 = b.getString("s_key");
-/* 263 */                   prepareClient(sessionKey2);
-/* 264 */                   removeReconnectCallback();
-/* 266 */                   this.mReconnectDelay = 1000L;
-/* 267 */                   this.mMainHandler.postDelayed(this.mReconnectRunnable, this.mReconnectDelay);
+                   String sessionKey2 = b.getString("s_key");
+                   prepareClient(sessionKey2);
+                   removeReconnectCallback();
+                   this.mReconnectDelay = 1000L;
+                   this.mMainHandler.postDelayed(this.mReconnectRunnable, this.mReconnectDelay);
                             break;
                         case 3:
-/* 271 */                   Long conversationId = Long.valueOf(b.getLong("conversation_id"));
-/* 272 */                   Conversation conversation = new Conversation.Builder().setConnected().build();
-/* 275 */                   send(getPayload(conversationId, conversation));
+                   Long conversationId = Long.valueOf(b.getLong("conversation_id"));
+                   Conversation conversation = new Conversation.Builder().setConnected().build();
+                   send(getPayload(conversationId, conversation));
                             break;
                         case 4:
-/* 279 */                   Long conversationId2 = Long.valueOf(b.getLong("conversation_id"));
-/* 280 */                   Conversation conversation2 = new Conversation.Builder().build();
-/* 281 */                   send(getPayload(conversationId2, conversation2));
+                   Long conversationId2 = Long.valueOf(b.getLong("conversation_id"));
+                   Conversation conversation2 = new Conversation.Builder().build();
+                   send(getPayload(conversationId2, conversation2));
                             break;
                         case 5:
-/* 285 */                   disconnect();
+                   disconnect();
                             break;
                         case 7:
-/* 289 */                   boolean isTyping = b.getBoolean(EXTRA_IS_TYPING);
-/* 290 */                   Long conversationId3 = Long.valueOf(b.getLong("conversation_id"));
-/* 291 */                   Conversation conversation3 = new Conversation.Builder().setConnected().setTyping(isTyping).build();
-/* 295 */                   send(getPayload(conversationId3, conversation3));
+                   boolean isTyping = b.getBoolean(EXTRA_IS_TYPING);
+                   Long conversationId3 = Long.valueOf(b.getLong("conversation_id"));
+                   Conversation conversation3 = new Conversation.Builder().setConnected().setTyping(isTyping).build();
+                   send(getPayload(conversationId3, conversation3));
                             break;
                         case 8:
-/* 299 */                   long conversationId4 = b.getLong("conversation_id");
-/* 300 */                   long lastMessageId = b.getLong("last_message_id");
-/* 301 */                   Conversation conversation4 = new Conversation.Builder().setConnected().setLastMessageId(lastMessageId).build();
-/* 305 */                   send(getPayload(Long.valueOf(conversationId4), conversation4));
+                   long conversationId4 = b.getLong("conversation_id");
+                   long lastMessageId = b.getLong("last_message_id");
+                   Conversation conversation4 = new Conversation.Builder().setConnected().setLastMessageId(lastMessageId).build();
+                   send(getPayload(Long.valueOf(conversationId4), conversation4));
                             break;
                     }
                 }

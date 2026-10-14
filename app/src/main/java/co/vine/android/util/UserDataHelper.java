@@ -6,37 +6,37 @@
             import android.support.annotation.NonNull;
             import android.support.annotation.Nullable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 14 */    public class UserDataHelper {
+            
+    public class UserDataHelper {
                 private final Context mContext;
 
-/* 15 */        public UserDataHelper(Context context) {
-/* 17 */            this.mContext = context;
+        public UserDataHelper(Context context) {
+            this.mContext = context;
                 }
 
-/* 21 */        public boolean getBoolean(@Nullable Account account, String key, boolean defaultValue) {
+        public boolean getBoolean(@Nullable Account account, String key, boolean defaultValue) {
                     String data;
                     return (account == null || (data = m4am().getUserData(account, key)) == null) ? defaultValue : Boolean.parseBoolean(data);
                 }
 
-/* 33 */        public void setBoolean(@NonNull Account account, String key, boolean value) {
-/* 34 */            m4am().setUserData(account, key, Boolean.toString(value));
+        public void setBoolean(@NonNull Account account, String key, boolean value) {
+            m4am().setUserData(account, key, Boolean.toString(value));
                 }
 
-/* 38 */        public long getLong(@Nullable Account account, String key, long defaultValue) {
+        public long getLong(@Nullable Account account, String key, long defaultValue) {
                     String data;
-/* 39 */            if (account != null && (data = m4am().getUserData(account, key)) != null) {
-/* 44 */                return Long.parseLong(data);
+            if (account != null && (data = m4am().getUserData(account, key)) != null) {
+                return Long.parseLong(data);
                     }
-/* 46 */            return defaultValue;
+            return defaultValue;
                 }
 
-/* 51 */        public void setLong(@NonNull Account account, String key, long value) {
-/* 52 */            m4am().setUserData(account, key, Long.toString(value));
+        public void setLong(@NonNull Account account, String key, long value) {
+            m4am().setUserData(account, key, Long.toString(value));
                 }
 
-                /* JADX INFO: renamed from: am */
-/* 55 */        private AccountManager m4am() {
-/* 56 */            return (AccountManager) this.mContext.getSystemService("account");
+                
+        private AccountManager m4am() {
+            return (AccountManager) this.mContext.getSystemService("account");
                 }
             }

@@ -2,14 +2,14 @@
 
             import java.util.Iterator;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface TreeNode {
                 JsonToken asToken();
 
-                /* JADX INFO: renamed from: at */
+                
                 TreeNode m525at(JsonPointer jsonPointer);
 
-                /* JADX INFO: renamed from: at */
+                
                 TreeNode m526at(String str) throws IllegalArgumentException;
 
                 Iterator<String> fieldNames();

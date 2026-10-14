@@ -1,6 +1,6 @@
             package com.fasterxml.jackson.core;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface JsonTokenId {
                 public static final int ID_EMBEDDED_OBJECT = 12;
                 public static final int ID_END_ARRAY = 4;

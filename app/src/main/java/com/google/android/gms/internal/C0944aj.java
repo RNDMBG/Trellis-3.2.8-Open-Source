@@ -3,15 +3,15 @@
             import co.vine.android.HomeTabActivity;
             import java.util.Map;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.aj */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0944aj implements InterfaceC0943ai {
-                /* JADX INFO: renamed from: a */
+                
                 private static boolean m1251a(Map<String, String> map) {
                     return "1".equals(map.get("custom_close"));
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static int m1252b(Map<String, String> map) {
                     String str = map.get("o");
                     if (str != null) {
@@ -25,8 +25,8 @@
                     return -1;
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0943ai
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 public void mo1249a(C1005cq c1005cq, Map<String, String> map) {
                     String str = map.get("a");
                     if (str == null) {

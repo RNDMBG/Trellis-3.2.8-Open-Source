@@ -3,8 +3,8 @@
             import android.os.AsyncTask;
             import com.edisonwang.android.slog.SLog;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 8 */     public abstract class BaseFinishProcessTask extends AsyncTask<Void, Integer, Void> {
+            
+     public abstract class BaseFinishProcessTask extends AsyncTask<Void, Integer, Void> {
                 public boolean isRunning;
                 protected int mCurrentMessage;
                 private int mLastProgress;
@@ -15,37 +15,37 @@
                 protected final String tag;
 
 
-/* 20 */        public BaseFinishProcessTask(String tag, Runnable onComplete, boolean releasePreview, boolean saveSession) {
-/* 22 */            this.tag = tag;
-/* 23 */            this.onComplete = onComplete;
-/* 24 */            this.releasePreview = releasePreview;
-/* 25 */            this.saveSession = saveSession;
+        public BaseFinishProcessTask(String tag, Runnable onComplete, boolean releasePreview, boolean saveSession) {
+            this.tag = tag;
+            this.onComplete = onComplete;
+            this.releasePreview = releasePreview;
+            this.saveSession = saveSession;
                 }
 
-                /* JADX INFO: renamed from: onPostExecute, reason: avoid collision after fix types in other method */
-/* 29 */        protected void onPostExecute(Void aVoid) {
-/* 30 */            SLog.m447d("Waited for {} ms", Long.valueOf(System.currentTimeMillis() - this.mWaitStartTime));
-/* 31 */            if (this.onComplete != null) {
-/* 32 */                this.onComplete.run();
+                
+        protected void onPostExecute(Void aVoid) {
+            SLog.m447d("Waited for {} ms", Long.valueOf(System.currentTimeMillis() - this.mWaitStartTime));
+            if (this.onComplete != null) {
+                this.onComplete.run();
                     }
-/* 34 */            this.isRunning = false;
+            this.isRunning = false;
                 }
 
-                @Override // android.os.AsyncTask
-/* 38 */        protected void onPreExecute() {
-/* 39 */            this.mCurrentMessage = 1;
-/* 40 */            this.mWaitStartTime = System.currentTimeMillis();
-/* 41 */            this.isRunning = true;
+                @Override 
+        protected void onPreExecute() {
+            this.mCurrentMessage = 1;
+            this.mWaitStartTime = System.currentTimeMillis();
+            this.isRunning = true;
                 }
 
-/* 44 */        public void publish(int value) {
-/* 45 */            this.mLastProgress = value;
-/* 46 */            publishProgress(Integer.valueOf(value));
+        public void publish(int value) {
+            this.mLastProgress = value;
+            publishProgress(Integer.valueOf(value));
                 }
 
-/* 49 */        public void publishGreater(int value) {
-/* 50 */            if (value > this.mLastProgress) {
-/* 51 */                publish(value);
+        public void publishGreater(int value) {
+            if (value > this.mLastProgress) {
+                publish(value);
                     }
                 }
             }

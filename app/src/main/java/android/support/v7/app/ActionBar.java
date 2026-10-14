@@ -11,8 +11,8 @@
             import android.view.ViewGroup;
             import android.widget.SpinnerAdapter;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 419 */   public abstract class ActionBar {
+            
+   public abstract class ActionBar {
                 public static final int DISPLAY_HOME_AS_UP = 4;
                 public static final int DISPLAY_SHOW_CUSTOM = 16;
                 public static final int DISPLAY_SHOW_HOME = 2;
@@ -174,67 +174,67 @@
 
                 public abstract void show();
 
-/* 420 */       public void setStackedBackgroundDrawable(Drawable d) {
+       public void setStackedBackgroundDrawable(Drawable d) {
                 }
 
-/* 431 */       public void setSplitBackgroundDrawable(Drawable d) {
+       public void setSplitBackgroundDrawable(Drawable d) {
                 }
 
-/* 648 */       public void setHomeButtonEnabled(boolean enabled) {
+       public void setHomeButtonEnabled(boolean enabled) {
                 }
 
-/* 660 */       public Context getThemedContext() {
-/* 661 */           return null;
+       public Context getThemedContext() {
+           return null;
                 }
 
-/* 681 */       public void setHomeAsUpIndicator(Drawable indicator) {
+       public void setHomeAsUpIndicator(Drawable indicator) {
                 }
 
-/* 702 */       public void setHomeAsUpIndicator(int resId) {
+       public void setHomeAsUpIndicator(int resId) {
                 }
 
-/* 721 */       public void setHomeActionContentDescription(CharSequence description) {
+       public void setHomeActionContentDescription(CharSequence description) {
                 }
 
-/* 741 */       public void setHomeActionContentDescription(int resId) {
+       public void setHomeActionContentDescription(int resId) {
                 }
 
-/* 1020 */      public static class LayoutParams extends ViewGroup.MarginLayoutParams {
+      public static class LayoutParams extends ViewGroup.MarginLayoutParams {
                     public int gravity;
 
-/* 1021 */          public LayoutParams(Context c, AttributeSet attrs) {
-/* 1022 */              super(c, attrs);
-/* 1019 */              this.gravity = -1;
-/* 1024 */              TypedArray a = c.obtainStyledAttributes(attrs, C0084R.styleable.ActionBarLayout);
-/* 1026 */              this.gravity = a.getInt(0, -1);
-/* 1027 */              a.recycle();
+          public LayoutParams(Context c, AttributeSet attrs) {
+              super(c, attrs);
+              this.gravity = -1;
+              TypedArray a = c.obtainStyledAttributes(attrs, C0084R.styleable.ActionBarLayout);
+              this.gravity = a.getInt(0, -1);
+              a.recycle();
                     }
 
-/* 1030 */          public LayoutParams(int width, int height) {
-/* 1031 */              super(width, height);
-/* 1019 */              this.gravity = -1;
-/* 1032 */              this.gravity = 19;
+          public LayoutParams(int width, int height) {
+              super(width, height);
+              this.gravity = -1;
+              this.gravity = 19;
                     }
 
-/* 1035 */          public LayoutParams(int width, int height, int gravity) {
-/* 1036 */              super(width, height);
-/* 1019 */              this.gravity = -1;
-/* 1037 */              this.gravity = gravity;
+          public LayoutParams(int width, int height, int gravity) {
+              super(width, height);
+              this.gravity = -1;
+              this.gravity = gravity;
                     }
 
-/* 1040 */          public LayoutParams(int gravity) {
-/* 1041 */              this(-2, -1, gravity);
+          public LayoutParams(int gravity) {
+              this(-2, -1, gravity);
                     }
 
-/* 1044 */          public LayoutParams(LayoutParams source) {
-/* 1045 */              super((ViewGroup.MarginLayoutParams) source);
-/* 1019 */              this.gravity = -1;
-/* 1047 */              this.gravity = source.gravity;
+          public LayoutParams(LayoutParams source) {
+              super((ViewGroup.MarginLayoutParams) source);
+              this.gravity = -1;
+              this.gravity = source.gravity;
                     }
 
-/* 1050 */          public LayoutParams(ViewGroup.LayoutParams source) {
-/* 1051 */              super(source);
-/* 1019 */              this.gravity = -1;
+          public LayoutParams(ViewGroup.LayoutParams source) {
+              super(source);
+              this.gravity = -1;
                     }
                 }
             }

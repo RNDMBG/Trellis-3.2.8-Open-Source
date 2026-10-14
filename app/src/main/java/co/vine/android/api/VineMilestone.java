@@ -3,8 +3,8 @@
             import android.os.Parcel;
             import android.os.Parcelable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 20 */    public class VineMilestone implements Parcelable {
+            
+    public class VineMilestone implements Parcelable {
                 public static final Parcelable.Creator<VineMilestone> CREATOR = new C03321();
                 public String backgroundImageUrl;
                 public String backgroundVideoUrl;
@@ -16,65 +16,65 @@
                 public int overlayColor;
                 public String title;
 
-/* 21 */        public VineMilestone(String backgroundImageUrl, String backgroundVideoUrl, String iconUrl, String title, String description, String milestoneUrl, int overlayColor, float overlayAlpha, int blurRadius) {
-/* 23 */            this.backgroundImageUrl = backgroundImageUrl;
-/* 24 */            this.backgroundVideoUrl = backgroundVideoUrl;
-/* 25 */            this.iconUrl = iconUrl;
-/* 26 */            this.title = title;
-/* 27 */            this.description = description;
-/* 28 */            this.milestoneUrl = milestoneUrl;
-/* 29 */            this.overlayColor = overlayColor;
-/* 30 */            this.overlayAlpha = overlayAlpha;
-/* 31 */            this.blurRadius = blurRadius;
+        public VineMilestone(String backgroundImageUrl, String backgroundVideoUrl, String iconUrl, String title, String description, String milestoneUrl, int overlayColor, float overlayAlpha, int blurRadius) {
+            this.backgroundImageUrl = backgroundImageUrl;
+            this.backgroundVideoUrl = backgroundVideoUrl;
+            this.iconUrl = iconUrl;
+            this.title = title;
+            this.description = description;
+            this.milestoneUrl = milestoneUrl;
+            this.overlayColor = overlayColor;
+            this.overlayAlpha = overlayAlpha;
+            this.blurRadius = blurRadius;
                 }
 
-/* 33 */        public VineMilestone(Parcel in) {
-/* 35 */            this.backgroundImageUrl = in.readString();
-/* 36 */            this.backgroundVideoUrl = in.readString();
-/* 37 */            this.iconUrl = in.readString();
-/* 38 */            this.title = in.readString();
-/* 39 */            this.description = in.readString();
-/* 40 */            this.milestoneUrl = in.readString();
-/* 41 */            this.overlayColor = in.readInt();
-/* 42 */            this.overlayAlpha = in.readFloat();
-/* 43 */            this.blurRadius = in.readInt();
+        public VineMilestone(Parcel in) {
+            this.backgroundImageUrl = in.readString();
+            this.backgroundVideoUrl = in.readString();
+            this.iconUrl = in.readString();
+            this.title = in.readString();
+            this.description = in.readString();
+            this.milestoneUrl = in.readString();
+            this.overlayColor = in.readInt();
+            this.overlayAlpha = in.readFloat();
+            this.blurRadius = in.readInt();
                 }
 
-                @Override // android.os.Parcelable
-/* 47 */        public void writeToParcel(Parcel dest, int flags) {
-/* 48 */            dest.writeString(this.backgroundImageUrl);
-/* 49 */            dest.writeString(this.backgroundVideoUrl);
-/* 50 */            dest.writeString(this.iconUrl);
-/* 51 */            dest.writeString(this.title);
-/* 52 */            dest.writeString(this.description);
-/* 53 */            dest.writeString(this.milestoneUrl);
-/* 54 */            dest.writeInt(this.overlayColor);
-/* 55 */            dest.writeFloat(this.overlayAlpha);
-/* 56 */            dest.writeInt(this.blurRadius);
+                @Override 
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(this.backgroundImageUrl);
+            dest.writeString(this.backgroundVideoUrl);
+            dest.writeString(this.iconUrl);
+            dest.writeString(this.title);
+            dest.writeString(this.description);
+            dest.writeString(this.milestoneUrl);
+            dest.writeInt(this.overlayColor);
+            dest.writeFloat(this.overlayAlpha);
+            dest.writeInt(this.blurRadius);
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.api.VineMilestone$1 */
-/* 57 */        static class C03321 implements Parcelable.Creator<VineMilestone> {
-/* 58 */            C03321() {
+                
+        static class C03321 implements Parcelable.Creator<VineMilestone> {
+            C03321() {
                     }
 
 
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // android.os.Parcelable.Creator
-/* 60 */            public VineMilestone createFromParcel(Parcel in) {
-/* 61 */                return new VineMilestone(in);
+                    
+                    @Override 
+            public VineMilestone createFromParcel(Parcel in) {
+                return new VineMilestone(in);
                     }
 
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // android.os.Parcelable.Creator
-/* 64 */            public VineMilestone[] newArray(int size) {
-/* 65 */                return new VineMilestone[size];
+                    
+                    @Override 
+            public VineMilestone[] newArray(int size) {
+                return new VineMilestone[size];
                     }
                 }
 
-                @Override // android.os.Parcelable
-/* 70 */        public int describeContents() {
-/* 71 */            return 0;
+                @Override 
+        public int describeContents() {
+            return 0;
                 }
             }

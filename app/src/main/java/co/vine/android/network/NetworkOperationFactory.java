@@ -5,7 +5,7 @@
             import org.apache.http.message.BasicNameValuePair;
             import org.json.JSONObject;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface NetworkOperationFactory<T> {
                 NetworkOperation createBasicAuthDeleteRequest(Context context, StringBuilder sb, T t, NetworkOperationReader networkOperationReader);
 

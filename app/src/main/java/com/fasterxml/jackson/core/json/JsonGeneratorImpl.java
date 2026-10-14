@@ -12,8 +12,8 @@
             import com.fasterxml.jackson.core.util.VersionUtil;
             import java.io.IOException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 93 */    public abstract class JsonGeneratorImpl extends GeneratorBase {
+            
+    public abstract class JsonGeneratorImpl extends GeneratorBase {
                 protected static final int[] sOutputEscapes = CharTypes.get7BitOutputEscapes();
                 protected CharacterEscapes _characterEscapes;
                 protected final IOContext _ioContext;
@@ -21,60 +21,60 @@
                 protected int[] _outputEscapes;
                 protected SerializableString _rootValueSeparator;
 
-/* 94 */        public JsonGeneratorImpl(IOContext iOContext, int i, ObjectCodec objectCodec) {
-/* 95 */            super(i, objectCodec);
-/* 53 */            this._outputEscapes = sOutputEscapes;
-/* 84 */            this._rootValueSeparator = DefaultPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR;
-/* 96 */            this._ioContext = iOContext;
-/* 97 */            if (isEnabled(JsonGenerator.Feature.ESCAPE_NON_ASCII)) {
-/* 98 */                setHighestNonEscapedChar(127);
+        public JsonGeneratorImpl(IOContext iOContext, int i, ObjectCodec objectCodec) {
+            super(i, objectCodec);
+            this._outputEscapes = sOutputEscapes;
+            this._rootValueSeparator = DefaultPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR;
+            this._ioContext = iOContext;
+            if (isEnabled(JsonGenerator.Feature.ESCAPE_NON_ASCII)) {
+                setHighestNonEscapedChar(127);
                     }
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonGenerator
-/* 109 */       public JsonGenerator setHighestNonEscapedChar(int i) {
-/* 110 */           if (i < 0) {
+                @Override 
+       public JsonGenerator setHighestNonEscapedChar(int i) {
+           if (i < 0) {
                         i = 0;
                     }
                     this._maximumNonEscapedChar = i;
-/* 111 */           return this;
+           return this;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonGenerator
-/* 115 */       public int getHighestEscapedChar() {
-/* 116 */           return this._maximumNonEscapedChar;
+                @Override 
+       public int getHighestEscapedChar() {
+           return this._maximumNonEscapedChar;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonGenerator
-/* 121 */       public JsonGenerator setCharacterEscapes(CharacterEscapes characterEscapes) {
-/* 122 */           this._characterEscapes = characterEscapes;
-/* 123 */           if (characterEscapes == null) {
-/* 124 */               this._outputEscapes = sOutputEscapes;
+                @Override 
+       public JsonGenerator setCharacterEscapes(CharacterEscapes characterEscapes) {
+           this._characterEscapes = characterEscapes;
+           if (characterEscapes == null) {
+               this._outputEscapes = sOutputEscapes;
                     } else {
-/* 126 */               this._outputEscapes = characterEscapes.getEscapeCodesForAscii();
+               this._outputEscapes = characterEscapes.getEscapeCodesForAscii();
                     }
-/* 128 */           return this;
+           return this;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonGenerator
-/* 136 */       public CharacterEscapes getCharacterEscapes() {
-/* 137 */           return this._characterEscapes;
+                @Override 
+       public CharacterEscapes getCharacterEscapes() {
+           return this._characterEscapes;
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonGenerator
-/* 141 */       public JsonGenerator setRootValueSeparator(SerializableString serializableString) {
-/* 142 */           this._rootValueSeparator = serializableString;
-/* 143 */           return this;
+                @Override 
+       public JsonGenerator setRootValueSeparator(SerializableString serializableString) {
+           this._rootValueSeparator = serializableString;
+           return this;
                 }
 
-                @Override // com.fasterxml.jackson.core.base.GeneratorBase, com.fasterxml.jackson.core.JsonGenerator, com.fasterxml.jackson.core.Versioned
-/* 153 */       public Version version() {
-/* 154 */           return VersionUtil.versionFor(getClass());
+                @Override 
+       public Version version() {
+           return VersionUtil.versionFor(getClass());
                 }
 
-                @Override // com.fasterxml.jackson.core.JsonGenerator
-/* 168 */       public final void writeStringField(String str, String str2) throws IOException {
-/* 169 */           writeFieldName(str);
-/* 170 */           writeString(str2);
+                @Override 
+       public final void writeStringField(String str, String str2) throws IOException {
+           writeFieldName(str);
+           writeString(str2);
                 }
             }

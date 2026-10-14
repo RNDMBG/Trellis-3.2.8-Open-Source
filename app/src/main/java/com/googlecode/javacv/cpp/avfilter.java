@@ -19,9 +19,9 @@
             import java.nio.ByteBuffer;
             import java.nio.IntBuffer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties(inherit = {avformat.class, postproc.class, swresample.class, swscale.class}, value = {@Platform(cinclude = {"<libavfilter/avfilter.h>", "<libavfilter/buffersink.h>", "<libavfilter/buffersrc.h>"}, link = {"avfilter@.3"}), @Platform(preload = {"avfilter-3"}, value = {"windows"})})
-/* 37 */    public class avfilter {
+    public class avfilter {
                 public static final int AVFILTER_ALIGN = 16;
                 public static final int AVFILTER_AUTO_CONVERT_ALL = 0;
                 public static final int AVFILTER_AUTO_CONVERT_NONE = -1;
@@ -332,20 +332,20 @@
                 public static native int avfilter_version();
 
                 static {
-/* 39 */            Loader.load();
+            Loader.load();
                 }
 
                 @Opaque
-/* 103 */       public static class AVFilterFormats extends Pointer {
-/* 104 */           public AVFilterFormats() {
+       public static class AVFilterFormats extends Pointer {
+           public AVFilterFormats() {
                     }
 
-/* 105 */           public AVFilterFormats(Pointer p) {
-/* 106 */               super(p);
+           public AVFilterFormats(Pointer p) {
+               super(p);
                     }
                 }
 
-/* 113 */       public static class AVFilterBuffer extends Pointer {
+       public static class AVFilterBuffer extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -376,10 +376,10 @@
 
                     public native AVFilterBuffer free(Free_AVFilterBuffer free_AVFilterBuffer);
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public native int m2395h();
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public native AVFilterBuffer m2396h(int i);
 
                     public native int linesize(int i);
@@ -398,54 +398,54 @@
 
                     public native AVFilterBuffer refcount(int i);
 
-                    /* JADX INFO: renamed from: w */
+                    
                     public native int m2397w();
 
-                    /* JADX INFO: renamed from: w */
+                    
                     public native AVFilterBuffer m2398w(int i);
 
 
                     static {
-/* 116 */               Loader.load();
+               Loader.load();
                     }
 
-/* 116 */           public AVFilterBuffer() {
+           public AVFilterBuffer() {
                         allocate();
                     }
 
-/* 117 */           public AVFilterBuffer(int size) {
+           public AVFilterBuffer(int size) {
                         allocateArray(size);
                     }
 
-/* 118 */           public AVFilterBuffer(Pointer p) {
-/* 119 */               super(p);
+           public AVFilterBuffer(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 122 */           public AVFilterBuffer position(int position) {
-/* 123 */               return (AVFilterBuffer) super.position(position);
+                    @Override 
+           public AVFilterBuffer position(int position) {
+               return (AVFilterBuffer) super.position(position);
                     }
 
-/* 157 */           public static class Free_AVFilterBuffer extends FunctionPointer {
+           public static class Free_AVFilterBuffer extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVFilterBuffer aVFilterBuffer);
 
                         static {
-/* 159 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 159 */               public Free_AVFilterBuffer(Pointer p) {
-/* 160 */                   super(p);
+               public Free_AVFilterBuffer(Pointer p) {
+                   super(p);
                         }
 
-/* 160 */               protected Free_AVFilterBuffer() {
+               protected Free_AVFilterBuffer() {
                             allocate();
                         }
                     }
                 }
 
-/* 196 */       public static class AVFilterBufferRefAudioProps extends Pointer {
+       public static class AVFilterBufferRefAudioProps extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -469,36 +469,36 @@
 
 
                     static {
-/* 199 */               Loader.load();
+               Loader.load();
                     }
 
-/* 199 */           public AVFilterBufferRefAudioProps() {
+           public AVFilterBufferRefAudioProps() {
                         allocate();
                     }
 
-/* 200 */           public AVFilterBufferRefAudioProps(int size) {
+           public AVFilterBufferRefAudioProps(int size) {
                         allocateArray(size);
                     }
 
-/* 201 */           public AVFilterBufferRefAudioProps(Pointer p) {
-/* 202 */               super(p);
+           public AVFilterBufferRefAudioProps(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 205 */           public AVFilterBufferRefAudioProps position(int position) {
-/* 206 */               return (AVFilterBufferRefAudioProps) super.position(position);
+                    @Override 
+           public AVFilterBufferRefAudioProps position(int position) {
+               return (AVFilterBufferRefAudioProps) super.position(position);
                     }
                 }
 
-/* 222 */       public static class AVFilterBufferRefVideoProps extends Pointer {
+       public static class AVFilterBufferRefVideoProps extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public native int m2399h();
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public native AVFilterBufferRefVideoProps m2400h(int i);
 
                     public native int interlaced();
@@ -535,36 +535,36 @@
 
                     public native AVFilterBufferRefVideoProps top_field_first(int i);
 
-                    /* JADX INFO: renamed from: w */
+                    
                     public native int m2401w();
 
-                    /* JADX INFO: renamed from: w */
+                    
                     public native AVFilterBufferRefVideoProps m2402w(int i);
 
 
                     static {
-/* 225 */               Loader.load();
+               Loader.load();
                     }
 
-/* 225 */           public AVFilterBufferRefVideoProps() {
+           public AVFilterBufferRefVideoProps() {
                         allocate();
                     }
 
-/* 226 */           public AVFilterBufferRefVideoProps(int size) {
+           public AVFilterBufferRefVideoProps(int size) {
                         allocateArray(size);
                     }
 
-/* 227 */           public AVFilterBufferRefVideoProps(Pointer p) {
-/* 228 */               super(p);
+           public AVFilterBufferRefVideoProps(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 231 */           public AVFilterBufferRefVideoProps position(int position) {
-/* 232 */               return (AVFilterBufferRefVideoProps) super.position(position);
+                    @Override 
+           public AVFilterBufferRefVideoProps position(int position) {
+               return (AVFilterBufferRefVideoProps) super.position(position);
                     }
                 }
 
-/* 263 */       public static class AVFilterBufferRef extends Pointer {
+       public static class AVFilterBufferRef extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -633,28 +633,28 @@
 
 
                     static {
-/* 266 */               Loader.load();
+               Loader.load();
                     }
 
-/* 266 */           public AVFilterBufferRef() {
+           public AVFilterBufferRef() {
                         allocate();
                     }
 
-/* 267 */           public AVFilterBufferRef(int size) {
+           public AVFilterBufferRef(int size) {
                         allocateArray(size);
                     }
 
-/* 268 */           public AVFilterBufferRef(Pointer p) {
-/* 269 */               super(p);
+           public AVFilterBufferRef(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 272 */           public AVFilterBufferRef position(int position) {
-/* 273 */               return (AVFilterBufferRef) super.position(position);
+                    @Override 
+           public AVFilterBufferRef position(int position) {
+               return (AVFilterBufferRef) super.position(position);
                     }
                 }
 
-/* 380 */       public static class AVFilterPad extends Pointer {
+       public static class AVFilterPad extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -724,190 +724,190 @@
 
 
                     static {
-/* 383 */               Loader.load();
+               Loader.load();
                     }
 
-/* 383 */           public AVFilterPad() {
+           public AVFilterPad() {
                         allocate();
                     }
 
-/* 384 */           public AVFilterPad(int size) {
+           public AVFilterPad(int size) {
                         allocateArray(size);
                     }
 
-/* 385 */           public AVFilterPad(Pointer p) {
-/* 386 */               super(p);
+           public AVFilterPad(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 389 */           public AVFilterPad position(int position) {
-/* 390 */               return (AVFilterPad) super.position(position);
+                    @Override 
+           public AVFilterPad position(int position) {
+               return (AVFilterPad) super.position(position);
                     }
 
-/* 434 */           public static class Start_frame_AVFilterLink_AVFilterBufferRef extends FunctionPointer {
+           public static class Start_frame_AVFilterLink_AVFilterBufferRef extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterLink aVFilterLink, AVFilterBufferRef aVFilterBufferRef);
 
                         static {
-/* 436 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 436 */               public Start_frame_AVFilterLink_AVFilterBufferRef(Pointer p) {
-/* 437 */                   super(p);
+               public Start_frame_AVFilterLink_AVFilterBufferRef(Pointer p) {
+                   super(p);
                         }
 
-/* 437 */               protected Start_frame_AVFilterLink_AVFilterBufferRef() {
+               protected Start_frame_AVFilterLink_AVFilterBufferRef() {
                             allocate();
                         }
                     }
 
-/* 449 */           public static class Get_video_buffer_AVFilterLink_int_int extends FunctionPointer {
+           public static class Get_video_buffer_AVFilterLink_int_int extends FunctionPointer {
                         private native void allocate();
 
                         public native avutil.AVFrame call(AVFilterLink aVFilterLink, int i, int i2);
 
                         static {
-/* 451 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 451 */               public Get_video_buffer_AVFilterLink_int_int(Pointer p) {
-/* 452 */                   super(p);
+               public Get_video_buffer_AVFilterLink_int_int(Pointer p) {
+                   super(p);
                         }
 
-/* 452 */               protected Get_video_buffer_AVFilterLink_int_int() {
+               protected Get_video_buffer_AVFilterLink_int_int() {
                             allocate();
                         }
                     }
 
-/* 464 */           public static class Get_audio_buffer_AVFilterLink_int extends FunctionPointer {
+           public static class Get_audio_buffer_AVFilterLink_int extends FunctionPointer {
                         private native void allocate();
 
                         public native avutil.AVFrame call(AVFilterLink aVFilterLink, int i);
 
                         static {
-/* 466 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 466 */               public Get_audio_buffer_AVFilterLink_int(Pointer p) {
-/* 467 */                   super(p);
+               public Get_audio_buffer_AVFilterLink_int(Pointer p) {
+                   super(p);
                         }
 
-/* 467 */               protected Get_audio_buffer_AVFilterLink_int() {
+               protected Get_audio_buffer_AVFilterLink_int() {
                             allocate();
                         }
                     }
 
-/* 476 */           public static class End_frame_AVFilterLink extends FunctionPointer {
+           public static class End_frame_AVFilterLink extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterLink aVFilterLink);
 
                         static {
-/* 478 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 478 */               public End_frame_AVFilterLink(Pointer p) {
-/* 479 */                   super(p);
+               public End_frame_AVFilterLink(Pointer p) {
+                   super(p);
                         }
 
-/* 479 */               protected End_frame_AVFilterLink() {
+               protected End_frame_AVFilterLink() {
                             allocate();
                         }
                     }
 
-/* 488 */           public static class Draw_slice_AVFilterLink_int_int_int extends FunctionPointer {
+           public static class Draw_slice_AVFilterLink_int_int_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterLink aVFilterLink, int i, int i2, int i3);
 
                         static {
-/* 490 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 490 */               public Draw_slice_AVFilterLink_int_int_int(Pointer p) {
-/* 491 */                   super(p);
+               public Draw_slice_AVFilterLink_int_int_int(Pointer p) {
+                   super(p);
                         }
 
-/* 491 */               protected Draw_slice_AVFilterLink_int_int_int() {
+               protected Draw_slice_AVFilterLink_int_int_int() {
                             allocate();
                         }
                     }
 
-/* 507 */           public static class Filter_frame_AVFilterLink_AVFrame extends FunctionPointer {
+           public static class Filter_frame_AVFilterLink_AVFrame extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterLink aVFilterLink, avutil.AVFrame aVFrame);
 
                         static {
-/* 509 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 509 */               public Filter_frame_AVFilterLink_AVFrame(Pointer p) {
-/* 510 */                   super(p);
+               public Filter_frame_AVFilterLink_AVFrame(Pointer p) {
+                   super(p);
                         }
 
-/* 510 */               protected Filter_frame_AVFilterLink_AVFrame() {
+               protected Filter_frame_AVFilterLink_AVFrame() {
                             allocate();
                         }
                     }
 
-/* 525 */           public static class Poll_frame_AVFilterLink extends FunctionPointer {
+           public static class Poll_frame_AVFilterLink extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterLink aVFilterLink);
 
                         static {
-/* 527 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 527 */               public Poll_frame_AVFilterLink(Pointer p) {
-/* 528 */                   super(p);
+               public Poll_frame_AVFilterLink(Pointer p) {
+                   super(p);
                         }
 
-/* 528 */               protected Poll_frame_AVFilterLink() {
+               protected Poll_frame_AVFilterLink() {
                             allocate();
                         }
                     }
 
-/* 543 */           public static class Request_frame_AVFilterLink extends FunctionPointer {
+           public static class Request_frame_AVFilterLink extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterLink aVFilterLink);
 
                         static {
-/* 545 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 545 */               public Request_frame_AVFilterLink(Pointer p) {
-/* 546 */                   super(p);
+               public Request_frame_AVFilterLink(Pointer p) {
+                   super(p);
                         }
 
-/* 546 */               protected Request_frame_AVFilterLink() {
+               protected Request_frame_AVFilterLink() {
                             allocate();
                         }
                     }
 
-/* 569 */           public static class Config_props_AVFilterLink extends FunctionPointer {
+           public static class Config_props_AVFilterLink extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterLink aVFilterLink);
 
                         static {
-/* 571 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 571 */               public Config_props_AVFilterLink(Pointer p) {
-/* 572 */                   super(p);
+               public Config_props_AVFilterLink(Pointer p) {
+                   super(p);
                         }
 
-/* 572 */               protected Config_props_AVFilterLink() {
+               protected Config_props_AVFilterLink() {
                             allocate();
                         }
                     }
                 }
 
-/* 661 */       public static class AVFilter extends Pointer {
+       public static class AVFilter extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -970,147 +970,147 @@
 
 
                     static {
-/* 664 */               Loader.load();
+               Loader.load();
                     }
 
-/* 664 */           public AVFilter() {
+           public AVFilter() {
                         allocate();
                     }
 
-/* 665 */           public AVFilter(int size) {
+           public AVFilter(int size) {
                         allocateArray(size);
                     }
 
-/* 666 */           public AVFilter(Pointer p) {
-/* 667 */               super(p);
+           public AVFilter(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 670 */           public AVFilter position(int position) {
-/* 671 */               return (AVFilter) super.position(position);
+                    @Override 
+           public AVFilter position(int position) {
+               return (AVFilter) super.position(position);
                     }
 
-/* 746 */           public static class Init_AVFilterContext extends FunctionPointer {
+           public static class Init_AVFilterContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterContext aVFilterContext);
 
                         static {
-/* 748 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 748 */               public Init_AVFilterContext(Pointer p) {
-/* 749 */                   super(p);
+               public Init_AVFilterContext(Pointer p) {
+                   super(p);
                         }
 
-/* 749 */               protected Init_AVFilterContext() {
+               protected Init_AVFilterContext() {
                             allocate();
                         }
                     }
 
-/* 766 */           public static class Init_dict_AVFilterContext_PointerPointer extends FunctionPointer {
+           public static class Init_dict_AVFilterContext_PointerPointer extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterContext aVFilterContext, @Cast({"AVDictionary**"}) PointerPointer pointerPointer);
 
                         static {
-/* 768 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 768 */               public Init_dict_AVFilterContext_PointerPointer(Pointer p) {
-/* 769 */                   super(p);
+               public Init_dict_AVFilterContext_PointerPointer(Pointer p) {
+                   super(p);
                         }
 
-/* 769 */               protected Init_dict_AVFilterContext_PointerPointer() {
+               protected Init_dict_AVFilterContext_PointerPointer() {
                             allocate();
                         }
                     }
 
-/* 785 */           public static class Uninit_AVFilterContext extends FunctionPointer {
+           public static class Uninit_AVFilterContext extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVFilterContext aVFilterContext);
 
                         static {
-/* 787 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 787 */               public Uninit_AVFilterContext(Pointer p) {
-/* 788 */                   super(p);
+               public Uninit_AVFilterContext(Pointer p) {
+                   super(p);
                         }
 
-/* 788 */               protected Uninit_AVFilterContext() {
+               protected Uninit_AVFilterContext() {
                             allocate();
                         }
                     }
 
-/* 816 */           public static class Query_formats_AVFilterContext extends FunctionPointer {
+           public static class Query_formats_AVFilterContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterContext aVFilterContext);
 
                         static {
-/* 818 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 818 */               public Query_formats_AVFilterContext(Pointer p) {
-/* 819 */                   super(p);
+               public Query_formats_AVFilterContext(Pointer p) {
+                   super(p);
                         }
 
-/* 819 */               protected Query_formats_AVFilterContext() {
+               protected Query_formats_AVFilterContext() {
                             allocate();
                         }
                     }
 
-                    /* JADX INFO: renamed from: com.googlecode.javacv.cpp.avfilter$AVFilter$Process_command_AVFilterContext_BytePointer_BytePointer_BytePointer_int_int */
-/* 846 */           public static class C1231x8f446100 extends FunctionPointer {
+                    
+           public static class C1231x8f446100 extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterContext aVFilterContext, @Cast({"const char*"}) BytePointer bytePointer, @Cast({"const char*"}) BytePointer bytePointer2, @Cast({"char*"}) BytePointer bytePointer3, int i, int i2);
 
                         static {
-/* 848 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 848 */               public C1231x8f446100(Pointer p) {
-/* 849 */                   super(p);
+               public C1231x8f446100(Pointer p) {
+                   super(p);
                         }
 
-/* 849 */               protected C1231x8f446100() {
+               protected C1231x8f446100() {
                             allocate();
                         }
                     }
 
-/* 860 */           public static class Init_opaque_AVFilterContext_Pointer extends FunctionPointer {
+           public static class Init_opaque_AVFilterContext_Pointer extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVFilterContext aVFilterContext, Pointer pointer);
 
                         static {
-/* 862 */                   Loader.load();
+                   Loader.load();
                         }
 
-/* 862 */               public Init_opaque_AVFilterContext_Pointer(Pointer p) {
-/* 863 */                   super(p);
+               public Init_opaque_AVFilterContext_Pointer(Pointer p) {
+                   super(p);
                         }
 
-/* 863 */               protected Init_opaque_AVFilterContext_Pointer() {
+               protected Init_opaque_AVFilterContext_Pointer() {
                             allocate();
                         }
                     }
                 }
 
                 @Opaque
-/* 875 */       public static class AVFilterInternal extends Pointer {
-/* 876 */           public AVFilterInternal() {
+       public static class AVFilterInternal extends Pointer {
+           public AVFilterInternal() {
                     }
 
-/* 877 */           public AVFilterInternal(Pointer p) {
-/* 878 */               super(p);
+           public AVFilterInternal(Pointer p) {
+               super(p);
                     }
                 }
 
-/* 880 */       public static class AVFilterContext extends Pointer {
+       public static class AVFilterContext extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1202,28 +1202,28 @@
 
 
                     static {
-/* 883 */               Loader.load();
+               Loader.load();
                     }
 
-/* 883 */           public AVFilterContext() {
+           public AVFilterContext() {
                         allocate();
                     }
 
-/* 884 */           public AVFilterContext(int size) {
+           public AVFilterContext(int size) {
                         allocateArray(size);
                     }
 
-/* 885 */           public AVFilterContext(Pointer p) {
-/* 886 */               super(p);
+           public AVFilterContext(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 889 */           public AVFilterContext position(int position) {
-/* 890 */               return (AVFilterContext) super.position(position);
+                    @Override 
+           public AVFilterContext position(int position) {
+               return (AVFilterContext) super.position(position);
                     }
                 }
 
-/* 968 */       public static class AVFilterLink extends Pointer {
+       public static class AVFilterLink extends Pointer {
                     public static final int AVLINK_INIT = 2;
                     public static final int AVLINK_STARTINIT = 1;
                     public static final int AVLINK_UNINIT = 0;
@@ -1292,10 +1292,10 @@
 
                     public native AVFilterLink graph(AVFilterGraph aVFilterGraph);
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public native int m2403h();
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public native AVFilterLink m2404h(int i);
 
                     @Cast({"AVFilterChannelLayouts*"})
@@ -1376,46 +1376,46 @@
 
                     public native AVFilterLink type(int i);
 
-                    /* JADX INFO: renamed from: w */
+                    
                     public native int m2405w();
 
-                    /* JADX INFO: renamed from: w */
+                    
                     public native AVFilterLink m2406w(int i);
 
 
                     static {
-/* 971 */               Loader.load();
+               Loader.load();
                     }
 
-/* 971 */           public AVFilterLink() {
+           public AVFilterLink() {
                         allocate();
                     }
 
-/* 972 */           public AVFilterLink(int size) {
+           public AVFilterLink(int size) {
                         allocateArray(size);
                     }
 
-/* 973 */           public AVFilterLink(Pointer p) {
-/* 974 */               super(p);
+           public AVFilterLink(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 977 */           public AVFilterLink position(int position) {
-/* 978 */               return (AVFilterLink) super.position(position);
+                    @Override 
+           public AVFilterLink position(int position) {
+               return (AVFilterLink) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 1480 */      public static class AVFilterGraphInternal extends Pointer {
-/* 1481 */          public AVFilterGraphInternal() {
+      public static class AVFilterGraphInternal extends Pointer {
+          public AVFilterGraphInternal() {
                     }
 
-/* 1482 */          public AVFilterGraphInternal(Pointer p) {
-/* 1483 */              super(p);
+          public AVFilterGraphInternal(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 1484 */      public static class AVFilterGraph extends Pointer {
+      public static class AVFilterGraph extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1478,28 +1478,28 @@
 
 
                     static {
-/* 1487 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1487 */          public AVFilterGraph() {
+          public AVFilterGraph() {
                         allocate();
                     }
 
-/* 1488 */          public AVFilterGraph(int size) {
+          public AVFilterGraph(int size) {
                         allocateArray(size);
                     }
 
-/* 1489 */          public AVFilterGraph(Pointer p) {
-/* 1490 */              super(p);
+          public AVFilterGraph(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1493 */          public AVFilterGraph position(int position) {
-/* 1494 */              return (AVFilterGraph) super.position(position);
+                    @Override 
+          public AVFilterGraph position(int position) {
+              return (AVFilterGraph) super.position(position);
                     }
                 }
 
-/* 1667 */      public static class AVFilterInOut extends Pointer {
+      public static class AVFilterInOut extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1523,28 +1523,28 @@
 
 
                     static {
-/* 1670 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1670 */          public AVFilterInOut() {
+          public AVFilterInOut() {
                         allocate();
                     }
 
-/* 1671 */          public AVFilterInOut(int size) {
+          public AVFilterInOut(int size) {
                         allocateArray(size);
                     }
 
-/* 1672 */          public AVFilterInOut(Pointer p) {
-/* 1673 */              super(p);
+          public AVFilterInOut(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1676 */          public AVFilterInOut position(int position) {
-/* 1677 */              return (AVFilterInOut) super.position(position);
+                    @Override 
+          public AVFilterInOut position(int position) {
+              return (AVFilterInOut) super.position(position);
                     }
                 }
 
-/* 1983 */      public static class AVBufferSinkParams extends Pointer {
+      public static class AVBufferSinkParams extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1555,28 +1555,28 @@
 
 
                     static {
-/* 1986 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1986 */          public AVBufferSinkParams() {
+          public AVBufferSinkParams() {
                         allocate();
                     }
 
-/* 1987 */          public AVBufferSinkParams(int size) {
+          public AVBufferSinkParams(int size) {
                         allocateArray(size);
                     }
 
-/* 1988 */          public AVBufferSinkParams(Pointer p) {
-/* 1989 */              super(p);
+          public AVBufferSinkParams(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1992 */          public AVBufferSinkParams position(int position) {
-/* 1993 */              return (AVBufferSinkParams) super.position(position);
+                    @Override 
+          public AVBufferSinkParams position(int position) {
+              return (AVBufferSinkParams) super.position(position);
                     }
                 }
 
-/* 2008 */      public static class AVABufferSinkParams extends Pointer {
+      public static class AVABufferSinkParams extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1603,24 +1603,24 @@
 
 
                     static {
-/* 2011 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2011 */          public AVABufferSinkParams() {
+          public AVABufferSinkParams() {
                         allocate();
                     }
 
-/* 2012 */          public AVABufferSinkParams(int size) {
+          public AVABufferSinkParams(int size) {
                         allocateArray(size);
                     }
 
-/* 2013 */          public AVABufferSinkParams(Pointer p) {
-/* 2014 */              super(p);
+          public AVABufferSinkParams(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2017 */          public AVABufferSinkParams position(int position) {
-/* 2018 */              return (AVABufferSinkParams) super.position(position);
+                    @Override 
+          public AVABufferSinkParams position(int position) {
+              return (AVABufferSinkParams) super.position(position);
                     }
                 }
             }

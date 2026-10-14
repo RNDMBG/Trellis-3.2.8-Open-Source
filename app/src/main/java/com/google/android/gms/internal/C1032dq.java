@@ -3,29 +3,29 @@
             import java.util.LinkedHashMap;
             import java.util.Map;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.dq */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1032dq<K, V> {
 
-                /* JADX INFO: renamed from: lm */
+                
                 private final LinkedHashMap<K, V> f1720lm;
 
-                /* JADX INFO: renamed from: ln */
+                
                 private int f1721ln;
 
-                /* JADX INFO: renamed from: lo */
+                
                 private int f1722lo;
 
-                /* JADX INFO: renamed from: lp */
+                
                 private int f1723lp;
 
-                /* JADX INFO: renamed from: lq */
+                
                 private int f1724lq;
 
-                /* JADX INFO: renamed from: lr */
+                
                 private int f1725lr;
 
-                /* JADX INFO: renamed from: ls */
+                
                 private int f1726ls;
                 private int size;
 
@@ -37,7 +37,7 @@
                     this.f1720lm = new LinkedHashMap<>(0, 0.75f, true);
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private int m1619b(K k, V v) {
                     int iSizeOf = sizeOf(k, v);
                     if (iSizeOf < 0) {

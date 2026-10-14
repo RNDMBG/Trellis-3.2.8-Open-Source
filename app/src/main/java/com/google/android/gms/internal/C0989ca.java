@@ -9,14 +9,14 @@
             import java.util.HashMap;
             import org.json.JSONException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.ca */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0989ca {
 
-                /* JADX INFO: renamed from: gS */
+                
                 private static final SimpleDateFormat f1525gS = new SimpleDateFormat("yyyyMMdd");
 
-                /* JADX INFO: renamed from: a */
+                
                 public static String m1383a(C0982bu c0982bu, C0992cd c0992cd, Location location) {
                     try {
                         HashMap map = new HashMap();
@@ -52,7 +52,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static void m1384a(HashMap<String, Object> map, Location location) {
                     if (location == null) {
                         return;
@@ -69,7 +69,7 @@
                     map.put("loc", map2);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static void m1385a(HashMap<String, Object> map, C0992cd c0992cd) {
                     map.put("am", Integer.valueOf(c0992cd.f1544hh));
                     map.put("cog", m1387g(c0992cd.f1545hi));
@@ -100,7 +100,7 @@
                     map.put(BuildConfig.ENCODING, Integer.valueOf(c0992cd.f1561hy));
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static void m1386a(HashMap<String, Object> map, C1124v c1124v) {
                     if (c1124v.f2159es != -1) {
                         map.put("cust_age", f1525gS.format(new Date(c1124v.f2159es)));
@@ -122,7 +122,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: g */
+                
                 private static Integer m1387g(boolean z) {
                     return Integer.valueOf(z ? 1 : 0);
                 }

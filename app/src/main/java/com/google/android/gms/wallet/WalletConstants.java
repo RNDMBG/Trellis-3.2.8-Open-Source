@@ -3,7 +3,7 @@
             import android.accounts.Account;
             import com.google.android.gms.auth.GoogleAuthUtil;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class WalletConstants {
                 public static final String ACTION_ENABLE_WALLET_OPTIMIZATION = "com.google.android.gms.wallet.ENABLE_WALLET_OPTIMIZATION";
                 public static final int ENVIRONMENT_PRODUCTION = 1;
@@ -26,7 +26,7 @@
                 public static final int THEME_HOLO_DARK = 0;
                 public static final int THEME_HOLO_LIGHT = 1;
 
-                /* JADX INFO: renamed from: ur */
+                
                 public static final Account f2528ur = new Account("ACCOUNT_NO_WALLET", GoogleAuthUtil.GOOGLE_ACCOUNT_TYPE);
 
                 private WalletConstants() {

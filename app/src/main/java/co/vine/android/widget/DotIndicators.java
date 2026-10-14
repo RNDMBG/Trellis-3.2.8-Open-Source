@@ -10,8 +10,8 @@
             import android.view.View;
             import co.vine.android.C0257R;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 39 */    public class DotIndicators extends View {
+            
+    public class DotIndicators extends View {
                 private int mActivePos;
                 private int mDotHeight;
                 private int mDotPadding;
@@ -29,51 +29,51 @@
                 private boolean mShowFinalIcon;
                 private int mWidth;
 
-/* 40 */        public DotIndicators(Context context) {
-/* 41 */            this(context, null);
+        public DotIndicators(Context context) {
+            this(context, null);
                 }
 
-/* 44 */        public DotIndicators(Context context, AttributeSet attrs) {
-/* 45 */            this(context, attrs, 0);
+        public DotIndicators(Context context, AttributeSet attrs) {
+            this(context, attrs, 0);
                 }
 
-/* 58 */        public DotIndicators(Context context, AttributeSet attrs, int defStyle) {
-/* 59 */            super(context, attrs, defStyle);
-/* 61 */            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.DotIndicators, defStyle, 0);
-/* 64 */            int offRes = a.getResourceId(1, C0257R.drawable.pagination_sessions_default);
-/* 67 */            int onRes = a.getResourceId(0, C0257R.drawable.pagination_sessions_on);
-/* 70 */            this.mOff = BitmapFactory.decodeResource(context.getResources(), offRes);
-/* 71 */            this.mOn = BitmapFactory.decodeResource(context.getResources(), onRes);
-/* 73 */            int offAlpha = a.getInt(2, 100);
-/* 74 */            if (offAlpha != 100) {
-/* 75 */                this.mOffAlpha = true;
-/* 76 */                this.mOffAlphaValue = offAlpha;
+        public DotIndicators(Context context, AttributeSet attrs, int defStyle) {
+            super(context, attrs, defStyle);
+            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.DotIndicators, defStyle, 0);
+            int offRes = a.getResourceId(1, C0257R.drawable.pagination_sessions_default);
+            int onRes = a.getResourceId(0, C0257R.drawable.pagination_sessions_on);
+            this.mOff = BitmapFactory.decodeResource(context.getResources(), offRes);
+            this.mOn = BitmapFactory.decodeResource(context.getResources(), onRes);
+            int offAlpha = a.getInt(2, 100);
+            if (offAlpha != 100) {
+                this.mOffAlpha = true;
+                this.mOffAlphaValue = offAlpha;
                     }
-/* 79 */            this.mFinalIconOn = BitmapFactory.decodeResource(context.getResources(), C0257R.drawable.pagination_sessions_capture_on);
-/* 81 */            this.mFinalIconOff = BitmapFactory.decodeResource(context.getResources(), C0257R.drawable.pagination_sessions_capture_default);
-/* 84 */            this.mDotPadding = a.getDimensionPixelOffset(3, 0);
-/* 86 */            this.mFinalIconWidth = this.mFinalIconOff.getWidth();
-/* 87 */            this.mDotWidth = this.mOn.getWidth();
-/* 88 */            this.mDotHeight = this.mOn.getHeight();
-/* 89 */            this.mShowFinalIcon = true;
-/* 90 */            this.mPaint = new Paint();
-/* 91 */            a.recycle();
+            this.mFinalIconOn = BitmapFactory.decodeResource(context.getResources(), C0257R.drawable.pagination_sessions_capture_on);
+            this.mFinalIconOff = BitmapFactory.decodeResource(context.getResources(), C0257R.drawable.pagination_sessions_capture_default);
+            this.mDotPadding = a.getDimensionPixelOffset(3, 0);
+            this.mFinalIconWidth = this.mFinalIconOff.getWidth();
+            this.mDotWidth = this.mOn.getWidth();
+            this.mDotHeight = this.mOn.getHeight();
+            this.mShowFinalIcon = true;
+            this.mPaint = new Paint();
+            a.recycle();
                 }
 
-                @Override // android.view.View
-/* 95 */        protected void onDraw(Canvas canvas) {
+                @Override 
+        protected void onDraw(Canvas canvas) {
                     int left;
-/* 96 */            super.onDraw(canvas);
-/* 98 */            if (this.mHeight != 0 && this.mWidth != 0 && this.mNum != 0) {
+            super.onDraw(canvas);
+            if (this.mHeight != 0 && this.mWidth != 0 && this.mNum != 0) {
                int totalWidth = (this.mNum * this.mDotWidth) + (Math.max(0, this.mNum - 1) * this.mDotPadding);
                if (this.mShowFinalIcon) {
                    totalWidth += this.mDotPadding + this.mFinalIconWidth;
                }
                left = Math.max(0, (this.mWidth - totalWidth) / 2);
-/* 122 */               int top = (this.mHeight - this.mDotHeight) / 2;
-               // Profile dots use assets with inconsistent transparent padding
-               // across density buckets. Draw them as uniform circles so the
-               // active and inactive indicators share the same size and baseline.
+               int top = (this.mHeight - this.mDotHeight) / 2;
+               
+               
+               
                if (!this.mShowFinalIcon) {
                    float radius = Math.min(this.mDotWidth, this.mDotHeight) / 2.0f;
                    float centerY = this.mHeight / 2.0f;
@@ -87,50 +87,50 @@
                    return;
                }
                         for (int i = 0; i < this.mNum; i++) {
-/* 125 */                   if (this.mActivePos == i) {
-/* 126 */                       canvas.drawBitmap(this.mOn, left, top, (Paint) null);
+                   if (this.mActivePos == i) {
+                       canvas.drawBitmap(this.mOn, left, top, (Paint) null);
                             } else if (this.mOffAlpha) {
-/* 129 */                       this.mPaint.setAlpha(this.mOffAlphaValue);
-/* 130 */                       canvas.drawBitmap(this.mOn, left, top, this.mPaint);
+                       this.mPaint.setAlpha(this.mOffAlphaValue);
+                       canvas.drawBitmap(this.mOn, left, top, this.mPaint);
                             } else {
-/* 132 */                       canvas.drawBitmap(this.mOff, left, top, (Paint) null);
+                       canvas.drawBitmap(this.mOff, left, top, (Paint) null);
                             }
-/* 135 */                   left += this.mDotWidth + this.mDotPadding;
+                   left += this.mDotWidth + this.mDotPadding;
                         }
-/* 139 */               if (this.mShowFinalIcon) {
-/* 140 */                   if (this.mActivePos == this.mNum) {
-/* 141 */                       canvas.drawBitmap(this.mFinalIconOn, left, top, (Paint) null);
+               if (this.mShowFinalIcon) {
+                   if (this.mActivePos == this.mNum) {
+                       canvas.drawBitmap(this.mFinalIconOn, left, top, (Paint) null);
                             } else {
-/* 143 */                       canvas.drawBitmap(this.mFinalIconOff, left, top, (Paint) null);
+                       canvas.drawBitmap(this.mFinalIconOff, left, top, (Paint) null);
                             }
                         }
                     }
                 }
 
-                @Override // android.view.View
-/* 149 */       protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-/* 150 */           super.onSizeChanged(w, h, oldw, oldh);
-/* 151 */           this.mWidth = w;
-/* 152 */           this.mHeight = h;
+                @Override 
+       protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+           super.onSizeChanged(w, h, oldw, oldh);
+           this.mWidth = w;
+           this.mHeight = h;
                 }
 
-/* 155 */       public void setNumberOfDots(int num) {
-/* 156 */                       this.mNum = num;
+       public void setNumberOfDots(int num) {
+                       this.mNum = num;
                     invalidate();
                 }
 
-                /** Direct setter so callers do not depend on styleable resolution. */
+                
                 public void setDotPadding(int paddingPx) {
                     this.mDotPadding = paddingPx;
                     invalidate();
                 }
 
-/* 159 */       public void setFinalIcon(boolean finalIcon) {
-/* 160 */           this.mShowFinalIcon = finalIcon;
+       public void setFinalIcon(boolean finalIcon) {
+           this.mShowFinalIcon = finalIcon;
                 }
 
-/* 164 */       public void setActiveDot(int active) {
-/* 165 */           this.mActivePos = active;
-/* 166 */           invalidate();
+       public void setActiveDot(int active) {
+           this.mActivePos = active;
+           invalidate();
                 }
             }

@@ -5,11 +5,11 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class LatLngBoundsCreator implements Parcelable.Creator<LatLngBounds> {
                 public static final int CONTENT_DESCRIPTION = 0;
 
-                /* JADX INFO: renamed from: a */
+                
                 static void m2281a(LatLngBounds latLngBounds, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, latLngBounds.getVersionCode());
@@ -18,8 +18,8 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // android.os.Parcelable.Creator
+                
+                @Override 
                 public LatLngBounds createFromParcel(Parcel parcel) {
                     LatLng latLng;
                     LatLng latLng2;
@@ -66,8 +66,8 @@
                 }
 
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // android.os.Parcelable.Creator
+                
+                @Override 
                 public LatLngBounds[] newArray(int size) {
                     return new LatLngBounds[size];
                 }

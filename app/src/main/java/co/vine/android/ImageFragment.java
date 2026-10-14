@@ -19,8 +19,8 @@
             import co.vine.android.util.Util;
             import java.util.HashMap;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 26 */    public class ImageFragment extends BaseControllerFragment implements View.OnTouchListener {
+            
+    public class ImageFragment extends BaseControllerFragment implements View.OnTouchListener {
                 public static final String ARG_IMAGE_URL = "image_url";
                 public static final String STATE_IMAGE_BITMAP = "state_image_bitmap";
                 private long mFirstTouch;
@@ -30,126 +30,126 @@
                 private ImageView mImageView;
                 private ProgressBar mProgress;
 
-/* 27 */        static /* synthetic */ ImageKey access$100(ImageFragment x0) {
-/* 28 */            return x0.mImageKey;
+        static  ImageKey access$100(ImageFragment x0) {
+            return x0.mImageKey;
                 }
 
-/* 27 */        static /* synthetic */ ProgressBar access$200(ImageFragment x0) {
-/* 28 */            return x0.mProgress;
+        static  ProgressBar access$200(ImageFragment x0) {
+            return x0.mProgress;
                 }
 
-/* 27 */        static /* synthetic */ ImageView access$300(ImageFragment x0) {
-/* 28 */            return x0.mImageView;
+        static  ImageView access$300(ImageFragment x0) {
+            return x0.mImageView;
                 }
 
-/* 27 */        static /* synthetic */ Handler access$400(ImageFragment x0) {
-/* 28 */            return x0.mHandler;
+        static  Handler access$400(ImageFragment x0) {
+            return x0.mHandler;
                 }
 
-                @Override // co.vine.android.BaseControllerFragment, android.support.v4.app.Fragment
-/* 43 */        public void onCreate(Bundle savedInstanceState) {
-/* 44 */            super.onCreate(savedInstanceState);
-/* 45 */            this.mAppSessionListener = new ImageSessionListener(this, null);
+                @Override 
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            this.mAppSessionListener = new ImageSessionListener(this, null);
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 49 */        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-/* 50 */            View v = inflater.inflate(C0257R.layout.image_layout, container, false);
-/* 51 */            this.mImageView = (ImageView) v.findViewById(2131427383);
-/* 52 */            this.mProgress = (ProgressBar) v.findViewById(2131427334);
-/* 53 */            return v;
+                @Override 
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            View v = inflater.inflate(C0257R.layout.image_layout, container, false);
+            this.mImageView = (ImageView) v.findViewById(2131427383);
+            this.mProgress = (ProgressBar) v.findViewById(2131427334);
+            return v;
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 57 */        public void onActivityCreated(Bundle savedInstanceState) {
-/* 58 */            super.onActivityCreated(savedInstanceState);
-/* 60 */            if (savedInstanceState == null) {
-/* 61 */                Bundle args = getArguments();
-/* 62 */                String imageUrl = args.getString("image_url");
-/* 64 */                if (!TextUtils.isEmpty(imageUrl)) {
-/* 65 */                    this.mImageKey = new ImageKey(imageUrl);
-/* 66 */                    Bitmap imageBitmap = this.mAppController.getPhotoBitmap(this.mImageKey);
-/* 68 */                    if (imageBitmap != null) {
-/* 69 */                        this.mImageBitmap = imageBitmap;
+                @Override 
+        public void onActivityCreated(Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+            if (savedInstanceState == null) {
+                Bundle args = getArguments();
+                String imageUrl = args.getString("image_url");
+                if (!TextUtils.isEmpty(imageUrl)) {
+                    this.mImageKey = new ImageKey(imageUrl);
+                    Bitmap imageBitmap = this.mAppController.getPhotoBitmap(this.mImageKey);
+                    if (imageBitmap != null) {
+                        this.mImageBitmap = imageBitmap;
                             } else {
-/* 71 */                        this.mProgress.setVisibility(0);
+                        this.mProgress.setVisibility(0);
                             }
                         }
-/* 74 */                this.mImageView.setOnTouchListener(this);
-/* 78 */                return;
+                this.mImageView.setOnTouchListener(this);
+                return;
                     }
-/* 76 */            this.mImageBitmap = (Bitmap) savedInstanceState.getParcelable(STATE_IMAGE_BITMAP);
+            this.mImageBitmap = (Bitmap) savedInstanceState.getParcelable(STATE_IMAGE_BITMAP);
                 }
 
-                @Override // co.vine.android.BaseControllerFragment, co.vine.android.BaseFragment, android.support.v4.app.Fragment
-/* 81 */        public void onResume() {
-/* 82 */            super.onResume();
-/* 83 */            Bitmap imageBitmap = this.mImageBitmap;
-/* 84 */            if (imageBitmap != null) {
-/* 85 */                this.mImageView.setImageDrawable(new RecyclableBitmapDrawable(getResources(), imageBitmap));
+                @Override 
+        public void onResume() {
+            super.onResume();
+            Bitmap imageBitmap = this.mImageBitmap;
+            if (imageBitmap != null) {
+                this.mImageView.setImageDrawable(new RecyclableBitmapDrawable(getResources(), imageBitmap));
                     }
                 }
 
-                @Override // android.view.View.OnTouchListener
-/* 90 */        public boolean onTouch(View view, MotionEvent motionEvent) {
-/* 91 */            if (motionEvent.getAction() != 1) {
+                @Override 
+        public boolean onTouch(View view, MotionEvent motionEvent) {
+            if (motionEvent.getAction() != 1) {
                         return false;
                     }
-/* 93 */            long now = System.currentTimeMillis();
+            long now = System.currentTimeMillis();
                     if (now - this.mFirstTouch < 400) {
-/* 95 */                getActivity().finish();
+                getActivity().finish();
                         return true;
                     }
-/* 97 */            this.mFirstTouch = now;
+            this.mFirstTouch = now;
                     return true;
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 103 */       public void onSaveInstanceState(Bundle outState) {
-/* 104 */           super.onSaveInstanceState(outState);
-/* 105 */           if (this.mImageBitmap != null) {
-/* 106 */               outState.putParcelable(STATE_IMAGE_BITMAP, this.mImageBitmap);
+                @Override 
+       public void onSaveInstanceState(Bundle outState) {
+           super.onSaveInstanceState(outState);
+           if (this.mImageBitmap != null) {
+               outState.putParcelable(STATE_IMAGE_BITMAP, this.mImageBitmap);
                     }
                 }
 
-/* 108 */       private class ImageSessionListener extends AppSessionListener {
-/* 109 */           private ImageSessionListener() {
+       private class ImageSessionListener extends AppSessionListener {
+           private ImageSessionListener() {
                     }
 
-/* 109 */           /* synthetic */ ImageSessionListener(ImageFragment x0, Object x1) {
-/* 110 */               this();
+            ImageSessionListener(ImageFragment x0, Object x1) {
+               this();
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 112 */           public void onPhotoImageLoaded(HashMap<ImageKey, UrlImage> images) {
-/* 113 */               UrlImage image = images.get(ImageFragment.access$100(ImageFragment.this));
-/* 114 */               if (image != null && image.isValid()) {
-/* 115 */                   ImageFragment.access$200(ImageFragment.this).setVisibility(8);
-/* 116 */                   ImageFragment.access$300(ImageFragment.this).setImageDrawable(new RecyclableBitmapDrawable(ImageFragment.access$300(ImageFragment.this).getResources(), image.bitmap));
+                    @Override 
+           public void onPhotoImageLoaded(HashMap<ImageKey, UrlImage> images) {
+               UrlImage image = images.get(ImageFragment.access$100(ImageFragment.this));
+               if (image != null && image.isValid()) {
+                   ImageFragment.access$200(ImageFragment.this).setVisibility(8);
+                   ImageFragment.access$300(ImageFragment.this).setImageDrawable(new RecyclableBitmapDrawable(ImageFragment.access$300(ImageFragment.this).getResources(), image.bitmap));
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 121 */           public void onPhotoImageError(ImageKey key, HttpResult result) {
-/* 122 */               if (key.equals(ImageFragment.access$100(ImageFragment.this))) {
-/* 123 */                   finishFailed();
+                    @Override 
+           public void onPhotoImageError(ImageKey key, HttpResult result) {
+               if (key.equals(ImageFragment.access$100(ImageFragment.this))) {
+                   finishFailed();
                         }
                     }
 
-                    /* JADX INFO: renamed from: co.vine.android.ImageFragment$ImageSessionListener$1 */
-/* 126 */           class RunnableC02221 implements Runnable {
-/* 127 */               RunnableC02221() {
+                    
+           class RunnableC02221 implements Runnable {
+               RunnableC02221() {
                         }
 
-                        @Override // java.lang.Runnable
-/* 130 */               public void run() {
-/* 131 */                   Util.showCenteredToast(ImageFragment.this.getActivity(), C0257R.string.load_image_failure);
-/* 132 */                   ImageFragment.this.getActivity().finish();
+                        @Override 
+               public void run() {
+                   Util.showCenteredToast(ImageFragment.this.getActivity(), C0257R.string.load_image_failure);
+                   ImageFragment.this.getActivity().finish();
                         }
                     }
 
-/* 127 */           private void finishFailed() {
-/* 128 */               ImageFragment.access$400(ImageFragment.this).post(new RunnableC02221());
+           private void finishFailed() {
+               ImageFragment.access$400(ImageFragment.this).post(new RunnableC02221());
                     }
                 }
             }

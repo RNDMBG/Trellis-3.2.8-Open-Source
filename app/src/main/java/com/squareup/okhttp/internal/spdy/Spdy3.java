@@ -17,8 +17,8 @@
             import okio.Okio;
             import okio.Sink;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 37 */    public final class Spdy3 implements Variant {
+            
+    public final class Spdy3 implements Variant {
                 static final byte[] DICTIONARY;
                 static final int FLAG_FIN = 1;
                 static final int FLAG_UNIDIRECTIONAL = 2;
@@ -33,236 +33,236 @@
                 static final int TYPE_WINDOW_UPDATE = 9;
                 static final int VERSION = 3;
 
-                @Override // com.squareup.okhttp.internal.spdy.Variant
-/* 38 */        public Protocol getProtocol() {
-/* 39 */            return Protocol.SPDY_3;
+                @Override 
+        public Protocol getProtocol() {
+            return Protocol.SPDY_3;
                 }
 
                 static {
                     try {
-/* 60 */                DICTIONARY = "\u0000\u0000\u0000\u0007options\u0000\u0000\u0000\u0004head\u0000\u0000\u0000\u0004post\u0000\u0000\u0000\u0003put\u0000\u0000\u0000\u0006delete\u0000\u0000\u0000\u0005trace\u0000\u0000\u0000\u0006accept\u0000\u0000\u0000\u000eaccept-charset\u0000\u0000\u0000\u000faccept-encoding\u0000\u0000\u0000\u000faccept-language\u0000\u0000\u0000\raccept-ranges\u0000\u0000\u0000\u0003age\u0000\u0000\u0000\u0005allow\u0000\u0000\u0000\rauthorization\u0000\u0000\u0000\rcache-control\u0000\u0000\u0000\nconnection\u0000\u0000\u0000\fcontent-base\u0000\u0000\u0000\u0010content-encoding\u0000\u0000\u0000\u0010content-language\u0000\u0000\u0000\u000econtent-length\u0000\u0000\u0000\u0010content-location\u0000\u0000\u0000\u000bcontent-md5\u0000\u0000\u0000\rcontent-range\u0000\u0000\u0000\fcontent-type\u0000\u0000\u0000\u0004date\u0000\u0000\u0000\u0004etag\u0000\u0000\u0000\u0006expect\u0000\u0000\u0000\u0007expires\u0000\u0000\u0000\u0004from\u0000\u0000\u0000\u0004host\u0000\u0000\u0000\bif-match\u0000\u0000\u0000\u0011if-modified-since\u0000\u0000\u0000\rif-none-match\u0000\u0000\u0000\bif-range\u0000\u0000\u0000\u0013if-unmodified-since\u0000\u0000\u0000\rlast-modified\u0000\u0000\u0000\blocation\u0000\u0000\u0000\fmax-forwards\u0000\u0000\u0000\u0006pragma\u0000\u0000\u0000\u0012proxy-authenticate\u0000\u0000\u0000\u0013proxy-authorization\u0000\u0000\u0000\u0005range\u0000\u0000\u0000\u0007referer\u0000\u0000\u0000\u000bretry-after\u0000\u0000\u0000\u0006server\u0000\u0000\u0000\u0002te\u0000\u0000\u0000\u0007trailer\u0000\u0000\u0000\u0011transfer-encoding\u0000\u0000\u0000\u0007upgrade\u0000\u0000\u0000\nuser-agent\u0000\u0000\u0000\u0004vary\u0000\u0000\u0000\u0003via\u0000\u0000\u0000\u0007warning\u0000\u0000\u0000\u0010www-authenticate\u0000\u0000\u0000\u0006method\u0000\u0000\u0000\u0003get\u0000\u0000\u0000\u0006status\u0000\u0000\u0000\u0006200 OK\u0000\u0000\u0000\u0007version\u0000\u0000\u0000\bHTTP/1.1\u0000\u0000\u0000\u0003url\u0000\u0000\u0000\u0006public\u0000\u0000\u0000\nset-cookie\u0000\u0000\u0000\nkeep-alive\u0000\u0000\u0000\u0006origin100101201202205206300302303304305306307402405406407408409410411412413414415416417502504505203 Non-Authoritative Information204 No Content301 Moved Permanently400 Bad Request401 Unauthorized403 Forbidden404 Not Found500 Internal Server Error501 Not Implemented503 Service UnavailableJan Feb Mar Apr May Jun Jul Aug Sept Oct Nov Dec 00:00:00 Mon, Tue, Wed, Thu, Fri, Sat, Sun, GMTchunked,text/html,image/png,image/jpg,image/gif,application/xml,application/xhtml+xml,text/plain,text/javascript,publicprivatemax-age=gzip,deflate,sdchcharset=utf-8charset=iso-8859-1,utf-,*,enq=0.".getBytes(Util.UTF_8.name());
+                DICTIONARY = "\u0000\u0000\u0000\u0007options\u0000\u0000\u0000\u0004head\u0000\u0000\u0000\u0004post\u0000\u0000\u0000\u0003put\u0000\u0000\u0000\u0006delete\u0000\u0000\u0000\u0005trace\u0000\u0000\u0000\u0006accept\u0000\u0000\u0000\u000eaccept-charset\u0000\u0000\u0000\u000faccept-encoding\u0000\u0000\u0000\u000faccept-language\u0000\u0000\u0000\raccept-ranges\u0000\u0000\u0000\u0003age\u0000\u0000\u0000\u0005allow\u0000\u0000\u0000\rauthorization\u0000\u0000\u0000\rcache-control\u0000\u0000\u0000\nconnection\u0000\u0000\u0000\fcontent-base\u0000\u0000\u0000\u0010content-encoding\u0000\u0000\u0000\u0010content-language\u0000\u0000\u0000\u000econtent-length\u0000\u0000\u0000\u0010content-location\u0000\u0000\u0000\u000bcontent-md5\u0000\u0000\u0000\rcontent-range\u0000\u0000\u0000\fcontent-type\u0000\u0000\u0000\u0004date\u0000\u0000\u0000\u0004etag\u0000\u0000\u0000\u0006expect\u0000\u0000\u0000\u0007expires\u0000\u0000\u0000\u0004from\u0000\u0000\u0000\u0004host\u0000\u0000\u0000\bif-match\u0000\u0000\u0000\u0011if-modified-since\u0000\u0000\u0000\rif-none-match\u0000\u0000\u0000\bif-range\u0000\u0000\u0000\u0013if-unmodified-since\u0000\u0000\u0000\rlast-modified\u0000\u0000\u0000\blocation\u0000\u0000\u0000\fmax-forwards\u0000\u0000\u0000\u0006pragma\u0000\u0000\u0000\u0012proxy-authenticate\u0000\u0000\u0000\u0013proxy-authorization\u0000\u0000\u0000\u0005range\u0000\u0000\u0000\u0007referer\u0000\u0000\u0000\u000bretry-after\u0000\u0000\u0000\u0006server\u0000\u0000\u0000\u0002te\u0000\u0000\u0000\u0007trailer\u0000\u0000\u0000\u0011transfer-encoding\u0000\u0000\u0000\u0007upgrade\u0000\u0000\u0000\nuser-agent\u0000\u0000\u0000\u0004vary\u0000\u0000\u0000\u0003via\u0000\u0000\u0000\u0007warning\u0000\u0000\u0000\u0010www-authenticate\u0000\u0000\u0000\u0006method\u0000\u0000\u0000\u0003get\u0000\u0000\u0000\u0006status\u0000\u0000\u0000\u0006200 OK\u0000\u0000\u0000\u0007version\u0000\u0000\u0000\bHTTP/1.1\u0000\u0000\u0000\u0003url\u0000\u0000\u0000\u0006public\u0000\u0000\u0000\nset-cookie\u0000\u0000\u0000\nkeep-alive\u0000\u0000\u0000\u0006origin100101201202205206300302303304305306307402405406407408409410411412413414415416417502504505203 Non-Authoritative Information204 No Content301 Moved Permanently400 Bad Request401 Unauthorized403 Forbidden404 Not Found500 Internal Server Error501 Not Implemented503 Service UnavailableJan Feb Mar Apr May Jun Jul Aug Sept Oct Nov Dec 00:00:00 Mon, Tue, Wed, Thu, Fri, Sat, Sun, GMTchunked,text/html,image/png,image/jpg,image/gif,application/xml,application/xhtml+xml,text/plain,text/javascript,publicprivatemax-age=gzip,deflate,sdchcharset=utf-8charset=iso-8859-1,utf-,*,enq=0.".getBytes(Util.UTF_8.name());
                     } catch (UnsupportedEncodingException e) {
-/* 94 */                throw new AssertionError();
+                throw new AssertionError();
                     }
                 }
 
-                @Override // com.squareup.okhttp.internal.spdy.Variant
-/* 98 */        public FrameReader newReader(BufferedSource source, boolean client) {
-/* 99 */            return new Reader(source, client);
+                @Override 
+        public FrameReader newReader(BufferedSource source, boolean client) {
+            return new Reader(source, client);
                 }
 
-                @Override // com.squareup.okhttp.internal.spdy.Variant
-/* 102 */       public FrameWriter newWriter(BufferedSink sink, boolean client) {
-/* 103 */           return new Writer(sink, client);
+                @Override 
+       public FrameWriter newWriter(BufferedSink sink, boolean client) {
+           return new Writer(sink, client);
                 }
 
-/* 110 */       static final class Reader implements FrameReader {
+       static final class Reader implements FrameReader {
                     private final boolean client;
                     private final NameValueBlockReader headerBlockReader;
                     private final BufferedSource source;
 
-/* 111 */           Reader(BufferedSource source, boolean client) {
-/* 113 */               this.source = source;
-/* 114 */               this.headerBlockReader = new NameValueBlockReader(this.source);
-/* 115 */               this.client = client;
+           Reader(BufferedSource source, boolean client) {
+               this.source = source;
+               this.headerBlockReader = new NameValueBlockReader(this.source);
+               this.client = client;
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameReader
-/* 118 */           public void readConnectionPreface() {
+                    @Override 
+           public void readConnectionPreface() {
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameReader
-/* 128 */           public boolean nextFrame(FrameReader.Handler handler) throws IOException {
+                    @Override 
+           public boolean nextFrame(FrameReader.Handler handler) throws IOException {
                         try {
-/* 129 */                   int w1 = this.source.readInt();
-/* 130 */                   int w2 = this.source.readInt();
-/* 135 */                   boolean control = (Integer.MIN_VALUE & w1) != 0;
-/* 136 */                   int flags = ((-16777216) & w2) >>> 24;
-/* 137 */                   int length = w2 & ViewCompat.MEASURED_SIZE_MASK;
-/* 139 */                   if (control) {
-/* 140 */                       int version = (2147418112 & w1) >>> 16;
-/* 141 */                       int type = w1 & SupportMenu.USER_MASK;
-/* 143 */                       if (version != 3) {
-/* 144 */                           throw new ProtocolException("version != 3: " + version);
+                   int w1 = this.source.readInt();
+                   int w2 = this.source.readInt();
+                   boolean control = (Integer.MIN_VALUE & w1) != 0;
+                   int flags = ((-16777216) & w2) >>> 24;
+                   int length = w2 & ViewCompat.MEASURED_SIZE_MASK;
+                   if (control) {
+                       int version = (2147418112 & w1) >>> 16;
+                       int type = w1 & SupportMenu.USER_MASK;
+                       if (version != 3) {
+                           throw new ProtocolException("version != 3: " + version);
                                 }
                                 switch (type) {
                                     case 1:
-/* 149 */                               readSynStream(handler, flags, length);
+                               readSynStream(handler, flags, length);
                                         return true;
                                     case 2:
-/* 153 */                               readSynReply(handler, flags, length);
+                               readSynReply(handler, flags, length);
                                         return true;
                                     case 3:
-/* 157 */                               readRstStream(handler, flags, length);
+                               readRstStream(handler, flags, length);
                                         return true;
                                     case 4:
-/* 161 */                               readSettings(handler, flags, length);
+                               readSettings(handler, flags, length);
                                         return true;
                                     case 5:
                                     default:
-/* 181 */                               this.source.skip(length);
+                               this.source.skip(length);
                                         return true;
                                     case 6:
-/* 165 */                               readPing(handler, flags, length);
+                               readPing(handler, flags, length);
                                         return true;
                                     case 7:
-/* 169 */                               readGoAway(handler, flags, length);
+                               readGoAway(handler, flags, length);
                                         return true;
                                     case 8:
-/* 173 */                               readHeaders(handler, flags, length);
+                               readHeaders(handler, flags, length);
                                         return true;
                                     case 9:
-/* 177 */                               readWindowUpdate(handler, flags, length);
+                               readWindowUpdate(handler, flags, length);
                                         return true;
                                 }
                             }
-/* 185 */                   int streamId = w1 & Integer.MAX_VALUE;
-/* 186 */                   boolean inFinished = (flags & 1) != 0;
-/* 187 */                   handler.data(inFinished, streamId, this.source, length);
+                   int streamId = w1 & Integer.MAX_VALUE;
+                   boolean inFinished = (flags & 1) != 0;
+                   handler.data(inFinished, streamId, this.source, length);
                             return true;
                         } catch (IOException e) {
                             return false;
                         }
                     }
 
-/* 192 */           private void readSynStream(FrameReader.Handler handler, int flags, int length) throws IOException {
-/* 193 */               int w1 = this.source.readInt();
-/* 194 */               int w2 = this.source.readInt();
-/* 195 */               int streamId = w1 & Integer.MAX_VALUE;
-/* 196 */               int associatedStreamId = w2 & Integer.MAX_VALUE;
-/* 197 */               this.source.readShort();
-/* 198 */               List<Header> headerBlock = this.headerBlockReader.readNameValueBlock(length - 10);
-/* 200 */               boolean inFinished = (flags & 1) != 0;
-/* 201 */               boolean outFinished = (flags & 2) != 0;
-/* 202 */               handler.headers(outFinished, inFinished, streamId, associatedStreamId, headerBlock, HeadersMode.SPDY_SYN_STREAM);
+           private void readSynStream(FrameReader.Handler handler, int flags, int length) throws IOException {
+               int w1 = this.source.readInt();
+               int w2 = this.source.readInt();
+               int streamId = w1 & Integer.MAX_VALUE;
+               int associatedStreamId = w2 & Integer.MAX_VALUE;
+               this.source.readShort();
+               List<Header> headerBlock = this.headerBlockReader.readNameValueBlock(length - 10);
+               boolean inFinished = (flags & 1) != 0;
+               boolean outFinished = (flags & 2) != 0;
+               handler.headers(outFinished, inFinished, streamId, associatedStreamId, headerBlock, HeadersMode.SPDY_SYN_STREAM);
                     }
 
-/* 206 */           private void readSynReply(FrameReader.Handler handler, int flags, int length) throws IOException {
-/* 207 */               int w1 = this.source.readInt();
-/* 208 */               int streamId = w1 & Integer.MAX_VALUE;
-/* 209 */               List<Header> headerBlock = this.headerBlockReader.readNameValueBlock(length - 4);
-/* 210 */               boolean inFinished = (flags & 1) != 0;
-/* 211 */               handler.headers(false, inFinished, streamId, -1, headerBlock, HeadersMode.SPDY_REPLY);
+           private void readSynReply(FrameReader.Handler handler, int flags, int length) throws IOException {
+               int w1 = this.source.readInt();
+               int streamId = w1 & Integer.MAX_VALUE;
+               List<Header> headerBlock = this.headerBlockReader.readNameValueBlock(length - 4);
+               boolean inFinished = (flags & 1) != 0;
+               handler.headers(false, inFinished, streamId, -1, headerBlock, HeadersMode.SPDY_REPLY);
                     }
 
-/* 214 */           private void readRstStream(FrameReader.Handler handler, int flags, int length) throws IOException {
-/* 215 */               if (length != 8) {
+           private void readRstStream(FrameReader.Handler handler, int flags, int length) throws IOException {
+               if (length != 8) {
                             throw ioException("TYPE_RST_STREAM length: %d != 8", Integer.valueOf(length));
                         }
-/* 216 */               int streamId = this.source.readInt() & Integer.MAX_VALUE;
-/* 217 */               int errorCodeInt = this.source.readInt();
-/* 218 */               ErrorCode errorCode = ErrorCode.fromSpdy3Rst(errorCodeInt);
-/* 219 */               if (errorCode == null) {
-/* 220 */                   throw ioException("TYPE_RST_STREAM unexpected error code: %d", Integer.valueOf(errorCodeInt));
+               int streamId = this.source.readInt() & Integer.MAX_VALUE;
+               int errorCodeInt = this.source.readInt();
+               ErrorCode errorCode = ErrorCode.fromSpdy3Rst(errorCodeInt);
+               if (errorCode == null) {
+                   throw ioException("TYPE_RST_STREAM unexpected error code: %d", Integer.valueOf(errorCodeInt));
                         }
-/* 222 */               handler.rstStream(streamId, errorCode);
+               handler.rstStream(streamId, errorCode);
                     }
 
-/* 225 */           private void readHeaders(FrameReader.Handler handler, int flags, int length) throws IOException {
-/* 226 */               int w1 = this.source.readInt();
-/* 227 */               int streamId = w1 & Integer.MAX_VALUE;
-/* 228 */               List<Header> headerBlock = this.headerBlockReader.readNameValueBlock(length - 4);
-/* 229 */               handler.headers(false, false, streamId, -1, headerBlock, HeadersMode.SPDY_HEADERS);
+           private void readHeaders(FrameReader.Handler handler, int flags, int length) throws IOException {
+               int w1 = this.source.readInt();
+               int streamId = w1 & Integer.MAX_VALUE;
+               List<Header> headerBlock = this.headerBlockReader.readNameValueBlock(length - 4);
+               handler.headers(false, false, streamId, -1, headerBlock, HeadersMode.SPDY_HEADERS);
                     }
 
-/* 232 */           private void readWindowUpdate(FrameReader.Handler handler, int flags, int length) throws IOException {
-/* 233 */               if (length != 8) {
+           private void readWindowUpdate(FrameReader.Handler handler, int flags, int length) throws IOException {
+               if (length != 8) {
                             throw ioException("TYPE_WINDOW_UPDATE length: %d != 8", Integer.valueOf(length));
                         }
-/* 234 */               int w1 = this.source.readInt();
-/* 235 */               int w2 = this.source.readInt();
-/* 236 */               int streamId = w1 & Integer.MAX_VALUE;
-/* 237 */               long increment = w2 & Integer.MAX_VALUE;
+               int w1 = this.source.readInt();
+               int w2 = this.source.readInt();
+               int streamId = w1 & Integer.MAX_VALUE;
+               long increment = w2 & Integer.MAX_VALUE;
                         if (increment == 0) {
                             throw ioException("windowSizeIncrement was 0", Long.valueOf(increment));
                         }
-/* 239 */               handler.windowUpdate(streamId, increment);
+               handler.windowUpdate(streamId, increment);
                     }
 
-/* 242 */           private void readPing(FrameReader.Handler handler, int flags, int length) throws IOException {
-/* 243 */               if (length != 4) {
+           private void readPing(FrameReader.Handler handler, int flags, int length) throws IOException {
+               if (length != 4) {
                             throw ioException("TYPE_PING length: %d != 4", Integer.valueOf(length));
                         }
-/* 244 */               int id = this.source.readInt();
+               int id = this.source.readInt();
                         boolean ack = this.client == ((id & 1) == 1);
-/* 246 */               handler.ping(ack, id, 0);
+               handler.ping(ack, id, 0);
                     }
 
-/* 249 */           private void readGoAway(FrameReader.Handler handler, int flags, int length) throws IOException {
-/* 250 */               if (length != 8) {
+           private void readGoAway(FrameReader.Handler handler, int flags, int length) throws IOException {
+               if (length != 8) {
                             throw ioException("TYPE_GOAWAY length: %d != 8", Integer.valueOf(length));
                         }
-/* 251 */               int lastGoodStreamId = this.source.readInt() & Integer.MAX_VALUE;
-/* 252 */               int errorCodeInt = this.source.readInt();
-/* 253 */               ErrorCode errorCode = ErrorCode.fromSpdyGoAway(errorCodeInt);
-/* 254 */               if (errorCode == null) {
-/* 255 */                   throw ioException("TYPE_GOAWAY unexpected error code: %d", Integer.valueOf(errorCodeInt));
+               int lastGoodStreamId = this.source.readInt() & Integer.MAX_VALUE;
+               int errorCodeInt = this.source.readInt();
+               ErrorCode errorCode = ErrorCode.fromSpdyGoAway(errorCodeInt);
+               if (errorCode == null) {
+                   throw ioException("TYPE_GOAWAY unexpected error code: %d", Integer.valueOf(errorCodeInt));
                         }
-/* 257 */               handler.goAway(lastGoodStreamId, errorCode, ByteString.EMPTY);
+               handler.goAway(lastGoodStreamId, errorCode, ByteString.EMPTY);
                     }
 
-/* 260 */           private void readSettings(FrameReader.Handler handler, int flags, int length) throws IOException {
-/* 261 */               int numberOfEntries = this.source.readInt();
-/* 262 */               if (length != (numberOfEntries * 8) + 4) {
-/* 263 */                   throw ioException("TYPE_SETTINGS length: %d != 4 + 8 * %d", Integer.valueOf(length), Integer.valueOf(numberOfEntries));
+           private void readSettings(FrameReader.Handler handler, int flags, int length) throws IOException {
+               int numberOfEntries = this.source.readInt();
+               if (length != (numberOfEntries * 8) + 4) {
+                   throw ioException("TYPE_SETTINGS length: %d != 4 + 8 * %d", Integer.valueOf(length), Integer.valueOf(numberOfEntries));
                         }
-/* 265 */               Settings settings = new Settings();
+               Settings settings = new Settings();
                         for (int i = 0; i < numberOfEntries; i++) {
-/* 267 */                   int w1 = this.source.readInt();
-/* 268 */                   int value = this.source.readInt();
-/* 269 */                   int idFlags = ((-16777216) & w1) >>> 24;
-/* 270 */                   int id = w1 & ViewCompat.MEASURED_SIZE_MASK;
-/* 271 */                   settings.set(id, idFlags, value);
+                   int w1 = this.source.readInt();
+                   int value = this.source.readInt();
+                   int idFlags = ((-16777216) & w1) >>> 24;
+                   int id = w1 & ViewCompat.MEASURED_SIZE_MASK;
+                   settings.set(id, idFlags, value);
                         }
-/* 273 */               boolean clearPrevious = (flags & 1) != 0;
-/* 274 */               handler.settings(clearPrevious, settings);
+               boolean clearPrevious = (flags & 1) != 0;
+               handler.settings(clearPrevious, settings);
                     }
 
-/* 277 */           private static IOException ioException(String message, Object... args) throws IOException {
-/* 278 */               throw new IOException(String.format(message, args));
+           private static IOException ioException(String message, Object... args) throws IOException {
+               throw new IOException(String.format(message, args));
                     }
 
-                    @Override // java.io.Closeable, java.lang.AutoCloseable
-/* 281 */           public void close() throws IOException {
-/* 282 */               this.headerBlockReader.close();
+                    @Override 
+           public void close() throws IOException {
+               this.headerBlockReader.close();
                     }
                 }
 
-/* 292 */       static final class Writer implements FrameWriter {
+       static final class Writer implements FrameWriter {
                     private final boolean client;
                     private boolean closed;
                     private final Buffer headerBlockBuffer;
                     private final BufferedSink headerBlockOut;
                     private final BufferedSink sink;
 
-/* 293 */           Writer(BufferedSink sink, boolean client) {
-/* 295 */               this.sink = sink;
-/* 296 */               this.client = client;
-/* 298 */               Deflater deflater = new Deflater();
-/* 299 */               deflater.setDictionary(Spdy3.DICTIONARY);
-/* 300 */               this.headerBlockBuffer = new Buffer();
-/* 301 */               this.headerBlockOut = Okio.buffer(new DeflaterSink((Sink) this.headerBlockBuffer, deflater));
+           Writer(BufferedSink sink, boolean client) {
+               this.sink = sink;
+               this.client = client;
+               Deflater deflater = new Deflater();
+               deflater.setDictionary(Spdy3.DICTIONARY);
+               this.headerBlockBuffer = new Buffer();
+               this.headerBlockOut = Okio.buffer(new DeflaterSink((Sink) this.headerBlockBuffer, deflater));
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 305 */           public void ackSettings(Settings peerSettings) {
+                    @Override 
+           public void ackSettings(Settings peerSettings) {
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 311 */           public void pushPromise(int streamId, int promisedStreamId, List<Header> requestHeaders) throws IOException {
+                    @Override 
+           public void pushPromise(int streamId, int promisedStreamId, List<Header> requestHeaders) throws IOException {
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 315 */           public synchronized void connectionPreface() {
+                    @Override 
+           public synchronized void connectionPreface() {
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 318 */           public synchronized void flush() throws IOException {
+                    @Override 
+           public synchronized void flush() throws IOException {
                         try {
                             if (this.closed) {
                                 throw new IOException("closed");
                             }
-/* 320 */                   this.sink.flush();
+                   this.sink.flush();
                         } catch (Throwable th) {
                             if (th instanceof IOException) {
                                 throw (IOException) th;
@@ -271,216 +271,216 @@
                         }
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 325 */           public synchronized void synStream(boolean outFinished, boolean inFinished, int streamId, int associatedStreamId, List<Header> headerBlock) throws IOException {
+                    @Override 
+           public synchronized void synStream(boolean outFinished, boolean inFinished, int streamId, int associatedStreamId, List<Header> headerBlock) throws IOException {
                         try {
                             if (this.closed) {
                                 throw new IOException("closed");
                             }
-/* 327 */                   writeNameValueBlockToBuffer(headerBlock);
-/* 328 */                   int length = (int) (10 + this.headerBlockBuffer.size());
-/* 330 */                   int flags = (outFinished ? 1 : 0) | (inFinished ? 2 : 0);
-/* 333 */                   this.sink.writeInt(-2147287039);
-/* 334 */                   this.sink.writeInt(((flags & 255) << 24) | (16777215 & length));
-/* 335 */                   this.sink.writeInt(Integer.MAX_VALUE & streamId);
-/* 336 */                   this.sink.writeInt(Integer.MAX_VALUE & associatedStreamId);
-/* 337 */                   this.sink.writeShort(0);
-/* 338 */                   this.sink.writeAll(this.headerBlockBuffer);
-/* 339 */                   this.sink.flush();
+                   writeNameValueBlockToBuffer(headerBlock);
+                   int length = (int) (10 + this.headerBlockBuffer.size());
+                   int flags = (outFinished ? 1 : 0) | (inFinished ? 2 : 0);
+                   this.sink.writeInt(-2147287039);
+                   this.sink.writeInt(((flags & 255) << 24) | (16777215 & length));
+                   this.sink.writeInt(Integer.MAX_VALUE & streamId);
+                   this.sink.writeInt(Integer.MAX_VALUE & associatedStreamId);
+                   this.sink.writeShort(0);
+                   this.sink.writeAll(this.headerBlockBuffer);
+                   this.sink.flush();
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 343 */           public synchronized void synReply(boolean outFinished, int streamId, List<Header> headerBlock) throws IOException {
+                    @Override 
+           public synchronized void synReply(boolean outFinished, int streamId, List<Header> headerBlock) throws IOException {
                         try {
                             if (this.closed) {
                                 throw new IOException("closed");
                             }
-/* 345 */                   writeNameValueBlockToBuffer(headerBlock);
-/* 347 */                   int flags = outFinished ? 1 : 0;
-/* 348 */                   int length = (int) (this.headerBlockBuffer.size() + 4);
-/* 350 */                   this.sink.writeInt(-2147287038);
-/* 351 */                   this.sink.writeInt(((flags & 255) << 24) | (16777215 & length));
-/* 352 */                   this.sink.writeInt(Integer.MAX_VALUE & streamId);
-/* 353 */                   this.sink.writeAll(this.headerBlockBuffer);
-/* 354 */                   this.sink.flush();
+                   writeNameValueBlockToBuffer(headerBlock);
+                   int flags = outFinished ? 1 : 0;
+                   int length = (int) (this.headerBlockBuffer.size() + 4);
+                   this.sink.writeInt(-2147287038);
+                   this.sink.writeInt(((flags & 255) << 24) | (16777215 & length));
+                   this.sink.writeInt(Integer.MAX_VALUE & streamId);
+                   this.sink.writeAll(this.headerBlockBuffer);
+                   this.sink.flush();
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 358 */           public synchronized void headers(int streamId, List<Header> headerBlock) throws IOException {
+                    @Override 
+           public synchronized void headers(int streamId, List<Header> headerBlock) throws IOException {
                         try {
                             if (this.closed) {
                                 throw new IOException("closed");
                             }
-/* 360 */                   writeNameValueBlockToBuffer(headerBlock);
-/* 363 */                   int length = (int) (this.headerBlockBuffer.size() + 4);
-/* 365 */                   this.sink.writeInt(-2147287032);
-/* 366 */                   this.sink.writeInt((16777215 & length) | 0);
-/* 367 */                   this.sink.writeInt(Integer.MAX_VALUE & streamId);
-/* 368 */                   this.sink.writeAll(this.headerBlockBuffer);
+                   writeNameValueBlockToBuffer(headerBlock);
+                   int length = (int) (this.headerBlockBuffer.size() + 4);
+                   this.sink.writeInt(-2147287032);
+                   this.sink.writeInt((16777215 & length) | 0);
+                   this.sink.writeInt(Integer.MAX_VALUE & streamId);
+                   this.sink.writeAll(this.headerBlockBuffer);
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 372 */           public synchronized void rstStream(int streamId, ErrorCode errorCode) throws IOException {
+                    @Override 
+           public synchronized void rstStream(int streamId, ErrorCode errorCode) throws IOException {
                         try {
                             if (this.closed) {
                                 throw new IOException("closed");
                             }
-/* 374 */                   if (errorCode.spdyRstCode == -1) {
+                   if (errorCode.spdyRstCode == -1) {
                                 throw new IllegalArgumentException();
                             }
-/* 378 */                   this.sink.writeInt(-2147287037);
-/* 379 */                   this.sink.writeInt(8);
-/* 380 */                   this.sink.writeInt(Integer.MAX_VALUE & streamId);
-/* 381 */                   this.sink.writeInt(errorCode.spdyRstCode);
-/* 382 */                   this.sink.flush();
+                   this.sink.writeInt(-2147287037);
+                   this.sink.writeInt(8);
+                   this.sink.writeInt(Integer.MAX_VALUE & streamId);
+                   this.sink.writeInt(errorCode.spdyRstCode);
+                   this.sink.flush();
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 385 */           public int maxDataLength() {
-/* 386 */               return 16383;
+                    @Override 
+           public int maxDataLength() {
+               return 16383;
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 390 */           public synchronized void data(boolean outFinished, int streamId, Buffer source, int byteCount) throws IOException {
-/* 391 */               int flags = outFinished ? 1 : 0;
+                    @Override 
+           public synchronized void data(boolean outFinished, int streamId, Buffer source, int byteCount) throws IOException {
+               int flags = outFinished ? 1 : 0;
                         try {
-/* 392 */                   sendDataFrame(streamId, flags, source, byteCount);
+                   sendDataFrame(streamId, flags, source, byteCount);
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
 
-/* 396 */           void sendDataFrame(int streamId, int flags, Buffer buffer, int byteCount) throws IOException {
-/* 397 */               if (this.closed) {
+           void sendDataFrame(int streamId, int flags, Buffer buffer, int byteCount) throws IOException {
+               if (this.closed) {
                             throw new IOException("closed");
                         }
                         if (byteCount > 16777215) {
-/* 399 */                   throw new IllegalArgumentException("FRAME_TOO_LARGE max size is 16Mib: " + byteCount);
+                   throw new IllegalArgumentException("FRAME_TOO_LARGE max size is 16Mib: " + byteCount);
                         }
-/* 401 */               this.sink.writeInt(Integer.MAX_VALUE & streamId);
-/* 402 */               this.sink.writeInt(((flags & 255) << 24) | (16777215 & byteCount));
-/* 403 */               if (byteCount > 0) {
-/* 404 */                   this.sink.write(buffer, byteCount);
+               this.sink.writeInt(Integer.MAX_VALUE & streamId);
+               this.sink.writeInt(((flags & 255) << 24) | (16777215 & byteCount));
+               if (byteCount > 0) {
+                   this.sink.write(buffer, byteCount);
                         }
                     }
 
-/* 408 */           private void writeNameValueBlockToBuffer(List<Header> headerBlock) throws IOException {
+           private void writeNameValueBlockToBuffer(List<Header> headerBlock) throws IOException {
                         if (this.headerBlockBuffer.size() != 0) {
                             throw new IllegalStateException();
                         }
-/* 410 */               this.headerBlockOut.writeInt(headerBlock.size());
+               this.headerBlockOut.writeInt(headerBlock.size());
                         int size = headerBlock.size();
                         for (int i = 0; i < size; i++) {
-/* 412 */                   ByteString name = headerBlock.get(i).name;
-/* 413 */                   this.headerBlockOut.writeInt(name.size());
-/* 414 */                   this.headerBlockOut.write(name);
-/* 415 */                   ByteString value = headerBlock.get(i).value;
-/* 416 */                   this.headerBlockOut.writeInt(value.size());
-/* 417 */                   this.headerBlockOut.write(value);
+                   ByteString name = headerBlock.get(i).name;
+                   this.headerBlockOut.writeInt(name.size());
+                   this.headerBlockOut.write(name);
+                   ByteString value = headerBlock.get(i).value;
+                   this.headerBlockOut.writeInt(value.size());
+                   this.headerBlockOut.write(value);
                         }
-/* 419 */               this.headerBlockOut.flush();
+               this.headerBlockOut.flush();
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 422 */           public synchronized void settings(Settings settings) throws IOException {
+                    @Override 
+           public synchronized void settings(Settings settings) throws IOException {
                         try {
                             if (this.closed) {
                                 throw new IOException("closed");
                             }
-/* 426 */                   int size = settings.size();
-/* 427 */                   int length = (size * 8) + 4;
-/* 428 */                   this.sink.writeInt(-2147287036);
-/* 429 */                   this.sink.writeInt((length & ViewCompat.MEASURED_SIZE_MASK) | 0);
-/* 430 */                   this.sink.writeInt(size);
+                   int size = settings.size();
+                   int length = (size * 8) + 4;
+                   this.sink.writeInt(-2147287036);
+                   this.sink.writeInt((length & ViewCompat.MEASURED_SIZE_MASK) | 0);
+                   this.sink.writeInt(size);
                             for (int i = 0; i <= 10; i++) {
-/* 432 */                       if (settings.isSet(i)) {
-/* 433 */                           int settingsFlags = settings.flags(i);
-/* 434 */                           this.sink.writeInt(((settingsFlags & 255) << 24) | (i & ViewCompat.MEASURED_SIZE_MASK));
-/* 435 */                           this.sink.writeInt(settings.get(i));
+                       if (settings.isSet(i)) {
+                           int settingsFlags = settings.flags(i);
+                           this.sink.writeInt(((settingsFlags & 255) << 24) | (i & ViewCompat.MEASURED_SIZE_MASK));
+                           this.sink.writeInt(settings.get(i));
                                 }
                             }
-/* 437 */                   this.sink.flush();
+                   this.sink.flush();
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 441 */           public synchronized void ping(boolean reply, int payload1, int payload2) throws IOException {
+                    @Override 
+           public synchronized void ping(boolean reply, int payload1, int payload2) throws IOException {
                         synchronized (this) {
                             try {
                                 if (this.closed) {
                                     throw new IOException("closed");
                                 }
                                 boolean payloadIsReply = this.client != ((payload1 & 1) == 1);
-/* 444 */                       if (reply != payloadIsReply) {
+                       if (reply != payloadIsReply) {
                                     throw new IllegalArgumentException("payload != reply");
                                 }
-/* 448 */                       this.sink.writeInt(-2147287034);
-/* 449 */                       this.sink.writeInt(4);
-/* 450 */                       this.sink.writeInt(payload1);
-/* 451 */                       this.sink.flush();
+                       this.sink.writeInt(-2147287034);
+                       this.sink.writeInt(4);
+                       this.sink.writeInt(payload1);
+                       this.sink.flush();
                             } catch (Throwable th) {
                                 throw th;
                             }
                         }
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 455 */           public synchronized void goAway(int lastGoodStreamId, ErrorCode errorCode, byte[] ignored) throws IOException {
+                    @Override 
+           public synchronized void goAway(int lastGoodStreamId, ErrorCode errorCode, byte[] ignored) throws IOException {
                         try {
                             if (this.closed) {
                                 throw new IOException("closed");
                             }
-/* 457 */                   if (errorCode.spdyGoAwayCode == -1) {
-/* 458 */                       throw new IllegalArgumentException("errorCode.spdyGoAwayCode == -1");
+                   if (errorCode.spdyGoAwayCode == -1) {
+                       throw new IllegalArgumentException("errorCode.spdyGoAwayCode == -1");
                             }
-/* 463 */                   this.sink.writeInt(-2147287033);
-/* 464 */                   this.sink.writeInt(8);
-/* 465 */                   this.sink.writeInt(lastGoodStreamId);
-/* 466 */                   this.sink.writeInt(errorCode.spdyGoAwayCode);
-/* 467 */                   this.sink.flush();
+                   this.sink.writeInt(-2147287033);
+                   this.sink.writeInt(8);
+                   this.sink.writeInt(lastGoodStreamId);
+                   this.sink.writeInt(errorCode.spdyGoAwayCode);
+                   this.sink.flush();
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
 
-                    @Override // com.squareup.okhttp.internal.spdy.FrameWriter
-/* 471 */           public synchronized void windowUpdate(int streamId, long increment) throws IOException {
+                    @Override 
+           public synchronized void windowUpdate(int streamId, long increment) throws IOException {
                         try {
                             if (this.closed) {
                                 throw new IOException("closed");
                             }
                             if (increment == 0 || increment > 2147483647L) {
-/* 474 */                       throw new IllegalArgumentException("windowSizeIncrement must be between 1 and 0x7fffffff: " + increment);
+                       throw new IllegalArgumentException("windowSizeIncrement must be between 1 and 0x7fffffff: " + increment);
                             }
-/* 480 */                   this.sink.writeInt(-2147287031);
-/* 481 */                   this.sink.writeInt(8);
-/* 482 */                   this.sink.writeInt(streamId);
-/* 483 */                   this.sink.writeInt((int) increment);
-/* 484 */                   this.sink.flush();
+                   this.sink.writeInt(-2147287031);
+                   this.sink.writeInt(8);
+                   this.sink.writeInt(streamId);
+                   this.sink.writeInt((int) increment);
+                   this.sink.flush();
                         } catch (IOException e) {
                             throw e;
                         }
                     }
 
-                    @Override // java.io.Closeable, java.lang.AutoCloseable
-/* 487 */           public synchronized void close() throws IOException {
+                    @Override 
+           public synchronized void close() throws IOException {
                         try {
                             this.closed = true;
-/* 489 */                   Util.closeAll(this.sink, this.headerBlockOut);
+                   Util.closeAll(this.sink, this.headerBlockOut);
                         } catch (Throwable th) {
                             if (th instanceof IOException) {
                                 throw (IOException) th;

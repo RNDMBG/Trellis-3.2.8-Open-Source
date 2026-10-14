@@ -6,28 +6,28 @@
             import android.os.Parcel;
             import android.os.RemoteException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface IUiSettingsDelegate extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.internal.IUiSettingsDelegate$a */
+                
                 public static abstract class AbstractBinderC1156a extends Binder implements IUiSettingsDelegate {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.internal.IUiSettingsDelegate$a$a */
+                    
                     private static class a implements IUiSettingsDelegate {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2264dG;
 
                         a(IBinder iBinder) {
                             this.f2264dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2264dG;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public boolean isCompassEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -46,7 +46,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public boolean isMyLocationButtonEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -65,7 +65,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public boolean isRotateGesturesEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -84,7 +84,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public boolean isScrollGesturesEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -103,7 +103,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public boolean isTiltGesturesEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -122,7 +122,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public boolean isZoomControlsEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -141,7 +141,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public boolean isZoomGesturesEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -160,7 +160,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public void setAllGesturesEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -178,7 +178,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public void setCompassEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -196,7 +196,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public void setMyLocationButtonEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -214,7 +214,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public void setRotateGesturesEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -232,7 +232,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public void setScrollGesturesEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -250,7 +250,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public void setTiltGesturesEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -268,7 +268,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public void setZoomControlsEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -286,7 +286,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IUiSettingsDelegate
+                        @Override 
                         public void setZoomGesturesEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -305,7 +305,7 @@
                         }
                     }
 
-                    /* JADX INFO: renamed from: ab */
+                    
                     public static IUiSettingsDelegate m2233ab(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -314,7 +314,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IUiSettingsDelegate)) ? new a(iBinder) : (IUiSettingsDelegate) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
                         switch (i) {
                             case 1:

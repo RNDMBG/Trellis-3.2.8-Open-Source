@@ -7,7 +7,7 @@
             import twitter4j.internal.http.HttpClientConfiguration;
             import twitter4j.internal.http.HttpClientWrapperConfiguration;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface Configuration extends HttpClientConfiguration, HttpClientWrapperConfiguration, AuthorizationConfiguration, Serializable {
                 int getAsyncNumThreads();
 
@@ -19,34 +19,34 @@
 
                 String getDispatcherImpl();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 int getHttpConnectionTimeout();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 int getHttpDefaultMaxPerRoute();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 int getHttpMaxTotalConnections();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 String getHttpProxyHost();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 String getHttpProxyPassword();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 int getHttpProxyPort();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 String getHttpProxyUser();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 int getHttpReadTimeout();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 int getHttpRetryCount();
 
-                @Override // twitter4j.internal.http.HttpClientConfiguration
+                @Override 
                 int getHttpRetryIntervalSeconds();
 
                 int getHttpStreamingReadTimeout();
@@ -59,20 +59,20 @@
 
                 Properties getMediaProviderParameters();
 
-                @Override // twitter4j.auth.AuthorizationConfiguration
+                @Override 
                 String getOAuth2AccessToken();
 
                 String getOAuth2InvalidateTokenURL();
 
-                @Override // twitter4j.auth.AuthorizationConfiguration
+                @Override 
                 String getOAuth2TokenType();
 
                 String getOAuth2TokenURL();
 
-                @Override // twitter4j.auth.AuthorizationConfiguration
+                @Override 
                 String getOAuthAccessToken();
 
-                @Override // twitter4j.auth.AuthorizationConfiguration
+                @Override 
                 String getOAuthAccessTokenSecret();
 
                 String getOAuthAccessTokenURL();
@@ -81,18 +81,18 @@
 
                 String getOAuthAuthorizationURL();
 
-                @Override // twitter4j.auth.AuthorizationConfiguration
+                @Override 
                 String getOAuthConsumerKey();
 
-                @Override // twitter4j.auth.AuthorizationConfiguration
+                @Override 
                 String getOAuthConsumerSecret();
 
                 String getOAuthRequestTokenURL();
 
-                @Override // twitter4j.auth.AuthorizationConfiguration
+                @Override 
                 String getPassword();
 
-                @Override // twitter4j.internal.http.HttpClientWrapperConfiguration
+                @Override 
                 Map<String, String> getRequestHeaders();
 
                 String getRestBaseURL();
@@ -101,7 +101,7 @@
 
                 String getStreamBaseURL();
 
-                @Override // twitter4j.auth.AuthorizationConfiguration
+                @Override 
                 String getUser();
 
                 String getUserAgent();

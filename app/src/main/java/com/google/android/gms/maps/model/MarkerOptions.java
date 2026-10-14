@@ -6,48 +6,48 @@
             import com.google.android.gms.dynamic.InterfaceC0904b;
             import com.google.android.gms.maps.internal.C1174r;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class MarkerOptions implements SafeParcelable {
                 public static final MarkerOptionsCreator CREATOR = new MarkerOptionsCreator();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2318iM;
                 private float mAlpha;
 
-                /* JADX INFO: renamed from: qA */
+                
                 private LatLng f2319qA;
 
-                /* JADX INFO: renamed from: qB */
+                
                 private String f2320qB;
 
-                /* JADX INFO: renamed from: qC */
+                
                 private String f2321qC;
 
-                /* JADX INFO: renamed from: qD */
+                
                 private BitmapDescriptor f2322qD;
 
-                /* JADX INFO: renamed from: qE */
+                
                 private boolean f2323qE;
 
-                /* JADX INFO: renamed from: qF */
+                
                 private boolean f2324qF;
 
-                /* JADX INFO: renamed from: qG */
+                
                 private float f2325qG;
 
-                /* JADX INFO: renamed from: qH */
+                
                 private float f2326qH;
 
-                /* JADX INFO: renamed from: qI */
+                
                 private float f2327qI;
 
-                /* JADX INFO: renamed from: ql */
+                
                 private boolean f2328ql;
 
-                /* JADX INFO: renamed from: qt */
+                
                 private float f2329qt;
 
-                /* JADX INFO: renamed from: qu */
+                
                 private float f2330qu;
 
                 public MarkerOptions() {
@@ -98,7 +98,7 @@
                     return this;
                 }
 
-                /* JADX INFO: renamed from: cN */
+                
                 IBinder m2283cN() {
                     if (this.f2322qD == null) {
                         return null;
@@ -106,7 +106,7 @@
                     return this.f2322qD.m2266cs().asBinder();
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -213,7 +213,7 @@
                     return this;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     if (C1174r.m2265cK()) {
                         C1182f.m2300a(this, out, flags);

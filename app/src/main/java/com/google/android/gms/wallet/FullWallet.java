@@ -4,32 +4,32 @@
             import android.os.Parcelable;
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class FullWallet implements SafeParcelable {
                 public static final Parcelable.Creator<FullWallet> CREATOR = new C1209c();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2468iM;
 
-                /* JADX INFO: renamed from: tH */
+                
                 String f2469tH;
 
-                /* JADX INFO: renamed from: tI */
+                
                 String f2470tI;
 
-                /* JADX INFO: renamed from: tJ */
+                
                 ProxyCard f2471tJ;
 
-                /* JADX INFO: renamed from: tK */
+                
                 String f2472tK;
 
-                /* JADX INFO: renamed from: tL */
+                
                 Address f2473tL;
 
-                /* JADX INFO: renamed from: tM */
+                
                 Address f2474tM;
 
-                /* JADX INFO: renamed from: tN */
+                
                 String[] f2475tN;
 
                 public FullWallet() {
@@ -47,7 +47,7 @@
                     this.f2475tN = paymentDescriptions;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -84,7 +84,7 @@
                     return this.f2468iM;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C1209c.m2348a(this, out, flags);
                 }

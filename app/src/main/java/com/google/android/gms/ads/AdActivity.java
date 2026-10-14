@@ -7,15 +7,15 @@
             import com.google.android.gms.internal.C1002cn;
             import com.google.android.gms.internal.InterfaceC0975bn;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class AdActivity extends Activity {
                 public static final String CLASS_NAME = "com.google.android.gms.ads.AdActivity";
                 public static final String SIMPLE_CLASS_NAME = "AdActivity";
 
-                /* JADX INFO: renamed from: dH */
+                
                 private InterfaceC0975bn f879dH;
 
-                @Override // android.app.Activity
+                @Override 
                 protected void onCreate(Bundle savedInstanceState) {
                     super.onCreate(savedInstanceState);
                     this.f879dH = C0974bm.m1338a(this);
@@ -32,7 +32,7 @@
                     }
                 }
 
-                @Override // android.app.Activity
+                @Override 
                 protected void onDestroy() {
                     try {
                         if (this.f879dH != null) {
@@ -44,7 +44,7 @@
                     super.onDestroy();
                 }
 
-                @Override // android.app.Activity
+                @Override 
                 protected void onPause() {
                     try {
                         if (this.f879dH != null) {
@@ -57,7 +57,7 @@
                     super.onPause();
                 }
 
-                @Override // android.app.Activity
+                @Override 
                 protected void onRestart() {
                     super.onRestart();
                     try {
@@ -70,7 +70,7 @@
                     }
                 }
 
-                @Override // android.app.Activity
+                @Override 
                 protected void onResume() {
                     super.onResume();
                     try {
@@ -83,7 +83,7 @@
                     }
                 }
 
-                @Override // android.app.Activity
+                @Override 
                 protected void onSaveInstanceState(Bundle outState) {
                     try {
                         if (this.f879dH != null) {
@@ -96,7 +96,7 @@
                     super.onSaveInstanceState(outState);
                 }
 
-                @Override // android.app.Activity
+                @Override 
                 protected void onStart() {
                     super.onStart();
                     try {
@@ -109,7 +109,7 @@
                     }
                 }
 
-                @Override // android.app.Activity
+                @Override 
                 protected void onStop() {
                     try {
                         if (this.f879dH != null) {

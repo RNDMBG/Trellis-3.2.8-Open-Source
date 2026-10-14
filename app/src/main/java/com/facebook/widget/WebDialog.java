@@ -35,8 +35,8 @@
             import java.net.URL;
             import java.net.URLDecoder;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 57 */    public class WebDialog extends Dialog {
+            
+    public class WebDialog extends Dialog {
                 static final String CANCEL_URI = "fbconnect://cancel";
                 public static final int DEFAULT_THEME = 16973840;
                 static final boolean DISABLE_SSL_CHECK_FOR_TESTING = false;
@@ -58,317 +58,317 @@
                     void onComplete(Bundle bundle, FacebookException facebookException);
                 }
 
-/* 58 */        static /* synthetic */ void access$000(WebDialog x0) {
-/* 59 */            x0.sendCancelToListener();
+        static  void access$000(WebDialog x0) {
+            x0.sendCancelToListener();
                 }
 
-/* 58 */        static /* synthetic */ void access$200(WebDialog x0, Bundle x1) {
-/* 59 */            x0.sendSuccessToListener(x1);
+        static  void access$200(WebDialog x0, Bundle x1) {
+            x0.sendSuccessToListener(x1);
                 }
 
-/* 58 */        static /* synthetic */ void access$300(WebDialog x0, Throwable x1) {
-/* 59 */            x0.sendErrorToListener(x1);
+        static  void access$300(WebDialog x0, Throwable x1) {
+            x0.sendErrorToListener(x1);
                 }
 
-/* 58 */        static /* synthetic */ boolean access$400(WebDialog x0) {
-/* 59 */            return x0.isDetached;
+        static  boolean access$400(WebDialog x0) {
+            return x0.isDetached;
                 }
 
-/* 58 */        static /* synthetic */ ProgressDialog access$500(WebDialog x0) {
-/* 59 */            return x0.spinner;
+        static  ProgressDialog access$500(WebDialog x0) {
+            return x0.spinner;
                 }
 
-/* 58 */        static /* synthetic */ FrameLayout access$600(WebDialog x0) {
-/* 59 */            return x0.contentFrameLayout;
+        static  FrameLayout access$600(WebDialog x0) {
+            return x0.contentFrameLayout;
                 }
 
-/* 58 */        static /* synthetic */ WebView access$700(WebDialog x0) {
-/* 59 */            return x0.webView;
+        static  WebView access$700(WebDialog x0) {
+            return x0.webView;
                 }
 
-/* 58 */        static /* synthetic */ ImageView access$800(WebDialog x0) {
-/* 59 */            return x0.crossImageView;
+        static  ImageView access$800(WebDialog x0) {
+            return x0.crossImageView;
                 }
 
-/* 80 */        public static void initLoadingString(int loadingStringRes) {
-/* 81 */            STRING_FACEBOOK_LOADING = loadingStringRes;
+        public static void initLoadingString(int loadingStringRes) {
+            STRING_FACEBOOK_LOADING = loadingStringRes;
                 }
 
-/* 106 */       public WebDialog(Context context, String url) {
-/* 107 */           this(context, url, 16973840);
+       public WebDialog(Context context, String url) {
+           this(context, url, 16973840);
                 }
 
-/* 118 */       public WebDialog(Context context, String url, int theme) {
-/* 119 */           super(context, theme);
-/* 75 */            this.listenerCalled = false;
-/* 76 */            this.isDetached = false;
-/* 120 */           this.url = url;
+       public WebDialog(Context context, String url, int theme) {
+           super(context, theme);
+            this.listenerCalled = false;
+            this.isDetached = false;
+           this.url = url;
                 }
 
-/* 132 */       public WebDialog(Context context, String action, Bundle parameters, int theme, OnCompleteListener listener) {
-/* 133 */           super(context, theme);
-/* 75 */            this.listenerCalled = false;
-/* 76 */            this.isDetached = false;
-/* 136 */           parameters = parameters == null ? new Bundle() : parameters;
-/* 138 */           parameters.putString("display", DISPLAY_TOUCH);
-/* 139 */           parameters.putString("type", USER_AGENT);
-/* 141 */           Uri uri = Utility.buildUri(ServerProtocol.DIALOG_AUTHORITY, "v2.3/dialog/" + action, parameters);
-/* 143 */           this.url = uri.toString();
-/* 144 */           this.onCompleteListener = listener;
+       public WebDialog(Context context, String action, Bundle parameters, int theme, OnCompleteListener listener) {
+           super(context, theme);
+            this.listenerCalled = false;
+            this.isDetached = false;
+           parameters = parameters == null ? new Bundle() : parameters;
+           parameters.putString("display", DISPLAY_TOUCH);
+           parameters.putString("type", USER_AGENT);
+           Uri uri = Utility.buildUri(ServerProtocol.DIALOG_AUTHORITY, "v2.3/dialog/" + action, parameters);
+           this.url = uri.toString();
+           this.onCompleteListener = listener;
                 }
 
-/* 152 */       public void setOnCompleteListener(OnCompleteListener listener) {
-/* 153 */           this.onCompleteListener = listener;
+       public void setOnCompleteListener(OnCompleteListener listener) {
+           this.onCompleteListener = listener;
                 }
 
-/* 161 */       public OnCompleteListener getOnCompleteListener() {
-/* 162 */           return this.onCompleteListener;
+       public OnCompleteListener getOnCompleteListener() {
+           return this.onCompleteListener;
                 }
 
-                @Override // android.app.Dialog, android.content.DialogInterface
-/* 166 */       public void dismiss() {
-/* 167 */           if (this.webView != null) {
-/* 168 */               this.webView.stopLoading();
+                @Override 
+       public void dismiss() {
+           if (this.webView != null) {
+               this.webView.stopLoading();
                     }
-/* 170 */           if (!this.isDetached) {
-/* 171 */               if (this.spinner.isShowing()) {
-/* 172 */                   this.spinner.dismiss();
+           if (!this.isDetached) {
+               if (this.spinner.isShowing()) {
+                   this.spinner.dismiss();
                         }
-/* 174 */               super.dismiss();
+               super.dismiss();
                     }
                 }
 
-                @Override // android.app.Dialog, android.view.Window.Callback
-/* 179 */       public void onDetachedFromWindow() {
-/* 180 */           this.isDetached = true;
-/* 181 */           super.onDetachedFromWindow();
+                @Override 
+       public void onDetachedFromWindow() {
+           this.isDetached = true;
+           super.onDetachedFromWindow();
                 }
 
-                @Override // android.app.Dialog, android.view.Window.Callback
-/* 185 */       public void onAttachedToWindow() {
-/* 186 */           this.isDetached = false;
-/* 187 */           super.onAttachedToWindow();
+                @Override 
+       public void onAttachedToWindow() {
+           this.isDetached = false;
+           super.onAttachedToWindow();
                 }
 
-                @Override // android.app.Dialog
-/* 191 */       protected void onCreate(Bundle savedInstanceState) {
-/* 192 */           super.onCreate(savedInstanceState);
-/* 194 */           setOnCancelListener(new DialogInterfaceOnCancelListenerC07811());
-/* 201 */           this.spinner = new ProgressDialog(getContext());
-/* 202 */           this.spinner.requestWindowFeature(1);
-/* 203 */           this.spinner.setMessage(getContext().getString(STRING_FACEBOOK_LOADING));
-/* 204 */           this.spinner.setOnCancelListener(new DialogInterfaceOnCancelListenerC07822());
-/* 212 */           requestWindowFeature(1);
-/* 213 */           this.contentFrameLayout = new FrameLayout(getContext());
-/* 219 */           createCrossImage();
-/* 224 */           int crossWidth = this.crossImageView.getDrawable().getIntrinsicWidth();
-/* 225 */           setUpWebView(crossWidth / 2);
-/* 230 */           this.contentFrameLayout.addView(this.crossImageView, new ViewGroup.LayoutParams(-2, -2));
-/* 232 */           addContentView(this.contentFrameLayout, new ViewGroup.LayoutParams(-1, -1));
+                @Override 
+       protected void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState);
+           setOnCancelListener(new DialogInterfaceOnCancelListenerC07811());
+           this.spinner = new ProgressDialog(getContext());
+           this.spinner.requestWindowFeature(1);
+           this.spinner.setMessage(getContext().getString(STRING_FACEBOOK_LOADING));
+           this.spinner.setOnCancelListener(new DialogInterfaceOnCancelListenerC07822());
+           requestWindowFeature(1);
+           this.contentFrameLayout = new FrameLayout(getContext());
+           createCrossImage();
+           int crossWidth = this.crossImageView.getDrawable().getIntrinsicWidth();
+           setUpWebView(crossWidth / 2);
+           this.contentFrameLayout.addView(this.crossImageView, new ViewGroup.LayoutParams(-2, -2));
+           addContentView(this.contentFrameLayout, new ViewGroup.LayoutParams(-1, -1));
                 }
 
-                /* JADX INFO: renamed from: com.facebook.widget.WebDialog$1 */
-/* 192 */       class DialogInterfaceOnCancelListenerC07811 implements DialogInterface.OnCancelListener {
-/* 193 */           DialogInterfaceOnCancelListenerC07811() {
+                
+       class DialogInterfaceOnCancelListenerC07811 implements DialogInterface.OnCancelListener {
+           DialogInterfaceOnCancelListenerC07811() {
                     }
 
-                    @Override // android.content.DialogInterface.OnCancelListener
-/* 196 */           public void onCancel(DialogInterface dialogInterface) {
-/* 197 */               WebDialog.access$000(WebDialog.this);
-                    }
-                }
-
-                /* JADX INFO: renamed from: com.facebook.widget.WebDialog$2 */
-/* 202 */       class DialogInterfaceOnCancelListenerC07822 implements DialogInterface.OnCancelListener {
-/* 203 */           DialogInterfaceOnCancelListenerC07822() {
-                    }
-
-                    @Override // android.content.DialogInterface.OnCancelListener
-/* 206 */           public void onCancel(DialogInterface dialogInterface) {
-/* 207 */               WebDialog.access$000(WebDialog.this);
-/* 208 */               WebDialog.this.dismiss();
+                    @Override 
+           public void onCancel(DialogInterface dialogInterface) {
+               WebDialog.access$000(WebDialog.this);
                     }
                 }
 
-/* 236 */       private void sendSuccessToListener(Bundle values) {
-/* 237 */           if (this.onCompleteListener != null && !this.listenerCalled) {
-/* 238 */               this.listenerCalled = true;
-/* 239 */               this.onCompleteListener.onComplete(values, null);
+                
+       class DialogInterfaceOnCancelListenerC07822 implements DialogInterface.OnCancelListener {
+           DialogInterfaceOnCancelListenerC07822() {
+                    }
+
+                    @Override 
+           public void onCancel(DialogInterface dialogInterface) {
+               WebDialog.access$000(WebDialog.this);
+               WebDialog.this.dismiss();
                     }
                 }
 
-/* 243 */       private void sendErrorToListener(Throwable error) {
+       private void sendSuccessToListener(Bundle values) {
+           if (this.onCompleteListener != null && !this.listenerCalled) {
+               this.listenerCalled = true;
+               this.onCompleteListener.onComplete(values, null);
+                    }
+                }
+
+       private void sendErrorToListener(Throwable error) {
                     FacebookException facebookException;
-/* 244 */           if (this.onCompleteListener != null && !this.listenerCalled) {
-/* 245 */               this.listenerCalled = true;
-/* 247 */               if (error instanceof FacebookException) {
-/* 248 */                   facebookException = (FacebookException) error;
+           if (this.onCompleteListener != null && !this.listenerCalled) {
+               this.listenerCalled = true;
+               if (error instanceof FacebookException) {
+                   facebookException = (FacebookException) error;
                         } else {
-/* 250 */                   facebookException = new FacebookException(error);
+                   facebookException = new FacebookException(error);
                         }
-/* 252 */               this.onCompleteListener.onComplete(null, facebookException);
+               this.onCompleteListener.onComplete(null, facebookException);
                     }
                 }
 
-/* 256 */       private void sendCancelToListener() {
-/* 257 */           sendErrorToListener(new FacebookOperationCanceledException());
+       private void sendCancelToListener() {
+           sendErrorToListener(new FacebookOperationCanceledException());
                 }
 
-/* 260 */       private void createCrossImage() {
-/* 261 */           this.crossImageView = new ImageView(getContext());
-/* 263 */           this.crossImageView.setOnClickListener(new ViewOnClickListenerC07833());
-/* 270 */           Drawable crossDrawable = getContext().getResources().getDrawable(C0257R.drawable.com_facebook_close);
-/* 271 */           this.crossImageView.setImageDrawable(crossDrawable);
-/* 275 */           this.crossImageView.setVisibility(4);
+       private void createCrossImage() {
+           this.crossImageView = new ImageView(getContext());
+           this.crossImageView.setOnClickListener(new ViewOnClickListenerC07833());
+           Drawable crossDrawable = getContext().getResources().getDrawable(C0257R.drawable.com_facebook_close);
+           this.crossImageView.setImageDrawable(crossDrawable);
+           this.crossImageView.setVisibility(4);
                 }
 
-                /* JADX INFO: renamed from: com.facebook.widget.WebDialog$3 */
-/* 261 */       class ViewOnClickListenerC07833 implements View.OnClickListener {
-/* 262 */           ViewOnClickListenerC07833() {
+                
+       class ViewOnClickListenerC07833 implements View.OnClickListener {
+           ViewOnClickListenerC07833() {
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 265 */           public void onClick(View v) {
-/* 266 */               WebDialog.access$000(WebDialog.this);
-/* 267 */               WebDialog.this.dismiss();
+                    @Override 
+           public void onClick(View v) {
+               WebDialog.access$000(WebDialog.this);
+               WebDialog.this.dismiss();
                     }
                 }
 
                 @SuppressLint({"SetJavaScriptEnabled"})
-/* 279 */       private void setUpWebView(int margin) {
-/* 280 */           LinearLayout webViewContainer = new LinearLayout(getContext());
-/* 281 */           this.webView = new WebView(getContext());
-/* 282 */           this.webView.setVerticalScrollBarEnabled(false);
-/* 283 */           this.webView.setHorizontalScrollBarEnabled(false);
-/* 284 */           this.webView.setWebViewClient(new DialogWebViewClient(this, null));
-/* 285 */           this.webView.getSettings().setJavaScriptEnabled(true);
-/* 286 */           this.webView.loadUrl(this.url);
-/* 287 */           this.webView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-/* 289 */           this.webView.setVisibility(4);
-/* 290 */           this.webView.getSettings().setSavePassword(false);
-/* 292 */           webViewContainer.setPadding(margin, margin, margin, margin);
-/* 293 */           webViewContainer.addView(this.webView);
-/* 294 */           this.contentFrameLayout.addView(webViewContainer);
+       private void setUpWebView(int margin) {
+           LinearLayout webViewContainer = new LinearLayout(getContext());
+           this.webView = new WebView(getContext());
+           this.webView.setVerticalScrollBarEnabled(false);
+           this.webView.setHorizontalScrollBarEnabled(false);
+           this.webView.setWebViewClient(new DialogWebViewClient(this, null));
+           this.webView.getSettings().setJavaScriptEnabled(true);
+           this.webView.loadUrl(this.url);
+           this.webView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+           this.webView.setVisibility(4);
+           this.webView.getSettings().setSavePassword(false);
+           webViewContainer.setPadding(margin, margin, margin, margin);
+           webViewContainer.addView(this.webView);
+           this.contentFrameLayout.addView(webViewContainer);
                 }
 
-/* 297 */       public static Bundle decodeUrl(String s) {
-/* 298 */           Bundle params = new Bundle();
-/* 299 */           if (s != null) {
-/* 300 */               String[] array = s.split("&");
+       public static Bundle decodeUrl(String s) {
+           Bundle params = new Bundle();
+           if (s != null) {
+               String[] array = s.split("&");
                         for (String parameter : array) {
-/* 302 */                   String[] v = parameter.split("=");
+                   String[] v = parameter.split("=");
                             try {
-/* 305 */                       if (v.length == 2) {
-/* 306 */                           params.putString(URLDecoder.decode(v[0], IoUtils.UTF_8), URLDecoder.decode(v[1], IoUtils.UTF_8));
+                       if (v.length == 2) {
+                           params.putString(URLDecoder.decode(v[0], IoUtils.UTF_8), URLDecoder.decode(v[1], IoUtils.UTF_8));
                                 } else if (v.length == 1) {
-/* 309 */                           params.putString(URLDecoder.decode(v[0], IoUtils.UTF_8), "");
+                           params.putString(URLDecoder.decode(v[0], IoUtils.UTF_8), "");
                                 }
                             } catch (UnsupportedEncodingException e) {
                             }
                         }
                     }
-/* 316 */           return params;
+           return params;
                 }
 
-/* 317 */       private class DialogWebViewClient extends WebViewClient {
-/* 318 */           private DialogWebViewClient() {
+       private class DialogWebViewClient extends WebViewClient {
+           private DialogWebViewClient() {
                     }
 
-/* 318 */           /* synthetic */ DialogWebViewClient(WebDialog x0, DialogInterfaceOnCancelListenerC07811 x1) {
-/* 319 */               this();
+            DialogWebViewClient(WebDialog x0, DialogInterfaceOnCancelListenerC07811 x1) {
+               this();
                     }
 
-                    @Override // android.webkit.WebViewClient
-/* 322 */           public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    @Override 
+           public boolean shouldOverrideUrlLoading(WebView view, String url) {
                         Bundle values;
-/* 323 */               Utility.logd(WebDialog.LOG_TAG, "Redirect URL: " + url);
-/* 324 */               if (url.startsWith(WebDialog.REDIRECT_URI)) {
+               Utility.logd(WebDialog.LOG_TAG, "Redirect URL: " + url);
+               if (url.startsWith(WebDialog.REDIRECT_URI)) {
                             try {
-/* 327 */                       URL u = new URL(url.replace("fbconnect", "http"));
-/* 328 */                       Bundle b = WebDialog.decodeUrl(u.getQuery());
-/* 329 */                       b.putAll(WebDialog.decodeUrl(u.getRef()));
-/* 330 */                       values = b;
+                       URL u = new URL(url.replace("fbconnect", "http"));
+                       Bundle b = WebDialog.decodeUrl(u.getQuery());
+                       b.putAll(WebDialog.decodeUrl(u.getRef()));
+                       values = b;
                             } catch (MalformedURLException e) {
-/* 332 */                       values = new Bundle();
+                       values = new Bundle();
                             }
-/* 335 */                   String error = values.getString("error");
-/* 336 */                   if (error == null) {
-/* 337 */                       error = values.getString("error_type");
+                   String error = values.getString("error");
+                   if (error == null) {
+                       error = values.getString("error_type");
                             }
-/* 340 */                   String errorMessage = values.getString("error_msg");
-/* 341 */                   if (errorMessage == null) {
-/* 342 */                       errorMessage = values.getString("error_description");
+                   String errorMessage = values.getString("error_msg");
+                   if (errorMessage == null) {
+                       errorMessage = values.getString("error_description");
                             }
-/* 344 */                   String errorCodeString = values.getString("error_code");
-/* 345 */                   int errorCode = -1;
-/* 346 */                   if (!Utility.isNullOrEmpty(errorCodeString)) {
+                   String errorCodeString = values.getString("error_code");
+                   int errorCode = -1;
+                   if (!Utility.isNullOrEmpty(errorCodeString)) {
                                 try {
-/* 348 */                           errorCode = Integer.parseInt(errorCodeString);
+                           errorCode = Integer.parseInt(errorCodeString);
                                 } catch (NumberFormatException e2) {
-/* 350 */                           errorCode = -1;
+                           errorCode = -1;
                                 }
                             }
-/* 354 */                   if (Utility.isNullOrEmpty(error) && Utility.isNullOrEmpty(errorMessage) && errorCode == -1) {
-/* 356 */                       WebDialog.access$200(WebDialog.this, values);
+                   if (Utility.isNullOrEmpty(error) && Utility.isNullOrEmpty(errorMessage) && errorCode == -1) {
+                       WebDialog.access$200(WebDialog.this, values);
                             } else if (error != null && (error.equals("access_denied") || error.equals("OAuthAccessDeniedException"))) {
-/* 359 */                       WebDialog.access$000(WebDialog.this);
+                       WebDialog.access$000(WebDialog.this);
                             } else {
-/* 361 */                       FacebookRequestError requestError = new FacebookRequestError(errorCode, error, errorMessage);
-/* 362 */                       WebDialog.access$300(WebDialog.this, new FacebookServiceException(requestError, errorMessage));
+                       FacebookRequestError requestError = new FacebookRequestError(errorCode, error, errorMessage);
+                       WebDialog.access$300(WebDialog.this, new FacebookServiceException(requestError, errorMessage));
                             }
-/* 365 */                   WebDialog.this.dismiss();
-/* 366 */                   return true;
+                   WebDialog.this.dismiss();
+                   return true;
                         }
-/* 367 */               if (url.startsWith(WebDialog.CANCEL_URI)) {
-/* 368 */                   WebDialog.access$000(WebDialog.this);
-/* 369 */                   WebDialog.this.dismiss();
-/* 370 */                   return true;
+               if (url.startsWith(WebDialog.CANCEL_URI)) {
+                   WebDialog.access$000(WebDialog.this);
+                   WebDialog.this.dismiss();
+                   return true;
                         }
-/* 371 */               if (url.contains(WebDialog.DISPLAY_TOUCH)) {
-/* 372 */                   return false;
+               if (url.contains(WebDialog.DISPLAY_TOUCH)) {
+                   return false;
                         }
-/* 375 */               WebDialog.this.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(url)));
-/* 377 */               return true;
+               WebDialog.this.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(url)));
+               return true;
                     }
 
-                    @Override // android.webkit.WebViewClient
-/* 382 */           public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-/* 383 */               super.onReceivedError(view, errorCode, description, failingUrl);
-/* 384 */               WebDialog.access$300(WebDialog.this, new FacebookDialogException(description, errorCode, failingUrl));
-/* 385 */               WebDialog.this.dismiss();
+                    @Override 
+           public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+               super.onReceivedError(view, errorCode, description, failingUrl);
+               WebDialog.access$300(WebDialog.this, new FacebookDialogException(description, errorCode, failingUrl));
+               WebDialog.this.dismiss();
                     }
 
-                    @Override // android.webkit.WebViewClient
-/* 392 */           public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-/* 393 */               super.onReceivedSslError(view, handler, error);
-/* 395 */               WebDialog.access$300(WebDialog.this, new FacebookDialogException(null, -11, null));
-/* 396 */               handler.cancel();
-/* 397 */               WebDialog.this.dismiss();
+                    @Override 
+           public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+               super.onReceivedSslError(view, handler, error);
+               WebDialog.access$300(WebDialog.this, new FacebookDialogException(null, -11, null));
+               handler.cancel();
+               WebDialog.this.dismiss();
                     }
 
-                    @Override // android.webkit.WebViewClient
-/* 402 */           public void onPageStarted(WebView view, String url, Bitmap favicon) {
-/* 403 */               Utility.logd(WebDialog.LOG_TAG, "Webview loading URL: " + url);
-/* 404 */               super.onPageStarted(view, url, favicon);
-/* 405 */               if (!WebDialog.access$400(WebDialog.this)) {
-/* 406 */                   WebDialog.access$500(WebDialog.this).show();
+                    @Override 
+           public void onPageStarted(WebView view, String url, Bitmap favicon) {
+               Utility.logd(WebDialog.LOG_TAG, "Webview loading URL: " + url);
+               super.onPageStarted(view, url, favicon);
+               if (!WebDialog.access$400(WebDialog.this)) {
+                   WebDialog.access$500(WebDialog.this).show();
                         }
                     }
 
-                    @Override // android.webkit.WebViewClient
-/* 411 */           public void onPageFinished(WebView view, String url) {
-/* 412 */               super.onPageFinished(view, url);
-/* 413 */               if (!WebDialog.access$400(WebDialog.this)) {
-/* 414 */                   WebDialog.access$500(WebDialog.this).dismiss();
+                    @Override 
+           public void onPageFinished(WebView view, String url) {
+               super.onPageFinished(view, url);
+               if (!WebDialog.access$400(WebDialog.this)) {
+                   WebDialog.access$500(WebDialog.this).dismiss();
                         }
-/* 420 */               WebDialog.access$600(WebDialog.this).setBackgroundColor(0);
-/* 421 */               WebDialog.access$700(WebDialog.this).setVisibility(0);
-/* 422 */               WebDialog.access$800(WebDialog.this).setVisibility(0);
+               WebDialog.access$600(WebDialog.this).setBackgroundColor(0);
+               WebDialog.access$700(WebDialog.this).setVisibility(0);
+               WebDialog.access$800(WebDialog.this).setVisibility(0);
                     }
                 }
 
-                /* JADX INFO: Access modifiers changed from: private */
-/* 433 */       public static class BuilderBase<CONCRETE extends BuilderBase<?>> {
+                
+       public static class BuilderBase<CONCRETE extends BuilderBase<?>> {
                     private String action;
                     private String applicationId;
                     private Context context;
@@ -377,89 +377,89 @@
                     private Session session;
                     private int theme = 16973840;
 
-/* 434 */           protected BuilderBase(Context context, Session session, String action, Bundle parameters) {
-/* 436 */               Validate.notNull(session, "session");
-/* 437 */               if (!session.isOpened()) {
-/* 438 */                   throw new FacebookException("Attempted to use a Session that was not open.");
+           protected BuilderBase(Context context, Session session, String action, Bundle parameters) {
+               Validate.notNull(session, "session");
+               if (!session.isOpened()) {
+                   throw new FacebookException("Attempted to use a Session that was not open.");
                         }
-/* 440 */               this.session = session;
-/* 442 */               finishInit(context, action, parameters);
+               this.session = session;
+               finishInit(context, action, parameters);
                     }
 
-/* 444 */           protected BuilderBase(Context context, String applicationId, String action, Bundle parameters) {
-/* 446 */               Validate.notNullOrEmpty(applicationId, "applicationId");
-/* 447 */               this.applicationId = applicationId;
-/* 449 */               finishInit(context, action, parameters);
+           protected BuilderBase(Context context, String applicationId, String action, Bundle parameters) {
+               Validate.notNullOrEmpty(applicationId, "applicationId");
+               this.applicationId = applicationId;
+               finishInit(context, action, parameters);
                     }
 
-                    /* JADX WARN: Multi-variable type inference failed */
-/* 458 */           public CONCRETE setTheme(int theme) {
-/* 459 */               this.theme = theme;
-/* 461 */               return (CONCRETE) this;
+                    
+           public CONCRETE setTheme(int theme) {
+               this.theme = theme;
+               return (CONCRETE) this;
                     }
 
-                    /* JADX WARN: Multi-variable type inference failed */
-/* 471 */           public CONCRETE setOnCompleteListener(OnCompleteListener listener) {
-/* 472 */               this.listener = listener;
-/* 474 */               return (CONCRETE) this;
+                    
+           public CONCRETE setOnCompleteListener(OnCompleteListener listener) {
+               this.listener = listener;
+               return (CONCRETE) this;
                     }
 
-/* 484 */           public WebDialog build() {
-/* 485 */               if (this.session != null && this.session.isOpened()) {
-/* 486 */                   this.parameters.putString(ServerProtocol.DIALOG_PARAM_APP_ID, this.session.getApplicationId());
-/* 487 */                   this.parameters.putString("access_token", this.session.getAccessToken());
+           public WebDialog build() {
+               if (this.session != null && this.session.isOpened()) {
+                   this.parameters.putString(ServerProtocol.DIALOG_PARAM_APP_ID, this.session.getApplicationId());
+                   this.parameters.putString("access_token", this.session.getAccessToken());
                         } else {
-/* 489 */                   this.parameters.putString(ServerProtocol.DIALOG_PARAM_APP_ID, this.applicationId);
+                   this.parameters.putString(ServerProtocol.DIALOG_PARAM_APP_ID, this.applicationId);
                         }
-/* 492 */               if (!this.parameters.containsKey("redirect_uri")) {
-/* 493 */                   this.parameters.putString("redirect_uri", WebDialog.REDIRECT_URI);
+               if (!this.parameters.containsKey("redirect_uri")) {
+                   this.parameters.putString("redirect_uri", WebDialog.REDIRECT_URI);
                         }
-/* 496 */               return new WebDialog(this.context, this.action, this.parameters, this.theme, this.listener);
+               return new WebDialog(this.context, this.action, this.parameters, this.theme, this.listener);
                     }
 
-/* 499 */           protected String getApplicationId() {
-/* 500 */               return this.applicationId;
+           protected String getApplicationId() {
+               return this.applicationId;
                     }
 
-/* 503 */           protected Context getContext() {
-/* 504 */               return this.context;
+           protected Context getContext() {
+               return this.context;
                     }
 
-/* 507 */           protected int getTheme() {
-/* 508 */               return this.theme;
+           protected int getTheme() {
+               return this.theme;
                     }
 
-/* 511 */           protected Bundle getParameters() {
-/* 512 */               return this.parameters;
+           protected Bundle getParameters() {
+               return this.parameters;
                     }
 
-/* 515 */           protected OnCompleteListener getListener() {
-/* 516 */               return this.listener;
+           protected OnCompleteListener getListener() {
+               return this.listener;
                     }
 
-/* 519 */           private void finishInit(Context context, String action, Bundle parameters) {
-/* 520 */               this.context = context;
-/* 521 */               this.action = action;
-/* 522 */               if (parameters != null) {
-/* 523 */                   this.parameters = parameters;
+           private void finishInit(Context context, String action, Bundle parameters) {
+               this.context = context;
+               this.action = action;
+               if (parameters != null) {
+                   this.parameters = parameters;
                         } else {
-/* 525 */                   this.parameters = new Bundle();
+                   this.parameters = new Bundle();
                         }
                     }
                 }
 
-/* 531 */       public static class Builder extends BuilderBase<Builder> {
+       public static class Builder extends BuilderBase<Builder> {
 
-/* 544 */           public Builder(Context context, Session session, String action, Bundle parameters) {
-/* 545 */               super(context, session, action, parameters);
+           public Builder(Context context, Session session, String action, Bundle parameters) {
+               super(context, session, action, parameters);
                     }
 
-/* 557 */           public Builder(Context context, String applicationId, String action, Bundle parameters) {
-/* 558 */               super(context, applicationId, action, parameters);
+           public Builder(Context context, String applicationId, String action, Bundle parameters) {
+               super(context, applicationId, action, parameters);
                     }
                 }
 
-/* 564 */       public static class FeedDialogBuilder extends BuilderBase<FeedDialogBuilder> {
+       public static class FeedDialogBuilder extends BuilderBase<FeedDialogBuilder> {
                     private static final String CAPTION_PARAM = "caption";
                     private static final String DESCRIPTION_PARAM = "description";
                     private static final String FEED_DIALOG = "feed";
@@ -471,56 +471,56 @@
                     private static final String TO_PARAM = "to";
 
 
-/* 584 */           public FeedDialogBuilder(Context context, Session session) {
-/* 585 */               super(context, session, FEED_DIALOG, (Bundle) null);
+           public FeedDialogBuilder(Context context, Session session) {
+               super(context, session, FEED_DIALOG, (Bundle) null);
                     }
 
-/* 598 */           public FeedDialogBuilder(Context context, Session session, Bundle parameters) {
-/* 599 */               super(context, session, FEED_DIALOG, parameters);
+           public FeedDialogBuilder(Context context, Session session, Bundle parameters) {
+               super(context, session, FEED_DIALOG, parameters);
                     }
 
-/* 610 */           public FeedDialogBuilder setFrom(String id) {
-/* 611 */               getParameters().putString(FROM_PARAM, id);
-/* 612 */               return this;
+           public FeedDialogBuilder setFrom(String id) {
+               getParameters().putString(FROM_PARAM, id);
+               return this;
                     }
 
-/* 622 */           public FeedDialogBuilder setTo(String id) {
-/* 623 */               getParameters().putString(TO_PARAM, id);
-/* 624 */               return this;
+           public FeedDialogBuilder setTo(String id) {
+               getParameters().putString(TO_PARAM, id);
+               return this;
                     }
 
-/* 633 */           public FeedDialogBuilder setLink(String link) {
-/* 634 */               getParameters().putString(LINK_PARAM, link);
-/* 635 */               return this;
+           public FeedDialogBuilder setLink(String link) {
+               getParameters().putString(LINK_PARAM, link);
+               return this;
                     }
 
-/* 644 */           public FeedDialogBuilder setPicture(String picture) {
-/* 645 */               getParameters().putString(PICTURE_PARAM, picture);
-/* 646 */               return this;
+           public FeedDialogBuilder setPicture(String picture) {
+               getParameters().putString(PICTURE_PARAM, picture);
+               return this;
                     }
 
-/* 656 */           public FeedDialogBuilder setSource(String source) {
-/* 657 */               getParameters().putString(SOURCE_PARAM, source);
-/* 658 */               return this;
+           public FeedDialogBuilder setSource(String source) {
+               getParameters().putString(SOURCE_PARAM, source);
+               return this;
                     }
 
-/* 667 */           public FeedDialogBuilder setName(String name) {
-/* 668 */               getParameters().putString("name", name);
-/* 669 */               return this;
+           public FeedDialogBuilder setName(String name) {
+               getParameters().putString("name", name);
+               return this;
                     }
 
-/* 678 */           public FeedDialogBuilder setCaption(String caption) {
-/* 679 */               getParameters().putString(CAPTION_PARAM, caption);
-/* 680 */               return this;
+           public FeedDialogBuilder setCaption(String caption) {
+               getParameters().putString(CAPTION_PARAM, caption);
+               return this;
                     }
 
-/* 689 */           public FeedDialogBuilder setDescription(String description) {
-/* 690 */               getParameters().putString("description", description);
-/* 691 */               return this;
+           public FeedDialogBuilder setDescription(String description) {
+               getParameters().putString("description", description);
+               return this;
                     }
                 }
 
-/* 697 */       public static class RequestsDialogBuilder extends BuilderBase<RequestsDialogBuilder> {
+       public static class RequestsDialogBuilder extends BuilderBase<RequestsDialogBuilder> {
                     private static final String APPREQUESTS_DIALOG = "apprequests";
                     private static final String DATA_PARAM = "data";
                     private static final String MESSAGE_PARAM = "message";
@@ -528,32 +528,32 @@
                     private static final String TO_PARAM = "to";
 
 
-/* 713 */           public RequestsDialogBuilder(Context context, Session session) {
-/* 714 */               super(context, session, APPREQUESTS_DIALOG, (Bundle) null);
+           public RequestsDialogBuilder(Context context, Session session) {
+               super(context, session, APPREQUESTS_DIALOG, (Bundle) null);
                     }
 
-/* 727 */           public RequestsDialogBuilder(Context context, Session session, Bundle parameters) {
-/* 728 */               super(context, session, APPREQUESTS_DIALOG, parameters);
+           public RequestsDialogBuilder(Context context, Session session, Bundle parameters) {
+               super(context, session, APPREQUESTS_DIALOG, parameters);
                     }
 
-/* 738 */           public RequestsDialogBuilder setMessage(String message) {
-/* 739 */               getParameters().putString("message", message);
-/* 740 */               return this;
+           public RequestsDialogBuilder setMessage(String message) {
+               getParameters().putString("message", message);
+               return this;
                     }
 
-/* 751 */           public RequestsDialogBuilder setTo(String id) {
-/* 752 */               getParameters().putString(TO_PARAM, id);
-/* 753 */               return this;
+           public RequestsDialogBuilder setTo(String id) {
+               getParameters().putString(TO_PARAM, id);
+               return this;
                     }
 
-/* 763 */           public RequestsDialogBuilder setData(String data) {
-/* 764 */               getParameters().putString("data", data);
-/* 765 */               return this;
+           public RequestsDialogBuilder setData(String data) {
+               getParameters().putString("data", data);
+               return this;
                     }
 
-/* 774 */           public RequestsDialogBuilder setTitle(String title) {
-/* 775 */               getParameters().putString("title", title);
-/* 776 */               return this;
+           public RequestsDialogBuilder setTitle(String title) {
+               getParameters().putString("title", title);
+               return this;
                     }
                 }
             }

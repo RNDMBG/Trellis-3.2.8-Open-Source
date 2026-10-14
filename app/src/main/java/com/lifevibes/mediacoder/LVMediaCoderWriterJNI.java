@@ -1,7 +1,7 @@
             package com.lifevibes.mediacoder;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 43 */    class LVMediaCoderWriterJNI {
+            
+    class LVMediaCoderWriterJNI {
                 public static final native int LVMediaCoderInitWriter(String str);
 
                 public static final native int LVMediaCoderWriterAddStreamAudio(int i, byte[] bArr, int i2, int i3, int i4, int i5);
@@ -22,6 +22,6 @@
 
                 public static final native char RGB888toYUV420WithUVStride2KAligned(byte[] bArr, byte[] bArr2, int i, int i2, int i3);
 
-/* 44 */        LVMediaCoderWriterJNI() {
+        LVMediaCoderWriterJNI() {
                 }
             }

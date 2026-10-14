@@ -12,21 +12,21 @@
             import java.util.List;
             import java.util.Set;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.v */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C1124v implements SafeParcelable {
                 public static final C1125w CREATOR = new C1125w();
 
-                /* JADX INFO: renamed from: es */
+                
                 public final long f2159es;
 
-                /* JADX INFO: renamed from: et */
+                
                 public final int f2160et;
 
-                /* JADX INFO: renamed from: eu */
+                
                 public final List<String> f2161eu;
 
-                /* JADX INFO: renamed from: ev */
+                
                 public final boolean f2162ev;
                 public final Bundle extras;
                 public final int tagForChildDirectedTreatment;
@@ -55,12 +55,12 @@
                     this.extras = adMobExtras != null ? adMobExtras.getExtras() : null;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C1125w.m2175a(this, out, flags);
                 }

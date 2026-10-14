@@ -4,35 +4,35 @@
             import android.os.Parcelable;
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class MaskedWallet implements SafeParcelable {
                 public static final Parcelable.Creator<MaskedWallet> CREATOR = new C1213g();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2494iM;
 
-                /* JADX INFO: renamed from: tH */
+                
                 String f2495tH;
 
-                /* JADX INFO: renamed from: tI */
+                
                 String f2496tI;
 
-                /* JADX INFO: renamed from: tK */
+                
                 String f2497tK;
 
-                /* JADX INFO: renamed from: tL */
+                
                 Address f2498tL;
 
-                /* JADX INFO: renamed from: tM */
+                
                 Address f2499tM;
 
-                /* JADX INFO: renamed from: tN */
+                
                 String[] f2500tN;
 
-                /* JADX INFO: renamed from: tZ */
+                
                 LoyaltyWalletObject[] f2501tZ;
 
-                /* JADX INFO: renamed from: ua */
+                
                 OfferWalletObject[] f2502ua;
 
                 public MaskedWallet() {
@@ -51,7 +51,7 @@
                     this.f2502ua = offerWalletObjects;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -92,7 +92,7 @@
                     return this.f2494iM;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel dest, int flags) {
                     C1213g.m2360a(this, dest, flags);
                 }

@@ -1,10 +1,10 @@
             package android.support.v7.appcompat;
             
-            /* JADX INFO: renamed from: android.support.v7.appcompat.R */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0084R {
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$anim */
+                
                 public static final class anim {
                     public static final int abc_fade_in = 2130968576;
                     public static final int abc_fade_out = 2130968577;
@@ -14,7 +14,7 @@
                     public static final int abc_slide_out_top = 2130968581;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$attr */
+                
                 public static final class attr {
                     public static final int actionBarDivider = 2130771968;
                     public static final int actionBarItemBackground = 2130771969;
@@ -128,7 +128,7 @@
                     public static final int windowSplitActionBar = 2130772059;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$bool */
+                
                 public static final class bool {
                     public static final int abc_action_bar_embed_tabs_pre_jb = 2131230720;
                     public static final int abc_action_bar_expanded_action_views_exclusive = 2131230721;
@@ -138,7 +138,7 @@
                     public static final int abc_split_action_bar_is_narrow = 2131230725;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$color */
+                
                 public static final class color {
                     public static final int abc_search_url_text_holo = 2131296428;
                     public static final int abc_search_url_text_normal = 2131296256;
@@ -146,7 +146,7 @@
                     public static final int abc_search_url_text_selected = 2131296258;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$dimen */
+                
                 public static final class dimen {
                     public static final int abc_action_bar_default_height = 2131361792;
                     public static final int abc_action_bar_icon_vertical_padding = 2131361793;
@@ -171,7 +171,7 @@
                     public static final int dialog_fixed_width_minor = 2131361845;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$drawable */
+                
                 public static final class drawable {
                     public static final int abc_ab_bottom_solid_dark_holo = 2130837505;
                     public static final int abc_ab_bottom_solid_light_holo = 2130837506;
@@ -262,7 +262,7 @@
                     public static final int abc_textfield_searchview_right_holo_light = 2130837591;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$id */
+                
                 public static final class id {
                     public static final int action_bar = 2131427372;
                     public static final int action_bar_activity_content = 2131427328;
@@ -322,18 +322,18 @@
                     public static final int title = 2131427387;
                     public static final int top_action_bar = 2131427376;
 
-                    /* JADX INFO: renamed from: up */
+                    
                     public static final int f1up = 2131427377;
                     public static final int useLogo = 2131427351;
                     public static final int withText = 2131427363;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$integer */
+                
                 public static final class integer {
                     public static final int abc_max_action_buttons = 2131492864;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$layout */
+                
                 public static final class layout {
                     public static final int abc_action_bar_decor = 2130903040;
                     public static final int abc_action_bar_decor_include = 2130903041;
@@ -362,7 +362,7 @@
                     public static final int support_simple_spinner_dropdown_item = 2130903217;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$string */
+                
                 public static final class string {
                     public static final int abc_action_bar_home_description = 2131623994;
                     public static final int abc_action_bar_up_description = 2131623995;
@@ -379,7 +379,7 @@
                     public static final int abc_shareactionprovider_share_with_application = 2131624006;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$style */
+                
                 public static final class style {
                     public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog = 2131689553;
                     public static final int TextAppearance_AppCompat_Base_SearchResult = 2131689554;
@@ -522,7 +522,7 @@
                     public static final int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131689728;
                 }
 
-                /* JADX INFO: renamed from: android.support.v7.appcompat.R$styleable */
+                
                 public static final class styleable {
                     public static final int ActionBarLayout_android_layout_gravity = 0;
                     public static final int ActionBarWindow_windowActionBar = 0;

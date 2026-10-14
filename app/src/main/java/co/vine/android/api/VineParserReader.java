@@ -11,8 +11,8 @@
             import java.io.IOException;
             import java.io.InputStream;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 75 */    public class VineParserReader implements NetworkOperationReader {
+            
+    public class VineParserReader implements NetworkOperationReader {
                 public static final String EXTRA_LAST_FRIEND_INDEX = "friend_index";
                 public static final boolean LOGGABLE = Log.isLoggable("VineParserReader", 3);
                 public static final String TAG = "VineParserReader";
@@ -50,52 +50,52 @@
                 private Object mParsedObject;
                 private final int mType;
 
-                @Override // co.vine.android.network.NetworkOperationReader
-/* 76 */        public void readInput(int statusCode, long contentLength, InputStream is) throws IOException {
-/* 77 */            // Parse the response stream directly. The decompiled version buffered and
-/* 78 */            // logged every feed/notification chunk, which made large timelines appear
-/* 79 */            // to hang on the loading screen and exposed authenticated feed content.
-/* 92 */            if (statusCode == 200) {
+                @Override 
+        public void readInput(int statusCode, long contentLength, InputStream is) throws IOException {
+            
+            
+            
+            if (statusCode == 200) {
                         switch (this.mType) {
                             case 4:
-/* 95 */                        JsonParser jsonParser = VineParsers.createParser(is);
-/* 96 */                        this.mParsedObject = VineParsers.parseLogin(jsonParser);
+                        JsonParser jsonParser = VineParsers.createParser(is);
+                        this.mParsedObject = VineParsers.parseLogin(jsonParser);
                                 break;
                             default:
-/* 100 */                       JsonParser jsonParser2 = VineParsers.createParser(is);
-/* 101 */                       this.mParsedObject = VineParsers.parseVineResponse(jsonParser2, this.mType, this.mBundle);
+                       JsonParser jsonParser2 = VineParsers.createParser(is);
+                       this.mParsedObject = VineParsers.parseVineResponse(jsonParser2, this.mType, this.mBundle);
                                 break;
                         }
-/* 112 */               return;
+               return;
                     }
-/* 106 */           JsonParser jsonParser3 = VineParsers.createParser(is);
-/* 107 */           this.mParsedObject = VineParsers.parseError(jsonParser3);
-/* 108 */           if (LOGGABLE) {
-/* 109 */               Log.d("VineParserReader", "ERROR: Response with " + statusCode);
+           JsonParser jsonParser3 = VineParsers.createParser(is);
+           this.mParsedObject = VineParsers.parseError(jsonParser3);
+           if (LOGGABLE) {
+               Log.d("VineParserReader", "ERROR: Response with " + statusCode);
                     }
                 }
 
-/* 115 */       public <T> T getParsedObject() {
-/* 116 */           return (T) this.mParsedObject;
+       public <T> T getParsedObject() {
+           return (T) this.mParsedObject;
                 }
 
-/* 119 */       public static VineParserReader createParserReader(int type) {
-/* 120 */           return new VineParserReader(type);
+       public static VineParserReader createParserReader(int type) {
+           return new VineParserReader(type);
                 }
 
-/* 123 */       public static VineParserReader createLoginReader() {
-/* 124 */           return new VineParserReader(4);
+       public static VineParserReader createLoginReader() {
+           return new VineParserReader(4);
                 }
 
-/* 128 */       private VineParserReader(int type) {
-/* 130 */           this.mType = type;
+       private VineParserReader(int type) {
+           this.mType = type;
                 }
 
-                @Override // co.vine.android.network.NetworkOperationReader
-/* 135 */       public void onHandleError(HttpResult result) {
+                @Override 
+       public void onHandleError(HttpResult result) {
                 }
 
-/* 138 */       public Bundle getExtraBundle() {
-/* 139 */           return this.mBundle;
+       public Bundle getExtraBundle() {
+           return this.mBundle;
                 }
             }

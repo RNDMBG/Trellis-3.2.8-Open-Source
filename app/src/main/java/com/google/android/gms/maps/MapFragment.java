@@ -20,22 +20,22 @@
             import com.google.android.gms.maps.internal.IMapFragmentDelegate;
             import com.google.android.gms.maps.model.RuntimeRemoteException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class MapFragment extends Fragment {
 
-                /* JADX INFO: renamed from: pH */
+                
                 private final C1144b f2234pH = new C1144b(this);
 
-                /* JADX INFO: renamed from: pI */
+                
                 private GoogleMap f2235pI;
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.MapFragment$a */
+                
                 static class C1143a implements LifecycleDelegate {
 
-                    /* JADX INFO: renamed from: pJ */
+                    
                     private final Fragment f2236pJ;
 
-                    /* JADX INFO: renamed from: pK */
+                    
                     private final IMapFragmentDelegate f2237pK;
 
                     public C1143a(Fragment fragment, IMapFragmentDelegate iMapFragmentDelegate) {
@@ -43,12 +43,12 @@
                         this.f2236pJ = (Fragment) C1028dm.m1605e(fragment);
                     }
 
-                    /* JADX INFO: renamed from: cD */
+                    
                     public IMapFragmentDelegate m2217cD() {
                         return this.f2237pK;
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onCreate(Bundle savedInstanceState) {
                         if (savedInstanceState == null) {
                             try {
@@ -64,7 +64,7 @@
                         this.f2237pK.onCreate(savedInstanceState);
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
                         try {
                             return (View) BinderC0905c.m1165b(this.f2237pK.onCreateView(BinderC0905c.m1166g(inflater), BinderC0905c.m1166g(container), savedInstanceState));
@@ -73,7 +73,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onDestroy() {
                         try {
                             this.f2237pK.onDestroy();
@@ -82,7 +82,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onDestroyView() {
                         try {
                             this.f2237pK.onDestroyView();
@@ -91,7 +91,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onInflate(Activity activity, Bundle attrs, Bundle savedInstanceState) {
                         try {
                             this.f2237pK.onInflate(BinderC0905c.m1166g(activity), (GoogleMapOptions) attrs.getParcelable("MapOptions"), savedInstanceState);
@@ -100,7 +100,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onLowMemory() {
                         try {
                             this.f2237pK.onLowMemory();
@@ -109,7 +109,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onPause() {
                         try {
                             this.f2237pK.onPause();
@@ -118,7 +118,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onResume() {
                         try {
                             this.f2237pK.onResume();
@@ -127,7 +127,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.dynamic.LifecycleDelegate
+                    @Override 
                     public void onSaveInstanceState(Bundle outState) {
                         try {
                             this.f2237pK.onSaveInstanceState(outState);
@@ -137,24 +137,24 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.MapFragment$b */
+                
                 static class C1144b extends AbstractC0903a<C1143a> {
 
-                    /* JADX INFO: renamed from: fD */
+                    
                     private Activity f2238fD;
 
-                    /* JADX INFO: renamed from: pJ */
+                    
                     private final Fragment f2239pJ;
 
-                    /* JADX INFO: renamed from: pL */
+                    
                     protected InterfaceC0906d<C1143a> f2240pL;
 
                     C1144b(Fragment fragment) {
                         this.f2239pJ = fragment;
                     }
 
-                    /* JADX INFO: renamed from: a */
-                    static /* synthetic */ void m2218a(C1144b c1144b, Activity activity) {
+                    
+                    static  void m2218a(C1144b c1144b, Activity activity) {
                         c1144b.setActivity(activity);
                     }
 
@@ -163,14 +163,14 @@
                         m2219cE();
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a
-                    /* JADX INFO: renamed from: a */
+                    @Override 
+                    
                     protected void mo1160a(InterfaceC0906d<C1143a> interfaceC0906d) {
                         this.f2240pL = interfaceC0906d;
                         m2219cE();
                     }
 
-                    /* JADX INFO: renamed from: cE */
+                    
                     public void m2219cE() {
                         if (this.f2238fD == null || this.f2240pL == null || m1161bP() != null) {
                             return;
@@ -197,7 +197,7 @@
                     return mapFragment;
                 }
 
-                /* JADX INFO: renamed from: cD */
+                
                 protected IMapFragmentDelegate m2216cD() {
                     this.f2234pH.m2219cE();
                     if (this.f2234pH.m1161bP() == null) {
@@ -225,7 +225,7 @@
                     }
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onActivityCreated(Bundle savedInstanceState) {
                     if (savedInstanceState != null) {
                         savedInstanceState.setClassLoader(MapFragment.class.getClassLoader());
@@ -233,36 +233,36 @@
                     super.onActivityCreated(savedInstanceState);
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onAttach(Activity activity) {
                     super.onAttach(activity);
                     C1144b.m2218a(this.f2234pH, activity);
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onCreate(Bundle savedInstanceState) {
                     super.onCreate(savedInstanceState);
                     this.f2234pH.onCreate(savedInstanceState);
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
                     return this.f2234pH.onCreateView(inflater, container, savedInstanceState);
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onDestroy() {
                     this.f2234pH.onDestroy();
                     super.onDestroy();
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onDestroyView() {
                     this.f2234pH.onDestroyView();
                     super.onDestroyView();
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
                     super.onInflate(activity, attrs, savedInstanceState);
                     C1144b.m2218a(this.f2234pH, activity);
@@ -272,25 +272,25 @@
                     this.f2234pH.onInflate(activity, bundle, savedInstanceState);
                 }
 
-                @Override // android.app.Fragment, android.content.ComponentCallbacks
+                @Override 
                 public void onLowMemory() {
                     this.f2234pH.onLowMemory();
                     super.onLowMemory();
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onPause() {
                     this.f2234pH.onPause();
                     super.onPause();
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onResume() {
                     super.onResume();
                     this.f2234pH.onResume();
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void onSaveInstanceState(Bundle outState) {
                     if (outState != null) {
                         outState.setClassLoader(MapFragment.class.getClassLoader());
@@ -299,7 +299,7 @@
                     this.f2234pH.onSaveInstanceState(outState);
                 }
 
-                @Override // android.app.Fragment
+                @Override 
                 public void setArguments(Bundle args) {
                     super.setArguments(args);
                 }

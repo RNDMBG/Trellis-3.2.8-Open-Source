@@ -33,8 +33,8 @@
             import com.twitter.android.sdk.Twitter;
             import java.util.HashMap;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 40 */    public class ReshareFragment extends BaseControllerFragment {
+            
+    public class ReshareFragment extends BaseControllerFragment {
                 public static final String ARG_DESCRIPTION = "description";
                 public static final String ARG_NETWORK = "network";
                 public static final String ARG_POST_ID = "post_id";
@@ -57,321 +57,321 @@
                 private ImageView mThumbnailView;
                 private Twitter mTwitter;
 
-/* 41 */        static /* synthetic */ ProgressDialog access$000(ReshareFragment x0) {
-/* 42 */            return x0.mShareProgress;
+        static  ProgressDialog access$000(ReshareFragment x0) {
+            return x0.mShareProgress;
                 }
 
-/* 41 */        static /* synthetic */ String access$100(ReshareFragment x0) {
-/* 42 */            return x0.mNetwork;
+        static  String access$100(ReshareFragment x0) {
+            return x0.mNetwork;
                 }
 
-/* 41 */        static /* synthetic */ ProgressDialog access$200(ReshareFragment x0) {
-/* 42 */            return x0.mProgress;
+        static  ProgressDialog access$200(ReshareFragment x0) {
+            return x0.mProgress;
                 }
 
-/* 41 */        static /* synthetic */ ImageKey access$300(ReshareFragment x0) {
-/* 42 */            return x0.mThumbnailKey;
+        static  ImageKey access$300(ReshareFragment x0) {
+            return x0.mThumbnailKey;
                 }
 
-/* 41 */        static /* synthetic */ void access$400(ReshareFragment x0, Bitmap x1) {
-/* 42 */            x0.setThumbnailImage(x1);
+        static  void access$400(ReshareFragment x0, Bitmap x1) {
+            x0.setThumbnailImage(x1);
                 }
 
-/* 41 */        static /* synthetic */ CaptchaRequestHelper access$500(ReshareFragment x0) {
-/* 42 */            return x0.mCaptchaRequestHelper;
+        static  CaptchaRequestHelper access$500(ReshareFragment x0) {
+            return x0.mCaptchaRequestHelper;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ReshareFragment$1 */
-/* 68 */        class C02731 extends CaptchaRequestHelper {
-/* 69 */            C02731() {
+                
+        class C02731 extends CaptchaRequestHelper {
+            C02731() {
                     }
 
-                    @Override // co.vine.android.CaptchaRequestHelper
-/* 73 */            protected void handleRetryCaptchaRequest(PendingCaptchaRequest pendingCaptchaRequest) {
-/* 74 */                ReshareFragment.this.mAppController.retryRequest(this.mPendingCaptchaRequest.actionCode, this.mPendingCaptchaRequest.bundle);
+                    @Override 
+            protected void handleRetryCaptchaRequest(PendingCaptchaRequest pendingCaptchaRequest) {
+                ReshareFragment.this.mAppController.retryRequest(this.mPendingCaptchaRequest.actionCode, this.mPendingCaptchaRequest.bundle);
                     }
 
-                    @Override // co.vine.android.CaptchaRequestHelper
-/* 79 */            protected void handleFailedCaptchaRequest(PendingCaptchaRequest pendingCaptchaRequest) {
-/* 80 */                String newRequestToFail = ReshareFragment.this.mAppController.generateReqIdForCanceledCaptcha();
-/* 81 */                ReshareFragment.this.mAppController.failRequest(newRequestToFail, this.mPendingCaptchaRequest.actionCode, this.mPendingCaptchaRequest.bundle);
+                    @Override 
+            protected void handleFailedCaptchaRequest(PendingCaptchaRequest pendingCaptchaRequest) {
+                String newRequestToFail = ReshareFragment.this.mAppController.generateReqIdForCanceledCaptcha();
+                ReshareFragment.this.mAppController.failRequest(newRequestToFail, this.mPendingCaptchaRequest.actionCode, this.mPendingCaptchaRequest.bundle);
                     }
                 }
 
-                @Override // co.vine.android.BaseControllerFragment, android.support.v4.app.Fragment
-/* 87 */        public void onCreate(Bundle savedInstanceState) {
-/* 88 */            super.onCreate(savedInstanceState);
-/* 89 */            this.mAppSessionListener = new ReshareListener();
-/* 91 */            Bundle args = getArguments();
-/* 92 */            this.mPostId = args.getLong("post_id");
-/* 93 */            this.mDescription = args.getString("description");
-/* 94 */            this.mNetwork = args.getString("network");
-/* 95 */            this.mShareUrl = args.getString("share_url");
-/* 96 */            if (this.mShareUrl == null) {
-/* 97 */                this.mShareUrl = "";
+                @Override 
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            this.mAppSessionListener = new ReshareListener();
+            Bundle args = getArguments();
+            this.mPostId = args.getLong("post_id");
+            this.mDescription = args.getString("description");
+            this.mNetwork = args.getString("network");
+            this.mShareUrl = args.getString("share_url");
+            if (this.mShareUrl == null) {
+                this.mShareUrl = "";
                     }
-/* 99 */            this.mThumbnailUrl = args.getString("thumbnail_url");
-/* 100 */           if (this.mThumbnailUrl == null) {
-/* 101 */               this.mThumbnailUrl = "";
+            this.mThumbnailUrl = args.getString("thumbnail_url");
+           if (this.mThumbnailUrl == null) {
+               this.mThumbnailUrl = "";
                     }
-/* 103 */           this.mTwitter = new Twitter(TwitterVineApp.API_KEY, TwitterVineApp.API_SECRET);
-/* 105 */           if (savedInstanceState != null) {
-/* 106 */               this.mCaptchaRequestHelper.restorePendingCaptchaRequest(savedInstanceState);
+           this.mTwitter = new Twitter(TwitterVineApp.API_KEY, TwitterVineApp.API_SECRET);
+           if (savedInstanceState != null) {
+               this.mCaptchaRequestHelper.restorePendingCaptchaRequest(savedInstanceState);
                     }
-/* 109 */           setHasOptionsMenu(true);
+           setHasOptionsMenu(true);
                 }
 
-/* 112 */       private boolean validateSocialConnect() {
-/* 113 */           if ("facebook".equals(this.mNetwork)) {
-/* 114 */               return this.mAppController.isConnectedToFacebook(getActivity());
+       private boolean validateSocialConnect() {
+           if ("facebook".equals(this.mNetwork)) {
+               return this.mAppController.isConnectedToFacebook(getActivity());
                     }
-/* 115 */           if ("twitter".equals(this.mNetwork)) {
-/* 116 */               return Util.getDefaultSharedPrefs(getActivity()).getBoolean(Settings.PREF_TWITTER_CONNECTED, false);
+           if ("twitter".equals(this.mNetwork)) {
+               return Util.getDefaultSharedPrefs(getActivity()).getBoolean(Settings.PREF_TWITTER_CONNECTED, false);
                     }
                     return false;
                 }
 
-                @Override // co.vine.android.BaseControllerFragment, co.vine.android.BaseFragment, android.support.v4.app.Fragment
-/* 122 */       public void onResume() {
-/* 123 */           super.onResume();
-/* 124 */           if (this.mCaption != null) {
-/* 125 */               Util.setSoftKeyboardVisibility(getActivity(), this.mCaption, true);
+                @Override 
+       public void onResume() {
+           super.onResume();
+           if (this.mCaption != null) {
+               Util.setSoftKeyboardVisibility(getActivity(), this.mCaption, true);
                     }
-/* 127 */           this.mCaptchaRequestHelper.handlePendingCaptchaRequest();
+           this.mCaptchaRequestHelper.handlePendingCaptchaRequest();
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 131 */       public void onActivityCreated(Bundle savedInstanceState) {
-/* 132 */           super.onActivityCreated(savedInstanceState);
-/* 135 */           if ("facebook".equals(this.mNetwork)) {
-/* 136 */               Session session = this.mAppController.getValidFacebookSession(getActivity(), false);
-/* 137 */               if (session == null) {
-/* 138 */                   this.mAppController.connectToFacebookInitialize(this);
+                @Override 
+       public void onActivityCreated(Bundle savedInstanceState) {
+           super.onActivityCreated(savedInstanceState);
+           if ("facebook".equals(this.mNetwork)) {
+               Session session = this.mAppController.getValidFacebookSession(getActivity(), false);
+               if (session == null) {
+                   this.mAppController.connectToFacebookInitialize(this);
                         } else if (this.mAppController.getPendingFacebookToken() != null) {
-/* 141 */                   this.mAppController.sendFacebookToken();
+                   this.mAppController.sendFacebookToken();
                         }
                     } else if ("twitter".equals(this.mNetwork)) {
-/* 145 */               Activity activity = getActivity();
-/* 146 */               Account ac = VineAccountHelper.getAccount(activity, this.mAppController.getActiveSession().getLoginEmail());
-/* 148 */               AccountManager am = AccountManager.get(activity);
-/* 149 */               if (ac == null || am == null) {
-/* 150 */                   CrashUtil.logException(new VineLoggingException("Account or AM is null: " + ac + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + am));
+               Activity activity = getActivity();
+               Account ac = VineAccountHelper.getAccount(activity, this.mAppController.getActiveSession().getLoginEmail());
+               AccountManager am = AccountManager.get(activity);
+               if (ac == null || am == null) {
+                   CrashUtil.logException(new VineLoggingException("Account or AM is null: " + ac + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + am));
                         } else {
-/* 152 */                   String token = am.getUserData(ac, VineAccountHelper.KEY_TWITTER_TOKEN);
-/* 153 */                   if (TextUtils.isEmpty(token)) {
-/* 154 */                       AppController.startTwitterAuthWithFinish(this.mTwitter, activity);
+                   String token = am.getUserData(ac, VineAccountHelper.KEY_TWITTER_TOKEN);
+                   if (TextUtils.isEmpty(token)) {
+                       AppController.startTwitterAuthWithFinish(this.mTwitter, activity);
                             }
                         }
                     }
-/* 160 */           this.mCaption.setLines(8);
-/* 161 */           this.mCaption.setHorizontallyScrolling(false);
-/* 163 */           if (!TextUtils.isEmpty(this.mThumbnailUrl)) {
-/* 164 */               this.mThumbnailKey = new ImageKey(this.mThumbnailUrl);
-/* 165 */               setThumbnailImage(this.mAppController.getPhotoBitmap(this.mThumbnailKey));
+           this.mCaption.setLines(8);
+           this.mCaption.setHorizontallyScrolling(false);
+           if (!TextUtils.isEmpty(this.mThumbnailUrl)) {
+               this.mThumbnailKey = new ImageKey(this.mThumbnailUrl);
+               setThumbnailImage(this.mAppController.getPhotoBitmap(this.mThumbnailKey));
                     }
-/* 167 */           if (!TextUtils.isEmpty(this.mDescription)) {
-/* 168 */               this.mCaption.setText(this.mDescription);
+           if (!TextUtils.isEmpty(this.mDescription)) {
+               this.mCaption.setText(this.mDescription);
                     }
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 174 */       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-/* 175 */           View v = inflater.inflate(C0257R.layout.reshare, container, false);
-/* 176 */           this.mCaption = (EditText) v.findViewById(C0257R.id.caption);
-/* 177 */           this.mThumbnailView = (ImageView) v.findViewById(C0257R.id.thumbnail);
-/* 178 */           return v;
+                @Override 
+       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+           View v = inflater.inflate(C0257R.layout.reshare, container, false);
+           this.mCaption = (EditText) v.findViewById(C0257R.id.caption);
+           this.mThumbnailView = (ImageView) v.findViewById(C0257R.id.thumbnail);
+           return v;
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 182 */       public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-/* 183 */           if (!isDetached()) {
-/* 184 */               inflater.inflate(C0257R.menu.reshare, menu);
-/* 185 */               MenuItem menuItem = menu.findItem(C0257R.id.done);
+                @Override 
+       public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+           if (!isDetached()) {
+               inflater.inflate(C0257R.menu.reshare, menu);
+               MenuItem menuItem = menu.findItem(C0257R.id.done);
                         try {
-/* 187 */                   if ("facebook".equals(this.mNetwork)) {
-/* 188 */                       menuItem.setTitle(getString(C0257R.string.share_action_facebook).toUpperCase());
+                   if ("facebook".equals(this.mNetwork)) {
+                       menuItem.setTitle(getString(C0257R.string.share_action_facebook).toUpperCase());
                             } else if ("twitter".equals(this.mNetwork)) {
-/* 190 */                       menuItem.setTitle(getString(C0257R.string.share_action_twitter).toUpperCase());
+                       menuItem.setTitle(getString(C0257R.string.share_action_twitter).toUpperCase());
                             }
-/* 192 */                   super.onCreateOptionsMenu(menu, inflater);
+                   super.onCreateOptionsMenu(menu, inflater);
                         } catch (IllegalStateException e) {
                         }
                     }
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 201 */       public boolean onOptionsItemSelected(MenuItem item) {
-/* 202 */           if (item.getItemId() == 2131427939) {
-/* 204 */               int characterLimit = (140 - this.mShareUrl.length()) - 1;
-/* 205 */               if ("twitter".equals(this.mNetwork) && this.mCaption.getText().length() > characterLimit) {
-/* 206 */                   Util.showCenteredToast(getActivity(), getString(C0257R.string.reshare_tweet_length_exceeded, Integer.valueOf(characterLimit)));
+                @Override 
+       public boolean onOptionsItemSelected(MenuItem item) {
+           if (item.getItemId() == 2131427939) {
+               int characterLimit = (140 - this.mShareUrl.length()) - 1;
+               if ("twitter".equals(this.mNetwork) && this.mCaption.getText().length() > characterLimit) {
+                   Util.showCenteredToast(getActivity(), getString(C0257R.string.reshare_tweet_length_exceeded, Integer.valueOf(characterLimit)));
                             return true;
                         }
-/* 208 */               if (validateSocialConnect()) {
-/* 209 */                   InputMethodManager imm = (InputMethodManager) getActivity().getSystemService("input_method");
-/* 211 */                   imm.hideSoftInputFromWindow(this.mCaption.getWindowToken(), 0);
-/* 213 */                   String message = this.mCaption.getText().toString();
-/* 214 */                   this.mAppController.sharePost(this.mNetwork, message, this.mPostId);
-/* 215 */                   ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-/* 217 */                   d.setMessage(getString(C0257R.string.sharing_post));
-/* 218 */                   d.setProgress(0);
-/* 219 */                   d.show();
-/* 220 */                   this.mShareProgress = d;
+               if (validateSocialConnect()) {
+                   InputMethodManager imm = (InputMethodManager) getActivity().getSystemService("input_method");
+                   imm.hideSoftInputFromWindow(this.mCaption.getWindowToken(), 0);
+                   String message = this.mCaption.getText().toString();
+                   this.mAppController.sharePost(this.mNetwork, message, this.mPostId);
+                   ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
+                   d.setMessage(getString(C0257R.string.sharing_post));
+                   d.setProgress(0);
+                   d.show();
+                   this.mShareProgress = d;
                             return true;
                         }
-/* 222 */               String properNetwork = this.mNetwork.substring(0, 1).toUpperCase() + this.mNetwork.substring(1);
-/* 223 */               Util.showCenteredToast(getActivity(), getString(C0257R.string.share_failed_invalid_session, properNetwork));
-/* 225 */               getActivity().finish();
+               String properNetwork = this.mNetwork.substring(0, 1).toUpperCase() + this.mNetwork.substring(1);
+               Util.showCenteredToast(getActivity(), getString(C0257R.string.share_failed_invalid_session, properNetwork));
+               getActivity().finish();
                         return true;
                     }
-/* 229 */           return super.onOptionsItemSelected(item);
+           return super.onOptionsItemSelected(item);
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 234 */       public void onActivityResult(int requestCode, int resultCode, Intent data) {
-/* 235 */           if (resultCode == 0) {
-/* 236 */               getActivity().finish();
+                @Override 
+       public void onActivityResult(int requestCode, int resultCode, Intent data) {
+           if (resultCode == 0) {
+               getActivity().finish();
                     }
-/* 239 */           if (this.mCaptchaRequestHelper.onActivityResult(requestCode, resultCode, data)) {
-/* 240 */               if (this.mShareProgress != null && this.mShareProgress.isShowing()) {
-/* 241 */                   this.mShareProgress.hide();
-/* 307 */                   return;
+           if (this.mCaptchaRequestHelper.onActivityResult(requestCode, resultCode, data)) {
+               if (this.mShareProgress != null && this.mShareProgress.isShowing()) {
+                   this.mShareProgress.hide();
+                   return;
                         }
-/* 307 */               return;
+               return;
                     }
-/* 246 */           if (this.mProgress == null || !this.mProgress.isShowing()) {
-/* 247 */               ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-/* 249 */               d.setMessage(getString(C0257R.string.login_logging_in));
-/* 250 */               d.setProgress(0);
-/* 251 */               d.show();
-/* 252 */               this.mProgress = d;
+           if (this.mProgress == null || !this.mProgress.isShowing()) {
+               ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
+               d.setMessage(getString(C0257R.string.login_logging_in));
+               d.setProgress(0);
+               d.show();
+               this.mProgress = d;
                     }
                     switch (requestCode) {
                         case 1:
-/* 257 */                   if (resultCode == -1) {
-/* 258 */                       String username = data.getStringExtra("screen_name");
-/* 259 */                       String token = data.getStringExtra(Twitter.EXTRA_TOKEN);
-/* 260 */                       String secret = data.getStringExtra(Twitter.EXTRA_TOKEN_SECRET);
-/* 261 */                       long userId = data.getLongExtra("user_id", 0L);
-/* 262 */                       this.mAppController.connectTwitter(this.mAppController.getActiveSession(), username, token, secret, userId);
+                   if (resultCode == -1) {
+                       String username = data.getStringExtra("screen_name");
+                       String token = data.getStringExtra(Twitter.EXTRA_TOKEN);
+                       String secret = data.getStringExtra(Twitter.EXTRA_TOKEN_SECRET);
+                       long userId = data.getLongExtra("user_id", 0L);
+                       this.mAppController.connectTwitter(this.mAppController.getActiveSession(), username, token, secret, userId);
                             }
                             break;
                         case 2:
-/* 268 */                   if (resultCode == -1) {
-/* 269 */                       String username2 = data.getStringExtra("screen_name");
-/* 271 */                       String token2 = data.getStringExtra("token");
-/* 272 */                       String secret2 = data.getStringExtra("secret");
-/* 273 */                       long userId2 = data.getLongExtra("user_id", 0L);
-/* 274 */                       this.mAppController.connectTwitter(this.mAppController.getActiveSession(), username2, token2, secret2, userId2);
+                   if (resultCode == -1) {
+                       String username2 = data.getStringExtra("screen_name");
+                       String token2 = data.getStringExtra("token");
+                       String secret2 = data.getStringExtra("secret");
+                       long userId2 = data.getLongExtra("user_id", 0L);
+                       this.mAppController.connectTwitter(this.mAppController.getActiveSession(), username2, token2, secret2, userId2);
                             }
                             break;
                         default:
-/* 280 */                   SLog.m447d("Facebook auth came back: {}", Integer.valueOf(requestCode));
-/* 281 */                   if (resultCode == -1) {
-/* 282 */                       Session session = Session.getActiveSession();
-/* 283 */                       if (session != null) {
-/* 284 */                           if (session.onActivityResult(getActivity(), requestCode, resultCode, data)) {
-/* 286 */                               if (session.getPermissions().contains(AppController.PUBLISH_ACTIONS)) {
-/* 287 */                                   AppController.setPendingFacebookToken(getActivity(), session.getAccessToken());
-/* 289 */                                   this.mAppController.sendFacebookToken();
+                   SLog.m447d("Facebook auth came back: {}", Integer.valueOf(requestCode));
+                   if (resultCode == -1) {
+                       Session session = Session.getActiveSession();
+                       if (session != null) {
+                           if (session.onActivityResult(getActivity(), requestCode, resultCode, data)) {
+                               if (session.getPermissions().contains(AppController.PUBLISH_ACTIONS)) {
+                                   AppController.setPendingFacebookToken(getActivity(), session.getAccessToken());
+                                   this.mAppController.sendFacebookToken();
                                         } else {
-/* 291 */                                   getActivity().runOnUiThread(new RunnableC02742());
-/* 297 */                                   this.mAppController.connectToFacebookPublish(this);
+                                   getActivity().runOnUiThread(new RunnableC02742());
+                                   this.mAppController.connectToFacebookPublish(this);
                                         }
                                     }
                                 } else {
-/* 301 */                           super.onActivityResult(requestCode, resultCode, data);
+                           super.onActivityResult(requestCode, resultCode, data);
                                 }
                             }
                             break;
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ReshareFragment$2 */
-/* 289 */       class RunnableC02742 implements Runnable {
-/* 290 */           RunnableC02742() {
+                
+       class RunnableC02742 implements Runnable {
+           RunnableC02742() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 293 */           public void run() {
-/* 294 */               Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.publish_to_facebook_toast);
+                    @Override 
+           public void run() {
+               Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.publish_to_facebook_toast);
                     }
                 }
 
-/* 309 */       private void setThumbnailImage(Bitmap bitmap) {
-/* 310 */           if (bitmap != null) {
-/* 311 */               this.mThumbnailView.setImageDrawable(new RecyclableBitmapDrawable(this.mThumbnailView.getResources(), bitmap));
+       private void setThumbnailImage(Bitmap bitmap) {
+           if (bitmap != null) {
+               this.mThumbnailView.setImageDrawable(new RecyclableBitmapDrawable(this.mThumbnailView.getResources(), bitmap));
                     } else {
-/* 313 */               this.mThumbnailView.setImageBitmap(null);
-/* 314 */               this.mThumbnailView.setBackgroundColor(getResources().getColor(C0257R.color.solid_light_gray));
+               this.mThumbnailView.setImageBitmap(null);
+               this.mThumbnailView.setBackgroundColor(getResources().getColor(C0257R.color.solid_light_gray));
                     }
                 }
 
-/* 316 */       class ReshareListener extends AppSessionListener {
-/* 317 */           ReshareListener() {
+       class ReshareListener extends AppSessionListener {
+           ReshareListener() {
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 321 */           public void onSharePostComplete(String reqId, int statusCode, String reasonPhrase) {
-/* 322 */               if (ReshareFragment.access$000(ReshareFragment.this) != null) {
-/* 323 */                   ReshareFragment.access$000(ReshareFragment.this).dismiss();
+                    @Override 
+           public void onSharePostComplete(String reqId, int statusCode, String reasonPhrase) {
+               if (ReshareFragment.access$000(ReshareFragment.this) != null) {
+                   ReshareFragment.access$000(ReshareFragment.this).dismiss();
                         }
-/* 326 */               if (statusCode != 200) {
-/* 327 */                   if (!TextUtils.isEmpty(reasonPhrase)) {
-/* 328 */                       Util.showCenteredToast(ReshareFragment.this.getActivity(), ReshareFragment.this.getString(C0257R.string.error_share_post, reasonPhrase));
+               if (statusCode != 200) {
+                   if (!TextUtils.isEmpty(reasonPhrase)) {
+                       Util.showCenteredToast(ReshareFragment.this.getActivity(), ReshareFragment.this.getString(C0257R.string.error_share_post, reasonPhrase));
                             }
                         } else {
-/* 331 */                   if ("facebook".equals(ReshareFragment.access$100(ReshareFragment.this))) {
-/* 332 */                       Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.share_facebook_success);
+                   if ("facebook".equals(ReshareFragment.access$100(ReshareFragment.this))) {
+                       Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.share_facebook_success);
                             } else if ("twitter".equals(ReshareFragment.access$100(ReshareFragment.this))) {
-/* 334 */                       Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.share_twitter_success);
+                       Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.share_twitter_success);
                             }
-/* 336 */                   ReshareFragment.this.getActivity().finish();
+                   ReshareFragment.this.getActivity().finish();
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 341 */           public void onConnectFacebookComplete(String reqId, int statusCode, String reasonPhrase) {
-/* 342 */               if (ReshareFragment.access$200(ReshareFragment.this) != null) {
-/* 343 */                   ReshareFragment.access$200(ReshareFragment.this).dismiss();
+                    @Override 
+           public void onConnectFacebookComplete(String reqId, int statusCode, String reasonPhrase) {
+               if (ReshareFragment.access$200(ReshareFragment.this) != null) {
+                   ReshareFragment.access$200(ReshareFragment.this).dismiss();
                         }
-/* 346 */               if (statusCode != 200) {
-/* 347 */                   Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.error_facebook_send_token);
-/* 348 */                   ReshareFragment.this.getActivity().finish();
+               if (statusCode != 200) {
+                   Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.error_facebook_send_token);
+                   ReshareFragment.this.getActivity().finish();
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 355 */           public void onConnectTwitterComplete(String reqId, int statusCode, String reasonPhrase, String username, String token, String secret, long userId) {
-/* 356 */               if (ReshareFragment.access$200(ReshareFragment.this) != null) {
-/* 357 */                   ReshareFragment.access$200(ReshareFragment.this).dismiss();
+                    @Override 
+           public void onConnectTwitterComplete(String reqId, int statusCode, String reasonPhrase, String username, String token, String secret, long userId) {
+               if (ReshareFragment.access$200(ReshareFragment.this) != null) {
+                   ReshareFragment.access$200(ReshareFragment.this).dismiss();
                         }
-/* 360 */               if (statusCode != 200) {
-/* 370 */                   Util.showCenteredToast(ReshareFragment.this.getActivity(), reasonPhrase);
-/* 371 */                   ReshareFragment.this.getActivity().finish();
+               if (statusCode != 200) {
+                   Util.showCenteredToast(ReshareFragment.this.getActivity(), reasonPhrase);
+                   ReshareFragment.this.getActivity().finish();
                         } else if (userId > 0 && !TextUtils.isEmpty(token) && !TextUtils.isEmpty(secret)) {
-/* 362 */                   VineAccountHelper.saveTwitterInfo(ReshareFragment.this.getActivity(), ReshareFragment.this.mAppController.getActiveSession().getLoginEmail(), username, token, secret, userId);
-/* 365 */                   Util.getDefaultSharedPrefs(ReshareFragment.this.getActivity()).edit().putBoolean(Settings.PREF_TWITTER_CONNECTED, true).apply();
+                   VineAccountHelper.saveTwitterInfo(ReshareFragment.this.getActivity(), ReshareFragment.this.mAppController.getActiveSession().getLoginEmail(), username, token, secret, userId);
+                   Util.getDefaultSharedPrefs(ReshareFragment.this.getActivity()).edit().putBoolean(Settings.PREF_TWITTER_CONNECTED, true).apply();
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 376 */           public void onPhotoImageLoaded(HashMap<ImageKey, UrlImage> images) {
-/* 377 */               UrlImage image = images.get(ReshareFragment.access$300(ReshareFragment.this));
-/* 378 */               if (image != null && image.isValid()) {
-/* 379 */                   ReshareFragment.access$400(ReshareFragment.this, image.bitmap);
+                    @Override 
+           public void onPhotoImageLoaded(HashMap<ImageKey, UrlImage> images) {
+               UrlImage image = images.get(ReshareFragment.access$300(ReshareFragment.this));
+               if (image != null && image.isValid()) {
+                   ReshareFragment.access$400(ReshareFragment.this, image.bitmap);
                         }
                     }
 
-                    @Override // co.vine.android.client.AppSessionListener
-/* 384 */           public void onCaptchaRequired(String reqId, String captchaUrl, PendingAction action) {
-/* 385 */               ReshareFragment.access$500(ReshareFragment.this).onCaptchaRequired(ReshareFragment.this.getActivity(), reqId, action.actionCode, action.bundle, captchaUrl);
+                    @Override 
+           public void onCaptchaRequired(String reqId, String captchaUrl, PendingAction action) {
+               ReshareFragment.access$500(ReshareFragment.this).onCaptchaRequired(ReshareFragment.this.getActivity(), reqId, action.actionCode, action.bundle, captchaUrl);
                     }
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 390 */       public void onSaveInstanceState(Bundle outState) {
-/* 391 */           super.onSaveInstanceState(outState);
-/* 392 */           this.mCaptchaRequestHelper.onSaveInstanceState(outState);
+                @Override 
+       public void onSaveInstanceState(Bundle outState) {
+           super.onSaveInstanceState(outState);
+           this.mCaptchaRequestHelper.onSaveInstanceState(outState);
                 }
             }

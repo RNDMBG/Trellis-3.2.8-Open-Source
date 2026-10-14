@@ -7,29 +7,29 @@
             import android.os.Parcel;
             import android.os.RemoteException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.ew */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1065ew extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.ew$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1065ew {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.internal.ew$a$a, reason: collision with other inner class name */
+                    
                     private static class C1335a implements InterfaceC1065ew {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f1859dG;
 
                         C1335a(IBinder iBinder) {
                             this.f1859dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f1859dG;
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1065ew
+                        @Override 
                         public void onAddGeofencesResult(int statusCode, String[] geofenceRequestIds) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -48,7 +48,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1065ew
+                        @Override 
                         public void onRemoveGeofencesByPendingIntentResult(int statusCode, PendingIntent pendingIntent) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -72,7 +72,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1065ew
+                        @Override 
                         public void onRemoveGeofencesByRequestIdsResult(int statusCode, String[] geofenceRequestIds) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -96,7 +96,7 @@
                         attachInterface(this, "com.google.android.gms.location.internal.IGeofencerCallbacks");
                     }
 
-                    /* JADX INFO: renamed from: E */
+                    
                     public static InterfaceC1065ew m1896E(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -105,12 +105,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1065ew)) ? new C1335a(iBinder) : (InterfaceC1065ew) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:

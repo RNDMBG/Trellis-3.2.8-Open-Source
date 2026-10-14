@@ -1,7 +1,7 @@
             package com.facebook;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 85 */    public enum SessionState {
+            
+    public enum SessionState {
                 CREATED(Category.CREATED_CATEGORY),
                 CREATED_TOKEN_LOADED(Category.CREATED_CATEGORY),
                 OPENING(Category.CREATED_CATEGORY),
@@ -18,15 +18,15 @@
                     CLOSED_CATEGORY
                 }
 
-/* 86 */        SessionState(Category category) {
-/* 88 */            this.category = category;
+        SessionState(Category category) {
+            this.category = category;
                 }
 
-/* 99 */        public boolean isOpened() {
+        public boolean isOpened() {
                     return this.category == Category.OPENED_CATEGORY;
                 }
 
-/* 110 */       public boolean isClosed() {
+       public boolean isClosed() {
                     return this.category == Category.CLOSED_CATEGORY;
                 }
             }

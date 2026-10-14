@@ -8,30 +8,30 @@
             import com.google.android.gms.dynamic.InterfaceC0904b;
             import com.google.android.gms.maps.model.internal.InterfaceC1190d;
             
-            /* JADX INFO: renamed from: com.google.android.gms.maps.internal.d */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1160d extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.internal.d$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1160d {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.internal.d$a$a, reason: collision with other inner class name */
+                    
                     private static class C1351a implements InterfaceC1160d {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2267dG;
 
                         C1351a(IBinder iBinder) {
                             this.f2267dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2267dG;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.InterfaceC1160d
-                        /* JADX INFO: renamed from: f */
+                        @Override 
+                        
                         public InterfaceC0904b mo2199f(InterfaceC1190d interfaceC1190d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -51,8 +51,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.InterfaceC1160d
-                        /* JADX INFO: renamed from: g */
+                        @Override 
+                        
                         public InterfaceC0904b mo2200g(InterfaceC1190d interfaceC1190d) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -77,7 +77,7 @@
                         attachInterface(this, "com.google.android.gms.maps.internal.IInfoWindowAdapter");
                     }
 
-                    /* JADX INFO: renamed from: L */
+                    
                     public static InterfaceC1160d m2244L(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -86,12 +86,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1160d)) ? new C1351a(iBinder) : (InterfaceC1160d) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:
@@ -115,9 +115,9 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: f */
+                
                 InterfaceC0904b mo2199f(InterfaceC1190d interfaceC1190d) throws RemoteException;
 
-                /* JADX INFO: renamed from: g */
+                
                 InterfaceC0904b mo2200g(InterfaceC1190d interfaceC1190d) throws RemoteException;
             }

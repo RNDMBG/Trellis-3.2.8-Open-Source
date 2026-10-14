@@ -25,7 +25,7 @@
             import java.io.IOException;
             import java.net.URISyntaxException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class GoogleAuthUtil {
                 public static final String GOOGLE_ACCOUNT_TYPE = "com.google";
                 public static final String KEY_ANDROID_PACKAGE_NAME;
@@ -37,16 +37,16 @@
                 public static final String KEY_REQUEST_VISIBLE_ACTIVITIES = "request_visible_actions";
                 public static final String KEY_SUPPRESS_PROGRESS_SCREEN = "suppressProgressScreen";
 
-                /* JADX INFO: renamed from: iH */
+                
                 private static final ComponentName f922iH;
 
-                /* JADX INFO: renamed from: iI */
+                
                 private static final ComponentName f923iI;
 
-                /* JADX INFO: renamed from: iJ */
+                
                 private static final Intent f924iJ;
 
-                /* JADX INFO: renamed from: iK */
+                
                 private static final Intent f925iK;
 
                 static {
@@ -61,7 +61,7 @@
                 private GoogleAuthUtil() {
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static String m1002a(Context context, String str, String str2, Bundle bundle) throws IOException, GoogleAuthException {
                     int i;
                     if (bundle == null) {
@@ -101,7 +101,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static void m1003b(Intent intent) {
                     if (intent == null) {
                         throw new IllegalArgumentException("Callack cannot be null.");
@@ -201,7 +201,7 @@
                     AccountManager.get(context).invalidateAuthToken(GOOGLE_ACCOUNT_TYPE, token);
                 }
 
-                /* JADX INFO: renamed from: m */
+                
                 private static void m1004m(Context context) throws GoogleAuthException {
                     try {
                         GooglePlayServicesUtil.m1020m(context);
@@ -212,12 +212,12 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: r */
+                
                 private static boolean m1005r(String str) {
                     return "NetworkError".equals(str) || "ServiceUnavailable".equals(str) || "Timeout".equals(str);
                 }
 
-                /* JADX INFO: renamed from: s */
+                
                 private static boolean m1006s(String str) {
                     return "BadAuthentication".equals(str) || "CaptchaRequired".equals(str) || "DeviceManagementRequiredOrSyncDisabled".equals(str) || "NeedPermission".equals(str) || "NeedsBrowser".equals(str) || "UserCancel".equals(str) || "AppDownloadRequired".equals(str);
                 }

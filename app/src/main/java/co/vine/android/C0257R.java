@@ -1,10 +1,10 @@
             package co.vine.android;
             
-            /* JADX INFO: renamed from: co.vine.android.R */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0257R {
 
-                /* JADX INFO: renamed from: co.vine.android.R$anim */
+                
                 public static final class anim {
                     public static final int abc_fade_in = 2130771968;
                     public static final int abc_fade_out = 2130771969;
@@ -36,13 +36,13 @@
                     public static final int slow_fade_in = 2130771995;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$array */
+                
                 public static final class array {
                     public static final int find_friends_colors = 2130837504;
                     public static final int find_friends_colors_twitter_reg = 2130837505;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$attr */
+                
                 public static final class attr {
                     public static final int actionBarDivider = 2130903040;
                     public static final int actionBarItemBackground = 2130903041;
@@ -325,7 +325,7 @@
                     public static final int windowActionModeOverlay = 2130903312;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$bool */
+                
                 public static final class bool {
                     public static final int abc_action_bar_embed_tabs_pre_jb = 2130968577;
                     public static final int abc_action_bar_expanded_action_views_exclusive = 2130968578;
@@ -336,7 +336,7 @@
                     public static final int abc_action_bar_embed_tabs = 2130968576;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$color */
+                
                 public static final class color {
                     public static final int abc_search_url_text_holo = 2131034120;
                     public static final int abc_search_url_text_normal = 2131034121;
@@ -580,7 +580,7 @@
                     public static final int switch_thumb_normal_material_light = 2131034325;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$dimen */
+                
                 public static final class dimen {
                     public static final int abc_action_bar_default_height = 2131099648;
                     public static final int abc_action_bar_icon_vertical_padding = 2131099651;
@@ -783,7 +783,7 @@
                     public static final int profile_dot_padding = 2131099793;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$drawable */
+                
                 public static final class drawable {
                     public static final int ab_left_padding = 2131165184;
                     public static final int abc_ab_bottom_solid_dark_holo = 2131165185;
@@ -1424,7 +1424,7 @@
                     public static final int rule_vertical_flat_top_light = 2131165857;
                     public static final int rule_vertical_light = 2131165858;
 
-                    /* JADX INFO: renamed from: s1 */
+                    
                     public static final int f83s1 = 2130838142;
                     public static final int scrub_left = 2131165860;
                     public static final int scrub_right = 2131165861;
@@ -1469,7 +1469,7 @@
                     public static final int tool_bar_background = 2131165900;
                     public static final int trans_to_black_gradient = 2131165901;
 
-                    /* JADX INFO: renamed from: v */
+                    
                     public static final int f84v = 2130838185;
                     public static final int viewed_background = 2131165903;
                     public static final int viewed_background_repeat = 2131165904;
@@ -1501,7 +1501,7 @@
                     public static final int vm_thread_nib_you = 2131165930;
                     public static final int vm_watermark = 2131165931;
 
-                    /* JADX INFO: renamed from: z */
+                    
                     public static final int f85z = 2130838215;
                     public static final int zero_rating_background = 2131165933;
                     public static final int zoom_minus = 2131165934;
@@ -1549,7 +1549,7 @@
                     public static final int z = 2131165932;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$id */
+                
                 public static final class id {
                     public static final int ab_back_button = 2131230720;
                     public static final int ab_home_button = 2131230721;
@@ -2134,7 +2134,7 @@
                     public static final int undo = 2131231304;
                     public static final int unread_count = 2131231305;
 
-                    /* JADX INFO: renamed from: up */
+                    
                     public static final int f86up = 2131427377;
                     public static final int upDragger = 2131231307;
                     public static final int upgrade_spinner = 2131231313;
@@ -2191,7 +2191,7 @@
                     public static final int updates_github = 2131231311;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$integer */
+                
                 public static final class integer {
                     public static final int abc_max_action_buttons = 2131296256;
                     public static final int activity_anim_duration = 2131296257;
@@ -2200,7 +2200,7 @@
                     public static final int rotateAnimTime = 2131296260;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$layout */
+                
                 public static final class layout {
                     public static final int abc_action_bar_decor = 2131361792;
                     public static final int abc_action_bar_decor_include = 2131361793;
@@ -2409,7 +2409,7 @@
                     public static final int updates = 2131361980;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$menu */
+                
                 public static final class menu {
                     public static final int capture = 2131427328;
                     public static final int comment_actions = 2131427329;
@@ -2434,7 +2434,7 @@
                     public static final int share = 2131427348;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$plurals */
+                
                 public static final class plurals {
                     public static final int new_messages = 2131492864;
                     public static final int profile_followers = 2131492865;
@@ -2463,7 +2463,7 @@
                     public static final int timeline_likes = 2131492888;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$raw */
+                
                 public static final class raw {
                     public static final int cacerts = 2131558400;
                     public static final int decode_test = 2131558401;
@@ -2471,7 +2471,7 @@
                     public static final int vm_notification = 2131558403;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$string */
+                
                 public static final class string {
                     public static final int API_ERROR_ACCESS_DENIED = 2131623936;
                     public static final int API_ERROR_ACCOUNT_DEACTIVATED = 2131623937;
@@ -2861,7 +2861,7 @@
                     public static final int next = 2131624325;
                     public static final int next_caps = 2131624326;
 
-                    /* JADX INFO: renamed from: no */
+                    
                     public static final int f87no = 2131624322;
                     public static final int no_camera_found_toast = 2131624328;
                     public static final int no_contacts_found = 2131624329;
@@ -2887,11 +2887,11 @@
                     public static final int number_format_thousands = 2131624349;
                     public static final int off = 2131624350;
 
-                    /* JADX INFO: renamed from: ok */
+                    
                     public static final int f88ok = 2131624346;
                     public static final int older_activity = 2131624352;
 
-                    /* JADX INFO: renamed from: on */
+                    
                     public static final int f89on = 2131624348;
                     public static final int on_the_rise = 2131624354;
                     public static final int opening_camera = 2131624355;
@@ -3133,7 +3133,7 @@
                     public static final int timeline_post_title = 2131624591;
                     public static final int title_activity_reporting = 2131624592;
 
-                    /* JADX INFO: renamed from: to */
+                    
                     public static final int f90to = 2131624587;
                     public static final int toast_gms_resolution_failed = 2131624594;
                     public static final int too_many_drafts = 2131624595;
@@ -3224,7 +3224,7 @@
                     public static final int updates_new_build = 2131624627;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$style */
+                
                 public static final class style {
                     public static final int ActionbarOverflowButtonStyle = 2131689472;
                     public static final int ActivityAnimation = 2131689473;
@@ -3661,7 +3661,7 @@
                     public static final int Widget_AppCompat_Toolbar_Button_Navigation = 2131689904;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$styleable */
+                
                 public static final class styleable {
                     public static final int ActionBarLayout_android_layout_gravity = 0;
                     public static final int ActionBarWindow_windowActionBar = 0;
@@ -3885,7 +3885,7 @@
                     public static final int[] VineTextView = {C0257R.attr.textWeight, C0257R.attr.textStyle};
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.R$xml */
+                
                 public static final class xml {
                     public static final int authenticator = 2131820544;
                     public static final int camera_widget_provider = 2131820545;

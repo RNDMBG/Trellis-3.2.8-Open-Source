@@ -4,48 +4,48 @@
             import android.os.Parcelable;
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class MaskedWalletRequest implements SafeParcelable {
                 public static final Parcelable.Creator<MaskedWalletRequest> CREATOR = new C1214h();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2503iM;
 
-                /* JADX INFO: renamed from: tE */
+                
                 String f2504tE;
 
-                /* JADX INFO: renamed from: tI */
+                
                 String f2505tI;
 
-                /* JADX INFO: renamed from: tO */
+                
                 Cart f2506tO;
 
-                /* JADX INFO: renamed from: ub */
+                
                 boolean f2507ub;
 
-                /* JADX INFO: renamed from: uc */
+                
                 boolean f2508uc;
 
-                /* JADX INFO: renamed from: ud */
+                
                 boolean f2509ud;
 
-                /* JADX INFO: renamed from: ue */
+                
                 String f2510ue;
 
-                /* JADX INFO: renamed from: uf */
+                
                 String f2511uf;
 
-                /* JADX INFO: renamed from: ug */
+                
                 boolean f2512ug;
 
-                /* JADX INFO: renamed from: uh */
+                
                 boolean f2513uh;
 
                 public final class Builder {
                     private Builder() {
                     }
 
-                    /* synthetic */ Builder(MaskedWalletRequest x0, Object x1) {
+                     Builder(MaskedWalletRequest x0, Object x1) {
                         this();
                     }
 
@@ -128,7 +128,7 @@
                     return new Builder(maskedWalletRequest, null);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -177,7 +177,7 @@
                     return this.f2509ud;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel dest, int flags) {
                     C1214h.m2363a(this, dest, flags);
                 }

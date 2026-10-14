@@ -7,8 +7,8 @@
             import java.util.HashMap;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 40 */    public class DefaultLoadControl implements LoadControl {
+            
+    public class DefaultLoadControl implements LoadControl {
                 private static final int ABOVE_HIGH_WATERMARK = 0;
                 private static final int BELOW_LOW_WATERMARK = 2;
                 private static final int BETWEEN_WATERMARKS = 1;
@@ -35,160 +35,160 @@
                     void onLoadingChanged(boolean z);
                 }
 
-/* 41 */        static /* synthetic */ EventListener access$000(DefaultLoadControl x0) {
-/* 42 */            return x0.eventListener;
+        static  EventListener access$000(DefaultLoadControl x0) {
+            return x0.eventListener;
                 }
 
-/* 89 */        public DefaultLoadControl(Allocator allocator) {
-/* 90 */            this(allocator, null, null);
+        public DefaultLoadControl(Allocator allocator) {
+            this(allocator, null, null);
                 }
 
-/* 102 */       public DefaultLoadControl(Allocator allocator, Handler eventHandler, EventListener eventListener) {
-/* 103 */           this(allocator, eventHandler, eventListener, DEFAULT_LOW_WATERMARK_MS, DEFAULT_HIGH_WATERMARK_MS, 0.2f, 0.8f);
+       public DefaultLoadControl(Allocator allocator, Handler eventHandler, EventListener eventListener) {
+           this(allocator, eventHandler, eventListener, DEFAULT_LOW_WATERMARK_MS, DEFAULT_HIGH_WATERMARK_MS, 0.2f, 0.8f);
                 }
 
-/* 125 */       public DefaultLoadControl(Allocator allocator, Handler eventHandler, EventListener eventListener, int lowWatermarkMs, int highWatermarkMs, float lowPoolLoad, float highPoolLoad) {
-/* 127 */           this.allocator = allocator;
-/* 128 */           this.eventHandler = eventHandler;
-/* 129 */           this.eventListener = eventListener;
-/* 130 */           this.loaders = new ArrayList();
-/* 131 */           this.loaderStates = new HashMap<>();
-/* 132 */           this.lowWatermarkUs = ((long) lowWatermarkMs) * 1000;
-/* 133 */           this.highWatermarkUs = ((long) highWatermarkMs) * 1000;
-/* 134 */           this.lowPoolLoad = lowPoolLoad;
-/* 135 */           this.highPoolLoad = highPoolLoad;
+       public DefaultLoadControl(Allocator allocator, Handler eventHandler, EventListener eventListener, int lowWatermarkMs, int highWatermarkMs, float lowPoolLoad, float highPoolLoad) {
+           this.allocator = allocator;
+           this.eventHandler = eventHandler;
+           this.eventListener = eventListener;
+           this.loaders = new ArrayList();
+           this.loaderStates = new HashMap<>();
+           this.lowWatermarkUs = ((long) lowWatermarkMs) * 1000;
+           this.highWatermarkUs = ((long) highWatermarkMs) * 1000;
+           this.lowPoolLoad = lowPoolLoad;
+           this.highPoolLoad = highPoolLoad;
                 }
 
-                @Override // com.google.android.exoplayer.LoadControl
-/* 139 */       public void register(Object loader, int bufferSizeContribution) {
-/* 140 */           this.loaders.add(loader);
-/* 141 */           this.loaderStates.put(loader, new LoaderState(bufferSizeContribution));
-/* 142 */           this.targetBufferSize += bufferSizeContribution;
+                @Override 
+       public void register(Object loader, int bufferSizeContribution) {
+           this.loaders.add(loader);
+           this.loaderStates.put(loader, new LoaderState(bufferSizeContribution));
+           this.targetBufferSize += bufferSizeContribution;
                 }
 
-                @Override // com.google.android.exoplayer.LoadControl
-/* 146 */       public void unregister(Object loader) {
-/* 147 */           this.loaders.remove(loader);
-/* 148 */           LoaderState state = this.loaderStates.remove(loader);
-/* 149 */           this.targetBufferSize -= state.bufferSizeContribution;
-/* 150 */           updateControlState();
+                @Override 
+       public void unregister(Object loader) {
+           this.loaders.remove(loader);
+           LoaderState state = this.loaderStates.remove(loader);
+           this.targetBufferSize -= state.bufferSizeContribution;
+           updateControlState();
                 }
 
-                @Override // com.google.android.exoplayer.LoadControl
-/* 154 */       public void trimAllocator() {
-/* 155 */           this.allocator.trim(this.targetBufferSize);
+                @Override 
+       public void trimAllocator() {
+           this.allocator.trim(this.targetBufferSize);
                 }
 
-                @Override // com.google.android.exoplayer.LoadControl
-/* 159 */       public Allocator getAllocator() {
-/* 160 */           return this.allocator;
+                @Override 
+       public Allocator getAllocator() {
+           return this.allocator;
                 }
 
-                @Override // com.google.android.exoplayer.LoadControl
-/* 166 */       public boolean update(Object loader, long playbackPositionUs, long nextLoadPositionUs, boolean loading, boolean failed) {
-/* 167 */           int loaderBufferState = getLoaderBufferState(playbackPositionUs, nextLoadPositionUs);
-/* 168 */           LoaderState loaderState = this.loaderStates.get(loader);
-/* 169 */           boolean loaderStateChanged = (loaderState.bufferState == loaderBufferState && loaderState.nextLoadPositionUs == nextLoadPositionUs && loaderState.loading == loading && loaderState.failed == failed) ? false : true;
-/* 172 */           if (loaderStateChanged) {
-/* 173 */               loaderState.bufferState = loaderBufferState;
-/* 174 */               loaderState.nextLoadPositionUs = nextLoadPositionUs;
-/* 175 */               loaderState.loading = loading;
-/* 176 */               loaderState.failed = failed;
+                @Override 
+       public boolean update(Object loader, long playbackPositionUs, long nextLoadPositionUs, boolean loading, boolean failed) {
+           int loaderBufferState = getLoaderBufferState(playbackPositionUs, nextLoadPositionUs);
+           LoaderState loaderState = this.loaderStates.get(loader);
+           boolean loaderStateChanged = (loaderState.bufferState == loaderBufferState && loaderState.nextLoadPositionUs == nextLoadPositionUs && loaderState.loading == loading && loaderState.failed == failed) ? false : true;
+           if (loaderStateChanged) {
+               loaderState.bufferState = loaderBufferState;
+               loaderState.nextLoadPositionUs = nextLoadPositionUs;
+               loaderState.loading = loading;
+               loaderState.failed = failed;
                     }
-/* 180 */           int allocatedSize = this.allocator.getAllocatedSize();
-/* 181 */           int bufferPoolState = getBufferPoolState(allocatedSize);
-/* 182 */           boolean bufferPoolStateChanged = this.bufferPoolState != bufferPoolState;
-/* 183 */           if (bufferPoolStateChanged) {
-/* 184 */               this.bufferPoolState = bufferPoolState;
+           int allocatedSize = this.allocator.getAllocatedSize();
+           int bufferPoolState = getBufferPoolState(allocatedSize);
+           boolean bufferPoolStateChanged = this.bufferPoolState != bufferPoolState;
+           if (bufferPoolStateChanged) {
+               this.bufferPoolState = bufferPoolState;
                     }
-/* 188 */           if (loaderStateChanged || bufferPoolStateChanged) {
-/* 189 */               updateControlState();
+           if (loaderStateChanged || bufferPoolStateChanged) {
+               updateControlState();
                     }
                     return allocatedSize < this.targetBufferSize && nextLoadPositionUs != -1 && nextLoadPositionUs <= this.maxLoadStartPositionUs;
                 }
 
-/* 196 */       private int getLoaderBufferState(long playbackPositionUs, long nextLoadPositionUs) {
+       private int getLoaderBufferState(long playbackPositionUs, long nextLoadPositionUs) {
                     if (nextLoadPositionUs == -1) {
                         return 0;
                     }
-/* 200 */           long timeUntilNextLoadPosition = nextLoadPositionUs - playbackPositionUs;
+           long timeUntilNextLoadPosition = nextLoadPositionUs - playbackPositionUs;
                     if (timeUntilNextLoadPosition <= this.highWatermarkUs) {
                         return timeUntilNextLoadPosition < this.lowWatermarkUs ? 2 : 1;
                     }
                     return 0;
                 }
 
-/* 207 */       private int getBufferPoolState(int allocatedSize) {
-/* 208 */           float bufferPoolLoad = allocatedSize / this.targetBufferSize;
+       private int getBufferPoolState(int allocatedSize) {
+           float bufferPoolLoad = allocatedSize / this.targetBufferSize;
                     if (bufferPoolLoad > this.highPoolLoad) {
                         return 0;
                     }
                     return bufferPoolLoad < this.lowPoolLoad ? 2 : 1;
                 }
 
-/* 214 */       private void updateControlState() {
-/* 215 */           boolean loading = false;
-/* 216 */           boolean failed = false;
-/* 217 */           boolean finished = true;
-/* 218 */           int highestState = this.bufferPoolState;
+       private void updateControlState() {
+           boolean loading = false;
+           boolean failed = false;
+           boolean finished = true;
+           int highestState = this.bufferPoolState;
                     for (int i = 0; i < this.loaders.size(); i++) {
-/* 220 */               LoaderState loaderState = this.loaderStates.get(this.loaders.get(i));
-/* 221 */               loading |= loaderState.loading;
-/* 222 */               failed |= loaderState.failed;
-/* 223 */               finished &= loaderState.nextLoadPositionUs == -1;
-/* 224 */               highestState = Math.max(highestState, loaderState.bufferState);
+               LoaderState loaderState = this.loaderStates.get(this.loaders.get(i));
+               loading |= loaderState.loading;
+               failed |= loaderState.failed;
+               finished &= loaderState.nextLoadPositionUs == -1;
+               highestState = Math.max(highestState, loaderState.bufferState);
                     }
-/* 227 */           this.fillingBuffers = (this.loaders.isEmpty() || finished || failed || (highestState != 2 && (highestState != 1 || !this.fillingBuffers))) ? false : true;
-/* 230 */           if (this.fillingBuffers && !this.streamingPrioritySet) {
-/* 231 */               NetworkLock.instance.add(0);
-/* 232 */               this.streamingPrioritySet = true;
-/* 233 */               notifyLoadingChanged(true);
+           this.fillingBuffers = (this.loaders.isEmpty() || finished || failed || (highestState != 2 && (highestState != 1 || !this.fillingBuffers))) ? false : true;
+           if (this.fillingBuffers && !this.streamingPrioritySet) {
+               NetworkLock.instance.add(0);
+               this.streamingPrioritySet = true;
+               notifyLoadingChanged(true);
                     } else if (!this.fillingBuffers && this.streamingPrioritySet && !loading) {
-/* 235 */               NetworkLock.instance.remove(0);
-/* 236 */               this.streamingPrioritySet = false;
-/* 237 */               notifyLoadingChanged(false);
+               NetworkLock.instance.remove(0);
+               this.streamingPrioritySet = false;
+               notifyLoadingChanged(false);
                     }
-/* 240 */           this.maxLoadStartPositionUs = -1L;
-/* 241 */           if (this.fillingBuffers) {
+           this.maxLoadStartPositionUs = -1L;
+           if (this.fillingBuffers) {
                         for (int i2 = 0; i2 < this.loaders.size(); i2++) {
-/* 243 */                   Object loader = this.loaders.get(i2);
-/* 245 */                   long loaderTime = this.loaderStates.get(loader).nextLoadPositionUs;
+                   Object loader = this.loaders.get(i2);
+                   long loaderTime = this.loaderStates.get(loader).nextLoadPositionUs;
                             if (loaderTime != -1 && (this.maxLoadStartPositionUs == -1 || loaderTime < this.maxLoadStartPositionUs)) {
-/* 248 */                       this.maxLoadStartPositionUs = loaderTime;
+                       this.maxLoadStartPositionUs = loaderTime;
                             }
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.exoplayer.DefaultLoadControl$1 */
-/* 254 */       class RunnableC08511 implements Runnable {
-                    final /* synthetic */ boolean val$loading;
+                
+       class RunnableC08511 implements Runnable {
+                    final  boolean val$loading;
 
-/* 255 */           RunnableC08511(boolean z) {
+           RunnableC08511(boolean z) {
                         this.val$loading = z;
                     }
 
-                    @Override // java.lang.Runnable
-/* 258 */           public void run() {
-/* 259 */               DefaultLoadControl.access$000(DefaultLoadControl.this).onLoadingChanged(this.val$loading);
+                    @Override 
+           public void run() {
+               DefaultLoadControl.access$000(DefaultLoadControl.this).onLoadingChanged(this.val$loading);
                     }
                 }
 
-/* 254 */       private void notifyLoadingChanged(boolean loading) {
-/* 255 */           if (this.eventHandler != null && this.eventListener != null) {
-/* 256 */               this.eventHandler.post(new RunnableC08511(loading));
+       private void notifyLoadingChanged(boolean loading) {
+           if (this.eventHandler != null && this.eventListener != null) {
+               this.eventHandler.post(new RunnableC08511(loading));
                     }
                 }
 
-/* 272 */       private static class LoaderState {
+       private static class LoaderState {
                     public final int bufferSizeContribution;
                     public int bufferState = 0;
                     public boolean loading = false;
                     public boolean failed = false;
                     public long nextLoadPositionUs = -1;
 
-/* 273 */           public LoaderState(int bufferSizeContribution) {
-/* 275 */               this.bufferSizeContribution = bufferSizeContribution;
+           public LoaderState(int bufferSizeContribution) {
+               this.bufferSizeContribution = bufferSizeContribution;
                     }
                 }
             }

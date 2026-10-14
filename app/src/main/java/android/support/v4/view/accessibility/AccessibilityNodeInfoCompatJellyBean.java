@@ -4,60 +4,60 @@
             import android.view.View;
             import android.view.accessibility.AccessibilityNodeInfo;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 24 */    class AccessibilityNodeInfoCompatJellyBean {
-/* 25 */        AccessibilityNodeInfoCompatJellyBean() {
+            
+    class AccessibilityNodeInfoCompatJellyBean {
+        AccessibilityNodeInfoCompatJellyBean() {
                 }
 
-/* 28 */        public static void addChild(Object info, View child, int virtualDescendantId) {
-/* 29 */            ((AccessibilityNodeInfo) info).addChild(child, virtualDescendantId);
+        public static void addChild(Object info, View child, int virtualDescendantId) {
+            ((AccessibilityNodeInfo) info).addChild(child, virtualDescendantId);
                 }
 
-/* 32 */        public static void setSource(Object info, View root, int virtualDescendantId) {
-/* 33 */            ((AccessibilityNodeInfo) info).setSource(root, virtualDescendantId);
+        public static void setSource(Object info, View root, int virtualDescendantId) {
+            ((AccessibilityNodeInfo) info).setSource(root, virtualDescendantId);
                 }
 
-/* 36 */        public static boolean isVisibleToUser(Object info) {
-/* 37 */            return ((AccessibilityNodeInfo) info).isVisibleToUser();
+        public static boolean isVisibleToUser(Object info) {
+            return ((AccessibilityNodeInfo) info).isVisibleToUser();
                 }
 
-/* 40 */        public static void setVisibleToUser(Object info, boolean visibleToUser) {
-/* 41 */            ((AccessibilityNodeInfo) info).setVisibleToUser(visibleToUser);
+        public static void setVisibleToUser(Object info, boolean visibleToUser) {
+            ((AccessibilityNodeInfo) info).setVisibleToUser(visibleToUser);
                 }
 
-/* 44 */        public static boolean performAction(Object info, int action, Bundle arguments) {
-/* 45 */            return ((AccessibilityNodeInfo) info).performAction(action, arguments);
+        public static boolean performAction(Object info, int action, Bundle arguments) {
+            return ((AccessibilityNodeInfo) info).performAction(action, arguments);
                 }
 
-/* 48 */        public static void setMovementGranularities(Object info, int granularities) {
-/* 49 */            ((AccessibilityNodeInfo) info).setMovementGranularities(granularities);
+        public static void setMovementGranularities(Object info, int granularities) {
+            ((AccessibilityNodeInfo) info).setMovementGranularities(granularities);
                 }
 
-/* 52 */        public static int getMovementGranularities(Object info) {
-/* 53 */            return ((AccessibilityNodeInfo) info).getMovementGranularities();
+        public static int getMovementGranularities(Object info) {
+            return ((AccessibilityNodeInfo) info).getMovementGranularities();
                 }
 
-/* 56 */        public static Object obtain(View root, int virtualDescendantId) {
-/* 57 */            return AccessibilityNodeInfo.obtain(root, virtualDescendantId);
+        public static Object obtain(View root, int virtualDescendantId) {
+            return AccessibilityNodeInfo.obtain(root, virtualDescendantId);
                 }
 
-/* 60 */        public static Object findFocus(Object info, int focus) {
-/* 61 */            return ((AccessibilityNodeInfo) info).findFocus(focus);
+        public static Object findFocus(Object info, int focus) {
+            return ((AccessibilityNodeInfo) info).findFocus(focus);
                 }
 
-/* 64 */        public static Object focusSearch(Object info, int direction) {
-/* 65 */            return ((AccessibilityNodeInfo) info).focusSearch(direction);
+        public static Object focusSearch(Object info, int direction) {
+            return ((AccessibilityNodeInfo) info).focusSearch(direction);
                 }
 
-/* 68 */        public static void setParent(Object info, View root, int virtualDescendantId) {
-/* 69 */            ((AccessibilityNodeInfo) info).setParent(root, virtualDescendantId);
+        public static void setParent(Object info, View root, int virtualDescendantId) {
+            ((AccessibilityNodeInfo) info).setParent(root, virtualDescendantId);
                 }
 
-/* 72 */        public static boolean isAccessibilityFocused(Object info) {
-/* 73 */            return ((AccessibilityNodeInfo) info).isAccessibilityFocused();
+        public static boolean isAccessibilityFocused(Object info) {
+            return ((AccessibilityNodeInfo) info).isAccessibilityFocused();
                 }
 
-/* 76 */        public static void setAccesibilityFocused(Object info, boolean focused) {
-/* 77 */            ((AccessibilityNodeInfo) info).setAccessibilityFocused(focused);
+        public static void setAccesibilityFocused(Object info, boolean focused) {
+            ((AccessibilityNodeInfo) info).setAccessibilityFocused(focused);
                 }
             }

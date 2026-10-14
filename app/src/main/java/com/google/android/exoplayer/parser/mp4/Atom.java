@@ -2,8 +2,8 @@
 
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 57 */    abstract class Atom {
+            
+    abstract class Atom {
                 public static final int TYPE_avc1 = 1635148593;
                 public static final int TYPE_avc3 = 1635148595;
                 public static final int TYPE_avcC = 1635148611;
@@ -40,51 +40,51 @@
                 public static final int TYPE_uuid = 1970628964;
                 public final int type;
 
-/* 58 */        Atom(int type) {
-/* 60 */            this.type = type;
+        Atom(int type) {
+            this.type = type;
                 }
 
-/* 66 */        public static final class LeafAtom extends Atom {
+        public static final class LeafAtom extends Atom {
                     public final ParsableByteArray data;
 
-/* 67 */            public LeafAtom(int type, ParsableByteArray data) {
-/* 68 */                super(type);
-/* 69 */                this.data = data;
+            public LeafAtom(int type, ParsableByteArray data) {
+                super(type);
+                this.data = data;
                     }
                 }
 
-/* 77 */        public static final class ContainerAtom extends Atom {
+        public static final class ContainerAtom extends Atom {
                     public final ArrayList<Atom> children;
 
-/* 78 */            public ContainerAtom(int type) {
-/* 79 */                super(type);
-/* 80 */                this.children = new ArrayList<>();
+            public ContainerAtom(int type) {
+                super(type);
+                this.children = new ArrayList<>();
                     }
 
-/* 83 */            public void add(Atom atom) {
-/* 84 */                this.children.add(atom);
+            public void add(Atom atom) {
+                this.children.add(atom);
                     }
 
-/* 87 */            public LeafAtom getLeafAtomOfType(int type) {
-/* 88 */                int childrenSize = this.children.size();
+            public LeafAtom getLeafAtomOfType(int type) {
+                int childrenSize = this.children.size();
                         for (int i = 0; i < childrenSize; i++) {
-/* 90 */                    Atom atom = this.children.get(i);
-/* 91 */                    if (atom.type == type) {
-/* 92 */                        return (LeafAtom) atom;
+                    Atom atom = this.children.get(i);
+                    if (atom.type == type) {
+                        return (LeafAtom) atom;
                             }
                         }
-/* 95 */                return null;
+                return null;
                     }
 
-/* 98 */            public ContainerAtom getContainerAtomOfType(int type) {
-/* 99 */                int childrenSize = this.children.size();
+            public ContainerAtom getContainerAtomOfType(int type) {
+                int childrenSize = this.children.size();
                         for (int i = 0; i < childrenSize; i++) {
-/* 101 */                   Atom atom = this.children.get(i);
-/* 102 */                   if (atom.type == type) {
-/* 103 */                       return (ContainerAtom) atom;
+                   Atom atom = this.children.get(i);
+                   if (atom.type == type) {
+                       return (ContainerAtom) atom;
                             }
                         }
-/* 106 */               return null;
+               return null;
                     }
                 }
             }

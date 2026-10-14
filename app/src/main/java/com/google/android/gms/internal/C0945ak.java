@@ -7,10 +7,10 @@
             import co.vine.android.service.VineService;
             import java.util.Map;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.ak */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0945ak implements InterfaceC0943ai {
-                /* JADX INFO: renamed from: a */
+                
                 private static int m1253a(DisplayMetrics displayMetrics, Map<String, String> map, String str, int i) {
                     String str2 = map.get(str);
                     if (str2 == null) {
@@ -24,8 +24,8 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.InterfaceC0943ai
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 public void mo1249a(C1005cq c1005cq, Map<String, String> map) {
                     String str = map.get(BaseFragment.ARG_ACTION);
                     if (str == null) {

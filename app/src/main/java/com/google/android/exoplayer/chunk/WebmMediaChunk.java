@@ -11,56 +11,56 @@
             import java.util.Map;
             import java.util.UUID;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 48 */    public final class WebmMediaChunk extends MediaChunk {
+            
+    public final class WebmMediaChunk extends MediaChunk {
                 private final WebmExtractor extractor;
 
-/* 49 */        public WebmMediaChunk(DataSource dataSource, DataSpec dataSpec, Format format, int trigger, WebmExtractor extractor, long startTimeUs, long endTimeUs, int nextChunkIndex) {
-/* 50 */            super(dataSource, dataSpec, format, trigger, startTimeUs, endTimeUs, nextChunkIndex);
-/* 51 */            this.extractor = extractor;
+        public WebmMediaChunk(DataSource dataSource, DataSpec dataSpec, Format format, int trigger, WebmExtractor extractor, long startTimeUs, long endTimeUs, int nextChunkIndex) {
+            super(dataSource, dataSpec, format, trigger, startTimeUs, endTimeUs, nextChunkIndex);
+            this.extractor = extractor;
                 }
 
-                @Override // com.google.android.exoplayer.chunk.MediaChunk
-/* 55 */        public void seekToStart() {
-/* 56 */            seekTo(0L, false);
+                @Override 
+        public void seekToStart() {
+            seekTo(0L, false);
                 }
 
-                @Override // com.google.android.exoplayer.chunk.MediaChunk
-/* 60 */        public boolean seekTo(long positionUs, boolean allowNoop) {
-/* 61 */            boolean isDiscontinuous = this.extractor.seekTo(positionUs, allowNoop);
-/* 62 */            if (isDiscontinuous) {
-/* 63 */                resetReadPosition();
+                @Override 
+        public boolean seekTo(long positionUs, boolean allowNoop) {
+            boolean isDiscontinuous = this.extractor.seekTo(positionUs, allowNoop);
+            if (isDiscontinuous) {
+                resetReadPosition();
                     }
-/* 65 */            return isDiscontinuous;
+            return isDiscontinuous;
                 }
 
-                @Override // com.google.android.exoplayer.chunk.MediaChunk
-/* 69 */        public boolean prepare() {
-/* 70 */            return true;
+                @Override 
+        public boolean prepare() {
+            return true;
                 }
 
-                @Override // com.google.android.exoplayer.chunk.MediaChunk
-/* 74 */        public boolean sampleAvailable() throws ParserException {
-/* 75 */            NonBlockingInputStream inputStream = getNonBlockingInputStream();
-/* 76 */            int result = this.extractor.read(inputStream, null);
+                @Override 
+        public boolean sampleAvailable() throws ParserException {
+            NonBlockingInputStream inputStream = getNonBlockingInputStream();
+            int result = this.extractor.read(inputStream, null);
                     return (result & 32) != 0;
                 }
 
-                @Override // com.google.android.exoplayer.chunk.MediaChunk
-/* 81 */        public boolean read(SampleHolder holder) {
-/* 82 */            NonBlockingInputStream inputStream = getNonBlockingInputStream();
-/* 83 */            Assertions.checkState(inputStream != null);
-/* 84 */            int result = this.extractor.read(inputStream, holder);
+                @Override 
+        public boolean read(SampleHolder holder) {
+            NonBlockingInputStream inputStream = getNonBlockingInputStream();
+            Assertions.checkState(inputStream != null);
+            int result = this.extractor.read(inputStream, holder);
                     return (result & 4) != 0;
                 }
 
-                @Override // com.google.android.exoplayer.chunk.MediaChunk
-/* 89 */        public MediaFormat getMediaFormat() {
-/* 90 */            return this.extractor.getFormat();
+                @Override 
+        public MediaFormat getMediaFormat() {
+            return this.extractor.getFormat();
                 }
 
-                @Override // com.google.android.exoplayer.chunk.MediaChunk
-/* 95 */        public Map<UUID, byte[]> getPsshInfo() {
-/* 96 */            return null;
+                @Override 
+        public Map<UUID, byte[]> getPsshInfo() {
+            return null;
                 }
             }

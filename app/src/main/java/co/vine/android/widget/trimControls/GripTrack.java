@@ -10,8 +10,8 @@
             import android.view.View;
             import co.vine.android.C0257R;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 36 */    public class GripTrack extends View {
+            
+    public class GripTrack extends View {
                 private Paint mGripBgPaint;
                 private RectF mGripHandle;
                 private final int mGripHandleHeight;
@@ -25,50 +25,50 @@
                     boolean onGripTouchEvent(MotionEvent motionEvent);
                 }
 
-/* 37 */        public GripTrack(Context context, GripTrackTouchListener listener) {
-/* 38 */            super(context);
-/* 22 */            this.mGripBgPaint = new Paint();
-/* 23 */            this.mGripHandlePaint = new Paint();
-/* 25 */            this.mLeftRect = new Rect();
-/* 26 */            this.mRightRect = new Rect();
-/* 27 */            this.mGripHandle = new RectF();
-/* 39 */            Resources res = getResources();
-/* 40 */            this.mGripBgPaint.setColor(res.getColor(C0257R.color.gripTrackBackground));
-/* 41 */            this.mGripHandlePaint.setColor(res.getColor(C0257R.color.white_forty_percent));
-/* 42 */            this.mGripHandleWidth = res.getDimensionPixelSize(C0257R.dimen.grip_handle_width);
-/* 43 */            this.mGripHandleHeight = res.getDimensionPixelSize(C0257R.dimen.grip_handle_height);
-/* 44 */            this.mGripTrackTouchListener = listener;
+        public GripTrack(Context context, GripTrackTouchListener listener) {
+            super(context);
+            this.mGripBgPaint = new Paint();
+            this.mGripHandlePaint = new Paint();
+            this.mLeftRect = new Rect();
+            this.mRightRect = new Rect();
+            this.mGripHandle = new RectF();
+            Resources res = getResources();
+            this.mGripBgPaint.setColor(res.getColor(C0257R.color.gripTrackBackground));
+            this.mGripHandlePaint.setColor(res.getColor(C0257R.color.white_forty_percent));
+            this.mGripHandleWidth = res.getDimensionPixelSize(C0257R.dimen.grip_handle_width);
+            this.mGripHandleHeight = res.getDimensionPixelSize(C0257R.dimen.grip_handle_height);
+            this.mGripTrackTouchListener = listener;
                 }
 
-/* 47 */        public void setBoundaries(int leftPx, int rightPx) {
-/* 48 */            this.mLeftRect.left = 0;
-/* 49 */            this.mLeftRect.right = leftPx;
-/* 50 */            this.mLeftRect.top = 0;
-/* 51 */            this.mLeftRect.bottom = getBottom();
-/* 53 */            this.mRightRect.left = rightPx;
-/* 54 */            this.mRightRect.right = getWidth();
-/* 55 */            this.mRightRect.top = 0;
-/* 56 */            this.mRightRect.bottom = getBottom();
-/* 58 */            invalidate();
+        public void setBoundaries(int leftPx, int rightPx) {
+            this.mLeftRect.left = 0;
+            this.mLeftRect.right = leftPx;
+            this.mLeftRect.top = 0;
+            this.mLeftRect.bottom = getBottom();
+            this.mRightRect.left = rightPx;
+            this.mRightRect.right = getWidth();
+            this.mRightRect.top = 0;
+            this.mRightRect.bottom = getBottom();
+            invalidate();
                 }
 
-                @Override // android.view.View
-/* 61 */        public boolean onTouchEvent(MotionEvent event) {
-/* 62 */            if (this.mRightRect.contains((int) event.getX(), (int) event.getY())) {
-/* 63 */                return this.mGripTrackTouchListener.onGripTouchEvent(event);
+                @Override 
+        public boolean onTouchEvent(MotionEvent event) {
+            if (this.mRightRect.contains((int) event.getX(), (int) event.getY())) {
+                return this.mGripTrackTouchListener.onGripTouchEvent(event);
                     }
                     return false;
                 }
 
-                @Override // android.view.View
-/* 69 */        protected void onDraw(Canvas canvas) {
-/* 70 */            super.onDraw(canvas);
-/* 73 */            canvas.drawRect(this.mLeftRect, this.mGripBgPaint);
-/* 74 */            canvas.drawRect(this.mRightRect, this.mGripBgPaint);
-/* 77 */            int gripHandleTop = (getHeight() - this.mGripHandleHeight) / 2;
-/* 78 */            this.mGripHandle.set(this.mLeftRect.right - (this.mGripHandleWidth * 5), gripHandleTop, this.mLeftRect.right - (this.mGripHandleWidth * 4), this.mGripHandleHeight + gripHandleTop);
-/* 80 */            canvas.drawRoundRect(this.mGripHandle, this.mGripHandleWidth / 2, this.mGripHandleWidth / 2, this.mGripHandlePaint);
-/* 81 */            this.mGripHandle.offset(this.mGripHandleWidth * 2, 0.0f);
-/* 82 */            canvas.drawRoundRect(this.mGripHandle, this.mGripHandleWidth / 2, this.mGripHandleWidth / 2, this.mGripHandlePaint);
+                @Override 
+        protected void onDraw(Canvas canvas) {
+            super.onDraw(canvas);
+            canvas.drawRect(this.mLeftRect, this.mGripBgPaint);
+            canvas.drawRect(this.mRightRect, this.mGripBgPaint);
+            int gripHandleTop = (getHeight() - this.mGripHandleHeight) / 2;
+            this.mGripHandle.set(this.mLeftRect.right - (this.mGripHandleWidth * 5), gripHandleTop, this.mLeftRect.right - (this.mGripHandleWidth * 4), this.mGripHandleHeight + gripHandleTop);
+            canvas.drawRoundRect(this.mGripHandle, this.mGripHandleWidth / 2, this.mGripHandleWidth / 2, this.mGripHandlePaint);
+            this.mGripHandle.offset(this.mGripHandleWidth * 2, 0.0f);
+            canvas.drawRoundRect(this.mGripHandle, this.mGripHandleWidth / 2, this.mGripHandleWidth / 2, this.mGripHandlePaint);
                 }
             }

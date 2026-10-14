@@ -11,7 +11,7 @@
             import com.google.android.gms.internal.C1031dp;
             import com.google.android.gms.internal.C1082fm;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class PlusOneButton extends FrameLayout {
                 public static final int ANNOTATION_BUBBLE = 1;
                 public static final int ANNOTATION_INLINE = 2;
@@ -22,32 +22,32 @@
                 public static final int SIZE_STANDARD = 3;
                 public static final int SIZE_TALL = 2;
 
-                /* JADX INFO: renamed from: hN */
+                
                 private String f2376hN;
                 private int mSize;
 
-                /* JADX INFO: renamed from: re */
+                
                 private View f2377re;
 
-                /* JADX INFO: renamed from: rf */
+                
                 private int f2378rf;
 
-                /* JADX INFO: renamed from: rg */
+                
                 private int f2379rg;
 
-                /* JADX INFO: renamed from: rh */
+                
                 private OnPlusOneClickListener f2380rh;
 
                 protected class DefaultOnPlusOneClickListener implements View.OnClickListener, OnPlusOneClickListener {
 
-                    /* JADX INFO: renamed from: ri */
+                    
                     private final OnPlusOneClickListener f2381ri;
 
                     public DefaultOnPlusOneClickListener(OnPlusOneClickListener proxy) {
                         this.f2381ri = proxy;
                     }
 
-                    @Override // android.view.View.OnClickListener
+                    @Override 
                     public void onClick(View view) {
                         Intent intent = (Intent) PlusOneButton.m2331a(PlusOneButton.this).getTag();
                         if (this.f2381ri != null) {
@@ -57,7 +57,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.plus.PlusOneButton.OnPlusOneClickListener
+                    @Override 
                     public void onPlusOneClick(Intent intent) {
                         Context context = PlusOneButton.this.getContext();
                         if (!(context instanceof Activity) || intent == null) {
@@ -85,13 +85,13 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ View m2331a(PlusOneButton plusOneButton) {
+                
+                static  View m2331a(PlusOneButton plusOneButton) {
                     return plusOneButton.f2377re;
                 }
 
-                /* JADX INFO: renamed from: b */
-                static /* synthetic */ int m2332b(PlusOneButton plusOneButton) {
+                
+                static  int m2332b(PlusOneButton plusOneButton) {
                     return plusOneButton.f2379rg;
                 }
 
@@ -114,7 +114,7 @@
                     return "TALL".equalsIgnoreCase(strM1618a) ? 2 : 3;
                 }
 
-                /* JADX INFO: renamed from: p */
+                
                 private void m2333p(Context context) {
                     if (this.f2377re != null) {
                         removeView(this.f2377re);
@@ -138,12 +138,12 @@
                     setOnPlusOneClickListener(plusOneClickListener);
                 }
 
-                @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+                @Override 
                 protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
                     this.f2377re.layout(0, 0, right - left, bottom - top);
                 }
 
-                @Override // android.widget.FrameLayout, android.view.View
+                @Override 
                 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
                     View view = this.f2377re;
                     measureChild(view, widthMeasureSpec, heightMeasureSpec);

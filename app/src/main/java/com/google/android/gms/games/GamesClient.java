@@ -22,7 +22,7 @@
             import com.google.android.gms.internal.C1055em;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class GamesClient implements GooglePlayServicesClient {
                 public static final String EXTRA_EXCLUSIVE_BIT_MASK = "exclusive_bit_mask";
                 public static final String EXTRA_INVITATION = "invitation";
@@ -58,31 +58,31 @@
                 public static final int STATUS_REAL_TIME_MESSAGE_SEND_FAILED = 7001;
                 public static final int STATUS_REAL_TIME_ROOM_NOT_JOINED = 7004;
 
-                /* JADX INFO: renamed from: mz */
+                
                 private final C1055em f1046mz;
 
                 public static final class Builder {
 
-                    /* JADX INFO: renamed from: iq */
+                    
                     private final GooglePlayServicesClient.ConnectionCallbacks f1047iq;
 
-                    /* JADX INFO: renamed from: ir */
+                    
                     private final GooglePlayServicesClient.OnConnectionFailedListener f1048ir;
 
-                    /* JADX INFO: renamed from: mA */
+                    
                     private String f1051mA;
 
-                    /* JADX INFO: renamed from: mC */
+                    
                     private View f1053mC;
                     private final Context mContext;
 
-                    /* JADX INFO: renamed from: it */
+                    
                     private String f1050it = "<<default account>>";
 
-                    /* JADX INFO: renamed from: is */
+                    
                     private String[] f1049is = {Scopes.GAMES};
 
-                    /* JADX INFO: renamed from: mB */
+                    
                     private int f1052mB = 49;
 
                     public Builder(Context context, GooglePlayServicesClient.ConnectionCallbacks connectedListener, GooglePlayServicesClient.OnConnectionFailedListener connectionFailedListener) {
@@ -121,7 +121,7 @@
                     this.f1046mz = new C1055em(context, gamePackageName, accountName, connectedListener, connectionFailedListener, scopes, gravity, gamesContentView, false);
                 }
 
-                /* synthetic */ GamesClient(Context x0, String x1, String x2, GooglePlayServicesClient.ConnectionCallbacks x3, GooglePlayServicesClient.OnConnectionFailedListener x4, String[] x5, int x6, View x7, Object x8) {
+                 GamesClient(Context x0, String x1, String x2, GooglePlayServicesClient.ConnectionCallbacks x3, GooglePlayServicesClient.OnConnectionFailedListener x4, String[] x5, int x6, View x7, Object x8) {
                     this(x0, x1, x2, x3, x4, x5, x6, x7);
                 }
 
@@ -133,7 +133,7 @@
                     this.f1046mz.clearNotifications(notificationTypes);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void connect() {
                     this.f1046mz.connect();
                 }
@@ -146,7 +146,7 @@
                     this.f1046mz.m1794j(invitationId, 0);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void disconnect() {
                     this.f1046mz.disconnect();
                 }
@@ -215,22 +215,22 @@
                     this.f1046mz.m1788a(listener, id, numSteps);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnected() {
                     return this.f1046mz.isConnected();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnecting() {
                     return this.f1046mz.isConnecting();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionCallbacksRegistered(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     return this.f1046mz.isConnectionCallbacksRegistered(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionFailedListenerRegistered(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     return this.f1046mz.isConnectionFailedListenerRegistered(listener);
                 }
@@ -310,12 +310,12 @@
                     this.f1046mz.connect();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f1046mz.registerConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f1046mz.registerConnectionFailedListener(listener);
                 }
@@ -401,12 +401,12 @@
                     this.f1046mz.m1790b(listener, id);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f1046mz.unregisterConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f1046mz.unregisterConnectionFailedListener(listener);
                 }

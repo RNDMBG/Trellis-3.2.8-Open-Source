@@ -7,29 +7,29 @@
             import android.os.RemoteException;
             import com.google.android.gms.maps.model.Tile;
             
-            /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.g */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1193g extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.g$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1193g {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.g$a$a, reason: collision with other inner class name */
+                    
                     private static class C1369a implements InterfaceC1193g {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2370dG;
 
                         C1369a(IBinder iBinder) {
                             this.f2370dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2370dG;
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1193g
+                        @Override 
                         public Tile getTile(int x, int y, int zoom) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -56,7 +56,7 @@
                         attachInterface(this, "com.google.android.gms.maps.model.internal.ITileProviderDelegate");
                     }
 
-                    /* JADX INFO: renamed from: aj */
+                    
                     public static InterfaceC1193g m2326aj(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -65,12 +65,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1193g)) ? new C1369a(iBinder) : (InterfaceC1193g) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:

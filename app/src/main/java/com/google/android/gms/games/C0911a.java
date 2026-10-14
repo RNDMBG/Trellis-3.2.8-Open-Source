@@ -6,10 +6,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.games.a */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C0911a implements Parcelable.Creator<GameEntity> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m1183a(GameEntity gameEntity, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1140a(parcel, 1, gameEntity.getApplicationId(), false);
@@ -31,22 +31,22 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: K */
+                
                 public GameEntity[] m1184K(int i) {
                     return new GameEntity[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ GameEntity createFromParcel(Parcel x0) {
+                @Override 
+                public  GameEntity createFromParcel(Parcel x0) {
                     return mo1175t(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ GameEntity[] newArray(int x0) {
+                @Override 
+                public  GameEntity[] newArray(int x0) {
                     return m1184K(x0);
                 }
 
-                /* JADX INFO: renamed from: t */
+                
                 public GameEntity mo1175t(Parcel parcel) {
                     int iM1111j = C0901a.m1111j(parcel);
                     int iM1105f = 0;

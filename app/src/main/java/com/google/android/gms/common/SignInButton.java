@@ -11,7 +11,7 @@
             import com.google.android.gms.internal.C1029dn;
             import com.google.android.gms.internal.C1030do;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class SignInButton extends FrameLayout implements View.OnClickListener {
                 public static final int COLOR_DARK = 0;
                 public static final int COLOR_LIGHT = 1;
@@ -19,13 +19,13 @@
                 public static final int SIZE_STANDARD = 0;
                 public static final int SIZE_WIDE = 1;
 
-                /* JADX INFO: renamed from: jc */
+                
                 private int f943jc;
 
-                /* JADX INFO: renamed from: jd */
+                
                 private View f944jd;
 
-                /* JADX INFO: renamed from: je */
+                
                 private View.OnClickListener f945je;
                 private int mSize;
 
@@ -43,14 +43,14 @@
                     setStyle(0, 0);
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 private static Button m1026c(Context context, int i, int i2) {
                     C1030do c1030do = new C1030do(context);
                     c1030do.m1617a(context.getResources(), i, i2);
                     return c1030do;
                 }
 
-                /* JADX INFO: renamed from: p */
+                
                 private void m1027p(Context context) {
                     if (this.f944jd != null) {
                         removeView(this.f944jd);
@@ -66,7 +66,7 @@
                     this.f944jd.setOnClickListener(this);
                 }
 
-                @Override // android.view.View.OnClickListener
+                @Override 
                 public void onClick(View view) {
                     if (this.f945je == null || view != this.f944jd) {
                         return;
@@ -78,13 +78,13 @@
                     setStyle(this.mSize, colorScheme);
                 }
 
-                @Override // android.view.View
+                @Override 
                 public void setEnabled(boolean enabled) {
                     super.setEnabled(enabled);
                     this.f944jd.setEnabled(enabled);
                 }
 
-                @Override // android.view.View
+                @Override 
                 public void setOnClickListener(View.OnClickListener listener) {
                     this.f945je = listener;
                     if (this.f944jd != null) {

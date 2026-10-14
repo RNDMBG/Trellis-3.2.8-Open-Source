@@ -2,10 +2,10 @@
 
             import java.util.Iterator;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public abstract class DataBuffer<T> implements Iterable<T> {
 
-                /* JADX INFO: renamed from: jf */
+                
                 protected final C0891d f948jf;
 
                 protected DataBuffer(C0891d dataHolder) {
@@ -33,7 +33,7 @@
                     return this.f948jf.isClosed();
                 }
 
-                @Override // java.lang.Iterable
+                @Override 
                 public Iterator<T> iterator() {
                     return new C0888a(this);
                 }

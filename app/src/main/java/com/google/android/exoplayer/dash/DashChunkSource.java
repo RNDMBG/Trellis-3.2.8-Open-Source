@@ -25,8 +25,8 @@
             import java.util.HashMap;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 50 */    public class DashChunkSource implements ChunkSource {
+            
+    public class DashChunkSource implements ChunkSource {
                 private final DataSource dataSource;
                 private final FormatEvaluator evaluator;
                 private final Format[] formats;
@@ -39,173 +39,173 @@
                 private final HashMap<String, Representation> representations = new HashMap<>();
                 private final FormatEvaluator.Evaluation evaluation = new FormatEvaluator.Evaluation();
 
-/* 51 */        static /* synthetic */ HashMap access$000(DashChunkSource x0) {
-/* 52 */            return x0.segmentIndexes;
+        static  HashMap access$000(DashChunkSource x0) {
+            return x0.segmentIndexes;
                 }
 
-/* 73 */        public DashChunkSource(DataSource dataSource, FormatEvaluator evaluator, Representation... representations) {
-/* 75 */            this.dataSource = dataSource;
-/* 76 */            this.evaluator = evaluator;
-/* 77 */            this.formats = new Format[representations.length];
-/* 81 */            this.trackInfo = new TrackInfo(representations[0].format.mimeType, representations[0].periodDurationMs * 1000);
-/* 84 */            int maxWidth = 0;
-/* 85 */            int maxHeight = 0;
+        public DashChunkSource(DataSource dataSource, FormatEvaluator evaluator, Representation... representations) {
+            this.dataSource = dataSource;
+            this.evaluator = evaluator;
+            this.formats = new Format[representations.length];
+            this.trackInfo = new TrackInfo(representations[0].format.mimeType, representations[0].periodDurationMs * 1000);
+            int maxWidth = 0;
+            int maxHeight = 0;
                     for (int i = 0; i < representations.length; i++) {
-/* 87 */                this.formats[i] = representations[i].format;
-/* 88 */                maxWidth = Math.max(this.formats[i].width, maxWidth);
-/* 89 */                maxHeight = Math.max(this.formats[i].height, maxHeight);
-/* 90 */                Extractor extractor = this.formats[i].mimeType.startsWith(MimeTypes.VIDEO_WEBM) ? new WebmExtractor() : new FragmentedMp4Extractor();
-/* 92 */                this.extractors.put(this.formats[i].f875id, extractor);
-/* 93 */                this.representations.put(this.formats[i].f875id, representations[i]);
-/* 94 */                DashSegmentIndex segmentIndex = representations[i].getIndex();
-/* 95 */                if (segmentIndex != null) {
-/* 96 */                    this.segmentIndexes.put(this.formats[i].f875id, segmentIndex);
+                this.formats[i] = representations[i].format;
+                maxWidth = Math.max(this.formats[i].width, maxWidth);
+                maxHeight = Math.max(this.formats[i].height, maxHeight);
+                Extractor extractor = this.formats[i].mimeType.startsWith(MimeTypes.VIDEO_WEBM) ? new WebmExtractor() : new FragmentedMp4Extractor();
+                this.extractors.put(this.formats[i].f875id, extractor);
+                this.representations.put(this.formats[i].f875id, representations[i]);
+                DashSegmentIndex segmentIndex = representations[i].getIndex();
+                if (segmentIndex != null) {
+                    this.segmentIndexes.put(this.formats[i].f875id, segmentIndex);
                         }
                     }
-/* 99 */            this.maxWidth = maxWidth;
-/* 100 */           this.maxHeight = maxHeight;
-/* 101 */           Arrays.sort(this.formats, new Format.DecreasingBandwidthComparator());
+            this.maxWidth = maxWidth;
+           this.maxHeight = maxHeight;
+           Arrays.sort(this.formats, new Format.DecreasingBandwidthComparator());
                 }
 
-                @Override // com.google.android.exoplayer.chunk.ChunkSource
-/* 105 */       public final void getMaxVideoDimensions(MediaFormat out) {
-/* 106 */           if (this.trackInfo.mimeType.startsWith(MimeTypes.BASE_TYPE_VIDEO)) {
-/* 107 */               out.setMaxVideoDimensions(this.maxWidth, this.maxHeight);
+                @Override 
+       public final void getMaxVideoDimensions(MediaFormat out) {
+           if (this.trackInfo.mimeType.startsWith(MimeTypes.BASE_TYPE_VIDEO)) {
+               out.setMaxVideoDimensions(this.maxWidth, this.maxHeight);
                     }
                 }
 
-                @Override // com.google.android.exoplayer.chunk.ChunkSource
-/* 112 */       public final TrackInfo getTrackInfo() {
-/* 113 */           return this.trackInfo;
+                @Override 
+       public final TrackInfo getTrackInfo() {
+           return this.trackInfo;
                 }
 
-                @Override // com.google.android.exoplayer.chunk.ChunkSource
-/* 117 */       public void enable() {
-/* 118 */           this.evaluator.enable();
+                @Override 
+       public void enable() {
+           this.evaluator.enable();
                 }
 
-                @Override // com.google.android.exoplayer.chunk.ChunkSource
-/* 122 */       public void disable(List<? extends MediaChunk> queue) {
-/* 123 */           this.evaluator.disable();
+                @Override 
+       public void disable(List<? extends MediaChunk> queue) {
+           this.evaluator.disable();
                 }
 
-                @Override // com.google.android.exoplayer.chunk.ChunkSource
-/* 128 */       public void continueBuffering(long playbackPositionUs) {
+                @Override 
+       public void continueBuffering(long playbackPositionUs) {
                 }
 
-                @Override // com.google.android.exoplayer.chunk.ChunkSource
-/* 133 */       public final void getChunkOperation(List<? extends MediaChunk> queue, long seekPositionUs, long playbackPositionUs, ChunkOperationHolder out) {
+                @Override 
+       public final void getChunkOperation(List<? extends MediaChunk> queue, long seekPositionUs, long playbackPositionUs, ChunkOperationHolder out) {
                     int nextSegmentNum;
-/* 134 */           this.evaluation.queueSize = queue.size();
-/* 135 */           if (this.evaluation.format == null || !this.lastChunkWasInitialization) {
-/* 136 */               this.evaluator.evaluate(queue, playbackPositionUs, this.formats, this.evaluation);
+           this.evaluation.queueSize = queue.size();
+           if (this.evaluation.format == null || !this.lastChunkWasInitialization) {
+               this.evaluator.evaluate(queue, playbackPositionUs, this.formats, this.evaluation);
                     }
-/* 138 */           Format selectedFormat = this.evaluation.format;
-/* 139 */           out.queueSize = this.evaluation.queueSize;
-/* 141 */           if (selectedFormat == null) {
-/* 142 */               out.chunk = null;
-/* 188 */               return;
+           Format selectedFormat = this.evaluation.format;
+           out.queueSize = this.evaluation.queueSize;
+           if (selectedFormat == null) {
+               out.chunk = null;
+               return;
                     }
-/* 144 */           if (out.queueSize != queue.size() || out.chunk == null || !out.chunk.format.f875id.equals(selectedFormat.f875id)) {
-/* 151 */               Representation selectedRepresentation = this.representations.get(selectedFormat.f875id);
-/* 152 */               Extractor extractor = this.extractors.get(selectedRepresentation.format.f875id);
-/* 154 */               RangedUri pendingInitializationUri = null;
-/* 155 */               RangedUri pendingIndexUri = null;
-/* 156 */               if (extractor.getFormat() == null) {
-/* 157 */                   pendingInitializationUri = selectedRepresentation.getInitializationUri();
+           if (out.queueSize != queue.size() || out.chunk == null || !out.chunk.format.f875id.equals(selectedFormat.f875id)) {
+               Representation selectedRepresentation = this.representations.get(selectedFormat.f875id);
+               Extractor extractor = this.extractors.get(selectedRepresentation.format.f875id);
+               RangedUri pendingInitializationUri = null;
+               RangedUri pendingIndexUri = null;
+               if (extractor.getFormat() == null) {
+                   pendingInitializationUri = selectedRepresentation.getInitializationUri();
                         }
-/* 159 */               if (!this.segmentIndexes.containsKey(selectedRepresentation.format.f875id)) {
-/* 160 */                   pendingIndexUri = selectedRepresentation.getIndexUri();
+               if (!this.segmentIndexes.containsKey(selectedRepresentation.format.f875id)) {
+                   pendingIndexUri = selectedRepresentation.getIndexUri();
                         }
-/* 162 */               if (pendingInitializationUri != null || pendingIndexUri != null) {
-/* 164 */                   Chunk initializationChunk = newInitializationChunk(pendingInitializationUri, pendingIndexUri, selectedRepresentation, extractor, this.dataSource, this.evaluation.trigger);
-/* 166 */                   this.lastChunkWasInitialization = true;
-/* 167 */                   out.chunk = initializationChunk;
-/* 188 */                   return;
+               if (pendingInitializationUri != null || pendingIndexUri != null) {
+                   Chunk initializationChunk = newInitializationChunk(pendingInitializationUri, pendingIndexUri, selectedRepresentation, extractor, this.dataSource, this.evaluation.trigger);
+                   this.lastChunkWasInitialization = true;
+                   out.chunk = initializationChunk;
+                   return;
                         }
-/* 172 */               DashSegmentIndex segmentIndex = this.segmentIndexes.get(selectedRepresentation.format.f875id);
-/* 173 */               if (queue.isEmpty()) {
-/* 174 */                   nextSegmentNum = segmentIndex.getSegmentNum(seekPositionUs);
+               DashSegmentIndex segmentIndex = this.segmentIndexes.get(selectedRepresentation.format.f875id);
+               if (queue.isEmpty()) {
+                   nextSegmentNum = segmentIndex.getSegmentNum(seekPositionUs);
                         } else {
-/* 176 */                   nextSegmentNum = queue.get(out.queueSize - 1).nextChunkIndex;
+                   nextSegmentNum = queue.get(out.queueSize - 1).nextChunkIndex;
                         }
-/* 179 */               if (nextSegmentNum == -1) {
-/* 180 */                   out.chunk = null;
-/* 188 */                   return;
+               if (nextSegmentNum == -1) {
+                   out.chunk = null;
+                   return;
                         }
-/* 184 */               Chunk nextMediaChunk = newMediaChunk(selectedRepresentation, segmentIndex, extractor, this.dataSource, nextSegmentNum, this.evaluation.trigger);
-/* 186 */               this.lastChunkWasInitialization = false;
-/* 187 */               out.chunk = nextMediaChunk;
+               Chunk nextMediaChunk = newMediaChunk(selectedRepresentation, segmentIndex, extractor, this.dataSource, nextSegmentNum, this.evaluation.trigger);
+               this.lastChunkWasInitialization = false;
+               out.chunk = nextMediaChunk;
                     }
                 }
 
-                @Override // com.google.android.exoplayer.chunk.ChunkSource
-/* 191 */       public IOException getError() {
-/* 192 */           return null;
+                @Override 
+       public IOException getError() {
+           return null;
                 }
 
-                @Override // com.google.android.exoplayer.chunk.ChunkSource
-/* 197 */       public void onChunkLoadError(Chunk chunk, Exception e) {
+                @Override 
+       public void onChunkLoadError(Chunk chunk, Exception e) {
                 }
 
-/* 202 */       private Chunk newInitializationChunk(RangedUri initializationUri, RangedUri indexUri, Representation representation, Extractor extractor, DataSource dataSource, int trigger) {
+       private Chunk newInitializationChunk(RangedUri initializationUri, RangedUri indexUri, Representation representation, Extractor extractor, DataSource dataSource, int trigger) {
                     RangedUri requestUri;
                     int expectedExtractorResult;
-/* 204 */           long indexAnchor = 0;
-/* 206 */           if (initializationUri != null) {
-/* 209 */               expectedExtractorResult = 2 | 8;
-/* 210 */               requestUri = initializationUri.attemptMerge(indexUri);
-/* 211 */               if (requestUri != null) {
-/* 212 */                   expectedExtractorResult |= 16;
-/* 213 */                   if (extractor.hasRelativeIndexOffsets()) {
-/* 214 */                       indexAnchor = indexUri.start + indexUri.length;
+           long indexAnchor = 0;
+           if (initializationUri != null) {
+               expectedExtractorResult = 2 | 8;
+               requestUri = initializationUri.attemptMerge(indexUri);
+               if (requestUri != null) {
+                   expectedExtractorResult |= 16;
+                   if (extractor.hasRelativeIndexOffsets()) {
+                       indexAnchor = indexUri.start + indexUri.length;
                             }
                         } else {
-/* 217 */                   requestUri = initializationUri;
+                   requestUri = initializationUri;
                         }
                     } else {
-/* 220 */               requestUri = indexUri;
-/* 221 */               if (extractor.hasRelativeIndexOffsets()) {
-/* 222 */                   indexAnchor = indexUri.start + indexUri.length;
+               requestUri = indexUri;
+               if (extractor.hasRelativeIndexOffsets()) {
+                   indexAnchor = indexUri.start + indexUri.length;
                         }
-/* 224 */               expectedExtractorResult = 2 | 16;
+               expectedExtractorResult = 2 | 16;
                     }
-/* 226 */           DataSpec dataSpec = new DataSpec(requestUri.getUri(), requestUri.start, requestUri.length, representation.getCacheKey());
-/* 228 */           return new InitializationLoadable(dataSource, dataSpec, trigger, representation.format, extractor, expectedExtractorResult, indexAnchor);
+           DataSpec dataSpec = new DataSpec(requestUri.getUri(), requestUri.start, requestUri.length, representation.getCacheKey());
+           return new InitializationLoadable(dataSource, dataSpec, trigger, representation.format, extractor, expectedExtractorResult, indexAnchor);
                 }
 
-/* 233 */       private Chunk newMediaChunk(Representation representation, DashSegmentIndex segmentIndex, Extractor extractor, DataSource dataSource, int segmentNum, int trigger) {
-/* 234 */           int lastSegmentNum = segmentIndex.getLastSegmentNum();
-/* 235 */           int nextSegmentNum = segmentNum == lastSegmentNum ? -1 : segmentNum + 1;
-/* 236 */           long startTimeUs = segmentIndex.getTimeUs(segmentNum);
-/* 237 */           long endTimeUs = segmentNum < lastSegmentNum ? segmentIndex.getTimeUs(segmentNum + 1) : startTimeUs + segmentIndex.getDurationUs(segmentNum);
-/* 239 */           RangedUri segmentUri = segmentIndex.getSegmentUrl(segmentNum);
-/* 240 */           DataSpec dataSpec = new DataSpec(segmentUri.getUri(), segmentUri.start, segmentUri.length, representation.getCacheKey());
-/* 242 */           return new Mp4MediaChunk(dataSource, dataSpec, representation.format, trigger, startTimeUs, endTimeUs, nextSegmentNum, extractor, false, 0L);
+       private Chunk newMediaChunk(Representation representation, DashSegmentIndex segmentIndex, Extractor extractor, DataSource dataSource, int segmentNum, int trigger) {
+           int lastSegmentNum = segmentIndex.getLastSegmentNum();
+           int nextSegmentNum = segmentNum == lastSegmentNum ? -1 : segmentNum + 1;
+           long startTimeUs = segmentIndex.getTimeUs(segmentNum);
+           long endTimeUs = segmentNum < lastSegmentNum ? segmentIndex.getTimeUs(segmentNum + 1) : startTimeUs + segmentIndex.getDurationUs(segmentNum);
+           RangedUri segmentUri = segmentIndex.getSegmentUrl(segmentNum);
+           DataSpec dataSpec = new DataSpec(segmentUri.getUri(), segmentUri.start, segmentUri.length, representation.getCacheKey());
+           return new Mp4MediaChunk(dataSource, dataSpec, representation.format, trigger, startTimeUs, endTimeUs, nextSegmentNum, extractor, false, 0L);
                 }
 
-/* 253 */       private class InitializationLoadable extends Chunk {
+       private class InitializationLoadable extends Chunk {
                     private final int expectedExtractorResult;
                     private final Extractor extractor;
                     private final long indexAnchor;
                     private final Uri uri;
 
-/* 254 */           public InitializationLoadable(DataSource dataSource, DataSpec dataSpec, int trigger, Format format, Extractor extractor, int expectedExtractorResult, long indexAnchor) {
-/* 256 */               super(dataSource, dataSpec, format, trigger);
-/* 257 */               this.extractor = extractor;
-/* 258 */               this.expectedExtractorResult = expectedExtractorResult;
-/* 259 */               this.indexAnchor = indexAnchor;
-/* 260 */               this.uri = dataSpec.uri;
+           public InitializationLoadable(DataSource dataSource, DataSpec dataSpec, int trigger, Format format, Extractor extractor, int expectedExtractorResult, long indexAnchor) {
+               super(dataSource, dataSpec, format, trigger);
+               this.extractor = extractor;
+               this.expectedExtractorResult = expectedExtractorResult;
+               this.indexAnchor = indexAnchor;
+               this.uri = dataSpec.uri;
                     }
 
-                    @Override // com.google.android.exoplayer.chunk.Chunk
-/* 264 */           protected void consumeStream(NonBlockingInputStream stream) throws IOException {
-/* 265 */               int result = this.extractor.read(stream, null);
-/* 266 */               if (result != this.expectedExtractorResult) {
-/* 267 */                   throw new ParserException("Invalid extractor result. Expected " + this.expectedExtractorResult + ", got " + result);
+                    @Override 
+           protected void consumeStream(NonBlockingInputStream stream) throws IOException {
+               int result = this.extractor.read(stream, null);
+               if (result != this.expectedExtractorResult) {
+                   throw new ParserException("Invalid extractor result. Expected " + this.expectedExtractorResult + ", got " + result);
                         }
-/* 270 */               if ((result & 16) != 0) {
-/* 271 */                   DashChunkSource.access$000(DashChunkSource.this).put(this.format.f875id, new DashWrappingSegmentIndex(this.extractor.getIndex(), this.uri, this.indexAnchor));
+               if ((result & 16) != 0) {
+                   DashChunkSource.access$000(DashChunkSource.this).put(this.format.f875id, new DashWrappingSegmentIndex(this.extractor.getIndex(), this.uri, this.indexAnchor));
                         }
                     }
                 }

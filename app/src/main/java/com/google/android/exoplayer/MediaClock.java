@@ -2,39 +2,39 @@
 
             import android.os.SystemClock;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 23 */    class MediaClock {
+            
+    class MediaClock {
                 private long deltaUs;
                 private boolean started;
                 private long timeUs;
 
-/* 24 */        MediaClock() {
+        MediaClock() {
                 }
 
-/* 43 */        public void start() {
-/* 44 */            if (!this.started) {
-/* 45 */                this.started = true;
-/* 46 */                this.deltaUs = elapsedRealtimeMinus(this.timeUs);
+        public void start() {
+            if (!this.started) {
+                this.started = true;
+                this.deltaUs = elapsedRealtimeMinus(this.timeUs);
                     }
                 }
 
-/* 53 */        public void stop() {
-/* 54 */            if (this.started) {
-/* 55 */                this.timeUs = elapsedRealtimeMinus(this.deltaUs);
-/* 56 */                this.started = false;
+        public void stop() {
+            if (this.started) {
+                this.timeUs = elapsedRealtimeMinus(this.deltaUs);
+                this.started = false;
                     }
                 }
 
-/* 63 */        public void setTimeUs(long timeUs) {
-/* 64 */            this.timeUs = timeUs;
-/* 65 */            this.deltaUs = elapsedRealtimeMinus(timeUs);
+        public void setTimeUs(long timeUs) {
+            this.timeUs = timeUs;
+            this.deltaUs = elapsedRealtimeMinus(timeUs);
                 }
 
-/* 71 */        public long getTimeUs() {
+        public long getTimeUs() {
                     return this.started ? elapsedRealtimeMinus(this.deltaUs) : this.timeUs;
                 }
 
-/* 75 */        private long elapsedRealtimeMinus(long microSeconds) {
-/* 76 */            return (SystemClock.elapsedRealtime() * 1000) - microSeconds;
+        private long elapsedRealtimeMinus(long microSeconds) {
+            return (SystemClock.elapsedRealtime() * 1000) - microSeconds;
                 }
             }

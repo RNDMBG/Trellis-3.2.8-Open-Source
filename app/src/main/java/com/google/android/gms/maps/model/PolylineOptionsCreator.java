@@ -6,11 +6,11 @@
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class PolylineOptionsCreator implements Parcelable.Creator<PolylineOptions> {
                 public static final int CONTENT_DESCRIPTION = 0;
 
-                /* JADX INFO: renamed from: a */
+                
                 static void m2287a(PolylineOptions polylineOptions, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, polylineOptions.getVersionCode());
@@ -23,8 +23,8 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // android.os.Parcelable.Creator
+                
+                @Override 
                 public PolylineOptions createFromParcel(Parcel parcel) {
                     float fM1108i = 0.0f;
                     boolean zM1102c = false;
@@ -70,8 +70,8 @@
                 }
 
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // android.os.Parcelable.Creator
+                
+                @Override 
                 public PolylineOptions[] newArray(int size) {
                     return new PolylineOptions[size];
                 }

@@ -23,8 +23,8 @@
             import java.util.HashMap;
             import java.util.HashSet;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 39 */    public class VineSuggestionsProvider extends ContentProvider {
+            
+    public class VineSuggestionsProvider extends ContentProvider {
                 public static final String AUTHORITY;
                 public static final String CONTENT_AUTHORITY;
                 private static final boolean LOGGABLE;
@@ -55,200 +55,200 @@
                 }
 
                 static {
-/* 41 */            LOGGABLE = BuildUtil.isLogsOn() || Log.isLoggable(TAG, 3);
-/* 44 */            AUTHORITY = BuildUtil.getAuthority(".provider.VineSuggestionsProvider");
-/* 45 */            CONTENT_AUTHORITY = "content://" + AUTHORITY + "/";
-/* 49 */            USERS_URI = Uri.parse(CONTENT_AUTHORITY + "users");
-/* 50 */            TAGS_URI = Uri.parse(CONTENT_AUTHORITY + "tags");
-/* 55 */            sUriMatcher = new UriMatcher(-1);
-/* 61 */            sUsersTypeAhead = new HashMap<>();
-/* 62 */            sTagsTypeAhead = new HashMap<>();
-/* 63 */            sUriMatcher.addURI(AUTHORITY, "users/#", 1);
-/* 64 */            sUriMatcher.addURI(AUTHORITY, "tags", 2);
+            LOGGABLE = BuildUtil.isLogsOn() || Log.isLoggable(TAG, 3);
+            AUTHORITY = BuildUtil.getAuthority(".provider.VineSuggestionsProvider");
+            CONTENT_AUTHORITY = "content://" + AUTHORITY + "/";
+            USERS_URI = Uri.parse(CONTENT_AUTHORITY + "users");
+            TAGS_URI = Uri.parse(CONTENT_AUTHORITY + "tags");
+            sUriMatcher = new UriMatcher(-1);
+            sUsersTypeAhead = new HashMap<>();
+            sTagsTypeAhead = new HashMap<>();
+            sUriMatcher.addURI(AUTHORITY, "users/#", 1);
+            sUriMatcher.addURI(AUTHORITY, "tags", 2);
                 }
 
-                @Override // android.content.ContentProvider
-/* 70 */        public boolean onCreate() {
-/* 71 */            this.mAppController = AppController.getInstance(getContext());
-/* 72 */            return true;
+                @Override 
+        public boolean onCreate() {
+            this.mAppController = AppController.getInstance(getContext());
+            return true;
                 }
 
-                @Override // android.content.ContentProvider
-/* 78 */        public Cursor query(Uri uri, String[] projection, String selection, String[] selArgs, String sortOrder) {
+                @Override 
+        public Cursor query(Uri uri, String[] projection, String selection, String[] selArgs, String sortOrder) {
                     SQLiteDatabase db;
                     try {
-/* 83 */                db = VineDatabaseHelper.getDatabaseHelper(getContext()).getReadableDatabase();
+                db = VineDatabaseHelper.getDatabaseHelper(getContext()).getReadableDatabase();
                     } catch (SQLiteException e) {
-/* 86 */                CrashUtil.logException(e, "Failed to get a readable database on query.", new Object[0]);
-/* 87 */                db = VineDatabaseHelper.getDatabaseHelper(getContext()).getWritableDatabase();
+                CrashUtil.logException(e, "Failed to get a readable database on query.", new Object[0]);
+                db = VineDatabaseHelper.getDatabaseHelper(getContext()).getWritableDatabase();
                     }
-/* 91 */            SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-/* 92 */            if (LOGGABLE) {
-/* 93 */                Log.d(TAG, "QUERY: uri " + uri + " -> " + sUriMatcher.match(uri));
+            SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+            if (LOGGABLE) {
+                Log.d(TAG, "QUERY: uri " + uri + " -> " + sUriMatcher.match(uri));
                     }
-/* 96 */            int match = sUriMatcher.match(uri);
+            int match = sUriMatcher.match(uri);
                     switch (match) {
                         case 1:
-/* 99 */                    long userId = Long.parseLong(uri.getLastPathSegment());
-/* 100 */                   Cursor c = getComposeUserSuggestions(selection, new MatrixCursor(UsersQuery.PROJECTION), userId);
-/* 117 */                   return c;
+                    long userId = Long.parseLong(uri.getLastPathSegment());
+                   Cursor c = getComposeUserSuggestions(selection, new MatrixCursor(UsersQuery.PROJECTION), userId);
+                   return c;
                         case 2:
-/* 104 */                   Cursor c2 = getComposeTagSuggestions(selection, new MatrixCursor(TagsQuery.PROJECTION));
-/* 117 */                   return c2;
+                   Cursor c2 = getComposeTagSuggestions(selection, new MatrixCursor(TagsQuery.PROJECTION));
+                   return c2;
                         default:
-/* 107 */                   qb.setTables("user_groups_view");
+                   qb.setTables("user_groups_view");
                             try {
-/* 79 */                        Cursor c3 = qb.query(db, projection, selection, selArgs, null, null, sortOrder);
-/* 116 */                       c3.setNotificationUri(getContext().getContentResolver(), uri);
-/* 117 */                       return c3;
+                        Cursor c3 = qb.query(db, projection, selection, selArgs, null, null, sortOrder);
+                       c3.setNotificationUri(getContext().getContentResolver(), uri);
+                       return c3;
                             } catch (Exception e2) {
-/* 119 */                       if (LOGGABLE) {
-/* 120 */                           SLog.m453d("Cannot execute {} {}  {} {} {} {}", (Object[]) new String[]{db.toString(), qb.getTables(), selection, null, sortOrder});
+                       if (LOGGABLE) {
+                           SLog.m453d("Cannot execute {} {}  {} {} {} {}", (Object[]) new String[]{db.toString(), qb.getTables(), selection, null, sortOrder});
                                 }
-/* 123 */                       throw new RuntimeException(e2);
+                       throw new RuntimeException(e2);
                             }
                     }
                 }
 
-                @Override // android.content.ContentProvider
-/* 128 */       public String getType(Uri uri) {
-/* 129 */           return null;
+                @Override 
+       public String getType(Uri uri) {
+           return null;
                 }
 
-                @Override // android.content.ContentProvider
-/* 133 */       public Uri insert(Uri uri, ContentValues values) {
-/* 134 */           return null;
+                @Override 
+       public Uri insert(Uri uri, ContentValues values) {
+           return null;
                 }
 
-                @Override // android.content.ContentProvider
-/* 138 */       public int delete(Uri uri, String selection, String[] selectionArgs) {
-/* 139 */           return 0;
+                @Override 
+       public int delete(Uri uri, String selection, String[] selectionArgs) {
+           return 0;
                 }
 
-                @Override // android.content.ContentProvider
-/* 143 */       public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-/* 144 */           return 0;
+                @Override 
+       public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+           return 0;
                 }
 
-/* 147 */       private Cursor getComposeUserSuggestions(String query, MatrixCursor cursor, long userId) {
+       private Cursor getComposeUserSuggestions(String query, MatrixCursor cursor, long userId) {
                     String selection;
                     String[] selectionArgs;
                     ArrayList<VineUser> users;
-/* 148 */           int id = 0;
-/* 149 */           int max = this.mAppController.getTypeaheadMaxCompose();
-/* 150 */           boolean haveQuery = !TextUtils.isEmpty(query);
-/* 151 */           ContentResolver resolver = getContext().getContentResolver();
-/* 152 */           Uri uri = ContentUris.withAppendedId(Vine.UserGroupsView.CONTENT_URI_ALL_FOLLOW, userId);
-/* 156 */           if (haveQuery) {
-/* 157 */               selection = "username LIKE ?";
-/* 158 */               selectionArgs = new String[]{query + "%"};
+           int id = 0;
+           int max = this.mAppController.getTypeaheadMaxCompose();
+           boolean haveQuery = !TextUtils.isEmpty(query);
+           ContentResolver resolver = getContext().getContentResolver();
+           Uri uri = ContentUris.withAppendedId(Vine.UserGroupsView.CONTENT_URI_ALL_FOLLOW, userId);
+           if (haveQuery) {
+               selection = "username LIKE ?";
+               selectionArgs = new String[]{query + "%"};
                     } else {
-/* 160 */               selection = null;
-/* 161 */               selectionArgs = null;
+               selection = null;
+               selectionArgs = null;
                     }
-/* 164 */           Cursor c = resolver.query(uri, UsersQuery.PROJECTION, selection, selectionArgs, Vine.UserGroupsView.SORT_ORDER_DEFINED_DESCENDING);
-/* 167 */           HashSet<Long> prefetchIds = new HashSet<>();
-/* 168 */           if (c != null) {
-/* 169 */               while (c.moveToNext()) {
-/* 170 */                   if (!prefetchIds.contains(Long.valueOf(c.getLong(1)))) {
-/* 171 */                       if (id > max) {
+           Cursor c = resolver.query(uri, UsersQuery.PROJECTION, selection, selectionArgs, Vine.UserGroupsView.SORT_ORDER_DEFINED_DESCENDING);
+           HashSet<Long> prefetchIds = new HashSet<>();
+           if (c != null) {
+               while (c.moveToNext()) {
+                   if (!prefetchIds.contains(Long.valueOf(c.getLong(1)))) {
+                       if (id > max) {
                                     break;
                                 }
-/* 174 */                       MatrixCursor.RowBuilder rowBuilder = cursor.newRow();
+                       MatrixCursor.RowBuilder rowBuilder = cursor.newRow();
                                 rowBuilder.add(Integer.valueOf(id));
-/* 176 */                       rowBuilder.add(Long.valueOf(c.getLong(1)));
-/* 177 */                       rowBuilder.add(c.getString(2));
-/* 178 */                       rowBuilder.add(c.getString(3));
-/* 179 */                       prefetchIds.add(Long.valueOf(c.getLong(1)));
-/* 175 */                       id++;
+                       rowBuilder.add(Long.valueOf(c.getLong(1)));
+                       rowBuilder.add(c.getString(2));
+                       rowBuilder.add(c.getString(3));
+                       prefetchIds.add(Long.valueOf(c.getLong(1)));
+                       id++;
                             }
                         }
-/* 182 */               c.close();
+               c.close();
                     }
-/* 185 */           if (haveQuery && id <= max && (users = getRealtimeUserSuggestions(query)) != null) {
+           if (haveQuery && id <= max && (users = getRealtimeUserSuggestions(query)) != null) {
                         for (VineUser user : users) {
-/* 189 */                   if (!prefetchIds.contains(Long.valueOf(user.userId))) {
-/* 190 */                       if (id > max) {
+                   if (!prefetchIds.contains(Long.valueOf(user.userId))) {
+                       if (id > max) {
                                     break;
                                 }
-/* 193 */                       MatrixCursor.RowBuilder rowBuilder2 = cursor.newRow();
+                       MatrixCursor.RowBuilder rowBuilder2 = cursor.newRow();
                                 rowBuilder2.add(Integer.valueOf(id));
-/* 195 */                       rowBuilder2.add(Long.valueOf(user.userId));
-/* 196 */                       rowBuilder2.add(user.username);
-/* 197 */                       rowBuilder2.add(user.avatarUrl);
-/* 194 */                       id++;
+                       rowBuilder2.add(Long.valueOf(user.userId));
+                       rowBuilder2.add(user.username);
+                       rowBuilder2.add(user.avatarUrl);
+                       id++;
                             }
                         }
                     }
-/* 202 */           return cursor;
+           return cursor;
                 }
 
-/* 205 */       private Cursor getComposeTagSuggestions(String query, MatrixCursor cursor) {
+       private Cursor getComposeTagSuggestions(String query, MatrixCursor cursor) {
                     String selection;
                     String[] selectionArgs;
                     ArrayList<VineTag> tags;
-/* 206 */           int id = 0;
-/* 207 */           int max = this.mAppController.getTypeaheadMaxCompose();
-/* 208 */           boolean haveQuery = !TextUtils.isEmpty(query);
-/* 209 */           ContentResolver resolver = getContext().getContentResolver();
-/* 210 */           Uri uri = Vine.TagsRecentlyUsed.CONTENT_URI;
-/* 214 */           if (haveQuery) {
-/* 215 */               selection = "tag_name LIKE ?";
-/* 216 */               selectionArgs = new String[]{query + "%"};
+           int id = 0;
+           int max = this.mAppController.getTypeaheadMaxCompose();
+           boolean haveQuery = !TextUtils.isEmpty(query);
+           ContentResolver resolver = getContext().getContentResolver();
+           Uri uri = Vine.TagsRecentlyUsed.CONTENT_URI;
+           if (haveQuery) {
+               selection = "tag_name LIKE ?";
+               selectionArgs = new String[]{query + "%"};
                     } else {
-/* 218 */               selection = null;
-/* 219 */               selectionArgs = null;
+               selection = null;
+               selectionArgs = null;
                     }
-/* 222 */           Cursor c = resolver.query(uri, VineDatabaseSQL.TagsRecentlyUsedQuery.PROJECTION, selection, selectionArgs, Vine.TagsRecentlyUsed.SORT_ORDER_NEWEST_FIRST);
-/* 225 */           HashSet<Long> prefetchIds = new HashSet<>();
-/* 226 */           if (c != null) {
-/* 227 */               while (c.moveToNext()) {
-/* 228 */                   if (!prefetchIds.contains(Long.valueOf(c.getLong(1)))) {
-/* 229 */                       if (id > max) {
+           Cursor c = resolver.query(uri, VineDatabaseSQL.TagsRecentlyUsedQuery.PROJECTION, selection, selectionArgs, Vine.TagsRecentlyUsed.SORT_ORDER_NEWEST_FIRST);
+           HashSet<Long> prefetchIds = new HashSet<>();
+           if (c != null) {
+               while (c.moveToNext()) {
+                   if (!prefetchIds.contains(Long.valueOf(c.getLong(1)))) {
+                       if (id > max) {
                                     break;
                                 }
-/* 232 */                       MatrixCursor.RowBuilder rowBuilder = cursor.newRow();
+                       MatrixCursor.RowBuilder rowBuilder = cursor.newRow();
                                 rowBuilder.add(Integer.valueOf(id));
-/* 234 */                       rowBuilder.add(Long.valueOf(c.getLong(1)));
-/* 235 */                       rowBuilder.add(c.getString(2));
-/* 236 */                       prefetchIds.add(Long.valueOf(c.getLong(1)));
-/* 233 */                       id++;
+                       rowBuilder.add(Long.valueOf(c.getLong(1)));
+                       rowBuilder.add(c.getString(2));
+                       prefetchIds.add(Long.valueOf(c.getLong(1)));
+                       id++;
                             }
                         }
-/* 239 */               c.close();
+               c.close();
                     }
-/* 242 */           if (haveQuery && id <= max && (tags = getRealtimeTagSuggestions(query)) != null) {
+           if (haveQuery && id <= max && (tags = getRealtimeTagSuggestions(query)) != null) {
                         for (VineTag tag : tags) {
-/* 246 */                   if (!prefetchIds.contains(Long.valueOf(tag.tagId))) {
-/* 247 */                       if (id > max) {
+                   if (!prefetchIds.contains(Long.valueOf(tag.tagId))) {
+                       if (id > max) {
                                     break;
                                 }
-/* 250 */                       MatrixCursor.RowBuilder rowBuilder2 = cursor.newRow();
+                       MatrixCursor.RowBuilder rowBuilder2 = cursor.newRow();
                                 rowBuilder2.add(Integer.valueOf(id));
-/* 252 */                       rowBuilder2.add(Long.valueOf(tag.tagId));
-/* 253 */                       rowBuilder2.add(tag.tagName);
-/* 251 */                       id++;
+                       rowBuilder2.add(Long.valueOf(tag.tagId));
+                       rowBuilder2.add(tag.tagName);
+                       id++;
                             }
                         }
                     }
-/* 258 */           return cursor;
+           return cursor;
                 }
 
-/* 261 */       public static void addRealtimeUserSuggestions(String query, ArrayList<VineUser> users) {
+       public static void addRealtimeUserSuggestions(String query, ArrayList<VineUser> users) {
                     synchronized (sUsersTypeAhead) {
                         try {
-/* 263 */                   sUsersTypeAhead.put(query, users);
+                   sUsersTypeAhead.put(query, users);
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
                 }
 
-/* 267 */       public static ArrayList<VineUser> getRealtimeUserSuggestions(String query) {
+       public static ArrayList<VineUser> getRealtimeUserSuggestions(String query) {
                     ArrayList<VineUser> arrayList;
                     synchronized (sUsersTypeAhead) {
                         try {
-/* 269 */                   arrayList = sUsersTypeAhead.get(query);
+                   arrayList = sUsersTypeAhead.get(query);
                         } catch (Throwable th) {
                             throw th;
                         }
@@ -256,31 +256,31 @@
                     return arrayList;
                 }
 
-/* 273 */       public static void clearRealtimeUserSuggestions() {
+       public static void clearRealtimeUserSuggestions() {
                     synchronized (sUsersTypeAhead) {
                         try {
-/* 275 */                   sUsersTypeAhead.clear();
+                   sUsersTypeAhead.clear();
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
                 }
 
-/* 279 */       public static void addRealtimeTagSuggestions(String query, ArrayList<VineTag> tags) {
+       public static void addRealtimeTagSuggestions(String query, ArrayList<VineTag> tags) {
                     synchronized (sTagsTypeAhead) {
                         try {
-/* 281 */                   sTagsTypeAhead.put(query, tags);
+                   sTagsTypeAhead.put(query, tags);
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
                 }
 
-/* 285 */       public static ArrayList<VineTag> getRealtimeTagSuggestions(String query) {
+       public static ArrayList<VineTag> getRealtimeTagSuggestions(String query) {
                     ArrayList<VineTag> arrayList;
                     synchronized (sTagsTypeAhead) {
                         try {
-/* 287 */                   arrayList = sTagsTypeAhead.get(query);
+                   arrayList = sTagsTypeAhead.get(query);
                         } catch (Throwable th) {
                             throw th;
                         }
@@ -288,10 +288,10 @@
                     return arrayList;
                 }
 
-/* 291 */       public static void clearRealtimeTagSuggestions() {
+       public static void clearRealtimeTagSuggestions() {
                     synchronized (sTagsTypeAhead) {
                         try {
-/* 293 */                   sTagsTypeAhead.clear();
+                   sTagsTypeAhead.clear();
                         } catch (Throwable th) {
                             throw th;
                         }

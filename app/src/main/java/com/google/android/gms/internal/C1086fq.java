@@ -15,178 +15,178 @@
             import java.util.List;
             import java.util.Set;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.fq */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C1086fq extends AbstractC1038dw implements SafeParcelable, ItemScope {
                 public static final C1087fr CREATOR = new C1087fr();
 
-                /* JADX INFO: renamed from: rH */
+                
                 private static final HashMap<String, AbstractC1038dw.a<?, ?>> f1952rH = new HashMap<>();
 
-                /* JADX INFO: renamed from: hN */
+                
                 private String f1953hN;
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f1954iM;
                 private String mName;
 
-                /* JADX INFO: renamed from: mo */
+                
                 private String f1955mo;
 
-                /* JADX INFO: renamed from: oE */
+                
                 private double f1956oE;
 
-                /* JADX INFO: renamed from: oF */
+                
                 private double f1957oF;
 
-                /* JADX INFO: renamed from: rI */
+                
                 private final Set<Integer> f1958rI;
 
-                /* JADX INFO: renamed from: rJ */
+                
                 private C1086fq f1959rJ;
 
-                /* JADX INFO: renamed from: rK */
+                
                 private List<String> f1960rK;
 
-                /* JADX INFO: renamed from: rL */
+                
                 private C1086fq f1961rL;
 
-                /* JADX INFO: renamed from: rM */
+                
                 private String f1962rM;
 
-                /* JADX INFO: renamed from: rN */
+                
                 private String f1963rN;
 
-                /* JADX INFO: renamed from: rO */
+                
                 private String f1964rO;
 
-                /* JADX INFO: renamed from: rP */
+                
                 private List<C1086fq> f1965rP;
 
-                /* JADX INFO: renamed from: rQ */
+                
                 private int f1966rQ;
 
-                /* JADX INFO: renamed from: rR */
+                
                 private List<C1086fq> f1967rR;
 
-                /* JADX INFO: renamed from: rS */
+                
                 private C1086fq f1968rS;
 
-                /* JADX INFO: renamed from: rT */
+                
                 private List<C1086fq> f1969rT;
 
-                /* JADX INFO: renamed from: rU */
+                
                 private String f1970rU;
 
-                /* JADX INFO: renamed from: rV */
+                
                 private String f1971rV;
 
-                /* JADX INFO: renamed from: rW */
+                
                 private C1086fq f1972rW;
 
-                /* JADX INFO: renamed from: rX */
+                
                 private String f1973rX;
 
-                /* JADX INFO: renamed from: rY */
+                
                 private String f1974rY;
 
-                /* JADX INFO: renamed from: rZ */
+                
                 private String f1975rZ;
 
-                /* JADX INFO: renamed from: sA */
+                
                 private C1086fq f1976sA;
 
-                /* JADX INFO: renamed from: sB */
+                
                 private String f1977sB;
 
-                /* JADX INFO: renamed from: sC */
+                
                 private String f1978sC;
 
-                /* JADX INFO: renamed from: sD */
+                
                 private String f1979sD;
 
-                /* JADX INFO: renamed from: sE */
+                
                 private String f1980sE;
 
-                /* JADX INFO: renamed from: sF */
+                
                 private String f1981sF;
 
-                /* JADX INFO: renamed from: sa */
+                
                 private List<C1086fq> f1982sa;
 
-                /* JADX INFO: renamed from: sb */
+                
                 private String f1983sb;
 
-                /* JADX INFO: renamed from: sc */
+                
                 private String f1984sc;
 
-                /* JADX INFO: renamed from: sd */
+                
                 private String f1985sd;
 
-                /* JADX INFO: renamed from: se */
+                
                 private String f1986se;
 
-                /* JADX INFO: renamed from: sf */
+                
                 private String f1987sf;
 
-                /* JADX INFO: renamed from: sg */
+                
                 private String f1988sg;
 
-                /* JADX INFO: renamed from: sh */
+                
                 private String f1989sh;
 
-                /* JADX INFO: renamed from: si */
+                
                 private String f1990si;
 
-                /* JADX INFO: renamed from: sj */
+                
                 private C1086fq f1991sj;
 
-                /* JADX INFO: renamed from: sk */
+                
                 private String f1992sk;
 
-                /* JADX INFO: renamed from: sl */
+                
                 private String f1993sl;
 
-                /* JADX INFO: renamed from: sm */
+                
                 private String f1994sm;
 
-                /* JADX INFO: renamed from: sn */
+                
                 private String f1995sn;
 
-                /* JADX INFO: renamed from: so */
+                
                 private C1086fq f1996so;
 
-                /* JADX INFO: renamed from: sp */
+                
                 private C1086fq f1997sp;
 
-                /* JADX INFO: renamed from: sq */
+                
                 private C1086fq f1998sq;
 
-                /* JADX INFO: renamed from: sr */
+                
                 private List<C1086fq> f1999sr;
 
-                /* JADX INFO: renamed from: ss */
+                
                 private String f2000ss;
 
-                /* JADX INFO: renamed from: st */
+                
                 private String f2001st;
 
-                /* JADX INFO: renamed from: su */
+                
                 private String f2002su;
 
-                /* JADX INFO: renamed from: sv */
+                
                 private String f2003sv;
 
-                /* JADX INFO: renamed from: sw */
+                
                 private C1086fq f2004sw;
 
-                /* JADX INFO: renamed from: sx */
+                
                 private String f2005sx;
 
-                /* JADX INFO: renamed from: sy */
+                
                 private String f2006sy;
 
-                /* JADX INFO: renamed from: sz */
+                
                 private String f2007sz;
 
                 static {
@@ -369,26 +369,26 @@
                     this.f1981sF = str35;
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: D */
+                @Override 
+                
                 protected Object mo1641D(String str) {
                     return null;
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: E */
+                @Override 
+                
                 protected boolean mo1642E(String str) {
                     return false;
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: a */
+                @Override 
+                
                 protected boolean mo1646a(AbstractC1038dw.a aVar) {
                     return this.f1958rI.contains(Integer.valueOf(aVar.m1669bw()));
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: b */
+                @Override 
+                
                 protected Object mo1647b(AbstractC1038dw.a aVar) {
                     switch (aVar.m1669bw()) {
                         case 2:
@@ -505,99 +505,99 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC1038dw
-                /* JADX INFO: renamed from: bp */
+                @Override 
+                
                 public HashMap<String, AbstractC1038dw.a<?, ?>> mo1648bp() {
                     return f1952rH;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     C1087fr c1087fr = CREATOR;
                     return 0;
                 }
 
-                /* JADX INFO: renamed from: di */
+                
                 Set<Integer> m1997di() {
                     return this.f1958rI;
                 }
 
-                /* JADX INFO: renamed from: dj */
+                
                 C1086fq m1998dj() {
                     return this.f1959rJ;
                 }
 
-                /* JADX INFO: renamed from: dk */
+                
                 C1086fq m1999dk() {
                     return this.f1961rL;
                 }
 
-                /* JADX INFO: renamed from: dl */
+                
                 List<C1086fq> m2000dl() {
                     return this.f1965rP;
                 }
 
-                /* JADX INFO: renamed from: dm */
+                
                 List<C1086fq> m2001dm() {
                     return this.f1967rR;
                 }
 
-                /* JADX INFO: renamed from: dn */
+                
                 C1086fq m2002dn() {
                     return this.f1968rS;
                 }
 
-                /* JADX INFO: renamed from: do */
+                
                 List<C1086fq> m2003do() {
                     return this.f1969rT;
                 }
 
-                /* JADX INFO: renamed from: dp */
+                
                 C1086fq m2004dp() {
                     return this.f1972rW;
                 }
 
-                /* JADX INFO: renamed from: dq */
+                
                 List<C1086fq> m2005dq() {
                     return this.f1982sa;
                 }
 
-                /* JADX INFO: renamed from: dr */
+                
                 C1086fq m2006dr() {
                     return this.f1991sj;
                 }
 
-                /* JADX INFO: renamed from: ds */
+                
                 C1086fq m2007ds() {
                     return this.f1996so;
                 }
 
-                /* JADX INFO: renamed from: dt */
+                
                 C1086fq m2008dt() {
                     return this.f1997sp;
                 }
 
-                /* JADX INFO: renamed from: du */
+                
                 C1086fq m2009du() {
                     return this.f1998sq;
                 }
 
-                /* JADX INFO: renamed from: dv */
+                
                 List<C1086fq> m2010dv() {
                     return this.f1999sr;
                 }
 
-                /* JADX INFO: renamed from: dw */
+                
                 C1086fq m2011dw() {
                     return this.f2004sw;
                 }
 
-                /* JADX INFO: renamed from: dx */
+                
                 C1086fq m2012dx() {
                     return this.f1976sA;
                 }
 
-                /* JADX INFO: renamed from: dy */
+                
                 public C1086fq m2013dy() {
                     return this;
                 }
@@ -623,267 +623,267 @@
                     return true;
                 }
 
-                @Override // com.google.android.gms.common.data.Freezable
-                public /* synthetic */ ItemScope freeze() {
+                @Override 
+                public  ItemScope freeze() {
                     return m2013dy();
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getAbout() {
                     return this.f1959rJ;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public List<String> getAdditionalName() {
                     return this.f1960rK;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getAddress() {
                     return this.f1961rL;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getAddressCountry() {
                     return this.f1962rM;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getAddressLocality() {
                     return this.f1963rN;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getAddressRegion() {
                     return this.f1964rO;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public List<ItemScope> getAssociated_media() {
                     return (ArrayList) this.f1965rP;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public int getAttendeeCount() {
                     return this.f1966rQ;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public List<ItemScope> getAttendees() {
                     return (ArrayList) this.f1967rR;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getAudio() {
                     return this.f1968rS;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public List<ItemScope> getAuthor() {
                     return (ArrayList) this.f1969rT;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getBestRating() {
                     return this.f1970rU;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getBirthDate() {
                     return this.f1971rV;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getByArtist() {
                     return this.f1972rW;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getCaption() {
                     return this.f1973rX;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getContentSize() {
                     return this.f1974rY;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getContentUrl() {
                     return this.f1975rZ;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public List<ItemScope> getContributor() {
                     return (ArrayList) this.f1982sa;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getDateCreated() {
                     return this.f1983sb;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getDateModified() {
                     return this.f1984sc;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getDatePublished() {
                     return this.f1985sd;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getDescription() {
                     return this.f1955mo;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getDuration() {
                     return this.f1986se;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getEmbedUrl() {
                     return this.f1987sf;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getEndDate() {
                     return this.f1988sg;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getFamilyName() {
                     return this.f1989sh;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getGender() {
                     return this.f1990si;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getGeo() {
                     return this.f1991sj;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getGivenName() {
                     return this.f1992sk;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getHeight() {
                     return this.f1993sl;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getId() {
                     return this.f1994sm;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getImage() {
                     return this.f1995sn;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getInAlbum() {
                     return this.f1996so;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public double getLatitude() {
                     return this.f1956oE;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getLocation() {
                     return this.f1997sp;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public double getLongitude() {
                     return this.f1957oF;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getName() {
                     return this.mName;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getPartOfTVSeries() {
                     return this.f1998sq;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public List<ItemScope> getPerformers() {
                     return (ArrayList) this.f1999sr;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getPlayerType() {
                     return this.f2000ss;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getPostOfficeBoxNumber() {
                     return this.f2001st;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getPostalCode() {
                     return this.f2002su;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getRatingValue() {
                     return this.f2003sv;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getReviewRating() {
                     return this.f2004sw;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getStartDate() {
                     return this.f2005sx;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getStreetAddress() {
                     return this.f2006sy;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getText() {
                     return this.f2007sz;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public ItemScope getThumbnail() {
                     return this.f1976sA;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getThumbnailUrl() {
                     return this.f1977sB;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getTickerSymbol() {
                     return this.f1978sC;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getType() {
                     return this.f1979sD;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getUrl() {
                     return this.f1953hN;
                 }
@@ -892,282 +892,282 @@
                     return this.f1954iM;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getWidth() {
                     return this.f1980sE;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public String getWorstRating() {
                     return this.f1981sF;
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAbout() {
                     return this.f1958rI.contains(2);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAdditionalName() {
                     return this.f1958rI.contains(3);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAddress() {
                     return this.f1958rI.contains(4);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAddressCountry() {
                     return this.f1958rI.contains(5);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAddressLocality() {
                     return this.f1958rI.contains(6);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAddressRegion() {
                     return this.f1958rI.contains(7);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAssociated_media() {
                     return this.f1958rI.contains(8);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAttendeeCount() {
                     return this.f1958rI.contains(9);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAttendees() {
                     return this.f1958rI.contains(10);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAudio() {
                     return this.f1958rI.contains(11);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasAuthor() {
                     return this.f1958rI.contains(12);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasBestRating() {
                     return this.f1958rI.contains(13);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasBirthDate() {
                     return this.f1958rI.contains(14);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasByArtist() {
                     return this.f1958rI.contains(15);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasCaption() {
                     return this.f1958rI.contains(16);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasContentSize() {
                     return this.f1958rI.contains(17);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasContentUrl() {
                     return this.f1958rI.contains(18);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasContributor() {
                     return this.f1958rI.contains(19);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasDateCreated() {
                     return this.f1958rI.contains(20);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasDateModified() {
                     return this.f1958rI.contains(21);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasDatePublished() {
                     return this.f1958rI.contains(22);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasDescription() {
                     return this.f1958rI.contains(23);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasDuration() {
                     return this.f1958rI.contains(24);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasEmbedUrl() {
                     return this.f1958rI.contains(25);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasEndDate() {
                     return this.f1958rI.contains(26);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasFamilyName() {
                     return this.f1958rI.contains(27);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasGender() {
                     return this.f1958rI.contains(28);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasGeo() {
                     return this.f1958rI.contains(29);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasGivenName() {
                     return this.f1958rI.contains(30);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasHeight() {
                     return this.f1958rI.contains(31);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasId() {
                     return this.f1958rI.contains(32);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasImage() {
                     return this.f1958rI.contains(33);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasInAlbum() {
                     return this.f1958rI.contains(34);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasLatitude() {
                     return this.f1958rI.contains(36);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasLocation() {
                     return this.f1958rI.contains(37);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasLongitude() {
                     return this.f1958rI.contains(38);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasName() {
                     return this.f1958rI.contains(39);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasPartOfTVSeries() {
                     return this.f1958rI.contains(40);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasPerformers() {
                     return this.f1958rI.contains(41);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasPlayerType() {
                     return this.f1958rI.contains(42);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasPostOfficeBoxNumber() {
                     return this.f1958rI.contains(43);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasPostalCode() {
                     return this.f1958rI.contains(44);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasRatingValue() {
                     return this.f1958rI.contains(45);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasReviewRating() {
                     return this.f1958rI.contains(46);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasStartDate() {
                     return this.f1958rI.contains(47);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasStreetAddress() {
                     return this.f1958rI.contains(48);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasText() {
                     return this.f1958rI.contains(49);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasThumbnail() {
                     return this.f1958rI.contains(50);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasThumbnailUrl() {
                     return this.f1958rI.contains(51);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasTickerSymbol() {
                     return this.f1958rI.contains(52);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasType() {
                     return this.f1958rI.contains(53);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasUrl() {
                     return this.f1958rI.contains(54);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasWidth() {
                     return this.f1958rI.contains(55);
                 }
 
-                @Override // com.google.android.gms.plus.model.moments.ItemScope
+                @Override 
                 public boolean hasWorstRating() {
                     return this.f1958rI.contains(56);
                 }
@@ -1189,12 +1189,12 @@
                     }
                 }
 
-                @Override // com.google.android.gms.common.data.Freezable
+                @Override 
                 public boolean isDataValid() {
                     return true;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C1087fr c1087fr = CREATOR;
                     C1087fr.m2014a(this, out, flags);

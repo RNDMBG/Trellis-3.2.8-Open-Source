@@ -21,8 +21,8 @@
             import java.util.ArrayList;
             import java.util.HashMap;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 60 */    public class UsersMemoryAdapter extends BaseAdapter {
+            
+    public class UsersMemoryAdapter extends BaseAdapter {
                 protected final AppController mAppController;
                 protected final Context mContext;
                 private boolean mFollow;
@@ -33,164 +33,164 @@
                 protected ArrayList<VineUser> mUsers;
                 protected final ArrayList<WeakReference<UserViewHolder>> mViewHolders = new ArrayList<>();
 
-/* 61 */        public UsersMemoryAdapter(Context context, AppController appController, boolean follow, View.OnClickListener listener, Friendships friendships) {
-/* 63 */            this.mContext = context;
-/* 64 */            this.mAppController = appController;
-/* 65 */            this.mLoggedInUserId = appController.getActiveId();
-/* 66 */            this.mFollow = follow;
-/* 67 */            this.mListener = listener;
-/* 68 */            this.mFriendships = friendships;
-/* 70 */            this.mProfileImageSize = context.getResources().getDimensionPixelOffset(C0257R.dimen.user_image_size);
+        public UsersMemoryAdapter(Context context, AppController appController, boolean follow, View.OnClickListener listener, Friendships friendships) {
+            this.mContext = context;
+            this.mAppController = appController;
+            this.mLoggedInUserId = appController.getActiveId();
+            this.mFollow = follow;
+            this.mListener = listener;
+            this.mFriendships = friendships;
+            this.mProfileImageSize = context.getResources().getDimensionPixelOffset(C0257R.dimen.user_image_size);
                 }
 
-                @Override // android.widget.Adapter
+                @Override 
                 @Nullable
-/* 76 */        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) {
                     View view;
-/* 77 */            if (convertView == null) {
-/* 78 */                view = newView(position, parent);
+            if (convertView == null) {
+                view = newView(position, parent);
                     } else {
-/* 80 */                view = convertView;
+                view = convertView;
                     }
-/* 82 */            bindView(view, position);
-/* 83 */            return view;
+            bindView(view, position);
+            return view;
                 }
 
-/* 86 */        public View newView(int position, ViewGroup parent) {
-/* 87 */            LayoutInflater layoutInflater = LayoutInflater.from(this.mContext);
-/* 88 */            View v = layoutInflater.inflate(C0257R.layout.user_row_view, parent, false);
-/* 90 */            UserViewHolder holder = new UserViewHolder(v);
-/* 92 */            if (this.mFollow) {
-/* 93 */                holder.followButton.setOnClickListener(this.mListener);
+        public View newView(int position, ViewGroup parent) {
+            LayoutInflater layoutInflater = LayoutInflater.from(this.mContext);
+            View v = layoutInflater.inflate(C0257R.layout.user_row_view, parent, false);
+            UserViewHolder holder = new UserViewHolder(v);
+            if (this.mFollow) {
+                holder.followButton.setOnClickListener(this.mListener);
                     } else {
-/* 95 */                holder.followButton.setVisibility(8);
+                holder.followButton.setVisibility(8);
                     }
-/* 98 */            this.mViewHolders.add(new WeakReference<>(holder));
-/* 99 */            v.setTag(holder);
-/* 100 */           return v;
+            this.mViewHolders.add(new WeakReference<>(holder));
+            v.setTag(holder);
+           return v;
                 }
 
-/* 103 */       public void bindView(View view, int position) {
+       public void bindView(View view, int position) {
                     boolean following;
-/* 104 */           VineUser user = this.mUsers.get(position);
-/* 106 */           UserViewHolder holder = (UserViewHolder) view.getTag();
-/* 107 */           holder.username.setText(user.username);
-/* 108 */           holder.userId = user.userId;
-/* 110 */           if (user.verified == 1) {
-/* 111 */               holder.verified.setVisibility(0);
+           VineUser user = this.mUsers.get(position);
+           UserViewHolder holder = (UserViewHolder) view.getTag();
+           holder.username.setText(user.username);
+           holder.userId = user.userId;
+           if (user.verified == 1) {
+               holder.verified.setVisibility(0);
                     } else {
-/* 113 */               holder.verified.setVisibility(8);
+               holder.verified.setVisibility(8);
                     }
-/* 117 */           ImageButton followButton = holder.followButton;
-/* 118 */           if (followButton != null) {
-/* 119 */               if (this.mFollow && holder.userId != this.mAppController.getActiveId()) {
-/* 120 */                   followButton.setVisibility(0);
-/* 122 */                   Friendships friendships = this.mFriendships;
-/* 123 */                   long userId = user.userId;
-/* 125 */                   if (friendships != null && friendships.contains(userId)) {
-/* 127 */                       following = friendships.isFollowing(userId);
+           ImageButton followButton = holder.followButton;
+           if (followButton != null) {
+               if (this.mFollow && holder.userId != this.mAppController.getActiveId()) {
+                   followButton.setVisibility(0);
+                   Friendships friendships = this.mFriendships;
+                   long userId = user.userId;
+                   if (friendships != null && friendships.contains(userId)) {
+                       following = friendships.isFollowing(userId);
                             } else {
-/* 129 */                       following = user.isFollowing();
+                       following = user.isFollowing();
                             }
-/* 135 */                   followButton.setTag(new FollowButtonViewHolder(userId, following));
-/* 137 */                   if (following) {
-/* 138 */                       followButton.setBackgroundResource(C0257R.drawable.btn_following_default);
+                   followButton.setTag(new FollowButtonViewHolder(userId, following));
+                   if (following) {
+                       followButton.setBackgroundResource(C0257R.drawable.btn_following_default);
                             } else {
-/* 140 */                       followButton.setBackgroundResource(C0257R.drawable.btn_follow_default);
+                       followButton.setBackgroundResource(C0257R.drawable.btn_follow_default);
                             }
                         } else {
-/* 143 */                   followButton.setVisibility(8);
+                   followButton.setVisibility(8);
                         }
                     }
-/* 147 */           String url = user.avatarUrl;
-/* 148 */           if (!TextUtils.isEmpty(url)) {
-/* 149 */               ImageKey key = new ImageKey(url, this.mProfileImageSize, this.mProfileImageSize, true);
-/* 150 */               if (Util.isDefaultAvatarUrl(url)) {
-/* 151 */                   Util.safeSetDefaultAvatar(holder.image, Util.ProfileImageSize.MEDIUM, (-16777216) | this.mContext.getResources().getColor(C0257R.color.vine_green));
-/* 159 */                   return;
+           String url = user.avatarUrl;
+           if (!TextUtils.isEmpty(url)) {
+               ImageKey key = new ImageKey(url, this.mProfileImageSize, this.mProfileImageSize, true);
+               if (Util.isDefaultAvatarUrl(url)) {
+                   Util.safeSetDefaultAvatar(holder.image, Util.ProfileImageSize.MEDIUM, (-16777216) | this.mContext.getResources().getColor(C0257R.color.vine_green));
+                   return;
                         } else {
-/* 153 */                   holder.avatarUrl = key;
-/* 154 */                   setUserImage(holder, this.mAppController.getPhotoBitmap(key));
-/* 159 */                   return;
+                   holder.avatarUrl = key;
+                   setUserImage(holder, this.mAppController.getPhotoBitmap(key));
+                   return;
                         }
                     }
-/* 157 */           setUserImage(holder, null);
+           setUserImage(holder, null);
                 }
 
-/* 161 */       public synchronized void setUserImages(HashMap<ImageKey, UrlImage> images) {
+       public synchronized void setUserImages(HashMap<ImageKey, UrlImage> images) {
                     try {
                         ArrayList<WeakReference<UserViewHolder>> toRemove = new ArrayList<>();
                         for (WeakReference<UserViewHolder> ref : this.mViewHolders) {
-/* 164 */                   UserViewHolder holder = ref.get();
-/* 165 */                   if (holder == null) {
-/* 166 */                       toRemove.add(ref);
+                   UserViewHolder holder = ref.get();
+                   if (holder == null) {
+                       toRemove.add(ref);
                             } else {
-/* 168 */                       UrlImage image = images.get(holder.avatarUrl);
-/* 169 */                       if (image != null && image.isValid()) {
-/* 170 */                           setUserImage(holder, image.bitmap);
+                       UrlImage image = images.get(holder.avatarUrl);
+                       if (image != null && image.isValid()) {
+                           setUserImage(holder, image.bitmap);
                                 }
                             }
                         }
                         for (WeakReference<UserViewHolder> r : toRemove) {
-/* 175 */                   this.mViewHolders.remove(r);
+                   this.mViewHolders.remove(r);
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
 
-                @Override // android.widget.Adapter
-/* 180 */       public int getCount() {
-/* 181 */           if (this.mUsers != null) {
-/* 182 */               return this.mUsers.size();
+                @Override 
+       public int getCount() {
+           if (this.mUsers != null) {
+               return this.mUsers.size();
                     }
                     return 0;
                 }
 
-                @Override // android.widget.Adapter
-/* 188 */       public Object getItem(int position) {
-/* 189 */           if (this.mUsers != null) {
-/* 190 */               return this.mUsers.get(position);
+                @Override 
+       public Object getItem(int position) {
+           if (this.mUsers != null) {
+               return this.mUsers.get(position);
                     }
                     return null;
                 }
 
-                @Override // android.widget.Adapter
-/* 196 */       public long getItemId(int position) {
+                @Override 
+       public long getItemId(int position) {
                     VineUser user;
-/* 197 */           if (this.mUsers == null || position >= this.mUsers.size() || (user = this.mUsers.get(position)) == null) {
+           if (this.mUsers == null || position >= this.mUsers.size() || (user = this.mUsers.get(position)) == null) {
                         return 0L;
                     }
-/* 200 */           return user.userId;
+           return user.userId;
                 }
 
-/* 206 */       private void setUserImage(UserViewHolder holder, Bitmap bmp) {
-/* 207 */           holder.image.setColorFilter((ColorFilter) null);
-/* 208 */           if (bmp != null) {
-/* 209 */               holder.image.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), bmp));
+       private void setUserImage(UserViewHolder holder, Bitmap bmp) {
+           holder.image.setColorFilter((ColorFilter) null);
+           if (bmp != null) {
+               holder.image.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), bmp));
                     } else {
-/* 211 */               holder.image.setImageResource(C0257R.drawable.circle_shape_light);
+               holder.image.setImageResource(C0257R.drawable.circle_shape_light);
                     }
                 }
 
-/* 216 */       public void mergeData(ArrayList<VineUser> users, boolean mergeAfter) {
-/* 217 */           if (!mergeAfter) {
-/* 218 */               this.mUsers = new ArrayList<>();
+       public void mergeData(ArrayList<VineUser> users, boolean mergeAfter) {
+           if (!mergeAfter) {
+               this.mUsers = new ArrayList<>();
                     }
-/* 221 */           if (this.mUsers == null) {
-/* 222 */               this.mUsers = new ArrayList<>();
+           if (this.mUsers == null) {
+               this.mUsers = new ArrayList<>();
                     }
-/* 225 */           if (users != null) {
+           if (users != null) {
                         for (VineUser user : users) {
-/* 227 */                   this.mUsers.add(user);
+                   this.mUsers.add(user);
                         }
                     }
-/* 230 */           if (users != null) {
-/* 231 */               notifyDataSetChanged();
+           if (users != null) {
+               notifyDataSetChanged();
                     }
                 }
 
-/* 235 */       public ArrayList<VineUser> getUsers() {
-/* 236 */           return this.mUsers;
+       public ArrayList<VineUser> getUsers() {
+           return this.mUsers;
                 }
             }

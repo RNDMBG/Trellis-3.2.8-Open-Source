@@ -1,7 +1,7 @@
             package co.vine.android.util;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 17 */    public class AuthenticationUtils {
+            
+    public class AuthenticationUtils {
                 private static final int MIN_PASSWORD_CHARS = 6;
                 private static final int MIN_USERNAME_CHARS = 3;
 
@@ -11,35 +11,35 @@
                     VALID
                 }
 
-/* 18 */        public static Result validateUsername(String username) {
-/* 19 */            if (username == null || username.isEmpty()) {
-/* 20 */                return Result.EMPTY;
+        public static Result validateUsername(String username) {
+            if (username == null || username.isEmpty()) {
+                return Result.EMPTY;
                     }
-/* 21 */            if (username.length() < 3) {
-/* 22 */                return Result.TOO_SHORT;
+            if (username.length() < 3) {
+                return Result.TOO_SHORT;
                     }
-/* 24 */            return Result.VALID;
+            return Result.VALID;
                 }
 
-/* 35 */        public static boolean isUsernameValid(String username) {
+        public static boolean isUsernameValid(String username) {
                     return validateUsername(username) == Result.VALID;
                 }
 
-/* 46 */        public static Result validatePassword(String password) {
-/* 47 */            if (password == null || password.isEmpty()) {
-/* 48 */                return Result.EMPTY;
+        public static Result validatePassword(String password) {
+            if (password == null || password.isEmpty()) {
+                return Result.EMPTY;
                     }
-/* 49 */            if (password.length() < 6) {
-/* 50 */                return Result.TOO_SHORT;
+            if (password.length() < 6) {
+                return Result.TOO_SHORT;
                     }
-/* 52 */            return Result.VALID;
+            return Result.VALID;
                 }
 
-/* 63 */        public static boolean isPasswordValid(String password) {
+        public static boolean isPasswordValid(String password) {
                     return validatePassword(password) == Result.VALID;
                 }
 
-/* 73 */        public static boolean isEmailAddressValid(String emailAddress) {
+        public static boolean isEmailAddressValid(String emailAddress) {
                     return emailAddress != null && emailAddress.indexOf(64) >= 0 && emailAddress.indexOf(46) >= 0;
                 }
             }

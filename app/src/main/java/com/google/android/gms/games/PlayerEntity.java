@@ -9,40 +9,40 @@
             import com.google.android.gms.internal.C1027dl;
             import com.google.android.gms.internal.C1049eg;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class PlayerEntity extends AbstractC1056en implements Player {
                 public static final Parcelable.Creator<PlayerEntity> CREATOR = new C0910a();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f1054iM;
 
-                /* JADX INFO: renamed from: mD */
+                
                 private final String f1055mD;
 
-                /* JADX INFO: renamed from: mE */
+                
                 private final long f1056mE;
 
-                /* JADX INFO: renamed from: ml */
+                
                 private final String f1057ml;
 
-                /* JADX INFO: renamed from: mq */
+                
                 private final Uri f1058mq;
 
-                /* JADX INFO: renamed from: mr */
+                
                 private final Uri f1059mr;
 
-                /* JADX INFO: renamed from: com.google.android.gms.games.PlayerEntity$a */
+                
                 static final class C0910a extends C0914c {
                     C0910a() {
                     }
 
-                    @Override // com.google.android.gms.games.C0914c, android.os.Parcelable.Creator
-                    public /* synthetic */ PlayerEntity createFromParcel(Parcel x0) {
+                    @Override 
+                    public  PlayerEntity createFromParcel(Parcel x0) {
                         return mo1182u(x0);
                     }
 
-                    @Override // com.google.android.gms.games.C0914c
-                    /* JADX INFO: renamed from: u */
+                    @Override 
+                    
                     public PlayerEntity mo1182u(Parcel parcel) {
                         if (PlayerEntity.m1180b(PlayerEntity.m1181bQ()) || PlayerEntity.m1176J(PlayerEntity.class.getCanonicalName())) {
                             return super.mo1182u(parcel);
@@ -76,17 +76,17 @@
                     C1017db.m1525k(this.f1056mE > 0);
                 }
 
-                /* JADX INFO: renamed from: J */
-                static /* synthetic */ boolean m1176J(String str) {
+                
+                static  boolean m1176J(String str) {
                     return m1531y(str);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 static int m1177a(Player player) {
                     return C1027dl.hashCode(player.getPlayerId(), player.getDisplayName(), player.getIconImageUri(), player.getHiResImageUri(), Long.valueOf(player.getRetrievedTimestamp()));
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 static boolean m1178a(Player player, Object obj) {
                     if (!(obj instanceof Player)) {
                         return false;
@@ -98,22 +98,22 @@
                     return C1027dl.equal(player2.getPlayerId(), player.getPlayerId()) && C1027dl.equal(player2.getDisplayName(), player.getDisplayName()) && C1027dl.equal(player2.getIconImageUri(), player.getIconImageUri()) && C1027dl.equal(player2.getHiResImageUri(), player.getHiResImageUri()) && C1027dl.equal(Long.valueOf(player2.getRetrievedTimestamp()), Long.valueOf(player.getRetrievedTimestamp()));
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 static String m1179b(Player player) {
                     return C1027dl.m1599d(player).m1600a("PlayerId", player.getPlayerId()).m1600a("DisplayName", player.getDisplayName()).m1600a("IconImageUri", player.getIconImageUri()).m1600a("HiResImageUri", player.getHiResImageUri()).m1600a("RetrievedTimestamp", Long.valueOf(player.getRetrievedTimestamp())).toString();
                 }
 
-                /* JADX INFO: renamed from: b */
-                static /* synthetic */ boolean m1180b(Integer num) {
+                
+                static  boolean m1180b(Integer num) {
                     return m1798c(num);
                 }
 
-                /* JADX INFO: renamed from: bQ */
-                static /* synthetic */ Integer m1181bQ() {
+                
+                static  Integer m1181bQ() {
                     return m1530aW();
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -122,39 +122,39 @@
                     return m1178a(this, obj);
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // com.google.android.gms.common.data.Freezable
+                
+                @Override 
                 public Player freeze() {
                     return this;
                 }
 
 
-                @Override // com.google.android.gms.games.Player
+                @Override 
                 public String getDisplayName() {
                     return this.f1057ml;
                 }
 
-                @Override // com.google.android.gms.games.Player
+                @Override 
                 public void getDisplayName(CharArrayBuffer dataOut) {
                     C1049eg.m1731b(this.f1057ml, dataOut);
                 }
 
-                @Override // com.google.android.gms.games.Player
+                @Override 
                 public Uri getHiResImageUri() {
                     return this.f1059mr;
                 }
 
-                @Override // com.google.android.gms.games.Player
+                @Override 
                 public Uri getIconImageUri() {
                     return this.f1058mq;
                 }
 
-                @Override // com.google.android.gms.games.Player
+                @Override 
                 public String getPlayerId() {
                     return this.f1055mD;
                 }
 
-                @Override // com.google.android.gms.games.Player
+                @Override 
                 public long getRetrievedTimestamp() {
                     return this.f1056mE;
                 }
@@ -163,12 +163,12 @@
                     return this.f1054iM;
                 }
 
-                @Override // com.google.android.gms.games.Player
+                @Override 
                 public boolean hasHiResImage() {
                     return getHiResImageUri() != null;
                 }
 
-                @Override // com.google.android.gms.games.Player
+                @Override 
                 public boolean hasIconImage() {
                     return getIconImageUri() != null;
                 }
@@ -177,7 +177,7 @@
                     return m1177a(this);
                 }
 
-                @Override // com.google.android.gms.common.data.Freezable
+                @Override 
                 public boolean isDataValid() {
                     return true;
                 }
@@ -186,7 +186,7 @@
                     return m1179b(this);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel dest, int flags) {
                     if (!m1532aX()) {
                         C0914c.m1185a(this, dest, flags);

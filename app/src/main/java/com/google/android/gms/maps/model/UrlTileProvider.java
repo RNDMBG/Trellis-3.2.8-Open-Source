@@ -6,13 +6,13 @@
             import java.io.OutputStream;
             import java.net.URL;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public abstract class UrlTileProvider implements TileProvider {
 
-                /* JADX INFO: renamed from: dP */
+                
                 private final int f2360dP;
 
-                /* JADX INFO: renamed from: dQ */
+                
                 private final int f2361dQ;
 
                 public UrlTileProvider(int width, int height) {
@@ -20,7 +20,7 @@
                     this.f2361dQ = height;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static long m2292a(InputStream inputStream, OutputStream outputStream) throws IOException {
                     byte[] bArr = new byte[4096];
                     long j = 0;
@@ -34,14 +34,14 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static byte[] m2293a(InputStream inputStream) throws IOException {
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     m2292a(inputStream, byteArrayOutputStream);
                     return byteArrayOutputStream.toByteArray();
                 }
 
-                @Override // com.google.android.gms.maps.model.TileProvider
+                @Override 
                 public final Tile getTile(int x, int y, int zoom) {
                     URL tileUrl = getTileUrl(x, y, zoom);
                     if (tileUrl == null) {

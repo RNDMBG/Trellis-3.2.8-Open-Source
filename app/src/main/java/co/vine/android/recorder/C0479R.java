@@ -1,10 +1,10 @@
             package co.vine.android.recorder;
             
-            /* JADX INFO: renamed from: co.vine.android.recorder.R */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0479R {
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$anim */
+                
                 public static final class anim {
                     public static final int abc_fade_in = 2130968576;
                     public static final int abc_fade_out = 2130968577;
@@ -14,7 +14,7 @@
                     public static final int abc_slide_out_top = 2130968581;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$attr */
+                
                 public static final class attr {
                     public static final int actionBarDivider = 2130771968;
                     public static final int actionBarItemBackground = 2130771969;
@@ -144,7 +144,7 @@
                     public static final int zOrderOnTop = 2130772119;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$bool */
+                
                 public static final class bool {
                     public static final int abc_action_bar_embed_tabs_pre_jb = 2131230720;
                     public static final int abc_action_bar_expanded_action_views_exclusive = 2131230721;
@@ -154,7 +154,7 @@
                     public static final int abc_split_action_bar_is_narrow = 2131230725;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$color */
+                
                 public static final class color {
                     public static final int abc_search_url_text_holo = 2131296428;
                     public static final int abc_search_url_text_normal = 2131296256;
@@ -174,7 +174,7 @@
                     public static final int common_signin_btn_text_light = 2131296432;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$dimen */
+                
                 public static final class dimen {
                     public static final int abc_action_bar_default_height = 2131361792;
                     public static final int abc_action_bar_icon_vertical_padding = 2131361793;
@@ -199,7 +199,7 @@
                     public static final int dialog_fixed_width_minor = 2131361845;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$drawable */
+                
                 public static final class drawable {
                     public static final int abc_ab_bottom_solid_dark_holo = 2130837505;
                     public static final int abc_ab_bottom_solid_light_holo = 2130837506;
@@ -319,7 +319,7 @@
                     public static final int ic_plusone_tall_off_client = 2130837999;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$id */
+                
                 public static final class id {
                     public static final int action_bar = 2131427372;
                     public static final int action_bar_activity_content = 2131427328;
@@ -382,19 +382,19 @@
                     public static final int title = 2131427387;
                     public static final int top_action_bar = 2131427376;
 
-                    /* JADX INFO: renamed from: up */
+                    
                     public static final int f107up = 2131427377;
                     public static final int useLogo = 2131427351;
                     public static final int withText = 2131427363;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$integer */
+                
                 public static final class integer {
                     public static final int abc_max_action_buttons = 2131492864;
                     public static final int google_play_services_version = 2131492867;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$layout */
+                
                 public static final class layout {
                     public static final int abc_action_bar_decor = 2130903040;
                     public static final int abc_action_bar_decor_include = 2130903041;
@@ -423,7 +423,7 @@
                     public static final int support_simple_spinner_dropdown_item = 2130903217;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$string */
+                
                 public static final class string {
                     public static final int abc_action_bar_home_description = 2131623994;
                     public static final int abc_action_bar_up_description = 2131623995;
@@ -466,7 +466,7 @@
                     public static final int common_signin_button_text_long = 2131624096;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$style */
+                
                 public static final class style {
                     public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog = 2131689553;
                     public static final int TextAppearance_AppCompat_Base_SearchResult = 2131689554;
@@ -609,7 +609,7 @@
                     public static final int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131689728;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.recorder.R$styleable */
+                
                 public static final class styleable {
                     public static final int ActionBarLayout_android_layout_gravity = 0;
                     public static final int ActionBarWindow_windowActionBar = 0;

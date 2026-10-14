@@ -16,8 +16,8 @@
             import co.vine.android.WebViewActivity;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 62 */    public class LinkDispatcher {
+            
+    public class LinkDispatcher {
                 private static final String CHANNELS = "channels";
                 private static final String COMMENTS = "comments";
                 private static final String CONVERSATIONS = "conversations";
@@ -38,74 +38,74 @@
                 private static final String USER = "user";
                 private static final String USER_ID = "user-id";
 
-/* 63 */        public static void dispatch(String link, Context context) {
-/* 64 */            dispatch(Uri.parse(link), context);
+        public static void dispatch(String link, Context context) {
+            dispatch(Uri.parse(link), context);
                 }
 
-/* 67 */        public static void dispatch(Uri linkUri, Context context) {
-/* 68 */            if (linkUri != null) {
-/* 72 */                String scheme = linkUri.getScheme();
-/* 74 */                if ("vine".equals(scheme) || SCHEME_VINE_DEV.equals(scheme)) {
-/* 75 */                    dispatchVineScheme(linkUri, context);
+        public static void dispatch(Uri linkUri, Context context) {
+            if (linkUri != null) {
+                String scheme = linkUri.getScheme();
+                if ("vine".equals(scheme) || SCHEME_VINE_DEV.equals(scheme)) {
+                    dispatchVineScheme(linkUri, context);
                         } else if (SCHEME_HTTP.equals(scheme) || SCHEME_HTTPS.equals(scheme)) {
-/* 77 */                    WebViewActivity.start(context, linkUri);
+                    WebViewActivity.start(context, linkUri);
                         }
                     }
                 }
 
-/* 81 */        private static void dispatchVineScheme(Uri linkUri, Context context) {
+        private static void dispatchVineScheme(Uri linkUri, Context context) {
                     byte b = 1;
-/* 82 */            String host = linkUri.getHost();
-/* 83 */            List<String> pathSegments = linkUri.getPathSegments();
+            String host = linkUri.getHost();
+            List<String> pathSegments = linkUri.getPathSegments();
                     switch (host) {
                         case "channels":
-/* 86 */                    if (pathSegments.size() > 0) {
-/* 87 */                        Intent i = new Intent(context, (Class<?>) ExploreChannelsActivity.class);
-/* 88 */                        i.setData(linkUri);
-/* 89 */                        context.startActivity(i);
+                    if (pathSegments.size() > 0) {
+                        Intent i = new Intent(context, (Class<?>) ExploreChannelsActivity.class);
+                        i.setData(linkUri);
+                        context.startActivity(i);
                                 break;
                             }
                             break;
                         case "find-friends":
-/* 94 */                    context.startActivity(new Intent(context, (Class<?>) FindFriendsActivity.class));
+                    context.startActivity(new Intent(context, (Class<?>) FindFriendsActivity.class));
                             break;
                         case "user":
                         case "user-id":
-/* 99 */                    startProfileActivityForLinkUri(context, linkUri);
+                    startProfileActivityForLinkUri(context, linkUri);
                             break;
                         case "post":
                             try {
-/* 106 */                       SingleActivity.start(context, Long.parseLong(linkUri.getLastPathSegment()));
+                       SingleActivity.start(context, Long.parseLong(linkUri.getLastPathSegment()));
                                 break;
                             } catch (NumberFormatException e) {
-/* 108 */                       Util.showCenteredToast(context, C0257R.string.invalid_link);
-/* 167 */                       return;
+                       Util.showCenteredToast(context, C0257R.string.invalid_link);
+                       return;
                             }
                         case "posts":
-/* 116 */                   long postId = Long.parseLong(pathSegments.get(0));
-/* 117 */                   String destination = linkUri.getLastPathSegment();
+                   long postId = Long.parseLong(pathSegments.get(0));
+                   String destination = linkUri.getLastPathSegment();
                             switch (destination) {
                                 case "comments":
-/* 120 */                           CommentsActivity.start(context, postId, -1L, -1L, true);
+                           CommentsActivity.start(context, postId, -1L, -1L, true);
                                     break;
                                 case "likes":
-/* 124 */                           UsersActivity.startUserListForLikers(context, postId);
+                           UsersActivity.startUserListForLikers(context, postId);
                                     break;
                                 case "reposts":
-/* 128 */                           UsersActivity.startUserListForReviners(context, postId);
+                           UsersActivity.startUserListForReviners(context, postId);
                                     break;
                             }
                             break;
                         case "tag":
-/* 135 */                   HashtagActivity.start(context, "#" + linkUri.getLastPathSegment());
+                   HashtagActivity.start(context, "#" + linkUri.getLastPathSegment());
                             break;
                         case "timelines":
                         case "popular-now":
-/* 140 */                   ExploreVideoListActivity.start(context, linkUri);
+                   ExploreVideoListActivity.start(context, linkUri);
                             break;
                         case "tw":
-/* 150 */                   if (pathSegments != null && pathSegments.size() > 0) {
-/* 152 */                       String str = pathSegments.get(0);
+                   if (pathSegments != null && pathSegments.size() > 0) {
+                       String str = pathSegments.get(0);
                                 switch (str.hashCode()) {
                                     case 3446944:
                                         if (!str.equals("post")) {
@@ -113,7 +113,7 @@
                                         }
                                         break;
                                     case 3599307:
-/* 152 */                               b = !str.equals("user") ? (byte) -1 : (byte) 0;
+                               b = !str.equals("user") ? (byte) -1 : (byte) 0;
                                         break;
                                     default:
                                         b = -1;
@@ -121,10 +121,10 @@
                                 }
                                 switch (b) {
                                     case 0:
-/* 154 */                               startProfileActivityForLinkUri(context, linkUri);
+                               startProfileActivityForLinkUri(context, linkUri);
                                         break;
                                     case 1:
-/* 158 */                               startSinglePostActivityForLinkUri(context, linkUri);
+                               startSinglePostActivityForLinkUri(context, linkUri);
                                         break;
                                 }
                             }
@@ -132,25 +132,25 @@
                     }
                 }
 
-/* 170 */       private static void startSinglePostActivityForLinkUri(Context context, Uri linkUri) {
+       private static void startSinglePostActivityForLinkUri(Context context, Uri linkUri) {
                     try {
-/* 171 */               long postId = Long.parseLong(linkUri.getLastPathSegment());
-/* 172 */               SingleActivity.start(context, postId);
+               long postId = Long.parseLong(linkUri.getLastPathSegment());
+               SingleActivity.start(context, postId);
                     } catch (NumberFormatException e) {
-/* 174 */               Util.showCenteredToast(context, C0257R.string.invalid_link);
+               Util.showCenteredToast(context, C0257R.string.invalid_link);
                     }
                 }
 
-/* 178 */       private static void startProfileActivityForLinkUri(Context context, Uri linkUri) {
-/* 179 */           String lastPathSegment = linkUri.getLastPathSegment();
-/* 180 */           if ("settings".equals(lastPathSegment)) {
-/* 181 */               context.startActivity(new Intent(context, (Class<?>) SettingsActivity.class));
-/* 189 */               return;
+       private static void startProfileActivityForLinkUri(Context context, Uri linkUri) {
+           String lastPathSegment = linkUri.getLastPathSegment();
+           if ("settings".equals(lastPathSegment)) {
+               context.startActivity(new Intent(context, (Class<?>) SettingsActivity.class));
+               return;
                     }
                     try {
-/* 184 */               ProfileActivity.start(context, Long.parseLong(lastPathSegment), "LinkDispatcher");
+               ProfileActivity.start(context, Long.parseLong(lastPathSegment), "LinkDispatcher");
                     } catch (NumberFormatException e) {
-/* 186 */               Util.showCenteredToast(context, C0257R.string.invalid_link);
+               Util.showCenteredToast(context, C0257R.string.invalid_link);
                     }
                 }
             }

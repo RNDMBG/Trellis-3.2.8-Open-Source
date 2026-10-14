@@ -1,11 +1,11 @@
             package co.vine.android.provider;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class VineUploadsDatabaseSQL {
                 public static final String ADD_COLUMN = " ADD COLUMN ";
                 public static final String ALTER_TABLE = "ALTER TABLE ";
 
-                /* JADX INFO: renamed from: AS */
+                
                 public static final String f106AS = " AS ";
                 public static final String CREATE_TABLE = "CREATE TABLE ";
                 public static final String CREATE_VIEW = "CREATE VIEW ";

@@ -5,37 +5,37 @@
             import java.util.Collections;
             import java.util.List;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bw */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0984bw implements SafeParcelable {
                 public static final C0985bx CREATOR = new C0985bx();
 
-                /* JADX INFO: renamed from: eW */
+                
                 public final List<String> f1508eW;
 
-                /* JADX INFO: renamed from: eX */
+                
                 public final List<String> f1509eX;
                 public final int errorCode;
 
-                /* JADX INFO: renamed from: fW */
+                
                 public final String f1510fW;
 
-                /* JADX INFO: renamed from: fa */
+                
                 public final long f1511fa;
 
-                /* JADX INFO: renamed from: gG */
+                
                 public final String f1512gG;
 
-                /* JADX INFO: renamed from: gH */
+                
                 public final long f1513gH;
 
-                /* JADX INFO: renamed from: gI */
+                
                 public final boolean f1514gI;
 
-                /* JADX INFO: renamed from: gJ */
+                
                 public final long f1515gJ;
 
-                /* JADX INFO: renamed from: gK */
+                
                 public final List<String> f1516gK;
                 public final int orientation;
                 public final int versionCode;
@@ -63,12 +63,12 @@
                     this(1, str, str2, list, -2, list2, j, z, j2, list3, j3, i);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     C0985bx.m1374a(this, out, flags);
                 }

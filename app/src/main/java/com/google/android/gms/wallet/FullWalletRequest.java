@@ -4,27 +4,27 @@
             import android.os.Parcelable;
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class FullWalletRequest implements SafeParcelable {
                 public static final Parcelable.Creator<FullWalletRequest> CREATOR = new C1210d();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2476iM;
 
-                /* JADX INFO: renamed from: tH */
+                
                 String f2477tH;
 
-                /* JADX INFO: renamed from: tI */
+                
                 String f2478tI;
 
-                /* JADX INFO: renamed from: tO */
+                
                 Cart f2479tO;
 
                 public final class Builder {
                     private Builder() {
                     }
 
-                    /* synthetic */ Builder(FullWalletRequest x0, Object x1) {
+                     Builder(FullWalletRequest x0, Object x1) {
                         this();
                     }
 
@@ -65,7 +65,7 @@
                     return new Builder(fullWalletRequest, null);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -86,7 +86,7 @@
                     return this.f2476iM;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel dest, int flags) {
                     C1210d.m2351a(this, dest, flags);
                 }

@@ -1,6 +1,6 @@
             package co.vine.android;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class BuildConfig {
                 public static final String APPLICATION_ID = "co.vine.android";
                 public static final String APP_TYPE = "regular";

@@ -42,10 +42,10 @@
             import java.nio.IntBuffer;
             import java.nio.ShortBuffer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties({@Platform(include = {"<opencv2/core/core.hpp>", "opencv_adapters.h"}, link = {"opencv_core@.2.4"}, preload = {"tbb"}), @Platform(define = {"_WIN32_WINNT 0x0502"}, includepath = {"C:/opencv/build/include/"}, link = {"opencv_core246"}, preload = {"msvcr100", "msvcp100"}, value = {"windows"}), @Platform(linkpath = {"C:/opencv/build/x86/vc10/lib/"}, preloadpath = {"C:/opencv/build/x86/vc10/bin/"}, value = {"windows-x86"}), @Platform(linkpath = {"C:/opencv/build/x64/vc10/lib/"}, preloadpath = {"C:/opencv/build/x64/vc10/bin/"}, value = {"windows-x86_64"})})
-/* 103 */   public class opencv_core {
-                static final /* synthetic */ boolean $assertionsDisabled;
+   public class opencv_core {
+                static final  boolean $assertionsDisabled;
                 public static final int CV_16S = 3;
                 public static final int CV_16SC1;
                 public static final int CV_16SC2;
@@ -1059,78 +1059,78 @@
                 public static native int partition(@StdVector PointerPointer pointerPointer, @StdVector IntPointer intPointer, @ByRef Predicate predicate);
 
                 static {
-/* 105 */           $assertionsDisabled = !opencv_core.class.desiredAssertionStatus();
-/* 114 */           if (Loader.load() != null) {
-/* 115 */               String platformName = Loader.getPlatformName();
-/* 116 */               if (platformName.equals("windows-x86")) {
-/* 117 */                   SetLibraryPath("C:/opencv/build/x86/vc10/bin/");
+           $assertionsDisabled = !opencv_core.class.desiredAssertionStatus();
+           if (Loader.load() != null) {
+               String platformName = Loader.getPlatformName();
+               if (platformName.equals("windows-x86")) {
+                   SetLibraryPath("C:/opencv/build/x86/vc10/bin/");
                         } else if (platformName.equals("windows-x86_64")) {
-/* 119 */                   SetLibraryPath("C:/opencv/build/x64/vc10/bin/");
+                   SetLibraryPath("C:/opencv/build/x64/vc10/bin/");
                         }
                     }
-/* 926 */           IPL_IMAGE_MAGIC_VAL = Loader.load() == null ? 0 : Loader.sizeof(IplImage.class);
-/* 966 */           CV_8UC1 = CV_MAKETYPE(0, 1);
-/* 967 */           CV_8UC2 = CV_MAKETYPE(0, 2);
-/* 968 */           CV_8UC3 = CV_MAKETYPE(0, 3);
-/* 969 */           CV_8UC4 = CV_MAKETYPE(0, 4);
-/* 971 */           CV_8SC1 = CV_MAKETYPE(1, 1);
-/* 972 */           CV_8SC2 = CV_MAKETYPE(1, 2);
-/* 973 */           CV_8SC3 = CV_MAKETYPE(1, 3);
-/* 974 */           CV_8SC4 = CV_MAKETYPE(1, 4);
-/* 976 */           CV_16UC1 = CV_MAKETYPE(2, 1);
-/* 977 */           CV_16UC2 = CV_MAKETYPE(2, 2);
-/* 978 */           CV_16UC3 = CV_MAKETYPE(2, 3);
-/* 979 */           CV_16UC4 = CV_MAKETYPE(2, 4);
-/* 981 */           CV_16SC1 = CV_MAKETYPE(3, 1);
-/* 982 */           CV_16SC2 = CV_MAKETYPE(3, 2);
-/* 983 */           CV_16SC3 = CV_MAKETYPE(3, 3);
-/* 984 */           CV_16SC4 = CV_MAKETYPE(3, 4);
-/* 986 */           CV_32SC1 = CV_MAKETYPE(4, 1);
-/* 987 */           CV_32SC2 = CV_MAKETYPE(4, 2);
-/* 988 */           CV_32SC3 = CV_MAKETYPE(4, 3);
-/* 989 */           CV_32SC4 = CV_MAKETYPE(4, 4);
-/* 991 */           CV_32FC1 = CV_MAKETYPE(5, 1);
-/* 992 */           CV_32FC2 = CV_MAKETYPE(5, 2);
-/* 993 */           CV_32FC3 = CV_MAKETYPE(5, 3);
-/* 994 */           CV_32FC4 = CV_MAKETYPE(5, 4);
-/* 996 */           CV_64FC1 = CV_MAKETYPE(6, 1);
-/* 997 */           CV_64FC2 = CV_MAKETYPE(6, 2);
-/* 998 */           CV_64FC3 = CV_MAKETYPE(6, 3);
-/* 999 */           CV_64FC4 = CV_MAKETYPE(6, 4);
-/* 1002 */          CV_WHOLE_ARR = Loader.load() == null ? null : cvSlice(0, CV_WHOLE_SEQ_END_INDEX);
-/* 2384 */          CV_WHOLE_SEQ = Loader.load() == null ? null : cvSlice(0, CV_WHOLE_SEQ_END_INDEX);
-/* 2769 */          CV_SEQ_ELTYPE_POINT = CV_32SC2;
-/* 2770 */          CV_SEQ_ELTYPE_CODE = CV_8UC1;
-/* 2774 */          CV_SEQ_ELTYPE_INDEX = CV_32SC1;
-/* 2779 */          CV_SEQ_ELTYPE_POINT3D = CV_32FC3;
-/* 2808 */          CV_SEQ_POINT_SET = CV_SEQ_ELTYPE_POINT | 0;
-/* 2809 */          CV_SEQ_POINT3D_SET = CV_SEQ_ELTYPE_POINT3D | 0;
-/* 2810 */          CV_SEQ_POLYLINE = CV_SEQ_ELTYPE_POINT | 4096;
-/* 2811 */          CV_SEQ_POLYGON = CV_SEQ_POLYLINE | 16384;
-/* 2812 */          CV_SEQ_CONTOUR = CV_SEQ_POLYGON;
-/* 2813 */          CV_SEQ_SIMPLE_POLYGON = CV_SEQ_POLYGON | 0;
-/* 2816 */          CV_SEQ_CHAIN = CV_SEQ_ELTYPE_CODE | 4096;
-/* 2817 */          CV_SEQ_CHAIN_CONTOUR = CV_SEQ_CHAIN | 16384;
-/* 2826 */          CV_SEQ_INDEX = CV_SEQ_ELTYPE_INDEX | 0;
-/* 3008 */          CV_ATTR_LIST_EMPTY = new CvAttrList();
+           IPL_IMAGE_MAGIC_VAL = Loader.load() == null ? 0 : Loader.sizeof(IplImage.class);
+           CV_8UC1 = CV_MAKETYPE(0, 1);
+           CV_8UC2 = CV_MAKETYPE(0, 2);
+           CV_8UC3 = CV_MAKETYPE(0, 3);
+           CV_8UC4 = CV_MAKETYPE(0, 4);
+           CV_8SC1 = CV_MAKETYPE(1, 1);
+           CV_8SC2 = CV_MAKETYPE(1, 2);
+           CV_8SC3 = CV_MAKETYPE(1, 3);
+           CV_8SC4 = CV_MAKETYPE(1, 4);
+           CV_16UC1 = CV_MAKETYPE(2, 1);
+           CV_16UC2 = CV_MAKETYPE(2, 2);
+           CV_16UC3 = CV_MAKETYPE(2, 3);
+           CV_16UC4 = CV_MAKETYPE(2, 4);
+           CV_16SC1 = CV_MAKETYPE(3, 1);
+           CV_16SC2 = CV_MAKETYPE(3, 2);
+           CV_16SC3 = CV_MAKETYPE(3, 3);
+           CV_16SC4 = CV_MAKETYPE(3, 4);
+           CV_32SC1 = CV_MAKETYPE(4, 1);
+           CV_32SC2 = CV_MAKETYPE(4, 2);
+           CV_32SC3 = CV_MAKETYPE(4, 3);
+           CV_32SC4 = CV_MAKETYPE(4, 4);
+           CV_32FC1 = CV_MAKETYPE(5, 1);
+           CV_32FC2 = CV_MAKETYPE(5, 2);
+           CV_32FC3 = CV_MAKETYPE(5, 3);
+           CV_32FC4 = CV_MAKETYPE(5, 4);
+           CV_64FC1 = CV_MAKETYPE(6, 1);
+           CV_64FC2 = CV_MAKETYPE(6, 2);
+           CV_64FC3 = CV_MAKETYPE(6, 3);
+           CV_64FC4 = CV_MAKETYPE(6, 4);
+          CV_WHOLE_ARR = Loader.load() == null ? null : cvSlice(0, CV_WHOLE_SEQ_END_INDEX);
+          CV_WHOLE_SEQ = Loader.load() == null ? null : cvSlice(0, CV_WHOLE_SEQ_END_INDEX);
+          CV_SEQ_ELTYPE_POINT = CV_32SC2;
+          CV_SEQ_ELTYPE_CODE = CV_8UC1;
+          CV_SEQ_ELTYPE_INDEX = CV_32SC1;
+          CV_SEQ_ELTYPE_POINT3D = CV_32FC3;
+          CV_SEQ_POINT_SET = CV_SEQ_ELTYPE_POINT | 0;
+          CV_SEQ_POINT3D_SET = CV_SEQ_ELTYPE_POINT3D | 0;
+          CV_SEQ_POLYLINE = CV_SEQ_ELTYPE_POINT | 4096;
+          CV_SEQ_POLYGON = CV_SEQ_POLYLINE | 16384;
+          CV_SEQ_CONTOUR = CV_SEQ_POLYGON;
+          CV_SEQ_SIMPLE_POLYGON = CV_SEQ_POLYGON | 0;
+          CV_SEQ_CHAIN = CV_SEQ_ELTYPE_CODE | 4096;
+          CV_SEQ_CHAIN_CONTOUR = CV_SEQ_CHAIN | 16384;
+          CV_SEQ_INDEX = CV_SEQ_ELTYPE_INDEX | 0;
+          CV_ATTR_LIST_EMPTY = new CvAttrList();
                 }
 
                 @Opaque
-/* 134 */       public static class CvArr extends Pointer implements Cloneable {
+       public static class CvArr extends Pointer implements Cloneable {
                     static {
-/* 136 */               Loader.load();
+               Loader.load();
                     }
 
-/* 136 */           protected CvArr() {
+           protected CvArr() {
                     }
 
-/* 137 */           protected CvArr(Pointer p) {
-/* 138 */               super(p);
+           protected CvArr(Pointer p) {
+               super(p);
                     }
                 }
 
                 @Name({"CvArr*"})
-/* 139 */       public static class CvArrArray extends Pointer {
+       public static class CvArrArray extends Pointer {
                     private native void allocateArray(int i);
 
                     public native CvArr get();
@@ -1139,41 +1139,41 @@
 
 
                     static {
-/* 143 */               Loader.load();
+               Loader.load();
                     }
 
-/* 143 */           public CvArrArray(CvArr... array) {
-/* 144 */               this(array.length);
+           public CvArrArray(CvArr... array) {
+               this(array.length);
                         put(array);
                         position(0);
                     }
 
-/* 144 */           public CvArrArray(int size) {
+           public CvArrArray(int size) {
                         allocateArray(size);
                     }
 
-/* 145 */           public CvArrArray(Pointer p) {
-/* 146 */               super(p);
+           public CvArrArray(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 149 */           public CvArrArray position(int position) {
-/* 150 */               return (CvArrArray) super.position(position);
+                    @Override 
+           public CvArrArray position(int position) {
+               return (CvArrArray) super.position(position);
                     }
 
-/* 153 */           public CvArrArray put(CvArr... array) {
+           public CvArrArray put(CvArr... array) {
                         for (int i = 0; i < array.length; i++) {
-/* 155 */                   position(i).put(array[i]);
+                   position(i).put(array[i]);
                         }
-/* 157 */               return this;
+               return this;
                     }
                 }
 
                 @Name({"CvMat*"})
-/* 162 */       public static class CvMatArray extends CvArrArray {
+       public static class CvMatArray extends CvArrArray {
                     private native void allocateArray(int i);
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
+                    @Override 
                     @ValueGetter
                     public native CvMat get();
 
@@ -1182,45 +1182,45 @@
 
 
 
-/* 165 */           public CvMatArray(CvMat... array) {
-/* 166 */               this(array.length);
+           public CvMatArray(CvMat... array) {
+               this(array.length);
                         put((CvArr[]) array);
                         position(0);
                     }
 
-/* 166 */           public CvMatArray(int size) {
-/* 167 */               super(new CvArr[0]);
+           public CvMatArray(int size) {
+               super(new CvArr[0]);
                         allocateArray(size);
                     }
 
-/* 167 */           public CvMatArray(Pointer p) {
-/* 168 */               super(p);
+           public CvMatArray(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray, com.googlecode.javacpp.Pointer
-/* 171 */           public CvMatArray position(int position) {
-/* 172 */               return (CvMatArray) super.position(position);
+                    @Override 
+           public CvMatArray position(int position) {
+               return (CvMatArray) super.position(position);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
-/* 174 */           public CvMatArray put(CvArr... array) {
-/* 175 */               return (CvMatArray) super.put(array);
+                    @Override 
+           public CvMatArray put(CvArr... array) {
+               return (CvMatArray) super.put(array);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
-/* 178 */           public CvMatArray put(CvArr p) {
-/* 179 */               if (p instanceof CvMat) {
-/* 180 */                   return (CvMatArray) super.put(p);
+                    @Override 
+           public CvMatArray put(CvArr p) {
+               if (p instanceof CvMat) {
+                   return (CvMatArray) super.put(p);
                         }
-/* 182 */               throw new ArrayStoreException(p.getClass().getName());
+               throw new ArrayStoreException(p.getClass().getName());
                     }
                 }
 
                 @Name({"CvMatND*"})
-/* 185 */       public static class CvMatNDArray extends CvArrArray {
+       public static class CvMatNDArray extends CvArrArray {
                     private native void allocateArray(int i);
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
+                    @Override 
                     @ValueGetter
                     public native CvMatND get();
 
@@ -1229,45 +1229,45 @@
 
 
 
-/* 188 */           public CvMatNDArray(CvMatND... array) {
-/* 189 */               this(array.length);
+           public CvMatNDArray(CvMatND... array) {
+               this(array.length);
                         put((CvArr[]) array);
                         position(0);
                     }
 
-/* 189 */           public CvMatNDArray(int size) {
-/* 190 */               super(new CvArr[0]);
+           public CvMatNDArray(int size) {
+               super(new CvArr[0]);
                         allocateArray(size);
                     }
 
-/* 190 */           public CvMatNDArray(Pointer p) {
-/* 191 */               super(p);
+           public CvMatNDArray(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray, com.googlecode.javacpp.Pointer
-/* 194 */           public CvMatNDArray position(int position) {
-/* 195 */               return (CvMatNDArray) super.position(position);
+                    @Override 
+           public CvMatNDArray position(int position) {
+               return (CvMatNDArray) super.position(position);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
-/* 197 */           public CvMatNDArray put(CvArr... array) {
-/* 198 */               return (CvMatNDArray) super.put(array);
+                    @Override 
+           public CvMatNDArray put(CvArr... array) {
+               return (CvMatNDArray) super.put(array);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
-/* 201 */           public CvMatNDArray put(CvArr p) {
-/* 202 */               if (p instanceof CvMatND) {
-/* 203 */                   return (CvMatNDArray) super.put(p);
+                    @Override 
+           public CvMatNDArray put(CvArr p) {
+               if (p instanceof CvMatND) {
+                   return (CvMatNDArray) super.put(p);
                         }
-/* 205 */               throw new ArrayStoreException(p.getClass().getName());
+               throw new ArrayStoreException(p.getClass().getName());
                     }
                 }
 
                 @Name({"IplImage*"})
-/* 208 */       public static class IplImageArray extends CvArrArray {
+       public static class IplImageArray extends CvArrArray {
                     private native void allocateArray(int i);
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
+                    @Override 
                     @ValueGetter
                     public native IplImage get();
 
@@ -1276,174 +1276,174 @@
 
 
 
-/* 211 */           public IplImageArray(IplImage... array) {
-/* 212 */               this(array.length);
+           public IplImageArray(IplImage... array) {
+               this(array.length);
                         put((CvArr[]) array);
                         position(0);
                     }
 
-/* 212 */           public IplImageArray(int size) {
-/* 213 */               super(new CvArr[0]);
+           public IplImageArray(int size) {
+               super(new CvArr[0]);
                         allocateArray(size);
                     }
 
-/* 213 */           public IplImageArray(Pointer p) {
-/* 214 */               super(p);
+           public IplImageArray(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray, com.googlecode.javacpp.Pointer
-/* 217 */           public IplImageArray position(int position) {
-/* 218 */               return (IplImageArray) super.position(position);
+                    @Override 
+           public IplImageArray position(int position) {
+               return (IplImageArray) super.position(position);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
-/* 220 */           public IplImageArray put(CvArr... array) {
-/* 221 */               return (IplImageArray) super.put(array);
+                    @Override 
+           public IplImageArray put(CvArr... array) {
+               return (IplImageArray) super.put(array);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvArrArray
-/* 224 */           public IplImageArray put(CvArr p) {
-/* 225 */               if (p instanceof IplImage) {
-/* 226 */                   return (IplImageArray) super.put(p);
+                    @Override 
+           public IplImageArray put(CvArr p) {
+               if (p instanceof IplImage) {
+                   return (IplImageArray) super.put(p);
                         }
-/* 228 */               throw new ArrayStoreException(p.getClass().getName());
+               throw new ArrayStoreException(p.getClass().getName());
                     }
                 }
 
-/* 231 */       public static class Cv32suf extends Pointer {
+       public static class Cv32suf extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
-                    /* JADX INFO: renamed from: f */
+                    
                     public native float m2415f();
 
-                    /* JADX INFO: renamed from: f */
+                    
                     public native Cv32suf m2416f(float f);
 
-                    /* JADX INFO: renamed from: i */
+                    
                     public native int m2417i();
 
-                    /* JADX INFO: renamed from: i */
+                    
                     public native Cv32suf m2418i(int i);
 
-                    /* JADX INFO: renamed from: u */
+                    
                     public native int m2419u();
 
-                    /* JADX INFO: renamed from: u */
+                    
                     public native Cv32suf m2420u(int i);
 
 
                     static {
-/* 234 */               Loader.load();
+               Loader.load();
                     }
 
-/* 234 */           public Cv32suf() {
+           public Cv32suf() {
                         allocate();
                     }
 
-/* 235 */           public Cv32suf(int size) {
+           public Cv32suf(int size) {
                         allocateArray(size);
                     }
 
-/* 236 */           public Cv32suf(Pointer p) {
-/* 237 */               super(p);
+           public Cv32suf(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 241 */           public Cv32suf position(int position) {
-/* 242 */               return (Cv32suf) super.position(position);
+                    @Override 
+           public Cv32suf position(int position) {
+               return (Cv32suf) super.position(position);
                     }
                 }
 
-/* 248 */       public static class Cv64suf extends Pointer {
+       public static class Cv64suf extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
-                    /* JADX INFO: renamed from: f */
+                    
                     public native double m2421f();
 
-                    /* JADX INFO: renamed from: f */
+                    
                     public native Cv64suf m2422f(double d);
 
-                    /* JADX INFO: renamed from: i */
+                    
                     public native long m2423i();
 
-                    /* JADX INFO: renamed from: i */
+                    
                     public native Cv64suf m2424i(long j);
 
-                    /* JADX INFO: renamed from: u */
+                    
                     public native long m2425u();
 
-                    /* JADX INFO: renamed from: u */
+                    
                     public native Cv64suf m2426u(long j);
 
 
                     static {
-/* 251 */               Loader.load();
+               Loader.load();
                     }
 
-/* 251 */           public Cv64suf() {
+           public Cv64suf() {
                         allocate();
                     }
 
-/* 252 */           public Cv64suf(int size) {
+           public Cv64suf(int size) {
                         allocateArray(size);
                     }
 
-/* 253 */           public Cv64suf(Pointer p) {
-/* 254 */               super(p);
+           public Cv64suf(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 258 */           public Cv64suf position(int position) {
-/* 259 */               return (Cv64suf) super.position(position);
+                    @Override 
+           public Cv64suf position(int position) {
+               return (Cv64suf) super.position(position);
                     }
                 }
 
-/* 323 */       public static class CvRNG extends LongPointer {
+       public static class CvRNG extends LongPointer {
                     private native void allocate();
 
                     static {
-/* 325 */               Loader.load();
+               Loader.load();
                     }
 
-/* 325 */           public CvRNG() {
-/* 326 */               this(null);
+           public CvRNG() {
+               this(null);
                         allocate();
                     }
 
-/* 326 */           public CvRNG(Pointer p) {
-/* 327 */               super(p);
+           public CvRNG(Pointer p) {
+               super(p);
                     }
                 }
 
-/* 330 */       public static CvRNG cvRNG() {
-/* 331 */           return cvRNG(-1L);
+       public static CvRNG cvRNG() {
+           return cvRNG(-1L);
                 }
 
-/* 333 */       public static CvRNG cvRNG(long seed) {
-/* 334 */           CvRNG cvRNG = new CvRNG();
+       public static CvRNG cvRNG(long seed) {
+           CvRNG cvRNG = new CvRNG();
                     if (seed == 0) {
                         seed = -1;
                     }
                     return (CvRNG) cvRNG.put(seed);
                 }
 
-/* 336 */       public static int cvRandInt(CvRNG rng) {
-/* 337 */           long temp = rng.get();
-/* 338 */           long temp2 = ((temp & 4294967295L) * CV_RNG_COEFF) + ((temp >> 32) & 4294967295L);
-/* 339 */           rng.put(temp2);
-/* 340 */           return (int) temp2;
+       public static int cvRandInt(CvRNG rng) {
+           long temp = rng.get();
+           long temp2 = ((temp & 4294967295L) * CV_RNG_COEFF) + ((temp >> 32) & 4294967295L);
+           rng.put(temp2);
+           return (int) temp2;
                 }
 
-/* 342 */       public static double cvRandReal(CvRNG rng) {
-/* 343 */           return (((long) cvRandInt(rng)) & 4294967295L) * 2.3283064365386963E-10d;
+       public static double cvRandReal(CvRNG rng) {
+           return (((long) cvRandInt(rng)) & 4294967295L) * 2.3283064365386963E-10d;
                 }
 
-/* 377 */       public static class IplImage extends CvArr {
-                    static final /* synthetic */ boolean $assertionsDisabled;
+       public static class IplImage extends CvArr {
+                    static final  boolean $assertionsDisabled;
                     public static final byte[] gamma22;
                     public static final byte[] gamma22inv;
 
@@ -1459,10 +1459,10 @@
 
                     public native IplImage BorderMode(int i, int i2);
 
-                    /* JADX INFO: renamed from: ID */
+                    
                     public native int m2457ID();
 
-                    /* JADX INFO: renamed from: ID */
+                    
                     public native IplImage m2458ID(int i);
 
                     public native int align();
@@ -1547,600 +1547,600 @@
                     public native IplImage widthStep(int i);
 
                     static {
-/* 379 */               $assertionsDisabled = !opencv_core.class.desiredAssertionStatus();
-/* 532 */               gamma22 = new byte[256];
-/* 533 */               gamma22inv = new byte[256];
+               $assertionsDisabled = !opencv_core.class.desiredAssertionStatus();
+               gamma22 = new byte[256];
+               gamma22inv = new byte[256];
                         for (int i = 0; i < 256; i++) {
-/* 536 */                   gamma22[i] = (byte) Math.round(Math.pow(((double) i) / 255.0d, 2.2d) * 255.0d);
-/* 537 */                   gamma22inv[i] = (byte) Math.round(Math.pow(((double) i) / 255.0d, 0.45454545454545453d) * 255.0d);
+                   gamma22[i] = (byte) Math.round(Math.pow(((double) i) / 255.0d, 2.2d) * 255.0d);
+                   gamma22inv[i] = (byte) Math.round(Math.pow(((double) i) / 255.0d, 0.45454545454545453d) * 255.0d);
                         }
                     }
 
-                    /* JADX INFO: renamed from: clone, reason: collision with other method in class */
+                    
 
 
-/* 379 */           public IplImage() {
+           public IplImage() {
                         allocate();
                         zero();
                     }
 
-/* 380 */           public IplImage(int size) {
+           public IplImage(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 381 */           public IplImage(Pointer p) {
-/* 382 */               super(p);
+           public IplImage(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 386 */           public IplImage position(int position) {
-/* 387 */               return (IplImage) super.position(position);
+                    @Override 
+           public IplImage position(int position) {
+               return (IplImage) super.position(position);
                     }
 
-/* 390 */           public static IplImage create(CvSize size, int depth, int channels) {
-/* 391 */               IplImage i = opencv_core.cvCreateImage(size, depth, channels);
-/* 392 */               if (i != null) {
-/* 393 */                   i.deallocator(new ReleaseDeallocator(i));
+           public static IplImage create(CvSize size, int depth, int channels) {
+               IplImage i = opencv_core.cvCreateImage(size, depth, channels);
+               if (i != null) {
+                   i.deallocator(new ReleaseDeallocator(i));
                         }
-/* 395 */               return i;
+               return i;
                     }
 
-/* 397 */           public static IplImage create(int width, int height, int depth, int channels) {
-/* 398 */               return create(opencv_core.cvSize(width, height), depth, channels);
+           public static IplImage create(int width, int height, int depth, int channels) {
+               return create(opencv_core.cvSize(width, height), depth, channels);
                     }
 
-/* 400 */           public static IplImage create(CvSize size, int depth, int channels, int origin) {
-/* 401 */               IplImage i = create(size, depth, channels);
-/* 402 */               if (i != null) {
-/* 403 */                   i.origin(origin);
+           public static IplImage create(CvSize size, int depth, int channels, int origin) {
+               IplImage i = create(size, depth, channels);
+               if (i != null) {
+                   i.origin(origin);
                         }
-/* 405 */               return i;
+               return i;
                     }
 
-/* 407 */           public static IplImage create(int width, int height, int depth, int channels, int origin) {
-/* 408 */               IplImage i = create(width, height, depth, channels);
-/* 409 */               if (i != null) {
-/* 410 */                   i.origin(origin);
+           public static IplImage create(int width, int height, int depth, int channels, int origin) {
+               IplImage i = create(width, height, depth, channels);
+               if (i != null) {
+                   i.origin(origin);
                         }
-/* 412 */               return i;
+               return i;
                     }
 
-/* 415 */           public static IplImage createHeader(CvSize size, int depth, int channels) {
-/* 416 */               IplImage i = opencv_core.cvCreateImageHeader(size, depth, channels);
-/* 417 */               if (i != null) {
-/* 418 */                   i.deallocator(new HeaderReleaseDeallocator(i));
+           public static IplImage createHeader(CvSize size, int depth, int channels) {
+               IplImage i = opencv_core.cvCreateImageHeader(size, depth, channels);
+               if (i != null) {
+                   i.deallocator(new HeaderReleaseDeallocator(i));
                         }
-/* 420 */               return i;
+               return i;
                     }
 
-/* 422 */           public static IplImage createHeader(int width, int height, int depth, int channels) {
-/* 423 */               return createHeader(opencv_core.cvSize(width, height), depth, channels);
+           public static IplImage createHeader(int width, int height, int depth, int channels) {
+               return createHeader(opencv_core.cvSize(width, height), depth, channels);
                     }
 
-/* 425 */           public static IplImage createHeader(CvSize size, int depth, int channels, int origin) {
-/* 426 */               IplImage i = createHeader(size, depth, channels);
-/* 427 */               if (i != null) {
-/* 428 */                   i.origin(origin);
+           public static IplImage createHeader(CvSize size, int depth, int channels, int origin) {
+               IplImage i = createHeader(size, depth, channels);
+               if (i != null) {
+                   i.origin(origin);
                         }
-/* 430 */               return i;
+               return i;
                     }
 
-/* 432 */           public static IplImage createHeader(int width, int height, int depth, int channels, int origin) {
-/* 433 */               IplImage i = createHeader(width, height, depth, channels);
-/* 434 */               if (i != null) {
-/* 435 */                   i.origin(origin);
+           public static IplImage createHeader(int width, int height, int depth, int channels, int origin) {
+               IplImage i = createHeader(width, height, depth, channels);
+               if (i != null) {
+                   i.origin(origin);
                         }
-/* 437 */               return i;
+               return i;
                     }
 
-/* 440 */           public static IplImage createCompatible(IplImage template) {
-/* 441 */               return createIfNotCompatible(null, template);
+           public static IplImage createCompatible(IplImage template) {
+               return createIfNotCompatible(null, template);
                     }
 
-/* 443 */           public static IplImage createIfNotCompatible(IplImage image, IplImage template) {
-/* 444 */               if (image == null || image.width() != template.width() || image.height() != template.height() || image.depth() != template.depth() || image.nChannels() != template.nChannels()) {
-/* 446 */                   image = create(template.width(), template.height(), template.depth(), template.nChannels(), template.origin());
+           public static IplImage createIfNotCompatible(IplImage image, IplImage template) {
+               if (image == null || image.width() != template.width() || image.height() != template.height() || image.depth() != template.depth() || image.nChannels() != template.nChannels()) {
+                   image = create(template.width(), template.height(), template.depth(), template.nChannels(), template.origin());
                         }
-/* 449 */               image.origin(template.origin());
-/* 450 */               return image;
+               image.origin(template.origin());
+               return image;
                     }
 
-/* 454 */           public IplImage clone() {
-/* 455 */               IplImage i = opencv_core.cvCloneImage(this);
-/* 456 */               if (i != null) {
-/* 457 */                   i.deallocator(new ReleaseDeallocator(i));
+           public IplImage clone() {
+               IplImage i = opencv_core.cvCloneImage(this);
+               if (i != null) {
+                   i.deallocator(new ReleaseDeallocator(i));
                         }
-/* 459 */               return i;
+               return i;
                     }
 
-/* 462 */           public void release() {
-/* 463 */               deallocate();
+           public void release() {
+               deallocate();
                     }
 
-/* 463 */           protected static class ReleaseDeallocator extends IplImage implements Pointer.Deallocator {
-/* 465 */               ReleaseDeallocator(IplImage p) {
-/* 466 */                   super(p);
-                        }
-
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 466 */               public void deallocate() {
-/* 467 */                   opencv_core.cvReleaseImage(this);
-                        }
-                    }
-
-/* 467 */           protected static class HeaderReleaseDeallocator extends IplImage implements Pointer.Deallocator {
-/* 469 */               HeaderReleaseDeallocator(IplImage p) {
-/* 470 */                   super(p);
+           protected static class ReleaseDeallocator extends IplImage implements Pointer.Deallocator {
+               ReleaseDeallocator(IplImage p) {
+                   super(p);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 470 */               public void deallocate() {
-/* 471 */                   opencv_core.cvReleaseImageHeader(this);
+                        @Override 
+               public void deallocate() {
+                   opencv_core.cvReleaseImage(this);
                         }
                     }
 
-/* 502 */           public double highValue() {
+           protected static class HeaderReleaseDeallocator extends IplImage implements Pointer.Deallocator {
+               HeaderReleaseDeallocator(IplImage p) {
+                   super(p);
+                        }
+
+                        @Override 
+               public void deallocate() {
+                   opencv_core.cvReleaseImageHeader(this);
+                        }
+                    }
+
+           public double highValue() {
                         switch (depth()) {
-                            case opencv_core.IPL_DEPTH_8S /* -2147483640 */:
-/* 507 */                       return 127.0d;
-                            case opencv_core.IPL_DEPTH_16S /* -2147483632 */:
-/* 508 */                       return 32767.0d;
-                            case opencv_core.IPL_DEPTH_32S /* -2147483616 */:
-/* 509 */                       return 2.147483647E9d;
+                            case opencv_core.IPL_DEPTH_8S :
+                       return 127.0d;
+                            case opencv_core.IPL_DEPTH_16S :
+                       return 32767.0d;
+                            case opencv_core.IPL_DEPTH_32S :
+                       return 2.147483647E9d;
                             case 1:
                             case 32:
                             case 64:
-/* 512 */                       return 1.0d;
+                       return 1.0d;
                             case 8:
-/* 505 */                       return 255.0d;
+                       return 255.0d;
                             case 16:
-/* 506 */                       return 65535.0d;
+                       return 65535.0d;
                             default:
-/* 513 */                       if ($assertionsDisabled) {
-/* 503 */                           return 0.0d;
+                       if ($assertionsDisabled) {
+                           return 0.0d;
                                 }
                                 throw new AssertionError();
                         }
                     }
 
-/* 517 */           public CvSize cvSize() {
-/* 518 */               return opencv_core.cvSize(width(), height());
+           public CvSize cvSize() {
+               return opencv_core.cvSize(width(), height());
                     }
 
-/* 519 */           public ByteBuffer getByteBuffer(int index) {
-/* 520 */               return imageData().position(index).capacity(imageSize()).asByteBuffer();
+           public ByteBuffer getByteBuffer(int index) {
+               return imageData().position(index).capacity(imageSize()).asByteBuffer();
                     }
 
-/* 520 */           public ShortBuffer getShortBuffer(int index) {
-/* 521 */               return getByteBuffer(index * 2).asShortBuffer();
+           public ShortBuffer getShortBuffer(int index) {
+               return getByteBuffer(index * 2).asShortBuffer();
                     }
 
-/* 521 */           public IntBuffer getIntBuffer(int index) {
-/* 522 */               return getByteBuffer(index * 4).asIntBuffer();
+           public IntBuffer getIntBuffer(int index) {
+               return getByteBuffer(index * 4).asIntBuffer();
                     }
 
-/* 522 */           public FloatBuffer getFloatBuffer(int index) {
-/* 523 */               return getByteBuffer(index * 4).asFloatBuffer();
+           public FloatBuffer getFloatBuffer(int index) {
+               return getByteBuffer(index * 4).asFloatBuffer();
                     }
 
-/* 523 */           public DoubleBuffer getDoubleBuffer(int index) {
-/* 524 */               return getByteBuffer(index * 8).asDoubleBuffer();
+           public DoubleBuffer getDoubleBuffer(int index) {
+               return getByteBuffer(index * 8).asDoubleBuffer();
                     }
 
-/* 524 */           public ByteBuffer getByteBuffer() {
-/* 525 */               return getByteBuffer(0);
+           public ByteBuffer getByteBuffer() {
+               return getByteBuffer(0);
                     }
 
-/* 525 */           public ShortBuffer getShortBuffer() {
-/* 526 */               return getShortBuffer(0);
+           public ShortBuffer getShortBuffer() {
+               return getShortBuffer(0);
                     }
 
-/* 526 */           public IntBuffer getIntBuffer() {
-/* 527 */               return getIntBuffer(0);
+           public IntBuffer getIntBuffer() {
+               return getIntBuffer(0);
                     }
 
-/* 527 */           public FloatBuffer getFloatBuffer() {
-/* 528 */               return getFloatBuffer(0);
+           public FloatBuffer getFloatBuffer() {
+               return getFloatBuffer(0);
                     }
 
-/* 528 */           public DoubleBuffer getDoubleBuffer() {
-/* 529 */               return getDoubleBuffer(0);
+           public DoubleBuffer getDoubleBuffer() {
+               return getDoubleBuffer(0);
                     }
 
-/* 540 */           public static int decodeGamma22(int value) {
-/* 541 */               return gamma22[value & 255] & Constants.UNKNOWN;
+           public static int decodeGamma22(int value) {
+               return gamma22[value & 255] & Constants.UNKNOWN;
                     }
 
-/* 543 */           public static int encodeGamma22(int value) {
-/* 544 */               return gamma22inv[value & 255] & Constants.UNKNOWN;
+           public static int encodeGamma22(int value) {
+               return gamma22inv[value & 255] & Constants.UNKNOWN;
                     }
 
-/* 547 */           public static void flipCopyWithGamma(ByteBuffer srcBuf, int srcStep, ByteBuffer dstBuf, int dstStep, boolean signed, double gamma, boolean flip, int channels) {
+           public static void flipCopyWithGamma(ByteBuffer srcBuf, int srcStep, ByteBuffer dstBuf, int dstStep, boolean signed, double gamma, boolean flip, int channels) {
                         byte out;
                         byte out2;
                         byte out3;
                         byte out4;
-/* 548 */               if (!$assertionsDisabled && srcBuf == dstBuf) {
+               if (!$assertionsDisabled && srcBuf == dstBuf) {
                             throw new AssertionError();
                         }
-/* 549 */               int w = Math.min(srcStep, dstStep);
-/* 550 */               int srcLine = srcBuf.position();
+               int w = Math.min(srcStep, dstStep);
+               int srcLine = srcBuf.position();
                         int dstLine = dstBuf.position();
-/* 551 */               byte[] buffer = new byte[channels];
-/* 552 */               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
-/* 553 */                   if (flip) {
-/* 554 */                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
+               byte[] buffer = new byte[channels];
+               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
+                   if (flip) {
+                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
                             } else {
-/* 556 */                       srcBuf.position(srcLine);
+                       srcBuf.position(srcLine);
                             }
-/* 558 */                   dstBuf.position(dstLine);
-/* 559 */                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
-/* 560 */                   if (signed) {
-/* 561 */                       if (channels > 1) {
-/* 562 */                           int x = 0;
+                   dstBuf.position(dstLine);
+                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
+                   if (signed) {
+                       if (channels > 1) {
+                           int x = 0;
                                     while (x < w) {
                                         for (int z = 0; z < channels; z++) {
-/* 564 */                                   int in = srcBuf.get();
+                                   int in = srcBuf.get();
                                             if (gamma == 1.0d) {
-/* 567 */                                       out4 = (byte) in;
+                                       out4 = (byte) in;
                                             } else {
-/* 569 */                                       out4 = (byte) Math.round(Math.pow(((double) in) / 127.0d, gamma) * 127.0d);
+                                       out4 = (byte) Math.round(Math.pow(((double) in) / 127.0d, gamma) * 127.0d);
                                             }
-/* 571 */                                   buffer[z] = out4;
+                                   buffer[z] = out4;
                                         }
                                         for (int z2 = channels - 1; z2 >= 0; z2--) {
-/* 574 */                                   dstBuf.put(buffer[z2]);
+                                   dstBuf.put(buffer[z2]);
                                         }
-/* 562 */                               x += channels;
+                               x += channels;
                                     }
                                 } else {
                                     for (int x2 = 0; x2 < w; x2++) {
-/* 579 */                               int in2 = srcBuf.get();
+                               int in2 = srcBuf.get();
                                         if (gamma == 1.0d) {
-/* 582 */                                   out3 = (byte) in2;
+                                   out3 = (byte) in2;
                                         } else {
-/* 584 */                                   out3 = (byte) Math.round(Math.pow(((double) in2) / 127.0d, gamma) * 127.0d);
+                                   out3 = (byte) Math.round(Math.pow(((double) in2) / 127.0d, gamma) * 127.0d);
                                         }
-/* 586 */                               dstBuf.put(out3);
+                               dstBuf.put(out3);
                                     }
                                 }
                             } else if (channels > 1) {
-/* 591 */                       int x3 = 0;
+                       int x3 = 0;
                                 while (x3 < w) {
                                     for (int z3 = 0; z3 < channels; z3++) {
-/* 594 */                               int in3 = srcBuf.get() & Constants.UNKNOWN;
+                               int in3 = srcBuf.get() & Constants.UNKNOWN;
                                         if (gamma == 1.0d) {
-/* 596 */                                   out2 = (byte) in3;
+                                   out2 = (byte) in3;
                                         } else if (gamma == 2.2d) {
-/* 598 */                                   out2 = gamma22[in3];
+                                   out2 = gamma22[in3];
                                         } else if (gamma == 0.45454545454545453d) {
-/* 600 */                                   out2 = gamma22inv[in3];
+                                   out2 = gamma22inv[in3];
                                         } else {
-/* 602 */                                   out2 = (byte) Math.round(Math.pow(((double) in3) / 255.0d, gamma) * 255.0d);
+                                   out2 = (byte) Math.round(Math.pow(((double) in3) / 255.0d, gamma) * 255.0d);
                                         }
-/* 604 */                               buffer[z3] = out2;
+                               buffer[z3] = out2;
                                     }
                                     for (int z4 = channels - 1; z4 >= 0; z4--) {
-/* 607 */                               dstBuf.put(buffer[z4]);
+                               dstBuf.put(buffer[z4]);
                                     }
-/* 591 */                           x3 += channels;
+                           x3 += channels;
                                 }
                             } else {
                                 for (int x4 = 0; x4 < w; x4++) {
-/* 613 */                           int in4 = srcBuf.get() & Constants.UNKNOWN;
+                           int in4 = srcBuf.get() & Constants.UNKNOWN;
                                     if (gamma == 1.0d) {
-/* 615 */                               out = (byte) in4;
+                               out = (byte) in4;
                                     } else if (gamma == 2.2d) {
-/* 617 */                               out = gamma22[in4];
+                               out = gamma22[in4];
                                     } else if (gamma == 0.45454545454545453d) {
-/* 619 */                               out = gamma22inv[in4];
+                               out = gamma22inv[in4];
                                     } else {
-/* 621 */                               out = (byte) Math.round(Math.pow(((double) in4) / 255.0d, gamma) * 255.0d);
+                               out = (byte) Math.round(Math.pow(((double) in4) / 255.0d, gamma) * 255.0d);
                                     }
-/* 623 */                           dstBuf.put(out);
+                           dstBuf.put(out);
                                 }
                             }
-/* 627 */                   srcLine += srcStep;
-/* 628 */                   dstLine += dstStep;
+                   srcLine += srcStep;
+                   dstLine += dstStep;
                         }
                     }
 
-/* 632 */           public static void flipCopyWithGamma(ShortBuffer srcBuf, int srcStep, ShortBuffer dstBuf, int dstStep, boolean signed, double gamma, boolean flip, int channels) {
+           public static void flipCopyWithGamma(ShortBuffer srcBuf, int srcStep, ShortBuffer dstBuf, int dstStep, boolean signed, double gamma, boolean flip, int channels) {
                         short out;
                         short out2;
                         short out3;
                         short out4;
-/* 633 */               if (!$assertionsDisabled && srcBuf == dstBuf) {
+               if (!$assertionsDisabled && srcBuf == dstBuf) {
                             throw new AssertionError();
                         }
-/* 634 */               int w = Math.min(srcStep, dstStep);
-/* 635 */               int srcLine = srcBuf.position();
+               int w = Math.min(srcStep, dstStep);
+               int srcLine = srcBuf.position();
                         int dstLine = dstBuf.position();
-/* 636 */               short[] buffer = new short[channels];
-/* 637 */               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
-/* 638 */                   if (flip) {
-/* 639 */                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
+               short[] buffer = new short[channels];
+               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
+                   if (flip) {
+                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
                             } else {
-/* 641 */                       srcBuf.position(srcLine);
+                       srcBuf.position(srcLine);
                             }
-/* 643 */                   dstBuf.position(dstLine);
-/* 644 */                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
-/* 645 */                   if (signed) {
-/* 646 */                       if (channels > 1) {
-/* 647 */                           int x = 0;
+                   dstBuf.position(dstLine);
+                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
+                   if (signed) {
+                       if (channels > 1) {
+                           int x = 0;
                                     while (x < w) {
                                         for (int z = 0; z < channels; z++) {
-/* 649 */                                   int in = srcBuf.get();
+                                   int in = srcBuf.get();
                                             if (gamma == 1.0d) {
-/* 652 */                                       out4 = (short) in;
+                                       out4 = (short) in;
                                             } else {
-/* 654 */                                       out4 = (short) Math.round(Math.pow(((double) in) / 32767.0d, gamma) * 32767.0d);
+                                       out4 = (short) Math.round(Math.pow(((double) in) / 32767.0d, gamma) * 32767.0d);
                                             }
-/* 656 */                                   buffer[z] = out4;
+                                   buffer[z] = out4;
                                         }
                                         for (int z2 = channels - 1; z2 >= 0; z2--) {
-/* 659 */                                   dstBuf.put(buffer[z2]);
+                                   dstBuf.put(buffer[z2]);
                                         }
-/* 647 */                               x += channels;
+                               x += channels;
                                     }
                                 } else {
                                     for (int x2 = 0; x2 < w; x2++) {
-/* 664 */                               int in2 = srcBuf.get();
+                               int in2 = srcBuf.get();
                                         if (gamma == 1.0d) {
-/* 667 */                                   out3 = (short) in2;
+                                   out3 = (short) in2;
                                         } else {
-/* 669 */                                   out3 = (short) Math.round(Math.pow(((double) in2) / 32767.0d, gamma) * 32767.0d);
+                                   out3 = (short) Math.round(Math.pow(((double) in2) / 32767.0d, gamma) * 32767.0d);
                                         }
-/* 671 */                               dstBuf.put(out3);
+                               dstBuf.put(out3);
                                     }
                                 }
                             } else if (channels > 1) {
-/* 676 */                       int x3 = 0;
+                       int x3 = 0;
                                 while (x3 < w) {
                                     for (int z3 = 0; z3 < channels; z3++) {
-/* 678 */                               int in3 = srcBuf.get();
+                               int in3 = srcBuf.get();
                                         if (gamma == 1.0d) {
-/* 681 */                                   out2 = (short) in3;
+                                   out2 = (short) in3;
                                         } else {
-/* 683 */                                   out2 = (short) Math.round(Math.pow(((double) in3) / 65535.0d, gamma) * 65535.0d);
+                                   out2 = (short) Math.round(Math.pow(((double) in3) / 65535.0d, gamma) * 65535.0d);
                                         }
-/* 685 */                               buffer[z3] = out2;
+                               buffer[z3] = out2;
                                     }
                                     for (int z4 = channels - 1; z4 >= 0; z4--) {
-/* 688 */                               dstBuf.put(buffer[z4]);
+                               dstBuf.put(buffer[z4]);
                                     }
-/* 676 */                           x3 += channels;
+                           x3 += channels;
                                 }
                             } else {
                                 for (int x4 = 0; x4 < w; x4++) {
-/* 693 */                           int in4 = srcBuf.get() & 65535;
+                           int in4 = srcBuf.get() & 65535;
                                     if (gamma == 1.0d) {
-/* 696 */                               out = (short) in4;
+                               out = (short) in4;
                                     } else {
-/* 698 */                               out = (short) Math.round(Math.pow(((double) in4) / 65535.0d, gamma) * 65535.0d);
+                               out = (short) Math.round(Math.pow(((double) in4) / 65535.0d, gamma) * 65535.0d);
                                     }
-/* 700 */                           dstBuf.put(out);
+                           dstBuf.put(out);
                                 }
                             }
-/* 704 */                   srcLine += srcStep;
-/* 705 */                   dstLine += dstStep;
+                   srcLine += srcStep;
+                   dstLine += dstStep;
                         }
                     }
 
-/* 709 */           public static void flipCopyWithGamma(IntBuffer srcBuf, int srcStep, IntBuffer dstBuf, int dstStep, double gamma, boolean flip, int channels) {
+           public static void flipCopyWithGamma(IntBuffer srcBuf, int srcStep, IntBuffer dstBuf, int dstStep, double gamma, boolean flip, int channels) {
                         int out;
                         int out2;
-/* 710 */               if (!$assertionsDisabled && srcBuf == dstBuf) {
+               if (!$assertionsDisabled && srcBuf == dstBuf) {
                             throw new AssertionError();
                         }
-/* 711 */               int w = Math.min(srcStep, dstStep);
-/* 712 */               int srcLine = srcBuf.position();
+               int w = Math.min(srcStep, dstStep);
+               int srcLine = srcBuf.position();
                         int dstLine = dstBuf.position();
-/* 713 */               int[] buffer = new int[channels];
-/* 714 */               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
-/* 715 */                   if (flip) {
-/* 716 */                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
+               int[] buffer = new int[channels];
+               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
+                   if (flip) {
+                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
                             } else {
-/* 718 */                       srcBuf.position(srcLine);
+                       srcBuf.position(srcLine);
                             }
-/* 720 */                   dstBuf.position(dstLine);
-/* 721 */                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
-/* 722 */                   if (channels > 1) {
-/* 723 */                       int x = 0;
+                   dstBuf.position(dstLine);
+                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
+                   if (channels > 1) {
+                       int x = 0;
                                 while (x < w) {
                                     for (int z = 0; z < channels; z++) {
-/* 725 */                               int in = srcBuf.get();
+                               int in = srcBuf.get();
                                         if (gamma == 1.0d) {
-/* 728 */                                   out2 = in;
+                                   out2 = in;
                                         } else {
-/* 730 */                                   out2 = (int) Math.round(Math.pow(((double) in) / 2.147483647E9d, gamma) * 2.147483647E9d);
+                                   out2 = (int) Math.round(Math.pow(((double) in) / 2.147483647E9d, gamma) * 2.147483647E9d);
                                         }
-/* 732 */                               buffer[z] = out2;
+                               buffer[z] = out2;
                                     }
                                     for (int z2 = channels - 1; z2 >= 0; z2--) {
-/* 735 */                               dstBuf.put(buffer[z2]);
+                               dstBuf.put(buffer[z2]);
                                     }
-/* 723 */                           x += channels;
+                           x += channels;
                                 }
                             } else {
                                 for (int x2 = 0; x2 < w; x2++) {
-/* 740 */                           int in2 = srcBuf.get();
+                           int in2 = srcBuf.get();
                                     if (gamma == 1.0d) {
-/* 743 */                               out = in2;
+                               out = in2;
                                     } else {
-/* 745 */                               out = (int) Math.round(Math.pow(((double) in2) / 2.147483647E9d, gamma) * 2.147483647E9d);
+                               out = (int) Math.round(Math.pow(((double) in2) / 2.147483647E9d, gamma) * 2.147483647E9d);
                                     }
-/* 747 */                           dstBuf.put(out);
+                           dstBuf.put(out);
                                 }
                             }
-/* 750 */                   srcLine += srcStep;
-/* 751 */                   dstLine += dstStep;
+                   srcLine += srcStep;
+                   dstLine += dstStep;
                         }
                     }
 
-/* 755 */           public static void flipCopyWithGamma(FloatBuffer srcBuf, int srcStep, FloatBuffer dstBuf, int dstStep, double gamma, boolean flip, int channels) {
+           public static void flipCopyWithGamma(FloatBuffer srcBuf, int srcStep, FloatBuffer dstBuf, int dstStep, double gamma, boolean flip, int channels) {
                         float out;
                         float out2;
-/* 756 */               if (!$assertionsDisabled && srcBuf == dstBuf) {
+               if (!$assertionsDisabled && srcBuf == dstBuf) {
                             throw new AssertionError();
                         }
-/* 757 */               int w = Math.min(srcStep, dstStep);
-/* 758 */               int srcLine = srcBuf.position();
+               int w = Math.min(srcStep, dstStep);
+               int srcLine = srcBuf.position();
                         int dstLine = dstBuf.position();
-/* 759 */               float[] buffer = new float[channels];
-/* 760 */               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
-/* 761 */                   if (flip) {
-/* 762 */                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
+               float[] buffer = new float[channels];
+               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
+                   if (flip) {
+                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
                             } else {
-/* 764 */                       srcBuf.position(srcLine);
+                       srcBuf.position(srcLine);
                             }
-/* 766 */                   dstBuf.position(dstLine);
-/* 767 */                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
-/* 768 */                   if (channels > 1) {
-/* 769 */                       int x = 0;
+                   dstBuf.position(dstLine);
+                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
+                   if (channels > 1) {
+                       int x = 0;
                                 while (x < w) {
                                     for (int z = 0; z < channels; z++) {
-/* 771 */                               float in = srcBuf.get();
+                               float in = srcBuf.get();
                                         if (gamma == 1.0d) {
-/* 774 */                                   out2 = in;
+                                   out2 = in;
                                         } else {
-/* 776 */                                   out2 = (float) Math.pow(in, gamma);
+                                   out2 = (float) Math.pow(in, gamma);
                                         }
-/* 778 */                               buffer[z] = out2;
+                               buffer[z] = out2;
                                     }
                                     for (int z2 = channels - 1; z2 >= 0; z2--) {
-/* 781 */                               dstBuf.put(buffer[z2]);
+                               dstBuf.put(buffer[z2]);
                                     }
-/* 769 */                           x += channels;
+                           x += channels;
                                 }
                             } else {
                                 for (int x2 = 0; x2 < w; x2++) {
-/* 786 */                           float in2 = srcBuf.get();
+                           float in2 = srcBuf.get();
                                     if (gamma == 1.0d) {
-/* 789 */                               out = in2;
+                               out = in2;
                                     } else {
-/* 791 */                               out = (float) Math.pow(in2, gamma);
+                               out = (float) Math.pow(in2, gamma);
                                     }
-/* 793 */                           dstBuf.put(out);
+                           dstBuf.put(out);
                                 }
                             }
-/* 796 */                   srcLine += srcStep;
-/* 797 */                   dstLine += dstStep;
+                   srcLine += srcStep;
+                   dstLine += dstStep;
                         }
                     }
 
-/* 801 */           public static void flipCopyWithGamma(DoubleBuffer srcBuf, int srcStep, DoubleBuffer dstBuf, int dstStep, double gamma, boolean flip, int channels) {
+           public static void flipCopyWithGamma(DoubleBuffer srcBuf, int srcStep, DoubleBuffer dstBuf, int dstStep, double gamma, boolean flip, int channels) {
                         double out;
                         double out2;
-/* 802 */               if (!$assertionsDisabled && srcBuf == dstBuf) {
+               if (!$assertionsDisabled && srcBuf == dstBuf) {
                             throw new AssertionError();
                         }
-/* 803 */               int w = Math.min(srcStep, dstStep);
-/* 804 */               int srcLine = srcBuf.position();
+               int w = Math.min(srcStep, dstStep);
+               int srcLine = srcBuf.position();
                         int dstLine = dstBuf.position();
-/* 805 */               double[] buffer = new double[channels];
-/* 806 */               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
-/* 807 */                   if (flip) {
-/* 808 */                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
+               double[] buffer = new double[channels];
+               while (srcLine < srcBuf.capacity() && dstLine < dstBuf.capacity()) {
+                   if (flip) {
+                       srcBuf.position((srcBuf.capacity() - srcLine) - srcStep);
                             } else {
-/* 810 */                       srcBuf.position(srcLine);
+                       srcBuf.position(srcLine);
                             }
-/* 812 */                   dstBuf.position(dstLine);
-/* 813 */                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
-/* 814 */                   if (channels > 1) {
-/* 815 */                       int x = 0;
+                   dstBuf.position(dstLine);
+                   w = Math.min(Math.min(w, srcBuf.remaining()), dstBuf.remaining());
+                   if (channels > 1) {
+                       int x = 0;
                                 while (x < w) {
                                     for (int z = 0; z < channels; z++) {
-/* 817 */                               double in = srcBuf.get();
+                               double in = srcBuf.get();
                                         if (gamma == 1.0d) {
-/* 820 */                                   out2 = in;
+                                   out2 = in;
                                         } else {
-/* 822 */                                   out2 = Math.pow(in, gamma);
+                                   out2 = Math.pow(in, gamma);
                                         }
-/* 824 */                               buffer[z] = out2;
+                               buffer[z] = out2;
                                     }
                                     for (int z2 = channels - 1; z2 >= 0; z2--) {
-/* 827 */                               dstBuf.put(buffer[z2]);
+                               dstBuf.put(buffer[z2]);
                                     }
-/* 815 */                           x += channels;
+                           x += channels;
                                 }
                             } else {
                                 for (int x2 = 0; x2 < w; x2++) {
-/* 832 */                           double in2 = srcBuf.get();
+                           double in2 = srcBuf.get();
                                     if (gamma == 1.0d) {
-/* 835 */                               out = in2;
+                               out = in2;
                                     } else {
-/* 837 */                               out = Math.pow(in2, gamma);
+                               out = Math.pow(in2, gamma);
                                     }
-/* 839 */                           dstBuf.put(out);
+                           dstBuf.put(out);
                                 }
                             }
-/* 842 */                   srcLine += srcStep;
-/* 843 */                   dstLine += dstStep;
+                   srcLine += srcStep;
+                   dstLine += dstStep;
                         }
                     }
 
-/* 846 */           public void applyGamma(double gamma) {
+           public void applyGamma(double gamma) {
                         if (gamma != 1.0d) {
                             switch (depth()) {
-                                case opencv_core.IPL_DEPTH_8S /* -2147483640 */:
-/* 855 */                           flipCopyWithGamma(getByteBuffer(), widthStep(), getByteBuffer(), widthStep(), true, gamma, false, 0);
-/* 875 */                           return;
-                                case opencv_core.IPL_DEPTH_16S /* -2147483632 */:
-/* 861 */                           flipCopyWithGamma(getShortBuffer(), widthStep() / 2, getShortBuffer(), widthStep() / 2, true, gamma, false, 0);
-/* 875 */                           return;
-                                case opencv_core.IPL_DEPTH_32S /* -2147483616 */:
-/* 864 */                           flipCopyWithGamma(getFloatBuffer(), widthStep() / 4, getFloatBuffer(), widthStep() / 4, gamma, false, 0);
-/* 875 */                           return;
+                                case opencv_core.IPL_DEPTH_8S :
+                           flipCopyWithGamma(getByteBuffer(), widthStep(), getByteBuffer(), widthStep(), true, gamma, false, 0);
+                           return;
+                                case opencv_core.IPL_DEPTH_16S :
+                           flipCopyWithGamma(getShortBuffer(), widthStep() / 2, getShortBuffer(), widthStep() / 2, true, gamma, false, 0);
+                           return;
+                                case opencv_core.IPL_DEPTH_32S :
+                           flipCopyWithGamma(getFloatBuffer(), widthStep() / 4, getFloatBuffer(), widthStep() / 4, gamma, false, 0);
+                           return;
                                 case 8:
-/* 852 */                           flipCopyWithGamma(getByteBuffer(), widthStep(), getByteBuffer(), widthStep(), false, gamma, false, 0);
-/* 875 */                           return;
+                           flipCopyWithGamma(getByteBuffer(), widthStep(), getByteBuffer(), widthStep(), false, gamma, false, 0);
+                           return;
                                 case 16:
-/* 858 */                           flipCopyWithGamma(getShortBuffer(), widthStep() / 2, getShortBuffer(), widthStep() / 2, false, gamma, false, 0);
-/* 875 */                           return;
+                           flipCopyWithGamma(getShortBuffer(), widthStep() / 2, getShortBuffer(), widthStep() / 2, false, gamma, false, 0);
+                           return;
                                 case 32:
-/* 867 */                           flipCopyWithGamma(getFloatBuffer(), widthStep() / 4, getFloatBuffer(), widthStep() / 4, gamma, false, 0);
-/* 875 */                           return;
+                           flipCopyWithGamma(getFloatBuffer(), widthStep() / 4, getFloatBuffer(), widthStep() / 4, gamma, false, 0);
+                           return;
                                 case 64:
-/* 870 */                           flipCopyWithGamma(getDoubleBuffer(), widthStep() / 8, getDoubleBuffer(), widthStep() / 8, gamma, false, 0);
-/* 875 */                           return;
+                           flipCopyWithGamma(getDoubleBuffer(), widthStep() / 8, getDoubleBuffer(), widthStep() / 8, gamma, false, 0);
+                           return;
                                 default:
-/* 873 */                           if (!$assertionsDisabled) {
+                           if (!$assertionsDisabled) {
                                         throw new AssertionError();
                                     }
-/* 875 */                           return;
+                           return;
                             }
                         }
                     }
 
-/* 877 */           public CvMat asCvMat() {
-/* 878 */               CvMat mat = new CvMat();
-/* 879 */               opencv_core.cvGetMat(this, mat, null, 0);
-/* 880 */               return mat;
+           public CvMat asCvMat() {
+               CvMat mat = new CvMat();
+               opencv_core.cvGetMat(this, mat, null, 0);
+               return mat;
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 883 */           public String toString() {
+                    @Override 
+           public String toString() {
                         return isNull() ? super.toString() : "IplImage[width=" + width() + ",height=" + height() + ",depth=" + depth() + ",nChannels=" + nChannels() + "]";
                     }
                 }
 
                 @Opaque
-/* 892 */       public static class IplTileInfo extends Pointer {
+       public static class IplTileInfo extends Pointer {
                     static {
-/* 894 */               Loader.load();
+               Loader.load();
                     }
 
-/* 894 */           public IplTileInfo() {
+           public IplTileInfo() {
                     }
 
-/* 895 */           public IplTileInfo(Pointer p) {
-/* 896 */               super(p);
+           public IplTileInfo(Pointer p) {
+               super(p);
                     }
                 }
 
-/* 897 */       public static class IplROI extends Pointer {
+       public static class IplROI extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2167,97 +2167,97 @@
 
 
                     static {
-/* 900 */               Loader.load();
+               Loader.load();
                     }
 
-/* 900 */           public IplROI() {
+           public IplROI() {
                         allocate();
                     }
 
-/* 901 */           public IplROI(int size) {
+           public IplROI(int size) {
                         allocateArray(size);
                     }
 
-/* 902 */           public IplROI(Pointer p) {
-/* 903 */               super(p);
+           public IplROI(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 907 */           public IplROI position(int position) {
-/* 908 */               return (IplROI) super.position(position);
+                    @Override 
+           public IplROI position(int position) {
+               return (IplROI) super.position(position);
                     }
                 }
 
-/* 929 */       public static boolean CV_IS_IMAGE_HDR(CvArr img) {
+       public static boolean CV_IS_IMAGE_HDR(CvArr img) {
                     return img != null && new IplImage(img).nSize() == Loader.sizeof(IplImage.class);
                 }
 
-/* 932 */       public static boolean CV_IS_IMAGE(CvArr img) {
+       public static boolean CV_IS_IMAGE(CvArr img) {
                     return CV_IS_IMAGE_HDR(img) && new IplImage(img).imageData() != null;
                 }
 
-/* 951 */       public static int CV_MAT_DEPTH(int flags) {
-/* 952 */           return flags & 7;
+       public static int CV_MAT_DEPTH(int flags) {
+           return flags & 7;
                 }
 
-/* 953 */       public static int CV_MAKETYPE(int depth, int cn) {
-/* 954 */           return CV_MAT_DEPTH(depth) + ((cn - 1) << 3);
+       public static int CV_MAKETYPE(int depth, int cn) {
+           return CV_MAT_DEPTH(depth) + ((cn - 1) << 3);
                 }
 
-/* 954 */       public static int CV_MAKE_TYPE(int depth, int cn) {
-/* 955 */           return CV_MAKETYPE(depth, cn);
+       public static int CV_MAKE_TYPE(int depth, int cn) {
+           return CV_MAKETYPE(depth, cn);
                 }
 
-/* 956 */       public static int CV_8UC(int n) {
-/* 957 */           return CV_MAKETYPE(0, n);
+       public static int CV_8UC(int n) {
+           return CV_MAKETYPE(0, n);
                 }
 
-/* 957 */       public static int CV_8SC(int n) {
-/* 958 */           return CV_MAKETYPE(1, n);
+       public static int CV_8SC(int n) {
+           return CV_MAKETYPE(1, n);
                 }
 
-/* 958 */       public static int CV_16UC(int n) {
-/* 959 */           return CV_MAKETYPE(0, n);
+       public static int CV_16UC(int n) {
+           return CV_MAKETYPE(0, n);
                 }
 
-/* 959 */       public static int CV_16SC(int n) {
-/* 960 */           return CV_MAKETYPE(3, n);
+       public static int CV_16SC(int n) {
+           return CV_MAKETYPE(3, n);
                 }
 
-/* 960 */       public static int CV_32SC(int n) {
-/* 961 */           return CV_MAKETYPE(4, n);
+       public static int CV_32SC(int n) {
+           return CV_MAKETYPE(4, n);
                 }
 
-/* 961 */       public static int CV_32FC(int n) {
-/* 962 */           return CV_MAKETYPE(5, n);
+       public static int CV_32FC(int n) {
+           return CV_MAKETYPE(5, n);
                 }
 
-/* 962 */       public static int CV_64FC(int n) {
-/* 963 */           return CV_MAKETYPE(6, n);
+       public static int CV_64FC(int n) {
+           return CV_MAKETYPE(6, n);
                 }
 
-/* 1010 */      public static int CV_MAT_CN(int flags) {
-/* 1011 */          return ((flags & CV_MAT_CN_MASK) >> 3) + 1;
+      public static int CV_MAT_CN(int flags) {
+          return ((flags & CV_MAT_CN_MASK) >> 3) + 1;
                 }
 
-/* 1011 */      public static int CV_MAT_TYPE(int flags) {
-/* 1012 */          return flags & 4095;
+      public static int CV_MAT_TYPE(int flags) {
+          return flags & 4095;
                 }
 
-/* 1012 */      public static boolean CV_IS_MAT_CONT(int flags) {
+      public static boolean CV_IS_MAT_CONT(int flags) {
                     return (flags & 16384) != 0;
                 }
 
-/* 1013 */      public static boolean CV_IS_CONT_MAT(int flags) {
-/* 1014 */          return CV_IS_MAT_CONT(flags);
+      public static boolean CV_IS_CONT_MAT(int flags) {
+          return CV_IS_MAT_CONT(flags);
                 }
 
-/* 1014 */      public static boolean CV_IS_TEMP_MAT(int flags) {
+      public static boolean CV_IS_TEMP_MAT(int flags) {
                     return (32768 & flags) != 0;
                 }
 
-/* 1020 */      public static class CvMat extends CvArr {
-                    static final /* synthetic */ boolean $assertionsDisabled;
+      public static class CvMat extends CvArr {
+                    static final  boolean $assertionsDisabled;
                     private ByteBuffer byteBuffer;
                     private DoubleBuffer doubleBuffer;
                     private FloatBuffer floatBuffer;
@@ -2321,247 +2321,247 @@
                     public native CvMat step(int i);
 
                     static {
-/* 1022 */              $assertionsDisabled = !opencv_core.class.desiredAssertionStatus();
+              $assertionsDisabled = !opencv_core.class.desiredAssertionStatus();
                     }
 
-                    /* JADX INFO: renamed from: clone, reason: collision with other method in class */
+                    
 
 
-/* 1022 */          public CvMat() {
-/* 1179 */              this.fullSize = 0;
-/* 1181 */              this.byteBuffer = null;
-/* 1182 */              this.shortBuffer = null;
-/* 1183 */              this.intBuffer = null;
-/* 1184 */              this.floatBuffer = null;
-/* 1185 */              this.doubleBuffer = null;
-/* 1023 */              allocate();
+          public CvMat() {
+              this.fullSize = 0;
+              this.byteBuffer = null;
+              this.shortBuffer = null;
+              this.intBuffer = null;
+              this.floatBuffer = null;
+              this.doubleBuffer = null;
+              allocate();
                         zero();
                     }
 
-/* 1023 */          public CvMat(int size) {
-/* 1179 */              this.fullSize = 0;
-/* 1181 */              this.byteBuffer = null;
-/* 1182 */              this.shortBuffer = null;
-/* 1183 */              this.intBuffer = null;
-/* 1184 */              this.floatBuffer = null;
-/* 1185 */              this.doubleBuffer = null;
-/* 1024 */              allocateArray(size);
+          public CvMat(int size) {
+              this.fullSize = 0;
+              this.byteBuffer = null;
+              this.shortBuffer = null;
+              this.intBuffer = null;
+              this.floatBuffer = null;
+              this.doubleBuffer = null;
+              allocateArray(size);
                         zero();
                     }
 
-/* 1024 */          public CvMat(Pointer p) {
-/* 1025 */              super(p);
-/* 1179 */              this.fullSize = 0;
-/* 1181 */              this.byteBuffer = null;
-/* 1182 */              this.shortBuffer = null;
-/* 1183 */              this.intBuffer = null;
-/* 1184 */              this.floatBuffer = null;
-/* 1185 */              this.doubleBuffer = null;
+          public CvMat(Pointer p) {
+              super(p);
+              this.fullSize = 0;
+              this.byteBuffer = null;
+              this.shortBuffer = null;
+              this.intBuffer = null;
+              this.floatBuffer = null;
+              this.doubleBuffer = null;
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1029 */          public CvMat position(int position) {
-/* 1030 */              return (CvMat) super.position(position);
+                    @Override 
+          public CvMat position(int position) {
+              return (CvMat) super.position(position);
                     }
 
-/* 1033 */          public static CvMat create(int rows, int cols, int type) {
-/* 1034 */              CvMat m = opencv_core.cvCreateMat(rows, cols, type);
-/* 1035 */              if (m != null) {
-/* 1036 */                  m.fullSize = m.size();
-/* 1037 */                  m.deallocator(new ReleaseDeallocator(m));
+          public static CvMat create(int rows, int cols, int type) {
+              CvMat m = opencv_core.cvCreateMat(rows, cols, type);
+              if (m != null) {
+                  m.fullSize = m.size();
+                  m.deallocator(new ReleaseDeallocator(m));
                         }
-/* 1039 */              return m;
+              return m;
                     }
 
-/* 1041 */          public static CvMat create(int rows, int cols, int depth, int channels) {
-/* 1042 */              return create(rows, cols, opencv_core.CV_MAKETYPE(depth, channels));
+          public static CvMat create(int rows, int cols, int depth, int channels) {
+              return create(rows, cols, opencv_core.CV_MAKETYPE(depth, channels));
                     }
 
-/* 1044 */          public static CvMat create(int rows, int cols) {
-/* 1045 */              return create(rows, cols, 6, 1);
+          public static CvMat create(int rows, int cols) {
+              return create(rows, cols, 6, 1);
                     }
 
-/* 1048 */          public static CvMat createHeader(int rows, int cols, int type) {
-/* 1049 */              CvMat m = opencv_core.cvCreateMatHeader(rows, cols, type);
-/* 1050 */              if (m != null) {
-/* 1051 */                  m.fullSize = m.size();
-/* 1052 */                  m.deallocator(new ReleaseDeallocator(m));
+          public static CvMat createHeader(int rows, int cols, int type) {
+              CvMat m = opencv_core.cvCreateMatHeader(rows, cols, type);
+              if (m != null) {
+                  m.fullSize = m.size();
+                  m.deallocator(new ReleaseDeallocator(m));
                         }
-/* 1054 */              return m;
+              return m;
                     }
 
-/* 1056 */          public static CvMat createHeader(int rows, int cols, int depth, int channels) {
-/* 1057 */              return createHeader(rows, cols, opencv_core.CV_MAKETYPE(depth, channels));
+          public static CvMat createHeader(int rows, int cols, int depth, int channels) {
+              return createHeader(rows, cols, opencv_core.CV_MAKETYPE(depth, channels));
                     }
 
-/* 1059 */          public static CvMat createHeader(int rows, int cols) {
-/* 1060 */              return createHeader(rows, cols, 6, 1);
+          public static CvMat createHeader(int rows, int cols) {
+              return createHeader(rows, cols, 6, 1);
                     }
 
-                    /* JADX INFO: renamed from: com.googlecode.javacv.cpp.opencv_core$CvMat$1 */
-/* 1062 */          static class C12321 extends ThreadLocal<CvMat> {
-                        final /* synthetic */ int val$cols;
-                        final /* synthetic */ int val$rows;
-                        final /* synthetic */ int val$type;
+                    
+          static class C12321 extends ThreadLocal<CvMat> {
+                        final  int val$cols;
+                        final  int val$rows;
+                        final  int val$type;
 
-/* 1063 */              C12321(int i, int i2, int i3) {
-/* 1064 */                  this.val$rows = i;
+              C12321(int i, int i2, int i3) {
+                  this.val$rows = i;
                             this.val$cols = i2;
                             this.val$type = i3;
                         }
 
 
-                        /* JADX WARN: Can't rename method to resolve collision */
-                        @Override // java.lang.ThreadLocal
-/* 1064 */              protected CvMat initialValue() {
-/* 1065 */                  return CvMat.create(this.val$rows, this.val$cols, this.val$type);
+                        
+                        @Override 
+              protected CvMat initialValue() {
+                  return CvMat.create(this.val$rows, this.val$cols, this.val$type);
                         }
                     }
 
-/* 1063 */          public static ThreadLocal<CvMat> createThreadLocal(int rows, int cols, int type) {
-/* 1064 */              return new C12321(rows, cols, type);
+          public static ThreadLocal<CvMat> createThreadLocal(int rows, int cols, int type) {
+              return new C12321(rows, cols, type);
                     }
 
-/* 1068 */          public static ThreadLocal<CvMat> createThreadLocal(int rows, int cols, int depth, int channels) {
-/* 1069 */              return createThreadLocal(rows, cols, opencv_core.CV_MAKETYPE(depth, channels));
+          public static ThreadLocal<CvMat> createThreadLocal(int rows, int cols, int depth, int channels) {
+              return createThreadLocal(rows, cols, opencv_core.CV_MAKETYPE(depth, channels));
                     }
 
-/* 1071 */          public static ThreadLocal<CvMat> createThreadLocal(int rows, int cols) {
-/* 1072 */              return createThreadLocal(rows, cols, 6, 1);
+          public static ThreadLocal<CvMat> createThreadLocal(int rows, int cols) {
+              return createThreadLocal(rows, cols, 6, 1);
                     }
 
-                    /* JADX INFO: renamed from: com.googlecode.javacv.cpp.opencv_core$CvMat$2 */
-/* 1074 */          static class C12332 extends ThreadLocal<CvMat> {
-                        final /* synthetic */ int val$cols;
-                        final /* synthetic */ int val$rows;
-                        final /* synthetic */ int val$type;
+                    
+          static class C12332 extends ThreadLocal<CvMat> {
+                        final  int val$cols;
+                        final  int val$rows;
+                        final  int val$type;
 
-/* 1075 */              C12332(int i, int i2, int i3) {
-/* 1076 */                  this.val$rows = i;
+              C12332(int i, int i2, int i3) {
+                  this.val$rows = i;
                             this.val$cols = i2;
                             this.val$type = i3;
                         }
 
 
-                        /* JADX WARN: Can't rename method to resolve collision */
-                        @Override // java.lang.ThreadLocal
-/* 1076 */              protected CvMat initialValue() {
-/* 1077 */                  return CvMat.createHeader(this.val$rows, this.val$cols, this.val$type);
+                        
+                        @Override 
+              protected CvMat initialValue() {
+                  return CvMat.createHeader(this.val$rows, this.val$cols, this.val$type);
                         }
                     }
 
-/* 1075 */          public static ThreadLocal<CvMat> createHeaderThreadLocal(int rows, int cols, int type) {
-/* 1076 */              return new C12332(rows, cols, type);
+          public static ThreadLocal<CvMat> createHeaderThreadLocal(int rows, int cols, int type) {
+              return new C12332(rows, cols, type);
                     }
 
-/* 1080 */          public static ThreadLocal<CvMat> createHeaderThreadLocal(int rows, int cols, int depth, int channels) {
-/* 1081 */              return createHeaderThreadLocal(rows, cols, opencv_core.CV_MAKETYPE(depth, channels));
+          public static ThreadLocal<CvMat> createHeaderThreadLocal(int rows, int cols, int depth, int channels) {
+              return createHeaderThreadLocal(rows, cols, opencv_core.CV_MAKETYPE(depth, channels));
                     }
 
-/* 1083 */          public static ThreadLocal<CvMat> createHeaderThreadLocal(int rows, int cols) {
-/* 1084 */              return createHeaderThreadLocal(rows, cols, 6, 1);
+          public static ThreadLocal<CvMat> createHeaderThreadLocal(int rows, int cols) {
+              return createHeaderThreadLocal(rows, cols, 6, 1);
                     }
 
-/* 1087 */          public CvMat clone() {
-/* 1088 */              CvMat m = opencv_core.cvCloneMat(this);
-/* 1089 */              if (m != null) {
-/* 1090 */                  m.deallocator(new ReleaseDeallocator(m));
+          public CvMat clone() {
+              CvMat m = opencv_core.cvCloneMat(this);
+              if (m != null) {
+                  m.deallocator(new ReleaseDeallocator(m));
                         }
-/* 1092 */              return m;
+              return m;
                     }
 
-/* 1095 */          public void release() {
-/* 1096 */              deallocate();
+          public void release() {
+              deallocate();
                     }
 
-/* 1096 */          protected static class ReleaseDeallocator extends CvMat implements Pointer.Deallocator {
-/* 1098 */              ReleaseDeallocator(CvMat m) {
-/* 1099 */                  super(m);
+          protected static class ReleaseDeallocator extends CvMat implements Pointer.Deallocator {
+              ReleaseDeallocator(CvMat m) {
+                  super(m);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 1099 */              public void deallocate() {
-/* 1100 */                  opencv_core.cvReleaseMat(this);
+                        @Override 
+              public void deallocate() {
+                  opencv_core.cvReleaseMat(this);
                         }
                     }
 
-/* 1122 */          public int type() {
-/* 1123 */              return opencv_core.CV_MAT_TYPE(raw_type());
+          public int type() {
+              return opencv_core.CV_MAT_TYPE(raw_type());
                     }
 
-/* 1125 */          public void type(int depth, int cn) {
-/* 1126 */              raw_type(opencv_core.CV_MAKETYPE(depth, cn) | opencv_core.CV_MAT_MAGIC_VAL);
+          public void type(int depth, int cn) {
+              raw_type(opencv_core.CV_MAKETYPE(depth, cn) | opencv_core.CV_MAT_MAGIC_VAL);
                     }
 
-/* 1128 */          public int depth() {
-/* 1129 */              return opencv_core.CV_MAT_DEPTH(type());
+          public int depth() {
+              return opencv_core.CV_MAT_DEPTH(type());
                     }
 
-/* 1131 */          public int channels() {
-/* 1132 */              return opencv_core.CV_MAT_CN(type());
+          public int channels() {
+              return opencv_core.CV_MAT_CN(type());
                     }
 
-/* 1134 */          public int nChannels() {
-/* 1135 */              return opencv_core.CV_MAT_CN(type());
+          public int nChannels() {
+              return opencv_core.CV_MAT_CN(type());
                     }
 
-/* 1137 */          public boolean isContinuous() {
-/* 1138 */              return opencv_core.CV_IS_MAT_CONT(type());
+          public boolean isContinuous() {
+              return opencv_core.CV_IS_MAT_CONT(type());
                     }
 
-/* 1140 */          public int elemSize() {
+          public int elemSize() {
                         switch (depth()) {
                             case 0:
                             case 1:
-/* 1143 */                      return 1;
+                      return 1;
                             case 2:
                             case 3:
-/* 1145 */                      return 2;
+                      return 2;
                             case 4:
                             case 5:
-/* 1147 */                      return 4;
+                      return 4;
                             case 6:
-/* 1148 */                      return 8;
+                      return 8;
                             default:
-/* 1149 */                      if ($assertionsDisabled) {
-/* 1151 */                          return 0;
+                      if ($assertionsDisabled) {
+                          return 0;
                                 }
                                 throw new AssertionError();
                         }
                     }
 
-/* 1153 */          public int length() {
-/* 1154 */              return rows() * cols();
+          public int length() {
+              return rows() * cols();
                     }
 
-/* 1156 */          public int total() {
-/* 1157 */              return rows() * cols();
+          public int total() {
+              return rows() * cols();
                     }
 
-/* 1159 */          public boolean empty() {
+          public boolean empty() {
                         return length() == 0;
                     }
 
-/* 1163 */          public int size() {
-/* 1164 */              int rows = rows();
+          public int size() {
+              int rows = rows();
                         return (rows > 1 ? step() * (rows - 1) : 0) + (channels() * cols() * elemSize());
                     }
 
-/* 1167 */          public CvSize cvSize() {
-/* 1168 */              return opencv_core.cvSize(cols(), rows());
+          public CvSize cvSize() {
+              return opencv_core.cvSize(cols(), rows());
                     }
 
-/* 1170 */          public void reset() {
-/* 1171 */              this.fullSize = 0;
-/* 1172 */              this.byteBuffer = null;
-/* 1173 */              this.shortBuffer = null;
-/* 1174 */              this.intBuffer = null;
-/* 1175 */              this.floatBuffer = null;
-/* 1176 */              this.doubleBuffer = null;
+          public void reset() {
+              this.fullSize = 0;
+              this.byteBuffer = null;
+              this.shortBuffer = null;
+              this.intBuffer = null;
+              this.floatBuffer = null;
+              this.doubleBuffer = null;
                     }
 
-/* 1179 */          private int fullSize() {
-/* 1180 */              if (this.fullSize > 0) {
+          private int fullSize() {
+              if (this.fullSize > 0) {
                             return this.fullSize;
                         }
                         int size = size();
@@ -2569,126 +2569,126 @@
                         return size;
                     }
 
-/* 1186 */          public ByteBuffer getByteBuffer() {
-/* 1187 */              if (this.byteBuffer == null) {
-/* 1188 */                  this.byteBuffer = data_ptr().capacity(fullSize()).asBuffer();
+          public ByteBuffer getByteBuffer() {
+              if (this.byteBuffer == null) {
+                  this.byteBuffer = data_ptr().capacity(fullSize()).asBuffer();
                         }
-/* 1190 */              this.byteBuffer.position(0);
-/* 1191 */              return this.byteBuffer;
+              this.byteBuffer.position(0);
+              return this.byteBuffer;
                     }
 
-/* 1193 */          public ShortBuffer getShortBuffer() {
-/* 1194 */              if (this.shortBuffer == null) {
-/* 1195 */                  this.shortBuffer = data_s().capacity(fullSize() / 2).asBuffer();
+          public ShortBuffer getShortBuffer() {
+              if (this.shortBuffer == null) {
+                  this.shortBuffer = data_s().capacity(fullSize() / 2).asBuffer();
                         }
-/* 1197 */              this.shortBuffer.position(0);
-/* 1198 */              return this.shortBuffer;
+              this.shortBuffer.position(0);
+              return this.shortBuffer;
                     }
 
-/* 1200 */          public IntBuffer getIntBuffer() {
-/* 1201 */              if (this.intBuffer == null) {
-/* 1202 */                  this.intBuffer = data_i().capacity(fullSize() / 4).asBuffer();
+          public IntBuffer getIntBuffer() {
+              if (this.intBuffer == null) {
+                  this.intBuffer = data_i().capacity(fullSize() / 4).asBuffer();
                         }
-/* 1204 */              this.intBuffer.position(0);
-/* 1205 */              return this.intBuffer;
+              this.intBuffer.position(0);
+              return this.intBuffer;
                     }
 
-/* 1207 */          public FloatBuffer getFloatBuffer() {
-/* 1208 */              if (this.floatBuffer == null) {
-/* 1209 */                  this.floatBuffer = data_fl().capacity(fullSize() / 4).asBuffer();
+          public FloatBuffer getFloatBuffer() {
+              if (this.floatBuffer == null) {
+                  this.floatBuffer = data_fl().capacity(fullSize() / 4).asBuffer();
                         }
-/* 1211 */              this.floatBuffer.position(0);
-/* 1212 */              return this.floatBuffer;
+              this.floatBuffer.position(0);
+              return this.floatBuffer;
                     }
 
-/* 1214 */          public DoubleBuffer getDoubleBuffer() {
-/* 1215 */              if (this.doubleBuffer == null) {
-/* 1216 */                  this.doubleBuffer = data_db().capacity(fullSize() / 8).asBuffer();
+          public DoubleBuffer getDoubleBuffer() {
+              if (this.doubleBuffer == null) {
+                  this.doubleBuffer = data_db().capacity(fullSize() / 8).asBuffer();
                         }
-/* 1218 */              this.doubleBuffer.position(0);
-/* 1219 */              return this.doubleBuffer;
+              this.doubleBuffer.position(0);
+              return this.doubleBuffer;
                     }
 
-/* 1222 */          public double get(int i) {
+          public double get(int i) {
                         switch (depth()) {
                             case 0:
-/* 1224 */                      return getByteBuffer().get(i) & Constants.UNKNOWN;
+                      return getByteBuffer().get(i) & Constants.UNKNOWN;
                             case 1:
-/* 1225 */                      return getByteBuffer().get(i);
+                      return getByteBuffer().get(i);
                             case 2:
-/* 1226 */                      return getShortBuffer().get(i) & 65535;
+                      return getShortBuffer().get(i) & 65535;
                             case 3:
-/* 1227 */                      return getShortBuffer().get(i);
+                      return getShortBuffer().get(i);
                             case 4:
-/* 1228 */                      return getIntBuffer().get(i);
+                      return getIntBuffer().get(i);
                             case 5:
-/* 1229 */                      return getFloatBuffer().get(i);
+                      return getFloatBuffer().get(i);
                             case 6:
-/* 1230 */                      return getDoubleBuffer().get(i);
+                      return getDoubleBuffer().get(i);
                             default:
-/* 1231 */                      if ($assertionsDisabled) {
-/* 1233 */                          return Double.NaN;
+                      if ($assertionsDisabled) {
+                          return Double.NaN;
                                 }
                                 throw new AssertionError();
                         }
                     }
 
-/* 1235 */          public double get(int i, int j) {
-/* 1236 */              return get(((step() * i) / elemSize()) + (channels() * j));
+          public double get(int i, int j) {
+              return get(((step() * i) / elemSize()) + (channels() * j));
                     }
 
-/* 1239 */          public double get(int i, int j, int k) {
-/* 1240 */              return get(((step() * i) / elemSize()) + (channels() * j) + k);
+          public double get(int i, int j, int k) {
+              return get(((step() * i) / elemSize()) + (channels() * j) + k);
                     }
 
-/* 1242 */          public synchronized CvMat get(int index, double[] vv, int offset, int length) {
+          public synchronized CvMat get(int index, double[] vv, int offset, int length) {
                         try {
                             int d = depth();
                             switch (d) {
                                 case 0:
                                 case 1:
-/* 1247 */                          ByteBuffer bb = getByteBuffer();
-/* 1248 */                          bb.position(index);
+                          ByteBuffer bb = getByteBuffer();
+                          bb.position(index);
                                     for (int i = 0; i < length; i++) {
-/* 1250 */                              if (d == 0) {
-/* 1251 */                                  vv[i + offset] = bb.get(i) & Constants.UNKNOWN;
+                              if (d == 0) {
+                                  vv[i + offset] = bb.get(i) & Constants.UNKNOWN;
                                         } else {
-/* 1253 */                                  vv[i + offset] = bb.get(i);
+                                  vv[i + offset] = bb.get(i);
                                         }
                                     }
                                     break;
                                 case 2:
                                 case 3:
-/* 1259 */                          ShortBuffer sb = getShortBuffer();
-/* 1260 */                          sb.position(index);
+                          ShortBuffer sb = getShortBuffer();
+                          sb.position(index);
                                     for (int i2 = 0; i2 < length; i2++) {
-/* 1262 */                              if (d == 2) {
-/* 1263 */                                  vv[i2 + offset] = sb.get() & 65535;
+                              if (d == 2) {
+                                  vv[i2 + offset] = sb.get() & 65535;
                                         } else {
-/* 1265 */                                  vv[i2 + offset] = sb.get();
+                                  vv[i2 + offset] = sb.get();
                                         }
                                     }
                                     break;
                                 case 4:
-/* 1270 */                          IntBuffer ib = getIntBuffer();
-/* 1271 */                          ib.position(index);
+                          IntBuffer ib = getIntBuffer();
+                          ib.position(index);
                                     for (int i3 = 0; i3 < length; i3++) {
-/* 1273 */                              vv[i3 + offset] = ib.get();
+                              vv[i3 + offset] = ib.get();
                                     }
                                     break;
                                 case 5:
-/* 1277 */                          FloatBuffer fb = getFloatBuffer();
-/* 1278 */                          fb.position(index);
+                          FloatBuffer fb = getFloatBuffer();
+                          fb.position(index);
                                     for (int i4 = 0; i4 < length; i4++) {
-/* 1280 */                              vv[i4 + offset] = fb.get();
+                              vv[i4 + offset] = fb.get();
                                     }
                                     break;
                                 case 6:
-/* 1284 */                          getDoubleBuffer().position(index);
-/* 1285 */                          getDoubleBuffer().get(vv, offset, length);
+                          getDoubleBuffer().position(index);
+                          getDoubleBuffer().get(vv, offset, length);
                                     break;
                                 default:
-/* 1287 */                          if (!$assertionsDisabled) {
+                          if (!$assertionsDisabled) {
                                         throw new AssertionError();
                                     }
                                     break;
@@ -2699,95 +2699,95 @@
                         return this;
                     }
 
-/* 1291 */          public CvMat get(int index, double[] vv) {
-/* 1292 */              return get(index, vv, 0, vv.length);
+          public CvMat get(int index, double[] vv) {
+              return get(index, vv, 0, vv.length);
                     }
 
-/* 1294 */          public CvMat get(double[] vv) {
-/* 1295 */              return get(0, vv);
+          public CvMat get(double[] vv) {
+              return get(0, vv);
                     }
 
-/* 1297 */          public double[] get() {
-/* 1298 */              double[] vv = new double[fullSize() / elemSize()];
-/* 1299 */              get(vv);
-/* 1300 */              return vv;
+          public double[] get() {
+              double[] vv = new double[fullSize() / elemSize()];
+              get(vv);
+              return vv;
                     }
 
-/* 1303 */          public CvMat put(int i, double v) {
+          public CvMat put(int i, double v) {
                         switch (depth()) {
                             case 0:
                             case 1:
-/* 1306 */                      getByteBuffer().put(i, (byte) v);
-/* 1314 */                      return this;
+                      getByteBuffer().put(i, (byte) v);
+                      return this;
                             case 2:
                             case 3:
-/* 1308 */                      getShortBuffer().put(i, (short) v);
-/* 1314 */                      return this;
+                      getShortBuffer().put(i, (short) v);
+                      return this;
                             case 4:
-/* 1309 */                      getIntBuffer().put(i, (int) v);
-/* 1314 */                      return this;
+                      getIntBuffer().put(i, (int) v);
+                      return this;
                             case 5:
-/* 1310 */                      getFloatBuffer().put(i, (float) v);
-/* 1314 */                      return this;
+                      getFloatBuffer().put(i, (float) v);
+                      return this;
                             case 6:
-/* 1311 */                      getDoubleBuffer().put(i, v);
-/* 1314 */                      return this;
+                      getDoubleBuffer().put(i, v);
+                      return this;
                             default:
-/* 1312 */                      if (!$assertionsDisabled) {
+                      if (!$assertionsDisabled) {
                                     throw new AssertionError();
                                 }
-/* 1314 */                      return this;
+                      return this;
                         }
                     }
 
-/* 1316 */          public CvMat put(int i, int j, double v) {
-/* 1317 */              return put(((step() * i) / elemSize()) + (channels() * j), v);
+          public CvMat put(int i, int j, double v) {
+              return put(((step() * i) / elemSize()) + (channels() * j), v);
                     }
 
-/* 1319 */          public CvMat put(int i, int j, int k, double v) {
-/* 1320 */              return put(((step() * i) / elemSize()) + (channels() * j) + k, v);
+          public CvMat put(int i, int j, int k, double v) {
+              return put(((step() * i) / elemSize()) + (channels() * j) + k, v);
                     }
 
-/* 1322 */          public synchronized CvMat put(int index, double[] vv, int offset, int length) {
+          public synchronized CvMat put(int index, double[] vv, int offset, int length) {
                         try {
                             switch (depth()) {
                                 case 0:
                                 case 1:
-/* 1326 */                          ByteBuffer bb = getByteBuffer();
-/* 1327 */                          bb.position(index);
+                          ByteBuffer bb = getByteBuffer();
+                          bb.position(index);
                                     for (int i = 0; i < length; i++) {
-/* 1329 */                              bb.put((byte) vv[i + offset]);
+                              bb.put((byte) vv[i + offset]);
                                     }
                                     break;
                                 case 2:
                                 case 3:
-/* 1334 */                          ShortBuffer sb = getShortBuffer();
-/* 1335 */                          sb.position(index);
+                          ShortBuffer sb = getShortBuffer();
+                          sb.position(index);
                                     for (int i2 = 0; i2 < length; i2++) {
-/* 1337 */                              sb.put((short) vv[i2 + offset]);
+                              sb.put((short) vv[i2 + offset]);
                                     }
                                     break;
                                 case 4:
-/* 1341 */                          IntBuffer ib = getIntBuffer();
-/* 1342 */                          ib.position(index);
+                          IntBuffer ib = getIntBuffer();
+                          ib.position(index);
                                     for (int i3 = 0; i3 < length; i3++) {
-/* 1344 */                              ib.put((int) vv[i3 + offset]);
+                              ib.put((int) vv[i3 + offset]);
                                     }
                                     break;
                                 case 5:
-/* 1348 */                          FloatBuffer fb = getFloatBuffer();
-/* 1349 */                          fb.position(index);
+                          FloatBuffer fb = getFloatBuffer();
+                          fb.position(index);
                                     for (int i4 = 0; i4 < length; i4++) {
-/* 1351 */                              fb.put((float) vv[i4 + offset]);
+                              fb.put((float) vv[i4 + offset]);
                                     }
                                     break;
                                 case 6:
-/* 1355 */                          DoubleBuffer db = getDoubleBuffer();
-/* 1356 */                          db.position(index);
-/* 1357 */                          db.put(vv, offset, length);
+                          DoubleBuffer db = getDoubleBuffer();
+                          db.position(index);
+                          db.put(vv, offset, length);
                                     break;
                                 default:
-/* 1359 */                          if (!$assertionsDisabled) {
+                          if (!$assertionsDisabled) {
                                         throw new AssertionError();
                                     }
                                     break;
@@ -2798,32 +2798,32 @@
                         return this;
                     }
 
-/* 1363 */          public CvMat put(int index, double... vv) {
-/* 1364 */              return put(index, vv, 0, vv.length);
+          public CvMat put(int index, double... vv) {
+              return put(index, vv, 0, vv.length);
                     }
 
-/* 1366 */          public CvMat put(double... vv) {
-/* 1367 */              return put(0, vv);
+          public CvMat put(double... vv) {
+              return put(0, vv);
                     }
 
-/* 1370 */          public CvMat put(CvMat mat) {
-/* 1371 */              return put(0, 0, 0, mat, 0, 0, 0);
+          public CvMat put(CvMat mat) {
+              return put(0, 0, 0, mat, 0, 0, 0);
                     }
 
-/* 1374 */          public synchronized CvMat put(int dsti, int dstj, int dstk, CvMat mat, int srci, int srcj, int srck) {
+          public synchronized CvMat put(int dsti, int dstj, int dstk, CvMat mat, int srci, int srcj, int srck) {
                         try {
                             if (rows() == mat.rows() && cols() == mat.cols() && step() == mat.step() && type() == mat.type() && dsti == 0 && dstj == 0 && dstk == 0 && srci == 0 && srcj == 0 && srck == 0) {
-/* 1377 */                      getByteBuffer().clear();
-/* 1378 */                      mat.getByteBuffer().clear();
-/* 1379 */                      getByteBuffer().put(mat.getByteBuffer());
+                      getByteBuffer().clear();
+                      mat.getByteBuffer().clear();
+                      getByteBuffer().put(mat.getByteBuffer());
                             } else {
-/* 1381 */                      int w = Math.min(rows() - dsti, mat.rows() - srci);
-/* 1382 */                      int h = Math.min(cols() - dstj, mat.cols() - srcj);
-/* 1383 */                      int d = Math.min(channels() - dstk, mat.channels() - srck);
+                      int w = Math.min(rows() - dsti, mat.rows() - srci);
+                      int h = Math.min(cols() - dstj, mat.cols() - srcj);
+                      int d = Math.min(channels() - dstk, mat.channels() - srck);
                                 for (int i = 0; i < w; i++) {
                                     for (int j = 0; j < h; j++) {
                                         for (int k = 0; k < d; k++) {
-/* 1387 */                                  put(i + dsti, j + dstj, k + dstk, mat.get(i + srci, j + srcj, k + srck));
+                                  put(i + dsti, j + dstj, k + dstk, mat.get(i + srci, j + srcj, k + srck));
                                         }
                                     }
                                 }
@@ -2834,123 +2834,123 @@
                         return this;
                     }
 
-/* 1395 */          public IplImage asIplImage() {
-/* 1396 */              IplImage image = new IplImage();
-/* 1397 */              opencv_core.cvGetImage(this, image);
-/* 1398 */              return image;
+          public IplImage asIplImage() {
+              IplImage image = new IplImage();
+              opencv_core.cvGetImage(this, image);
+              return image;
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1401 */          public String toString() {
-/* 1402 */              return toString(0);
+                    @Override 
+          public String toString() {
+              return toString(0);
                     }
 
-/* 1404 */          public String toString(int indent) {
-/* 1405 */              StringBuilder s = new StringBuilder("[ ");
-/* 1406 */              int channels = channels();
+          public String toString(int indent) {
+              StringBuilder s = new StringBuilder("[ ");
+              int channels = channels();
                         for (int i = 0; i < rows(); i++) {
                             for (int j = 0; j < cols(); j++) {
-/* 1409 */                      CvScalar v = opencv_core.cvGet2D(this, i, j);
-/* 1410 */                      if (channels > 1) {
-/* 1411 */                          s.append("(");
+                      CvScalar v = opencv_core.cvGet2D(this, i, j);
+                      if (channels > 1) {
+                          s.append("(");
                                 }
                                 for (int k = 0; k < channels; k++) {
-/* 1414 */                          s.append((float) v.val(k));
-/* 1415 */                          if (k < channels - 1) {
-/* 1416 */                              s.append(", ");
+                          s.append((float) v.val(k));
+                          if (k < channels - 1) {
+                              s.append(", ");
                                     }
                                 }
-/* 1419 */                      if (channels > 1) {
-/* 1420 */                          s.append(")");
+                      if (channels > 1) {
+                          s.append(")");
                                 }
-/* 1422 */                      if (j < cols() - 1) {
-/* 1423 */                          s.append(", ");
+                      if (j < cols() - 1) {
+                          s.append(", ");
                                 }
                             }
-/* 1426 */                  if (i < rows() - 1) {
-/* 1427 */                      s.append("\n  ");
+                  if (i < rows() - 1) {
+                      s.append("\n  ");
                                 for (int j2 = 0; j2 < indent; j2++) {
-/* 1429 */                          s.append(' ');
+                          s.append(' ');
                                 }
                             }
                         }
-/* 1433 */              s.append(" ]");
-/* 1434 */              return s.toString();
+              s.append(" ]");
+              return s.toString();
                     }
                 }
 
-/* 1438 */      public static boolean CV_IS_MAT_HDR(CvArr mat) {
-/* 1439 */          CvMat m = new CvMat(mat);
+      public static boolean CV_IS_MAT_HDR(CvArr mat) {
+          CvMat m = new CvMat(mat);
                     return mat != null && (m.raw_type() & (-65536)) == 1111621632 && m.cols() > 0 && m.rows() > 0;
                 }
 
-/* 1443 */      public static boolean CV_IS_MAT_HDR_Z(CvArr mat) {
-/* 1444 */          CvMat m = new CvMat(mat);
+      public static boolean CV_IS_MAT_HDR_Z(CvArr mat) {
+          CvMat m = new CvMat(mat);
                     return mat != null && (m.raw_type() & (-65536)) == 1111621632 && m.cols() >= 0 && m.rows() >= 0;
                 }
 
-/* 1448 */      public static boolean CV_IS_MAT(CvArr mat) {
+      public static boolean CV_IS_MAT(CvArr mat) {
                     return CV_IS_MAT_HDR(mat) && new CvMat(mat).data_ptr() != null;
                 }
 
-/* 1451 */      public static boolean CV_IS_MASK_ARR(CvMat mat) {
+      public static boolean CV_IS_MASK_ARR(CvMat mat) {
                     return (mat.raw_type() & ((CV_8SC1 ^ (-1)) & 4095)) == 0;
                 }
 
-/* 1454 */      public static boolean CV_ARE_TYPES_EQ(CvMat mat1, CvMat mat2) {
+      public static boolean CV_ARE_TYPES_EQ(CvMat mat1, CvMat mat2) {
                     return ((mat1.raw_type() ^ mat2.raw_type()) & 4095) == 0;
                 }
 
-/* 1457 */      public static boolean CV_ARE_CNS_EQ(CvMat mat1, CvMat mat2) {
+      public static boolean CV_ARE_CNS_EQ(CvMat mat1, CvMat mat2) {
                     return ((mat1.raw_type() ^ mat2.raw_type()) & CV_MAT_CN_MASK) == 0;
                 }
 
-/* 1460 */      public static boolean CV_ARE_DEPTHS_EQ(CvMat mat1, CvMat mat2) {
+      public static boolean CV_ARE_DEPTHS_EQ(CvMat mat1, CvMat mat2) {
                     return ((mat1.raw_type() ^ mat2.raw_type()) & 7) == 0;
                 }
 
-/* 1463 */      public static boolean CV_ARE_SIZES_EQ(CvMat mat1, CvMat mat2) {
+      public static boolean CV_ARE_SIZES_EQ(CvMat mat1, CvMat mat2) {
                     return mat1.rows() == mat2.rows() && mat1.cols() == mat2.cols();
                 }
 
-/* 1466 */      public static boolean CV_IS_MAT_CONST(CvMat mat) {
+      public static boolean CV_IS_MAT_CONST(CvMat mat) {
                     return (mat.rows() | mat.cols()) == 1;
                 }
 
-/* 1469 */      public static int CV_ELEM_SIZE1(int type) {
-/* 1470 */          return (((Loader.sizeof(SizeTPointer.class) << 28) | 138682897) >> (CV_MAT_DEPTH(type) * 4)) & 15;
+      public static int CV_ELEM_SIZE1(int type) {
+          return (((Loader.sizeof(SizeTPointer.class) << 28) | 138682897) >> (CV_MAT_DEPTH(type) * 4)) & 15;
                 }
 
-/* 1472 */      public static int CV_ELEM_SIZE(int type) {
-/* 1473 */          return CV_MAT_CN(type) << ((((((Loader.sizeof(SizeTPointer.class) / 4) + 1) * 16384) | 14928) >> (CV_MAT_DEPTH(type) * 2)) & 3);
+      public static int CV_ELEM_SIZE(int type) {
+          return CV_MAT_CN(type) << ((((((Loader.sizeof(SizeTPointer.class) / 4) + 1) * 16384) | 14928) >> (CV_MAT_DEPTH(type) * 2)) & 3);
                 }
 
-/* 1475 */      public static int IPL2CV_DEPTH(int depth) {
-/* 1476 */          return (1125516576 >> (((Integer.MIN_VALUE & depth) != 0 ? 20 : 0) + ((depth & 240) >> 2))) & 15;
+      public static int IPL2CV_DEPTH(int depth) {
+          return (1125516576 >> (((Integer.MIN_VALUE & depth) != 0 ? 20 : 0) + ((depth & 240) >> 2))) & 15;
                 }
 
-/* 1481 */      public static CvMat cvMat(int rows, int cols, int type, Pointer data) {
-/* 1482 */          CvMat m = new CvMat();
-/* 1484 */          if (!$assertionsDisabled && (CV_MAT_DEPTH(type) < 0 || CV_MAT_DEPTH(type) > 6)) {
+      public static CvMat cvMat(int rows, int cols, int type, Pointer data) {
+          CvMat m = new CvMat();
+          if (!$assertionsDisabled && (CV_MAT_DEPTH(type) < 0 || CV_MAT_DEPTH(type) > 6)) {
                         throw new AssertionError();
                     }
-/* 1485 */          int type2 = CV_MAT_TYPE(type);
-/* 1486 */          m.raw_type(1111638016 | type2);
-/* 1487 */          m.cols(cols);
-/* 1488 */          m.rows(rows);
-/* 1489 */          m.step(CV_ELEM_SIZE(type2) * cols);
-/* 1490 */          m.data_ptr(new BytePointer(data));
-/* 1491 */          m.refcount(null);
-/* 1492 */          m.hdr_refcount(0);
-/* 1494 */          return m;
+          int type2 = CV_MAT_TYPE(type);
+          m.raw_type(1111638016 | type2);
+          m.cols(cols);
+          m.rows(rows);
+          m.step(CV_ELEM_SIZE(type2) * cols);
+          m.data_ptr(new BytePointer(data));
+          m.refcount(null);
+          m.hdr_refcount(0);
+          return m;
                 }
 
-/* 1497 */      public static int cvIplDepth(int type) {
-/* 1498 */          int depth = CV_MAT_DEPTH(type);
+      public static int cvIplDepth(int type) {
+          int depth = CV_MAT_DEPTH(type);
                     return ((depth == 1 || depth == 3 || depth == 4) ? Integer.MIN_VALUE : 0) | (CV_ELEM_SIZE1(depth) * 8);
                 }
 
-/* 1509 */      public static class CvMatND extends CvArr {
+      public static class CvMatND extends CvArr {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3007,69 +3007,69 @@
 
                     public native CvMatND type(int i);
 
-                    /* JADX INFO: renamed from: clone, reason: collision with other method in class */
+                    
 
 
-/* 1511 */          public CvMatND() {
+          public CvMatND() {
                         allocate();
                         zero();
                     }
 
-/* 1512 */          public CvMatND(int size) {
+          public CvMatND(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 1513 */          public CvMatND(Pointer p) {
-/* 1514 */              super(p);
+          public CvMatND(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1518 */          public CvMatND position(int position) {
-/* 1519 */              return (CvMatND) super.position(position);
+                    @Override 
+          public CvMatND position(int position) {
+              return (CvMatND) super.position(position);
                     }
 
-/* 1522 */          public static CvMatND create(int dims, int[] sizes, int type) {
-/* 1523 */              CvMatND m = opencv_core.cvCreateMatND(dims, sizes, type);
-/* 1524 */              if (m != null) {
-/* 1525 */                  m.deallocator(new ReleaseDeallocator(m));
+          public static CvMatND create(int dims, int[] sizes, int type) {
+              CvMatND m = opencv_core.cvCreateMatND(dims, sizes, type);
+              if (m != null) {
+                  m.deallocator(new ReleaseDeallocator(m));
                         }
-/* 1527 */              return m;
+              return m;
                     }
 
-/* 1530 */          public CvMatND clone() {
-/* 1531 */              CvMatND m = opencv_core.cvCloneMatND(this);
-/* 1532 */              if (m != null) {
-/* 1533 */                  m.deallocator(new ReleaseDeallocator(m));
+          public CvMatND clone() {
+              CvMatND m = opencv_core.cvCloneMatND(this);
+              if (m != null) {
+                  m.deallocator(new ReleaseDeallocator(m));
                         }
-/* 1535 */              return m;
+              return m;
                     }
 
-/* 1538 */          public void release() {
-/* 1539 */              deallocate();
+          public void release() {
+              deallocate();
                     }
 
-/* 1539 */          protected static class ReleaseDeallocator extends CvMatND implements Pointer.Deallocator {
-/* 1541 */              ReleaseDeallocator(CvMatND p) {
-/* 1542 */                  super(p);
+          protected static class ReleaseDeallocator extends CvMatND implements Pointer.Deallocator {
+              ReleaseDeallocator(CvMatND p) {
+                  super(p);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 1542 */              public void deallocate() {
-/* 1543 */                  opencv_core.cvReleaseMatND(this);
+                        @Override 
+              public void deallocate() {
+                  opencv_core.cvReleaseMatND(this);
                         }
                     }
                 }
 
-/* 1568 */      public static boolean CV_IS_MATND_HDR(CvArr mat) {
+      public static boolean CV_IS_MATND_HDR(CvArr mat) {
                     return mat != null && (new CvMatND(mat).type() & (-65536)) == 1111687168;
                 }
 
-/* 1571 */      public static boolean CV_IS_MATND(CvArr mat) {
+      public static boolean CV_IS_MATND(CvArr mat) {
                     return CV_IS_MATND_HDR(mat) && new CvMatND(mat).data_ptr() != null;
                 }
 
-/* 1577 */      public static class CvSparseMat extends CvArr {
+      public static class CvSparseMat extends CvArr {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3114,69 +3114,69 @@
 
                     public native CvSparseMat valoffset(int i);
 
-                    /* JADX INFO: renamed from: clone, reason: collision with other method in class */
+                    
 
 
-/* 1579 */          public CvSparseMat() {
+          public CvSparseMat() {
                         allocate();
                         zero();
                     }
 
-/* 1580 */          public CvSparseMat(int size) {
+          public CvSparseMat(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 1581 */          public CvSparseMat(Pointer p) {
-/* 1582 */              super(p);
+          public CvSparseMat(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1586 */          public CvSparseMat position(int position) {
-/* 1587 */              return (CvSparseMat) super.position(position);
+                    @Override 
+          public CvSparseMat position(int position) {
+              return (CvSparseMat) super.position(position);
                     }
 
-/* 1590 */          public static CvSparseMat create(int dims, int[] sizes, int type) {
-/* 1591 */              CvSparseMat m = opencv_core.cvCreateSparseMat(dims, sizes, type);
-/* 1592 */              if (m != null) {
-/* 1593 */                  m.deallocator(new ReleaseDeallocator(m));
+          public static CvSparseMat create(int dims, int[] sizes, int type) {
+              CvSparseMat m = opencv_core.cvCreateSparseMat(dims, sizes, type);
+              if (m != null) {
+                  m.deallocator(new ReleaseDeallocator(m));
                         }
-/* 1595 */              return m;
+              return m;
                     }
 
-/* 1598 */          public CvSparseMat clone() {
-/* 1599 */              CvSparseMat m = opencv_core.cvCloneSparseMat(this);
-/* 1600 */              if (m != null) {
-/* 1601 */                  m.deallocator(new ReleaseDeallocator(m));
+          public CvSparseMat clone() {
+              CvSparseMat m = opencv_core.cvCloneSparseMat(this);
+              if (m != null) {
+                  m.deallocator(new ReleaseDeallocator(m));
                         }
-/* 1603 */              return m;
+              return m;
                     }
 
-/* 1605 */          public void release() {
-/* 1606 */              deallocate();
+          public void release() {
+              deallocate();
                     }
 
-/* 1606 */          protected static class ReleaseDeallocator extends CvSparseMat implements Pointer.Deallocator {
-/* 1608 */              ReleaseDeallocator(CvSparseMat p) {
-/* 1609 */                  super(p);
+          protected static class ReleaseDeallocator extends CvSparseMat implements Pointer.Deallocator {
+              ReleaseDeallocator(CvSparseMat p) {
+                  super(p);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 1609 */              public void deallocate() {
-/* 1610 */                  opencv_core.cvReleaseSparseMat(this);
+                        @Override 
+              public void deallocate() {
+                  opencv_core.cvReleaseSparseMat(this);
                         }
                     }
                 }
 
-/* 1626 */      public static boolean CV_IS_SPARSE_MAT_HDR(CvArr mat) {
+      public static boolean CV_IS_SPARSE_MAT_HDR(CvArr mat) {
                     return mat != null && (new CvSparseMat(mat).type() & (-65536)) == 1111752704;
                 }
 
-/* 1629 */      public static boolean CV_IS_SPARSE_MAT(CvArr mat) {
-/* 1630 */          return CV_IS_SPARSE_MAT_HDR(mat);
+      public static boolean CV_IS_SPARSE_MAT(CvArr mat) {
+          return CV_IS_SPARSE_MAT_HDR(mat);
                 }
 
-/* 1631 */      public static class CvSparseNode extends Pointer {
+      public static class CvSparseNode extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3191,28 +3191,28 @@
 
 
                     static {
-/* 1634 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1634 */          public CvSparseNode() {
+          public CvSparseNode() {
                         allocate();
                     }
 
-/* 1635 */          public CvSparseNode(int size) {
+          public CvSparseNode(int size) {
                         allocateArray(size);
                     }
 
-/* 1636 */          public CvSparseNode(Pointer p) {
-/* 1637 */              super(p);
+          public CvSparseNode(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1641 */          public CvSparseNode position(int position) {
-/* 1642 */              return (CvSparseNode) super.position(position);
+                    @Override 
+          public CvSparseNode position(int position) {
+              return (CvSparseNode) super.position(position);
                     }
                 }
 
-/* 1647 */      public static class CvSparseMatIterator extends Pointer {
+      public static class CvSparseMatIterator extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3231,36 +3231,36 @@
 
 
                     static {
-/* 1650 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1650 */          public CvSparseMatIterator() {
+          public CvSparseMatIterator() {
                         allocate();
                     }
 
-/* 1651 */          public CvSparseMatIterator(int size) {
+          public CvSparseMatIterator(int size) {
                         allocateArray(size);
                     }
 
-/* 1652 */          public CvSparseMatIterator(Pointer p) {
-/* 1653 */              super(p);
+          public CvSparseMatIterator(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1657 */          public CvSparseMatIterator position(int position) {
-/* 1658 */              return (CvSparseMatIterator) super.position(position);
+                    @Override 
+          public CvSparseMatIterator position(int position) {
+              return (CvSparseMatIterator) super.position(position);
                     }
                 }
 
-/* 1666 */      public static Pointer CV_NODE_VAL(CvSparseMat mat, CvSparseNode node) {
-/* 1667 */          return new BytePointer(node).position(mat.valoffset());
+      public static Pointer CV_NODE_VAL(CvSparseMat mat, CvSparseNode node) {
+          return new BytePointer(node).position(mat.valoffset());
                 }
 
-/* 1669 */      public static IntPointer CV_NODE_IDX(CvSparseMat mat, CvSparseNode node) {
-/* 1670 */          return new IntPointer(new BytePointer(node).position(mat.idxoffset()));
+      public static IntPointer CV_NODE_IDX(CvSparseMat mat, CvSparseNode node) {
+          return new IntPointer(new BytePointer(node).position(mat.idxoffset()));
                 }
 
-/* 1672 */      public static class CvRect extends Pointer {
+      public static class CvRect extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3273,85 +3273,85 @@
 
                     public native CvRect width(int i);
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native int m2453x();
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native CvRect m2454x(int i);
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native int m2455y();
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native CvRect m2456y(int i);
 
 
                     static {
-/* 1675 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1675 */          public CvRect() {
+          public CvRect() {
                         allocate();
                     }
 
-/* 1676 */          public CvRect(int size) {
+          public CvRect(int size) {
                         allocateArray(size);
                     }
 
-/* 1677 */          public CvRect(Pointer p) {
-/* 1678 */              super(p);
+          public CvRect(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1682 */          public CvRect position(int position) {
-/* 1683 */              return (CvRect) super.position(position);
+                    @Override 
+          public CvRect position(int position) {
+              return (CvRect) super.position(position);
                     }
 
-/* 1685 */          public CvRect(int x, int y, int width, int height) {
-/* 1687 */              allocate();
+          public CvRect(int x, int y, int width, int height) {
+              allocate();
                         m2454x(x).m2456y(y).width(width).height(height);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1695 */          public String toString() {
-/* 1696 */              if (isNull()) {
-/* 1697 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 1699 */              if (capacity() == 0) {
-/* 1700 */                  return "(" + m2453x() + ", " + m2455y() + "; " + width() + ", " + height() + ")";
+              if (capacity() == 0) {
+                  return "(" + m2453x() + ", " + m2455y() + "; " + width() + ", " + height() + ")";
                         }
-/* 1702 */              String s = "";
-/* 1703 */              int p = position();
-/* 1704 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 1705 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + m2453x() + ", " + m2455y() + "; " + width() + ", " + height() + ")";
-/* 1704 */                  i++;
+                  i++;
                         }
-/* 1708 */              position(p);
-/* 1709 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 1713 */      public static CvRect cvRect(int x, int y, int width, int height) {
-/* 1714 */          return new CvRect().m2454x(x).m2456y(y).width(width).height(height);
+      public static CvRect cvRect(int x, int y, int width, int height) {
+          return new CvRect().m2454x(x).m2456y(y).width(width).height(height);
                 }
 
-/* 1716 */      public static IplROI cvRectToROI(CvRect rect, int coi) {
-/* 1717 */          IplROI roi = new IplROI();
-/* 1718 */          roi.xOffset(rect.m2453x());
-/* 1719 */          roi.yOffset(rect.m2455y());
-/* 1720 */          roi.width(rect.width());
-/* 1721 */          roi.height(rect.height());
-/* 1722 */          roi.coi(coi);
-/* 1723 */          return roi;
+      public static IplROI cvRectToROI(CvRect rect, int coi) {
+          IplROI roi = new IplROI();
+          roi.xOffset(rect.m2453x());
+          roi.yOffset(rect.m2455y());
+          roi.width(rect.width());
+          roi.height(rect.height());
+          roi.coi(coi);
+          return roi;
                 }
 
-/* 1725 */      public static CvRect cvROIToRect(IplROI roi) {
-/* 1726 */          return cvRect(roi.xOffset(), roi.yOffset(), roi.width(), roi.height());
+      public static CvRect cvROIToRect(IplROI roi) {
+          return cvRect(roi.xOffset(), roi.yOffset(), roi.width(), roi.height());
                 }
 
-/* 1732 */      public static class CvTermCriteria extends Pointer {
+      public static class CvTermCriteria extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3370,685 +3370,685 @@
 
 
                     static {
-/* 1735 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1735 */          public CvTermCriteria() {
+          public CvTermCriteria() {
                         allocate();
                     }
 
-/* 1736 */          public CvTermCriteria(int size) {
+          public CvTermCriteria(int size) {
                         allocateArray(size);
                     }
 
-/* 1737 */          public CvTermCriteria(Pointer p) {
-/* 1738 */              super(p);
+          public CvTermCriteria(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1742 */          public CvTermCriteria position(int position) {
-/* 1743 */              return (CvTermCriteria) super.position(position);
+                    @Override 
+          public CvTermCriteria position(int position) {
+              return (CvTermCriteria) super.position(position);
                     }
 
-/* 1745 */          public CvTermCriteria(int type, int max_iter, double epsilon) {
-/* 1747 */              allocate();
+          public CvTermCriteria(int type, int max_iter, double epsilon) {
+              allocate();
                         type(type).max_iter(max_iter).epsilon(epsilon);
                     }
                 }
 
-/* 1754 */      public static CvTermCriteria cvTermCriteria(int type, int max_iter, double epsilon) {
-/* 1755 */          return new CvTermCriteria().type(type).max_iter(max_iter).epsilon(epsilon);
+      public static CvTermCriteria cvTermCriteria(int type, int max_iter, double epsilon) {
+          return new CvTermCriteria().type(type).max_iter(max_iter).epsilon(epsilon);
                 }
 
-/* 1757 */      public static class CvPoint extends Pointer {
+      public static class CvPoint extends Pointer {
                     public static final CvPoint ZERO;
 
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native int m2429x();
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native CvPoint m2430x(int i);
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native int m2431y();
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native CvPoint m2432y(int i);
 
 
                     static {
-/* 1760 */              Loader.load();
-/* 1861 */              ZERO = new CvPoint().m2430x(0).m2432y(0);
+              Loader.load();
+              ZERO = new CvPoint().m2430x(0).m2432y(0);
                     }
 
-/* 1760 */          public CvPoint() {
+          public CvPoint() {
                         allocate();
                     }
 
-/* 1761 */          public CvPoint(int size) {
+          public CvPoint(int size) {
                         allocateArray(size);
                     }
 
-/* 1762 */          public CvPoint(Pointer p) {
-/* 1763 */              super(p);
+          public CvPoint(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1767 */          public CvPoint position(int position) {
-/* 1768 */              return (CvPoint) super.position(position);
+                    @Override 
+          public CvPoint position(int position) {
+              return (CvPoint) super.position(position);
                     }
 
-/* 1771 */          public CvPoint(int[] pts, int offset, int length) {
-/* 1772 */              this(length / 2);
-/* 1773 */              put(pts, offset, length);
+          public CvPoint(int[] pts, int offset, int length) {
+              this(length / 2);
+              put(pts, offset, length);
                     }
 
-/* 1775 */          public CvPoint(int... pts) {
-/* 1776 */              this(pts, 0, pts.length);
+          public CvPoint(int... pts) {
+              this(pts, 0, pts.length);
                     }
 
-/* 1778 */          public CvPoint(byte shift, double[] pts, int offset, int length) {
-/* 1779 */              this(length / 2);
-/* 1780 */              put(shift, pts, offset, length);
+          public CvPoint(byte shift, double[] pts, int offset, int length) {
+              this(length / 2);
+              put(shift, pts, offset, length);
                     }
 
-/* 1782 */          public CvPoint(byte shift, double... pts) {
-/* 1783 */              this(shift, pts, 0, pts.length);
+          public CvPoint(byte shift, double... pts) {
+              this(shift, pts, 0, pts.length);
                     }
 
-/* 1789 */          public int[] get() {
-/* 1790 */              int[] pts = new int[this.capacity == 0 ? 2 : this.capacity * 2];
-/* 1791 */              get(pts);
-/* 1792 */              return pts;
+          public int[] get() {
+              int[] pts = new int[this.capacity == 0 ? 2 : this.capacity * 2];
+              get(pts);
+              return pts;
                     }
 
-/* 1794 */          public CvPoint get(int[] pts) {
-/* 1795 */              return get(pts, 0, pts.length);
+          public CvPoint get(int[] pts) {
+              return get(pts, 0, pts.length);
                     }
 
-/* 1797 */          public CvPoint get(int[] pts, int offset, int length) {
+          public CvPoint get(int[] pts, int offset, int length) {
                         for (int i = 0; i < length / 2; i++) {
-/* 1799 */                  position(i);
-/* 1800 */                  pts[(i * 2) + offset] = m2429x();
-/* 1801 */                  pts[(i * 2) + offset + 1] = m2431y();
+                  position(i);
+                  pts[(i * 2) + offset] = m2429x();
+                  pts[(i * 2) + offset + 1] = m2431y();
                         }
-/* 1803 */              return position(0);
+              return position(0);
                     }
 
-/* 1806 */          public final CvPoint put(int[] pts, int offset, int length) {
+          public final CvPoint put(int[] pts, int offset, int length) {
                         for (int i = 0; i < length / 2; i++) {
-/* 1808 */                  position(i).put(pts[(i * 2) + offset], pts[(i * 2) + offset + 1]);
+                  position(i).put(pts[(i * 2) + offset], pts[(i * 2) + offset + 1]);
                         }
-/* 1810 */              return position(0);
+              return position(0);
                     }
 
-/* 1812 */          public final CvPoint put(int... pts) {
-/* 1813 */              return put(pts, 0, pts.length);
+          public final CvPoint put(int... pts) {
+              return put(pts, 0, pts.length);
                     }
 
-/* 1815 */          public final CvPoint put(byte shift, double[] pts, int offset, int length) {
-/* 1816 */              int[] a = new int[length];
+          public final CvPoint put(byte shift, double[] pts, int offset, int length) {
+              int[] a = new int[length];
                         for (int i = 0; i < length; i++) {
-/* 1818 */                  a[i] = (int) Math.round(pts[offset + i] * ((double) (1 << shift)));
+                  a[i] = (int) Math.round(pts[offset + i] * ((double) (1 << shift)));
                         }
-/* 1820 */              return put(a, 0, length);
+              return put(a, 0, length);
                     }
 
-/* 1822 */          public final CvPoint put(byte shift, double... pts) {
-/* 1823 */              return put(shift, pts, 0, pts.length);
+          public final CvPoint put(byte shift, double... pts) {
+              return put(shift, pts, 0, pts.length);
                     }
 
-/* 1826 */          public CvPoint put(int x, int y) {
-/* 1827 */              return m2430x(x).m2432y(y);
+          public CvPoint put(int x, int y) {
+              return m2430x(x).m2432y(y);
                     }
 
-/* 1829 */          public CvPoint put(CvPoint o) {
-/* 1830 */              return m2430x(o.m2429x()).m2432y(o.m2431y());
+          public CvPoint put(CvPoint o) {
+              return m2430x(o.m2429x()).m2432y(o.m2431y());
                     }
 
-/* 1832 */          public CvPoint put(byte shift, CvPoint2D32f o) {
-/* 1833 */              m2430x(Math.round(o.m2433x() * (1 << shift)));
-/* 1834 */              m2432y(Math.round(o.m2435y() * (1 << shift)));
-/* 1835 */              return this;
+          public CvPoint put(byte shift, CvPoint2D32f o) {
+              m2430x(Math.round(o.m2433x() * (1 << shift)));
+              m2432y(Math.round(o.m2435y() * (1 << shift)));
+              return this;
                     }
 
-/* 1837 */          public CvPoint put(byte shift, CvPoint2D64f o) {
-/* 1838 */              m2430x((int) Math.round(o.m2437x() * ((double) (1 << shift))));
-/* 1839 */              m2432y((int) Math.round(o.m2439y() * ((double) (1 << shift))));
-/* 1840 */              return this;
+          public CvPoint put(byte shift, CvPoint2D64f o) {
+              m2430x((int) Math.round(o.m2437x() * ((double) (1 << shift))));
+              m2432y((int) Math.round(o.m2439y() * ((double) (1 << shift))));
+              return this;
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1843 */          public String toString() {
-/* 1844 */              if (isNull()) {
-/* 1845 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 1847 */              if (capacity() == 0) {
-/* 1848 */                  return "(" + m2429x() + ", " + m2431y() + ")";
+              if (capacity() == 0) {
+                  return "(" + m2429x() + ", " + m2431y() + ")";
                         }
-/* 1850 */              String s = "";
-/* 1851 */              int p = position();
-/* 1852 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 1853 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + m2429x() + ", " + m2431y() + ")";
-/* 1852 */                  i++;
+                  i++;
                         }
-/* 1856 */              position(p);
-/* 1857 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 1863 */      public static CvPoint cvPoint(int x, int y) {
-/* 1864 */          return new CvPoint().m2430x(x).m2432y(y);
+      public static CvPoint cvPoint(int x, int y) {
+          return new CvPoint().m2430x(x).m2432y(y);
                 }
 
-/* 1865 */      public static class CvPoint2D32f extends Pointer {
+      public static class CvPoint2D32f extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native float m2433x();
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native CvPoint2D32f m2434x(float f);
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native float m2435y();
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native CvPoint2D32f m2436y(float f);
 
 
                     static {
-/* 1868 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1868 */          public CvPoint2D32f() {
+          public CvPoint2D32f() {
                         allocate();
                     }
 
-/* 1869 */          public CvPoint2D32f(int size) {
+          public CvPoint2D32f(int size) {
                         allocateArray(size);
                     }
 
-/* 1870 */          public CvPoint2D32f(Pointer p) {
-/* 1871 */              super(p);
+          public CvPoint2D32f(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1875 */          public CvPoint2D32f position(int position) {
-/* 1876 */              return (CvPoint2D32f) super.position(position);
+                    @Override 
+          public CvPoint2D32f position(int position) {
+              return (CvPoint2D32f) super.position(position);
                     }
 
-/* 1879 */          public CvPoint2D32f(double[] pts, int offset, int length) {
-/* 1880 */              this(length / 2);
-/* 1881 */              put(pts, offset, length);
+          public CvPoint2D32f(double[] pts, int offset, int length) {
+              this(length / 2);
+              put(pts, offset, length);
                     }
 
-/* 1883 */          public CvPoint2D32f(double... pts) {
-/* 1884 */              this(pts, 0, pts.length);
+          public CvPoint2D32f(double... pts) {
+              this(pts, 0, pts.length);
                     }
 
-/* 1890 */          public double[] get() {
-/* 1891 */              double[] pts = new double[this.capacity == 0 ? 2 : this.capacity * 2];
-/* 1892 */              get(pts);
-/* 1893 */              return pts;
+          public double[] get() {
+              double[] pts = new double[this.capacity == 0 ? 2 : this.capacity * 2];
+              get(pts);
+              return pts;
                     }
 
-/* 1895 */          public CvPoint2D32f get(double[] pts) {
-/* 1896 */              return get(pts, 0, pts.length);
+          public CvPoint2D32f get(double[] pts) {
+              return get(pts, 0, pts.length);
                     }
 
-/* 1898 */          public CvPoint2D32f get(double[] pts, int offset, int length) {
+          public CvPoint2D32f get(double[] pts, int offset, int length) {
                         for (int i = 0; i < length / 2; i++) {
-/* 1900 */                  position(i);
-/* 1901 */                  pts[(i * 2) + offset] = m2433x();
-/* 1902 */                  pts[(i * 2) + offset + 1] = m2435y();
+                  position(i);
+                  pts[(i * 2) + offset] = m2433x();
+                  pts[(i * 2) + offset + 1] = m2435y();
                         }
-/* 1904 */              return position(0);
+              return position(0);
                     }
 
-/* 1907 */          public final CvPoint2D32f put(double[] pts, int offset, int length) {
+          public final CvPoint2D32f put(double[] pts, int offset, int length) {
                         for (int i = 0; i < length / 2; i++) {
-/* 1909 */                  position(i).put(pts[(i * 2) + offset], pts[(i * 2) + offset + 1]);
+                  position(i).put(pts[(i * 2) + offset], pts[(i * 2) + offset + 1]);
                         }
-/* 1911 */              return position(0);
+              return position(0);
                     }
 
-/* 1913 */          public final CvPoint2D32f put(double... pts) {
-/* 1914 */              return put(pts, 0, pts.length);
+          public final CvPoint2D32f put(double... pts) {
+              return put(pts, 0, pts.length);
                     }
 
-/* 1917 */          public CvPoint2D32f put(double x, double y) {
-/* 1918 */              return m2434x((float) x).m2436y((float) y);
+          public CvPoint2D32f put(double x, double y) {
+              return m2434x((float) x).m2436y((float) y);
                     }
 
-/* 1920 */          public CvPoint2D32f put(CvPoint o) {
-/* 1921 */              return m2434x(o.m2429x()).m2436y(o.m2431y());
+          public CvPoint2D32f put(CvPoint o) {
+              return m2434x(o.m2429x()).m2436y(o.m2431y());
                     }
 
-/* 1923 */          public CvPoint2D32f put(CvPoint2D32f o) {
-/* 1924 */              return m2434x(o.m2433x()).m2436y(o.m2435y());
+          public CvPoint2D32f put(CvPoint2D32f o) {
+              return m2434x(o.m2433x()).m2436y(o.m2435y());
                     }
 
-/* 1926 */          public CvPoint2D32f put(CvPoint2D64f o) {
-/* 1927 */              return m2434x((float) o.m2437x()).m2436y((float) o.m2439y());
+          public CvPoint2D32f put(CvPoint2D64f o) {
+              return m2434x((float) o.m2437x()).m2436y((float) o.m2439y());
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1930 */          public String toString() {
-/* 1931 */              if (isNull()) {
-/* 1932 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 1934 */              if (capacity() == 0) {
-/* 1935 */                  return "(" + m2433x() + ", " + m2435y() + ")";
+              if (capacity() == 0) {
+                  return "(" + m2433x() + ", " + m2435y() + ")";
                         }
-/* 1937 */              String s = "";
-/* 1938 */              int p = position();
-/* 1939 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 1940 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + m2433x() + ", " + m2435y() + ")";
-/* 1939 */                  i++;
+                  i++;
                         }
-/* 1943 */              position(p);
-/* 1944 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 1948 */      public static CvPoint2D32f cvPoint2D32f(double x, double y) {
-/* 1949 */          return new CvPoint2D32f().m2434x((float) x).m2436y((float) y);
+      public static CvPoint2D32f cvPoint2D32f(double x, double y) {
+          return new CvPoint2D32f().m2434x((float) x).m2436y((float) y);
                 }
 
-/* 1951 */      public static CvPoint2D32f cvPointTo32f(CvPoint point) {
-/* 1952 */          return cvPoint2D32f(point.m2429x(), point.m2431y());
+      public static CvPoint2D32f cvPointTo32f(CvPoint point) {
+          return cvPoint2D32f(point.m2429x(), point.m2431y());
                 }
 
-/* 1954 */      public static CvPoint cvPointFrom32f(CvPoint2D32f point) {
-/* 1955 */          CvPoint ipt = new CvPoint();
-/* 1956 */          ipt.m2430x(Math.round(point.m2433x()));
-/* 1957 */          ipt.m2432y(Math.round(point.m2435y()));
-/* 1958 */          return ipt;
+      public static CvPoint cvPointFrom32f(CvPoint2D32f point) {
+          CvPoint ipt = new CvPoint();
+          ipt.m2430x(Math.round(point.m2433x()));
+          ipt.m2432y(Math.round(point.m2435y()));
+          return ipt;
                 }
 
-/* 1959 */      public static class CvPoint3D32f extends Pointer {
+      public static class CvPoint3D32f extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native float m2441x();
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native CvPoint3D32f m2442x(float f);
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native float m2443y();
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native CvPoint3D32f m2444y(float f);
 
-                    /* JADX INFO: renamed from: z */
+                    
                     public native float m2445z();
 
-                    /* JADX INFO: renamed from: z */
+                    
                     public native CvPoint3D32f m2446z(float f);
 
 
                     static {
-/* 1962 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1962 */          public CvPoint3D32f() {
+          public CvPoint3D32f() {
                         allocate();
                     }
 
-/* 1963 */          public CvPoint3D32f(int size) {
+          public CvPoint3D32f(int size) {
                         allocateArray(size);
                     }
 
-/* 1964 */          public CvPoint3D32f(Pointer p) {
-/* 1965 */              super(p);
+          public CvPoint3D32f(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1969 */          public CvPoint3D32f position(int position) {
-/* 1970 */              return (CvPoint3D32f) super.position(position);
+                    @Override 
+          public CvPoint3D32f position(int position) {
+              return (CvPoint3D32f) super.position(position);
                     }
 
-/* 1973 */          public CvPoint3D32f(double[] pts, int offset, int length) {
-/* 1974 */              this(length / 3);
-/* 1975 */              put(pts, offset, length);
+          public CvPoint3D32f(double[] pts, int offset, int length) {
+              this(length / 3);
+              put(pts, offset, length);
                     }
 
-/* 1977 */          public CvPoint3D32f(double... pts) {
-/* 1978 */              this(pts, 0, pts.length);
+          public CvPoint3D32f(double... pts) {
+              this(pts, 0, pts.length);
                     }
 
-/* 1985 */          public double[] get() {
-/* 1986 */              double[] pts = new double[this.capacity == 0 ? 3 : this.capacity * 3];
-/* 1987 */              get(pts);
-/* 1988 */              return pts;
+          public double[] get() {
+              double[] pts = new double[this.capacity == 0 ? 3 : this.capacity * 3];
+              get(pts);
+              return pts;
                     }
 
-/* 1990 */          public CvPoint3D32f get(double[] pts) {
-/* 1991 */              return get(pts, 0, pts.length);
+          public CvPoint3D32f get(double[] pts) {
+              return get(pts, 0, pts.length);
                     }
 
-/* 1993 */          public CvPoint3D32f get(double[] pts, int offset, int length) {
+          public CvPoint3D32f get(double[] pts, int offset, int length) {
                         for (int i = 0; i < length / 3; i++) {
-/* 1995 */                  position(i);
-/* 1996 */                  pts[(i * 3) + offset] = m2441x();
-/* 1997 */                  pts[(i * 3) + offset + 1] = m2443y();
-/* 1998 */                  pts[(i * 3) + offset + 2] = m2445z();
+                  position(i);
+                  pts[(i * 3) + offset] = m2441x();
+                  pts[(i * 3) + offset + 1] = m2443y();
+                  pts[(i * 3) + offset + 2] = m2445z();
                         }
-/* 2000 */              return position(0);
+              return position(0);
                     }
 
-/* 2003 */          public final CvPoint3D32f put(double[] pts, int offset, int length) {
+          public final CvPoint3D32f put(double[] pts, int offset, int length) {
                         for (int i = 0; i < length / 3; i++) {
-/* 2005 */                  position(i).put(pts[(i * 3) + offset], pts[(i * 3) + offset + 1], pts[(i * 3) + offset + 2]);
+                  position(i).put(pts[(i * 3) + offset], pts[(i * 3) + offset + 1], pts[(i * 3) + offset + 2]);
                         }
-/* 2007 */              return position(0);
+              return position(0);
                     }
 
-/* 2009 */          public final CvPoint3D32f put(double... pts) {
-/* 2010 */              return put(pts, 0, pts.length);
+          public final CvPoint3D32f put(double... pts) {
+              return put(pts, 0, pts.length);
                     }
 
-/* 2013 */          public CvPoint3D32f put(double x, double y, double z) {
-/* 2014 */              return m2442x((float) x).m2444y((float) y).m2446z((float) z);
+          public CvPoint3D32f put(double x, double y, double z) {
+              return m2442x((float) x).m2444y((float) y).m2446z((float) z);
                     }
 
-/* 2016 */          public CvPoint3D32f put(CvPoint o) {
-/* 2017 */              return m2442x(o.m2429x()).m2444y(o.m2431y()).m2446z(0.0f);
+          public CvPoint3D32f put(CvPoint o) {
+              return m2442x(o.m2429x()).m2444y(o.m2431y()).m2446z(0.0f);
                     }
 
-/* 2019 */          public CvPoint3D32f put(CvPoint2D32f o) {
-/* 2020 */              return m2442x(o.m2433x()).m2444y(o.m2435y()).m2446z(0.0f);
+          public CvPoint3D32f put(CvPoint2D32f o) {
+              return m2442x(o.m2433x()).m2444y(o.m2435y()).m2446z(0.0f);
                     }
 
-/* 2022 */          public CvPoint3D32f put(CvPoint2D64f o) {
-/* 2023 */              return m2442x((float) o.m2437x()).m2444y((float) o.m2439y()).m2446z(0.0f);
+          public CvPoint3D32f put(CvPoint2D64f o) {
+              return m2442x((float) o.m2437x()).m2444y((float) o.m2439y()).m2446z(0.0f);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2026 */          public String toString() {
-/* 2027 */              if (isNull()) {
-/* 2028 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 2030 */              if (capacity() == 0) {
-/* 2031 */                  return "(" + m2441x() + ", " + m2443y() + ", " + m2445z() + ")";
+              if (capacity() == 0) {
+                  return "(" + m2441x() + ", " + m2443y() + ", " + m2445z() + ")";
                         }
-/* 2033 */              String s = "";
-/* 2034 */              int p = position();
-/* 2035 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 2036 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + m2441x() + ", " + m2443y() + ", " + m2445z() + ")";
-/* 2035 */                  i++;
+                  i++;
                         }
-/* 2039 */              position(p);
-/* 2040 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 2044 */      public static CvPoint3D32f cvPoint3D32f(double x, double y, double z) {
-/* 2045 */          return new CvPoint3D32f().m2442x((float) x).m2444y((float) y).m2446z((float) z);
+      public static CvPoint3D32f cvPoint3D32f(double x, double y, double z) {
+          return new CvPoint3D32f().m2442x((float) x).m2444y((float) y).m2446z((float) z);
                 }
 
-/* 2046 */      public static class CvPoint2D64f extends Pointer {
+      public static class CvPoint2D64f extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native double m2437x();
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native CvPoint2D64f m2438x(double d);
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native double m2439y();
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native CvPoint2D64f m2440y(double d);
 
 
                     static {
-/* 2049 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2049 */          public CvPoint2D64f() {
+          public CvPoint2D64f() {
                         allocate();
                     }
 
-/* 2050 */          public CvPoint2D64f(int size) {
+          public CvPoint2D64f(int size) {
                         allocateArray(size);
                     }
 
-/* 2051 */          public CvPoint2D64f(Pointer p) {
-/* 2052 */              super(p);
+          public CvPoint2D64f(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2056 */          public CvPoint2D64f position(int position) {
-/* 2057 */              return (CvPoint2D64f) super.position(position);
+                    @Override 
+          public CvPoint2D64f position(int position) {
+              return (CvPoint2D64f) super.position(position);
                     }
 
-/* 2060 */          public CvPoint2D64f(double[] pts, int offset, int length) {
-/* 2061 */              this(length / 2);
-/* 2062 */              put(pts, offset, length);
+          public CvPoint2D64f(double[] pts, int offset, int length) {
+              this(length / 2);
+              put(pts, offset, length);
                     }
 
-/* 2064 */          public CvPoint2D64f(double... pts) {
-/* 2065 */              this(pts, 0, pts.length);
+          public CvPoint2D64f(double... pts) {
+              this(pts, 0, pts.length);
                     }
 
-/* 2071 */          public double[] get() {
-/* 2072 */              double[] pts = new double[this.capacity == 0 ? 2 : this.capacity * 2];
-/* 2073 */              get(pts);
-/* 2074 */              return pts;
+          public double[] get() {
+              double[] pts = new double[this.capacity == 0 ? 2 : this.capacity * 2];
+              get(pts);
+              return pts;
                     }
 
-/* 2076 */          public CvPoint2D64f get(double[] pts) {
-/* 2077 */              return get(pts, 0, pts.length);
+          public CvPoint2D64f get(double[] pts) {
+              return get(pts, 0, pts.length);
                     }
 
-/* 2079 */          public CvPoint2D64f get(double[] pts, int offset, int length) {
+          public CvPoint2D64f get(double[] pts, int offset, int length) {
                         for (int i = 0; i < length / 2; i++) {
-/* 2081 */                  position(i);
-/* 2082 */                  pts[(i * 2) + offset] = m2437x();
-/* 2083 */                  pts[(i * 2) + offset + 1] = m2439y();
+                  position(i);
+                  pts[(i * 2) + offset] = m2437x();
+                  pts[(i * 2) + offset + 1] = m2439y();
                         }
-/* 2085 */              return position(0);
+              return position(0);
                     }
 
-/* 2088 */          public final CvPoint2D64f put(double[] pts, int offset, int length) {
+          public final CvPoint2D64f put(double[] pts, int offset, int length) {
                         for (int i = 0; i < length / 2; i++) {
-/* 2090 */                  position(i).put(pts[(i * 2) + offset], pts[(i * 2) + offset + 1]);
+                  position(i).put(pts[(i * 2) + offset], pts[(i * 2) + offset + 1]);
                         }
-/* 2092 */              return position(0);
+              return position(0);
                     }
 
-/* 2094 */          public final CvPoint2D64f put(double... pts) {
-/* 2095 */              return put(pts, 0, pts.length);
+          public final CvPoint2D64f put(double... pts) {
+              return put(pts, 0, pts.length);
                     }
 
-/* 2098 */          public CvPoint2D64f put(double x, double y) {
-/* 2099 */              return m2438x(x).m2440y(y);
+          public CvPoint2D64f put(double x, double y) {
+              return m2438x(x).m2440y(y);
                     }
 
-/* 2101 */          public CvPoint2D64f put(CvPoint o) {
-/* 2102 */              return m2438x(o.m2429x()).m2440y(o.m2431y());
+          public CvPoint2D64f put(CvPoint o) {
+              return m2438x(o.m2429x()).m2440y(o.m2431y());
                     }
 
-/* 2104 */          public CvPoint2D64f put(CvPoint2D32f o) {
-/* 2105 */              return m2438x(o.m2433x()).m2440y(o.m2435y());
+          public CvPoint2D64f put(CvPoint2D32f o) {
+              return m2438x(o.m2433x()).m2440y(o.m2435y());
                     }
 
-/* 2107 */          public CvPoint2D64f put(CvPoint2D64f o) {
-/* 2108 */              return m2438x(o.m2437x()).m2440y(o.m2439y());
+          public CvPoint2D64f put(CvPoint2D64f o) {
+              return m2438x(o.m2437x()).m2440y(o.m2439y());
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2111 */          public String toString() {
-/* 2112 */              if (isNull()) {
-/* 2113 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 2115 */              if (capacity() == 0) {
-/* 2116 */                  return "(" + ((float) m2437x()) + ", " + ((float) m2439y()) + ")";
+              if (capacity() == 0) {
+                  return "(" + ((float) m2437x()) + ", " + ((float) m2439y()) + ")";
                         }
-/* 2118 */              String s = "";
-/* 2119 */              int p = position();
-/* 2120 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 2121 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + ((float) m2437x()) + ", " + ((float) m2439y()) + ")";
-/* 2120 */                  i++;
+                  i++;
                         }
-/* 2124 */              position(p);
-/* 2125 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 2129 */      public static CvPoint2D64f cvPoint2D64f(double x, double y) {
-/* 2130 */          return new CvPoint2D64f().m2438x(x).m2440y(y);
+      public static CvPoint2D64f cvPoint2D64f(double x, double y) {
+          return new CvPoint2D64f().m2438x(x).m2440y(y);
                 }
 
-/* 2131 */      public static class CvPoint3D64f extends Pointer {
+      public static class CvPoint3D64f extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native double m2447x();
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native CvPoint3D64f m2448x(double d);
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native double m2449y();
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native CvPoint3D64f m2450y(double d);
 
-                    /* JADX INFO: renamed from: z */
+                    
                     public native double m2451z();
 
-                    /* JADX INFO: renamed from: z */
+                    
                     public native CvPoint3D64f m2452z(double d);
 
 
                     static {
-/* 2134 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2134 */          public CvPoint3D64f() {
+          public CvPoint3D64f() {
                         allocate();
                     }
 
-/* 2135 */          public CvPoint3D64f(int size) {
+          public CvPoint3D64f(int size) {
                         allocateArray(size);
                     }
 
-/* 2136 */          public CvPoint3D64f(Pointer p) {
-/* 2137 */              super(p);
+          public CvPoint3D64f(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2141 */          public CvPoint3D64f position(int position) {
-/* 2142 */              return (CvPoint3D64f) super.position(position);
+                    @Override 
+          public CvPoint3D64f position(int position) {
+              return (CvPoint3D64f) super.position(position);
                     }
 
-/* 2145 */          public CvPoint3D64f(double[] pts, int offset, int length) {
-/* 2146 */              this(length / 3);
-/* 2147 */              put(pts, offset, length);
+          public CvPoint3D64f(double[] pts, int offset, int length) {
+              this(length / 3);
+              put(pts, offset, length);
                     }
 
-/* 2149 */          public CvPoint3D64f(double... pts) {
-/* 2150 */              this(pts, 0, pts.length);
+          public CvPoint3D64f(double... pts) {
+              this(pts, 0, pts.length);
                     }
 
-/* 2157 */          public double[] get() {
-/* 2158 */              double[] pts = new double[this.capacity == 0 ? 3 : this.capacity * 3];
-/* 2159 */              get(pts);
-/* 2160 */              return pts;
+          public double[] get() {
+              double[] pts = new double[this.capacity == 0 ? 3 : this.capacity * 3];
+              get(pts);
+              return pts;
                     }
 
-/* 2162 */          public CvPoint3D64f get(double[] pts) {
-/* 2163 */              return get(pts, 0, pts.length);
+          public CvPoint3D64f get(double[] pts) {
+              return get(pts, 0, pts.length);
                     }
 
-/* 2165 */          public CvPoint3D64f get(double[] pts, int offset, int length) {
+          public CvPoint3D64f get(double[] pts, int offset, int length) {
                         for (int i = 0; i < length / 3; i++) {
-/* 2167 */                  position(i);
-/* 2168 */                  pts[(i * 3) + offset] = m2447x();
-/* 2169 */                  pts[(i * 3) + offset + 1] = m2449y();
-/* 2170 */                  pts[(i * 3) + offset + 2] = m2451z();
+                  position(i);
+                  pts[(i * 3) + offset] = m2447x();
+                  pts[(i * 3) + offset + 1] = m2449y();
+                  pts[(i * 3) + offset + 2] = m2451z();
                         }
-/* 2172 */              return position(0);
+              return position(0);
                     }
 
-/* 2175 */          public final CvPoint3D64f put(double[] pts, int offset, int length) {
+          public final CvPoint3D64f put(double[] pts, int offset, int length) {
                         for (int i = 0; i < length / 3; i++) {
-/* 2177 */                  position(i).put(pts[(i * 3) + offset], pts[(i * 3) + offset + 1], pts[(i * 3) + offset + 2]);
+                  position(i).put(pts[(i * 3) + offset], pts[(i * 3) + offset + 1], pts[(i * 3) + offset + 2]);
                         }
-/* 2179 */              return position(0);
+              return position(0);
                     }
 
-/* 2181 */          public final CvPoint3D64f put(double... pts) {
-/* 2182 */              return put(pts, 0, pts.length);
+          public final CvPoint3D64f put(double... pts) {
+              return put(pts, 0, pts.length);
                     }
 
-/* 2185 */          public CvPoint3D64f put(double x, double y, double z) {
-/* 2186 */              return m2448x(m2447x()).m2450y(m2449y()).m2452z(m2451z());
+          public CvPoint3D64f put(double x, double y, double z) {
+              return m2448x(m2447x()).m2450y(m2449y()).m2452z(m2451z());
                     }
 
-/* 2188 */          public CvPoint3D64f put(CvPoint o) {
-/* 2189 */              return m2448x(o.m2429x()).m2450y(o.m2431y()).m2452z(0.0d);
+          public CvPoint3D64f put(CvPoint o) {
+              return m2448x(o.m2429x()).m2450y(o.m2431y()).m2452z(0.0d);
                     }
 
-/* 2191 */          public CvPoint3D64f put(CvPoint2D32f o) {
-/* 2192 */              return m2448x(o.m2433x()).m2450y(o.m2435y()).m2452z(0.0d);
+          public CvPoint3D64f put(CvPoint2D32f o) {
+              return m2448x(o.m2433x()).m2450y(o.m2435y()).m2452z(0.0d);
                     }
 
-/* 2194 */          public CvPoint3D64f put(CvPoint2D64f o) {
-/* 2195 */              return m2448x(o.m2437x()).m2450y(o.m2439y()).m2452z(0.0d);
+          public CvPoint3D64f put(CvPoint2D64f o) {
+              return m2448x(o.m2437x()).m2450y(o.m2439y()).m2452z(0.0d);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2198 */          public String toString() {
-/* 2199 */              if (isNull()) {
-/* 2200 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 2202 */              if (capacity() == 0) {
-/* 2203 */                  return "(" + ((float) m2447x()) + ", " + ((float) m2449y()) + ", " + ((float) m2451z()) + ")";
+              if (capacity() == 0) {
+                  return "(" + ((float) m2447x()) + ", " + ((float) m2449y()) + ", " + ((float) m2451z()) + ")";
                         }
-/* 2205 */              String s = "";
-/* 2206 */              int p = position();
-/* 2207 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 2208 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + ((float) m2447x()) + ", " + ((float) m2449y()) + ", " + ((float) m2451z()) + ")";
-/* 2207 */                  i++;
+                  i++;
                         }
-/* 2211 */              position(p);
-/* 2212 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 2216 */      public static CvPoint3D64f cvPoint3D64f(double x, double y, double z) {
-/* 2217 */          return new CvPoint3D64f().m2448x(x).m2450y(y).m2452z(z);
+      public static CvPoint3D64f cvPoint3D64f(double x, double y, double z) {
+          return new CvPoint3D64f().m2448x(x).m2450y(y).m2452z(z);
                 }
 
-/* 2218 */      public static class CvSize extends Pointer {
+      public static class CvSize extends Pointer {
                     public static final CvSize ZERO;
 
                     private native void allocate();
@@ -4065,58 +4065,58 @@
 
 
                     static {
-/* 2221 */              Loader.load();
-/* 2256 */              ZERO = new CvSize().width(0).height(0);
+              Loader.load();
+              ZERO = new CvSize().width(0).height(0);
                     }
 
-/* 2221 */          public CvSize() {
+          public CvSize() {
                         allocate();
                     }
 
-/* 2222 */          public CvSize(int size) {
+          public CvSize(int size) {
                         allocateArray(size);
                     }
 
-/* 2223 */          public CvSize(Pointer p) {
-/* 2224 */              super(p);
+          public CvSize(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2228 */          public CvSize position(int position) {
-/* 2229 */              return (CvSize) super.position(position);
+                    @Override 
+          public CvSize position(int position) {
+              return (CvSize) super.position(position);
                     }
 
-/* 2231 */          public CvSize(int width, int height) {
-/* 2233 */              allocate();
+          public CvSize(int width, int height) {
+              allocate();
                         width(width).height(height);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2239 */          public String toString() {
-/* 2240 */              if (isNull()) {
-/* 2241 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 2243 */              if (capacity() == 0) {
-/* 2244 */                  return "(" + width() + ", " + height() + ")";
+              if (capacity() == 0) {
+                  return "(" + width() + ", " + height() + ")";
                         }
-/* 2246 */              String s = "";
-/* 2247 */              int p = position();
-/* 2248 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 2249 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + width() + ", " + height() + ")";
-/* 2248 */                  i++;
+                  i++;
                         }
-/* 2252 */              position(p);
-/* 2253 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 2258 */      public static CvSize cvSize(int width, int height) {
-/* 2259 */          return new CvSize().width(width).height(height);
+      public static CvSize cvSize(int width, int height) {
+          return new CvSize().width(width).height(height);
                 }
 
-/* 2260 */      public static class CvSize2D32f extends Pointer {
+      public static class CvSize2D32f extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4131,57 +4131,57 @@
 
 
                     static {
-/* 2263 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2263 */          public CvSize2D32f() {
+          public CvSize2D32f() {
                         allocate();
                     }
 
-/* 2264 */          public CvSize2D32f(int size) {
+          public CvSize2D32f(int size) {
                         allocateArray(size);
                     }
 
-/* 2265 */          public CvSize2D32f(Pointer p) {
-/* 2266 */              super(p);
+          public CvSize2D32f(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2270 */          public CvSize2D32f position(int position) {
-/* 2271 */              return (CvSize2D32f) super.position(position);
+                    @Override 
+          public CvSize2D32f position(int position) {
+              return (CvSize2D32f) super.position(position);
                     }
 
-/* 2273 */          public CvSize2D32f(float width, float height) {
-/* 2275 */              allocate();
+          public CvSize2D32f(float width, float height) {
+              allocate();
                         width(width).height(height);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2281 */          public String toString() {
-/* 2282 */              if (isNull()) {
-/* 2283 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 2285 */              if (capacity() == 0) {
-/* 2286 */                  return "(" + width() + ", " + height() + ")";
+              if (capacity() == 0) {
+                  return "(" + width() + ", " + height() + ")";
                         }
-/* 2288 */              String s = "";
-/* 2289 */              int p = position();
-/* 2290 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 2291 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + width() + ", " + height() + ")";
-/* 2290 */                  i++;
+                  i++;
                         }
-/* 2294 */              position(p);
-/* 2295 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 2299 */      public static CvSize2D32f cvSize2D32f(double width, double height) {
-/* 2300 */          return new CvSize2D32f().width((float) width).height((float) height);
+      public static CvSize2D32f cvSize2D32f(double width, double height) {
+          return new CvSize2D32f().width((float) width).height((float) height);
                 }
 
-/* 2301 */      public static class CvBox2D extends Pointer {
+      public static class CvBox2D extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4202,53 +4202,53 @@
 
 
                     static {
-/* 2304 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2304 */          public CvBox2D() {
+          public CvBox2D() {
                         allocate();
                     }
 
-/* 2305 */          public CvBox2D(int size) {
+          public CvBox2D(int size) {
                         allocateArray(size);
                     }
 
-/* 2306 */          public CvBox2D(Pointer p) {
-/* 2307 */              super(p);
+          public CvBox2D(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2311 */          public CvBox2D position(int position) {
-/* 2312 */              return (CvBox2D) super.position(position);
+                    @Override 
+          public CvBox2D position(int position) {
+              return (CvBox2D) super.position(position);
                     }
 
-/* 2314 */          public CvBox2D(CvPoint2D32f center, CvSize2D32f size, float angle) {
-/* 2316 */              allocate();
+          public CvBox2D(CvPoint2D32f center, CvSize2D32f size, float angle) {
+              allocate();
                         center(center).size(size).angle(angle);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2323 */          public String toString() {
-/* 2324 */              if (isNull()) {
-/* 2325 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 2327 */              if (capacity() == 0) {
-/* 2328 */                  return "(" + center() + ", " + size() + ", " + angle() + ")";
+              if (capacity() == 0) {
+                  return "(" + center() + ", " + size() + ", " + angle() + ")";
                         }
-/* 2330 */              String s = "";
-/* 2331 */              int p = position();
-/* 2332 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 2333 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + center() + ", " + size() + ", " + angle() + ")";
-/* 2332 */                  i++;
+                  i++;
                         }
-/* 2336 */              position(p);
-/* 2337 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 2340 */      public static class CvLineIterator extends Pointer {
+      public static class CvLineIterator extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4280,28 +4280,28 @@
 
 
                     static {
-/* 2343 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2343 */          public CvLineIterator() {
+          public CvLineIterator() {
                         allocate();
                     }
 
-/* 2344 */          public CvLineIterator(int size) {
+          public CvLineIterator(int size) {
                         allocateArray(size);
                     }
 
-/* 2345 */          public CvLineIterator(Pointer p) {
-/* 2346 */              super(p);
+          public CvLineIterator(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2350 */          public CvLineIterator position(int position) {
-/* 2351 */              return (CvLineIterator) super.position(position);
+                    @Override 
+          public CvLineIterator position(int position) {
+              return (CvLineIterator) super.position(position);
                     }
                 }
 
-/* 2363 */      public static class CvSlice extends Pointer {
+      public static class CvSlice extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4316,32 +4316,32 @@
 
 
                     static {
-/* 2366 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2366 */          public CvSlice() {
+          public CvSlice() {
                         allocate();
                     }
 
-/* 2367 */          public CvSlice(int size) {
+          public CvSlice(int size) {
                         allocateArray(size);
                     }
 
-/* 2368 */          public CvSlice(Pointer p) {
-/* 2369 */              super(p);
+          public CvSlice(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2373 */          public CvSlice position(int position) {
-/* 2374 */              return (CvSlice) super.position(position);
+                    @Override 
+          public CvSlice position(int position) {
+              return (CvSlice) super.position(position);
                     }
                 }
 
-/* 2380 */      public static CvSlice cvSlice(int start, int end) {
-/* 2381 */          return new CvSlice().start_index(start).end_index(end);
+      public static CvSlice cvSlice(int start, int end) {
+          return new CvSlice().start_index(start).end_index(end);
                 }
 
-/* 2385 */      public static class CvScalar extends Pointer {
+      public static class CvScalar extends Pointer {
                     public static final CvScalar ALPHA1;
                     public static final CvScalar ALPHA255;
                     public static final CvScalar BLACK;
@@ -4376,124 +4376,124 @@
 
 
                     static {
-/* 2388 */              Loader.load();
-/* 2451 */              ZERO = new CvScalar().val(0, 0.0d).val(1, 0.0d).val(2, 0.0d).val(3, 0.0d);
-/* 2452 */              ONE = new CvScalar().val(0, 1.0d).val(1, 1.0d).val(2, 1.0d).val(3, 1.0d);
-/* 2453 */              ONEHALF = new CvScalar().val(0, 0.5d).val(1, 0.5d).val(2, 0.5d).val(3, 0.5d);
-/* 2454 */              ALPHA1 = new CvScalar().val(0, 0.0d).val(1, 0.0d).val(2, 0.0d).val(3, 1.0d);
-/* 2455 */              ALPHA255 = new CvScalar().val(0, 0.0d).val(1, 0.0d).val(2, 0.0d).val(3, 255.0d);
-/* 2457 */              WHITE = opencv_core.CV_RGB(255.0d, 255.0d, 255.0d);
-/* 2458 */              GRAY = opencv_core.CV_RGB(128.0d, 128.0d, 128.0d);
-/* 2459 */              BLACK = opencv_core.CV_RGB(0.0d, 0.0d, 0.0d);
-/* 2460 */              RED = opencv_core.CV_RGB(255.0d, 0.0d, 0.0d);
-/* 2461 */              GREEN = opencv_core.CV_RGB(0.0d, 255.0d, 0.0d);
-/* 2462 */              BLUE = opencv_core.CV_RGB(0.0d, 0.0d, 255.0d);
-/* 2463 */              CYAN = opencv_core.CV_RGB(0.0d, 255.0d, 255.0d);
-/* 2464 */              MAGENTA = opencv_core.CV_RGB(255.0d, 0.0d, 255.0d);
-/* 2465 */              YELLOW = opencv_core.CV_RGB(255.0d, 255.0d, 0.0d);
+              Loader.load();
+              ZERO = new CvScalar().val(0, 0.0d).val(1, 0.0d).val(2, 0.0d).val(3, 0.0d);
+              ONE = new CvScalar().val(0, 1.0d).val(1, 1.0d).val(2, 1.0d).val(3, 1.0d);
+              ONEHALF = new CvScalar().val(0, 0.5d).val(1, 0.5d).val(2, 0.5d).val(3, 0.5d);
+              ALPHA1 = new CvScalar().val(0, 0.0d).val(1, 0.0d).val(2, 0.0d).val(3, 1.0d);
+              ALPHA255 = new CvScalar().val(0, 0.0d).val(1, 0.0d).val(2, 0.0d).val(3, 255.0d);
+              WHITE = opencv_core.CV_RGB(255.0d, 255.0d, 255.0d);
+              GRAY = opencv_core.CV_RGB(128.0d, 128.0d, 128.0d);
+              BLACK = opencv_core.CV_RGB(0.0d, 0.0d, 0.0d);
+              RED = opencv_core.CV_RGB(255.0d, 0.0d, 0.0d);
+              GREEN = opencv_core.CV_RGB(0.0d, 255.0d, 0.0d);
+              BLUE = opencv_core.CV_RGB(0.0d, 0.0d, 255.0d);
+              CYAN = opencv_core.CV_RGB(0.0d, 255.0d, 255.0d);
+              MAGENTA = opencv_core.CV_RGB(255.0d, 0.0d, 255.0d);
+              YELLOW = opencv_core.CV_RGB(255.0d, 255.0d, 0.0d);
                     }
 
-/* 2388 */          public CvScalar() {
+          public CvScalar() {
                         allocate();
                     }
 
-/* 2389 */          public CvScalar(int size) {
+          public CvScalar(int size) {
                         allocateArray(size);
                     }
 
-/* 2390 */          public CvScalar(Pointer p) {
-/* 2391 */              super(p);
+          public CvScalar(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2395 */          public CvScalar position(int position) {
-/* 2396 */              return (CvScalar) super.position(position);
+                    @Override 
+          public CvScalar position(int position) {
+              return (CvScalar) super.position(position);
                     }
 
-/* 2398 */          public CvScalar(double val0, double val1, double val2, double val3) {
-/* 2400 */              allocate();
+          public CvScalar(double val0, double val1, double val2, double val3) {
+              allocate();
                         val(0, val0).val(1, val1).val(2, val2).val(3, val3);
                     }
 
-/* 2403 */          public double getVal(int i) {
-/* 2404 */              return val(i);
+          public double getVal(int i) {
+              return val(i);
                     }
 
-/* 2404 */          public CvScalar setVal(int i, double val) {
-/* 2405 */              return val(i, val);
+          public CvScalar setVal(int i, double val) {
+              return val(i, val);
                     }
 
-/* 2413 */          public void scale(double s) {
+          public void scale(double s) {
                         for (int i = 0; i < 4; i++) {
-/* 2415 */                  val(i, val(i) * s);
+                  val(i, val(i) * s);
                         }
                     }
 
-/* 2418 */          public double red() {
-/* 2419 */              return val(2);
+          public double red() {
+              return val(2);
                     }
 
-/* 2419 */          public double green() {
-/* 2420 */              return val(1);
+          public double green() {
+              return val(1);
                     }
 
-/* 2420 */          public double blue() {
-/* 2421 */              return val(0);
+          public double blue() {
+              return val(0);
                     }
 
-/* 2421 */          public CvScalar red(double r) {
-/* 2422 */              val(2, r);
+          public CvScalar red(double r) {
+              val(2, r);
                         return this;
                     }
 
-/* 2422 */          public CvScalar green(double g) {
-/* 2423 */              val(1, g);
+          public CvScalar green(double g) {
+              val(1, g);
                         return this;
                     }
 
-/* 2423 */          public CvScalar blue(double b) {
-/* 2424 */              val(0, b);
+          public CvScalar blue(double b) {
+              val(0, b);
                         return this;
                     }
 
-/* 2426 */          public double magnitude() {
-/* 2427 */              return Math.sqrt((val(0) * val(0)) + (val(1) * val(1)) + (val(2) * val(2)) + (val(3) * val(3)));
+          public double magnitude() {
+              return Math.sqrt((val(0) * val(0)) + (val(1) * val(1)) + (val(2) * val(2)) + (val(3) * val(3)));
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2430 */          public String toString() {
-/* 2431 */              if (isNull()) {
-/* 2432 */                  return super.toString();
+                    @Override 
+          public String toString() {
+              if (isNull()) {
+                  return super.toString();
                         }
-/* 2434 */              if (capacity() == 0) {
-/* 2435 */                  return "(" + ((float) val(0)) + ", " + ((float) val(1)) + ", " + ((float) val(2)) + ", " + ((float) val(3)) + ")";
+              if (capacity() == 0) {
+                  return "(" + ((float) val(0)) + ", " + ((float) val(1)) + ", " + ((float) val(2)) + ", " + ((float) val(3)) + ")";
                         }
-/* 2438 */              String s = "";
-/* 2439 */              int p = position();
-/* 2440 */              int i = 0;
+              String s = "";
+              int p = position();
+              int i = 0;
                         while (i < capacity()) {
-/* 2441 */                  position(i);
+                  position(i);
                             s = s + (i == 0 ? "(" : " (") + ((float) val(0)) + ", " + ((float) val(1)) + ", " + ((float) val(2)) + ", " + ((float) val(3)) + ")";
-/* 2440 */                  i++;
+                  i++;
                         }
-/* 2445 */              position(p);
-/* 2446 */              return s;
+              position(p);
+              return s;
                     }
                 }
 
-/* 2467 */      public static CvScalar cvScalar(double val0, double val1, double val2, double val3) {
-/* 2468 */          return new CvScalar().val(0, val0).val(1, val1).val(2, val2).val(3, val3);
+      public static CvScalar cvScalar(double val0, double val1, double val2, double val3) {
+          return new CvScalar().val(0, val0).val(1, val1).val(2, val2).val(3, val3);
                 }
 
-/* 2470 */      public static CvScalar cvRealScalar(double val0) {
-/* 2471 */          return new CvScalar().val(0, val0).val(1, 0.0d).val(2, 0.0d).val(3, 0.0d);
+      public static CvScalar cvRealScalar(double val0) {
+          return new CvScalar().val(0, val0).val(1, 0.0d).val(2, 0.0d).val(3, 0.0d);
                 }
 
-/* 2473 */      public static CvScalar cvScalarAll(double val0123) {
-/* 2474 */          return new CvScalar().val(0, val0123).val(1, val0123).val(2, val0123).val(3, val0123);
+      public static CvScalar cvScalarAll(double val0123) {
+          return new CvScalar().val(0, val0123).val(1, val0123).val(2, val0123).val(3, val0123);
                 }
 
-/* 2476 */      public static class CvMemBlock extends Pointer {
+      public static class CvMemBlock extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4508,28 +4508,28 @@
 
 
                     static {
-/* 2479 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2479 */          public CvMemBlock() {
+          public CvMemBlock() {
                         allocate();
                     }
 
-/* 2480 */          public CvMemBlock(int size) {
+          public CvMemBlock(int size) {
                         allocateArray(size);
                     }
 
-/* 2481 */          public CvMemBlock(Pointer p) {
-/* 2482 */              super(p);
+          public CvMemBlock(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2486 */          public CvMemBlock position(int position) {
-/* 2487 */              return (CvMemBlock) super.position(position);
+                    @Override 
+          public CvMemBlock position(int position) {
+              return (CvMemBlock) super.position(position);
                     }
                 }
 
-/* 2494 */      public static class CvMemStorage extends Pointer {
+      public static class CvMemStorage extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4560,62 +4560,62 @@
 
 
                     static {
-/* 2497 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2497 */          public CvMemStorage() {
+          public CvMemStorage() {
                         allocate();
                         zero();
                     }
 
-/* 2498 */          public CvMemStorage(int size) {
+          public CvMemStorage(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 2499 */          public CvMemStorage(Pointer p) {
-/* 2500 */              super(p);
+          public CvMemStorage(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2504 */          public CvMemStorage position(int position) {
-/* 2505 */              return (CvMemStorage) super.position(position);
+                    @Override 
+          public CvMemStorage position(int position) {
+              return (CvMemStorage) super.position(position);
                     }
 
-/* 2508 */          public static CvMemStorage create(int block_size) {
-/* 2509 */              CvMemStorage m = opencv_core.cvCreateMemStorage(block_size);
-/* 2510 */              if (m != null) {
-/* 2511 */                  m.deallocator(new ReleaseDeallocator(m));
+          public static CvMemStorage create(int block_size) {
+              CvMemStorage m = opencv_core.cvCreateMemStorage(block_size);
+              if (m != null) {
+                  m.deallocator(new ReleaseDeallocator(m));
                         }
-/* 2513 */              return m;
+              return m;
                     }
 
-/* 2515 */          public static CvMemStorage create() {
-/* 2516 */              return create(0);
+          public static CvMemStorage create() {
+              return create(0);
                     }
 
-/* 2519 */          public void release() {
-/* 2520 */              deallocate();
+          public void release() {
+              deallocate();
                     }
 
-/* 2520 */          protected static class ReleaseDeallocator extends CvMemStorage implements Pointer.Deallocator {
+          protected static class ReleaseDeallocator extends CvMemStorage implements Pointer.Deallocator {
 
-/* 2522 */              ReleaseDeallocator(CvMemStorage p) {
-/* 2523 */                  super(p);
+              ReleaseDeallocator(CvMemStorage p) {
+                  super(p);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 2523 */              public void deallocate() {
-/* 2524 */                  opencv_core.cvReleaseMemStorage(this);
+                        @Override 
+              public void deallocate() {
+                  opencv_core.cvReleaseMemStorage(this);
                         }
                     }
                 }
 
-/* 2535 */      public static boolean CV_IS_STORAGE(CvArr storage) {
+      public static boolean CV_IS_STORAGE(CvArr storage) {
                     return storage != null && (new CvMemStorage(storage).signature() & (-65536)) == 1116274688;
                 }
 
-/* 2537 */      public static class CvMemStoragePos extends Pointer {
+      public static class CvMemStoragePos extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4630,28 +4630,28 @@
 
 
                     static {
-/* 2540 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2540 */          public CvMemStoragePos() {
+          public CvMemStoragePos() {
                         allocate();
                     }
 
-/* 2541 */          public CvMemStoragePos(int size) {
+          public CvMemStoragePos(int size) {
                         allocateArray(size);
                     }
 
-/* 2542 */          public CvMemStoragePos(Pointer p) {
-/* 2543 */              super(p);
+          public CvMemStoragePos(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2547 */          public CvMemStoragePos position(int position) {
-/* 2548 */              return (CvMemStoragePos) super.position(position);
+                    @Override 
+          public CvMemStoragePos position(int position) {
+              return (CvMemStoragePos) super.position(position);
                     }
                 }
 
-/* 2554 */      public static class CvSeqBlock extends Pointer {
+      public static class CvSeqBlock extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4679,28 +4679,28 @@
 
 
                     static {
-/* 2557 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2557 */          public CvSeqBlock() {
+          public CvSeqBlock() {
                         allocate();
                     }
 
-/* 2558 */          public CvSeqBlock(int size) {
+          public CvSeqBlock(int size) {
                         allocateArray(size);
                     }
 
-/* 2559 */          public CvSeqBlock(Pointer p) {
-/* 2560 */              super(p);
+          public CvSeqBlock(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2564 */          public CvSeqBlock position(int position) {
-/* 2565 */              return (CvSeqBlock) super.position(position);
+                    @Override 
+          public CvSeqBlock position(int position) {
+              return (CvSeqBlock) super.position(position);
                     }
                 }
 
-/* 2574 */      public static class CvSeq extends CvArr {
+      public static class CvSeq extends CvArr {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4764,31 +4764,31 @@
                     public native CvSeq v_prev(CvSeq cvSeq);
 
 
-/* 2576 */          public CvSeq() {
+          public CvSeq() {
                         allocate();
                         zero();
                     }
 
-/* 2577 */          public CvSeq(int size) {
+          public CvSeq(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 2578 */          public CvSeq(Pointer p) {
-/* 2579 */              super(p);
+          public CvSeq(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2583 */          public CvSeq position(int position) {
-/* 2584 */              return (CvSeq) super.position(position);
+                    @Override 
+          public CvSeq position(int position) {
+              return (CvSeq) super.position(position);
                     }
 
-/* 2588 */          public static CvSeq create(int seq_flags, int header_size, int elem_size, CvMemStorage storage) {
-/* 2589 */              return opencv_core.cvCreateSeq(seq_flags, header_size, elem_size, storage);
+          public static CvSeq create(int seq_flags, int header_size, int elem_size, CvMemStorage storage) {
+              return opencv_core.cvCreateSeq(seq_flags, header_size, elem_size, storage);
                     }
                 }
 
-/* 2613 */      public static class CvSetElem extends Pointer {
+      public static class CvSetElem extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4803,28 +4803,28 @@
 
 
                     static {
-/* 2616 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2616 */          public CvSetElem() {
+          public CvSetElem() {
                         allocate();
                     }
 
-/* 2617 */          public CvSetElem(int size) {
+          public CvSetElem(int size) {
                         allocateArray(size);
                     }
 
-/* 2618 */          public CvSetElem(Pointer p) {
-/* 2619 */              super(p);
+          public CvSetElem(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2623 */          public CvSetElem position(int position) {
-/* 2624 */              return (CvSetElem) super.position(position);
+                    @Override 
+          public CvSetElem position(int position) {
+              return (CvSetElem) super.position(position);
                     }
                 }
 
-/* 2629 */      public static class CvSet extends CvSeq {
+      public static class CvSet extends CvSeq {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4839,35 +4839,35 @@
 
 
 
-/* 2631 */          public CvSet() {
+          public CvSet() {
                         allocate();
                         zero();
                     }
 
-/* 2632 */          public CvSet(int size) {
+          public CvSet(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 2633 */          public CvSet(Pointer p) {
-/* 2634 */              super(p);
+          public CvSet(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvSeq, com.googlecode.javacpp.Pointer
-/* 2638 */          public CvSet position(int position) {
-/* 2639 */              return (CvSet) super.position(position);
+                    @Override 
+          public CvSet position(int position) {
+              return (CvSet) super.position(position);
                     }
 
-/* 2643 */          public static CvSet create(int set_flags, int header_size, int elem_size, CvMemStorage storage) {
-/* 2644 */              return opencv_core.cvCreateSet(set_flags, header_size, elem_size, storage);
+          public static CvSet create(int set_flags, int header_size, int elem_size, CvMemStorage storage) {
+              return opencv_core.cvCreateSet(set_flags, header_size, elem_size, storage);
                     }
                 }
 
-/* 2653 */      public static boolean CV_IS_SET_ELEM(Pointer ptr) {
+      public static boolean CV_IS_SET_ELEM(Pointer ptr) {
                     return new CvSetElem(ptr).flags() >= 0;
                 }
 
-/* 2656 */      public static class CvGraphEdge extends Pointer {
+      public static class CvGraphEdge extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4890,28 +4890,28 @@
 
 
                     static {
-/* 2659 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2659 */          public CvGraphEdge() {
+          public CvGraphEdge() {
                         allocate();
                     }
 
-/* 2660 */          public CvGraphEdge(int size) {
+          public CvGraphEdge(int size) {
                         allocateArray(size);
                     }
 
-/* 2661 */          public CvGraphEdge(Pointer p) {
-/* 2662 */              super(p);
+          public CvGraphEdge(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2666 */          public CvGraphEdge position(int position) {
-/* 2667 */              return (CvGraphEdge) super.position(position);
+                    @Override 
+          public CvGraphEdge position(int position) {
+              return (CvGraphEdge) super.position(position);
                     }
                 }
 
-/* 2674 */      public static class CvGraphVtx extends Pointer {
+      public static class CvGraphVtx extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4926,28 +4926,28 @@
 
 
                     static {
-/* 2677 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2677 */          public CvGraphVtx() {
+          public CvGraphVtx() {
                         allocate();
                     }
 
-/* 2678 */          public CvGraphVtx(int size) {
+          public CvGraphVtx(int size) {
                         allocateArray(size);
                     }
 
-/* 2679 */          public CvGraphVtx(Pointer p) {
-/* 2680 */              super(p);
+          public CvGraphVtx(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2684 */          public CvGraphVtx position(int position) {
-/* 2685 */              return (CvGraphVtx) super.position(position);
+                    @Override 
+          public CvGraphVtx position(int position) {
+              return (CvGraphVtx) super.position(position);
                     }
                 }
 
-/* 2690 */      public static class CvGraphVtx2D extends CvGraphVtx {
+      public static class CvGraphVtx2D extends CvGraphVtx {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4958,25 +4958,25 @@
 
 
 
-/* 2692 */          public CvGraphVtx2D() {
+          public CvGraphVtx2D() {
                         allocate();
                     }
 
-/* 2693 */          public CvGraphVtx2D(int size) {
+          public CvGraphVtx2D(int size) {
                         allocateArray(size);
                     }
 
-/* 2694 */          public CvGraphVtx2D(Pointer p) {
-/* 2695 */              super(p);
+          public CvGraphVtx2D(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvGraphVtx, com.googlecode.javacpp.Pointer
-/* 2699 */          public CvGraphVtx2D position(int position) {
-/* 2700 */              return (CvGraphVtx2D) super.position(position);
+                    @Override 
+          public CvGraphVtx2D position(int position) {
+              return (CvGraphVtx2D) super.position(position);
                     }
                 }
 
-/* 2704 */      public static class CvGraph extends CvSet {
+      public static class CvGraph extends CvSet {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -4988,31 +4988,31 @@
 
 
 
-/* 2706 */          public CvGraph() {
+          public CvGraph() {
                         allocate();
                         zero();
                     }
 
-/* 2707 */          public CvGraph(int size) {
+          public CvGraph(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 2708 */          public CvGraph(Pointer p) {
-/* 2709 */              super(p);
+          public CvGraph(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvSet, com.googlecode.javacv.cpp.opencv_core.CvSeq, com.googlecode.javacpp.Pointer
-/* 2713 */          public CvGraph position(int position) {
-/* 2714 */              return (CvGraph) super.position(position);
+                    @Override 
+          public CvGraph position(int position) {
+              return (CvGraph) super.position(position);
                     }
 
-/* 2718 */          public static CvGraph create(int graph_flags, int header_size, int vtx_size, int edge_size, CvMemStorage storage) {
-/* 2719 */              return opencv_core.cvCreateGraph(graph_flags, header_size, vtx_size, edge_size, storage);
+          public static CvGraph create(int graph_flags, int header_size, int vtx_size, int edge_size, CvMemStorage storage) {
+              return opencv_core.cvCreateGraph(graph_flags, header_size, vtx_size, edge_size, storage);
                     }
                 }
 
-/* 2726 */      public static class CvChain extends CvSeq {
+      public static class CvChain extends CvSeq {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5024,25 +5024,25 @@
 
 
 
-/* 2728 */          public CvChain() {
+          public CvChain() {
                         allocate();
                     }
 
-/* 2729 */          public CvChain(int size) {
+          public CvChain(int size) {
                         allocateArray(size);
                     }
 
-/* 2730 */          public CvChain(Pointer p) {
-/* 2731 */              super(p);
+          public CvChain(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvSeq, com.googlecode.javacpp.Pointer
-/* 2735 */          public CvChain position(int position) {
-/* 2736 */              return (CvChain) super.position(position);
+                    @Override 
+          public CvChain position(int position) {
+              return (CvChain) super.position(position);
                     }
                 }
 
-/* 2740 */      public static class CvContour extends CvSeq {
+      public static class CvContour extends CvSeq {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5062,109 +5062,109 @@
 
 
 
-/* 2742 */          public CvContour() {
+          public CvContour() {
                         allocate();
                     }
 
-/* 2743 */          public CvContour(int size) {
+          public CvContour(int size) {
                         allocateArray(size);
                     }
 
-/* 2744 */          public CvContour(Pointer p) {
-/* 2745 */              super(p);
+          public CvContour(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvSeq, com.googlecode.javacpp.Pointer
-/* 2749 */          public CvContour position(int position) {
-/* 2750 */              return (CvContour) super.position(position);
+                    @Override 
+          public CvContour position(int position) {
+              return (CvContour) super.position(position);
                     }
                 }
 
-/* 2828 */      public static boolean CV_IS_SEQ(CvArr seq) {
+      public static boolean CV_IS_SEQ(CvArr seq) {
                     return seq != null && (new CvSeq(seq).flags() & (-65536)) == 1117323264;
                 }
 
-/* 2831 */      public static boolean CV_IS_SET(CvArr set) {
+      public static boolean CV_IS_SET(CvArr set) {
                     return set != null && (new CvSet(set).flags() & (-65536)) == 1117257728;
                 }
 
-/* 2834 */      public static int CV_SEQ_ELTYPE(CvSeq seq) {
-/* 2835 */          return seq.flags() & 4095;
+      public static int CV_SEQ_ELTYPE(CvSeq seq) {
+          return seq.flags() & 4095;
                 }
 
-/* 2835 */      public static int CV_SEQ_KIND(CvSeq seq) {
-/* 2836 */          return seq.flags() & 12288;
+      public static int CV_SEQ_KIND(CvSeq seq) {
+          return seq.flags() & 12288;
                 }
 
-/* 2837 */      public static boolean CV_IS_SEQ_INDEX(CvSeq seq) {
+      public static boolean CV_IS_SEQ_INDEX(CvSeq seq) {
                     return CV_SEQ_ELTYPE(seq) == CV_SEQ_ELTYPE_INDEX && CV_SEQ_KIND(seq) == 0;
                 }
 
-/* 2840 */      public static boolean CV_IS_SEQ_CURVE(CvSeq seq) {
+      public static boolean CV_IS_SEQ_CURVE(CvSeq seq) {
                     return CV_SEQ_KIND(seq) == 4096;
                 }
 
-/* 2841 */      public static boolean CV_IS_SEQ_CLOSED(CvSeq seq) {
+      public static boolean CV_IS_SEQ_CLOSED(CvSeq seq) {
                     return (seq.flags() & 16384) != 0;
                 }
 
-/* 2842 */      public static boolean CV_IS_SEQ_CONVEX(CvSeq seq) {
-/* 2843 */          return false;
+      public static boolean CV_IS_SEQ_CONVEX(CvSeq seq) {
+          return false;
                 }
 
-/* 2843 */      public static boolean CV_IS_SEQ_HOLE(CvSeq seq) {
+      public static boolean CV_IS_SEQ_HOLE(CvSeq seq) {
                     return (seq.flags() & 32768) != 0;
                 }
 
-/* 2844 */      public static boolean CV_IS_SEQ_SIMPLE(CvSeq seq) {
-/* 2845 */          return true;
+      public static boolean CV_IS_SEQ_SIMPLE(CvSeq seq) {
+          return true;
                 }
 
-/* 2847 */      public static boolean CV_IS_SEQ_POINT_SET(CvSeq seq) {
+      public static boolean CV_IS_SEQ_POINT_SET(CvSeq seq) {
                     return CV_SEQ_ELTYPE(seq) == CV_32SC2 || CV_SEQ_ELTYPE(seq) == CV_32FC2;
                 }
 
-/* 2850 */      public static boolean CV_IS_SEQ_POINT_SUBSET(CvSeq seq) {
+      public static boolean CV_IS_SEQ_POINT_SUBSET(CvSeq seq) {
                     return CV_IS_SEQ_INDEX(seq) || CV_SEQ_ELTYPE(seq) == 7;
                 }
 
-/* 2853 */      public static boolean CV_IS_SEQ_POLYLINE(CvSeq seq) {
+      public static boolean CV_IS_SEQ_POLYLINE(CvSeq seq) {
                     return CV_SEQ_KIND(seq) == 4096 && CV_IS_SEQ_POINT_SET(seq);
                 }
 
-/* 2856 */      public static boolean CV_IS_SEQ_POLYGON(CvSeq seq) {
+      public static boolean CV_IS_SEQ_POLYGON(CvSeq seq) {
                     return CV_IS_SEQ_POLYLINE(seq) && CV_IS_SEQ_CLOSED(seq);
                 }
 
-/* 2859 */      public static boolean CV_IS_SEQ_CHAIN(CvSeq seq) {
+      public static boolean CV_IS_SEQ_CHAIN(CvSeq seq) {
                     return CV_SEQ_KIND(seq) == 4096 && seq.elem_size() == 1;
                 }
 
-/* 2862 */      public static boolean CV_IS_SEQ_CONTOUR(CvSeq seq) {
+      public static boolean CV_IS_SEQ_CONTOUR(CvSeq seq) {
                     return CV_IS_SEQ_CLOSED(seq) && (CV_IS_SEQ_POLYLINE(seq) || CV_IS_SEQ_CHAIN(seq));
                 }
 
-/* 2865 */      public static boolean CV_IS_SEQ_CHAIN_CONTOUR(CvSeq seq) {
+      public static boolean CV_IS_SEQ_CHAIN_CONTOUR(CvSeq seq) {
                     return CV_IS_SEQ_CHAIN(seq) && CV_IS_SEQ_CLOSED(seq);
                 }
 
-/* 2868 */      public static boolean CV_IS_SEQ_POLYGON_TREE(CvSeq seq) {
+      public static boolean CV_IS_SEQ_POLYGON_TREE(CvSeq seq) {
                     return CV_SEQ_ELTYPE(seq) == 0 && CV_SEQ_KIND(seq) == 8192;
                 }
 
-/* 2872 */      public static boolean CV_IS_GRAPH(CvSeq seq) {
+      public static boolean CV_IS_GRAPH(CvSeq seq) {
                     return CV_IS_SET(seq) && CV_SEQ_KIND(seq) == 4096;
                 }
 
-/* 2875 */      public static boolean CV_IS_GRAPH_ORIENTED(CvSeq seq) {
+      public static boolean CV_IS_GRAPH_ORIENTED(CvSeq seq) {
                     return (seq.flags() & 16384) != 0;
                 }
 
-/* 2878 */      public static boolean CV_IS_SUBDIV2D(CvSeq seq) {
+      public static boolean CV_IS_SUBDIV2D(CvSeq seq) {
                     return CV_IS_SET(seq) && CV_SEQ_KIND(seq) == 8192;
                 }
 
-/* 2881 */      public static class CvSeqWriter extends Pointer {
+      public static class CvSeqWriter extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5198,28 +5198,28 @@
 
 
                     static {
-/* 2884 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2884 */          public CvSeqWriter() {
+          public CvSeqWriter() {
                         allocate();
                     }
 
-/* 2885 */          public CvSeqWriter(int size) {
+          public CvSeqWriter(int size) {
                         allocateArray(size);
                     }
 
-/* 2886 */          public CvSeqWriter(Pointer p) {
-/* 2887 */              super(p);
+          public CvSeqWriter(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2891 */          public CvSeqWriter position(int position) {
-/* 2892 */              return (CvSeqWriter) super.position(position);
+                    @Override 
+          public CvSeqWriter position(int position) {
+              return (CvSeqWriter) super.position(position);
                     }
                 }
 
-/* 2904 */      public static class CvSeqReader extends Pointer {
+      public static class CvSeqReader extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5262,94 +5262,94 @@
 
 
                     static {
-/* 2907 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2907 */          public CvSeqReader() {
+          public CvSeqReader() {
                         allocate();
                     }
 
-/* 2908 */          public CvSeqReader(int size) {
+          public CvSeqReader(int size) {
                         allocateArray(size);
                     }
 
-/* 2909 */          public CvSeqReader(Pointer p) {
-/* 2910 */              super(p);
+          public CvSeqReader(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2914 */          public CvSeqReader position(int position) {
-/* 2915 */              return (CvSeqReader) super.position(position);
+                    @Override 
+          public CvSeqReader position(int position) {
+              return (CvSeqReader) super.position(position);
                     }
                 }
 
-/* 2938 */      public static CvPoint CV_CURRENT_POINT(CvSeqReader reader) {
-/* 2939 */          return new CvPoint(reader.ptr());
+      public static CvPoint CV_CURRENT_POINT(CvSeqReader reader) {
+          return new CvPoint(reader.ptr());
                 }
 
-/* 2939 */      public static CvPoint CV_PREV_POINT(CvSeqReader reader) {
-/* 2940 */          return new CvPoint(reader.prev_elem());
+      public static CvPoint CV_PREV_POINT(CvSeqReader reader) {
+          return new CvPoint(reader.prev_elem());
                 }
 
-/* 2941 */      public static void CV_READ_EDGE(CvPoint pt1, CvPoint pt2, CvSeqReader reader) {
-/* 2942 */          if (!$assertionsDisabled && reader.seq().elem_size() != Loader.sizeof(CvPoint.class)) {
+      public static void CV_READ_EDGE(CvPoint pt1, CvPoint pt2, CvSeqReader reader) {
+          if (!$assertionsDisabled && reader.seq().elem_size() != Loader.sizeof(CvPoint.class)) {
                         throw new AssertionError();
                     }
-/* 2943 */          CV_PREV_POINT(reader);
-/* 2944 */          CV_CURRENT_POINT(reader);
-/* 2945 */          reader.prev_elem(reader.ptr());
-/* 2946 */          CV_NEXT_SEQ_ELEM(Loader.sizeof(CvPoint.class), reader);
+          CV_PREV_POINT(reader);
+          CV_CURRENT_POINT(reader);
+          reader.prev_elem(reader.ptr());
+          CV_NEXT_SEQ_ELEM(Loader.sizeof(CvPoint.class), reader);
                 }
 
-/* 2948 */      public static CvGraphEdge CV_NEXT_GRAPH_EDGE(CvGraphEdge edge, CvGraphVtx vertex) {
-/* 2949 */          if ($assertionsDisabled || edge.vtx(0).equals(vertex) || edge.vtx(1).equals(vertex)) {
+      public static CvGraphEdge CV_NEXT_GRAPH_EDGE(CvGraphEdge edge, CvGraphVtx vertex) {
+          if ($assertionsDisabled || edge.vtx(0).equals(vertex) || edge.vtx(1).equals(vertex)) {
                         return edge.next(edge.vtx(1).equals(vertex) ? 1 : 0);
                     }
                     throw new AssertionError();
                 }
 
                 @Opaque
-/* 2953 */      public static class CvFileStorage extends Pointer {
+      public static class CvFileStorage extends Pointer {
                     static {
-/* 2955 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2955 */          public CvFileStorage() {
+          public CvFileStorage() {
                     }
 
-/* 2956 */          public CvFileStorage(Pointer p) {
-/* 2957 */              super(p);
+          public CvFileStorage(Pointer p) {
+              super(p);
                     }
 
-/* 2959 */          public static CvFileStorage open(String filename, CvMemStorage memstorage, int flags) {
-/* 2960 */              return open(filename, memstorage, flags, null);
+          public static CvFileStorage open(String filename, CvMemStorage memstorage, int flags) {
+              return open(filename, memstorage, flags, null);
                     }
 
-/* 2962 */          public static CvFileStorage open(String filename, CvMemStorage memstorage, int flags, String encoding) {
-/* 2963 */              CvFileStorage f = opencv_core.cvOpenFileStorage(filename, memstorage, flags, encoding);
-/* 2964 */              if (f != null) {
-/* 2965 */                  f.deallocator(new ReleaseDeallocator(f));
+          public static CvFileStorage open(String filename, CvMemStorage memstorage, int flags, String encoding) {
+              CvFileStorage f = opencv_core.cvOpenFileStorage(filename, memstorage, flags, encoding);
+              if (f != null) {
+                  f.deallocator(new ReleaseDeallocator(f));
                         }
-/* 2967 */              return f;
+              return f;
                     }
 
-/* 2970 */          public void release() {
-/* 2971 */              deallocate();
+          public void release() {
+              deallocate();
                     }
 
-/* 2972 */          protected static class ReleaseDeallocator extends CvFileStorage implements Pointer.Deallocator {
-/* 2973 */              ReleaseDeallocator(CvFileStorage p) {
-/* 2974 */                  super(p);
+          protected static class ReleaseDeallocator extends CvFileStorage implements Pointer.Deallocator {
+              ReleaseDeallocator(CvFileStorage p) {
+                  super(p);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 2974 */              public void deallocate() {
-/* 2975 */                  opencv_core.cvReleaseFileStorage(this);
+                        @Override 
+              public void deallocate() {
+                  opencv_core.cvReleaseFileStorage(this);
                         }
                     }
                 }
 
-/* 2989 */      public static class CvAttrList extends Pointer {
+      public static class CvAttrList extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5365,84 +5365,84 @@
 
 
                     static {
-/* 2992 */              Loader.load();
+              Loader.load();
                     }
 
-/* 2992 */          public CvAttrList() {
+          public CvAttrList() {
                         allocate();
                     }
 
-/* 2993 */          public CvAttrList(int size) {
+          public CvAttrList(int size) {
                         allocateArray(size);
                     }
 
-/* 2994 */          public CvAttrList(Pointer p) {
-/* 2995 */              super(p);
+          public CvAttrList(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 2999 */          public CvAttrList position(int position) {
-/* 3000 */              return (CvAttrList) super.position(position);
+                    @Override 
+          public CvAttrList position(int position) {
+              return (CvAttrList) super.position(position);
                     }
                 }
 
-/* 3009 */      public static CvAttrList cvAttrList(PointerPointer attr, CvAttrList next) {
-/* 3010 */          return new CvAttrList().attr(attr).next(next);
+      public static CvAttrList cvAttrList(PointerPointer attr, CvAttrList next) {
+          return new CvAttrList().attr(attr).next(next);
                 }
 
-/* 3012 */      public static CvAttrList cvAttrList() {
-/* 3013 */          return new CvAttrList();
+      public static CvAttrList cvAttrList() {
+          return new CvAttrList();
                 }
 
-/* 3034 */      public static int CV_NODE_TYPE(int flags) {
-/* 3035 */          return flags & 7;
+      public static int CV_NODE_TYPE(int flags) {
+          return flags & 7;
                 }
 
-/* 3035 */      public static boolean CV_NODE_IS_INT(int flags) {
+      public static boolean CV_NODE_IS_INT(int flags) {
                     return CV_NODE_TYPE(flags) == 1;
                 }
 
-/* 3036 */      public static boolean CV_NODE_IS_REAL(int flags) {
+      public static boolean CV_NODE_IS_REAL(int flags) {
                     return CV_NODE_TYPE(flags) == 2;
                 }
 
-/* 3037 */      public static boolean CV_NODE_IS_STRING(int flags) {
+      public static boolean CV_NODE_IS_STRING(int flags) {
                     return CV_NODE_TYPE(flags) == 3;
                 }
 
-/* 3038 */      public static boolean CV_NODE_IS_SEQ(int flags) {
+      public static boolean CV_NODE_IS_SEQ(int flags) {
                     return CV_NODE_TYPE(flags) == 5;
                 }
 
-/* 3039 */      public static boolean CV_NODE_IS_MAP(int flags) {
+      public static boolean CV_NODE_IS_MAP(int flags) {
                     return CV_NODE_TYPE(flags) == 6;
                 }
 
-/* 3040 */      public static boolean CV_NODE_IS_COLLECTION(int flags) {
+      public static boolean CV_NODE_IS_COLLECTION(int flags) {
                     return CV_NODE_TYPE(flags) >= 5;
                 }
 
-/* 3041 */      public static boolean CV_NODE_IS_FLOW(int flags) {
+      public static boolean CV_NODE_IS_FLOW(int flags) {
                     return (flags & 8) != 0;
                 }
 
-/* 3042 */      public static boolean CV_NODE_IS_EMPTY(int flags) {
+      public static boolean CV_NODE_IS_EMPTY(int flags) {
                     return (flags & 32) != 0;
                 }
 
-/* 3043 */      public static boolean CV_NODE_IS_USER(int flags) {
+      public static boolean CV_NODE_IS_USER(int flags) {
                     return (flags & 16) != 0;
                 }
 
-/* 3044 */      public static boolean CV_NODE_HAS_NAME(int flags) {
+      public static boolean CV_NODE_HAS_NAME(int flags) {
                     return (flags & 64) != 0;
                 }
 
-/* 3045 */      public static boolean CV_NODE_SEQ_IS_SIMPLE(CvSeq seq) {
+      public static boolean CV_NODE_SEQ_IS_SIMPLE(CvSeq seq) {
                     return (seq.flags() & 256) != 0;
                 }
 
-/* 3046 */      public static class CvString extends Pointer {
+      public static class CvString extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5458,28 +5458,28 @@
 
 
                     static {
-/* 3049 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3049 */          public CvString() {
+          public CvString() {
                         allocate();
                     }
 
-/* 3050 */          public CvString(int size) {
+          public CvString(int size) {
                         allocateArray(size);
                     }
 
-/* 3051 */          public CvString(Pointer p) {
-/* 3052 */              super(p);
+          public CvString(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3056 */          public CvString position(int position) {
-/* 3057 */              return (CvString) super.position(position);
+                    @Override 
+          public CvString position(int position) {
+              return (CvString) super.position(position);
                     }
                 }
 
-/* 3063 */      public static class CvStringHashNode extends Pointer {
+      public static class CvStringHashNode extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5499,42 +5499,42 @@
 
 
                     static {
-/* 3066 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3066 */          public CvStringHashNode() {
+          public CvStringHashNode() {
                         allocate();
                     }
 
-/* 3067 */          public CvStringHashNode(int size) {
+          public CvStringHashNode(int size) {
                         allocateArray(size);
                     }
 
-/* 3068 */          public CvStringHashNode(Pointer p) {
-/* 3069 */              super(p);
+          public CvStringHashNode(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3073 */          public CvStringHashNode position(int position) {
-/* 3074 */              return (CvStringHashNode) super.position(position);
+                    @Override 
+          public CvStringHashNode position(int position) {
+              return (CvStringHashNode) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 3081 */      public static class CvFileNodeHash extends Pointer {
+      public static class CvFileNodeHash extends Pointer {
                     static {
-/* 3083 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3083 */          public CvFileNodeHash() {
+          public CvFileNodeHash() {
                     }
 
-/* 3084 */          public CvFileNodeHash(Pointer p) {
-/* 3085 */              super(p);
+          public CvFileNodeHash(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 3086 */      public static class CvFileNode extends Pointer {
+      public static class CvFileNode extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5575,118 +5575,118 @@
 
 
                     static {
-/* 3089 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3089 */          public CvFileNode() {
+          public CvFileNode() {
                         allocate();
                     }
 
-/* 3090 */          public CvFileNode(int size) {
+          public CvFileNode(int size) {
                         allocateArray(size);
                     }
 
-/* 3091 */          public CvFileNode(Pointer p) {
-/* 3092 */              super(p);
+          public CvFileNode(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3096 */          public CvFileNode position(int position) {
-/* 3097 */              return (CvFileNode) super.position(position);
+                    @Override 
+          public CvFileNode position(int position) {
+              return (CvFileNode) super.position(position);
                     }
                 }
 
-/* 3111 */      public static class CvIsInstanceFunc extends FunctionPointer {
+      public static class CvIsInstanceFunc extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(@Const Pointer pointer);
 
                     static {
-/* 3113 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3113 */          public CvIsInstanceFunc(Pointer p) {
-/* 3114 */              super(p);
+          public CvIsInstanceFunc(Pointer p) {
+              super(p);
                     }
 
-/* 3114 */          protected CvIsInstanceFunc() {
+          protected CvIsInstanceFunc() {
                         allocate();
                     }
                 }
 
-/* 3118 */      public static class CvReleaseFunc extends FunctionPointer {
+      public static class CvReleaseFunc extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(PointerPointer pointerPointer);
 
                     static {
-/* 3120 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3120 */          public CvReleaseFunc(Pointer p) {
-/* 3121 */              super(p);
+          public CvReleaseFunc(Pointer p) {
+              super(p);
                     }
 
-/* 3121 */          protected CvReleaseFunc() {
+          protected CvReleaseFunc() {
                         allocate();
                     }
                 }
 
-/* 3125 */      public static class CvReadFunc extends FunctionPointer {
+      public static class CvReadFunc extends FunctionPointer {
                     private native void allocate();
 
                     public native Pointer call(CvFileStorage cvFileStorage, CvFileNode cvFileNode);
 
                     static {
-/* 3127 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3127 */          public CvReadFunc(Pointer p) {
-/* 3128 */              super(p);
+          public CvReadFunc(Pointer p) {
+              super(p);
                     }
 
-/* 3128 */          protected CvReadFunc() {
+          protected CvReadFunc() {
                         allocate();
                     }
                 }
 
-/* 3132 */      public static class CvWriteFunc extends FunctionPointer {
+      public static class CvWriteFunc extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(CvFileStorage cvFileStorage, String str, @Const Pointer pointer, @ByVal CvAttrList cvAttrList);
 
                     static {
-/* 3134 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3134 */          public CvWriteFunc(Pointer p) {
-/* 3135 */              super(p);
+          public CvWriteFunc(Pointer p) {
+              super(p);
                     }
 
-/* 3135 */          protected CvWriteFunc() {
+          protected CvWriteFunc() {
                         allocate();
                     }
                 }
 
-/* 3140 */      public static class CvCloneFunc extends FunctionPointer {
+      public static class CvCloneFunc extends FunctionPointer {
                     private native void allocate();
 
                     public native Pointer call(@Const Pointer pointer);
 
                     static {
-/* 3142 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3142 */          public CvCloneFunc(Pointer p) {
-/* 3143 */              super(p);
+          public CvCloneFunc(Pointer p) {
+              super(p);
                     }
 
-/* 3143 */          protected CvCloneFunc() {
+          protected CvCloneFunc() {
                         allocate();
                     }
                 }
 
-/* 3146 */      public static class CvTypeInfo extends Pointer {
+      public static class CvTypeInfo extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5732,32 +5732,32 @@
 
                     public native CvWriteFunc write();
 
-                    /* JADX INFO: renamed from: clone, reason: collision with other method in class */
+                    
 
 
                     static {
-/* 3149 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3149 */          public CvTypeInfo() {
+          public CvTypeInfo() {
                         allocate();
                     }
 
-/* 3150 */          public CvTypeInfo(int size) {
+          public CvTypeInfo(int size) {
                         allocateArray(size);
                     }
 
-/* 3151 */          public CvTypeInfo(Pointer p) {
-/* 3152 */              super(p);
+          public CvTypeInfo(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3156 */          public CvTypeInfo position(int position) {
-/* 3157 */              return (CvTypeInfo) super.position(position);
+                    @Override 
+          public CvTypeInfo position(int position) {
+              return (CvTypeInfo) super.position(position);
                     }
                 }
 
-/* 3174 */      public static class CvPluginFuncInfo extends Pointer {
+      public static class CvPluginFuncInfo extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5785,28 +5785,28 @@
 
 
                     static {
-/* 3177 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3177 */          public CvPluginFuncInfo() {
+          public CvPluginFuncInfo() {
                         allocate();
                     }
 
-/* 3178 */          public CvPluginFuncInfo(int size) {
+          public CvPluginFuncInfo(int size) {
                         allocateArray(size);
                     }
 
-/* 3179 */          public CvPluginFuncInfo(Pointer p) {
-/* 3180 */              super(p);
+          public CvPluginFuncInfo(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3184 */          public CvPluginFuncInfo position(int position) {
-/* 3185 */              return (CvPluginFuncInfo) super.position(position);
+                    @Override 
+          public CvPluginFuncInfo position(int position) {
+              return (CvPluginFuncInfo) super.position(position);
                     }
                 }
 
-/* 3194 */      public static class CvModuleInfo extends Pointer {
+      public static class CvModuleInfo extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5831,45 +5831,45 @@
 
 
                     static {
-/* 3197 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3197 */          public CvModuleInfo() {
+          public CvModuleInfo() {
                         allocate();
                     }
 
-/* 3198 */          public CvModuleInfo(int size) {
+          public CvModuleInfo(int size) {
                         allocateArray(size);
                     }
 
-/* 3199 */          public CvModuleInfo(Pointer p) {
-/* 3200 */              super(p);
+          public CvModuleInfo(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3204 */          public CvModuleInfo position(int position) {
-/* 3205 */              return (CvModuleInfo) super.position(position);
+                    @Override 
+          public CvModuleInfo position(int position) {
+              return (CvModuleInfo) super.position(position);
                     }
                 }
 
-/* 3219 */      public static void cvFree(Pointer ptr) {
-/* 3220 */          cvFree_(ptr);
-/* 3221 */          ptr.setNull();
+      public static void cvFree(Pointer ptr) {
+          cvFree_(ptr);
+          ptr.setNull();
                 }
 
-/* 3247 */      public static CvMat cvGetSubArr(CvArr arr, CvMat submat, @ByVal CvRect rect) {
-/* 3248 */          return cvGetSubRect(arr, submat, rect);
+      public static CvMat cvGetSubArr(CvArr arr, CvMat submat, @ByVal CvRect rect) {
+          return cvGetSubRect(arr, submat, rect);
                 }
 
-/* 3252 */      public static CvMat cvGetRow(CvArr arr, CvMat submat, int row) {
-/* 3253 */          return cvGetRows(arr, submat, row, row + 1, 1);
+      public static CvMat cvGetRow(CvArr arr, CvMat submat, int row) {
+          return cvGetRows(arr, submat, row, row + 1, 1);
                 }
 
-/* 3257 */      public static CvMat cvGetCol(CvArr arr, CvMat submat, int col) {
-/* 3258 */          return cvGetCols(arr, submat, col, col + 1);
+      public static CvMat cvGetCol(CvArr arr, CvMat submat, int col) {
+          return cvGetCols(arr, submat, col, col + 1);
                 }
 
-/* 3280 */      public static class CvNArrayIterator extends Pointer {
+      public static class CvNArrayIterator extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -5902,260 +5902,260 @@
 
 
                     static {
-/* 3283 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3283 */          public CvNArrayIterator() {
+          public CvNArrayIterator() {
                         allocate();
                     }
 
-/* 3284 */          public CvNArrayIterator(int size) {
+          public CvNArrayIterator(int size) {
                         allocateArray(size);
                     }
 
-/* 3285 */          public CvNArrayIterator(Pointer p) {
-/* 3286 */              super(p);
+          public CvNArrayIterator(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3290 */          public CvNArrayIterator position(int position) {
-/* 3291 */              return (CvNArrayIterator) super.position(position);
+                    @Override 
+          public CvNArrayIterator position(int position) {
+              return (CvNArrayIterator) super.position(position);
                     }
                 }
 
-/* 3310 */      public static int cvInitNArrayIterator(int count, CvArr[] arrs, CvArr mask, CvMatND stubs, CvNArrayIterator array_iterator, int flags) {
-/* 3311 */          return cvInitNArrayIterator(count, new CvArrArray(arrs), mask, stubs, array_iterator, flags);
+      public static int cvInitNArrayIterator(int count, CvArr[] arrs, CvArr mask, CvMatND stubs, CvNArrayIterator array_iterator, int flags) {
+          return cvInitNArrayIterator(count, new CvArrArray(arrs), mask, stubs, array_iterator, flags);
                 }
 
-/* 3349 */      public static CvArr cvReshapeND(CvArr arr, CvArr header, int new_cn, int new_dims, int[] new_sizes) {
-/* 3350 */          return cvReshapeMatND(arr, Loader.sizeof(header.getClass()), header, new_cn, new_dims, new_sizes);
+      public static CvArr cvReshapeND(CvArr arr, CvArr header, int new_cn, int new_dims, int[] new_sizes) {
+          return cvReshapeMatND(arr, Loader.sizeof(header.getClass()), header, new_cn, new_dims, new_sizes);
                 }
 
-/* 3365 */      public static void cvCopy(CvArr src, CvArr dst) {
-/* 3366 */          cvCopy(src, dst, null);
+      public static void cvCopy(CvArr src, CvArr dst) {
+          cvCopy(src, dst, null);
                 }
 
-/* 3369 */      public static void cvSet(CvArr arr, CvScalar value) {
-/* 3370 */          cvSet(arr, value, null);
+      public static void cvSet(CvArr arr, CvScalar value) {
+          cvSet(arr, value, null);
                 }
 
-/* 3373 */      public static void cvZero(CvArr arr) {
-/* 3374 */          cvSetZero(arr);
+      public static void cvZero(CvArr arr) {
+          cvSetZero(arr);
                 }
 
-/* 3380 */      public static void cvMixChannels(CvArr[] src, int src_count, CvArr[] dst, int dst_count, int[] from_to, int pair_count) {
-/* 3381 */          cvMixChannels(new CvArrArray(src), src_count, new CvArrArray(dst), dst_count, from_to, pair_count);
+      public static void cvMixChannels(CvArr[] src, int src_count, CvArr[] dst, int dst_count, int[] from_to, int pair_count) {
+          cvMixChannels(new CvArrArray(src), src_count, new CvArrArray(dst), dst_count, from_to, pair_count);
                 }
 
-/* 3387 */      public static void cvCvtScale(CvArr src, CvArr dst, double scale, double shift) {
-/* 3388 */          cvConvertScale(src, dst, scale, shift);
+      public static void cvCvtScale(CvArr src, CvArr dst, double scale, double shift) {
+          cvConvertScale(src, dst, scale, shift);
                 }
 
-/* 3390 */      public static void cvScale(CvArr src, CvArr dst, double scale, double shift) {
-/* 3391 */          cvConvertScale(src, dst, scale, shift);
+      public static void cvScale(CvArr src, CvArr dst, double scale, double shift) {
+          cvConvertScale(src, dst, scale, shift);
                 }
 
-/* 3393 */      public static void cvConvert(CvArr src, CvArr dst) {
-/* 3394 */          cvConvertScale(src, dst, 1.0d, 0.0d);
+      public static void cvConvert(CvArr src, CvArr dst) {
+          cvConvertScale(src, dst, 1.0d, 0.0d);
                 }
 
-/* 3397 */      public static void cvCvtScaleAbs(CvArr src, CvArr dst, double scale, double shift) {
-/* 3398 */          cvConvertScaleAbs(src, dst, scale, shift);
+      public static void cvCvtScaleAbs(CvArr src, CvArr dst, double scale, double shift) {
+          cvConvertScaleAbs(src, dst, scale, shift);
                 }
 
-/* 3407 */      public static void cvSubS(CvArr src, CvScalar value, CvArr dst, CvArr mask) {
-/* 3408 */          cvAddS(src, cvScalar(-value.val(0), -value.val(1), -value.val(2), -value.val(3)), dst, mask);
+      public static void cvSubS(CvArr src, CvScalar value, CvArr dst, CvArr mask) {
+          cvAddS(src, cvScalar(-value.val(0), -value.val(1), -value.val(2), -value.val(3)), dst, mask);
                 }
 
-/* 3414 */      public static void cvAXPY(CvArr A, double real_scalar, CvArr B, CvArr C) {
-/* 3415 */          cvScaleAdd(A, cvRealScalar(real_scalar), B, C);
+      public static void cvAXPY(CvArr A, double real_scalar, CvArr B, CvArr C) {
+          cvScaleAdd(A, cvRealScalar(real_scalar), B, C);
                 }
 
-/* 3445 */      public static void cvAbs(CvArr src, CvArr dst) {
-/* 3446 */          cvAbsDiffS(src, dst, cvScalarAll(0.0d));
+      public static void cvAbs(CvArr src, CvArr dst) {
+          cvAbsDiffS(src, dst, cvScalarAll(0.0d));
                 }
 
-/* 3464 */      public static int cvCheckArray(CvArr arr, int flags, double min_val, double max_val) {
-/* 3465 */          return cvCheckArr(arr, flags, min_val, max_val);
+      public static int cvCheckArray(CvArr arr, int flags, double min_val, double max_val) {
+          return cvCheckArr(arr, flags, min_val, max_val);
                 }
 
-/* 3487 */      public static void cvMatMulAdd(CvArr src1, CvArr src2, CvArr src3, CvArr dst) {
-/* 3488 */          cvGEMM(src1, src2, 1.0d, src3, 1.0d, dst, 0);
+      public static void cvMatMulAdd(CvArr src1, CvArr src2, CvArr src3, CvArr dst) {
+          cvGEMM(src1, src2, 1.0d, src3, 1.0d, dst, 0);
                 }
 
-/* 3490 */      public static void cvMatMul(CvArr src1, CvArr src2, CvArr dst) {
-/* 3491 */          cvMatMulAdd(src1, src2, null, dst);
+      public static void cvMatMul(CvArr src1, CvArr src2, CvArr dst) {
+          cvMatMulAdd(src1, src2, null, dst);
                 }
 
-/* 3500 */      public static void cvMatMulAddEx(CvArr srcA, CvArr srcB, double alpha, CvArr srcC, double beta, CvArr dst, int tABC) {
-/* 3501 */          cvGEMM(srcA, srcB, alpha, srcC, beta, dst, tABC);
+      public static void cvMatMulAddEx(CvArr srcA, CvArr srcB, double alpha, CvArr srcC, double beta, CvArr dst, int tABC) {
+          cvGEMM(srcA, srcB, alpha, srcC, beta, dst, tABC);
                 }
 
-/* 3504 */      public static void cvMatMulAddS(CvArr src, CvArr dst, CvMat transmat, CvMat shiftvec) {
-/* 3505 */          cvTransform(src, dst, transmat, shiftvec);
+      public static void cvMatMulAddS(CvArr src, CvArr dst, CvMat transmat, CvMat shiftvec) {
+          cvTransform(src, dst, transmat, shiftvec);
                 }
 
-/* 3511 */      public static void cvT(CvArr src, CvArr dst) {
-/* 3512 */          cvTranspose(src, dst);
+      public static void cvT(CvArr src, CvArr dst) {
+          cvTranspose(src, dst);
                 }
 
-/* 3516 */      public static void cvMirror(CvArr src, CvArr dst, int flip_mode) {
-/* 3517 */          cvFlip(src, dst, flip_mode);
+      public static void cvMirror(CvArr src, CvArr dst, int flip_mode) {
+          cvFlip(src, dst, flip_mode);
                 }
 
-/* 3536 */      public static double cvInvert(CvArr src, CvArr dst) {
-/* 3537 */          return cvInvert(src, dst, 0);
+      public static double cvInvert(CvArr src, CvArr dst) {
+          return cvInvert(src, dst, 0);
                 }
 
-/* 3539 */      public static double cvInv(CvArr src, CvArr dst, int method) {
-/* 3540 */          return cvInvert(src, dst, method);
+      public static double cvInv(CvArr src, CvArr dst, int method) {
+          return cvInvert(src, dst, method);
                 }
 
-/* 3542 */      public static double cvInv(CvArr src, CvArr dst) {
-/* 3543 */          return cvInvert(src, dst, 0);
+      public static double cvInv(CvArr src, CvArr dst) {
+          return cvInvert(src, dst, 0);
                 }
 
-/* 3546 */      public static int cvSolve(CvArr A, CvArr B, CvArr X) {
-/* 3547 */          return cvSolve(A, B, X, 0);
+      public static int cvSolve(CvArr A, CvArr B, CvArr X) {
+          return cvSolve(A, B, X, 0);
                 }
 
-/* 3557 */      public static void cvSetIdentity(CvArr mat, double value) {
-/* 3558 */          cvSetIdentity(mat, cvRealScalar(value));
+      public static void cvSetIdentity(CvArr mat, double value) {
+          cvSetIdentity(mat, cvRealScalar(value));
                 }
 
-/* 3560 */      public static void cvSetIdentity(CvArr mat) {
-/* 3561 */          cvSetIdentity(mat, 1.0d);
+      public static void cvSetIdentity(CvArr mat) {
+          cvSetIdentity(mat, 1.0d);
                 }
 
-/* 3572 */      public static void cvCalcCovarMatrix(CvArr[] vects, int count, CvArr cov_mat, CvArr avg, int flags) {
-/* 3573 */          cvCalcCovarMatrix(new CvArrArray(vects), count, cov_mat, avg, flags);
+      public static void cvCalcCovarMatrix(CvArr[] vects, int count, CvArr cov_mat, CvArr avg, int flags) {
+          cvCalcCovarMatrix(new CvArrArray(vects), count, cov_mat, avg, flags);
                 }
 
-/* 3587 */      public static double cvMahalonobis(CvArr vec1, CvArr vec2, CvArr mat) {
-/* 3588 */          return cvMahalanobis(vec1, vec2, mat);
+      public static double cvMahalonobis(CvArr vec1, CvArr vec2, CvArr mat) {
+          return cvMahalanobis(vec1, vec2, mat);
                 }
 
-/* 3600 */      public static void cvMinMaxLoc(CvArr arr, double[] min_val, double[] max_val) {
-/* 3601 */          cvMinMaxLoc(arr, min_val, max_val, (CvPoint) null, (CvPoint) null, (CvArr) null);
+      public static void cvMinMaxLoc(CvArr arr, double[] min_val, double[] max_val) {
+          cvMinMaxLoc(arr, min_val, max_val, (CvPoint) null, (CvPoint) null, (CvArr) null);
                 }
 
-/* 3622 */      public static double cvNorm(CvArr arr1, CvArr arr2, int norm_type) {
-/* 3623 */          return cvNorm(arr1, arr2, norm_type, null);
+      public static double cvNorm(CvArr arr1, CvArr arr2, int norm_type) {
+          return cvNorm(arr1, arr2, norm_type, null);
                 }
 
-/* 3625 */      public static double cvNorm(CvArr arr1, CvArr arr2) {
-/* 3626 */          return cvNorm(arr1, arr2, 4, null);
+      public static double cvNorm(CvArr arr1, CvArr arr2) {
+          return cvNorm(arr1, arr2, 4, null);
                 }
 
-/* 3628 */      public static double cvNorm(CvArr arr1) {
-/* 3629 */          return cvNorm(arr1, null, 4, null);
+      public static double cvNorm(CvArr arr1) {
+          return cvNorm(arr1, null, 4, null);
                 }
 
-/* 3634 */      public static void cvNormalize(CvArr src, CvArr dst) {
-/* 3635 */          cvNormalize(src, dst, 1.0d, 0.0d, 4, null);
+      public static void cvNormalize(CvArr src, CvArr dst) {
+          cvNormalize(src, dst, 1.0d, 0.0d, 4, null);
                 }
 
-/* 3656 */      public static void cvFFT(CvArr src, CvArr dst, int flags, int nonzero_rows) {
-/* 3657 */          cvDFT(src, dst, flags, nonzero_rows);
+      public static void cvFFT(CvArr src, CvArr dst, int flags, int nonzero_rows) {
+          cvDFT(src, dst, flags, nonzero_rows);
                 }
 
-/* 3706 */      public static Pointer cvCvtSeqToArray(CvSeq seq, Pointer elements) {
-/* 3707 */          return cvCvtSeqToArray(seq, elements, CV_WHOLE_SEQ);
+      public static Pointer cvCvtSeqToArray(CvSeq seq, Pointer elements) {
+          return cvCvtSeqToArray(seq, elements, CV_WHOLE_SEQ);
                 }
 
-/* 3710 */      public static Pointer cvCvtSeqToArray(CvSeq seq, Buffer elements) {
-/* 3711 */          return cvCvtSeqToArray(seq, elements, CV_WHOLE_SEQ);
+      public static Pointer cvCvtSeqToArray(CvSeq seq, Buffer elements) {
+          return cvCvtSeqToArray(seq, elements, CV_WHOLE_SEQ);
                 }
 
-/* 3718 */      public static CvSeq cvCloneSeq(CvSeq seq, CvMemStorage storage) {
-/* 3719 */          return cvSeqSlice(seq, CV_WHOLE_SEQ, storage, 1);
+      public static CvSeq cvCloneSeq(CvSeq seq, CvMemStorage storage) {
+          return cvSeqSlice(seq, CV_WHOLE_SEQ, storage, 1);
                 }
 
-/* 3722 */      public static class CvCmpFunc extends FunctionPointer {
+      public static class CvCmpFunc extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(@Const Pointer pointer, @Const Pointer pointer2, Pointer pointer3);
 
                     static {
-/* 3724 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3724 */          public CvCmpFunc(Pointer p) {
-/* 3725 */              super(p);
+          public CvCmpFunc(Pointer p) {
+              super(p);
                     }
 
-/* 3725 */          protected CvCmpFunc() {
+          protected CvCmpFunc() {
                         allocate();
                     }
                 }
 
-/* 3744 */      public CvSetElem cvSetNew(CvSet set_header) {
-/* 3745 */          CvSetElem elem = set_header.free_elems();
-/* 3746 */          if (elem != null) {
-/* 3747 */              set_header.free_elems(elem.next_free());
-/* 3748 */              elem.flags(elem.flags() & CV_SET_ELEM_IDX_MASK);
-/* 3749 */              set_header.active_count(set_header.active_count() + 1);
+      public CvSetElem cvSetNew(CvSet set_header) {
+          CvSetElem elem = set_header.free_elems();
+          if (elem != null) {
+              set_header.free_elems(elem.next_free());
+              elem.flags(elem.flags() & CV_SET_ELEM_IDX_MASK);
+              set_header.active_count(set_header.active_count() + 1);
                     } else {
-/* 3751 */              cvSetAdd(set_header, null, elem);
+              cvSetAdd(set_header, null, elem);
                     }
-/* 3753 */          return elem;
+          return elem;
                 }
 
-/* 3755 */      public void cvSetRemoveByPtr(CvSet set_header, CvSetElem elem) {
-/* 3756 */          if (!$assertionsDisabled && elem.flags() < 0) {
+      public void cvSetRemoveByPtr(CvSet set_header, CvSetElem elem) {
+          if (!$assertionsDisabled && elem.flags() < 0) {
                         throw new AssertionError();
                     }
-/* 3757 */          elem.next_free(set_header.free_elems());
-/* 3758 */          elem.flags((elem.flags() & CV_SET_ELEM_IDX_MASK) | 128);
-/* 3759 */          set_header.free_elems(elem);
-/* 3760 */          set_header.active_count(set_header.active_count() - 1);
+          elem.next_free(set_header.free_elems());
+          elem.flags((elem.flags() & CV_SET_ELEM_IDX_MASK) | 128);
+          set_header.free_elems(elem);
+          set_header.active_count(set_header.active_count() - 1);
                 }
 
-/* 3763 */      public static CvSetElem cvGetSetElem(CvSet set_header, int index) {
-/* 3764 */          CvSetElem elem = new CvSetElem(cvGetSeqElem(set_header, index));
-/* 3765 */          if (elem == null || !CV_IS_SET_ELEM(elem)) {
+      public static CvSetElem cvGetSetElem(CvSet set_header, int index) {
+          CvSetElem elem = new CvSetElem(cvGetSeqElem(set_header, index));
+          if (elem == null || !CV_IS_SET_ELEM(elem)) {
                         return null;
                     }
                     return elem;
                 }
 
-/* 3784 */      public static CvGraphEdge cvGraphFindEdge(CvGraph graph, int start_idx, int end_idx) {
-/* 3785 */          return cvFindGraphEdge(graph, start_idx, end_idx);
+      public static CvGraphEdge cvGraphFindEdge(CvGraph graph, int start_idx, int end_idx) {
+          return cvFindGraphEdge(graph, start_idx, end_idx);
                 }
 
-/* 3787 */      public static CvGraphEdge cvGraphFindEdgeByPtr(CvGraph graph, CvGraphVtx start_vtx, CvGraphVtx end_vtx) {
-/* 3788 */          return cvFindGraphEdgeByPtr(graph, start_vtx, end_vtx);
+      public static CvGraphEdge cvGraphFindEdgeByPtr(CvGraph graph, CvGraphVtx start_vtx, CvGraphVtx end_vtx) {
+          return cvFindGraphEdgeByPtr(graph, start_vtx, end_vtx);
                 }
 
-/* 3793 */      public static CvGraphVtx cvGetGraphVtx(CvGraph graph, int idx) {
-/* 3794 */          return new CvGraphVtx(cvGetSetElem(graph, idx));
+      public static CvGraphVtx cvGetGraphVtx(CvGraph graph, int idx) {
+          return new CvGraphVtx(cvGetSetElem(graph, idx));
                 }
 
-/* 3794 */      public static int cvGraphVtxIdx(CvGraph graph, CvGraphVtx vtx) {
-/* 3795 */          return vtx.flags() & CV_SET_ELEM_IDX_MASK;
+      public static int cvGraphVtxIdx(CvGraph graph, CvGraphVtx vtx) {
+          return vtx.flags() & CV_SET_ELEM_IDX_MASK;
                 }
 
-/* 3795 */      public static int cvGraphEdgeIdx(CvGraph graph, CvGraphEdge edge) {
-/* 3796 */          return edge.flags() & CV_SET_ELEM_IDX_MASK;
+      public static int cvGraphEdgeIdx(CvGraph graph, CvGraphEdge edge) {
+          return edge.flags() & CV_SET_ELEM_IDX_MASK;
                 }
 
-/* 3796 */      public static int cvGraphGetVtxCount(CvGraph graph) {
-/* 3797 */          return graph.active_count();
+      public static int cvGraphGetVtxCount(CvGraph graph) {
+          return graph.active_count();
                 }
 
-/* 3797 */      public static int cvGraphGetEdgeCount(CvGraph graph) {
-/* 3798 */          return graph.edges().active_count();
+      public static int cvGraphGetEdgeCount(CvGraph graph) {
+          return graph.edges().active_count();
                 }
 
-/* 3817 */      public static boolean CV_IS_GRAPH_EDGE_VISITED(CvGraphVtx vtx) {
+      public static boolean CV_IS_GRAPH_EDGE_VISITED(CvGraphVtx vtx) {
                     return (vtx.flags() & 1073741824) != 0;
                 }
 
-/* 3820 */      public static boolean CV_IS_GRAPH_VERTEX_VISITED(CvGraphEdge edge) {
+      public static boolean CV_IS_GRAPH_VERTEX_VISITED(CvGraphEdge edge) {
                     return (edge.flags() & 1073741824) != 0;
                 }
 
-/* 3822 */      public static class CvGraphScanner extends Pointer {
+      public static class CvGraphScanner extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -6190,100 +6190,100 @@
 
 
                     static {
-/* 3825 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3825 */          public CvGraphScanner() {
+          public CvGraphScanner() {
                         allocate();
                         zero();
                     }
 
-/* 3826 */          public CvGraphScanner(int size) {
+          public CvGraphScanner(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 3827 */          public CvGraphScanner(Pointer p) {
-/* 3828 */              super(p);
+          public CvGraphScanner(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3832 */          public CvGraphScanner position(int position) {
-/* 3833 */              return (CvGraphScanner) super.position(position);
+                    @Override 
+          public CvGraphScanner position(int position) {
+              return (CvGraphScanner) super.position(position);
                     }
 
-/* 3837 */          public static CvGraphScanner create(CvGraph graph, CvGraphVtx vtx, int mask) {
-/* 3838 */              CvGraphScanner g = opencv_core.cvCreateGraphScanner(graph, vtx, mask);
-/* 3839 */              if (g != null) {
-/* 3840 */                  g.deallocator(new ReleaseDeallocator(g));
+          public static CvGraphScanner create(CvGraph graph, CvGraphVtx vtx, int mask) {
+              CvGraphScanner g = opencv_core.cvCreateGraphScanner(graph, vtx, mask);
+              if (g != null) {
+                  g.deallocator(new ReleaseDeallocator(g));
                         }
-/* 3842 */              return g;
+              return g;
                     }
 
-/* 3844 */          public void release() {
-/* 3845 */              deallocate();
+          public void release() {
+              deallocate();
                     }
 
-/* 3845 */          protected static class ReleaseDeallocator extends CvGraphScanner implements Pointer.Deallocator {
+          protected static class ReleaseDeallocator extends CvGraphScanner implements Pointer.Deallocator {
 
-/* 3847 */              ReleaseDeallocator(CvGraphScanner p) {
-/* 3848 */                  super(p);
+              ReleaseDeallocator(CvGraphScanner p) {
+                  super(p);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 3848 */              public void deallocate() {
-/* 3849 */                  opencv_core.cvReleaseGraphScanner(this);
+                        @Override 
+              public void deallocate() {
+                  opencv_core.cvReleaseGraphScanner(this);
                         }
                     }
                 }
 
-/* 3869 */      public static CvScalar CV_RGB(double r, double g, double b) {
-/* 3870 */          return cvScalar(b, g, r, 0.0d);
+      public static CvScalar CV_RGB(double r, double g, double b) {
+          return cvScalar(b, g, r, 0.0d);
                 }
 
-/* 3887 */      public static void cvEllipseBox(CvArr img, @ByVal CvBox2D box, @ByVal CvScalar color, int thickness, int line_type, int shift) {
-/* 3888 */          CvSize2D32f size = box.size();
-/* 3889 */          CvSize axes = cvSize((int) Math.round(((double) size.width()) * 0.5d), (int) Math.round(((double) size.height()) * 0.5d));
-/* 3890 */          cvEllipse(img, cvPointFrom32f(box.center()), axes, box.angle(), 0.0d, 360.0d, color, thickness, line_type, shift);
+      public static void cvEllipseBox(CvArr img, @ByVal CvBox2D box, @ByVal CvScalar color, int thickness, int line_type, int shift) {
+          CvSize2D32f size = box.size();
+          CvSize axes = cvSize((int) Math.round(((double) size.width()) * 0.5d), (int) Math.round(((double) size.height()) * 0.5d));
+          cvEllipse(img, cvPointFrom32f(box.center()), axes, box.angle(), 0.0d, 360.0d, color, thickness, line_type, shift);
                 }
 
-/* 3898 */      public static void cvFillPoly(CvArr img, CvPoint[] pts, int[] npts, int contours, @ByVal CvScalar color, int line_type, int shift) {
-/* 3899 */          cvFillPoly(img, new PointerPointer(pts), npts, contours, color, line_type, shift);
+      public static void cvFillPoly(CvArr img, CvPoint[] pts, int[] npts, int contours, @ByVal CvScalar color, int line_type, int shift) {
+          cvFillPoly(img, new PointerPointer(pts), npts, contours, color, line_type, shift);
                 }
 
-/* 3907 */      public static void cvPolyLine(CvArr img, CvPoint[] pts, int[] npts, int contours, int is_closed, @ByVal CvScalar color, int thickness, int line_type, int shift) {
-/* 3908 */          cvPolyLine(img, new PointerPointer(pts), npts, contours, is_closed, color, thickness, line_type, shift);
+      public static void cvPolyLine(CvArr img, CvPoint[] pts, int[] npts, int contours, int is_closed, @ByVal CvScalar color, int thickness, int line_type, int shift) {
+          cvPolyLine(img, new PointerPointer(pts), npts, contours, is_closed, color, thickness, line_type, shift);
                 }
 
-/* 3918 */      public static void cvDrawRect(CvArr img, CvPoint pt1, CvPoint pt2, CvScalar color, int thickness, int line_type, int shift) {
-/* 3919 */          cvRectangle(img, pt1, pt2, color, thickness, line_type, shift);
+      public static void cvDrawRect(CvArr img, CvPoint pt1, CvPoint pt2, CvScalar color, int thickness, int line_type, int shift) {
+          cvRectangle(img, pt1, pt2, color, thickness, line_type, shift);
                 }
 
-/* 3922 */      public static void cvDrawLine(CvArr img, CvPoint pt1, CvPoint pt2, CvScalar color, int thickness, int line_type, int shift) {
-/* 3923 */          cvLine(img, pt1, pt2, color, thickness, line_type, shift);
+      public static void cvDrawLine(CvArr img, CvPoint pt1, CvPoint pt2, CvScalar color, int thickness, int line_type, int shift) {
+          cvLine(img, pt1, pt2, color, thickness, line_type, shift);
                 }
 
-/* 3926 */      public static void cvDrawCircle(CvArr img, CvPoint center, int radius, CvScalar color, int thickness, int line_type, int shift) {
-/* 3927 */          cvCircle(img, center, radius, color, thickness, line_type, shift);
+      public static void cvDrawCircle(CvArr img, CvPoint center, int radius, CvScalar color, int thickness, int line_type, int shift) {
+          cvCircle(img, center, radius, color, thickness, line_type, shift);
                 }
 
-/* 3931 */      public static void cvDrawEllipse(CvArr img, CvPoint center, CvSize axes, double angle, double start_angle, double end_angle, CvScalar color, int thickness, int line_type, int shift) {
-/* 3932 */          cvEllipse(img, center, axes, angle, start_angle, end_angle, color, thickness, line_type, shift);
+      public static void cvDrawEllipse(CvArr img, CvPoint center, CvSize axes, double angle, double start_angle, double end_angle, CvScalar color, int thickness, int line_type, int shift) {
+          cvEllipse(img, center, axes, angle, start_angle, end_angle, color, thickness, line_type, shift);
                 }
 
-/* 3937 */      public static void cvDrawPolyLine(CvArr img, CvPoint[] pts, int[] npts, int contours, int is_closed, CvScalar color, int thickness, int line_type, int shift) {
-/* 3938 */          cvPolyLine(img, pts, npts, contours, is_closed, color, thickness, line_type, shift);
+      public static void cvDrawPolyLine(CvArr img, CvPoint[] pts, int[] npts, int contours, int is_closed, CvScalar color, int thickness, int line_type, int shift) {
+          cvPolyLine(img, pts, npts, contours, is_closed, color, thickness, line_type, shift);
                 }
 
-/* 3942 */      public static void cvDrawPolyLine(CvArr img, @Cast({"CvPoint**"}) PointerPointer pts, int[] npts, int contours, int is_closed, CvScalar color, int thickness, int line_type, int shift) {
-/* 3943 */          cvPolyLine(img, pts, npts, contours, is_closed, color, thickness, line_type, shift);
+      public static void cvDrawPolyLine(CvArr img, @Cast({"CvPoint**"}) PointerPointer pts, int[] npts, int contours, int is_closed, CvScalar color, int thickness, int line_type, int shift) {
+          cvPolyLine(img, pts, npts, contours, is_closed, color, thickness, line_type, shift);
                 }
 
-/* 3947 */      public static void cvDrawPolyLine(CvArr img, @ByPtrPtr CvPoint pts, int[] npts, int contours, int is_closed, CvScalar color, int thickness, int line_type, int shift) {
-/* 3948 */          cvPolyLine(img, pts, npts, contours, is_closed, color, thickness, line_type, shift);
+      public static void cvDrawPolyLine(CvArr img, @ByPtrPtr CvPoint pts, int[] npts, int contours, int is_closed, CvScalar color, int thickness, int line_type, int shift) {
+          cvPolyLine(img, pts, npts, contours, is_closed, color, thickness, line_type, shift);
                 }
 
-/* 3968 */      public static class CvFont extends Pointer {
+      public static class CvFont extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -6303,10 +6303,10 @@
 
                     public native CvFont cyrillic(IntPointer intPointer);
 
-                    /* JADX INFO: renamed from: dx */
+                    
                     public native float m2427dx();
 
-                    /* JADX INFO: renamed from: dx */
+                    
                     public native CvFont m2428dx(float f);
 
                     public native int font_face();
@@ -6345,48 +6345,48 @@
 
 
                     static {
-/* 3971 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3971 */          public CvFont() {
+          public CvFont() {
                         allocate();
                     }
 
-/* 3972 */          public CvFont(int size) {
+          public CvFont(int size) {
                         allocateArray(size);
                     }
 
-/* 3973 */          public CvFont(Pointer p) {
-/* 3974 */              super(p);
+          public CvFont(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3978 */          public CvFont position(int position) {
-/* 3979 */              return (CvFont) super.position(position);
+                    @Override 
+          public CvFont position(int position) {
+              return (CvFont) super.position(position);
                     }
 
-/* 3982 */          public CvFont(int font_face, double hscale, double vscale, double shear, int thickness, int line_type) {
-/* 3984 */              allocate();
-/* 3985 */              opencv_core.cvInitFont(this, font_face, hscale, vscale, shear, thickness, line_type);
+          public CvFont(int font_face, double hscale, double vscale, double shear, int thickness, int line_type) {
+              allocate();
+              opencv_core.cvInitFont(this, font_face, hscale, vscale, shear, thickness, line_type);
                     }
 
-/* 3986 */          public CvFont(int font_face, double scale, int thickness) {
-/* 3988 */              allocate();
-/* 3989 */              opencv_core.cvInitFont(this, font_face, scale, scale, 0.0d, thickness, 16);
+          public CvFont(int font_face, double scale, int thickness) {
+              allocate();
+              opencv_core.cvInitFont(this, font_face, scale, scale, 0.0d, thickness, 16);
                     }
                 }
 
-/* 4008 */      public static CvFont cvFont(double scale, int thickness) {
-/* 4009 */          CvFont font = new CvFont();
-/* 4010 */          cvInitFont(font, 1, scale, scale, 0.0d, thickness, 16);
-/* 4011 */          return font;
+      public static CvFont cvFont(double scale, int thickness) {
+          CvFont font = new CvFont();
+          cvInitFont(font, 1, scale, scale, 0.0d, thickness, 16);
+          return font;
                 }
 
-/* 4027 */      public static void cvDrawContours(CvArr img, CvSeq contour, @ByVal CvScalar external_color, @ByVal CvScalar hole_color, int max_level, int thickness, int line_type) {
-/* 4028 */          cvDrawContours(img, contour, external_color, hole_color, max_level, thickness, line_type, CvPoint.ZERO);
+      public static void cvDrawContours(CvArr img, CvSeq contour, @ByVal CvScalar external_color, @ByVal CvScalar hole_color, int max_level, int thickness, int line_type) {
+          cvDrawContours(img, contour, external_color, hole_color, max_level, thickness, line_type, CvPoint.ZERO);
                 }
 
-/* 4031 */      public static class CvTreeNodeIterator extends Pointer {
+      public static class CvTreeNodeIterator extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -6406,172 +6406,172 @@
 
 
                     static {
-/* 4034 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4034 */          public CvTreeNodeIterator() {
+          public CvTreeNodeIterator() {
                         allocate();
                     }
 
-/* 4035 */          public CvTreeNodeIterator(int size) {
+          public CvTreeNodeIterator(int size) {
                         allocateArray(size);
                     }
 
-/* 4036 */          public CvTreeNodeIterator(Pointer p) {
-/* 4037 */              super(p);
+          public CvTreeNodeIterator(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 4041 */          public CvTreeNodeIterator position(int position) {
-/* 4042 */              return (CvTreeNodeIterator) super.position(position);
+                    @Override 
+          public CvTreeNodeIterator position(int position) {
+              return (CvTreeNodeIterator) super.position(position);
                     }
                 }
 
-/* 4067 */      public static class CvAllocFunc extends FunctionPointer {
+      public static class CvAllocFunc extends FunctionPointer {
                     private native void allocate();
 
                     public native Pointer call(@Cast({"size_t"}) long j, Pointer pointer);
 
                     static {
-/* 4069 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4069 */          public CvAllocFunc(Pointer p) {
-/* 4070 */              super(p);
+          public CvAllocFunc(Pointer p) {
+              super(p);
                     }
 
-/* 4070 */          protected CvAllocFunc() {
+          protected CvAllocFunc() {
                         allocate();
                     }
                 }
 
-/* 4074 */      public static class CvFreeFunc extends FunctionPointer {
+      public static class CvFreeFunc extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(Pointer pointer, Pointer pointer2);
 
                     static {
-/* 4076 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4076 */          public CvFreeFunc(Pointer p) {
-/* 4077 */              super(p);
+          public CvFreeFunc(Pointer p) {
+              super(p);
                     }
 
-/* 4077 */          protected CvFreeFunc() {
+          protected CvFreeFunc() {
                         allocate();
                     }
                 }
 
                 @Convention("CV_STDCALL")
-/* 4086 */      public static class Cv_iplCreateImageHeader extends FunctionPointer {
+      public static class Cv_iplCreateImageHeader extends FunctionPointer {
                     private native void allocate();
 
                     public native IplImage call(int i, int i2, int i3, @Cast({"char*"}) BytePointer bytePointer, @Cast({"char*"}) BytePointer bytePointer2, int i4, int i5, int i6, int i7, int i8, IplROI iplROI, IplImage iplImage, Pointer pointer, IplTileInfo iplTileInfo);
 
                     static {
-/* 4088 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4088 */          public Cv_iplCreateImageHeader(Pointer p) {
-/* 4089 */              super(p);
+          public Cv_iplCreateImageHeader(Pointer p) {
+              super(p);
                     }
 
-/* 4089 */          protected Cv_iplCreateImageHeader() {
+          protected Cv_iplCreateImageHeader() {
                         allocate();
                     }
                 }
 
                 @Convention("CV_STDCALL")
-/* 4096 */      public static class Cv_iplAllocateImageData extends FunctionPointer {
+      public static class Cv_iplAllocateImageData extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(IplImage iplImage, int i, int i2);
 
                     static {
-/* 4098 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4098 */          public Cv_iplAllocateImageData(Pointer p) {
-/* 4099 */              super(p);
+          public Cv_iplAllocateImageData(Pointer p) {
+              super(p);
                     }
 
-/* 4099 */          protected Cv_iplAllocateImageData() {
+          protected Cv_iplAllocateImageData() {
                         allocate();
                     }
                 }
 
                 @Convention("CV_STDCALL")
-/* 4104 */      public static class Cv_iplDeallocate extends FunctionPointer {
+      public static class Cv_iplDeallocate extends FunctionPointer {
                     private native void allocate();
 
                     public native void call(IplImage iplImage, int i);
 
                     static {
-/* 4106 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4106 */          public Cv_iplDeallocate(Pointer p) {
-/* 4107 */              super(p);
+          public Cv_iplDeallocate(Pointer p) {
+              super(p);
                     }
 
-/* 4107 */          protected Cv_iplDeallocate() {
+          protected Cv_iplDeallocate() {
                         allocate();
                     }
                 }
 
                 @Convention("CV_STDCALL")
-/* 4112 */      public static class Cv_iplCreateROI extends FunctionPointer {
+      public static class Cv_iplCreateROI extends FunctionPointer {
                     private native void allocate();
 
                     public native IplROI call(int i, int i2, int i3, int i4, int i5);
 
                     static {
-/* 4114 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4114 */          public Cv_iplCreateROI(Pointer p) {
-/* 4115 */              super(p);
+          public Cv_iplCreateROI(Pointer p) {
+              super(p);
                     }
 
-/* 4115 */          protected Cv_iplCreateROI() {
+          protected Cv_iplCreateROI() {
                         allocate();
                     }
                 }
 
                 @Convention("CV_STDCALL")
-/* 4120 */      public static class Cv_iplCloneImage extends FunctionPointer {
+      public static class Cv_iplCloneImage extends FunctionPointer {
                     private native void allocate();
 
                     public native IplImage call(@Const IplImage iplImage);
 
                     static {
-/* 4122 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4122 */          public Cv_iplCloneImage(Pointer p) {
-/* 4123 */              super(p);
+          public Cv_iplCloneImage(Pointer p) {
+              super(p);
                     }
 
-/* 4123 */          protected Cv_iplCloneImage() {
+          protected Cv_iplCloneImage() {
                         allocate();
                     }
                 }
 
-/* 4140 */      public static void cvStartWriteStruct(CvFileStorage fs, String name, int struct_flags, String type_name) {
-/* 4141 */          cvStartWriteStruct(fs, name, struct_flags, type_name, CV_ATTR_LIST_EMPTY);
+      public static void cvStartWriteStruct(CvFileStorage fs, String name, int struct_flags, String type_name) {
+          cvStartWriteStruct(fs, name, struct_flags, type_name, CV_ATTR_LIST_EMPTY);
                 }
 
-/* 4150 */      public static void cvWrite(CvFileStorage fs, String name, Pointer ptr) {
-/* 4151 */          cvWrite(fs, name, ptr, CV_ATTR_LIST_EMPTY);
+      public static void cvWrite(CvFileStorage fs, String name, Pointer ptr) {
+          cvWrite(fs, name, ptr, CV_ATTR_LIST_EMPTY);
                 }
 
-/* 4162 */      public static int cvReadInt(CvFileNode node) {
-/* 4163 */          return cvReadInt(node, 0);
+      public static int cvReadInt(CvFileNode node) {
+          return cvReadInt(node, 0);
                 }
 
-/* 4165 */      public static int cvReadInt(CvFileNode node, int default_value) {
-/* 4166 */          if (node == null) {
+      public static int cvReadInt(CvFileNode node, int default_value) {
+          if (node == null) {
                         return default_value;
                     }
                     if (CV_NODE_IS_INT(node.tag())) {
@@ -6585,20 +6585,20 @@
                     return default_value3;
                 }
 
-/* 4170 */      public static int cvReadIntByName(CvFileStorage fs, CvFileNode map, String name) {
-/* 4171 */          return cvReadIntByName(fs, map, name, 0);
+      public static int cvReadIntByName(CvFileStorage fs, CvFileNode map, String name) {
+          return cvReadIntByName(fs, map, name, 0);
                 }
 
-/* 4173 */      public static int cvReadIntByName(CvFileStorage fs, CvFileNode map, String name, int default_value) {
-/* 4174 */          return cvReadInt(cvGetFileNodeByName(fs, map, name), default_value);
+      public static int cvReadIntByName(CvFileStorage fs, CvFileNode map, String name, int default_value) {
+          return cvReadInt(cvGetFileNodeByName(fs, map, name), default_value);
                 }
 
-/* 4176 */      public static double cvReadReal(CvFileNode node) {
-/* 4177 */          return cvReadReal(node, 0.0d);
+      public static double cvReadReal(CvFileNode node) {
+          return cvReadReal(node, 0.0d);
                 }
 
-/* 4179 */      public static double cvReadReal(CvFileNode node, double default_value) {
-/* 4180 */          if (node == null) {
+      public static double cvReadReal(CvFileNode node, double default_value) {
+          if (node == null) {
                         return default_value;
                     }
                     if (CV_NODE_IS_INT(node.tag())) {
@@ -6612,82 +6612,82 @@
                     return default_value3;
                 }
 
-/* 4184 */      public static double cvReadRealByName(CvFileStorage fs, CvFileNode map, String name) {
-/* 4185 */          return cvReadRealByName(fs, map, name, 0.0d);
+      public static double cvReadRealByName(CvFileStorage fs, CvFileNode map, String name) {
+          return cvReadRealByName(fs, map, name, 0.0d);
                 }
 
-/* 4187 */      public static double cvReadRealByName(CvFileStorage fs, CvFileNode map, String name, double default_value) {
-/* 4188 */          return cvReadReal(cvGetFileNodeByName(fs, map, name), default_value);
+      public static double cvReadRealByName(CvFileStorage fs, CvFileNode map, String name, double default_value) {
+          return cvReadReal(cvGetFileNodeByName(fs, map, name), default_value);
                 }
 
-/* 4190 */      public static String cvReadString(CvFileNode node) {
-/* 4191 */          return cvReadString(node, null);
+      public static String cvReadString(CvFileNode node) {
+          return cvReadString(node, null);
                 }
 
-/* 4193 */      public static String cvReadString(CvFileNode node, String default_value) {
-/* 4194 */          if (node != null) {
-/* 4196 */              if (CV_NODE_IS_STRING(node.tag())) {
-/* 4197 */                  CvString str = node.data_str();
-/* 4198 */                  BytePointer pointer = str.ptr();
-/* 4199 */                  byte[] bytes = new byte[str.len()];
-/* 4200 */                  pointer.get(bytes);
-/* 4201 */                  String default_value2 = new String(bytes);
-/* 4203 */                  return default_value2;
+      public static String cvReadString(CvFileNode node, String default_value) {
+          if (node != null) {
+              if (CV_NODE_IS_STRING(node.tag())) {
+                  CvString str = node.data_str();
+                  BytePointer pointer = str.ptr();
+                  byte[] bytes = new byte[str.len()];
+                  pointer.get(bytes);
+                  String default_value2 = new String(bytes);
+                  return default_value2;
                         }
-/* 4203 */              return null;
+              return null;
                     }
-/* 4203 */          return default_value;
+          return default_value;
                 }
 
-/* 4206 */      public static String cvReadStringByName(CvFileStorage fs, CvFileNode map, String name) {
-/* 4207 */          return cvReadStringByName(fs, map, name, null);
+      public static String cvReadStringByName(CvFileStorage fs, CvFileNode map, String name) {
+          return cvReadStringByName(fs, map, name, null);
                 }
 
-/* 4209 */      public static String cvReadStringByName(CvFileStorage fs, CvFileNode map, String name, String default_value) {
-/* 4210 */          return cvReadString(cvGetFileNodeByName(fs, map, name), default_value);
+      public static String cvReadStringByName(CvFileStorage fs, CvFileNode map, String name, String default_value) {
+          return cvReadString(cvGetFileNodeByName(fs, map, name), default_value);
                 }
 
-/* 4212 */      public static Pointer cvRead(CvFileStorage fs, CvFileNode node) {
-/* 4213 */          return cvRead(fs, node, CV_ATTR_LIST_EMPTY);
+      public static Pointer cvRead(CvFileStorage fs, CvFileNode node) {
+          return cvRead(fs, node, CV_ATTR_LIST_EMPTY);
                 }
 
-/* 4216 */      public static Pointer cvReadByName(CvFileStorage fs, CvFileNode map, String name) {
-/* 4217 */          return cvReadByName(fs, map, name, CV_ATTR_LIST_EMPTY);
+      public static Pointer cvReadByName(CvFileStorage fs, CvFileNode map, String name) {
+          return cvReadByName(fs, map, name, CV_ATTR_LIST_EMPTY);
                 }
 
-/* 4219 */      public static Pointer cvReadByName(CvFileStorage fs, CvFileNode map, String name, CvAttrList attributes) {
-/* 4220 */          CvFileNode n = cvGetFileNodeByName(fs, map, name);
-/* 4221 */          return cvRead(fs, n, attributes);
+      public static Pointer cvReadByName(CvFileStorage fs, CvFileNode map, String name, CvAttrList attributes) {
+          CvFileNode n = cvGetFileNodeByName(fs, map, name);
+          return cvRead(fs, n, attributes);
                 }
 
-/* 4240 */      public static void cvSave(String filename, Pointer struct_ptr) {
-/* 4241 */          cvSave(filename, struct_ptr, null, null, CV_ATTR_LIST_EMPTY);
+      public static void cvSave(String filename, Pointer struct_ptr) {
+          cvSave(filename, struct_ptr, null, null, CV_ATTR_LIST_EMPTY);
                 }
 
-/* 4245 */      public static Pointer cvLoad(String filename) {
-/* 4246 */          return cvLoad(filename, null, null, null);
+      public static Pointer cvLoad(String filename) {
+          return cvLoad(filename, null, null, null);
                 }
 
-/* 4290 */      public static class CvErrorCallback extends FunctionPointer {
+      public static class CvErrorCallback extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(int i, String str, String str2, String str3, int i2, Pointer pointer);
 
                     static {
-/* 4292 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4292 */          public CvErrorCallback(Pointer p) {
-/* 4293 */              super(p);
+          public CvErrorCallback(Pointer p) {
+              super(p);
                     }
 
-/* 4293 */          protected CvErrorCallback() {
+          protected CvErrorCallback() {
                         allocate();
                     }
                 }
 
                 @Name({"std::vector<std::string>"})
-/* 4327 */      public static class StringVector extends Pointer {
+      public static class StringVector extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@Cast({"size_t"}) long j);
@@ -6703,39 +6703,39 @@
                     public native long size();
 
                     static {
-/* 4329 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4329 */          public StringVector(String... array) {
-/* 4330 */              this(array.length);
+          public StringVector(String... array) {
+              this(array.length);
                         put(array);
                     }
 
-/* 4330 */          public StringVector() {
+          public StringVector() {
                         allocate();
                     }
 
-/* 4331 */          public StringVector(long n) {
+          public StringVector(long n) {
                         allocate(n);
                     }
 
-/* 4332 */          public StringVector(Pointer p) {
-/* 4333 */              super(p);
+          public StringVector(Pointer p) {
+              super(p);
                     }
 
-/* 4343 */          public StringVector put(String... array) {
+          public StringVector put(String... array) {
                         if (size() < array.length) {
                             resize(array.length);
                         }
                         for (int i = 0; i < array.length; i++) {
-/* 4346 */                  put(i, array[i]);
+                  put(i, array[i]);
                         }
-/* 4348 */              return this;
+              return this;
                     }
                 }
 
                 @Name({"std::vector<cv::Mat>"})
-/* 4352 */      public static class MatVector extends Pointer {
+      public static class MatVector extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@Cast({"size_t"}) long j);
@@ -6764,39 +6764,39 @@
                     public native long size();
 
                     static {
-/* 4354 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4354 */          public MatVector(CvArr... array) {
-/* 4355 */              this(array.length);
+          public MatVector(CvArr... array) {
+              this(array.length);
                         put(array);
                     }
 
-/* 4355 */          public MatVector() {
+          public MatVector() {
                         allocate();
                     }
 
-/* 4356 */          public MatVector(long n) {
+          public MatVector(long n) {
                         allocate(n);
                     }
 
-/* 4357 */          public MatVector(Pointer p) {
-/* 4358 */              super(p);
+          public MatVector(Pointer p) {
+              super(p);
                     }
 
-/* 4370 */          public MatVector put(CvArr... array) {
+          public MatVector put(CvArr... array) {
                         if (size() < array.length) {
                             resize(array.length);
                         }
                         for (int i = 0; i < array.length; i++) {
-/* 4373 */                  put(i, array[i]);
+                  put(i, array[i]);
                         }
-/* 4375 */              return this;
+              return this;
                     }
                 }
 
                 @Name({"std::vector<std::vector<char> >"})
-/* 4379 */      public static class ByteVectorVector extends Pointer {
+      public static class ByteVectorVector extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@Cast({"size_t"}) long j);
@@ -6817,24 +6817,24 @@
                     public native long size(@Cast({"size_t"}) long j);
 
                     static {
-/* 4381 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4381 */          public ByteVectorVector() {
+          public ByteVectorVector() {
                         allocate();
                     }
 
-/* 4382 */          public ByteVectorVector(long n) {
+          public ByteVectorVector(long n) {
                         allocate(n);
                     }
 
-/* 4383 */          public ByteVectorVector(Pointer p) {
-/* 4384 */              super(p);
+          public ByteVectorVector(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Name({"std::vector<std::vector<int> >"})
-/* 4397 */      public static class IntVectorVector extends Pointer {
+      public static class IntVectorVector extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@Cast({"size_t"}) long j);
@@ -6855,24 +6855,24 @@
                     public native long size(@Cast({"size_t"}) long j);
 
                     static {
-/* 4399 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4399 */          public IntVectorVector() {
+          public IntVectorVector() {
                         allocate();
                     }
 
-/* 4400 */          public IntVectorVector(long n) {
+          public IntVectorVector(long n) {
                         allocate(n);
                     }
 
-/* 4401 */          public IntVectorVector(Pointer p) {
-/* 4402 */              super(p);
+          public IntVectorVector(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Name({"std::vector<std::vector<cv::Point> >"})
-/* 4415 */      public static class PointVectorVector extends Pointer {
+      public static class PointVectorVector extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@Cast({"size_t"}) long j);
@@ -6894,24 +6894,24 @@
                     public native long size(@Cast({"size_t"}) long j);
 
                     static {
-/* 4417 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4417 */          public PointVectorVector() {
+          public PointVectorVector() {
                         allocate();
                     }
 
-/* 4418 */          public PointVectorVector(long n) {
+          public PointVectorVector(long n) {
                         allocate(n);
                     }
 
-/* 4419 */          public PointVectorVector(Pointer p) {
-/* 4420 */              super(p);
+          public PointVectorVector(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Name({"std::vector<std::vector<cv::Point2f> >"})
-/* 4433 */      public static class Point2fVectorVector extends Pointer {
+      public static class Point2fVectorVector extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@Cast({"size_t"}) long j);
@@ -6933,24 +6933,24 @@
                     public native long size(@Cast({"size_t"}) long j);
 
                     static {
-/* 4435 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4435 */          public Point2fVectorVector() {
+          public Point2fVectorVector() {
                         allocate();
                     }
 
-/* 4436 */          public Point2fVectorVector(long n) {
+          public Point2fVectorVector(long n) {
                         allocate(n);
                     }
 
-/* 4437 */          public Point2fVectorVector(Pointer p) {
-/* 4438 */              super(p);
+          public Point2fVectorVector(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Name({"std::vector<std::vector<cv::Point2d> >"})
-/* 4451 */      public static class Point2dVectorVector extends Pointer {
+      public static class Point2dVectorVector extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@Cast({"size_t"}) long j);
@@ -6972,24 +6972,24 @@
                     public native long size(@Cast({"size_t"}) long j);
 
                     static {
-/* 4453 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4453 */          public Point2dVectorVector() {
+          public Point2dVectorVector() {
                         allocate();
                     }
 
-/* 4454 */          public Point2dVectorVector(long n) {
+          public Point2dVectorVector(long n) {
                         allocate(n);
                     }
 
-/* 4455 */          public Point2dVectorVector(Pointer p) {
-/* 4456 */              super(p);
+          public Point2dVectorVector(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Name({"std::vector<std::vector<cv::Rect> >"})
-/* 4469 */      public static class RectVectorVector extends Pointer {
+      public static class RectVectorVector extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@Cast({"size_t"}) long j);
@@ -7011,25 +7011,25 @@
                     public native long size(@Cast({"size_t"}) long j);
 
                     static {
-/* 4471 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4471 */          public RectVectorVector() {
+          public RectVectorVector() {
                         allocate();
                     }
 
-/* 4472 */          public RectVectorVector(long n) {
+          public RectVectorVector(long n) {
                         allocate(n);
                     }
 
-/* 4473 */          public RectVectorVector(Pointer p) {
-/* 4474 */              super(p);
+          public RectVectorVector(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Namespace("cv")
                 @NoOffset
-/* 4495 */      public static class KDTree extends Pointer {
+      public static class KDTree extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@InputArray CvMat cvMat, @InputArray CvMat cvMat2, @Cast({"bool"}) boolean z);
@@ -7083,7 +7083,7 @@
                     public native KDTree points(CvMat cvMat);
 
                     @NoOffset
-/* 4496 */          public static class Node extends Pointer {
+          public static class Node extends Pointer {
                         private native void allocate();
 
                         private native void allocate(int i, int i2, int i3, float f);
@@ -7108,54 +7108,54 @@
 
 
                         static {
-/* 4499 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 4499 */              public Node() {
+              public Node() {
                             allocate();
                         }
 
-/* 4500 */              public Node(int size) {
+              public Node(int size) {
                             allocateArray(size);
                         }
 
-/* 4501 */              public Node(Pointer p) {
-/* 4502 */                  super(p);
+              public Node(Pointer p) {
+                  super(p);
                         }
 
-/* 4502 */              public Node(int _idx, int _left, int _right, float _boundary) {
-/* 4504 */                  allocate(_idx, _left, _right, _boundary);
+              public Node(int _idx, int _left, int _right, float _boundary) {
+                  allocate(_idx, _left, _right, _boundary);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer
-/* 4510 */              public Node position(int position) {
-/* 4511 */                  return (Node) super.position(position);
+                        @Override 
+              public Node position(int position) {
+                  return (Node) super.position(position);
                         }
                     }
 
                     static {
-/* 4497 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4518 */          public KDTree() {
+          public KDTree() {
                         allocate();
                     }
 
-/* 4519 */          public KDTree(Pointer p) {
-/* 4520 */              super(p);
+          public KDTree(Pointer p) {
+              super(p);
                     }
 
-/* 4520 */          public KDTree(CvMat _points, boolean copyAndReorderPoints) {
-/* 4522 */              allocate(_points, copyAndReorderPoints);
+          public KDTree(CvMat _points, boolean copyAndReorderPoints) {
+              allocate(_points, copyAndReorderPoints);
                     }
 
-/* 4523 */          public KDTree(CvMat _points, CvMat _labels, boolean copyAndReorderPoints) {
-/* 4525 */              allocate(_points, _labels, copyAndReorderPoints);
+          public KDTree(CvMat _points, CvMat _labels, boolean copyAndReorderPoints) {
+              allocate(_points, _labels, copyAndReorderPoints);
                     }
                 }
 
                 @Namespace("cv")
-/* 4560 */      public static class Algorithm extends Pointer {
+      public static class Algorithm extends Pointer {
                     @Ptr
                     public static native Algorithm _create(String str);
 
@@ -7214,65 +7214,65 @@
                     public native void write(@Const @Adapter("FileStorageAdapter") CvFileStorage cvFileStorage);
 
                     static {
-/* 4562 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4562 */          public Algorithm() {
+          public Algorithm() {
                         allocate();
                     }
 
-/* 4563 */          public Algorithm(Pointer p) {
-/* 4564 */              super(p);
+          public Algorithm(Pointer p) {
+              super(p);
                     }
 
-/* 4594 */          public static class Constructor extends FunctionPointer {
+          public static class Constructor extends FunctionPointer {
                         private native void allocate();
 
                         public native Algorithm call();
 
                         static {
-/* 4596 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 4596 */              public Constructor(Pointer p) {
-/* 4597 */                  super(p);
+              public Constructor(Pointer p) {
+                  super(p);
                         }
 
-/* 4597 */              protected Constructor() {
+              protected Constructor() {
                             allocate();
                         }
                     }
 
                     @Const
                     @Namespace("cv::Algorithm")
-/* 4601 */          public static class Getter extends FunctionPointer {
+          public static class Getter extends FunctionPointer {
                         public native int call(Algorithm algorithm);
 
                         static {
-/* 4603 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 4603 */              public Getter(Pointer p) {
-/* 4604 */                  super(p);
+              public Getter(Pointer p) {
+                  super(p);
                         }
                     }
 
                     @Namespace("cv::Algorithm")
-/* 4606 */          public static class Setter extends FunctionPointer {
+          public static class Setter extends FunctionPointer {
                         public native void call(Algorithm algorithm, int i);
 
                         static {
-/* 4608 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 4608 */              public Setter(Pointer p) {
-/* 4609 */                  super(p);
+              public Setter(Pointer p) {
+                  super(p);
                         }
                     }
                 }
 
                 @Namespace("cv")
-/* 4615 */      public static class AlgorithmInfo extends Pointer {
+      public static class AlgorithmInfo extends Pointer {
                     private native void allocate(String str, Algorithm.Constructor constructor);
 
                     public native void addParam_(@ByRef Algorithm algorithm, String str, int i, Pointer pointer, @Cast({"bool"}) boolean z, Algorithm.Getter getter, Algorithm.Setter setter, String str2);
@@ -7294,21 +7294,21 @@
                     public native void write(Algorithm algorithm, @Const @Adapter("FileStorageAdapter") CvFileStorage cvFileStorage);
 
                     static {
-/* 4617 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4617 */          public AlgorithmInfo(String name, Algorithm.Constructor create) {
+          public AlgorithmInfo(String name, Algorithm.Constructor create) {
                         allocate(name, create);
                     }
 
-/* 4618 */          public AlgorithmInfo(Pointer p) {
-/* 4619 */              super(p);
+          public AlgorithmInfo(Pointer p) {
+              super(p);
                     }
                 }
 
                 @NoOffset
                 @Namespace("cv")
-/* 4638 */      public static class Param extends Pointer {
+      public static class Param extends Pointer {
                     public static final int ALGORITHM = 6;
                     public static final int BOOLEAN = 1;
                     public static final int FLOAT = 7;
@@ -7353,36 +7353,36 @@
                     public native Param type(int i);
 
                     static {
-/* 4640 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4640 */          public Param() {
+          public Param() {
                         allocate();
                     }
 
-/* 4642 */          public Param(int _type, @Cast({"bool"}) boolean _readonly, int _offset, Algorithm.Getter _getter, Algorithm.Setter _setter, String _help) {
-/* 4644 */              allocate(_type, _readonly, _offset, _getter, _setter, _help);
+          public Param(int _type, @Cast({"bool"}) boolean _readonly, int _offset, Algorithm.Getter _getter, Algorithm.Setter _setter, String _help) {
+              allocate(_type, _readonly, _offset, _getter, _setter, _help);
                     }
 
-/* 4645 */          public Param(Pointer p) {
-/* 4646 */              super(p);
+          public Param(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 4661 */      public static class Predicate extends FunctionPointer {
+      public static class Predicate extends FunctionPointer {
                     private native void allocate();
 
                     public native boolean call(Pointer pointer, Pointer pointer2);
 
                     static {
-/* 4663 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4663 */          public Predicate(Pointer p) {
-/* 4664 */              super(p);
+          public Predicate(Pointer p) {
+              super(p);
                     }
 
-/* 4664 */          protected Predicate() {
+          protected Predicate() {
                         allocate();
                     }
                 }

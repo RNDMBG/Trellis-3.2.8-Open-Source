@@ -14,8 +14,8 @@
             import android.widget.ListAdapter;
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 38 */    public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClickListener {
+            
+    public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClickListener {
                 private static final String TAG = "ListMenuPresenter";
                 public static final String VIEWS_TAG = "android:menu:list";
                 MenuAdapter mAdapter;
@@ -29,226 +29,226 @@
                 ExpandedMenuView mMenuView;
                 int mThemeRes;
 
-/* 39 */        static /* synthetic */ int access$000(ListMenuPresenter x0) {
-/* 40 */            return x0.mItemIndexOffset;
+        static  int access$000(ListMenuPresenter x0) {
+            return x0.mItemIndexOffset;
                 }
 
-/* 66 */        public ListMenuPresenter(Context context, int itemLayoutRes) {
-/* 67 */            this(itemLayoutRes, 0);
-/* 68 */            this.mContext = context;
-/* 69 */            this.mInflater = LayoutInflater.from(this.mContext);
+        public ListMenuPresenter(Context context, int itemLayoutRes) {
+            this(itemLayoutRes, 0);
+            this.mContext = context;
+            this.mInflater = LayoutInflater.from(this.mContext);
                 }
 
-/* 76 */        public ListMenuPresenter(int itemLayoutRes, int themeRes) {
-/* 78 */            this.mItemLayoutRes = itemLayoutRes;
-/* 79 */            this.mThemeRes = themeRes;
+        public ListMenuPresenter(int itemLayoutRes, int themeRes) {
+            this.mItemLayoutRes = itemLayoutRes;
+            this.mThemeRes = themeRes;
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 83 */        public void initForMenu(Context context, MenuBuilder menu) {
-/* 84 */            if (this.mThemeRes != 0) {
-/* 85 */                this.mContext = new ContextThemeWrapper(context, this.mThemeRes);
-/* 86 */                this.mInflater = LayoutInflater.from(this.mContext);
+                @Override 
+        public void initForMenu(Context context, MenuBuilder menu) {
+            if (this.mThemeRes != 0) {
+                this.mContext = new ContextThemeWrapper(context, this.mThemeRes);
+                this.mInflater = LayoutInflater.from(this.mContext);
                     } else if (this.mContext != null) {
-/* 88 */                this.mContext = context;
-/* 89 */                if (this.mInflater == null) {
-/* 90 */                    this.mInflater = LayoutInflater.from(this.mContext);
+                this.mContext = context;
+                if (this.mInflater == null) {
+                    this.mInflater = LayoutInflater.from(this.mContext);
                         }
                     }
-/* 93 */            this.mMenu = menu;
-/* 94 */            if (this.mAdapter != null) {
-/* 95 */                this.mAdapter.notifyDataSetChanged();
+            this.mMenu = menu;
+            if (this.mAdapter != null) {
+                this.mAdapter.notifyDataSetChanged();
                     }
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 100 */       public MenuView getMenuView(ViewGroup root) {
-/* 101 */           if (this.mAdapter == null) {
-/* 102 */               this.mAdapter = new MenuAdapter();
+                @Override 
+       public MenuView getMenuView(ViewGroup root) {
+           if (this.mAdapter == null) {
+               this.mAdapter = new MenuAdapter();
                     }
-/* 105 */           if (this.mAdapter.isEmpty()) {
+           if (this.mAdapter.isEmpty()) {
                         return null;
                     }
-/* 106 */           if (this.mMenuView == null) {
-/* 107 */               this.mMenuView = (ExpandedMenuView) this.mInflater.inflate(C0084R.layout.abc_expanded_menu_layout, root, false);
-/* 109 */               this.mMenuView.setAdapter((ListAdapter) this.mAdapter);
-/* 110 */               this.mMenuView.setOnItemClickListener(this);
+           if (this.mMenuView == null) {
+               this.mMenuView = (ExpandedMenuView) this.mInflater.inflate(C0084R.layout.abc_expanded_menu_layout, root, false);
+               this.mMenuView.setAdapter((ListAdapter) this.mAdapter);
+               this.mMenuView.setOnItemClickListener(this);
                     }
-/* 112 */           return this.mMenuView;
+           return this.mMenuView;
                 }
 
-/* 126 */       public ListAdapter getAdapter() {
-/* 127 */           if (this.mAdapter == null) {
-/* 128 */               this.mAdapter = new MenuAdapter();
+       public ListAdapter getAdapter() {
+           if (this.mAdapter == null) {
+               this.mAdapter = new MenuAdapter();
                     }
-/* 130 */           return this.mAdapter;
+           return this.mAdapter;
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 134 */       public void updateMenuView(boolean cleared) {
-/* 135 */           if (this.mAdapter != null) {
+                @Override 
+       public void updateMenuView(boolean cleared) {
+           if (this.mAdapter != null) {
                         this.mAdapter.notifyDataSetChanged();
                     }
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 139 */       public void setCallback(MenuPresenter.Callback cb) {
-/* 140 */           this.mCallback = cb;
+                @Override 
+       public void setCallback(MenuPresenter.Callback cb) {
+           this.mCallback = cb;
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 144 */       public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
-/* 145 */           if (!subMenu.hasVisibleItems()) {
+                @Override 
+       public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
+           if (!subMenu.hasVisibleItems()) {
                         return false;
                     }
-/* 148 */           new MenuDialogHelper(subMenu).show(null);
-/* 149 */           if (this.mCallback != null) {
-/* 150 */               this.mCallback.onOpenSubMenu(subMenu);
+           new MenuDialogHelper(subMenu).show(null);
+           if (this.mCallback != null) {
+               this.mCallback.onOpenSubMenu(subMenu);
                     }
-/* 152 */           return true;
+           return true;
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 156 */       public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
-/* 157 */           if (this.mCallback != null) {
-/* 158 */               this.mCallback.onCloseMenu(menu, allMenusAreClosing);
-                    }
-                }
-
-/* 162 */       int getItemIndexOffset() {
-/* 163 */           return this.mItemIndexOffset;
-                }
-
-/* 166 */       public void setItemIndexOffset(int offset) {
-/* 167 */           this.mItemIndexOffset = offset;
-/* 168 */           if (this.mMenuView != null) {
-/* 169 */               updateMenuView(false);
+                @Override 
+       public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
+           if (this.mCallback != null) {
+               this.mCallback.onCloseMenu(menu, allMenusAreClosing);
                     }
                 }
 
-                @Override // android.widget.AdapterView.OnItemClickListener
-/* 174 */       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-/* 175 */           this.mMenu.performItemAction(this.mAdapter.getItem(position), 0);
+       int getItemIndexOffset() {
+           return this.mItemIndexOffset;
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 179 */       public boolean flagActionItems() {
-/* 180 */           return false;
-                }
-
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 183 */       public boolean expandItemActionView(MenuBuilder menu, MenuItemImpl item) {
-/* 184 */           return false;
-                }
-
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 187 */       public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
-/* 188 */           return false;
-                }
-
-/* 191 */       public void saveHierarchyState(Bundle outState) {
-/* 192 */           SparseArray<Parcelable> viewStates = new SparseArray<>();
-/* 193 */           if (this.mMenuView != null) {
-/* 194 */               this.mMenuView.saveHierarchyState(viewStates);
-                    }
-/* 196 */           outState.putSparseParcelableArray(VIEWS_TAG, viewStates);
-                }
-
-/* 199 */       public void restoreHierarchyState(Bundle inState) {
-/* 200 */           SparseArray<Parcelable> viewStates = inState.getSparseParcelableArray(VIEWS_TAG);
-/* 201 */           if (viewStates != null) {
-/* 202 */               this.mMenuView.restoreHierarchyState(viewStates);
+       public void setItemIndexOffset(int offset) {
+           this.mItemIndexOffset = offset;
+           if (this.mMenuView != null) {
+               updateMenuView(false);
                     }
                 }
 
-/* 206 */       public void setId(int id) {
-/* 207 */           this.mId = id;
+                @Override 
+       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+           this.mMenu.performItemAction(this.mAdapter.getItem(position), 0);
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 211 */       public int getId() {
-/* 212 */           return this.mId;
+                @Override 
+       public boolean flagActionItems() {
+           return false;
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 216 */       public Parcelable onSaveInstanceState() {
-/* 217 */           if (this.mMenuView == null) {
-/* 218 */               return null;
+                @Override 
+       public boolean expandItemActionView(MenuBuilder menu, MenuItemImpl item) {
+           return false;
+                }
+
+                @Override 
+       public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
+           return false;
+                }
+
+       public void saveHierarchyState(Bundle outState) {
+           SparseArray<Parcelable> viewStates = new SparseArray<>();
+           if (this.mMenuView != null) {
+               this.mMenuView.saveHierarchyState(viewStates);
                     }
-/* 221 */           Bundle state = new Bundle();
-/* 222 */           saveHierarchyState(state);
-/* 223 */           return state;
+           outState.putSparseParcelableArray(VIEWS_TAG, viewStates);
                 }
 
-                @Override // android.support.v7.internal.view.menu.MenuPresenter
-/* 227 */       public void onRestoreInstanceState(Parcelable state) {
-/* 228 */           restoreHierarchyState((Bundle) state);
+       public void restoreHierarchyState(Bundle inState) {
+           SparseArray<Parcelable> viewStates = inState.getSparseParcelableArray(VIEWS_TAG);
+           if (viewStates != null) {
+               this.mMenuView.restoreHierarchyState(viewStates);
+                    }
                 }
 
-/* 229 */       private class MenuAdapter extends BaseAdapter {
+       public void setId(int id) {
+           this.mId = id;
+                }
+
+                @Override 
+       public int getId() {
+           return this.mId;
+                }
+
+                @Override 
+       public Parcelable onSaveInstanceState() {
+           if (this.mMenuView == null) {
+               return null;
+                    }
+           Bundle state = new Bundle();
+           saveHierarchyState(state);
+           return state;
+                }
+
+                @Override 
+       public void onRestoreInstanceState(Parcelable state) {
+           restoreHierarchyState((Bundle) state);
+                }
+
+       private class MenuAdapter extends BaseAdapter {
                     private int mExpandedIndex = -1;
 
-                    @Override // android.widget.Adapter
-/* 230 */           public /* bridge */ /* synthetic */ Object getItem(int x0) {
-/* 231 */               return getItem(x0);
+                    @Override 
+           public   Object getItem(int x0) {
+               return getItem(x0);
                     }
 
-/* 233 */           public MenuAdapter() {
-/* 235 */               findExpandedIndex();
+           public MenuAdapter() {
+               findExpandedIndex();
                     }
 
-                    @Override // android.widget.Adapter
-/* 238 */           public int getCount() {
-/* 239 */               ArrayList<MenuItemImpl> items = ListMenuPresenter.this.mMenu.getNonActionItems();
-/* 240 */               int count = items.size() - ListMenuPresenter.access$000(ListMenuPresenter.this);
+                    @Override 
+           public int getCount() {
+               ArrayList<MenuItemImpl> items = ListMenuPresenter.this.mMenu.getNonActionItems();
+               int count = items.size() - ListMenuPresenter.access$000(ListMenuPresenter.this);
                         return this.mExpandedIndex < 0 ? count : count - 1;
                     }
 
-                    @Override // android.widget.Adapter
-/* 247 */           public MenuItemImpl getItem(int position) {
-/* 248 */               ArrayList<MenuItemImpl> items = ListMenuPresenter.this.mMenu.getNonActionItems();
-/* 249 */               int position2 = position + ListMenuPresenter.access$000(ListMenuPresenter.this);
-/* 250 */               if (this.mExpandedIndex >= 0 && position2 >= this.mExpandedIndex) {
-/* 251 */                   position2++;
+                    @Override 
+           public MenuItemImpl getItem(int position) {
+               ArrayList<MenuItemImpl> items = ListMenuPresenter.this.mMenu.getNonActionItems();
+               int position2 = position + ListMenuPresenter.access$000(ListMenuPresenter.this);
+               if (this.mExpandedIndex >= 0 && position2 >= this.mExpandedIndex) {
+                   position2++;
                         }
-/* 253 */               return items.get(position2);
+               return items.get(position2);
                     }
 
-                    @Override // android.widget.Adapter
-/* 258 */           public long getItemId(int position) {
-/* 259 */               return position;
+                    @Override 
+           public long getItemId(int position) {
+               return position;
                     }
 
-                    @Override // android.widget.Adapter
-/* 262 */           public View getView(int position, View convertView, ViewGroup parent) {
-/* 263 */               if (convertView == null) {
-/* 264 */                   convertView = ListMenuPresenter.this.mInflater.inflate(ListMenuPresenter.this.mItemLayoutRes, parent, false);
+                    @Override 
+           public View getView(int position, View convertView, ViewGroup parent) {
+               if (convertView == null) {
+                   convertView = ListMenuPresenter.this.mInflater.inflate(ListMenuPresenter.this.mItemLayoutRes, parent, false);
                         }
-/* 267 */               MenuView.ItemView itemView = (MenuView.ItemView) convertView;
-/* 268 */               itemView.initialize(getItem(position), 0);
-/* 269 */               return convertView;
+               MenuView.ItemView itemView = (MenuView.ItemView) convertView;
+               itemView.initialize(getItem(position), 0);
+               return convertView;
                     }
 
-/* 272 */           void findExpandedIndex() {
-/* 273 */               MenuItemImpl expandedItem = ListMenuPresenter.this.mMenu.getExpandedItem();
-/* 274 */               if (expandedItem != null) {
-/* 275 */                   ArrayList<MenuItemImpl> items = ListMenuPresenter.this.mMenu.getNonActionItems();
-/* 276 */                   int count = items.size();
+           void findExpandedIndex() {
+               MenuItemImpl expandedItem = ListMenuPresenter.this.mMenu.getExpandedItem();
+               if (expandedItem != null) {
+                   ArrayList<MenuItemImpl> items = ListMenuPresenter.this.mMenu.getNonActionItems();
+                   int count = items.size();
                             for (int i = 0; i < count; i++) {
-/* 278 */                       MenuItemImpl item = items.get(i);
-/* 279 */                       if (item == expandedItem) {
-/* 280 */                           this.mExpandedIndex = i;
-/* 286 */                           return;
+                       MenuItemImpl item = items.get(i);
+                       if (item == expandedItem) {
+                           this.mExpandedIndex = i;
+                           return;
                                 }
                             }
                         }
-/* 285 */               this.mExpandedIndex = -1;
+               this.mExpandedIndex = -1;
                     }
 
-                    @Override // android.widget.BaseAdapter
-/* 289 */           public void notifyDataSetChanged() {
-/* 290 */               findExpandedIndex();
-/* 291 */               super.notifyDataSetChanged();
+                    @Override 
+           public void notifyDataSetChanged() {
+               findExpandedIndex();
+               super.notifyDataSetChanged();
                     }
                 }
             }

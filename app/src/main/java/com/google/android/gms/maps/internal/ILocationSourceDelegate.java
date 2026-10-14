@@ -6,23 +6,23 @@
             import android.os.Parcel;
             import android.os.RemoteException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface ILocationSourceDelegate extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.internal.ILocationSourceDelegate$a */
+                
                 public static abstract class AbstractBinderC1152a extends Binder implements ILocationSourceDelegate {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.internal.ILocationSourceDelegate$a$a */
+                    
                     private static class a implements ILocationSourceDelegate {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2260dG;
 
                         a(IBinder iBinder) {
                             this.f2260dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ILocationSourceDelegate
+                        @Override 
                         public void activate(InterfaceC1163g listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -40,12 +40,12 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2260dG;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.ILocationSourceDelegate
+                        @Override 
                         public void deactivate() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -67,7 +67,7 @@
                         attachInterface(this, "com.google.android.gms.maps.internal.ILocationSourceDelegate");
                     }
 
-                    /* JADX INFO: renamed from: M */
+                    
                     public static ILocationSourceDelegate m2229M(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -76,12 +76,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof ILocationSourceDelegate)) ? new a(iBinder) : (ILocationSourceDelegate) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:

@@ -6,17 +6,17 @@
             import com.google.android.gms.common.ConnectionResult;
             import com.google.android.gms.common.GooglePlayServicesClient;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bs */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public abstract class AbstractC0980bs extends AbstractC0995cg {
 
-                /* JADX INFO: renamed from: eI */
+                
                 private final C0982bu f1487eI;
 
-                /* JADX INFO: renamed from: gx */
+                
                 private final C0979br.a f1488gx;
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bs$a */
+                
                 public static final class a extends AbstractC0980bs {
                     private final Context mContext;
 
@@ -25,28 +25,28 @@
                         this.mContext = context;
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC0980bs
-                    /* JADX INFO: renamed from: ae */
+                    @Override 
+                    
                     public void mo1363ae() {
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC0980bs
-                    /* JADX INFO: renamed from: af */
+                    @Override 
+                    
                     public InterfaceC0986by mo1364af() {
                         return BinderC0987bz.m1381a(this.mContext, new C0947am());
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.bs$b */
+                
                 public static final class b extends AbstractC0980bs implements GooglePlayServicesClient.ConnectionCallbacks, GooglePlayServicesClient.OnConnectionFailedListener {
 
-                    /* JADX INFO: renamed from: eJ */
+                    
                     private final Object f1489eJ;
 
-                    /* JADX INFO: renamed from: gx */
+                    
                     private final C0979br.a f1490gx;
 
-                    /* JADX INFO: renamed from: gy */
+                    
                     private final C0981bt f1491gy;
 
                     public b(Context context, C0982bu c0982bu, C0979br.a aVar) {
@@ -57,8 +57,8 @@
                         this.f1491gy.connect();
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC0980bs
-                    /* JADX INFO: renamed from: ae */
+                    @Override 
+                    
                     public void mo1363ae() {
                         synchronized (this.f1489eJ) {
                             try {
@@ -71,8 +71,8 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC0980bs
-                    /* JADX INFO: renamed from: af */
+                    @Override 
+                    
                     public InterfaceC0986by mo1364af() {
                         InterfaceC0986by interfaceC0986byM1368ai;
                         synchronized (this.f1489eJ) {
@@ -89,17 +89,17 @@
                         return interfaceC0986byM1368ai;
                     }
 
-                    @Override // com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks
+                    @Override 
                     public void onConnected(Bundle connectionHint) {
                         start();
                     }
 
-                    @Override // com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener
+                    @Override 
                     public void onConnectionFailed(ConnectionResult result) {
                         this.f1490gx.mo1357a(new C0984bw(0));
                     }
 
-                    @Override // com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks
+                    @Override 
                     public void onDisconnected() {
                         C1002cn.m1454m("Disconnected from remote ad request service.");
                     }
@@ -110,7 +110,7 @@
                     this.f1488gx = aVar;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static C0984bw m1362a(InterfaceC0986by interfaceC0986by, C0982bu c0982bu) {
                     try {
                         return interfaceC0986by.mo1377a(c0982bu);
@@ -120,8 +120,8 @@
                     }
                 }
 
-                @Override // com.google.android.gms.internal.AbstractC0995cg
-                /* JADX INFO: renamed from: ac */
+                @Override 
+                
                 public final void mo1358ac() {
                     C0984bw c0984bwM1362a;
                     try {
@@ -137,13 +137,13 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: ae */
+                
                 public abstract void mo1363ae();
 
-                /* JADX INFO: renamed from: af */
+                
                 public abstract InterfaceC0986by mo1364af();
 
-                @Override // com.google.android.gms.internal.AbstractC0995cg
+                @Override 
                 public final void onStop() {
                     mo1363ae();
                 }

@@ -6,7 +6,7 @@
             import com.google.android.gms.internal.C1011cw;
             import com.google.android.gms.internal.C1028dm;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class AppStateClient implements GooglePlayServicesClient {
                 public static final int STATUS_CLIENT_RECONNECT_REQUIRED = 2;
                 public static final int STATUS_DEVELOPER_ERROR = 7;
@@ -21,24 +21,24 @@
                 public static final int STATUS_WRITE_OUT_OF_DATE_VERSION = 2000;
                 public static final int STATUS_WRITE_SIZE_EXCEEDED = 2001;
 
-                /* JADX INFO: renamed from: io */
+                
                 private final C1011cw f910io;
 
                 public static final class Builder {
 
-                    /* JADX INFO: renamed from: ip */
+                    
                     private static final String[] f911ip = {Scopes.APP_STATE};
 
-                    /* JADX INFO: renamed from: iq */
+                    
                     private GooglePlayServicesClient.ConnectionCallbacks f912iq;
 
-                    /* JADX INFO: renamed from: ir */
+                    
                     private GooglePlayServicesClient.OnConnectionFailedListener f913ir;
 
-                    /* JADX INFO: renamed from: is */
+                    
                     private String[] f914is = f911ip;
 
-                    /* JADX INFO: renamed from: it */
+                    
                     private String f915it = "<<default account>>";
                     private Context mContext;
 
@@ -67,11 +67,11 @@
                     this.f910io = new C1011cw(context, connectedListener, connectionFailedListener, accountName, scopes);
                 }
 
-                /* synthetic */ AppStateClient(Context x0, GooglePlayServicesClient.ConnectionCallbacks x1, GooglePlayServicesClient.OnConnectionFailedListener x2, String x3, String[] x4, Object x5) {
+                 AppStateClient(Context x0, GooglePlayServicesClient.ConnectionCallbacks x1, GooglePlayServicesClient.OnConnectionFailedListener x2, String x3, String[] x4, Object x5) {
                     this(x0, x1, x2, x3, x4);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void connect() {
                     this.f910io.connect();
                 }
@@ -80,7 +80,7 @@
                     this.f910io.deleteState(listener, stateKey);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void disconnect() {
                     this.f910io.disconnect();
                 }
@@ -93,22 +93,22 @@
                     return this.f910io.getMaxStateSize();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnected() {
                     return this.f910io.isConnected();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnecting() {
                     return this.f910io.isConnecting();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionCallbacksRegistered(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     return this.f910io.isConnectionCallbacksRegistered(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionFailedListenerRegistered(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     return this.f910io.isConnectionFailedListenerRegistered(listener);
                 }
@@ -126,12 +126,12 @@
                     this.f910io.connect();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f910io.registerConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f910io.registerConnectionFailedListener(listener);
                 }
@@ -149,12 +149,12 @@
                     this.f910io.signOut(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f910io.unregisterConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f910io.unregisterConnectionFailedListener(listener);
                 }

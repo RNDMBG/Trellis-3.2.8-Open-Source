@@ -11,7 +11,7 @@
             import java.io.IOException;
             import java.util.logging.Logger;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public abstract class Internal {
                 public static Internal instance;
                 public static final Logger logger = Logger.getLogger(OkHttpClient.class.getName());

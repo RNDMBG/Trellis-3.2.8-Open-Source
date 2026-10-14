@@ -5,7 +5,7 @@
             import com.google.android.gms.internal.C1028dm;
             import com.google.android.gms.maps.model.internal.InterfaceC1187a;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class BitmapDescriptorFactory {
                 public static final float HUE_AZURE = 210.0f;
                 public static final float HUE_BLUE = 240.0f;
@@ -18,13 +18,13 @@
                 public static final float HUE_VIOLET = 270.0f;
                 public static final float HUE_YELLOW = 60.0f;
 
-                /* JADX INFO: renamed from: pZ */
+                
                 private static InterfaceC1187a f2283pZ;
 
                 private BitmapDescriptorFactory() {
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static void m2267a(InterfaceC1187a interfaceC1187a) {
                     if (f2283pZ != null) {
                         return;
@@ -32,7 +32,7 @@
                     f2283pZ = (InterfaceC1187a) C1028dm.m1605e(interfaceC1187a);
                 }
 
-                /* JADX INFO: renamed from: cL */
+                
                 private static InterfaceC1187a m2268cL() {
                     return (InterfaceC1187a) C1028dm.m1601a(f2283pZ, "IBitmapDescriptorFactory is not initialized");
                 }

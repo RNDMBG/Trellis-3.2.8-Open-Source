@@ -13,8 +13,8 @@
             import java.util.Set;
             import twitter4j.internal.util.z_T4JInternalStringUtil;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 28 */    public final class PropertyConfiguration extends ConfigurationBase implements Serializable {
+            
+    public final class PropertyConfiguration extends ConfigurationBase implements Serializable {
                 public static final String APPLICATION_ONLY_AUTH_ENABLED = "enableApplicationOnlyAuth";
                 public static final String ASYNC_DISPATCHER_IMPL = "async.dispatcherImpl";
                 public static final String ASYNC_NUM_THREADS = "async.numThreads";
@@ -108,339 +108,339 @@
 
 
 
-/* 98 */        public PropertyConfiguration(InputStream is) {
-/* 100 */           Properties props = new Properties();
-/* 101 */           loadProperties(props, is);
-/* 102 */           setFieldsWithTreePath(props, "/");
+        public PropertyConfiguration(InputStream is) {
+           Properties props = new Properties();
+           loadProperties(props, is);
+           setFieldsWithTreePath(props, "/");
                 }
 
-/* 105 */       public PropertyConfiguration(Properties props) {
-/* 106 */           this(props, "/");
+       public PropertyConfiguration(Properties props) {
+           this(props, "/");
                 }
 
-/* 109 */       public PropertyConfiguration(Properties props, String treePath) {
-/* 111 */           setFieldsWithTreePath(props, treePath);
+       public PropertyConfiguration(Properties props, String treePath) {
+           setFieldsWithTreePath(props, treePath);
                 }
 
-/* 114 */       PropertyConfiguration(String treePath) {
+       PropertyConfiguration(String treePath) {
                     Properties props;
                     try {
-/* 119 */               props = (Properties) System.getProperties().clone();
+               props = (Properties) System.getProperties().clone();
                         try {
-/* 121 */                   Map<String, String> envMap = System.getenv();
+                   Map<String, String> envMap = System.getenv();
                             for (String key : envMap.keySet()) {
-/* 123 */                       props.setProperty(key, envMap.get(key));
+                       props.setProperty(key, envMap.get(key));
                             }
                         } catch (SecurityException e) {
                         }
-/* 126 */               normalize(props);
+               normalize(props);
                     } catch (SecurityException e2) {
-/* 129 */               props = new Properties();
+               props = new Properties();
                     }
-/* 133 */           loadProperties(props, "." + File.separatorChar + "twitter4j.properties");
-/* 135 */           loadProperties(props, Configuration.class.getResourceAsStream("/twitter4j.properties"));
-/* 137 */           loadProperties(props, Configuration.class.getResourceAsStream("/WEB-INF/twitter4j.properties"));
+           loadProperties(props, "." + File.separatorChar + "twitter4j.properties");
+           loadProperties(props, Configuration.class.getResourceAsStream("/twitter4j.properties"));
+           loadProperties(props, Configuration.class.getResourceAsStream("/WEB-INF/twitter4j.properties"));
                     try {
-/* 140 */               loadProperties(props, new FileInputStream("WEB-INF/twitter4j.properties"));
+               loadProperties(props, new FileInputStream("WEB-INF/twitter4j.properties"));
                     } catch (FileNotFoundException e3) {
                     } catch (SecurityException e4) {
                     }
-/* 145 */           setFieldsWithTreePath(props, treePath);
+           setFieldsWithTreePath(props, treePath);
                 }
 
-/* 151 */       PropertyConfiguration() {
-/* 152 */           this("/");
+       PropertyConfiguration() {
+           this("/");
                 }
 
-/* 155 */       private boolean notNull(Properties props, String prefix, String name) {
+       private boolean notNull(Properties props, String prefix, String name) {
                     return props.getProperty(new StringBuilder().append(prefix).append(name).toString()) != null;
                 }
 
-/* 159 */       private boolean loadProperties(Properties props, String path) {
-/* 160 */           FileInputStream fis = null;
+       private boolean loadProperties(Properties props, String path) {
+           FileInputStream fis = null;
                     try {
-/* 162 */               File file = new File(path);
-/* 163 */               if (!file.exists() || !file.isFile()) {
-/* 172 */                   if (0 != 0) {
+               File file = new File(path);
+               if (!file.exists() || !file.isFile()) {
+                   if (0 != 0) {
                                 try {
-/* 173 */                           fis.close();
+                           fis.close();
                                 } catch (IOException e) {
                                 }
                             }
-/* 179 */                   return false;
+                   return false;
                         }
-/* 164 */               FileInputStream fis2 = new FileInputStream(file);
+               FileInputStream fis2 = new FileInputStream(file);
                         try {
-/* 165 */                   props.load(fis2);
-/* 166 */                   normalize(props);
-/* 172 */                   if (fis2 != null) {
+                   props.load(fis2);
+                   normalize(props);
+                   if (fis2 != null) {
                                 try {
-/* 173 */                           fis2.close();
+                           fis2.close();
                                 } catch (IOException e2) {
                                 }
                             }
-/* 167 */                   return true;
+                   return true;
                         } catch (Exception e3) {
                             fis = fis2;
                         } catch (Throwable th) {
-/* 171 */                   th = th;
+                   th = th;
                             fis = fis2;
-/* 172 */                   if (fis != null) {
+                   if (fis != null) {
                                 try {
-/* 173 */                           fis.close();
+                           fis.close();
                                 } catch (IOException e4) {
                                 }
                             }
-/* 177 */                   throw th;
+                   throw th;
                         }
                     } catch (Exception e5) {
                     } catch (Throwable th2) {
                         return false;
                     }
-/* 172 */           if (fis != null) {
+           if (fis != null) {
                         try {
-/* 173 */                   fis.close();
+                   fis.close();
                         } catch (IOException e6) {
                         }
                     }
-/* 179 */           return false;
+           return false;
                 }
 
-/* 183 */       private boolean loadProperties(Properties props, InputStream is) {
+       private boolean loadProperties(Properties props, InputStream is) {
                     try {
-/* 184 */               props.load(is);
-/* 185 */               normalize(props);
-/* 186 */               return true;
+               props.load(is);
+               normalize(props);
+               return true;
                     } catch (Exception e) {
-/* 189 */               return false;
+               return false;
                     }
                 }
 
-/* 192 */       private void normalize(Properties props) {
-/* 193 */           Set keys = props.keySet();
-/* 194 */           ArrayList<String> toBeNormalized = new ArrayList<>(10);
+       private void normalize(Properties props) {
+           Set keys = props.keySet();
+           ArrayList<String> toBeNormalized = new ArrayList<>(10);
                     for (Object key : keys) {
-/* 196 */               String keyStr = (String) key;
-/* 197 */               if (-1 != keyStr.indexOf("twitter4j.")) {
-/* 198 */                   toBeNormalized.add(keyStr);
+               String keyStr = (String) key;
+               if (-1 != keyStr.indexOf("twitter4j.")) {
+                   toBeNormalized.add(keyStr);
                         }
                     }
                     for (String keyStr2 : toBeNormalized) {
-/* 202 */               String property = props.getProperty(keyStr2);
-/* 203 */               int index = keyStr2.indexOf("twitter4j.");
-/* 204 */               String newKey = keyStr2.substring(0, index) + keyStr2.substring(index + 10);
-/* 205 */               props.setProperty(newKey, property);
+               String property = props.getProperty(keyStr2);
+               int index = keyStr2.indexOf("twitter4j.");
+               String newKey = keyStr2.substring(0, index) + keyStr2.substring(index + 10);
+               props.setProperty(newKey, property);
                     }
                 }
 
-/* 218 */       private void setFieldsWithTreePath(Properties props, String treePath) {
-/* 219 */           setFieldsWithPrefix(props, "");
-/* 220 */           String[] splitArray = z_T4JInternalStringUtil.split(treePath, "/");
-/* 221 */           String prefix = null;
+       private void setFieldsWithTreePath(Properties props, String treePath) {
+           setFieldsWithPrefix(props, "");
+           String[] splitArray = z_T4JInternalStringUtil.split(treePath, "/");
+           String prefix = null;
                     for (String split : splitArray) {
-/* 223 */               if (!"".equals(split)) {
-/* 224 */                   if (prefix == null) {
-/* 225 */                       prefix = split + ".";
+               if (!"".equals(split)) {
+                   if (prefix == null) {
+                       prefix = split + ".";
                             } else {
-/* 227 */                       prefix = prefix + split + ".";
+                       prefix = prefix + split + ".";
                             }
-/* 229 */                   setFieldsWithPrefix(props, prefix);
+                   setFieldsWithPrefix(props, prefix);
                         }
                     }
                 }
 
-/* 234 */       private void setFieldsWithPrefix(Properties props, String prefix) {
-/* 235 */           if (notNull(props, prefix, DEBUG)) {
-/* 236 */               setDebug(getBoolean(props, prefix, DEBUG));
+       private void setFieldsWithPrefix(Properties props, String prefix) {
+           if (notNull(props, prefix, DEBUG)) {
+               setDebug(getBoolean(props, prefix, DEBUG));
                     }
-/* 239 */           if (notNull(props, prefix, "user")) {
-/* 240 */               setUser(getString(props, prefix, "user"));
+           if (notNull(props, prefix, "user")) {
+               setUser(getString(props, prefix, "user"));
                     }
-/* 242 */           if (notNull(props, prefix, "password")) {
-/* 243 */               setPassword(getString(props, prefix, "password"));
+           if (notNull(props, prefix, "password")) {
+               setPassword(getString(props, prefix, "password"));
                     }
-/* 245 */           if (notNull(props, prefix, HTTP_USE_SSL)) {
-/* 246 */               setUseSSL(getBoolean(props, prefix, HTTP_USE_SSL));
+           if (notNull(props, prefix, HTTP_USE_SSL)) {
+               setUseSSL(getBoolean(props, prefix, HTTP_USE_SSL));
                     }
-/* 248 */           if (notNull(props, prefix, HTTP_PRETTY_DEBUG)) {
-/* 249 */               setPrettyDebugEnabled(getBoolean(props, prefix, HTTP_PRETTY_DEBUG));
+           if (notNull(props, prefix, HTTP_PRETTY_DEBUG)) {
+               setPrettyDebugEnabled(getBoolean(props, prefix, HTTP_PRETTY_DEBUG));
                     }
-/* 251 */           if (notNull(props, prefix, HTTP_GZIP)) {
-/* 252 */               setGZIPEnabled(getBoolean(props, prefix, HTTP_GZIP));
+           if (notNull(props, prefix, HTTP_GZIP)) {
+               setGZIPEnabled(getBoolean(props, prefix, HTTP_GZIP));
                     }
-/* 254 */           if (notNull(props, prefix, "http.proxyHost") || notNull(props, prefix, "http.proxyHost")) {
-/* 257 */               setHttpProxyHost(getString(props, prefix, "http.proxyHost"));
+           if (notNull(props, prefix, "http.proxyHost") || notNull(props, prefix, "http.proxyHost")) {
+               setHttpProxyHost(getString(props, prefix, "http.proxyHost"));
                     }
-/* 259 */           if (notNull(props, prefix, HTTP_PROXY_USER)) {
-/* 260 */               setHttpProxyUser(getString(props, prefix, HTTP_PROXY_USER));
+           if (notNull(props, prefix, HTTP_PROXY_USER)) {
+               setHttpProxyUser(getString(props, prefix, HTTP_PROXY_USER));
                     }
-/* 262 */           if (notNull(props, prefix, HTTP_PROXY_PASSWORD)) {
-/* 263 */               setHttpProxyPassword(getString(props, prefix, HTTP_PROXY_PASSWORD));
+           if (notNull(props, prefix, HTTP_PROXY_PASSWORD)) {
+               setHttpProxyPassword(getString(props, prefix, HTTP_PROXY_PASSWORD));
                     }
-/* 265 */           if (notNull(props, prefix, "http.proxyPort") || notNull(props, prefix, "http.proxyPort")) {
-/* 268 */               setHttpProxyPort(getIntProperty(props, prefix, "http.proxyPort"));
+           if (notNull(props, prefix, "http.proxyPort") || notNull(props, prefix, "http.proxyPort")) {
+               setHttpProxyPort(getIntProperty(props, prefix, "http.proxyPort"));
                     }
-/* 270 */           if (notNull(props, prefix, HTTP_CONNECTION_TIMEOUT)) {
-/* 271 */               setHttpConnectionTimeout(getIntProperty(props, prefix, HTTP_CONNECTION_TIMEOUT));
+           if (notNull(props, prefix, HTTP_CONNECTION_TIMEOUT)) {
+               setHttpConnectionTimeout(getIntProperty(props, prefix, HTTP_CONNECTION_TIMEOUT));
                     }
-/* 273 */           if (notNull(props, prefix, HTTP_READ_TIMEOUT)) {
-/* 274 */               setHttpReadTimeout(getIntProperty(props, prefix, HTTP_READ_TIMEOUT));
+           if (notNull(props, prefix, HTTP_READ_TIMEOUT)) {
+               setHttpReadTimeout(getIntProperty(props, prefix, HTTP_READ_TIMEOUT));
                     }
-/* 276 */           if (notNull(props, prefix, HTTP_STREAMING_READ_TIMEOUT)) {
-/* 277 */               setHttpStreamingReadTimeout(getIntProperty(props, prefix, HTTP_STREAMING_READ_TIMEOUT));
+           if (notNull(props, prefix, HTTP_STREAMING_READ_TIMEOUT)) {
+               setHttpStreamingReadTimeout(getIntProperty(props, prefix, HTTP_STREAMING_READ_TIMEOUT));
                     }
-/* 279 */           if (notNull(props, prefix, HTTP_RETRY_COUNT)) {
-/* 280 */               setHttpRetryCount(getIntProperty(props, prefix, HTTP_RETRY_COUNT));
+           if (notNull(props, prefix, HTTP_RETRY_COUNT)) {
+               setHttpRetryCount(getIntProperty(props, prefix, HTTP_RETRY_COUNT));
                     }
-/* 282 */           if (notNull(props, prefix, HTTP_RETRY_INTERVAL_SECS)) {
-/* 283 */               setHttpRetryIntervalSeconds(getIntProperty(props, prefix, HTTP_RETRY_INTERVAL_SECS));
+           if (notNull(props, prefix, HTTP_RETRY_INTERVAL_SECS)) {
+               setHttpRetryIntervalSeconds(getIntProperty(props, prefix, HTTP_RETRY_INTERVAL_SECS));
                     }
-/* 285 */           if (notNull(props, prefix, HTTP_MAX_TOTAL_CONNECTIONS)) {
-/* 286 */               setHttpMaxTotalConnections(getIntProperty(props, prefix, HTTP_MAX_TOTAL_CONNECTIONS));
+           if (notNull(props, prefix, HTTP_MAX_TOTAL_CONNECTIONS)) {
+               setHttpMaxTotalConnections(getIntProperty(props, prefix, HTTP_MAX_TOTAL_CONNECTIONS));
                     }
-/* 288 */           if (notNull(props, prefix, HTTP_DEFAULT_MAX_PER_ROUTE)) {
-/* 289 */               setHttpDefaultMaxPerRoute(getIntProperty(props, prefix, HTTP_DEFAULT_MAX_PER_ROUTE));
+           if (notNull(props, prefix, HTTP_DEFAULT_MAX_PER_ROUTE)) {
+               setHttpDefaultMaxPerRoute(getIntProperty(props, prefix, HTTP_DEFAULT_MAX_PER_ROUTE));
                     }
-/* 291 */           if (notNull(props, prefix, OAUTH_CONSUMER_KEY)) {
-/* 292 */               setOAuthConsumerKey(getString(props, prefix, OAUTH_CONSUMER_KEY));
+           if (notNull(props, prefix, OAUTH_CONSUMER_KEY)) {
+               setOAuthConsumerKey(getString(props, prefix, OAUTH_CONSUMER_KEY));
                     }
-/* 294 */           if (notNull(props, prefix, OAUTH_CONSUMER_SECRET)) {
-/* 295 */               setOAuthConsumerSecret(getString(props, prefix, OAUTH_CONSUMER_SECRET));
+           if (notNull(props, prefix, OAUTH_CONSUMER_SECRET)) {
+               setOAuthConsumerSecret(getString(props, prefix, OAUTH_CONSUMER_SECRET));
                     }
-/* 297 */           if (notNull(props, prefix, OAUTH_ACCESS_TOKEN)) {
-/* 298 */               setOAuthAccessToken(getString(props, prefix, OAUTH_ACCESS_TOKEN));
+           if (notNull(props, prefix, OAUTH_ACCESS_TOKEN)) {
+               setOAuthAccessToken(getString(props, prefix, OAUTH_ACCESS_TOKEN));
                     }
-/* 300 */           if (notNull(props, prefix, OAUTH_ACCESS_TOKEN_SECRET)) {
-/* 301 */               setOAuthAccessTokenSecret(getString(props, prefix, OAUTH_ACCESS_TOKEN_SECRET));
+           if (notNull(props, prefix, OAUTH_ACCESS_TOKEN_SECRET)) {
+               setOAuthAccessTokenSecret(getString(props, prefix, OAUTH_ACCESS_TOKEN_SECRET));
                     }
-/* 303 */           if (notNull(props, prefix, OAUTH2_TOKEN_TYPE)) {
-/* 304 */               setOAuth2TokenType(getString(props, prefix, OAUTH2_TOKEN_TYPE));
+           if (notNull(props, prefix, OAUTH2_TOKEN_TYPE)) {
+               setOAuth2TokenType(getString(props, prefix, OAUTH2_TOKEN_TYPE));
                     }
-/* 306 */           if (notNull(props, prefix, OAUTH2_ACCESS_TOKEN)) {
-/* 307 */               setOAuth2AccessToken(getString(props, prefix, OAUTH2_ACCESS_TOKEN));
+           if (notNull(props, prefix, OAUTH2_ACCESS_TOKEN)) {
+               setOAuth2AccessToken(getString(props, prefix, OAUTH2_ACCESS_TOKEN));
                     }
-/* 309 */           if (notNull(props, prefix, ASYNC_NUM_THREADS)) {
-/* 310 */               setAsyncNumThreads(getIntProperty(props, prefix, ASYNC_NUM_THREADS));
+           if (notNull(props, prefix, ASYNC_NUM_THREADS)) {
+               setAsyncNumThreads(getIntProperty(props, prefix, ASYNC_NUM_THREADS));
                     }
-/* 312 */           if (notNull(props, prefix, CONTRIBUTING_TO)) {
-/* 313 */               setContributingTo(getLongProperty(props, prefix, CONTRIBUTING_TO));
+           if (notNull(props, prefix, CONTRIBUTING_TO)) {
+               setContributingTo(getLongProperty(props, prefix, CONTRIBUTING_TO));
                     }
-/* 315 */           if (notNull(props, prefix, ASYNC_DISPATCHER_IMPL)) {
-/* 316 */               setDispatcherImpl(getString(props, prefix, ASYNC_DISPATCHER_IMPL));
+           if (notNull(props, prefix, ASYNC_DISPATCHER_IMPL)) {
+               setDispatcherImpl(getString(props, prefix, ASYNC_DISPATCHER_IMPL));
                     }
-/* 318 */           if (notNull(props, prefix, CLIENT_VERSION)) {
-/* 319 */               setClientVersion(getString(props, prefix, CLIENT_VERSION));
+           if (notNull(props, prefix, CLIENT_VERSION)) {
+               setClientVersion(getString(props, prefix, CLIENT_VERSION));
                     }
-/* 321 */           if (notNull(props, prefix, CLIENT_URL)) {
-/* 322 */               setClientURL(getString(props, prefix, CLIENT_URL));
+           if (notNull(props, prefix, CLIENT_URL)) {
+               setClientURL(getString(props, prefix, CLIENT_URL));
                     }
-/* 324 */           if (notNull(props, prefix, HTTP_USER_AGENT)) {
-/* 325 */               setUserAgent(getString(props, prefix, HTTP_USER_AGENT));
+           if (notNull(props, prefix, HTTP_USER_AGENT)) {
+               setUserAgent(getString(props, prefix, HTTP_USER_AGENT));
                     }
-/* 328 */           if (notNull(props, prefix, OAUTH_REQUEST_TOKEN_URL)) {
-/* 329 */               setOAuthRequestTokenURL(getString(props, prefix, OAUTH_REQUEST_TOKEN_URL));
+           if (notNull(props, prefix, OAUTH_REQUEST_TOKEN_URL)) {
+               setOAuthRequestTokenURL(getString(props, prefix, OAUTH_REQUEST_TOKEN_URL));
                     }
-/* 332 */           if (notNull(props, prefix, OAUTH_AUTHORIZATION_URL)) {
-/* 333 */               setOAuthAuthorizationURL(getString(props, prefix, OAUTH_AUTHORIZATION_URL));
+           if (notNull(props, prefix, OAUTH_AUTHORIZATION_URL)) {
+               setOAuthAuthorizationURL(getString(props, prefix, OAUTH_AUTHORIZATION_URL));
                     }
-/* 336 */           if (notNull(props, prefix, OAUTH_ACCESS_TOKEN_URL)) {
-/* 337 */               setOAuthAccessTokenURL(getString(props, prefix, OAUTH_ACCESS_TOKEN_URL));
+           if (notNull(props, prefix, OAUTH_ACCESS_TOKEN_URL)) {
+               setOAuthAccessTokenURL(getString(props, prefix, OAUTH_ACCESS_TOKEN_URL));
                     }
-/* 340 */           if (notNull(props, prefix, OAUTH_AUTHENTICATION_URL)) {
-/* 341 */               setOAuthAuthenticationURL(getString(props, prefix, OAUTH_AUTHENTICATION_URL));
+           if (notNull(props, prefix, OAUTH_AUTHENTICATION_URL)) {
+               setOAuthAuthenticationURL(getString(props, prefix, OAUTH_AUTHENTICATION_URL));
                     }
-/* 344 */           if (notNull(props, prefix, OAUTH2_TOKEN_URL)) {
-/* 345 */               setOAuth2TokenURL(getString(props, prefix, OAUTH2_TOKEN_URL));
+           if (notNull(props, prefix, OAUTH2_TOKEN_URL)) {
+               setOAuth2TokenURL(getString(props, prefix, OAUTH2_TOKEN_URL));
                     }
-/* 348 */           if (notNull(props, prefix, OAUTH2_INVALIDATE_TOKEN_URL)) {
-/* 349 */               setOAuth2InvalidateTokenURL(getString(props, prefix, OAUTH2_INVALIDATE_TOKEN_URL));
+           if (notNull(props, prefix, OAUTH2_INVALIDATE_TOKEN_URL)) {
+               setOAuth2InvalidateTokenURL(getString(props, prefix, OAUTH2_INVALIDATE_TOKEN_URL));
                     }
-/* 352 */           if (notNull(props, prefix, REST_BASE_URL)) {
-/* 353 */               setRestBaseURL(getString(props, prefix, REST_BASE_URL));
+           if (notNull(props, prefix, REST_BASE_URL)) {
+               setRestBaseURL(getString(props, prefix, REST_BASE_URL));
                     }
-/* 356 */           if (notNull(props, prefix, STREAM_BASE_URL)) {
-/* 357 */               setStreamBaseURL(getString(props, prefix, STREAM_BASE_URL));
+           if (notNull(props, prefix, STREAM_BASE_URL)) {
+               setStreamBaseURL(getString(props, prefix, STREAM_BASE_URL));
                     }
-/* 359 */           if (notNull(props, prefix, USER_STREAM_BASE_URL)) {
-/* 360 */               setUserStreamBaseURL(getString(props, prefix, USER_STREAM_BASE_URL));
+           if (notNull(props, prefix, USER_STREAM_BASE_URL)) {
+               setUserStreamBaseURL(getString(props, prefix, USER_STREAM_BASE_URL));
                     }
-/* 362 */           if (notNull(props, prefix, SITE_STREAM_BASE_URL)) {
-/* 363 */               setSiteStreamBaseURL(getString(props, prefix, SITE_STREAM_BASE_URL));
+           if (notNull(props, prefix, SITE_STREAM_BASE_URL)) {
+               setSiteStreamBaseURL(getString(props, prefix, SITE_STREAM_BASE_URL));
                     }
-/* 365 */           if (notNull(props, prefix, INCLUDE_RTS)) {
-/* 366 */               setIncludeRTsEnbled(getBoolean(props, prefix, INCLUDE_RTS));
+           if (notNull(props, prefix, INCLUDE_RTS)) {
+               setIncludeRTsEnbled(getBoolean(props, prefix, INCLUDE_RTS));
                     }
-/* 368 */           if (notNull(props, prefix, INCLUDE_ENTITIES)) {
-/* 369 */               setIncludeEntitiesEnbled(getBoolean(props, prefix, INCLUDE_ENTITIES));
+           if (notNull(props, prefix, INCLUDE_ENTITIES)) {
+               setIncludeEntitiesEnbled(getBoolean(props, prefix, INCLUDE_ENTITIES));
                     }
-/* 371 */           if (notNull(props, prefix, INCLUDE_MY_RETWEET)) {
-/* 372 */               setIncludeMyRetweetEnabled(getBoolean(props, prefix, INCLUDE_MY_RETWEET));
+           if (notNull(props, prefix, INCLUDE_MY_RETWEET)) {
+               setIncludeMyRetweetEnabled(getBoolean(props, prefix, INCLUDE_MY_RETWEET));
                     }
-/* 374 */           if (notNull(props, prefix, LOGGER_FACTORY)) {
-/* 375 */               setLoggerFactory(getString(props, prefix, LOGGER_FACTORY));
+           if (notNull(props, prefix, LOGGER_FACTORY)) {
+               setLoggerFactory(getString(props, prefix, LOGGER_FACTORY));
                     }
-/* 377 */           if (notNull(props, prefix, JSON_STORE_ENABLED)) {
-/* 378 */               setJSONStoreEnabled(getBoolean(props, prefix, JSON_STORE_ENABLED));
+           if (notNull(props, prefix, JSON_STORE_ENABLED)) {
+               setJSONStoreEnabled(getBoolean(props, prefix, JSON_STORE_ENABLED));
                     }
-/* 380 */           if (notNull(props, prefix, MBEAN_ENABLED)) {
-/* 381 */               setMBeanEnabled(getBoolean(props, prefix, MBEAN_ENABLED));
+           if (notNull(props, prefix, MBEAN_ENABLED)) {
+               setMBeanEnabled(getBoolean(props, prefix, MBEAN_ENABLED));
                     }
-/* 383 */           if (notNull(props, prefix, STREAM_USER_REPLIES_ALL)) {
-/* 384 */               setUserStreamRepliesAllEnabled(getBoolean(props, prefix, STREAM_USER_REPLIES_ALL));
+           if (notNull(props, prefix, STREAM_USER_REPLIES_ALL)) {
+               setUserStreamRepliesAllEnabled(getBoolean(props, prefix, STREAM_USER_REPLIES_ALL));
                     }
-/* 386 */           if (notNull(props, prefix, STREAM_STALL_WARNINGS_ENABLED)) {
-/* 387 */               setStallWarningsEnabled(getBoolean(props, prefix, STREAM_STALL_WARNINGS_ENABLED));
+           if (notNull(props, prefix, STREAM_STALL_WARNINGS_ENABLED)) {
+               setStallWarningsEnabled(getBoolean(props, prefix, STREAM_STALL_WARNINGS_ENABLED));
                     }
-/* 389 */           if (notNull(props, prefix, APPLICATION_ONLY_AUTH_ENABLED)) {
-/* 390 */               setApplicationOnlyAuthEnabled(getBoolean(props, prefix, APPLICATION_ONLY_AUTH_ENABLED));
+           if (notNull(props, prefix, APPLICATION_ONLY_AUTH_ENABLED)) {
+               setApplicationOnlyAuthEnabled(getBoolean(props, prefix, APPLICATION_ONLY_AUTH_ENABLED));
                     }
-/* 392 */           if (notNull(props, prefix, MEDIA_PROVIDER)) {
-/* 393 */               setMediaProvider(getString(props, prefix, MEDIA_PROVIDER));
+           if (notNull(props, prefix, MEDIA_PROVIDER)) {
+               setMediaProvider(getString(props, prefix, MEDIA_PROVIDER));
                     }
-/* 395 */           if (notNull(props, prefix, MEDIA_PROVIDER_API_KEY)) {
-/* 396 */               setMediaProviderAPIKey(getString(props, prefix, MEDIA_PROVIDER_API_KEY));
+           if (notNull(props, prefix, MEDIA_PROVIDER_API_KEY)) {
+               setMediaProviderAPIKey(getString(props, prefix, MEDIA_PROVIDER_API_KEY));
                     }
-/* 398 */           if (notNull(props, prefix, MEDIA_PROVIDER_PARAMETERS)) {
-/* 399 */               String[] propsAry = z_T4JInternalStringUtil.split(getString(props, prefix, MEDIA_PROVIDER_PARAMETERS), "&");
-/* 400 */               Properties p = new Properties();
+           if (notNull(props, prefix, MEDIA_PROVIDER_PARAMETERS)) {
+               String[] propsAry = z_T4JInternalStringUtil.split(getString(props, prefix, MEDIA_PROVIDER_PARAMETERS), "&");
+               Properties p = new Properties();
                         for (String str : propsAry) {
-/* 402 */                   String[] parameter = z_T4JInternalStringUtil.split(str, "=");
-/* 403 */                   p.setProperty(parameter[0], parameter[1]);
+                   String[] parameter = z_T4JInternalStringUtil.split(str, "=");
+                   p.setProperty(parameter[0], parameter[1]);
                         }
-/* 405 */               setMediaProviderParameters(p);
+               setMediaProviderParameters(p);
                     }
-/* 407 */           cacheInstance();
+           cacheInstance();
                 }
 
-/* 410 */       protected boolean getBoolean(Properties props, String prefix, String name) {
-/* 411 */           String value = props.getProperty(prefix + name);
-/* 412 */           return Boolean.valueOf(value).booleanValue();
+       protected boolean getBoolean(Properties props, String prefix, String name) {
+           String value = props.getProperty(prefix + name);
+           return Boolean.valueOf(value).booleanValue();
                 }
 
-/* 415 */       protected int getIntProperty(Properties props, String prefix, String name) {
-/* 416 */           String value = props.getProperty(prefix + name);
+       protected int getIntProperty(Properties props, String prefix, String name) {
+           String value = props.getProperty(prefix + name);
                     try {
-/* 418 */               return Integer.parseInt(value);
+               return Integer.parseInt(value);
                     } catch (NumberFormatException e) {
-/* 420 */               return -1;
+               return -1;
                     }
                 }
 
-/* 424 */       protected long getLongProperty(Properties props, String prefix, String name) {
-/* 425 */           String value = props.getProperty(prefix + name);
+       protected long getLongProperty(Properties props, String prefix, String name) {
+           String value = props.getProperty(prefix + name);
                     try {
-/* 427 */               return Long.parseLong(value);
+               return Long.parseLong(value);
                     } catch (NumberFormatException e) {
-/* 429 */               return -1L;
+               return -1L;
                     }
                 }
 
-/* 433 */       protected String getString(Properties props, String prefix, String name) {
-/* 434 */           return props.getProperty(prefix + name);
+       protected String getString(Properties props, String prefix, String name) {
+           return props.getProperty(prefix + name);
                 }
 
-                @Override // twitter4j.conf.ConfigurationBase
-/* 438 */       protected Object readResolve() throws ObjectStreamException {
-/* 439 */           return super.readResolve();
+                @Override 
+       protected Object readResolve() throws ObjectStreamException {
+           return super.readResolve();
                 }
             }

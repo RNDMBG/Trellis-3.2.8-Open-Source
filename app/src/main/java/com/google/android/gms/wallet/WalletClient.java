@@ -4,10 +4,10 @@
             import com.google.android.gms.common.GooglePlayServicesClient;
             import com.google.android.gms.internal.C1106gj;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class WalletClient implements GooglePlayServicesClient {
 
-                /* JADX INFO: renamed from: uq */
+                
                 private final C1106gj f2527uq;
 
                 public WalletClient(Activity activity, int environment, String accountName, int theme, GooglePlayServicesClient.ConnectionCallbacks connectionCallbacks, GooglePlayServicesClient.OnConnectionFailedListener connectionFailedListener) {
@@ -26,32 +26,32 @@
                     this.f2527uq.checkForPreAuthorization(requestCode);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void connect() {
                     this.f2527uq.connect();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void disconnect() {
                     this.f2527uq.disconnect();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnected() {
                     return this.f2527uq.isConnected();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnecting() {
                     return this.f2527uq.isConnecting();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionCallbacksRegistered(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     return this.f2527uq.isConnectionCallbacksRegistered(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionFailedListenerRegistered(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     return this.f2527uq.isConnectionFailedListenerRegistered(listener);
                 }
@@ -68,22 +68,22 @@
                     this.f2527uq.notifyTransactionStatus(request);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f2527uq.registerConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f2527uq.registerConnectionFailedListener(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f2527uq.unregisterConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f2527uq.unregisterConnectionFailedListener(listener);
                 }

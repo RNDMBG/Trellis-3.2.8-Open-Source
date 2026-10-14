@@ -29,41 +29,41 @@
             import java.util.concurrent.ExecutorService;
             import java.util.concurrent.Executors;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class ImageManager {
 
-                /* JADX INFO: renamed from: jC */
+                
                 private static final Object f975jC = new Object();
 
-                /* JADX INFO: renamed from: jD */
+                
                 private static HashSet<Uri> f976jD = new HashSet<>();
 
-                /* JADX INFO: renamed from: jE */
+                
                 private static ImageManager f977jE;
 
-                /* JADX INFO: renamed from: jF */
+                
                 private static ImageManager f978jF;
 
-                /* JADX INFO: renamed from: jH */
+                
                 private final C0895b f980jH;
 
-                /* JADX INFO: renamed from: jI */
+                
                 private final Map<C0900a, ImageReceiver> f981jI;
 
-                /* JADX INFO: renamed from: jJ */
+                
                 private final Map<Uri, ImageReceiver> f982jJ;
                 private final Context mContext;
                 private final Handler mHandler = new Handler(Looper.getMainLooper());
 
-                /* JADX INFO: renamed from: jG */
+                
                 private final ExecutorService f979jG = Executors.newFixedThreadPool(4);
 
                 private final class ImageReceiver extends ResultReceiver {
 
-                    /* JADX INFO: renamed from: jK */
+                    
                     private final ArrayList<C0900a> f983jK;
 
-                    /* JADX INFO: renamed from: jL */
+                    
                     boolean f984jL;
                     private final Uri mUri;
 
@@ -74,12 +74,12 @@
                         this.f983jK = new ArrayList<>();
                     }
 
-                    /* JADX INFO: renamed from: a */
-                    static /* synthetic */ ArrayList m1075a(ImageReceiver imageReceiver) {
+                    
+                    static  ArrayList m1075a(ImageReceiver imageReceiver) {
                         return imageReceiver.f983jK;
                     }
 
-                    /* JADX INFO: renamed from: aR */
+                    
                     public void m1076aR() {
                         Intent intent = new Intent("com.google.android.gms.common.images.LOAD_IMAGE");
                         intent.putExtra("com.google.android.gms.extras.uri", this.mUri);
@@ -88,21 +88,21 @@
                         ImageManager.m1060a(ImageManager.this).sendBroadcast(intent);
                     }
 
-                    /* JADX INFO: renamed from: c */
+                    
                     public void m1077c(C0900a c0900a) {
                         C1017db.m1523a(!this.f984jL, "Cannot add an ImageRequest when mHandlingRequests is true");
                         C1017db.m1526w("ImageReceiver.addImageRequest() must be called in the main thread");
                         this.f983jK.add(c0900a);
                     }
 
-                    /* JADX INFO: renamed from: d */
+                    
                     public void m1078d(C0900a c0900a) {
                         C1017db.m1523a(!this.f984jL, "Cannot remove an ImageRequest when mHandlingRequests is true");
                         C1017db.m1526w("ImageReceiver.removeImageRequest() must be called in the main thread");
                         this.f983jK.remove(c0900a);
                     }
 
-                    @Override // android.os.ResultReceiver
+                    @Override 
                     public void onReceiveResult(int resultCode, Bundle resultData) {
                         ImageManager.m1071d(ImageManager.this).execute(ImageManager.this.new RunnableC0896c(this.mUri, (ParcelFileDescriptor) resultData.getParcelable("com.google.android.gms.extra.fileDescriptor")));
                     }
@@ -112,51 +112,51 @@
                     void onImageLoaded(Uri uri, Drawable drawable);
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.images.ImageManager$a */
+                
                 private static final class C0894a {
-                    /* JADX INFO: renamed from: a */
+                    
                     static int m1079a(ActivityManager activityManager) {
                         return activityManager.getLargeMemoryClass();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.images.ImageManager$b */
+                
                 private static final class C0895b extends C1032dq<C0900a.a, Bitmap> {
                     public C0895b(Context context) {
                         super(m1080q(context));
                     }
 
-                    /* JADX INFO: renamed from: q */
+                    
                     private static int m1080q(Context context) {
                         ActivityManager activityManager = (ActivityManager) context.getSystemService(HomeTabActivity.TAG_ACTIVITY);
                         return (int) (((((context.getApplicationInfo().flags & 1048576) != 0) && C1053ek.m1736bJ()) ? C0894a.m1079a(activityManager) : activityManager.getMemoryClass()) * 1048576 * 0.33f);
                     }
 
-                    /* JADX INFO: renamed from: a */
+                    
                     protected int m1081a(C0900a.a aVar, Bitmap bitmap) {
                         return bitmap.getHeight() * bitmap.getRowBytes();
                     }
 
-                    /* JADX INFO: renamed from: a */
+                    
                     protected void m1082a(boolean z, C0900a.a aVar, Bitmap bitmap, Bitmap bitmap2) {
                         super.entryRemoved(z, aVar, bitmap, bitmap2);
                     }
 
-                    @Override // com.google.android.gms.internal.C1032dq
-                    protected /* synthetic */ void entryRemoved(boolean x0, C0900a.a aVar, Bitmap bitmap, Bitmap bitmap2) {
+                    @Override 
+                    protected  void entryRemoved(boolean x0, C0900a.a aVar, Bitmap bitmap, Bitmap bitmap2) {
                         m1082a(x0, aVar, bitmap, bitmap2);
                     }
 
-                    @Override // com.google.android.gms.internal.C1032dq
-                    protected /* synthetic */ int sizeOf(C0900a.a aVar, Bitmap bitmap) {
+                    @Override 
+                    protected  int sizeOf(C0900a.a aVar, Bitmap bitmap) {
                         return m1081a(aVar, bitmap);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.images.ImageManager$c */
+                
                 private final class RunnableC0896c implements Runnable {
 
-                    /* JADX INFO: renamed from: jN */
+                    
                     private final ParcelFileDescriptor f987jN;
                     private final Uri mUri;
 
@@ -165,7 +165,7 @@
                         this.f987jN = parcelFileDescriptor;
                     }
 
-                    @Override // java.lang.Runnable
+                    @Override 
                     public void run() {
                         C1017db.m1527x("LoadBitmapFromDiskRunnable can't be executed in the main thread");
                         boolean z = false;
@@ -193,17 +193,17 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.images.ImageManager$d */
+                
                 private final class RunnableC0897d implements Runnable {
 
-                    /* JADX INFO: renamed from: jO */
+                    
                     private final C0900a f989jO;
 
                     public RunnableC0897d(C0900a c0900a) {
                         this.f989jO = c0900a;
                     }
 
-                    @Override // java.lang.Runnable
+                    @Override 
                     public void run() {
                         C1017db.m1526w("LoadImageRunnable must be executed on the main thread");
                         ImageManager.m1064a(ImageManager.this, this.f989jO);
@@ -240,26 +240,26 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.images.ImageManager$e */
+                
                 private static final class ComponentCallbacks2C0898e implements ComponentCallbacks2 {
 
-                    /* JADX INFO: renamed from: jH */
+                    
                     private final C0895b f990jH;
 
                     public ComponentCallbacks2C0898e(C0895b c0895b) {
                         this.f990jH = c0895b;
                     }
 
-                    @Override // android.content.ComponentCallbacks
+                    @Override 
                     public void onConfigurationChanged(Configuration newConfig) {
                     }
 
-                    @Override // android.content.ComponentCallbacks
+                    @Override 
                     public void onLowMemory() {
                         this.f990jH.evictAll();
                     }
 
-                    @Override // android.content.ComponentCallbacks2
+                    @Override 
                     public void onTrimMemory(int level) {
                         if (level >= 60) {
                             this.f990jH.evictAll();
@@ -269,16 +269,16 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.images.ImageManager$f */
+                
                 private final class RunnableC0899f implements Runnable {
 
-                    /* JADX INFO: renamed from: jP */
+                    
                     private final Bitmap f992jP;
 
-                    /* JADX INFO: renamed from: jQ */
+                    
                     private final CountDownLatch f993jQ;
 
-                    /* JADX INFO: renamed from: jR */
+                    
                     private boolean f994jR;
                     private final Uri mUri;
 
@@ -289,7 +289,7 @@
                         this.f993jQ = countDownLatch;
                     }
 
-                    /* JADX INFO: renamed from: a */
+                    
                     private void m1083a(ImageReceiver imageReceiver, boolean z) {
                         imageReceiver.f984jL = true;
                         ArrayList arrayListM1075a = ImageReceiver.m1075a(imageReceiver);
@@ -308,7 +308,7 @@
                         imageReceiver.f984jL = false;
                     }
 
-                    @Override // java.lang.Runnable
+                    @Override 
                     public void run() {
                         C1017db.m1526w("OnBitmapLoadedRunnable must be executed in the main thread");
                         boolean z = this.f992jP != null;
@@ -353,17 +353,17 @@
                     this.f982jJ = new HashMap();
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ Context m1060a(ImageManager imageManager) {
+                
+                static  Context m1060a(ImageManager imageManager) {
                     return imageManager.mContext;
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ Bitmap m1061a(ImageManager imageManager, C0900a.a aVar) {
+                
+                static  Bitmap m1061a(ImageManager imageManager, C0900a.a aVar) {
                     return imageManager.m1062a(aVar);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private Bitmap m1062a(C0900a.a aVar) {
                     if (this.f980jH == null) {
                         return null;
@@ -371,7 +371,7 @@
                     return this.f980jH.get(aVar);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static ImageManager m1063a(Context context, boolean z) {
                     if (z) {
                         if (f978jF == null) {
@@ -385,32 +385,32 @@
                     return f977jE;
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ boolean m1064a(ImageManager imageManager, C0900a c0900a) {
+                
+                static  boolean m1064a(ImageManager imageManager, C0900a c0900a) {
                     return imageManager.m1069b(c0900a);
                 }
 
-                /* JADX INFO: renamed from: aO */
+                
                 private void m1065aO() {
                     this.mContext.registerComponentCallbacks(new ComponentCallbacks2C0898e(this.f980jH));
                 }
 
-                /* JADX INFO: renamed from: aP */
-                static /* synthetic */ Object m1066aP() {
+                
+                static  Object m1066aP() {
                     return f975jC;
                 }
 
-                /* JADX INFO: renamed from: aQ */
-                static /* synthetic */ HashSet m1067aQ() {
+                
+                static  HashSet m1067aQ() {
                     return f976jD;
                 }
 
-                /* JADX INFO: renamed from: b */
-                static /* synthetic */ Map m1068b(ImageManager imageManager) {
+                
+                static  Map m1068b(ImageManager imageManager) {
                     return imageManager.f982jJ;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private boolean m1069b(C0900a c0900a) {
                     ImageReceiver imageReceiver;
                     C1017db.m1526w("ImageManager.cleanupHashMaps() must be called in the main thread");
@@ -425,8 +425,8 @@
                     return true;
                 }
 
-                /* JADX INFO: renamed from: c */
-                static /* synthetic */ Map m1070c(ImageManager imageManager) {
+                
+                static  Map m1070c(ImageManager imageManager) {
                     return imageManager.f981jI;
                 }
 
@@ -434,22 +434,22 @@
                     return m1063a(context, false);
                 }
 
-                /* JADX INFO: renamed from: d */
-                static /* synthetic */ ExecutorService m1071d(ImageManager imageManager) {
+                
+                static  ExecutorService m1071d(ImageManager imageManager) {
                     return imageManager.f979jG;
                 }
 
-                /* JADX INFO: renamed from: e */
-                static /* synthetic */ Handler m1072e(ImageManager imageManager) {
+                
+                static  Handler m1072e(ImageManager imageManager) {
                     return imageManager.mHandler;
                 }
 
-                /* JADX INFO: renamed from: f */
-                static /* synthetic */ C0895b m1073f(ImageManager imageManager) {
+                
+                static  C0895b m1073f(ImageManager imageManager) {
                     return imageManager.f980jH;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1074a(C0900a c0900a) {
                     C1017db.m1526w("ImageManager.loadImage() must be called in the main thread");
                     boolean zM1069b = m1069b(c0900a);

@@ -6,274 +6,274 @@
             import android.view.View;
             import android.widget.SpinnerAdapter;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 18 */    public class ActionBarImplJB extends ActionBarImplICS {
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void addOnMenuVisibilityListener(ActionBar.OnMenuVisibilityListener x0) {
-/* 20 */            super.addOnMenuVisibilityListener(x0);
+            
+    public class ActionBarImplJB extends ActionBarImplICS {
+                @Override 
+        public   void addOnMenuVisibilityListener(ActionBar.OnMenuVisibilityListener x0) {
+            super.addOnMenuVisibilityListener(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void addTab(ActionBar.Tab x0) {
-/* 20 */            super.addTab(x0);
+                @Override 
+        public   void addTab(ActionBar.Tab x0) {
+            super.addTab(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void addTab(ActionBar.Tab x0, int x1) {
-/* 20 */            super.addTab(x0, x1);
+                @Override 
+        public   void addTab(ActionBar.Tab x0, int x1) {
+            super.addTab(x0, x1);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void addTab(ActionBar.Tab x0, int x1, boolean x2) {
-/* 20 */            super.addTab(x0, x1, x2);
+                @Override 
+        public   void addTab(ActionBar.Tab x0, int x1, boolean x2) {
+            super.addTab(x0, x1, x2);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void addTab(ActionBar.Tab x0, boolean x1) {
-/* 20 */            super.addTab(x0, x1);
+                @Override 
+        public   void addTab(ActionBar.Tab x0, boolean x1) {
+            super.addTab(x0, x1);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ View getCustomView() {
-/* 20 */            return super.getCustomView();
+                @Override 
+        public   View getCustomView() {
+            return super.getCustomView();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ int getDisplayOptions() {
-/* 20 */            return super.getDisplayOptions();
+                @Override 
+        public   int getDisplayOptions() {
+            return super.getDisplayOptions();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ int getHeight() {
-/* 20 */            return super.getHeight();
+                @Override 
+        public   int getHeight() {
+            return super.getHeight();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ int getNavigationItemCount() {
-/* 20 */            return super.getNavigationItemCount();
+                @Override 
+        public   int getNavigationItemCount() {
+            return super.getNavigationItemCount();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ int getNavigationMode() {
-/* 20 */            return super.getNavigationMode();
+                @Override 
+        public   int getNavigationMode() {
+            return super.getNavigationMode();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ int getSelectedNavigationIndex() {
-/* 20 */            return super.getSelectedNavigationIndex();
+                @Override 
+        public   int getSelectedNavigationIndex() {
+            return super.getSelectedNavigationIndex();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ ActionBar.Tab getSelectedTab() {
-/* 20 */            return super.getSelectedTab();
+                @Override 
+        public   ActionBar.Tab getSelectedTab() {
+            return super.getSelectedTab();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ CharSequence getSubtitle() {
-/* 20 */            return super.getSubtitle();
+                @Override 
+        public   CharSequence getSubtitle() {
+            return super.getSubtitle();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ ActionBar.Tab getTabAt(int x0) {
-/* 20 */            return super.getTabAt(x0);
+                @Override 
+        public   ActionBar.Tab getTabAt(int x0) {
+            return super.getTabAt(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ int getTabCount() {
-/* 20 */            return super.getTabCount();
+                @Override 
+        public   int getTabCount() {
+            return super.getTabCount();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ Context getThemedContext() {
-/* 20 */            return super.getThemedContext();
+                @Override 
+        public   Context getThemedContext() {
+            return super.getThemedContext();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ CharSequence getTitle() {
-/* 20 */            return super.getTitle();
+                @Override 
+        public   CharSequence getTitle() {
+            return super.getTitle();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void hide() {
-/* 20 */            super.hide();
+                @Override 
+        public   void hide() {
+            super.hide();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ boolean isShowing() {
-/* 20 */            return super.isShowing();
+                @Override 
+        public   boolean isShowing() {
+            return super.isShowing();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ ActionBar.Tab newTab() {
-/* 20 */            return super.newTab();
+                @Override 
+        public   ActionBar.Tab newTab() {
+            return super.newTab();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void removeAllTabs() {
-/* 20 */            super.removeAllTabs();
+                @Override 
+        public   void removeAllTabs() {
+            super.removeAllTabs();
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void removeOnMenuVisibilityListener(ActionBar.OnMenuVisibilityListener x0) {
-/* 20 */            super.removeOnMenuVisibilityListener(x0);
+                @Override 
+        public   void removeOnMenuVisibilityListener(ActionBar.OnMenuVisibilityListener x0) {
+            super.removeOnMenuVisibilityListener(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void removeTab(ActionBar.Tab x0) {
-/* 20 */            super.removeTab(x0);
+                @Override 
+        public   void removeTab(ActionBar.Tab x0) {
+            super.removeTab(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void removeTabAt(int x0) {
-/* 20 */            super.removeTabAt(x0);
+                @Override 
+        public   void removeTabAt(int x0) {
+            super.removeTabAt(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void selectTab(ActionBar.Tab x0) {
-/* 20 */            super.selectTab(x0);
+                @Override 
+        public   void selectTab(ActionBar.Tab x0) {
+            super.selectTab(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setBackgroundDrawable(Drawable x0) {
-/* 20 */            super.setBackgroundDrawable(x0);
+                @Override 
+        public   void setBackgroundDrawable(Drawable x0) {
+            super.setBackgroundDrawable(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setCustomView(int x0) {
-/* 20 */            super.setCustomView(x0);
+                @Override 
+        public   void setCustomView(int x0) {
+            super.setCustomView(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setCustomView(View x0) {
-/* 20 */            super.setCustomView(x0);
+                @Override 
+        public   void setCustomView(View x0) {
+            super.setCustomView(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setCustomView(View x0, ActionBar.LayoutParams x1) {
-/* 20 */            super.setCustomView(x0, x1);
+                @Override 
+        public   void setCustomView(View x0, ActionBar.LayoutParams x1) {
+            super.setCustomView(x0, x1);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setDisplayHomeAsUpEnabled(boolean x0) {
-/* 20 */            super.setDisplayHomeAsUpEnabled(x0);
+                @Override 
+        public   void setDisplayHomeAsUpEnabled(boolean x0) {
+            super.setDisplayHomeAsUpEnabled(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setDisplayOptions(int x0) {
-/* 20 */            super.setDisplayOptions(x0);
+                @Override 
+        public   void setDisplayOptions(int x0) {
+            super.setDisplayOptions(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setDisplayOptions(int x0, int x1) {
-/* 20 */            super.setDisplayOptions(x0, x1);
+                @Override 
+        public   void setDisplayOptions(int x0, int x1) {
+            super.setDisplayOptions(x0, x1);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setDisplayShowCustomEnabled(boolean x0) {
-/* 20 */            super.setDisplayShowCustomEnabled(x0);
+                @Override 
+        public   void setDisplayShowCustomEnabled(boolean x0) {
+            super.setDisplayShowCustomEnabled(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setDisplayShowHomeEnabled(boolean x0) {
-/* 20 */            super.setDisplayShowHomeEnabled(x0);
+                @Override 
+        public   void setDisplayShowHomeEnabled(boolean x0) {
+            super.setDisplayShowHomeEnabled(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setDisplayShowTitleEnabled(boolean x0) {
-/* 20 */            super.setDisplayShowTitleEnabled(x0);
+                @Override 
+        public   void setDisplayShowTitleEnabled(boolean x0) {
+            super.setDisplayShowTitleEnabled(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setDisplayUseLogoEnabled(boolean x0) {
-/* 20 */            super.setDisplayUseLogoEnabled(x0);
+                @Override 
+        public   void setDisplayUseLogoEnabled(boolean x0) {
+            super.setDisplayUseLogoEnabled(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setHomeAsUpIndicator(int x0) {
-/* 20 */            super.setHomeAsUpIndicator(x0);
+                @Override 
+        public   void setHomeAsUpIndicator(int x0) {
+            super.setHomeAsUpIndicator(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setHomeAsUpIndicator(Drawable x0) {
-/* 20 */            super.setHomeAsUpIndicator(x0);
+                @Override 
+        public   void setHomeAsUpIndicator(Drawable x0) {
+            super.setHomeAsUpIndicator(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setHomeButtonEnabled(boolean x0) {
-/* 20 */            super.setHomeButtonEnabled(x0);
+                @Override 
+        public   void setHomeButtonEnabled(boolean x0) {
+            super.setHomeButtonEnabled(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setIcon(int x0) {
-/* 20 */            super.setIcon(x0);
+                @Override 
+        public   void setIcon(int x0) {
+            super.setIcon(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setIcon(Drawable x0) {
-/* 20 */            super.setIcon(x0);
+                @Override 
+        public   void setIcon(Drawable x0) {
+            super.setIcon(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setListNavigationCallbacks(SpinnerAdapter x0, ActionBar.OnNavigationListener x1) {
-/* 20 */            super.setListNavigationCallbacks(x0, x1);
+                @Override 
+        public   void setListNavigationCallbacks(SpinnerAdapter x0, ActionBar.OnNavigationListener x1) {
+            super.setListNavigationCallbacks(x0, x1);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setLogo(int x0) {
-/* 20 */            super.setLogo(x0);
+                @Override 
+        public   void setLogo(int x0) {
+            super.setLogo(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setLogo(Drawable x0) {
-/* 20 */            super.setLogo(x0);
+                @Override 
+        public   void setLogo(Drawable x0) {
+            super.setLogo(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setNavigationMode(int x0) {
-/* 20 */            super.setNavigationMode(x0);
+                @Override 
+        public   void setNavigationMode(int x0) {
+            super.setNavigationMode(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setSelectedNavigationItem(int x0) {
-/* 20 */            super.setSelectedNavigationItem(x0);
+                @Override 
+        public   void setSelectedNavigationItem(int x0) {
+            super.setSelectedNavigationItem(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setSplitBackgroundDrawable(Drawable x0) {
-/* 20 */            super.setSplitBackgroundDrawable(x0);
+                @Override 
+        public   void setSplitBackgroundDrawable(Drawable x0) {
+            super.setSplitBackgroundDrawable(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setStackedBackgroundDrawable(Drawable x0) {
-/* 20 */            super.setStackedBackgroundDrawable(x0);
+                @Override 
+        public   void setStackedBackgroundDrawable(Drawable x0) {
+            super.setStackedBackgroundDrawable(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setSubtitle(int x0) {
-/* 20 */            super.setSubtitle(x0);
+                @Override 
+        public   void setSubtitle(int x0) {
+            super.setSubtitle(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setSubtitle(CharSequence x0) {
-/* 20 */            super.setSubtitle(x0);
+                @Override 
+        public   void setSubtitle(CharSequence x0) {
+            super.setSubtitle(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setTitle(int x0) {
-/* 20 */            super.setTitle(x0);
+                @Override 
+        public   void setTitle(int x0) {
+            super.setTitle(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void setTitle(CharSequence x0) {
-/* 20 */            super.setTitle(x0);
+                @Override 
+        public   void setTitle(CharSequence x0) {
+            super.setTitle(x0);
                 }
 
-                @Override // android.support.v7.app.ActionBarImplICS, android.support.v7.app.ActionBar
-/* 19 */        public /* bridge */ /* synthetic */ void show() {
-/* 20 */            super.show();
+                @Override 
+        public   void show() {
+            super.show();
                 }
 
-/* 23 */        public ActionBarImplJB(Activity activity, ActionBar.Callback callback) {
-/* 24 */            super(activity, callback, false);
+        public ActionBarImplJB(Activity activity, ActionBar.Callback callback) {
+            super(activity, callback, false);
                 }
             }

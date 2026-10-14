@@ -9,81 +9,81 @@
             import co.vine.android.util.ConversationMenuHelper;
             import com.jeremyfeinstein.slidingmenu.lib.SlidingActivityHelper;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 24 */    public abstract class BaseControllerActionBarActivity extends BaseActionBarActivity implements ScrollListener {
+            
+    public abstract class BaseControllerActionBarActivity extends BaseActionBarActivity implements ScrollListener {
                 public static final String EXTRA_TITLE_ID = "title";
                 protected AppController mAppController;
                 protected AppSessionListener mAppSessionListener;
                 private ConversationMenuHelper mConversationSlidingMenuHelper;
 
-/* 25 */        protected void onCreate(Bundle savedInstanceState, int layout, boolean loginRequired) {
-/* 26 */            onCreate(savedInstanceState, layout, loginRequired, false);
+        protected void onCreate(Bundle savedInstanceState, int layout, boolean loginRequired) {
+            onCreate(savedInstanceState, layout, loginRequired, false);
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity
-/* 29 */        public void onCreate(Bundle savedInstanceState, int layout, boolean loginRequired, boolean readOnly) {
-/* 30 */            super.onCreate(savedInstanceState, layout, loginRequired, readOnly);
-/* 32 */            this.mAppController = AppController.getInstance(this);
-/* 34 */            if (this.mConversationSlidingMenuHelper != null) {
-/* 35 */                this.mConversationSlidingMenuHelper.setupConversationSlidingMenu();
+                @Override 
+        public void onCreate(Bundle savedInstanceState, int layout, boolean loginRequired, boolean readOnly) {
+            super.onCreate(savedInstanceState, layout, loginRequired, readOnly);
+            this.mAppController = AppController.getInstance(this);
+            if (this.mConversationSlidingMenuHelper != null) {
+                this.mConversationSlidingMenuHelper.setupConversationSlidingMenu();
                     }
                 }
 
-                @Override // co.vine.android.ScrollListener
-/* 41 */        public void onScroll(int delta) {
+                @Override 
+        public void onScroll(int delta) {
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 45 */        protected void onResume() {
-/* 46 */            super.onResume();
-/* 47 */            if (this.mConversationSlidingMenuHelper != null) {
-/* 48 */                this.mConversationSlidingMenuHelper.onResume();
+                @Override 
+        protected void onResume() {
+            super.onResume();
+            if (this.mConversationSlidingMenuHelper != null) {
+                this.mConversationSlidingMenuHelper.onResume();
                     }
-/* 50 */            if (this.mAppSessionListener != null) {
-/* 51 */                this.mAppController.addListener(this.mAppSessionListener);
-                    }
-                }
-
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 56 */        protected void onPause() {
-/* 57 */            super.onPause();
-/* 58 */            if (this.mConversationSlidingMenuHelper != null) {
-/* 59 */                this.mConversationSlidingMenuHelper.onPause();
-                    }
-/* 61 */            if (this.mAppSessionListener != null) {
-/* 62 */                this.mAppController.removeListener(this.mAppSessionListener);
-                    }
-/* 64 */            if (Build.VERSION.SDK_INT >= 14 && !BuildUtil.isExplore()) {
-/* 65 */                SdkVideoView.releaseStaticIfNeeded();
+            if (this.mAppSessionListener != null) {
+                this.mAppController.addListener(this.mAppSessionListener);
                     }
                 }
 
-/* 69 */        public AppController getAppController() {
-/* 70 */            return this.mAppController;
+                @Override 
+        protected void onPause() {
+            super.onPause();
+            if (this.mConversationSlidingMenuHelper != null) {
+                this.mConversationSlidingMenuHelper.onPause();
+                    }
+            if (this.mAppSessionListener != null) {
+                this.mAppController.removeListener(this.mAppSessionListener);
+                    }
+            if (Build.VERSION.SDK_INT >= 14 && !BuildUtil.isExplore()) {
+                SdkVideoView.releaseStaticIfNeeded();
+                    }
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity
-/* 74 */        protected SlidingActivityHelper createSlidingMenuHelper() {
-/* 75 */            this.mConversationSlidingMenuHelper = new ConversationMenuHelper(this);
-/* 76 */            return this.mConversationSlidingMenuHelper;
+        public AppController getAppController() {
+            return this.mAppController;
                 }
 
-/* 79 */        public boolean isConversationSideMenuEnabled() {
-/* 80 */            return false;
+                @Override 
+        protected SlidingActivityHelper createSlidingMenuHelper() {
+            this.mConversationSlidingMenuHelper = new ConversationMenuHelper(this);
+            return this.mConversationSlidingMenuHelper;
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity
-/* 84 */        protected boolean isSlidingMenuEnabled() {
-/* 85 */            return isConversationSideMenuEnabled();
+        public boolean isConversationSideMenuEnabled() {
+            return false;
                 }
 
-/* 88 */        public ConversationMenuHelper getConversationSlidingMenuHelper() {
-/* 89 */            return this.mConversationSlidingMenuHelper;
+                @Override 
+        protected boolean isSlidingMenuEnabled() {
+            return isConversationSideMenuEnabled();
                 }
 
-/* 92 */        public void notifyColorChange(int profileBackground) {
-/* 93 */            if (this.mConversationSlidingMenuHelper != null) {
-/* 94 */                this.mConversationSlidingMenuHelper.setPersonalizedColor(profileBackground);
+        public ConversationMenuHelper getConversationSlidingMenuHelper() {
+            return this.mConversationSlidingMenuHelper;
+                }
+
+        public void notifyColorChange(int profileBackground) {
+            if (this.mConversationSlidingMenuHelper != null) {
+                this.mConversationSlidingMenuHelper.setPersonalizedColor(profileBackground);
                     }
                 }
             }

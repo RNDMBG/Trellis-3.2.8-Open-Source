@@ -12,22 +12,22 @@
             import com.google.android.gms.plus.model.people.PersonBuffer;
             import java.util.Collection;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class PlusClient implements GooglePlayServicesClient {
 
-                /* JADX INFO: renamed from: rb */
+                
                 final C1081fl f2372rb;
 
                 public static class Builder {
 
-                    /* JADX INFO: renamed from: ir */
+                    
                     private final GooglePlayServicesClient.OnConnectionFailedListener f2373ir;
                     private final Context mContext;
 
-                    /* JADX INFO: renamed from: rc */
+                    
                     private final GooglePlayServicesClient.ConnectionCallbacks f2374rc;
 
-                    /* JADX INFO: renamed from: rd */
+                    
                     private final C1084fo f2375rd;
 
                     public Builder(Context context, GooglePlayServicesClient.ConnectionCallbacks connectionCallbacks, GooglePlayServicesClient.OnConnectionFailedListener connectionFailedListener) {
@@ -83,7 +83,7 @@
                     this.f2372rb = plusClientImpl;
                 }
 
-                /* JADX INFO: renamed from: cR */
+                
                 C1081fl m2330cR() {
                     return this.f2372rb;
                 }
@@ -92,12 +92,12 @@
                     this.f2372rb.clearDefaultAccount();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void connect() {
                     this.f2372rb.connect();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void disconnect() {
                     this.f2372rb.disconnect();
                 }
@@ -110,22 +110,22 @@
                     return this.f2372rb.getCurrentPerson();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnected() {
                     return this.f2372rb.isConnected();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnecting() {
                     return this.f2372rb.isConnecting();
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionCallbacksRegistered(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     return this.f2372rb.isConnectionCallbacksRegistered(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionFailedListenerRegistered(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     return this.f2372rb.isConnectionFailedListenerRegistered(listener);
                 }
@@ -154,12 +154,12 @@
                     this.f2372rb.loadVisiblePeople(listener, pageToken);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f2372rb.registerConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f2372rb.registerConnectionFailedListener(listener);
                 }
@@ -172,12 +172,12 @@
                     this.f2372rb.revokeAccessAndDisconnect(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     this.f2372rb.unregisterConnectionCallbacks(listener);
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     this.f2372rb.unregisterConnectionFailedListener(listener);
                 }

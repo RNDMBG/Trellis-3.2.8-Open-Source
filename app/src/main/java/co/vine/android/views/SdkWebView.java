@@ -5,26 +5,26 @@
             import android.util.AttributeSet;
             import android.webkit.WebView;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 13 */    public class SdkWebView extends WebView {
-/* 14 */        public SdkWebView(Context context) {
-/* 15 */            super(context);
-/* 16 */            init();
+            
+    public class SdkWebView extends WebView {
+        public SdkWebView(Context context) {
+            super(context);
+            init();
                 }
 
-/* 19 */        public SdkWebView(Context context, AttributeSet attrs) {
-/* 20 */            super(context, attrs);
-/* 21 */            init();
+        public SdkWebView(Context context, AttributeSet attrs) {
+            super(context, attrs);
+            init();
                 }
 
-/* 24 */        public SdkWebView(Context context, AttributeSet attrs, int defStyle) {
-/* 25 */            super(context, attrs, defStyle);
-/* 26 */            init();
+        public SdkWebView(Context context, AttributeSet attrs, int defStyle) {
+            super(context, attrs, defStyle);
+            init();
                 }
 
-/* 29 */        private void init() {
-/* 30 */            if (Build.VERSION.SDK_INT <= 14) {
-/* 31 */                setScrollBarStyle(0);
+        private void init() {
+            if (Build.VERSION.SDK_INT <= 14) {
+                setScrollBarStyle(0);
                     }
                 }
             }

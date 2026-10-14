@@ -12,11 +12,11 @@
             import android.widget.FrameLayout;
             import com.google.android.gms.common.GooglePlayServicesUtil;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public class PlusOneDummyView extends FrameLayout {
                 public static final String TAG = "PlusOneDummyView";
 
-                /* JADX INFO: renamed from: com.google.android.gms.plus.PlusOneDummyView$a */
+                
                 private static class C1198a implements InterfaceC1201d {
                     private Context mContext;
 
@@ -24,22 +24,22 @@
                         this.mContext = context;
                     }
 
-                    /* synthetic */ C1198a(Context context, Object c11971) {
+                     C1198a(Context context, Object c11971) {
                         this(context);
                     }
 
-                    @Override // com.google.android.gms.plus.PlusOneDummyView.InterfaceC1201d
+                    @Override 
                     public Drawable getDrawable(int size) {
                         return this.mContext.getResources().getDrawable(R.drawable.btn_default);
                     }
 
-                    @Override // com.google.android.gms.plus.PlusOneDummyView.InterfaceC1201d
+                    @Override 
                     public boolean isValid() {
                         return true;
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.plus.PlusOneDummyView$b */
+                
                 private static class C1199b implements InterfaceC1201d {
                     private Context mContext;
 
@@ -47,11 +47,11 @@
                         this.mContext = context;
                     }
 
-                    /* synthetic */ C1199b(Context context, Object c11971) {
+                     C1199b(Context context, Object c11971) {
                         this(context);
                     }
 
-                    @Override // com.google.android.gms.plus.PlusOneDummyView.InterfaceC1201d
+                    @Override 
                     public Drawable getDrawable(int size) {
                         String str;
                         try {
@@ -76,7 +76,7 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.plus.PlusOneDummyView.InterfaceC1201d
+                    @Override 
                     public boolean isValid() {
                         try {
                             this.mContext.createPackageContext(GooglePlayServicesUtil.GOOGLE_PLAY_SERVICES_PACKAGE, 4).getResources();
@@ -87,7 +87,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.plus.PlusOneDummyView$c */
+                
                 private static class C1200c implements InterfaceC1201d {
                     private Context mContext;
 
@@ -95,11 +95,11 @@
                         this.mContext = context;
                     }
 
-                    /* synthetic */ C1200c(Context context, Object c11971) {
+                     C1200c(Context context, Object c11971) {
                         this(context);
                     }
 
-                    @Override // com.google.android.gms.plus.PlusOneDummyView.InterfaceC1201d
+                    @Override 
                     public Drawable getDrawable(int size) {
                         String str;
                         switch (size) {
@@ -119,13 +119,13 @@
                         return this.mContext.getResources().getDrawable(this.mContext.getResources().getIdentifier(str, "drawable", this.mContext.getPackageName()));
                     }
 
-                    @Override // com.google.android.gms.plus.PlusOneDummyView.InterfaceC1201d
+                    @Override 
                     public boolean isValid() {
                         return (this.mContext.getResources().getIdentifier("ic_plusone_small_off_client", "drawable", this.mContext.getPackageName()) == 0 || this.mContext.getResources().getIdentifier("ic_plusone_medium_off_client", "drawable", this.mContext.getPackageName()) == 0 || this.mContext.getResources().getIdentifier("ic_plusone_tall_off_client", "drawable", this.mContext.getPackageName()) == 0 || this.mContext.getResources().getIdentifier("ic_plusone_standard_off_client", "drawable", this.mContext.getPackageName()) == 0) ? false : true;
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.plus.PlusOneDummyView$d */
+                
                 private interface InterfaceC1201d {
                     Drawable getDrawable(int i);
 
@@ -141,7 +141,7 @@
                     addView(button, new FrameLayout.LayoutParams(pointM2337ae.x, pointM2337ae.y, 17));
                 }
 
-                /* JADX INFO: renamed from: ae */
+                
                 private Point m2337ae(int i) {
                     int i2 = 24;
                     int i3 = 20;
@@ -169,7 +169,7 @@
                     return point;
                 }
 
-                /* JADX INFO: renamed from: cU */
+                
                 private InterfaceC1201d m2338cU() {
                     InterfaceC1201d c1199b = new C1199b(getContext(), null);
                     if (!c1199b.isValid()) {

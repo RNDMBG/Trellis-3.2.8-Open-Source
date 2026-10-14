@@ -3,7 +3,7 @@
             import android.content.Context;
             import com.googlecode.javacv.cpp.avcodec;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Deprecated
             public final class AdSize {
                 public static final int AUTO_HEIGHT = -2;
@@ -12,7 +12,7 @@
                 public static final int LARGE_AD_HEIGHT = 90;
                 public static final int PORTRAIT_AD_HEIGHT = 50;
 
-                /* JADX INFO: renamed from: c */
+                
                 private final com.google.android.gms.ads.AdSize f855c;
                 public static final AdSize SMART_BANNER = new AdSize(-1, -2, "mb");
                 public static final AdSize BANNER = new AdSize(320, 50, "mb");
@@ -40,7 +40,7 @@
                     return false;
                 }
 
-                /* JADX WARN: Code duplicated, block: B:16:0x003b  */
+                
                 public AdSize findBestSize(AdSize... options) {
                     float f;
                     AdSize adSize;

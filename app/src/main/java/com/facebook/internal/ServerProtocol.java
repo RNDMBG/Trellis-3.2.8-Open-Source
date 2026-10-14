@@ -2,7 +2,7 @@
 
             import java.util.Collection;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class ServerProtocol {
                 public static final String BATCHED_REST_METHOD_URL_BASE = "method/";
                 public static final String DIALOG_AUTHORITY = "m.facebook.com";

@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.d */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1210d implements Parcelable.Creator<FullWalletRequest> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2351a(FullWalletRequest fullWalletRequest, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, fullWalletRequest.getVersionCode());
@@ -18,7 +18,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: Q */
+                
                 public FullWalletRequest m2352Q(Parcel parcel) {
                     Cart cart = null;
                     int iM1111j = C0901a.m1111j(parcel);
@@ -51,18 +51,18 @@
                     return new FullWalletRequest(iM1105f, strM1113l2, strM1113l, cart);
                 }
 
-                /* JADX INFO: renamed from: av */
+                
                 public FullWalletRequest[] m2353av(int i) {
                     return new FullWalletRequest[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ FullWalletRequest createFromParcel(Parcel x0) {
+                @Override 
+                public  FullWalletRequest createFromParcel(Parcel x0) {
                     return m2352Q(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ FullWalletRequest[] newArray(int x0) {
+                @Override 
+                public  FullWalletRequest[] newArray(int x0) {
                     return m2353av(x0);
                 }
             }

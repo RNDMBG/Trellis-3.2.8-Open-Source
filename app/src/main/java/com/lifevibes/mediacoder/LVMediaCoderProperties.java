@@ -2,8 +2,8 @@
 
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 163 */   public class LVMediaCoderProperties {
+            
+   public class LVMediaCoderProperties {
                 public static final int AUDIO_CHANNEL_COUNT_1 = 1;
                 static final int AUDIO_CHANNEL_COUNT_2 = 2;
                 public static final int AUDIO_SAMPLE_RATE_11025 = 11025;
@@ -57,100 +57,100 @@
                 private static final ArrayList<Integer> SUPPORTED_FRAMERATES = new C12525();
                 private static final ArrayList<Integer> SUPPORTED_AUDIO_SAMPLERATES = new C12536();
 
-                /* JADX INFO: renamed from: com.lifevibes.mediacoder.LVMediaCoderProperties$1 */
-/* 164 */       static class C12481 extends ArrayList<Integer> {
+                
+       static class C12481 extends ArrayList<Integer> {
                     private static final long serialVersionUID = 1;
 
-/* 165 */           C12481() {
-/* 172 */               add(240);
-/* 173 */               add(320);
-/* 174 */               add(480);
-/* 175 */               add(640);
-/* 176 */               add(720);
+           C12481() {
+               add(240);
+               add(320);
+               add(480);
+               add(640);
+               add(720);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.lifevibes.mediacoder.LVMediaCoderProperties$2 */
-/* 181 */       static class C12492 extends ArrayList<Integer> {
+                
+       static class C12492 extends ArrayList<Integer> {
                     private static final long serialVersionUID = 1;
 
-/* 182 */           C12492() {
-/* 189 */               add(64000);
-/* 190 */               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_AUDIO_128K));
+           C12492() {
+               add(64000);
+               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_AUDIO_128K));
                     }
                 }
 
-                /* JADX INFO: renamed from: com.lifevibes.mediacoder.LVMediaCoderProperties$3 */
-/* 194 */       static class C12503 extends ArrayList<Integer> {
+                
+       static class C12503 extends ArrayList<Integer> {
                     private static final long serialVersionUID = 1;
 
-/* 195 */           C12503() {
-/* 202 */               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_512K));
-/* 203 */               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_1M));
-/* 204 */               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_2M));
-/* 205 */               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_3M));
-/* 206 */               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_5M));
-/* 207 */               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_8M));
+           C12503() {
+               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_512K));
+               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_1M));
+               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_2M));
+               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_3M));
+               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_5M));
+               add(Integer.valueOf(LVMediaCoderProperties.BITRATE_8M));
                     }
                 }
 
-                /* JADX INFO: renamed from: com.lifevibes.mediacoder.LVMediaCoderProperties$4 */
-/* 211 */       static class C12514 extends ArrayList<Integer> {
+                
+       static class C12514 extends ArrayList<Integer> {
                     private static final long serialVersionUID = 1;
 
-/* 212 */           C12514() {
-/* 219 */               add(1);
+           C12514() {
+               add(1);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.lifevibes.mediacoder.LVMediaCoderProperties$5 */
-/* 223 */       static class C12525 extends ArrayList<Integer> {
+                
+       static class C12525 extends ArrayList<Integer> {
                     private static final long serialVersionUID = 1;
 
-/* 224 */           C12525() {
-/* 231 */               add(15);
-/* 232 */               add(24);
-/* 233 */               add(25);
-/* 234 */               add(30);
+           C12525() {
+               add(15);
+               add(24);
+               add(25);
+               add(30);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.lifevibes.mediacoder.LVMediaCoderProperties$6 */
-/* 238 */       static class C12536 extends ArrayList<Integer> {
+                
+       static class C12536 extends ArrayList<Integer> {
                     private static final long serialVersionUID = 1;
 
-/* 239 */           C12536() {
-/* 246 */               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_48000));
-/* 247 */               add(44100);
-/* 248 */               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_32000));
-/* 249 */               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_22050));
-/* 250 */               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_16000));
-/* 251 */               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_11025));
-/* 252 */               add(8000);
+           C12536() {
+               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_48000));
+               add(44100);
+               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_32000));
+               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_22050));
+               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_16000));
+               add(Integer.valueOf(LVMediaCoderProperties.AUDIO_SAMPLE_RATE_11025));
+               add(8000);
                     }
                 }
 
-/* 265 */       public static ArrayList<Integer> getSupportedHeightAndWidth() {
-/* 266 */           return SUPPORTED_HEIGHT_WIDTH;
+       public static ArrayList<Integer> getSupportedHeightAndWidth() {
+           return SUPPORTED_HEIGHT_WIDTH;
                 }
 
-/* 272 */       public static ArrayList<Integer> getSupportedAudioBitrates() {
-/* 273 */           return SUPPORTED_AUDIO_BITRATES;
+       public static ArrayList<Integer> getSupportedAudioBitrates() {
+           return SUPPORTED_AUDIO_BITRATES;
                 }
 
-/* 279 */       public static ArrayList<Integer> getSupportedVideoBitrates() {
-/* 280 */           return SUPPORTED_VIDEO_BITRATES;
+       public static ArrayList<Integer> getSupportedVideoBitrates() {
+           return SUPPORTED_VIDEO_BITRATES;
                 }
 
-/* 286 */       public static ArrayList<Integer> getSupportedChannelCounts() {
-/* 287 */           return SUPPORTED_AUDIO_CHANNELCOUNTS;
+       public static ArrayList<Integer> getSupportedChannelCounts() {
+           return SUPPORTED_AUDIO_CHANNELCOUNTS;
                 }
 
-/* 293 */       public static ArrayList<Integer> getSupportedSampleRates() {
-/* 294 */           return SUPPORTED_AUDIO_SAMPLERATES;
+       public static ArrayList<Integer> getSupportedSampleRates() {
+           return SUPPORTED_AUDIO_SAMPLERATES;
                 }
 
-/* 300 */       public static ArrayList<Integer> getSupportedFrameRates() {
-/* 301 */           return SUPPORTED_FRAMERATES;
+       public static ArrayList<Integer> getSupportedFrameRates() {
+           return SUPPORTED_FRAMERATES;
                 }
             }

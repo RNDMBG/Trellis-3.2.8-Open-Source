@@ -7,45 +7,45 @@
             import com.google.android.gms.internal.C1028dm;
             import com.google.android.gms.maps.internal.C1174r;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class GroundOverlayOptions implements SafeParcelable {
                 public static final GroundOverlayOptionsCreator CREATOR = new GroundOverlayOptionsCreator();
                 public static final float NO_DIMENSION = -1.0f;
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2299iM;
 
-                /* JADX INFO: renamed from: qd */
+                
                 private float f2300qd;
 
-                /* JADX INFO: renamed from: qk */
+                
                 private float f2301qk;
 
-                /* JADX INFO: renamed from: ql */
+                
                 private boolean f2302ql;
 
-                /* JADX INFO: renamed from: qn */
+                
                 private BitmapDescriptor f2303qn;
 
-                /* JADX INFO: renamed from: qo */
+                
                 private LatLng f2304qo;
 
-                /* JADX INFO: renamed from: qp */
+                
                 private float f2305qp;
 
-                /* JADX INFO: renamed from: qq */
+                
                 private float f2306qq;
 
-                /* JADX INFO: renamed from: qr */
+                
                 private LatLngBounds f2307qr;
 
-                /* JADX INFO: renamed from: qs */
+                
                 private float f2308qs;
 
-                /* JADX INFO: renamed from: qt */
+                
                 private float f2309qt;
 
-                /* JADX INFO: renamed from: qu */
+                
                 private float f2310qu;
 
                 public GroundOverlayOptions() {
@@ -75,7 +75,7 @@
                     this.f2310qu = anchorV;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private GroundOverlayOptions m2271a(LatLng latLng, float f, float f2) {
                     this.f2304qo = latLng;
                     this.f2305qp = f;
@@ -94,12 +94,12 @@
                     return this;
                 }
 
-                /* JADX INFO: renamed from: cM */
+                
                 IBinder m2272cM() {
                     return this.f2303qn.m2266cs().asBinder();
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -189,7 +189,7 @@
                     return this;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     if (C1174r.m2265cK()) {
                         C1179c.m2297a(this, out, flags);

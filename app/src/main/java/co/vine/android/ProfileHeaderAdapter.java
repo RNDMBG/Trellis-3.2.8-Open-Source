@@ -34,8 +34,8 @@
             import co.vine.android.widget.TypefacesTextView;
             import java.util.HashMap;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 43 */    public class ProfileHeaderAdapter extends BaseAdapter implements ViewPager.OnPageChangeListener {
+            
+    public class ProfileHeaderAdapter extends BaseAdapter implements ViewPager.OnPageChangeListener {
                 private static final int FOLLOWING = 2;
                 private static final int FOLLOW_REQUESTED = 3;
                 private static final int NOT_FOLLOWING = 1;
@@ -63,435 +63,435 @@
                 private int mTabSelectedColor;
                 private VineUser mUser;
 
-/* 44 */        static /* synthetic */ PagerMainViewHolder access$102(ProfileHeaderAdapter x0, PagerMainViewHolder x1) {
-/* 45 */            x0.mHolderPagerMain = x1;
+        static  PagerMainViewHolder access$102(ProfileHeaderAdapter x0, PagerMainViewHolder x1) {
+            x0.mHolderPagerMain = x1;
                     return x1;
                 }
 
-/* 44 */        static /* synthetic */ VineUser access$200(ProfileHeaderAdapter x0) {
-/* 45 */            return x0.mUser;
+        static  VineUser access$200(ProfileHeaderAdapter x0) {
+            return x0.mUser;
                 }
 
-/* 44 */        static /* synthetic */ PagerDetailsViewHolder access$302(ProfileHeaderAdapter x0, PagerDetailsViewHolder x1) {
-/* 45 */            x0.mHolderPagerDetails = x1;
+        static  PagerDetailsViewHolder access$302(ProfileHeaderAdapter x0, PagerDetailsViewHolder x1) {
+            x0.mHolderPagerDetails = x1;
                     return x1;
                 }
 
-/* 44 */        static /* synthetic */ void access$400(ProfileHeaderAdapter x0) {
-/* 45 */            x0.invalidateDetailHeight();
+        static  void access$400(ProfileHeaderAdapter x0) {
+            x0.invalidateDetailHeight();
                 }
 
-/* 79 */        public ProfileHeaderAdapter(Context context, AppController appController, ProfileFragment fragment, boolean locked, boolean blocked, String followEventSource, boolean hideProfileReposts, boolean showActionsContainer) {
-/* 81 */            this.mContext = context;
-/* 82 */            this.mListener = fragment;
-/* 83 */            this.mAppController = appController;
-/* 84 */            this.mFragment = fragment;
-/* 85 */            this.mLocked = locked;
-/* 86 */            this.mBlocked = blocked;
-/* 87 */            this.mFollowEventSource = followEventSource;
-/* 89 */            Resources res = context.getResources();
-/* 90 */            this.mNumberUnSelectedColor = res.getColor(C0257R.color.black_thirty_five_percent);
-/* 92 */            this.mBold = new TypefacesSpan(null, Typefaces.get(this.mContext).getContentTypeface(1, 4));
-/* 94 */            this.mRegular = new TypefacesSpan(null, Typefaces.get(this.mContext).getContentTypeface(0, 2));
-/* 97 */            this.mShowActionsContainer = showActionsContainer;
-/* 98 */            this.mCurrentTab = 0;
+        public ProfileHeaderAdapter(Context context, AppController appController, ProfileFragment fragment, boolean locked, boolean blocked, String followEventSource, boolean hideProfileReposts, boolean showActionsContainer) {
+            this.mContext = context;
+            this.mListener = fragment;
+            this.mAppController = appController;
+            this.mFragment = fragment;
+            this.mLocked = locked;
+            this.mBlocked = blocked;
+            this.mFollowEventSource = followEventSource;
+            Resources res = context.getResources();
+            this.mNumberUnSelectedColor = res.getColor(C0257R.color.black_thirty_five_percent);
+            this.mBold = new TypefacesSpan(null, Typefaces.get(this.mContext).getContentTypeface(1, 4));
+            this.mRegular = new TypefacesSpan(null, Typefaces.get(this.mContext).getContentTypeface(0, 2));
+            this.mShowActionsContainer = showActionsContainer;
+            this.mCurrentTab = 0;
                 }
 
-                @Override // android.widget.Adapter
-/* 102 */       public int getCount() {
-/* 103 */           return 1;
+                @Override 
+       public int getCount() {
+           return 1;
                 }
 
-                @Override // android.widget.Adapter
-/* 107 */       public Object getItem(int i) {
-/* 108 */           return null;
+                @Override 
+       public Object getItem(int i) {
+           return null;
                 }
 
-                @Override // android.widget.Adapter
-/* 112 */       public long getItemId(int i) {
-/* 113 */           return 0L;
+                @Override 
+       public long getItemId(int i) {
+           return 0L;
                 }
 
-                @Override // android.widget.Adapter
-/* 117 */       public View getView(int i, View convertView, ViewGroup root) {
-/* 118 */           if (convertView == null) {
-/* 119 */               convertView = LayoutInflater.from(this.mContext).inflate(C0257R.layout.profile_header, root, false);
-/* 121 */               this.mHolder = new ProfileViewHolder(convertView);
-/* 122 */               this.mHolder.pager.setAdapter(new ProfileViewPagerAdapter(this, null));
-/* 123 */               this.mHolder.pager.setOnPageChangeListener(this);
-/* 126 */               this.mHolder.progress.setVisibility(0);
-/* 127 */               this.mHolder.dots.setFinalIcon(false);
-/* 128 */                               this.mHolder.dots.setNumberOfDots(2);
+                @Override 
+       public View getView(int i, View convertView, ViewGroup root) {
+           if (convertView == null) {
+               convertView = LayoutInflater.from(this.mContext).inflate(C0257R.layout.profile_header, root, false);
+               this.mHolder = new ProfileViewHolder(convertView);
+               this.mHolder.pager.setAdapter(new ProfileViewPagerAdapter(this, null));
+               this.mHolder.pager.setOnPageChangeListener(this);
+               this.mHolder.progress.setVisibility(0);
+               this.mHolder.dots.setFinalIcon(false);
+                               this.mHolder.dots.setNumberOfDots(2);
                 this.mHolder.dots.setDotPadding(this.mContext.getResources().getDimensionPixelOffset(C0257R.dimen.profile_dot_padding));
-/* 130 */               this.mHolder.dropDownHolder.revineParent.setOnClickListener(this.mFragment);
-/* 132 */               this.mHolder.profileActions.setVisibility(this.mShowActionsContainer ? 0 : 8);
-/* 134 */               if (this.mUser != null) {
-/* 135 */                   bindUser(this.mUser);
+               this.mHolder.dropDownHolder.revineParent.setOnClickListener(this.mFragment);
+               this.mHolder.profileActions.setVisibility(this.mShowActionsContainer ? 0 : 8);
+               if (this.mUser != null) {
+                   bindUser(this.mUser);
                         }
                     }
-/* 138 */           return convertView;
+           return convertView;
                 }
 
-/* 141 */       public void bindUser(VineUser profileUser) {
-/* 142 */           if (this.mHolder != null && this.mHolderPagerMain != null && this.mHolderPagerDetails != null) {
-/* 143 */               this.mUser = profileUser;
-/* 144 */               ProfileViewHolder holder = this.mHolder;
-/* 145 */               PagerMainViewHolder holderMain = this.mHolderPagerMain;
-/* 146 */               PagerDetailsViewHolder holderDetails = this.mHolderPagerDetails;
-/* 147 */               Resources res = this.mContext.getResources();
-/* 148 */               if (TextUtils.isEmpty(profileUser.avatarUrl) || Util.isDefaultAvatarUrl(profileUser.avatarUrl)) {
-/* 150 */                   setImage(null);
+       public void bindUser(VineUser profileUser) {
+           if (this.mHolder != null && this.mHolderPagerMain != null && this.mHolderPagerDetails != null) {
+               this.mUser = profileUser;
+               ProfileViewHolder holder = this.mHolder;
+               PagerMainViewHolder holderMain = this.mHolderPagerMain;
+               PagerDetailsViewHolder holderDetails = this.mHolderPagerDetails;
+               Resources res = this.mContext.getResources();
+               if (TextUtils.isEmpty(profileUser.avatarUrl) || Util.isDefaultAvatarUrl(profileUser.avatarUrl)) {
+                   setImage(null);
                         } else {
-/* 152 */                   holderMain.userImageKey = new ImageKey(profileUser.avatarUrl, true);
-/* 153 */                   setImage(this.mAppController.getPhotoBitmap(holderMain.userImageKey));
+                   holderMain.userImageKey = new ImageKey(profileUser.avatarUrl, true);
+                   setImage(this.mAppController.getPhotoBitmap(holderMain.userImageKey));
                         }
-/* 155 */               holderMain.imageView.setOnClickListener(this.mListener);
-/* 156 */               holderMain.imageView.setOnLongClickListener((View.OnLongClickListener) this.mListener);
-/* 157 */               holderMain.username.setText(profileUser.username);
-/* 159 */               if (profileUser.profileBackground > 0) {
-/* 160 */                   holder.profileBackground.setBackgroundColor(profileUser.profileBackground | (-16777216));
+               holderMain.imageView.setOnClickListener(this.mListener);
+               holderMain.imageView.setOnLongClickListener((View.OnLongClickListener) this.mListener);
+               holderMain.username.setText(profileUser.username);
+               if (profileUser.profileBackground > 0) {
+                   holder.profileBackground.setBackgroundColor(profileUser.profileBackground | (-16777216));
                         }
-/* 164 */               int tabSelectedColor = profileUser.profileBackground;
-/* 165 */               if (tabSelectedColor == Settings.DEFAULT_PROFILE_COLOR || tabSelectedColor <= 0) {
-/* 166 */                   tabSelectedColor = this.mContext.getResources().getColor(C0257R.color.vine_green);
+               int tabSelectedColor = profileUser.profileBackground;
+               if (tabSelectedColor == Settings.DEFAULT_PROFILE_COLOR || tabSelectedColor <= 0) {
+                   tabSelectedColor = this.mContext.getResources().getColor(C0257R.color.vine_green);
                         }
-/* 170 */               this.mTabSelectedColor = tabSelectedColor | (-16777216);
-/* 172 */               holder.profileTabArrowImage.setColorFilter(new PorterDuffColorFilter(1275068416, PorterDuff.Mode.SRC_IN));
-/* 174 */               if (!TextUtils.isEmpty(profileUser.description)) {
-/* 175 */                   holderDetails.description.setText(profileUser.description);
-/* 176 */                   holderDetails.description.setVisibility(0);
+               this.mTabSelectedColor = tabSelectedColor | (-16777216);
+               holder.profileTabArrowImage.setColorFilter(new PorterDuffColorFilter(1275068416, PorterDuff.Mode.SRC_IN));
+               if (!TextUtils.isEmpty(profileUser.description)) {
+                   holderDetails.description.setText(profileUser.description);
+                   holderDetails.description.setVisibility(0);
                         } else {
-/* 178 */                   holderDetails.description.setVisibility(8);
+                   holderDetails.description.setVisibility(8);
                         }
-/* 181 */               if (!TextUtils.isEmpty(profileUser.location)) {
-/* 182 */                   holderDetails.location.setText(profileUser.location);
-/* 183 */                   holderDetails.location.setVisibility(0);
+               if (!TextUtils.isEmpty(profileUser.location)) {
+                   holderDetails.location.setText(profileUser.location);
+                   holderDetails.location.setVisibility(0);
                         } else {
-/* 185 */                   holderDetails.location.setVisibility(8);
+                   holderDetails.location.setVisibility(8);
                         }
-/* 187 */               holder.userId = profileUser.userId;
-/* 189 */               if (profileUser.isVerified()) {
-/* 190 */                   holderMain.verified.setVisibility(0);
+               holder.userId = profileUser.userId;
+               if (profileUser.isVerified()) {
+                   holderMain.verified.setVisibility(0);
                         } else {
-/* 192 */                   holderMain.verified.setVisibility(8);
+                   holderMain.verified.setVisibility(8);
                         }
-/* 195 */               if (this.mBlocked || this.mAppController.getActiveId() == profileUser.userId) {
-/* 196 */                   holder.messageButton.setVisibility(8);
+               if (this.mBlocked || this.mAppController.getActiveId() == profileUser.userId) {
+                   holder.messageButton.setVisibility(8);
                         } else {
-/* 198 */                   holder.messageButton.setVisibility(0);
-/* 199 */                   holder.messageButton.setOnClickListener(this.mListener);
-/* 200 */                   setupMessageButton(holder.messageButton, profileUser);
+                   holder.messageButton.setVisibility(0);
+                   holder.messageButton.setOnClickListener(this.mListener);
+                   setupMessageButton(holder.messageButton, profileUser);
                         }
-/* 203 */               Button button = holder.follow;
-/* 204 */               if (this.mBlocked || this.mAppController.getActiveId() == profileUser.userId) {
-/* 205 */                   button.setVisibility(8);
+               Button button = holder.follow;
+               if (this.mBlocked || this.mAppController.getActiveId() == profileUser.userId) {
+                   button.setVisibility(8);
                         } else {
-/* 207 */                   button.setVisibility(0);
-/* 208 */                   setupFollowButton(button, profileUser);
-/* 209 */                   button.setOnClickListener(this.mListener);
+                   button.setVisibility(0);
+                   setupFollowButton(button, profileUser);
+                   button.setOnClickListener(this.mListener);
                         }
-/* 212 */               Button settings = holder.settings;
+               Button settings = holder.settings;
                         if (this.mAppController.getActiveId() == profileUser.userId) {
-/* 214 */                   settings.setVisibility(0);
-/* 215 */                   settings.setOnClickListener(this.mListener);
+                   settings.setVisibility(0);
+                   settings.setOnClickListener(this.mListener);
                         } else {
-/* 217 */                   settings.setVisibility(8);
+                   settings.setVisibility(8);
                         }
-/* 220 */               if (this.mLocked) {
-/* 221 */                   holder.postsParent.setVisibility(8);
-/* 222 */                   holder.likesParent.setVisibility(8);
-/* 223 */                   holderDetails.userLoopCount.setVisibility(8);
-/* 224 */                   holder.profileTabArrow.setVisibility(8);
+               if (this.mLocked) {
+                   holder.postsParent.setVisibility(8);
+                   holder.likesParent.setVisibility(8);
+                   holderDetails.userLoopCount.setVisibility(8);
+                   holder.profileTabArrow.setVisibility(8);
                         } else {
-/* 226 */                   holder.postsParent.setVisibility(0);
-/* 227 */                   holder.likesParent.setVisibility(0);
-/* 228 */                   holderDetails.userLoopCount.setVisibility(0);
-/* 229 */                   holder.profileTabArrow.setVisibility(this.mCurrentTab == 0 ? 0 : 8);
-/* 230 */                   holder.likesParent.setOnClickListener(this.mListener);
-/* 231 */                   holder.postsParent.setOnClickListener(this.mListener);
+                   holder.postsParent.setVisibility(0);
+                   holder.likesParent.setVisibility(0);
+                   holderDetails.userLoopCount.setVisibility(0);
+                   holder.profileTabArrow.setVisibility(this.mCurrentTab == 0 ? 0 : 8);
+                   holder.likesParent.setOnClickListener(this.mListener);
+                   holder.postsParent.setOnClickListener(this.mListener);
                             if (profileUser.loopCount > 2147483647L) {
-/* 235 */                       profileUser.loopCount = 2147483647L;
+                       profileUser.loopCount = 2147483647L;
                             }
-/* 238 */                   holderDetails.userLoopCount.setText(res.getQuantityString(C0257R.plurals.profile_loops, (int) profileUser.loopCount, Util.numberFormat(res, profileUser.loopCount, false)));
-/* 241 */                   invalidateCountAndTabColor(1, profileUser.likeCount, res, C0257R.plurals.profile_likes, holder.likesLabel);
-/* 242 */                   invalidateCountAndTabColor(0, profileUser.postCount, res, C0257R.plurals.profile_posts, holder.postsLabel);
+                   holderDetails.userLoopCount.setText(res.getQuantityString(C0257R.plurals.profile_loops, (int) profileUser.loopCount, Util.numberFormat(res, profileUser.loopCount, false)));
+                   invalidateCountAndTabColor(1, profileUser.likeCount, res, C0257R.plurals.profile_likes, holder.likesLabel);
+                   invalidateCountAndTabColor(0, profileUser.postCount, res, C0257R.plurals.profile_posts, holder.postsLabel);
                         }
-/* 244 */               holderMain.imageFrame.setVisibility(0);
-/* 245 */               holder.progress.setVisibility(8);
-/* 246 */               holder.profileTabArrow.setOnClickListener(this.mListener);
-/* 248 */               invalidateCount(profileUser.followerCount, res, C0257R.plurals.profile_followers, holderMain.followers);
-/* 249 */               invalidateCount(profileUser.followingCount, res, C0257R.plurals.profile_following, holderMain.following);
-/* 251 */               holderMain.followers.setOnClickListener(this.mListener);
-/* 252 */               holderMain.following.setOnClickListener(this.mListener);
+               holderMain.imageFrame.setVisibility(0);
+               holder.progress.setVisibility(8);
+               holder.profileTabArrow.setOnClickListener(this.mListener);
+               invalidateCount(profileUser.followerCount, res, C0257R.plurals.profile_followers, holderMain.followers);
+               invalidateCount(profileUser.followingCount, res, C0257R.plurals.profile_following, holderMain.following);
+               holderMain.followers.setOnClickListener(this.mListener);
+               holderMain.following.setOnClickListener(this.mListener);
                     }
-/* 255 */           invalidateDetailHeight();
-/* 257 */           this.mUser = profileUser;
+           invalidateDetailHeight();
+           this.mUser = profileUser;
                 }
 
-/* 260 */       private void invalidateDetailHeight() {
+       private void invalidateDetailHeight() {
                     View parent;
-/* 261 */           if (this.mHolderPagerDetails != null && (parent = this.mHolderPagerDetails.parent) != null) {
-/* 264 */               int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-/* 265 */               int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(SystemUtil.getDisplaySize(this.mContext).x, 1073741824);
-/* 266 */               parent.measure(widthMeasureSpec, heightMeasureSpec);
-/* 267 */               this.mDetailPageHeight = parent.getMeasuredHeight();
-/* 268 */               if (this.mMainPageHeight <= 0) {
-/* 269 */                   this.mMainPageHeight = this.mHolder.pager.getHeight();
+           if (this.mHolderPagerDetails != null && (parent = this.mHolderPagerDetails.parent) != null) {
+               int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+               int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(SystemUtil.getDisplaySize(this.mContext).x, 1073741824);
+               parent.measure(widthMeasureSpec, heightMeasureSpec);
+               this.mDetailPageHeight = parent.getMeasuredHeight();
+               if (this.mMainPageHeight <= 0) {
+                   this.mMainPageHeight = this.mHolder.pager.getHeight();
                         }
                     }
                 }
 
-/* 275 */       private void invalidateCountAndTabColor(int tab, int count, Resources res, int resId, TypefacesTextView labelView) {
-/* 276 */           invalidateCount(count, res, resId, labelView);
-/* 277 */           invalidateTabColor(tab, labelView);
+       private void invalidateCountAndTabColor(int tab, int count, Resources res, int resId, TypefacesTextView labelView) {
+           invalidateCount(count, res, resId, labelView);
+           invalidateTabColor(tab, labelView);
                 }
 
-/* 280 */       private void invalidateCount(int count, Resources res, int resId, TypefacesTextView labelView) {
-/* 281 */           String text = res.getQuantityString(resId, count, Util.numberFormat(res, count));
-/* 282 */           SpannableStringBuilder builder = new SpannableStringBuilder(text);
-/* 284 */           int start = text.indexOf(34);
-/* 285 */           int end = text.indexOf(34, start + 1);
-/* 287 */           Util.safeSetSpan(builder, this.mBold, start, end, 33);
-/* 288 */           Util.safeSetSpan(builder, this.mRegular, end, text.length(), 33);
-/* 290 */           builder.delete(start, start + 1);
-/* 291 */           builder.delete(end - 1, end);
-/* 293 */           labelView.setText(builder);
+       private void invalidateCount(int count, Resources res, int resId, TypefacesTextView labelView) {
+           String text = res.getQuantityString(resId, count, Util.numberFormat(res, count));
+           SpannableStringBuilder builder = new SpannableStringBuilder(text);
+           int start = text.indexOf(34);
+           int end = text.indexOf(34, start + 1);
+           Util.safeSetSpan(builder, this.mBold, start, end, 33);
+           Util.safeSetSpan(builder, this.mRegular, end, text.length(), 33);
+           builder.delete(start, start + 1);
+           builder.delete(end - 1, end);
+           labelView.setText(builder);
                 }
 
-/* 296 */       private void invalidateTabColor(int tab, TextView numberView) {
-/* 297 */           if (this.mCurrentTab == tab) {
-/* 298 */               numberView.setTextColor(this.mTabSelectedColor);
+       private void invalidateTabColor(int tab, TextView numberView) {
+           if (this.mCurrentTab == tab) {
+               numberView.setTextColor(this.mTabSelectedColor);
                     } else {
-/* 300 */               numberView.setTextColor(this.mNumberUnSelectedColor);
+               numberView.setTextColor(this.mNumberUnSelectedColor);
                     }
                 }
 
-/* 304 */       public void updatePostCount(int count, int tabToUpdate) {
-/* 305 */           ProfileViewHolder holder = this.mHolder;
-/* 306 */           Resources res = this.mContext.getResources();
-/* 307 */           if (res != null && holder != null) {
-/* 308 */               if (tabToUpdate == 0) {
-/* 309 */                   invalidateCountAndTabColor(0, count, res, C0257R.plurals.profile_posts, holder.postsLabel);
-/* 311 */                   invalidateTabColor(1, holder.likesLabel);
+       public void updatePostCount(int count, int tabToUpdate) {
+           ProfileViewHolder holder = this.mHolder;
+           Resources res = this.mContext.getResources();
+           if (res != null && holder != null) {
+               if (tabToUpdate == 0) {
+                   invalidateCountAndTabColor(0, count, res, C0257R.plurals.profile_posts, holder.postsLabel);
+                   invalidateTabColor(1, holder.likesLabel);
                         } else {
-/* 313 */                   invalidateCountAndTabColor(1, count, res, C0257R.plurals.profile_likes, holder.likesLabel);
-/* 315 */                   invalidateTabColor(0, holder.postsLabel);
+                   invalidateCountAndTabColor(1, count, res, C0257R.plurals.profile_likes, holder.likesLabel);
+                   invalidateTabColor(0, holder.postsLabel);
                         }
                     }
                 }
 
-/* 320 */       private void setupMessageButton(Button messageButton, VineUser profileUser) {
-/* 321 */           int color = profileUser.profileBackground;
-/* 322 */           if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-/* 323 */               color = 16777215 & this.mContext.getResources().getColor(C0257R.color.vine_green);
+       private void setupMessageButton(Button messageButton, VineUser profileUser) {
+           int color = profileUser.profileBackground;
+           if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
+               color = 16777215 & this.mContext.getResources().getColor(C0257R.color.vine_green);
                     }
-/* 325 */           messageButton.setTextColor((-16777216) | color);
-/* 326 */           Resources res = this.mContext.getResources();
-/* 327 */           ViewUtil.fillColor(res, 1023410176 | color, C0257R.drawable.btn_profile, messageButton);
+           messageButton.setTextColor((-16777216) | color);
+           Resources res = this.mContext.getResources();
+           ViewUtil.fillColor(res, 1023410176 | color, C0257R.drawable.btn_profile, messageButton);
                 }
 
-/* 330 */       private void setupFollowButton(Button followButton, VineUser user) {
-/* 331 */           int color = user.profileBackground;
-/* 332 */           if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-/* 333 */               color = this.mContext.getResources().getColor(C0257R.color.vine_green);
+       private void setupFollowButton(Button followButton, VineUser user) {
+           int color = user.profileBackground;
+           if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
+               color = this.mContext.getResources().getColor(C0257R.color.vine_green);
                     }
-/* 335 */           int color2 = color | (-16777216);
-/* 337 */           if (user.hasFollowRequested()) {
-/* 338 */               this.mFollowState = 3;
+           int color2 = color | (-16777216);
+           if (user.hasFollowRequested()) {
+               this.mFollowState = 3;
                     } else if (user.isFollowing()) {
-/* 340 */               this.mFollowState = 2;
+               this.mFollowState = 2;
                     } else if (this.mAppController.getActiveId() != user.userId) {
-/* 342 */               this.mFollowState = 1;
+               this.mFollowState = 1;
                     }
-/* 345 */           followButton.setActivated(this.mFollowState == 2);
-/* 347 */           Resources res = this.mContext.getResources();
-/* 348 */           if (this.mFollowState == 2) {
-/* 349 */               followButton.setTextColor(res.getColor(C0257R.color.solid_white));
-/* 350 */               followButton.setText(res.getString(C0257R.string.following));
+           followButton.setActivated(this.mFollowState == 2);
+           Resources res = this.mContext.getResources();
+           if (this.mFollowState == 2) {
+               followButton.setTextColor(res.getColor(C0257R.color.solid_white));
+               followButton.setText(res.getString(C0257R.string.following));
                     } else if (this.mFollowState == 1) {
-/* 352 */               followButton.setTextColor(color2 | (-16777216));
-/* 353 */               followButton.setText(res.getString(C0257R.string.follow));
+               followButton.setTextColor(color2 | (-16777216));
+               followButton.setText(res.getString(C0257R.string.follow));
                     }
-/* 356 */           if (this.mFollowState != 3) {
-/* 357 */               ViewUtil.fillColor(res, color2, C0257R.drawable.follow_button, followButton);
-/* 358 */               followButton.setPadding(0, 0, 0, 0);
-/* 366 */               return;
+           if (this.mFollowState != 3) {
+               ViewUtil.fillColor(res, color2, C0257R.drawable.follow_button, followButton);
+               followButton.setPadding(0, 0, 0, 0);
+               return;
                     }
-/* 360 */           int gray = res.getColor(C0257R.color.solid_dark_gray);
-/* 361 */           ViewUtil.fillColor(res, gray, C0257R.drawable.follow_button, followButton);
-/* 362 */           followButton.setTextColor(gray);
-/* 363 */           followButton.setText(res.getString(C0257R.string.follow_requested));
-/* 364 */           followButton.setPadding(res.getDimensionPixelSize(C0257R.dimen.standard_spacing), 0, 0, 0);
+           int gray = res.getColor(C0257R.color.solid_dark_gray);
+           ViewUtil.fillColor(res, gray, C0257R.drawable.follow_button, followButton);
+           followButton.setTextColor(gray);
+           followButton.setText(res.getString(C0257R.string.follow_requested));
+           followButton.setPadding(res.getDimensionPixelSize(C0257R.dimen.standard_spacing), 0, 0, 0);
                 }
 
-/* 368 */       public void onProfileHeaderLongClick(View view) {
-/* 369 */           if (view.getId() == C0257R.id.user_image && this.mUser != null && this.mUser.userId == this.mAppController.getActiveId()) {
-/* 371 */               FlurryUtils.trackProfileImageClick(true);
-/* 372 */               view.performHapticFeedback(0);
-/* 373 */               ImageActivity.start(this.mContext, this.mUser.avatarUrl, C0257R.string.sign_up_profile_photo);
+       public void onProfileHeaderLongClick(View view) {
+           if (view.getId() == C0257R.id.user_image && this.mUser != null && this.mUser.userId == this.mAppController.getActiveId()) {
+               FlurryUtils.trackProfileImageClick(true);
+               view.performHapticFeedback(0);
+               ImageActivity.start(this.mContext, this.mUser.avatarUrl, C0257R.string.sign_up_profile_photo);
                     }
                 }
 
-/* 378 */       public void onProfileHeaderClick(View view, ProfileFragment fragment, VineUser user) {
-/* 379 */           Context context = this.mContext;
-/* 380 */           int id = view.getId();
-/* 381 */           if (id == C0257R.id.settings) {
-/* 382 */               FlurryUtils.trackVisitFindFriends("Profile");
-/* 383 */               Intent intent = new Intent(context, (Class<?>) SettingsActivity.class);
-/* 384 */               context.startActivity(intent);
-/* 421 */               return;
+       public void onProfileHeaderClick(View view, ProfileFragment fragment, VineUser user) {
+           Context context = this.mContext;
+           int id = view.getId();
+           if (id == C0257R.id.settings) {
+               FlurryUtils.trackVisitFindFriends("Profile");
+               Intent intent = new Intent(context, (Class<?>) SettingsActivity.class);
+               context.startActivity(intent);
+               return;
                     }
-/* 385 */           if (id == C0257R.id.profile_follow) {
-/* 386 */               if (this.mFollowState == 2) {
-/* 387 */                   fragment.addRequest(this.mAppController.unfollowUser(this.mAppController.getActiveSession(), this.mHolder.userId, true));
-/* 389 */                   user.following = 0;
-/* 390 */                   setupFollowButton(this.mHolder.follow, user);
-/* 391 */                   FlurryUtils.trackFollow(this.mFollowEventSource);
-/* 421 */                   return;
+           if (id == C0257R.id.profile_follow) {
+               if (this.mFollowState == 2) {
+                   fragment.addRequest(this.mAppController.unfollowUser(this.mAppController.getActiveSession(), this.mHolder.userId, true));
+                   user.following = 0;
+                   setupFollowButton(this.mHolder.follow, user);
+                   FlurryUtils.trackFollow(this.mFollowEventSource);
+                   return;
                         }
-/* 392 */               if (this.mFollowState == 1) {
-/* 393 */                   if (user.isPrivate()) {
-/* 394 */                       user.followStatus |= 2;
+               if (this.mFollowState == 1) {
+                   if (user.isPrivate()) {
+                       user.followStatus |= 2;
                             } else {
-/* 396 */                       user.following = 1;
-/* 397 */                       user.repostsEnabled = 1;
+                       user.following = 1;
+                       user.repostsEnabled = 1;
                             }
-/* 399 */                   setupFollowButton(this.mHolder.follow, user);
-/* 400 */                   fragment.addRequest(this.mAppController.followUser(this.mAppController.getActiveSession(), this.mHolder.userId, true));
-/* 421 */                   return;
+                   setupFollowButton(this.mHolder.follow, user);
+                   fragment.addRequest(this.mAppController.followUser(this.mAppController.getActiveSession(), this.mHolder.userId, true));
+                   return;
                         }
-/* 402 */               if (this.mFollowState == 3) {
+               if (this.mFollowState == 3) {
                         }
-/* 421 */               return;
+               return;
                     }
-/* 405 */           if (id == C0257R.id.likesParent || id == C0257R.id.postsParent) {
-/* 406 */               if (this.mFragment.getActivity() instanceof HomeTabActivity) {
-/* 407 */                   ((HomeTabActivity) this.mFragment.getActivity()).resetNav();
+           if (id == C0257R.id.likesParent || id == C0257R.id.postsParent) {
+               if (this.mFragment.getActivity() instanceof HomeTabActivity) {
+                   ((HomeTabActivity) this.mFragment.getActivity()).resetNav();
                         }
-/* 409 */               changeSelectedTab(view.getId());
+               changeSelectedTab(view.getId());
                     } else {
-/* 410 */               if (id != C0257R.id.user_image || this.mUser == null) {
-/* 421 */                   return;
+               if (id != C0257R.id.user_image || this.mUser == null) {
+                   return;
                         }
                         if (this.mUser.userId == this.mAppController.getActiveId()) {
-/* 413 */                   FlurryUtils.trackVisitSettings("Profile");
-/* 414 */                   context.startActivity(new Intent(context, (Class<?>) SettingsActivity.class));
+                   FlurryUtils.trackVisitSettings("Profile");
+                   context.startActivity(new Intent(context, (Class<?>) SettingsActivity.class));
                         } else {
-/* 416 */                   FlurryUtils.trackProfileImageClick(false);
-/* 417 */                   ImageActivity.start(context, this.mUser.avatarUrl, C0257R.string.sign_up_profile_photo);
+                   FlurryUtils.trackProfileImageClick(false);
+                   ImageActivity.start(context, this.mUser.avatarUrl, C0257R.string.sign_up_profile_photo);
                         }
                     }
                 }
 
-/* 423 */       public void changeSelectedTab(int tabId) {
-/* 424 */           if (this.mHolder != null) {
-/* 427 */               if (tabId == C0257R.id.postsParent) {
-/* 428 */                   this.mCurrentTab = 0;
-/* 429 */                   this.mFragment.changeMode(1);
+       public void changeSelectedTab(int tabId) {
+           if (this.mHolder != null) {
+               if (tabId == C0257R.id.postsParent) {
+                   this.mCurrentTab = 0;
+                   this.mFragment.changeMode(1);
                         } else if (tabId == C0257R.id.likesParent) {
-/* 431 */                   this.mCurrentTab = 1;
-/* 432 */                   this.mFragment.changeMode(2);
+                   this.mCurrentTab = 1;
+                   this.mFragment.changeMode(2);
                         }
-/* 434 */               invalidateTabColor(0, this.mHolder.postsLabel);
-/* 435 */               invalidateTabColor(1, this.mHolder.likesLabel);
-/* 436 */               this.mHolder.profileTabArrow.setVisibility(this.mCurrentTab != 0 ? 8 : 0);
+               invalidateTabColor(0, this.mHolder.postsLabel);
+               invalidateTabColor(1, this.mHolder.likesLabel);
+               this.mHolder.profileTabArrow.setVisibility(this.mCurrentTab != 0 ? 8 : 0);
                     }
                 }
 
-/* 439 */       public void onImageLoaded(HashMap<ImageKey, UrlImage> images) {
+       public void onImageLoaded(HashMap<ImageKey, UrlImage> images) {
                     UrlImage urlImage;
-/* 440 */           if (this.mHolderPagerMain != null && this.mHolderPagerMain.userImageKey != null && (urlImage = images.get(this.mHolderPagerMain.userImageKey)) != null) {
-/* 444 */               setImage(urlImage.bitmap);
+           if (this.mHolderPagerMain != null && this.mHolderPagerMain.userImageKey != null && (urlImage = images.get(this.mHolderPagerMain.userImageKey)) != null) {
+               setImage(urlImage.bitmap);
                     }
                 }
 
-/* 450 */       private void setImage(Bitmap bmp) {
-/* 451 */           if (bmp == null) {
-/* 452 */               this.mHolderPagerMain.imageView.setImageResource(C0257R.drawable.avatar_large);
-/* 453 */               if (this.mUser != null && this.mUser.userId == this.mAppController.getActiveId()) {
-/* 454 */                   this.mHolderPagerMain.imageAction.setVisibility(0);
-/* 462 */                   return;
+       private void setImage(Bitmap bmp) {
+           if (bmp == null) {
+               this.mHolderPagerMain.imageView.setImageResource(C0257R.drawable.avatar_large);
+               if (this.mUser != null && this.mUser.userId == this.mAppController.getActiveId()) {
+                   this.mHolderPagerMain.imageAction.setVisibility(0);
+                   return;
                         } else {
-/* 456 */                   this.mHolderPagerMain.imageAction.setVisibility(8);
-/* 462 */                   return;
+                   this.mHolderPagerMain.imageAction.setVisibility(8);
+                   return;
                         }
                     }
-/* 459 */           this.mHolderPagerMain.imageAction.setVisibility(8);
-/* 460 */           this.mHolderPagerMain.imageView.setImageDrawable(new RecyclableBitmapDrawable(this.mHolderPagerMain.imageView.getResources(), bmp));
+           this.mHolderPagerMain.imageAction.setVisibility(8);
+           this.mHolderPagerMain.imageView.setImageDrawable(new RecyclableBitmapDrawable(this.mHolderPagerMain.imageView.getResources(), bmp));
                 }
 
-                @Override // android.support.v4.view.ViewPager.OnPageChangeListener
-/* 465 */       public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                @Override 
+       public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                     if (positionOffset > 0.0f && this.mMainPageHeight > 0 && this.mDetailPageHeight > this.mMainPageHeight) {
-/* 467 */               int delta = this.mDetailPageHeight - this.mMainPageHeight;
-/* 468 */               ViewGroup.LayoutParams param = this.mHolder.pager.getLayoutParams();
-/* 469 */               param.height = (int) (this.mMainPageHeight + (delta * positionOffset));
-/* 470 */               this.mHolder.pager.setLayoutParams(param);
+               int delta = this.mDetailPageHeight - this.mMainPageHeight;
+               ViewGroup.LayoutParams param = this.mHolder.pager.getLayoutParams();
+               param.height = (int) (this.mMainPageHeight + (delta * positionOffset));
+               this.mHolder.pager.setLayoutParams(param);
                     }
                 }
 
-                @Override // android.support.v4.view.ViewPager.OnPageChangeListener
-/* 475 */       public void onPageSelected(int i) {
-/* 476 */           if (this.mHolder != null && this.mHolder.dots != null) {
-/* 477 */               this.mHolder.dots.setActiveDot(i);
+                @Override 
+       public void onPageSelected(int i) {
+           if (this.mHolder != null && this.mHolder.dots != null) {
+               this.mHolder.dots.setActiveDot(i);
                     }
                 }
 
-                @Override // android.support.v4.view.ViewPager.OnPageChangeListener
-/* 483 */       public void onPageScrollStateChanged(int i) {
+                @Override 
+       public void onPageScrollStateChanged(int i) {
                 }
 
-/* 484 */       private class ProfileViewPagerAdapter extends PagerAdapter {
+       private class ProfileViewPagerAdapter extends PagerAdapter {
                     public static final int PAGER_COUNT = 2;
                     public static final int PAGER_INDEX_DETAILS = 1;
                     public static final int PAGER_INDEX_MAIN = 0;
 
-/* 485 */           private ProfileViewPagerAdapter() {
+           private ProfileViewPagerAdapter() {
                     }
 
-/* 485 */           /* synthetic */ ProfileViewPagerAdapter(ProfileHeaderAdapter x0, Object x1) {
-/* 486 */               this();
+            ProfileViewPagerAdapter(ProfileHeaderAdapter x0, Object x1) {
+               this();
                     }
 
-                    @Override // android.support.v4.view.PagerAdapter
-/* 493 */           public int getCount() {
-/* 494 */               return 2;
+                    @Override 
+           public int getCount() {
+               return 2;
                     }
 
-                    @Override // android.support.v4.view.PagerAdapter
-/* 498 */           public Object instantiateItem(ViewGroup container, int position) {
-/* 499 */               LayoutInflater inflater = (LayoutInflater) container.getContext().getSystemService("layout_inflater");
+                    @Override 
+           public Object instantiateItem(ViewGroup container, int position) {
+               LayoutInflater inflater = (LayoutInflater) container.getContext().getSystemService("layout_inflater");
                         switch (position) {
                             case 0:
-/* 503 */                       View v = inflater.inflate(C0257R.layout.profile_header_pager_main, container, false);
-/* 504 */                       ProfileHeaderAdapter.access$102(ProfileHeaderAdapter.this, new PagerMainViewHolder(v));
-/* 505 */                       container.addView(v);
-/* 506 */                       if (ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this) == null) {
+                       View v = inflater.inflate(C0257R.layout.profile_header_pager_main, container, false);
+                       ProfileHeaderAdapter.access$102(ProfileHeaderAdapter.this, new PagerMainViewHolder(v));
+                       container.addView(v);
+                       if (ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this) == null) {
                                     return v;
                                 }
-/* 507 */                       ProfileHeaderAdapter.this.bindUser(ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this));
+                       ProfileHeaderAdapter.this.bindUser(ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this));
                                 return v;
                             case 1:
-/* 512 */                       View v2 = inflater.inflate(C0257R.layout.profile_header_pager_details, container, false);
-/* 513 */                       ProfileHeaderAdapter.access$302(ProfileHeaderAdapter.this, new PagerDetailsViewHolder(v2));
-/* 514 */                       container.addView(v2);
-/* 515 */                       if (ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this) != null) {
-/* 516 */                           ProfileHeaderAdapter.this.bindUser(ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this));
+                       View v2 = inflater.inflate(C0257R.layout.profile_header_pager_details, container, false);
+                       ProfileHeaderAdapter.access$302(ProfileHeaderAdapter.this, new PagerDetailsViewHolder(v2));
+                       container.addView(v2);
+                       if (ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this) != null) {
+                           ProfileHeaderAdapter.this.bindUser(ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this));
                                 }
-/* 519 */                       ProfileHeaderAdapter.access$400(ProfileHeaderAdapter.this);
+                       ProfileHeaderAdapter.access$400(ProfileHeaderAdapter.this);
                                 return v2;
                             default:
-/* 523 */                       return null;
+                       return null;
                         }
                     }
 
-                    @Override // android.support.v4.view.PagerAdapter
-/* 527 */           public boolean isViewFromObject(View view, Object o) {
+                    @Override 
+           public boolean isViewFromObject(View view, Object o) {
                         return view == o;
                     }
                 }
 
-/* 543 */       static class PagerMainViewHolder {
+       static class PagerMainViewHolder {
                     public final TypefacesTextView followers;
                     public final TypefacesTextView following;
                     public ImageView imageAction;
@@ -501,32 +501,32 @@
                     public TextView username;
                     public ImageView verified;
 
-/* 544 */           public PagerMainViewHolder(View v) {
-/* 546 */               this.imageFrame = (ImageView) v.findViewById(C0257R.id.user_image_frame);
-/* 547 */               this.username = (TextView) v.findViewById(C0257R.id.username);
-/* 548 */               this.verified = (ImageView) v.findViewById(C0257R.id.profile_verified);
-/* 549 */               this.imageView = (ImageView) v.findViewById(C0257R.id.user_image);
-/* 550 */               this.imageAction = (ImageView) v.findViewById(C0257R.id.user_image_action);
-/* 551 */               this.followers = (TypefacesTextView) v.findViewById(C0257R.id.followers);
-/* 552 */               this.following = (TypefacesTextView) v.findViewById(C0257R.id.following);
+           public PagerMainViewHolder(View v) {
+               this.imageFrame = (ImageView) v.findViewById(C0257R.id.user_image_frame);
+               this.username = (TextView) v.findViewById(C0257R.id.username);
+               this.verified = (ImageView) v.findViewById(C0257R.id.profile_verified);
+               this.imageView = (ImageView) v.findViewById(C0257R.id.user_image);
+               this.imageAction = (ImageView) v.findViewById(C0257R.id.user_image_action);
+               this.followers = (TypefacesTextView) v.findViewById(C0257R.id.followers);
+               this.following = (TypefacesTextView) v.findViewById(C0257R.id.following);
                     }
                 }
 
-/* 563 */       static class PagerDetailsViewHolder {
+       static class PagerDetailsViewHolder {
                     public TextView description;
                     public TextView location;
                     public View parent;
                     public TextView userLoopCount;
 
-/* 564 */           public PagerDetailsViewHolder(View v) {
-/* 566 */               this.parent = v.findViewById(C0257R.id.measurableParent);
-/* 567 */               this.location = (TextView) v.findViewById(C0257R.id.location);
-/* 568 */               this.description = (TextView) v.findViewById(C0257R.id.description);
-/* 569 */               this.userLoopCount = (TextView) v.findViewById(C0257R.id.userLoopCount);
+           public PagerDetailsViewHolder(View v) {
+               this.parent = v.findViewById(C0257R.id.measurableParent);
+               this.location = (TextView) v.findViewById(C0257R.id.location);
+               this.description = (TextView) v.findViewById(C0257R.id.description);
+               this.userLoopCount = (TextView) v.findViewById(C0257R.id.userLoopCount);
                     }
                 }
 
-/* 590 */       static class ProfileViewHolder {
+       static class ProfileViewHolder {
                     public final DotIndicators dots;
                     public final DropdownHolder dropDownHolder;
                     public final Button follow;
@@ -544,42 +544,42 @@
                     public final Button settings;
                     public long userId;
 
-/* 591 */           public ProfileViewHolder(View v) {
-/* 593 */               this.pager = (ViewPager) v.findViewById(C0257R.id.pager);
-/* 594 */               this.profileBackground = (RelativeLayout) v.findViewById(C0257R.id.profile_content_outer);
-/* 595 */               this.follow = (Button) v.findViewById(C0257R.id.profile_follow);
-/* 596 */               this.settings = (Button) v.findViewById(C0257R.id.settings);
-/* 597 */               this.messageButton = (Button) v.findViewById(C0257R.id.message_button);
-/* 598 */               this.postsParent = v.findViewById(C0257R.id.postsParent);
-/* 599 */               this.postsLabel = (TypefacesTextView) v.findViewById(C0257R.id.postsLabel);
-/* 600 */               this.likesParent = v.findViewById(C0257R.id.likesParent);
-/* 601 */               this.likesLabel = (TypefacesTextView) v.findViewById(C0257R.id.likesLabel);
-/* 602 */               this.progress = (ProgressBar) v.findViewById(C0257R.id.profile_progress);
-/* 603 */               this.profileTabArrow = (ViewGroup) v.findViewById(C0257R.id.posts_dropdown);
-/* 604 */               this.profileTabArrowImage = (ImageView) v.findViewById(C0257R.id.profile_arrow_image);
-/* 605 */               this.dots = (DotIndicators) v.findViewById(C0257R.id.dots);
-/* 606 */               this.profileActions = (ViewGroup) v.findViewById(C0257R.id.profile_actions_container);
-/* 607 */               View dropDown = v.findViewById(C0257R.id.postsLikeDropDown);
-/* 608 */               this.dropDownHolder = new DropdownHolder(dropDown);
-/* 609 */               dropDown.setTag(this.dropDownHolder);
+           public ProfileViewHolder(View v) {
+               this.pager = (ViewPager) v.findViewById(C0257R.id.pager);
+               this.profileBackground = (RelativeLayout) v.findViewById(C0257R.id.profile_content_outer);
+               this.follow = (Button) v.findViewById(C0257R.id.profile_follow);
+               this.settings = (Button) v.findViewById(C0257R.id.settings);
+               this.messageButton = (Button) v.findViewById(C0257R.id.message_button);
+               this.postsParent = v.findViewById(C0257R.id.postsParent);
+               this.postsLabel = (TypefacesTextView) v.findViewById(C0257R.id.postsLabel);
+               this.likesParent = v.findViewById(C0257R.id.likesParent);
+               this.likesLabel = (TypefacesTextView) v.findViewById(C0257R.id.likesLabel);
+               this.progress = (ProgressBar) v.findViewById(C0257R.id.profile_progress);
+               this.profileTabArrow = (ViewGroup) v.findViewById(C0257R.id.posts_dropdown);
+               this.profileTabArrowImage = (ImageView) v.findViewById(C0257R.id.profile_arrow_image);
+               this.dots = (DotIndicators) v.findViewById(C0257R.id.dots);
+               this.profileActions = (ViewGroup) v.findViewById(C0257R.id.profile_actions_container);
+               View dropDown = v.findViewById(C0257R.id.postsLikeDropDown);
+               this.dropDownHolder = new DropdownHolder(dropDown);
+               dropDown.setTag(this.dropDownHolder);
                     }
                 }
 
-/* 616 */       public static class DropdownHolder {
+       public static class DropdownHolder {
                     public final ImageView revineIcon;
                     public final TextView revineLabel;
                     public final View revineParent;
 
-/* 617 */           public DropdownHolder(View v) {
-/* 619 */               this.revineParent = v.findViewById(C0257R.id.postsDropDownHideRevine);
-/* 620 */               this.revineLabel = (TextView) v.findViewById(C0257R.id.postsDropDownHideRevineLabel);
-/* 621 */               this.revineIcon = (ImageView) v.findViewById(C0257R.id.postsDropDownHideRevineIcon);
+           public DropdownHolder(View v) {
+               this.revineParent = v.findViewById(C0257R.id.postsDropDownHideRevine);
+               this.revineLabel = (TextView) v.findViewById(C0257R.id.postsDropDownHideRevineLabel);
+               this.revineIcon = (ImageView) v.findViewById(C0257R.id.postsDropDownHideRevineIcon);
                     }
                 }
 
-/* 625 */       public void updateFollowButtonState(VineUser user) {
-/* 626 */           if (this.mHolder != null) {
-/* 627 */               setupFollowButton(this.mHolder.follow, user);
+       public void updateFollowButtonState(VineUser user) {
+           if (this.mHolder != null) {
+               setupFollowButton(this.mHolder.follow, user);
                     }
                 }
             }

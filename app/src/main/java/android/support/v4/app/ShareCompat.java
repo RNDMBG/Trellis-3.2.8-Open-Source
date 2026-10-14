@@ -15,8 +15,8 @@
             import android.view.MenuItem;
             import java.util.ArrayList;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 56 */    public class ShareCompat {
+            
+    public class ShareCompat {
                 public static final String EXTRA_CALLING_ACTIVITY = "android.support.v4.app.EXTRA_CALLING_ACTIVITY";
                 public static final String EXTRA_CALLING_PACKAGE = "android.support.v4.app.EXTRA_CALLING_PACKAGE";
                 private static ShareCompatImpl IMPL;
@@ -27,123 +27,123 @@
                     String escapeHtml(CharSequence charSequence);
                 }
 
-/* 57 */        static /* synthetic */ ShareCompatImpl access$000() {
-/* 58 */            return IMPL;
+        static  ShareCompatImpl access$000() {
+            return IMPL;
                 }
 
-/* 83 */        static class ShareCompatImplBase implements ShareCompatImpl {
-/* 84 */            ShareCompatImplBase() {
+        static class ShareCompatImplBase implements ShareCompatImpl {
+            ShareCompatImplBase() {
                     }
 
-                    @Override // android.support.v4.app.ShareCompat.ShareCompatImpl
-/* 86 */            public void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
-/* 87 */                item.setIntent(shareIntent.createChooserIntent());
+                    @Override 
+            public void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
+                item.setIntent(shareIntent.createChooserIntent());
                     }
 
-                    @Override // android.support.v4.app.ShareCompat.ShareCompatImpl
-/* 90 */            public String escapeHtml(CharSequence text) {
-/* 91 */                StringBuilder out = new StringBuilder();
-/* 92 */                withinStyle(out, text, 0, text.length());
-/* 93 */                return out.toString();
+                    @Override 
+            public String escapeHtml(CharSequence text) {
+                StringBuilder out = new StringBuilder();
+                withinStyle(out, text, 0, text.length());
+                return out.toString();
                     }
 
-/* 97 */            private static void withinStyle(StringBuilder out, CharSequence text, int start, int end) {
-/* 98 */                int i = start;
+            private static void withinStyle(StringBuilder out, CharSequence text, int start, int end) {
+                int i = start;
                         while (i < end) {
-/* 99 */                    char c = text.charAt(i);
-/* 101 */                   if (c == '<') {
-/* 102 */                       out.append("&lt;");
+                    char c = text.charAt(i);
+                   if (c == '<') {
+                       out.append("&lt;");
                             } else if (c == '>') {
-/* 104 */                       out.append("&gt;");
+                       out.append("&gt;");
                             } else if (c == '&') {
-/* 106 */                       out.append("&amp;");
+                       out.append("&amp;");
                             } else if (c > '~' || c < ' ') {
-/* 108 */                       out.append("&#" + ((int) c) + ";");
+                       out.append("&#" + ((int) c) + ";");
                             } else if (c == ' ') {
-/* 110 */                       while (i + 1 < end && text.charAt(i + 1) == ' ') {
-/* 111 */                           out.append("&nbsp;");
-/* 112 */                           i++;
+                       while (i + 1 < end && text.charAt(i + 1) == ' ') {
+                           out.append("&nbsp;");
+                           i++;
                                 }
-/* 115 */                       out.append(' ');
+                       out.append(' ');
                             } else {
-/* 117 */                       out.append(c);
+                       out.append(c);
                             }
-/* 98 */                    i++;
+                    i++;
                         }
                     }
                 }
 
-/* 121 */       static class ShareCompatImplICS extends ShareCompatImplBase {
-/* 122 */           ShareCompatImplICS() {
+       static class ShareCompatImplICS extends ShareCompatImplBase {
+           ShareCompatImplICS() {
                     }
 
-                    @Override // android.support.v4.app.ShareCompat.ShareCompatImplBase, android.support.v4.app.ShareCompat.ShareCompatImpl
-/* 124 */           public void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
-/* 125 */               ShareCompatICS.configureMenuItem(item, shareIntent.getActivity(), shareIntent.getIntent());
-/* 127 */               if (shouldAddChooserIntent(item)) {
-/* 128 */                   item.setIntent(shareIntent.createChooserIntent());
+                    @Override 
+           public void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
+               ShareCompatICS.configureMenuItem(item, shareIntent.getActivity(), shareIntent.getIntent());
+               if (shouldAddChooserIntent(item)) {
+                   item.setIntent(shareIntent.createChooserIntent());
                         }
                     }
 
-/* 132 */           boolean shouldAddChooserIntent(MenuItem item) {
+           boolean shouldAddChooserIntent(MenuItem item) {
                         return !item.hasSubMenu();
                     }
                 }
 
-/* 135 */       static class ShareCompatImplJB extends ShareCompatImplICS {
-/* 136 */           ShareCompatImplJB() {
+       static class ShareCompatImplJB extends ShareCompatImplICS {
+           ShareCompatImplJB() {
                     }
 
-                    @Override // android.support.v4.app.ShareCompat.ShareCompatImplBase, android.support.v4.app.ShareCompat.ShareCompatImpl
-/* 138 */           public String escapeHtml(CharSequence html) {
-/* 139 */               return ShareCompatJB.escapeHtml(html);
+                    @Override 
+           public String escapeHtml(CharSequence html) {
+               return ShareCompatJB.escapeHtml(html);
                     }
 
-                    @Override // android.support.v4.app.ShareCompat.ShareCompatImplICS
-/* 143 */           boolean shouldAddChooserIntent(MenuItem item) {
-/* 144 */               return false;
+                    @Override 
+           boolean shouldAddChooserIntent(MenuItem item) {
+               return false;
                     }
                 }
 
                 static {
-/* 151 */           if (Build.VERSION.SDK_INT >= 16) {
-/* 152 */               IMPL = new ShareCompatImplJB();
+           if (Build.VERSION.SDK_INT >= 16) {
+               IMPL = new ShareCompatImplJB();
                     } else if (Build.VERSION.SDK_INT >= 14) {
-/* 154 */               IMPL = new ShareCompatImplICS();
+               IMPL = new ShareCompatImplICS();
                     } else {
-/* 156 */               IMPL = new ShareCompatImplBase();
+               IMPL = new ShareCompatImplBase();
                     }
                 }
 
-/* 172 */       public static String getCallingPackage(Activity calledActivity) {
-/* 173 */           String result = calledActivity.getCallingPackage();
-/* 174 */           if (result == null) {
-/* 175 */               return calledActivity.getIntent().getStringExtra(EXTRA_CALLING_PACKAGE);
+       public static String getCallingPackage(Activity calledActivity) {
+           String result = calledActivity.getCallingPackage();
+           if (result == null) {
+               return calledActivity.getIntent().getStringExtra(EXTRA_CALLING_PACKAGE);
                     }
-/* 177 */           return result;
+           return result;
                 }
 
-/* 192 */       public static ComponentName getCallingActivity(Activity calledActivity) {
-/* 193 */           ComponentName result = calledActivity.getCallingActivity();
-/* 194 */           if (result == null) {
-/* 195 */               return (ComponentName) calledActivity.getIntent().getParcelableExtra(EXTRA_CALLING_ACTIVITY);
+       public static ComponentName getCallingActivity(Activity calledActivity) {
+           ComponentName result = calledActivity.getCallingActivity();
+           if (result == null) {
+               return (ComponentName) calledActivity.getIntent().getParcelableExtra(EXTRA_CALLING_ACTIVITY);
                     }
-/* 197 */           return result;
+           return result;
                 }
 
-/* 231 */       public static void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
-/* 232 */           IMPL.configureMenuItem(item, shareIntent);
+       public static void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
+           IMPL.configureMenuItem(item, shareIntent);
                 }
 
-/* 243 */       public static void configureMenuItem(Menu menu, int menuItemId, IntentBuilder shareIntent) {
-/* 244 */           MenuItem item = menu.findItem(menuItemId);
-/* 245 */           if (item == null) {
-/* 246 */               throw new IllegalArgumentException("Could not find menu item with id " + menuItemId + " in the supplied menu");
+       public static void configureMenuItem(Menu menu, int menuItemId, IntentBuilder shareIntent) {
+           MenuItem item = menu.findItem(menuItemId);
+           if (item == null) {
+               throw new IllegalArgumentException("Could not find menu item with id " + menuItemId + " in the supplied menu");
                     }
-/* 249 */           configureMenuItem(item, shareIntent);
+           configureMenuItem(item, shareIntent);
                 }
 
-/* 273 */       public static class IntentBuilder {
+       public static class IntentBuilder {
                     private Activity mActivity;
                     private ArrayList<String> mBccAddresses;
                     private ArrayList<String> mCcAddresses;
@@ -152,203 +152,203 @@
                     private ArrayList<Uri> mStreams;
                     private ArrayList<String> mToAddresses;
 
-/* 274 */           public static IntentBuilder from(Activity launchingActivity) {
-/* 275 */               return new IntentBuilder(launchingActivity);
+           public static IntentBuilder from(Activity launchingActivity) {
+               return new IntentBuilder(launchingActivity);
                     }
 
-/* 277 */           private IntentBuilder(Activity launchingActivity) {
-/* 279 */               this.mActivity = launchingActivity;
-/* 281 */               this.mIntent.putExtra(ShareCompat.EXTRA_CALLING_PACKAGE, launchingActivity.getPackageName());
-/* 282 */               this.mIntent.putExtra(ShareCompat.EXTRA_CALLING_ACTIVITY, launchingActivity.getComponentName());
-/* 283 */               this.mIntent.addFlags(524288);
+           private IntentBuilder(Activity launchingActivity) {
+               this.mActivity = launchingActivity;
+               this.mIntent.putExtra(ShareCompat.EXTRA_CALLING_PACKAGE, launchingActivity.getPackageName());
+               this.mIntent.putExtra(ShareCompat.EXTRA_CALLING_ACTIVITY, launchingActivity.getComponentName());
+               this.mIntent.addFlags(524288);
                     }
 
-/* 295 */           public Intent getIntent() {
-/* 296 */               if (this.mToAddresses != null) {
-/* 297 */                   combineArrayExtra("android.intent.extra.EMAIL", this.mToAddresses);
-/* 298 */                   this.mToAddresses = null;
+           public Intent getIntent() {
+               if (this.mToAddresses != null) {
+                   combineArrayExtra("android.intent.extra.EMAIL", this.mToAddresses);
+                   this.mToAddresses = null;
                         }
-/* 300 */               if (this.mCcAddresses != null) {
-/* 301 */                   combineArrayExtra("android.intent.extra.CC", this.mCcAddresses);
-/* 302 */                   this.mCcAddresses = null;
+               if (this.mCcAddresses != null) {
+                   combineArrayExtra("android.intent.extra.CC", this.mCcAddresses);
+                   this.mCcAddresses = null;
                         }
-/* 304 */               if (this.mBccAddresses != null) {
-/* 305 */                   combineArrayExtra("android.intent.extra.BCC", this.mBccAddresses);
-/* 306 */                   this.mBccAddresses = null;
+               if (this.mBccAddresses != null) {
+                   combineArrayExtra("android.intent.extra.BCC", this.mBccAddresses);
+                   this.mBccAddresses = null;
                         }
-/* 310 */               boolean needsSendMultiple = this.mStreams != null && this.mStreams.size() > 1;
-/* 311 */               boolean isSendMultiple = this.mIntent.getAction().equals("android.intent.action.SEND_MULTIPLE");
-/* 313 */               if (!needsSendMultiple && isSendMultiple) {
-/* 316 */                   this.mIntent.setAction("android.intent.action.SEND");
-/* 317 */                   if (this.mStreams != null && !this.mStreams.isEmpty()) {
-/* 318 */                       this.mIntent.putExtra("android.intent.extra.STREAM", this.mStreams.get(0));
+               boolean needsSendMultiple = this.mStreams != null && this.mStreams.size() > 1;
+               boolean isSendMultiple = this.mIntent.getAction().equals("android.intent.action.SEND_MULTIPLE");
+               if (!needsSendMultiple && isSendMultiple) {
+                   this.mIntent.setAction("android.intent.action.SEND");
+                   if (this.mStreams != null && !this.mStreams.isEmpty()) {
+                       this.mIntent.putExtra("android.intent.extra.STREAM", this.mStreams.get(0));
                             } else {
-/* 320 */                       this.mIntent.removeExtra("android.intent.extra.STREAM");
+                       this.mIntent.removeExtra("android.intent.extra.STREAM");
                             }
-/* 322 */                   this.mStreams = null;
+                   this.mStreams = null;
                         }
-/* 325 */               if (needsSendMultiple && !isSendMultiple) {
-/* 328 */                   this.mIntent.setAction("android.intent.action.SEND_MULTIPLE");
-/* 329 */                   if (this.mStreams != null && !this.mStreams.isEmpty()) {
-/* 330 */                       this.mIntent.putParcelableArrayListExtra("android.intent.extra.STREAM", this.mStreams);
+               if (needsSendMultiple && !isSendMultiple) {
+                   this.mIntent.setAction("android.intent.action.SEND_MULTIPLE");
+                   if (this.mStreams != null && !this.mStreams.isEmpty()) {
+                       this.mIntent.putParcelableArrayListExtra("android.intent.extra.STREAM", this.mStreams);
                             } else {
-/* 332 */                       this.mIntent.removeExtra("android.intent.extra.STREAM");
+                       this.mIntent.removeExtra("android.intent.extra.STREAM");
                             }
                         }
-/* 336 */               return this.mIntent;
+               return this.mIntent;
                     }
 
-/* 339 */           Activity getActivity() {
-/* 340 */               return this.mActivity;
+           Activity getActivity() {
+               return this.mActivity;
                     }
 
-/* 343 */           private void combineArrayExtra(String extra, ArrayList<String> add) {
-/* 344 */               String[] currentAddresses = this.mIntent.getStringArrayExtra(extra);
-/* 345 */               int currentLength = currentAddresses != null ? currentAddresses.length : 0;
-/* 346 */               String[] finalAddresses = new String[add.size() + currentLength];
-/* 347 */               add.toArray(finalAddresses);
-/* 348 */               if (currentAddresses != null) {
-/* 349 */                   System.arraycopy(currentAddresses, 0, finalAddresses, add.size(), currentLength);
+           private void combineArrayExtra(String extra, ArrayList<String> add) {
+               String[] currentAddresses = this.mIntent.getStringArrayExtra(extra);
+               int currentLength = currentAddresses != null ? currentAddresses.length : 0;
+               String[] finalAddresses = new String[add.size() + currentLength];
+               add.toArray(finalAddresses);
+               if (currentAddresses != null) {
+                   System.arraycopy(currentAddresses, 0, finalAddresses, add.size(), currentLength);
                         }
-/* 351 */               this.mIntent.putExtra(extra, finalAddresses);
+               this.mIntent.putExtra(extra, finalAddresses);
                     }
 
-/* 355 */           private void combineArrayExtra(String extra, String[] add) {
-/* 356 */               Intent intent = getIntent();
-/* 357 */               String[] old = intent.getStringArrayExtra(extra);
-/* 358 */               int oldLength = old != null ? old.length : 0;
-/* 359 */               String[] result = new String[add.length + oldLength];
-/* 360 */               if (old != null) {
+           private void combineArrayExtra(String extra, String[] add) {
+               Intent intent = getIntent();
+               String[] old = intent.getStringArrayExtra(extra);
+               int oldLength = old != null ? old.length : 0;
+               String[] result = new String[add.length + oldLength];
+               if (old != null) {
                             System.arraycopy(old, 0, result, 0, oldLength);
                         }
-/* 361 */               System.arraycopy(add, 0, result, oldLength, add.length);
-/* 362 */               intent.putExtra(extra, result);
+               System.arraycopy(add, 0, result, oldLength, add.length);
+               intent.putExtra(extra, result);
                     }
 
-/* 372 */           public Intent createChooserIntent() {
-/* 373 */               return Intent.createChooser(getIntent(), this.mChooserTitle);
+           public Intent createChooserIntent() {
+               return Intent.createChooser(getIntent(), this.mChooserTitle);
                     }
 
-/* 385 */           public void startChooser() {
-/* 386 */               this.mActivity.startActivity(createChooserIntent());
+           public void startChooser() {
+               this.mActivity.startActivity(createChooserIntent());
                     }
 
-/* 395 */           public IntentBuilder setChooserTitle(CharSequence title) {
-/* 396 */               this.mChooserTitle = title;
-/* 397 */               return this;
+           public IntentBuilder setChooserTitle(CharSequence title) {
+               this.mChooserTitle = title;
+               return this;
                     }
 
-/* 406 */           public IntentBuilder setChooserTitle(int resId) {
-/* 407 */               return setChooserTitle(this.mActivity.getText(resId));
+           public IntentBuilder setChooserTitle(int resId) {
+               return setChooserTitle(this.mActivity.getText(resId));
                     }
 
-/* 417 */           public IntentBuilder setType(String mimeType) {
-/* 418 */               this.mIntent.setType(mimeType);
-/* 419 */               return this;
+           public IntentBuilder setType(String mimeType) {
+               this.mIntent.setType(mimeType);
+               return this;
                     }
 
-/* 430 */           public IntentBuilder setText(CharSequence text) {
-/* 431 */               this.mIntent.putExtra("android.intent.extra.TEXT", text);
-/* 432 */               return this;
+           public IntentBuilder setText(CharSequence text) {
+               this.mIntent.putExtra("android.intent.extra.TEXT", text);
+               return this;
                     }
 
-/* 446 */           public IntentBuilder setHtmlText(String htmlText) {
-/* 447 */               this.mIntent.putExtra(IntentCompat.EXTRA_HTML_TEXT, htmlText);
-/* 448 */               if (!this.mIntent.hasExtra("android.intent.extra.TEXT")) {
-/* 450 */                   setText(Html.fromHtml(htmlText));
+           public IntentBuilder setHtmlText(String htmlText) {
+               this.mIntent.putExtra(IntentCompat.EXTRA_HTML_TEXT, htmlText);
+               if (!this.mIntent.hasExtra("android.intent.extra.TEXT")) {
+                   setText(Html.fromHtml(htmlText));
                         }
-/* 452 */               return this;
+               return this;
                     }
 
-/* 465 */           public IntentBuilder setStream(Uri streamUri) {
-/* 466 */               if (!this.mIntent.getAction().equals("android.intent.action.SEND")) {
-/* 467 */                   this.mIntent.setAction("android.intent.action.SEND");
+           public IntentBuilder setStream(Uri streamUri) {
+               if (!this.mIntent.getAction().equals("android.intent.action.SEND")) {
+                   this.mIntent.setAction("android.intent.action.SEND");
                         }
-/* 469 */               this.mStreams = null;
-/* 470 */               this.mIntent.putExtra("android.intent.extra.STREAM", streamUri);
-/* 471 */               return this;
+               this.mStreams = null;
+               this.mIntent.putExtra("android.intent.extra.STREAM", streamUri);
+               return this;
                     }
 
-/* 485 */           public IntentBuilder addStream(Uri streamUri) {
-/* 486 */               Uri currentStream = (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
-/* 487 */               if (currentStream == null) {
-/* 488 */                   return setStream(streamUri);
+           public IntentBuilder addStream(Uri streamUri) {
+               Uri currentStream = (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
+               if (currentStream == null) {
+                   return setStream(streamUri);
                         }
-/* 490 */               if (this.mStreams == null) {
-/* 491 */                   this.mStreams = new ArrayList<>();
+               if (this.mStreams == null) {
+                   this.mStreams = new ArrayList<>();
                         }
-/* 493 */               if (currentStream != null) {
-/* 494 */                   this.mIntent.removeExtra("android.intent.extra.STREAM");
-/* 495 */                   this.mStreams.add(currentStream);
+               if (currentStream != null) {
+                   this.mIntent.removeExtra("android.intent.extra.STREAM");
+                   this.mStreams.add(currentStream);
                         }
-/* 497 */               this.mStreams.add(streamUri);
-/* 498 */               return this;
+               this.mStreams.add(streamUri);
+               return this;
                     }
 
-/* 509 */           public IntentBuilder setEmailTo(String[] addresses) {
-/* 510 */               if (this.mToAddresses != null) {
-/* 511 */                   this.mToAddresses = null;
+           public IntentBuilder setEmailTo(String[] addresses) {
+               if (this.mToAddresses != null) {
+                   this.mToAddresses = null;
                         }
-/* 513 */               this.mIntent.putExtra("android.intent.extra.EMAIL", addresses);
-/* 514 */               return this;
+               this.mIntent.putExtra("android.intent.extra.EMAIL", addresses);
+               return this;
                     }
 
-/* 524 */           public IntentBuilder addEmailTo(String address) {
-/* 525 */               if (this.mToAddresses == null) {
-/* 526 */                   this.mToAddresses = new ArrayList<>();
+           public IntentBuilder addEmailTo(String address) {
+               if (this.mToAddresses == null) {
+                   this.mToAddresses = new ArrayList<>();
                         }
-/* 528 */               this.mToAddresses.add(address);
-/* 529 */               return this;
+               this.mToAddresses.add(address);
+               return this;
                     }
 
-/* 539 */           public IntentBuilder addEmailTo(String[] addresses) {
-/* 540 */               combineArrayExtra("android.intent.extra.EMAIL", addresses);
-/* 541 */               return this;
+           public IntentBuilder addEmailTo(String[] addresses) {
+               combineArrayExtra("android.intent.extra.EMAIL", addresses);
+               return this;
                     }
 
-/* 552 */           public IntentBuilder setEmailCc(String[] addresses) {
-/* 553 */               this.mIntent.putExtra("android.intent.extra.CC", addresses);
-/* 554 */               return this;
+           public IntentBuilder setEmailCc(String[] addresses) {
+               this.mIntent.putExtra("android.intent.extra.CC", addresses);
+               return this;
                     }
 
-/* 564 */           public IntentBuilder addEmailCc(String address) {
-/* 565 */               if (this.mCcAddresses == null) {
-/* 566 */                   this.mCcAddresses = new ArrayList<>();
+           public IntentBuilder addEmailCc(String address) {
+               if (this.mCcAddresses == null) {
+                   this.mCcAddresses = new ArrayList<>();
                         }
-/* 568 */               this.mCcAddresses.add(address);
-/* 569 */               return this;
+               this.mCcAddresses.add(address);
+               return this;
                     }
 
-/* 579 */           public IntentBuilder addEmailCc(String[] addresses) {
-/* 580 */               combineArrayExtra("android.intent.extra.CC", addresses);
-/* 581 */               return this;
+           public IntentBuilder addEmailCc(String[] addresses) {
+               combineArrayExtra("android.intent.extra.CC", addresses);
+               return this;
                     }
 
-/* 592 */           public IntentBuilder setEmailBcc(String[] addresses) {
-/* 593 */               this.mIntent.putExtra("android.intent.extra.BCC", addresses);
-/* 594 */               return this;
+           public IntentBuilder setEmailBcc(String[] addresses) {
+               this.mIntent.putExtra("android.intent.extra.BCC", addresses);
+               return this;
                     }
 
-/* 604 */           public IntentBuilder addEmailBcc(String address) {
-/* 605 */               if (this.mBccAddresses == null) {
-/* 606 */                   this.mBccAddresses = new ArrayList<>();
+           public IntentBuilder addEmailBcc(String address) {
+               if (this.mBccAddresses == null) {
+                   this.mBccAddresses = new ArrayList<>();
                         }
-/* 608 */               this.mBccAddresses.add(address);
-/* 609 */               return this;
+               this.mBccAddresses.add(address);
+               return this;
                     }
 
-/* 619 */           public IntentBuilder addEmailBcc(String[] addresses) {
-/* 620 */               combineArrayExtra("android.intent.extra.BCC", addresses);
-/* 621 */               return this;
+           public IntentBuilder addEmailBcc(String[] addresses) {
+               combineArrayExtra("android.intent.extra.BCC", addresses);
+               return this;
                     }
 
-/* 631 */           public IntentBuilder setSubject(String subject) {
-/* 632 */               this.mIntent.putExtra("android.intent.extra.SUBJECT", subject);
-/* 633 */               return this;
+           public IntentBuilder setSubject(String subject) {
+               this.mIntent.putExtra("android.intent.extra.SUBJECT", subject);
+               return this;
                     }
                 }
 
-/* 670 */       public static class IntentReader {
+       public static class IntentReader {
                     private static final String TAG = "IntentReader";
                     private Activity mActivity;
                     private ComponentName mCallingActivity;
@@ -356,139 +356,139 @@
                     private Intent mIntent;
                     private ArrayList<Uri> mStreams;
 
-/* 671 */           public static IntentReader from(Activity activity) {
-/* 672 */               return new IntentReader(activity);
+           public static IntentReader from(Activity activity) {
+               return new IntentReader(activity);
                     }
 
-/* 674 */           private IntentReader(Activity activity) {
-/* 676 */               this.mActivity = activity;
-/* 677 */               this.mIntent = activity.getIntent();
-/* 678 */               this.mCallingPackage = ShareCompat.getCallingPackage(activity);
-/* 679 */               this.mCallingActivity = ShareCompat.getCallingActivity(activity);
+           private IntentReader(Activity activity) {
+               this.mActivity = activity;
+               this.mIntent = activity.getIntent();
+               this.mCallingPackage = ShareCompat.getCallingPackage(activity);
+               this.mCallingActivity = ShareCompat.getCallingActivity(activity);
                     }
 
-/* 690 */           public boolean isShareIntent() {
-/* 691 */               String action = this.mIntent.getAction();
+           public boolean isShareIntent() {
+               String action = this.mIntent.getAction();
                         return "android.intent.action.SEND".equals(action) || "android.intent.action.SEND_MULTIPLE".equals(action);
                     }
 
-/* 703 */           public boolean isSingleShare() {
-/* 704 */               return "android.intent.action.SEND".equals(this.mIntent.getAction());
+           public boolean isSingleShare() {
+               return "android.intent.action.SEND".equals(this.mIntent.getAction());
                     }
 
-/* 714 */           public boolean isMultipleShare() {
-/* 715 */               return "android.intent.action.SEND_MULTIPLE".equals(this.mIntent.getAction());
+           public boolean isMultipleShare() {
+               return "android.intent.action.SEND_MULTIPLE".equals(this.mIntent.getAction());
                     }
 
-/* 724 */           public String getType() {
-/* 725 */               return this.mIntent.getType();
+           public String getType() {
+               return this.mIntent.getType();
                     }
 
-/* 734 */           public CharSequence getText() {
-/* 735 */               return this.mIntent.getCharSequenceExtra("android.intent.extra.TEXT");
+           public CharSequence getText() {
+               return this.mIntent.getCharSequenceExtra("android.intent.extra.TEXT");
                     }
 
-/* 748 */           public String getHtmlText() {
-/* 749 */               String result = this.mIntent.getStringExtra(IntentCompat.EXTRA_HTML_TEXT);
-/* 750 */               if (result == null) {
-/* 751 */                   CharSequence text = getText();
-/* 752 */                   if (text instanceof Spanned) {
-/* 753 */                       return Html.toHtml((Spanned) text);
+           public String getHtmlText() {
+               String result = this.mIntent.getStringExtra(IntentCompat.EXTRA_HTML_TEXT);
+               if (result == null) {
+                   CharSequence text = getText();
+                   if (text instanceof Spanned) {
+                       return Html.toHtml((Spanned) text);
                             }
-/* 754 */                   if (text != null) {
-/* 755 */                       return ShareCompat.access$000().escapeHtml(text);
+                   if (text != null) {
+                       return ShareCompat.access$000().escapeHtml(text);
                             }
-/* 758 */                   return result;
+                   return result;
                         }
-/* 758 */               return result;
+               return result;
                     }
 
-/* 772 */           public Uri getStream() {
-/* 773 */               return (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
+           public Uri getStream() {
+               return (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
                     }
 
-/* 785 */           public Uri getStream(int index) {
-/* 786 */               if (this.mStreams == null && isMultipleShare()) {
-/* 787 */                   this.mStreams = this.mIntent.getParcelableArrayListExtra("android.intent.extra.STREAM");
+           public Uri getStream(int index) {
+               if (this.mStreams == null && isMultipleShare()) {
+                   this.mStreams = this.mIntent.getParcelableArrayListExtra("android.intent.extra.STREAM");
                         }
-/* 789 */               if (this.mStreams != null) {
-/* 790 */                   return this.mStreams.get(index);
+               if (this.mStreams != null) {
+                   return this.mStreams.get(index);
                         }
-/* 792 */               if (index == 0) {
-/* 793 */                   return (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
+               if (index == 0) {
+                   return (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
                         }
-/* 795 */               throw new IndexOutOfBoundsException("Stream items available: " + getStreamCount() + " index requested: " + index);
+               throw new IndexOutOfBoundsException("Stream items available: " + getStreamCount() + " index requested: " + index);
                     }
 
-/* 806 */           public int getStreamCount() {
-/* 807 */               if (this.mStreams == null && isMultipleShare()) {
-/* 808 */                   this.mStreams = this.mIntent.getParcelableArrayListExtra("android.intent.extra.STREAM");
+           public int getStreamCount() {
+               if (this.mStreams == null && isMultipleShare()) {
+                   this.mStreams = this.mIntent.getParcelableArrayListExtra("android.intent.extra.STREAM");
                         }
-/* 810 */               if (this.mStreams != null) {
-/* 811 */                   return this.mStreams.size();
+               if (this.mStreams != null) {
+                   return this.mStreams.size();
                         }
                         return this.mIntent.hasExtra("android.intent.extra.STREAM") ? 1 : 0;
                     }
 
-/* 822 */           public String[] getEmailTo() {
-/* 823 */               return this.mIntent.getStringArrayExtra("android.intent.extra.EMAIL");
+           public String[] getEmailTo() {
+               return this.mIntent.getStringArrayExtra("android.intent.extra.EMAIL");
                     }
 
-/* 832 */           public String[] getEmailCc() {
-/* 833 */               return this.mIntent.getStringArrayExtra("android.intent.extra.CC");
+           public String[] getEmailCc() {
+               return this.mIntent.getStringArrayExtra("android.intent.extra.CC");
                     }
 
-/* 842 */           public String[] getEmailBcc() {
-/* 843 */               return this.mIntent.getStringArrayExtra("android.intent.extra.BCC");
+           public String[] getEmailBcc() {
+               return this.mIntent.getStringArrayExtra("android.intent.extra.BCC");
                     }
 
-/* 852 */           public String getSubject() {
-/* 853 */               return this.mIntent.getStringExtra("android.intent.extra.SUBJECT");
+           public String getSubject() {
+               return this.mIntent.getStringExtra("android.intent.extra.SUBJECT");
                     }
 
-/* 869 */           public String getCallingPackage() {
-/* 870 */               return this.mCallingPackage;
+           public String getCallingPackage() {
+               return this.mCallingPackage;
                     }
 
-/* 886 */           public ComponentName getCallingActivity() {
-/* 887 */               return this.mCallingActivity;
+           public ComponentName getCallingActivity() {
+               return this.mCallingActivity;
                     }
 
-/* 900 */           public Drawable getCallingActivityIcon() {
-/* 901 */               if (this.mCallingActivity == null) {
+           public Drawable getCallingActivityIcon() {
+               if (this.mCallingActivity == null) {
                             return null;
                         }
-/* 903 */               PackageManager pm = this.mActivity.getPackageManager();
+               PackageManager pm = this.mActivity.getPackageManager();
                         try {
-/* 905 */                   return pm.getActivityIcon(this.mCallingActivity);
+                   return pm.getActivityIcon(this.mCallingActivity);
                         } catch (PackageManager.NameNotFoundException e) {
-/* 907 */                   Log.e(TAG, "Could not retrieve icon for calling activity", e);
+                   Log.e(TAG, "Could not retrieve icon for calling activity", e);
                             return null;
                         }
                     }
 
-/* 922 */           public Drawable getCallingApplicationIcon() {
-/* 923 */               if (this.mCallingPackage == null) {
+           public Drawable getCallingApplicationIcon() {
+               if (this.mCallingPackage == null) {
                             return null;
                         }
-/* 925 */               PackageManager pm = this.mActivity.getPackageManager();
+               PackageManager pm = this.mActivity.getPackageManager();
                         try {
-/* 927 */                   return pm.getApplicationIcon(this.mCallingPackage);
+                   return pm.getApplicationIcon(this.mCallingPackage);
                         } catch (PackageManager.NameNotFoundException e) {
-/* 929 */                   Log.e(TAG, "Could not retrieve icon for calling application", e);
+                   Log.e(TAG, "Could not retrieve icon for calling application", e);
                             return null;
                         }
                     }
 
-/* 944 */           public CharSequence getCallingApplicationLabel() {
-/* 945 */               if (this.mCallingPackage == null) {
+           public CharSequence getCallingApplicationLabel() {
+               if (this.mCallingPackage == null) {
                             return null;
                         }
-/* 947 */               PackageManager pm = this.mActivity.getPackageManager();
+               PackageManager pm = this.mActivity.getPackageManager();
                         try {
-/* 949 */                   return pm.getApplicationLabel(pm.getApplicationInfo(this.mCallingPackage, 0));
+                   return pm.getApplicationLabel(pm.getApplicationInfo(this.mCallingPackage, 0));
                         } catch (PackageManager.NameNotFoundException e) {
-/* 951 */                   Log.e(TAG, "Could not retrieve label for calling application", e);
+                   Log.e(TAG, "Could not retrieve label for calling application", e);
                             return null;
                         }
                     }

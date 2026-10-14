@@ -5,45 +5,45 @@
             import java.util.ArrayList;
             import java.util.HashMap;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.dw */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public abstract class AbstractC1038dw {
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.dw$a */
+                
                 public static class a<I, O> implements SafeParcelable {
                     public static final C1039dx CREATOR = new C1039dx();
 
-                    /* JADX INFO: renamed from: iM */
+                    
                     private final int f1735iM;
 
-                    /* JADX INFO: renamed from: lA */
+                    
                     protected final boolean f1736lA;
 
-                    /* JADX INFO: renamed from: lB */
+                    
                     protected final int f1737lB;
 
-                    /* JADX INFO: renamed from: lC */
+                    
                     protected final boolean f1738lC;
 
-                    /* JADX INFO: renamed from: lD */
+                    
                     protected final String f1739lD;
 
-                    /* JADX INFO: renamed from: lE */
+                    
                     protected final int f1740lE;
 
-                    /* JADX INFO: renamed from: lF */
+                    
                     protected final Class<? extends AbstractC1038dw> f1741lF;
 
-                    /* JADX INFO: renamed from: lG */
+                    
                     protected final String f1742lG;
 
-                    /* JADX INFO: renamed from: lH */
+                    
                     private C1041dz f1743lH;
 
-                    /* JADX INFO: renamed from: lI */
+                    
                     private b<I, O> f1744lI;
 
-                    /* JADX INFO: renamed from: lz */
+                    
                     protected final int f1745lz;
 
                     a(int i, int i2, boolean z, int i3, boolean z2, String str, int i4, String str2, C1033dr c1033dr) {
@@ -85,57 +85,57 @@
                         this.f1744lI = bVar;
                     }
 
-                    /* JADX INFO: renamed from: a */
+                    
                     public static a m1651a(String str, int i, b<?, ?> bVar, boolean z) {
                         return new a(bVar.mo1629bn(), z, bVar.mo1630bo(), false, str, i, null, bVar);
                     }
 
-                    /* JADX INFO: renamed from: a */
+                    
                     public static <T extends AbstractC1038dw> a<T, T> m1652a(String str, int i, Class<T> cls) {
                         return new a<>(11, false, 11, false, str, i, cls, null);
                     }
 
-                    /* JADX INFO: renamed from: b */
+                    
                     public static <T extends AbstractC1038dw> a<ArrayList<T>, ArrayList<T>> m1653b(String str, int i, Class<T> cls) {
                         return new a<>(11, true, 11, true, str, i, cls, null);
                     }
 
-                    /* JADX INFO: renamed from: c */
-                    static /* synthetic */ b m1654c(a aVar) {
+                    
+                    static  b m1654c(a aVar) {
                         return aVar.f1744lI;
                     }
 
-                    /* JADX INFO: renamed from: d */
+                    
                     public static a<Integer, Integer> m1655d(String str, int i) {
                         return new a<>(0, false, 0, false, str, i, null, null);
                     }
 
-                    /* JADX INFO: renamed from: e */
+                    
                     public static a<Double, Double> m1656e(String str, int i) {
                         return new a<>(4, false, 4, false, str, i, null, null);
                     }
 
-                    /* JADX INFO: renamed from: f */
+                    
                     public static a<Boolean, Boolean> m1657f(String str, int i) {
                         return new a<>(6, false, 6, false, str, i, null, null);
                     }
 
-                    /* JADX INFO: renamed from: g */
+                    
                     public static a<String, String> m1658g(String str, int i) {
                         return new a<>(7, false, 7, false, str, i, null, null);
                     }
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public static a<ArrayList<String>, ArrayList<String>> m1659h(String str, int i) {
                         return new a<>(7, true, 7, true, str, i, null, null);
                     }
 
-                    /* JADX INFO: renamed from: a */
+                    
                     public void m1660a(C1041dz c1041dz) {
                         this.f1743lH = c1041dz;
                     }
 
-                    /* JADX INFO: renamed from: bA */
+                    
                     C1033dr m1661bA() {
                         if (this.f1744lI == null) {
                             return null;
@@ -143,54 +143,54 @@
                         return C1033dr.m1620a(this.f1744lI);
                     }
 
-                    /* JADX INFO: renamed from: bB */
+                    
                     public HashMap<String, a<?, ?>> m1662bB() {
                         C1028dm.m1605e(this.f1742lG);
                         C1028dm.m1605e(this.f1743lH);
                         return this.f1743lH.m1681H(this.f1742lG);
                     }
 
-                    /* JADX INFO: renamed from: bn */
+                    
                     public int m1663bn() {
                         return this.f1745lz;
                     }
 
-                    /* JADX INFO: renamed from: bo */
+                    
                     public int m1664bo() {
                         return this.f1737lB;
                     }
 
-                    /* JADX INFO: renamed from: bs */
+                    
                     public a<I, O> m1665bs() {
                         return new a<>(this.f1735iM, this.f1745lz, this.f1736lA, this.f1737lB, this.f1738lC, this.f1739lD, this.f1740lE, this.f1742lG, m1661bA());
                     }
 
-                    /* JADX INFO: renamed from: bt */
+                    
                     public boolean m1666bt() {
                         return this.f1736lA;
                     }
 
-                    /* JADX INFO: renamed from: bu */
+                    
                     public boolean m1667bu() {
                         return this.f1738lC;
                     }
 
-                    /* JADX INFO: renamed from: bv */
+                    
                     public String m1668bv() {
                         return this.f1739lD;
                     }
 
-                    /* JADX INFO: renamed from: bw */
+                    
                     public int m1669bw() {
                         return this.f1740lE;
                     }
 
-                    /* JADX INFO: renamed from: bx */
+                    
                     public Class<? extends AbstractC1038dw> m1670bx() {
                         return this.f1741lF;
                     }
 
-                    /* JADX INFO: renamed from: by */
+                    
                     String m1671by() {
                         if (this.f1742lG == null) {
                             return null;
@@ -198,18 +198,18 @@
                         return this.f1742lG;
                     }
 
-                    /* JADX INFO: renamed from: bz */
+                    
                     public boolean m1672bz() {
                         return this.f1744lI != null;
                     }
 
-                    @Override // android.os.Parcelable
+                    @Override 
                     public int describeContents() {
                         C1039dx c1039dx = CREATOR;
                         return 0;
                     }
 
-                    /* JADX INFO: renamed from: f */
+                    
                     public I m1673f(O o) {
                         return this.f1744lI.mo1632f(o);
                     }
@@ -236,26 +236,26 @@
                         return sb.toString();
                     }
 
-                    @Override // android.os.Parcelable
+                    @Override 
                     public void writeToParcel(Parcel out, int flags) {
                         C1039dx c1039dx = CREATOR;
                         C1039dx.m1674a(this, out, flags);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.dw$b */
+                
                 public interface b<I, O> {
-                    /* JADX INFO: renamed from: bn */
+                    
                     int mo1629bn();
 
-                    /* JADX INFO: renamed from: bo */
+                    
                     int mo1630bo();
 
-                    /* JADX INFO: renamed from: f */
+                    
                     I mo1632f(O o);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1639a(StringBuilder sb, a aVar, Object obj) {
                     if (aVar.m1663bn() == 11) {
                         sb.append(aVar.m1670bx().cast(obj).toString());
@@ -270,7 +270,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1640a(StringBuilder sb, a aVar, ArrayList<Object> arrayList) {
                     sb.append("[");
                     int size = arrayList.size();
@@ -286,29 +286,29 @@
                     sb.append("]");
                 }
 
-                /* JADX INFO: renamed from: D */
+                
                 protected abstract Object mo1641D(String str);
 
-                /* JADX INFO: renamed from: E */
+                
                 protected abstract boolean mo1642E(String str);
 
-                /* JADX INFO: renamed from: F */
+                
                 protected boolean m1643F(String str) {
                     throw new UnsupportedOperationException("Concrete types not supported");
                 }
 
-                /* JADX INFO: renamed from: G */
+                
                 protected boolean m1644G(String str) {
                     throw new UnsupportedOperationException("Concrete type arrays not supported");
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-                /* JADX INFO: renamed from: a */
+                
+                
                 protected <O, I> I m1645a(a<I, O> aVar, Object obj) {
                     return a.m1654c(aVar) != null ? aVar.m1673f(obj) : obj;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 protected boolean mo1646a(a aVar) {
                     if (aVar.m1664bo() == 11) {
                         return aVar.m1667bu() ? m1644G(aVar.m1668bv()) : m1643F(aVar.m1668bv());
@@ -316,7 +316,7 @@
                     return mo1642E(aVar.m1668bv());
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 protected Object mo1647b(a aVar) {
                     String strM1668bv = aVar.m1668bv();
                     if (aVar.m1670bx() == null) {
@@ -334,15 +334,15 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: bp */
+                
                 public abstract HashMap<String, a<?, ?>> mo1648bp();
 
-                /* JADX INFO: renamed from: bq */
+                
                 public HashMap<String, Object> m1649bq() {
                     return null;
                 }
 
-                /* JADX INFO: renamed from: br */
+                
                 public HashMap<String, Object> m1650br() {
                     return null;
                 }

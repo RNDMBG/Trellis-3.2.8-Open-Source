@@ -4,11 +4,11 @@
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             import com.google.android.gms.maps.internal.C1174r;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class LatLng implements SafeParcelable {
                 public static final LatLngCreator CREATOR = new LatLngCreator();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2311iM;
                 public final double latitude;
                 public final double longitude;
@@ -27,7 +27,7 @@
                     this.latitude = Math.max(-90.0d, Math.min(90.0d, latitude));
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -58,7 +58,7 @@
                     return "lat/lng: (" + this.latitude + "," + this.longitude + ")";
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     if (C1174r.m2265cK()) {
                         C1181e.m2299a(this, out, flags);

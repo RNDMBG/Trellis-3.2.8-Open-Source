@@ -3,8 +3,8 @@
             import android.graphics.drawable.Drawable;
             import android.os.Build;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 35 */    public class DrawableCompat {
+            
+    public class DrawableCompat {
                 static final DrawableImpl IMPL;
 
                 interface DrawableImpl {
@@ -15,69 +15,69 @@
                     void setAutoMirrored(Drawable drawable, boolean z);
                 }
 
-/* 36 */        static class BaseDrawableImpl implements DrawableImpl {
-/* 37 */            BaseDrawableImpl() {
+        static class BaseDrawableImpl implements DrawableImpl {
+            BaseDrawableImpl() {
                     }
 
-                    @Override // android.support.v4.graphics.drawable.DrawableCompat.DrawableImpl
-/* 40 */            public void jumpToCurrentState(Drawable drawable) {
+                    @Override 
+            public void jumpToCurrentState(Drawable drawable) {
                     }
 
-                    @Override // android.support.v4.graphics.drawable.DrawableCompat.DrawableImpl
-/* 44 */            public void setAutoMirrored(Drawable drawable, boolean mirrored) {
+                    @Override 
+            public void setAutoMirrored(Drawable drawable, boolean mirrored) {
                     }
 
-                    @Override // android.support.v4.graphics.drawable.DrawableCompat.DrawableImpl
-/* 48 */            public boolean isAutoMirrored(Drawable drawable) {
-/* 49 */                return false;
-                    }
-                }
-
-/* 54 */        static class HoneycombDrawableImpl extends BaseDrawableImpl {
-/* 55 */            HoneycombDrawableImpl() {
-                    }
-
-                    @Override // android.support.v4.graphics.drawable.DrawableCompat.BaseDrawableImpl, android.support.v4.graphics.drawable.DrawableCompat.DrawableImpl
-/* 58 */            public void jumpToCurrentState(Drawable drawable) {
-/* 59 */                DrawableCompatHoneycomb.jumpToCurrentState(drawable);
+                    @Override 
+            public boolean isAutoMirrored(Drawable drawable) {
+                return false;
                     }
                 }
 
-/* 64 */        static class KitKatDrawableImpl extends HoneycombDrawableImpl {
-/* 65 */            KitKatDrawableImpl() {
+        static class HoneycombDrawableImpl extends BaseDrawableImpl {
+            HoneycombDrawableImpl() {
                     }
 
-                    @Override // android.support.v4.graphics.drawable.DrawableCompat.BaseDrawableImpl, android.support.v4.graphics.drawable.DrawableCompat.DrawableImpl
-/* 68 */            public void setAutoMirrored(Drawable drawable, boolean mirrored) {
-/* 69 */                DrawableCompatKitKat.setAutoMirrored(drawable, mirrored);
+                    @Override 
+            public void jumpToCurrentState(Drawable drawable) {
+                DrawableCompatHoneycomb.jumpToCurrentState(drawable);
+                    }
+                }
+
+        static class KitKatDrawableImpl extends HoneycombDrawableImpl {
+            KitKatDrawableImpl() {
                     }
 
-                    @Override // android.support.v4.graphics.drawable.DrawableCompat.BaseDrawableImpl, android.support.v4.graphics.drawable.DrawableCompat.DrawableImpl
-/* 73 */            public boolean isAutoMirrored(Drawable drawable) {
-/* 74 */                return DrawableCompatKitKat.isAutoMirrored(drawable);
+                    @Override 
+            public void setAutoMirrored(Drawable drawable, boolean mirrored) {
+                DrawableCompatKitKat.setAutoMirrored(drawable, mirrored);
+                    }
+
+                    @Override 
+            public boolean isAutoMirrored(Drawable drawable) {
+                return DrawableCompatKitKat.isAutoMirrored(drawable);
                     }
                 }
 
                 static {
-/* 83 */            int version = Build.VERSION.SDK_INT;
-/* 84 */            if (version >= 19) {
-/* 85 */                IMPL = new KitKatDrawableImpl();
+            int version = Build.VERSION.SDK_INT;
+            if (version >= 19) {
+                IMPL = new KitKatDrawableImpl();
                     } else if (version >= 11) {
-/* 87 */                IMPL = new HoneycombDrawableImpl();
+                IMPL = new HoneycombDrawableImpl();
                     } else {
-/* 89 */                IMPL = new BaseDrawableImpl();
+                IMPL = new BaseDrawableImpl();
                     }
                 }
 
-/* 101 */       public static void jumpToCurrentState(Drawable drawable) {
-/* 102 */           IMPL.jumpToCurrentState(drawable);
+       public static void jumpToCurrentState(Drawable drawable) {
+           IMPL.jumpToCurrentState(drawable);
                 }
 
-/* 117 */       public static void setAutoMirrored(Drawable drawable, boolean mirrored) {
-/* 118 */           IMPL.setAutoMirrored(drawable, mirrored);
+       public static void setAutoMirrored(Drawable drawable, boolean mirrored) {
+           IMPL.setAutoMirrored(drawable, mirrored);
                 }
 
-/* 132 */       public static boolean isAutoMirrored(Drawable drawable) {
-/* 133 */           return IMPL.isAutoMirrored(drawable);
+       public static boolean isAutoMirrored(Drawable drawable) {
+           return IMPL.isAutoMirrored(drawable);
                 }
             }

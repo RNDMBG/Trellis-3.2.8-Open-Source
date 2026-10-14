@@ -2,8 +2,8 @@
 
             import android.os.Looper;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 110 */   public interface ExoPlayer {
+            
+   public interface ExoPlayer {
                 public static final int STATE_BUFFERING = 3;
                 public static final int STATE_ENDED = 5;
                 public static final int STATE_IDLE = 1;
@@ -61,24 +61,24 @@
 
                 void stop();
 
-/* 111 */       public static final class Factory {
+       public static final class Factory {
                     public static final int DEFAULT_MIN_BUFFER_MS = 500;
                     public static final int DEFAULT_MIN_REBUFFER_MS = 5000;
 
-/* 112 */           private Factory() {
+           private Factory() {
                     }
 
-/* 128 */           public static ExoPlayer newInstance(int rendererCount, int minBufferMs, int minRebufferMs) {
-/* 129 */               return new ExoPlayerImpl(rendererCount, minBufferMs, minRebufferMs);
+           public static ExoPlayer newInstance(int rendererCount, int minBufferMs, int minRebufferMs) {
+               return new ExoPlayerImpl(rendererCount, minBufferMs, minRebufferMs);
                     }
 
-/* 140 */           public static ExoPlayer newInstance(int rendererCount) {
-/* 141 */               return new ExoPlayerImpl(rendererCount, 500, DEFAULT_MIN_REBUFFER_MS);
+           public static ExoPlayer newInstance(int rendererCount) {
+               return new ExoPlayerImpl(rendererCount, 500, DEFAULT_MIN_REBUFFER_MS);
                     }
 
                     @Deprecated
-/* 148 */           public static ExoPlayer newInstance(int rendererCount, int minRebufferMs) {
-/* 149 */               return new ExoPlayerImpl(rendererCount, 500, minRebufferMs);
+           public static ExoPlayer newInstance(int rendererCount, int minRebufferMs) {
+               return new ExoPlayerImpl(rendererCount, 500, minRebufferMs);
                     }
                 }
             }

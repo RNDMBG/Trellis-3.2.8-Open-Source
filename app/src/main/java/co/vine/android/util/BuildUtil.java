@@ -10,8 +10,8 @@
             import co.vine.android.recorder.RecordConfigUtils;
             import com.edisonwang.android.slog.SLog;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 34 */    public class BuildUtil {
+            
+    public class BuildUtil {
                 public static final int APP_TYPE_EXPLORE = 2;
                 public static final int APP_TYPE_REGULAR = 1;
                 public static final int ENVIRONMENT_DEV = 2;
@@ -31,159 +31,159 @@
                 private static final boolean sIsSwEncodingEnabled = RecordConfigUtils.SW_ENABLED;
 
                 static {
-/* 41 */            Log.i("bootstrap", "started.");
-/* 42 */            setup("google", "regular", "co.vine.android", "production", false);
-/* 44 */            CrashUtil.setup(false);
-/* 45 */            PlayerUtil.setup("co.vine.android");
-/* 46 */            SLog.setup(false, "amazon".equals("google"), "co.vine.android");
+            Log.i("bootstrap", "started.");
+            setup("google", "regular", "co.vine.android", "production", false);
+            CrashUtil.setup(false);
+            PlayerUtil.setup("co.vine.android");
+            SLog.setup(false, "amazon".equals("google"), "co.vine.android");
                 }
 
-/* 52 */        public static void setup(String market, String appType, String authority, String environment, boolean logsOn) {
+        public static void setup(String market, String appType, String authority, String environment, boolean logsOn) {
                     switch (market) {
                         case "amazon":
-/* 55 */                    sMarket = 2;
+                    sMarket = 2;
                             break;
                         case "astar":
-/* 58 */                    sMarket = 3;
+                    sMarket = 3;
                             break;
                         default:
-/* 61 */                    sMarket = 1;
+                    sMarket = 1;
                             break;
                     }
-/* 65 */            if ("production".equals(environment)) {
-/* 66 */                sEnvironment = 1;
+            if ("production".equals(environment)) {
+                sEnvironment = 1;
                     } else {
-/* 68 */                sEnvironment = 2;
+                sEnvironment = 2;
                     }
-/* 71 */            if (HomeTabActivity.TAG_EXPLORE.equals(appType)) {
-/* 72 */                sAppType = 2;
+            if (HomeTabActivity.TAG_EXPLORE.equals(appType)) {
+                sAppType = 2;
                     } else {
-/* 74 */                sAppType = 1;
+                sAppType = 1;
                     }
-/* 77 */            sLogsOn = logsOn;
-/* 79 */            if (!TextUtils.isEmpty(authority)) {
-/* 80 */                CrossConstants.AUTHORITY = authority;
+            sLogsOn = logsOn;
+            if (!TextUtils.isEmpty(authority)) {
+                CrossConstants.AUTHORITY = authority;
                     } else {
-/* 82 */                CrossConstants.AUTHORITY = "co.vine.android";
+                CrossConstants.AUTHORITY = "co.vine.android";
                     }
-/* 85 */            CrossConstants.BROADCAST_PERMISSION = CrossConstants.AUTHORITY + ".BROADCAST";
-/* 87 */            CrossConstants.RES_RAW_CA = C0257R.raw.cacerts;
-/* 89 */            CrossConstants.RES_VINE_GREEN = C0257R.color.vine_green;
+            CrossConstants.BROADCAST_PERMISSION = CrossConstants.AUTHORITY + ".BROADCAST";
+            CrossConstants.RES_RAW_CA = C0257R.raw.cacerts;
+            CrossConstants.RES_VINE_GREEN = C0257R.color.vine_green;
                 }
 
-/* 93 */        public static String getVersionName(Context context) {
+        public static String getVersionName(Context context) {
                     try {
-/* 94 */                if (sVersionName == null) {
-/* 95 */                    sVersionName = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
+                if (sVersionName == null) {
+                    sVersionName = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
                         }
-/* 98 */                return sVersionName;
+                return sVersionName;
                     } catch (Throwable e) {
-/* 100 */               CrashUtil.logException(e);
-/* 101 */               return EnvironmentCompat.MEDIA_UNKNOWN;
+               CrashUtil.logException(e);
+               return EnvironmentCompat.MEDIA_UNKNOWN;
                     }
                 }
 
-/* 105 */       public static boolean isIsHwEncodingEnabled() {
-/* 106 */           return sIsHwEncodingEnabled;
+       public static boolean isIsHwEncodingEnabled() {
+           return sIsHwEncodingEnabled;
                 }
 
-/* 109 */       public static boolean isAmazon() {
+       public static boolean isAmazon() {
                     return sMarket == 2;
                 }
 
-/* 113 */       public static boolean isGoogle() {
+       public static boolean isGoogle() {
                     return sMarket == 1;
                 }
 
-/* 117 */       public static boolean isAStar() {
+       public static boolean isAStar() {
                     return sMarket == 3;
                 }
 
-/* 121 */       public static boolean isProduction() {
+       public static boolean isProduction() {
                     return sEnvironment == 1;
                 }
 
-/* 125 */       public static boolean isRegular() {
+       public static boolean isRegular() {
                     return sAppType == 1;
                 }
 
-/* 129 */       public static boolean isExplore() {
+       public static boolean isExplore() {
                     return sAppType == 2;
                 }
 
-                /* JADX WARN: Code duplicated, block: B:11:0x001d  */
-/* 133 */       public static boolean isOldDeviceOrLowEndDevice(Context context) {
+                
+       public static boolean isOldDeviceOrLowEndDevice(Context context) {
                     boolean z = false;
-/* 134 */           if (isOldDeviceOrLowEndDevice == null) {
-/* 135 */               if (!isExplore()) {
+           if (isOldDeviceOrLowEndDevice == null) {
+               if (!isExplore()) {
                             z = SystemUtil.getMemoryRatio(context, !isExplore()) < 1.0d;
                         }
                         isOldDeviceOrLowEndDevice = Boolean.valueOf(z);
                     }
-/* 137 */           return isOldDeviceOrLowEndDevice.booleanValue();
+           return isOldDeviceOrLowEndDevice.booleanValue();
                 }
 
-/* 140 */       public static boolean isLogsOn() {
-/* 141 */           return sLogsOn;
+       public static boolean isLogsOn() {
+           return sLogsOn;
                 }
 
-/* 144 */       public static int getMarket() {
-/* 145 */           return sMarket;
+       public static int getMarket() {
+           return sMarket;
                 }
 
-/* 148 */       public static boolean isI18nOn() {
-/* 149 */           return sLogsOn;
+       public static boolean isI18nOn() {
+           return sLogsOn;
                 }
 
-/* 152 */       public static String getAuthority() {
-/* 153 */           return getAuthority("");
+       public static String getAuthority() {
+           return getAuthority("");
                 }
 
-/* 156 */       public static String getAuthority(String suffix) {
-/* 157 */           return CrossConstants.getAuthority(suffix);
+       public static String getAuthority(String suffix) {
+           return CrossConstants.getAuthority(suffix);
                 }
 
-/* 160 */       public static String getBaseUrl(Resources context) {
-/* 161 */           return context.getString(C0257R.string.vine_api);
+       public static String getBaseUrl(Resources context) {
+           return context.getString(C0257R.string.vine_api);
                 }
 
-/* 164 */       public static String getWebsiteUrl(Context context) {
-/* 165 */           return context.getString(C0257R.string.vine_www);
+       public static String getWebsiteUrl(Context context) {
+           return context.getString(C0257R.string.vine_www);
                 }
 
-/* 168 */       public static String getMediaUrl(Resources context) {
-/* 169 */           return context.getString(C0257R.string.vine_media_api);
+       public static String getMediaUrl(Resources context) {
+           return context.getString(C0257R.string.vine_media_api);
                 }
 
-/* 172 */       public static String getAmazonBucket(Context context) {
-/* 173 */           return context.getString(C0257R.string.amazon_bucket);
+       public static String getAmazonBucket(Context context) {
+           return context.getString(C0257R.string.amazon_bucket);
                 }
 
-/* 176 */       public static String getExploreUrl(Resources context) {
-/* 177 */           return context.getString(C0257R.string.explore_url);
+       public static String getExploreUrl(Resources context) {
+           return context.getString(C0257R.string.explore_url);
                 }
 
-/* 180 */       public static String getExplorePath(Resources context) {
-/* 181 */           return context.getString(C0257R.string.explore_url_path);
+       public static String getExplorePath(Resources context) {
+           return context.getString(C0257R.string.explore_url_path);
                 }
 
-/* 184 */       public static String getConfigUrl(Resources context) {
-/* 185 */           return context.getString(C0257R.string.vine_config);
+       public static String getConfigUrl(Resources context) {
+           return context.getString(C0257R.string.vine_config);
                 }
 
-/* 188 */       public static String getStatusUrl(Context context) {
-/* 189 */           return context.getString(C0257R.string.status_url);
+       public static String getStatusUrl(Context context) {
+           return context.getString(C0257R.string.status_url);
                 }
 
-/* 192 */       public static String getRtcUrl(Resources context) {
-/* 193 */           return context.getString(C0257R.string.rtc_url);
+       public static String getRtcUrl(Resources context) {
+           return context.getString(C0257R.string.rtc_url);
                 }
 
-/* 196 */       public static String getSenderId(Context context) {
-/* 197 */           return context.getString(C0257R.string.sender_id);
+       public static String getSenderId(Context context) {
+           return context.getString(C0257R.string.sender_id);
                 }
 
-/* 200 */       public static void bootstrap() {
-/* 201 */           Log.i("bootstrap", "completed.");
+       public static void bootstrap() {
+           Log.i("bootstrap", "completed.");
                 }
             }

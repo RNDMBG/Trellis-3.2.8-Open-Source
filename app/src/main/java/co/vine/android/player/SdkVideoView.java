@@ -31,9 +31,9 @@
             import java.io.IOException;
             import java.util.Map;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @TargetApi(14)
-/* 43 */    public class SdkVideoView extends TextureView implements MediaController.MediaPlayerControl, VideoViewInterface {
+    public class SdkVideoView extends TextureView implements MediaController.MediaPlayerControl, VideoViewInterface {
                 private static final boolean DEFAULT_GLOBAL_USE_VINE_PLAYER = false;
                 private static final boolean DISABLE_OPEN_ON_SEPARATE_THREAD;
                 private static final boolean IS_DEFECTIVE_ON_THREADED_MEDIA_PLAYERS;
@@ -130,168 +130,168 @@
                     void onSurfaceUpdated();
                 }
 
-/* 44 */        static /* synthetic */ MediaPlayer access$000(SdkVideoView x0) {
-/* 45 */            return x0.getPlayer();
+        static  MediaPlayer access$000(SdkVideoView x0) {
+            return x0.getPlayer();
                 }
 
-/* 44 */        static /* synthetic */ MediaPlayer.OnErrorListener access$100(SdkVideoView x0) {
-/* 45 */            return x0.mErrorListener;
+        static  MediaPlayer.OnErrorListener access$100(SdkVideoView x0) {
+            return x0.mErrorListener;
                 }
 
-/* 44 */        static /* synthetic */ void access$1001(SdkVideoView x0, boolean x1) {
-/* 45 */            x0.setKeepScreenOn(x1);
+        static  void access$1001(SdkVideoView x0, boolean x1) {
+            x0.setKeepScreenOn(x1);
                 }
 
-/* 44 */        static /* synthetic */ MediaPlayer.OnVideoSizeChangedListener access$1100(SdkVideoView x0) {
-/* 45 */            return x0.mCustomOnSizeChangedListener;
+        static  MediaPlayer.OnVideoSizeChangedListener access$1100(SdkVideoView x0) {
+            return x0.mCustomOnSizeChangedListener;
                 }
 
-/* 44 */        static /* synthetic */ long access$1200(SdkVideoView x0) {
-/* 45 */            return x0.mPrepareStart;
+        static  long access$1200(SdkVideoView x0) {
+            return x0.mPrepareStart;
                 }
 
-/* 44 */        static /* synthetic */ boolean access$1302(SdkVideoView x0, boolean x1) {
-/* 45 */            x0.mIsPrepared = x1;
+        static  boolean access$1302(SdkVideoView x0, boolean x1) {
+            x0.mIsPrepared = x1;
                     return x1;
                 }
 
-/* 44 */        static /* synthetic */ boolean access$1400(SdkVideoView x0) {
-/* 45 */            return x0.mAutoPlayOnPrepared;
+        static  boolean access$1400(SdkVideoView x0) {
+            return x0.mAutoPlayOnPrepared;
                 }
 
-/* 44 */        static /* synthetic */ void access$1500(SdkVideoView x0, int x1) {
-/* 45 */            x0.postMediaOp(x1);
+        static  void access$1500(SdkVideoView x0, int x1) {
+            x0.postMediaOp(x1);
                 }
 
-/* 44 */        static /* synthetic */ void access$1600(SdkVideoView x0) {
-/* 45 */            x0.onPlayerPrepared();
+        static  void access$1600(SdkVideoView x0) {
+            x0.onPlayerPrepared();
                 }
 
-/* 44 */        static /* synthetic */ Runnable access$1700(SdkVideoView x0) {
-/* 45 */            return x0.mPrepareNotifyRunnable;
+        static  Runnable access$1700(SdkVideoView x0) {
+            return x0.mPrepareNotifyRunnable;
                 }
 
-/* 44 */        static /* synthetic */ Handler access$1800(SdkVideoView x0) {
-/* 45 */            return x0.mUiOpsHandler;
+        static  Handler access$1800(SdkVideoView x0) {
+            return x0.mUiOpsHandler;
                 }
 
-/* 44 */        static /* synthetic */ int access$1902(SdkVideoView x0, int x1) {
-/* 45 */            x0.mCurrentBufferPercentage = x1;
+        static  int access$1902(SdkVideoView x0, int x1) {
+            x0.mCurrentBufferPercentage = x1;
                     return x1;
                 }
 
-/* 44 */        static /* synthetic */ void access$200(SdkVideoView x0, int x1) {
-/* 45 */            x0.runMediaOps(x1);
+        static  void access$200(SdkVideoView x0, int x1) {
+            x0.runMediaOps(x1);
                 }
 
-/* 44 */        static /* synthetic */ boolean access$2002(SdkVideoView x0, boolean x1) {
-/* 45 */            x0.mIsSeeking = x1;
+        static  boolean access$2002(SdkVideoView x0, boolean x1) {
+            x0.mIsSeeking = x1;
                     return x1;
                 }
 
-/* 44 */        static /* synthetic */ int access$2100(SdkVideoView x0) {
-/* 45 */            return x0.mNextSeek;
+        static  int access$2100(SdkVideoView x0) {
+            return x0.mNextSeek;
                 }
 
-/* 44 */        static /* synthetic */ int access$2102(SdkVideoView x0, int x1) {
-/* 45 */            x0.mNextSeek = x1;
+        static  int access$2102(SdkVideoView x0, int x1) {
+            x0.mNextSeek = x1;
                     return x1;
                 }
 
-/* 44 */        static /* synthetic */ SurfaceReadyListener access$2200(SdkVideoView x0) {
-/* 45 */            return x0.mSurfaceReadyListener;
+        static  SurfaceReadyListener access$2200(SdkVideoView x0) {
+            return x0.mSurfaceReadyListener;
                 }
 
-/* 44 */        static /* synthetic */ void access$2300(SdkVideoView x0) {
-/* 45 */            x0.openVideo();
+        static  void access$2300(SdkVideoView x0) {
+            x0.openVideo();
                 }
 
-/* 44 */        static /* synthetic */ int access$2402(SdkVideoView x0, int x1) {
-/* 45 */            x0.mSurfaceWidth = x1;
+        static  int access$2402(SdkVideoView x0, int x1) {
+            x0.mSurfaceWidth = x1;
                     return x1;
                 }
 
-/* 44 */        static /* synthetic */ int access$2502(SdkVideoView x0, int x1) {
-/* 45 */            x0.mSurfaceHeight = x1;
+        static  int access$2502(SdkVideoView x0, int x1) {
+            x0.mSurfaceHeight = x1;
                     return x1;
                 }
 
-/* 44 */        static /* synthetic */ int access$2600(SdkVideoView x0) {
-/* 45 */            return x0.mTargetState;
+        static  int access$2600(SdkVideoView x0) {
+            return x0.mTargetState;
                 }
 
-/* 44 */        static /* synthetic */ boolean access$2700(SdkVideoView x0) {
-/* 45 */            return x0.hasPlayer();
+        static  boolean access$2700(SdkVideoView x0) {
+            return x0.hasPlayer();
                 }
 
-/* 44 */        static /* synthetic */ int access$2800(SdkVideoView x0) {
-/* 45 */            return x0.mSeekWhenPrepared;
+        static  int access$2800(SdkVideoView x0) {
+            return x0.mSeekWhenPrepared;
                 }
 
-/* 44 */        static /* synthetic */ MediaController access$2900(SdkVideoView x0) {
-/* 45 */            return x0.mMediaController;
+        static  MediaController access$2900(SdkVideoView x0) {
+            return x0.mMediaController;
                 }
 
-/* 44 */        static /* synthetic */ boolean access$300(SdkVideoView x0, int x1, int x2) {
-/* 45 */            return x0.onError(x1, x2);
+        static  boolean access$300(SdkVideoView x0, int x1, int x2) {
+            return x0.onError(x1, x2);
                 }
 
-/* 44 */        static /* synthetic */ VinePlayer access$3000(SdkVideoView x0) {
-/* 45 */            return x0.mVinePlayer;
+        static  VinePlayer access$3000(SdkVideoView x0) {
+            return x0.mVinePlayer;
                 }
 
-/* 44 */        static /* synthetic */ void access$3100(SdkVideoView x0, String x1, boolean x2, boolean x3) {
-/* 45 */            x0.release(x1, x2, x3);
+        static  void access$3100(SdkVideoView x0, String x1, boolean x2, boolean x3) {
+            x0.release(x1, x2, x3);
                 }
 
-/* 44 */        static /* synthetic */ SurfaceUpdatedListener access$3200(SdkVideoView x0) {
-/* 45 */            return x0.mSurfaceUpdatedListener;
+        static  SurfaceUpdatedListener access$3200(SdkVideoView x0) {
+            return x0.mSurfaceUpdatedListener;
                 }
 
-/* 44 */        static /* synthetic */ VinePlayer.EventListener access$400(SdkVideoView x0) {
-/* 45 */            return x0.mVinePlayerListener;
+        static  VinePlayer.EventListener access$400(SdkVideoView x0) {
+            return x0.mVinePlayerListener;
                 }
 
-/* 44 */        static /* synthetic */ void access$500(SdkVideoView x0, int x1, int x2) {
-/* 45 */            x0.onVideoSizeChanged(x1, x2);
+        static  void access$500(SdkVideoView x0, int x1, int x2) {
+            x0.onVideoSizeChanged(x1, x2);
                 }
 
-/* 44 */        static /* synthetic */ void access$600(SdkVideoView x0) {
-/* 45 */            x0.onComplete();
+        static  void access$600(SdkVideoView x0) {
+            x0.onComplete();
                 }
 
-/* 44 */        static /* synthetic */ void access$700(SdkVideoView x0, int x1) {
-/* 45 */            x0.setCurrentState(x1);
+        static  void access$700(SdkVideoView x0, int x1) {
+            x0.setCurrentState(x1);
                 }
 
-/* 44 */        static /* synthetic */ VideoViewInterface.OnPreparedListener access$800(SdkVideoView x0) {
-/* 45 */            return x0.mOnPreparedListener;
+        static  VideoViewInterface.OnPreparedListener access$800(SdkVideoView x0) {
+            return x0.mOnPreparedListener;
                 }
 
                 static {
-/* 47 */            IS_DEFECTIVE_ON_THREADED_MEDIA_PLAYERS = Build.VERSION.SDK_INT < 21;
-/* 50 */            TAG = SdkVideoView.class.getSimpleName();
-/* 56 */            sGloablUseVinePlayer = false;
-/* 58 */            DISABLE_OPEN_ON_SEPARATE_THREAD = IS_DEFECTIVE_ON_THREADED_MEDIA_PLAYERS;
-/* 60 */            sRunMediaOpsOnSeparateThread = !IS_DEFECTIVE_ON_THREADED_MEDIA_PLAYERS;
-/* 62 */            OPEN_ON_MAIN_THREAD = false;
-/* 155 */           singlePlayer = null;
-/* 158 */           currentState = 1;
-/* 159 */           LOCK = new int[0];
+            IS_DEFECTIVE_ON_THREADED_MEDIA_PLAYERS = Build.VERSION.SDK_INT < 21;
+            TAG = SdkVideoView.class.getSimpleName();
+            sGloablUseVinePlayer = false;
+            DISABLE_OPEN_ON_SEPARATE_THREAD = IS_DEFECTIVE_ON_THREADED_MEDIA_PLAYERS;
+            sRunMediaOpsOnSeparateThread = !IS_DEFECTIVE_ON_THREADED_MEDIA_PLAYERS;
+            OPEN_ON_MAIN_THREAD = false;
+           singlePlayer = null;
+           currentState = 1;
+           LOCK = new int[0];
                 }
 
-/* 77 */        private static synchronized void onPlay() {
+        private static synchronized void onPlay() {
                     try {
                         sPlayingCount++;
-/* 79 */                if (sPlayingCount > 1) {
-/* 80 */                    SLog.m455e("Playing count > 1");
+                if (sPlayingCount > 1) {
+                    SLog.m455e("Playing count > 1");
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
 
-/* 84 */        private static synchronized void onPause() {
+        private static synchronized void onPause() {
                     try {
                         sPlayingCount--;
                     } catch (Throwable th) {
@@ -299,785 +299,785 @@
                     }
                 }
 
-/* 88 */        public static void setRunMediaOpsOnSeparateThread(boolean enabled) {
-/* 89 */            sRunMediaOpsOnSeparateThread = enabled;
+        public static void setRunMediaOpsOnSeparateThread(boolean enabled) {
+            sRunMediaOpsOnSeparateThread = enabled;
                 }
 
-/* 95 */        public static void setGlobalUseVinePlayer(boolean useVinePlayer) {
-/* 96 */            sGloablUseVinePlayer = useVinePlayer && Build.VERSION.SDK_INT >= 16;
+        public static void setGlobalUseVinePlayer(boolean useVinePlayer) {
+            sGloablUseVinePlayer = useVinePlayer && Build.VERSION.SDK_INT >= 16;
                 }
 
-/* 99 */        public static boolean getGlobalUseVinePlayer() {
-/* 100 */           return false;
+        public static boolean getGlobalUseVinePlayer() {
+           return false;
                 }
 
-/* 103 */       public static boolean getDefaultGlobalVinePlayer() {
-/* 104 */           return false;
+       public static boolean getDefaultGlobalVinePlayer() {
+           return false;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$1 */
-/* 188 */       class RunnableC04001 implements Runnable {
-/* 189 */           RunnableC04001() {
+                
+       class RunnableC04001 implements Runnable {
+           RunnableC04001() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 192 */           public void run() {
-/* 193 */               SdkVideoView.access$100(SdkVideoView.this).onError(SdkVideoView.access$000(SdkVideoView.this), 1, 0);
+                    @Override 
+           public void run() {
+               SdkVideoView.access$100(SdkVideoView.this).onError(SdkVideoView.access$000(SdkVideoView.this), 1, 0);
                     }
                 }
 
-/* 197 */       private MediaPlayer getPlayer() {
+       private MediaPlayer getPlayer() {
                     return this.SINGLE_PLAYER ? singlePlayer : this.mMediaPlayer;
                 }
 
-/* 201 */       private boolean hasPlayer() {
+       private boolean hasPlayer() {
                     return (getPlayer() == null && this.mVinePlayer == null) ? false : true;
                 }
 
-/* 205 */       public int getCurrentState() {
+       public int getCurrentState() {
                     return this.SINGLE_PLAYER ? currentState : this.mCurrentState;
                 }
 
-/* 209 */       private void setCurrentState(int state) {
-/* 210 */           if (this.SINGLE_PLAYER) {
-/* 211 */               currentState = state;
+       private void setCurrentState(int state) {
+           if (this.SINGLE_PLAYER) {
+               currentState = state;
                     } else {
-/* 213 */               this.mCurrentState = state;
+               this.mCurrentState = state;
                     }
                 }
 
-/* 217 */       public SdkVideoView(Context context) {
-/* 218 */           super(context);
-/* 116 */           this.mMediaPlayer = null;
-/* 166 */           this.mCurrentState = 1;
-/* 167 */           this.mTargetState = 1;
-/* 175 */           this.mPlayingPosition = -1;
-/* 177 */           this.mMuted = false;
-/* 178 */           this.mWasMuted = false;
-/* 179 */           this.mAudioSession = 0;
-/* 183 */           this.mSaveVideoClicker = new SaveVideoClicker();
-/* 184 */           this.mUiOpsHandler = new Handler(Looper.getMainLooper());
-/* 190 */           this.mOnOpenErrorListener = new RunnableC04001();
-/* 583 */           this.mSizeChangedListener = new C04105();
-/* 599 */           this.mPrepareNotifyRunnable = new RunnableC04116();
-/* 608 */           this.mPreparedListener = new C04127();
-/* 678 */           this.mCompletionListener = new C04138();
-/* 696 */           this.mErrorListener = new C04149();
-/* 722 */           this.mBufferingUpdateListener = new C040110();
-/* 729 */           this.mOnSeekCompleteListener = new C040211();
-/* 820 */           this.mSHCallback = new TextureViewSurfaceTextureListenerC040312();
-/* 911 */           this.mReleaseTag = "";
-/* 1050 */          this.mVisibileStartRunnable = new RunnableC040514();
-/* 219 */           this.SINGLE_PLAYER = SystemUtil.isSinglePlayerEnabled(context);
-/* 220 */           this.mUseVinePlayer = getGlobalUseVinePlayer();
-/* 221 */           initVideoView();
+       public SdkVideoView(Context context) {
+           super(context);
+           this.mMediaPlayer = null;
+           this.mCurrentState = 1;
+           this.mTargetState = 1;
+           this.mPlayingPosition = -1;
+           this.mMuted = false;
+           this.mWasMuted = false;
+           this.mAudioSession = 0;
+           this.mSaveVideoClicker = new SaveVideoClicker();
+           this.mUiOpsHandler = new Handler(Looper.getMainLooper());
+           this.mOnOpenErrorListener = new RunnableC04001();
+           this.mSizeChangedListener = new C04105();
+           this.mPrepareNotifyRunnable = new RunnableC04116();
+           this.mPreparedListener = new C04127();
+           this.mCompletionListener = new C04138();
+           this.mErrorListener = new C04149();
+           this.mBufferingUpdateListener = new C040110();
+           this.mOnSeekCompleteListener = new C040211();
+           this.mSHCallback = new TextureViewSurfaceTextureListenerC040312();
+           this.mReleaseTag = "";
+          this.mVisibileStartRunnable = new RunnableC040514();
+           this.SINGLE_PLAYER = SystemUtil.isSinglePlayerEnabled(context);
+           this.mUseVinePlayer = getGlobalUseVinePlayer();
+           initVideoView();
                 }
 
-/* 224 */       public SdkVideoView(Context context, AttributeSet attrs) {
-/* 225 */           super(context, attrs);
-/* 116 */           this.mMediaPlayer = null;
-/* 166 */           this.mCurrentState = 1;
-/* 167 */           this.mTargetState = 1;
-/* 175 */           this.mPlayingPosition = -1;
-/* 177 */           this.mMuted = false;
-/* 178 */           this.mWasMuted = false;
-/* 179 */           this.mAudioSession = 0;
-/* 183 */           this.mSaveVideoClicker = new SaveVideoClicker();
-/* 184 */           this.mUiOpsHandler = new Handler(Looper.getMainLooper());
-/* 190 */           this.mOnOpenErrorListener = new RunnableC04001();
-/* 583 */           this.mSizeChangedListener = new C04105();
-/* 599 */           this.mPrepareNotifyRunnable = new RunnableC04116();
-/* 608 */           this.mPreparedListener = new C04127();
-/* 678 */           this.mCompletionListener = new C04138();
-/* 696 */           this.mErrorListener = new C04149();
-/* 722 */           this.mBufferingUpdateListener = new C040110();
-/* 729 */           this.mOnSeekCompleteListener = new C040211();
-/* 820 */           this.mSHCallback = new TextureViewSurfaceTextureListenerC040312();
-/* 911 */           this.mReleaseTag = "";
-/* 1050 */          this.mVisibileStartRunnable = new RunnableC040514();
-/* 226 */           this.SINGLE_PLAYER = SystemUtil.isSinglePlayerEnabled(context);
-/* 227 */           this.mUseVinePlayer = getGlobalUseVinePlayer();
-/* 228 */           this.mAttributes = attrs;
-/* 229 */           initVideoView();
+       public SdkVideoView(Context context, AttributeSet attrs) {
+           super(context, attrs);
+           this.mMediaPlayer = null;
+           this.mCurrentState = 1;
+           this.mTargetState = 1;
+           this.mPlayingPosition = -1;
+           this.mMuted = false;
+           this.mWasMuted = false;
+           this.mAudioSession = 0;
+           this.mSaveVideoClicker = new SaveVideoClicker();
+           this.mUiOpsHandler = new Handler(Looper.getMainLooper());
+           this.mOnOpenErrorListener = new RunnableC04001();
+           this.mSizeChangedListener = new C04105();
+           this.mPrepareNotifyRunnable = new RunnableC04116();
+           this.mPreparedListener = new C04127();
+           this.mCompletionListener = new C04138();
+           this.mErrorListener = new C04149();
+           this.mBufferingUpdateListener = new C040110();
+           this.mOnSeekCompleteListener = new C040211();
+           this.mSHCallback = new TextureViewSurfaceTextureListenerC040312();
+           this.mReleaseTag = "";
+          this.mVisibileStartRunnable = new RunnableC040514();
+           this.SINGLE_PLAYER = SystemUtil.isSinglePlayerEnabled(context);
+           this.mUseVinePlayer = getGlobalUseVinePlayer();
+           this.mAttributes = attrs;
+           initVideoView();
                 }
 
-/* 232 */       public void setUseVinePlayer(boolean useVinePlayer) {
-/* 233 */           this.mUseVinePlayer = useVinePlayer;
+       public void setUseVinePlayer(boolean useVinePlayer) {
+           this.mUseVinePlayer = useVinePlayer;
                 }
 
-/* 236 */       public SdkVideoView(Context context, AttributeSet attrs, int defStyle) {
-/* 237 */           super(context, attrs, defStyle);
-/* 116 */           this.mMediaPlayer = null;
-/* 166 */           this.mCurrentState = 1;
-/* 167 */           this.mTargetState = 1;
-/* 175 */           this.mPlayingPosition = -1;
-/* 177 */           this.mMuted = false;
-/* 178 */           this.mWasMuted = false;
-/* 179 */           this.mAudioSession = 0;
-/* 183 */           this.mSaveVideoClicker = new SaveVideoClicker();
-/* 184 */           this.mUiOpsHandler = new Handler(Looper.getMainLooper());
-/* 190 */           this.mOnOpenErrorListener = new RunnableC04001();
-/* 583 */           this.mSizeChangedListener = new C04105();
-/* 599 */           this.mPrepareNotifyRunnable = new RunnableC04116();
-/* 608 */           this.mPreparedListener = new C04127();
-/* 678 */           this.mCompletionListener = new C04138();
-/* 696 */           this.mErrorListener = new C04149();
-/* 722 */           this.mBufferingUpdateListener = new C040110();
-/* 729 */           this.mOnSeekCompleteListener = new C040211();
-/* 820 */           this.mSHCallback = new TextureViewSurfaceTextureListenerC040312();
-/* 911 */           this.mReleaseTag = "";
-/* 1050 */          this.mVisibileStartRunnable = new RunnableC040514();
-/* 238 */           this.SINGLE_PLAYER = SystemUtil.isSinglePlayerEnabled(context);
-/* 239 */           this.mUseVinePlayer = getGlobalUseVinePlayer();
-/* 240 */           this.mAttributes = attrs;
-/* 241 */           initVideoView();
+       public SdkVideoView(Context context, AttributeSet attrs, int defStyle) {
+           super(context, attrs, defStyle);
+           this.mMediaPlayer = null;
+           this.mCurrentState = 1;
+           this.mTargetState = 1;
+           this.mPlayingPosition = -1;
+           this.mMuted = false;
+           this.mWasMuted = false;
+           this.mAudioSession = 0;
+           this.mSaveVideoClicker = new SaveVideoClicker();
+           this.mUiOpsHandler = new Handler(Looper.getMainLooper());
+           this.mOnOpenErrorListener = new RunnableC04001();
+           this.mSizeChangedListener = new C04105();
+           this.mPrepareNotifyRunnable = new RunnableC04116();
+           this.mPreparedListener = new C04127();
+           this.mCompletionListener = new C04138();
+           this.mErrorListener = new C04149();
+           this.mBufferingUpdateListener = new C040110();
+           this.mOnSeekCompleteListener = new C040211();
+           this.mSHCallback = new TextureViewSurfaceTextureListenerC040312();
+           this.mReleaseTag = "";
+          this.mVisibileStartRunnable = new RunnableC040514();
+           this.SINGLE_PLAYER = SystemUtil.isSinglePlayerEnabled(context);
+           this.mUseVinePlayer = getGlobalUseVinePlayer();
+           this.mAttributes = attrs;
+           initVideoView();
                 }
 
-/* 244 */       public void onViewClicked() {
-/* 245 */           this.mSaveVideoClicker.onClick(this);
+       public void onViewClicked() {
+           this.mSaveVideoClicker.onClick(this);
                 }
 
-                @Override // android.view.View
-/* 249 */       protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-/* 250 */           int width = getDefaultSize(this.mVideoWidth, widthMeasureSpec);
-/* 251 */           int height = getDefaultSize(this.mVideoHeight, heightMeasureSpec);
-/* 252 */           if (this.mVideoWidth > 0 && this.mVideoHeight > 0) {
-/* 253 */               if (this.mVideoWidth * height > this.mVideoHeight * width) {
-/* 254 */                   height = (this.mVideoHeight * width) / this.mVideoWidth;
+                @Override 
+       protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+           int width = getDefaultSize(this.mVideoWidth, widthMeasureSpec);
+           int height = getDefaultSize(this.mVideoHeight, heightMeasureSpec);
+           if (this.mVideoWidth > 0 && this.mVideoHeight > 0) {
+               if (this.mVideoWidth * height > this.mVideoHeight * width) {
+                   height = (this.mVideoHeight * width) / this.mVideoWidth;
                         } else if (this.mVideoWidth * height < this.mVideoHeight * width) {
-/* 256 */                   width = (this.mVideoWidth * height) / this.mVideoHeight;
+                   width = (this.mVideoWidth * height) / this.mVideoHeight;
                         }
                     }
-/* 259 */           setMeasuredDimension(width, height);
+           setMeasuredDimension(width, height);
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 262 */       public int getPlayingPosition() {
-/* 263 */           return this.mPlayingPosition;
+                @Override 
+       public int getPlayingPosition() {
+           return this.mPlayingPosition;
                 }
 
-/* 266 */       public void setPlayingPosition(int playingPosition) {
-/* 267 */           this.mPlayingPosition = playingPosition;
+       public void setPlayingPosition(int playingPosition) {
+           this.mPlayingPosition = playingPosition;
                 }
 
-                @Override // android.view.TextureView, android.view.View
-/* 271 */       protected void onAttachedToWindow() {
-/* 272 */           super.onAttachedToWindow();
-/* 273 */           this.mMediaOpThread = new HandlerThread("MediaOp");
-/* 274 */           this.mMediaOpThread.start();
-/* 275 */           this.mMediaOpHandler = new HandlerC04072(this.mMediaOpThread.getLooper());
+                @Override 
+       protected void onAttachedToWindow() {
+           super.onAttachedToWindow();
+           this.mMediaOpThread = new HandlerThread("MediaOp");
+           this.mMediaOpThread.start();
+           this.mMediaOpHandler = new HandlerC04072(this.mMediaOpThread.getLooper());
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$2 */
-/* 273 */       class HandlerC04072 extends Handler {
-/* 274 */           HandlerC04072(Looper x0) {
+                
+       class HandlerC04072 extends Handler {
+           HandlerC04072(Looper x0) {
                         super(x0);
                     }
 
-                    @Override // android.os.Handler
-/* 277 */           public void handleMessage(Message msg) {
-/* 278 */               SdkVideoView.access$200(SdkVideoView.this, msg.what);
+                    @Override 
+           public void handleMessage(Message msg) {
+               SdkVideoView.access$200(SdkVideoView.this, msg.what);
                     }
                 }
 
-/* 283 */       private void initVideoView() {
-/* 284 */           this.mContext = getContext();
-/* 285 */           this.mVideoWidth = 0;
-/* 286 */           this.mVideoHeight = 0;
-/* 287 */           setSurfaceTextureListener(this.mSHCallback);
-/* 288 */           setFocusable(true);
-/* 289 */           setFocusableInTouchMode(true);
-/* 290 */           requestFocus();
-/* 291 */           this.mTargetState = 1;
+       private void initVideoView() {
+           this.mContext = getContext();
+           this.mVideoWidth = 0;
+           this.mVideoHeight = 0;
+           setSurfaceTextureListener(this.mSHCallback);
+           setFocusable(true);
+           setFocusableInTouchMode(true);
+           requestFocus();
+           this.mTargetState = 1;
                 }
 
-                @Override // android.view.View
-/* 295 */       public void onInitializeAccessibilityEvent(@NonNull AccessibilityEvent event) {
-/* 296 */           super.onInitializeAccessibilityEvent(event);
-/* 297 */           event.setClassName(SdkVideoView.class.getName());
+                @Override 
+       public void onInitializeAccessibilityEvent(@NonNull AccessibilityEvent event) {
+           super.onInitializeAccessibilityEvent(event);
+           event.setClassName(SdkVideoView.class.getName());
                 }
 
-                @Override // android.view.View
-/* 301 */       public void onInitializeAccessibilityNodeInfo(@NonNull AccessibilityNodeInfo info) {
-/* 302 */           super.onInitializeAccessibilityNodeInfo(info);
-/* 303 */           info.setClassName(SdkVideoView.class.getName());
+                @Override 
+       public void onInitializeAccessibilityNodeInfo(@NonNull AccessibilityNodeInfo info) {
+           super.onInitializeAccessibilityNodeInfo(info);
+           info.setClassName(SdkVideoView.class.getName());
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 307 */       public void setVideoPath(String path) {
-/* 308 */           setVideoPathDirect(path);
+                @Override 
+       public void setVideoPath(String path) {
+           setVideoPathDirect(path);
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 311 */       public void setVideoPathDirect(String path) {
-/* 312 */           SLog.m447d("mPath={}.", path);
-/* 313 */           this.mPath = path;
-/* 314 */           setVideoURI(path != null ? Uri.parse(path) : null);
+                @Override 
+       public void setVideoPathDirect(String path) {
+           SLog.m447d("mPath={}.", path);
+           this.mPath = path;
+           setVideoURI(path != null ? Uri.parse(path) : null);
                 }
 
-/* 317 */       public String getPath() {
-/* 318 */           return this.mPath;
+       public String getPath() {
+           return this.mPath;
                 }
 
-/* 321 */       public void setVideoURI(Uri uri) {
-/* 322 */           setVideoURI(uri, null);
+       public void setVideoURI(Uri uri) {
+           setVideoURI(uri, null);
                 }
 
-/* 325 */       private void setVideoURI(Uri uri, Map<String, String> headers) {
-/* 326 */           this.mUri = uri;
-/* 327 */           currentUri = this.mUri;
-/* 328 */           this.mHeaders = headers;
-/* 329 */           this.mSeekWhenPrepared = 0;
-/* 330 */           openVideo();
-/* 331 */           requestLayout();
-/* 332 */           postInvalidate();
+       private void setVideoURI(Uri uri, Map<String, String> headers) {
+           this.mUri = uri;
+           currentUri = this.mUri;
+           this.mHeaders = headers;
+           this.mSeekWhenPrepared = 0;
+           openVideo();
+           requestLayout();
+           postInvalidate();
                 }
 
-/* 335 */       public boolean retryOpenVideo(boolean forced) {
-/* 336 */           SLog.m447d("Retry open video: {}", Boolean.valueOf(!this.mHasNotRetriedBefore));
-/* 337 */           if (!forced && this.mHasNotRetriedBefore) {
+       public boolean retryOpenVideo(boolean forced) {
+           SLog.m447d("Retry open video: {}", Boolean.valueOf(!this.mHasNotRetriedBefore));
+           if (!forced && this.mHasNotRetriedBefore) {
                         return false;
                     }
-/* 338 */           this.mHasNotRetriedBefore = true;
-/* 339 */           openVideo();
+           this.mHasNotRetriedBefore = true;
+           openVideo();
                     return true;
                 }
 
-/* 346 */       public boolean isSurfaceReady() {
-/* 347 */           return isAvailable();
+       public boolean isSurfaceReady() {
+           return isAvailable();
                 }
 
-/* 350 */       public void startOpenVideo() {
-/* 351 */           openVideo();
+       public void startOpenVideo() {
+           openVideo();
                 }
 
-/* 354 */       private void openVideo() {
-/* 355 */           if (OPEN_ON_MAIN_THREAD) {
-/* 356 */               mediaOpOpen();
+       private void openVideo() {
+           if (OPEN_ON_MAIN_THREAD) {
+               mediaOpOpen();
                     } else {
-/* 358 */               postMediaOp(1);
+               postMediaOp(1);
                     }
                 }
 
-/* 362 */       public void setVinePlayerListener(VinePlayer.EventListener listener) {
-/* 363 */           this.mVinePlayerListener = listener;
+       public void setVinePlayerListener(VinePlayer.EventListener listener) {
+           this.mVinePlayerListener = listener;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$3 */
-/* 368 */       class C04083 implements VinePlayer.EventListener {
-/* 369 */           C04083() {
+                
+       class C04083 implements VinePlayer.EventListener {
+           C04083() {
                     }
 
-                    @Override // co.vine.android.embed.player.VinePlayer.EventListener
-/* 372 */           public void onError(PlayerState state, int operation, Throwable e) {
-/* 373 */               SLog.m459e("VinePlayer error", e);
-/* 374 */               SdkVideoView.access$300(SdkVideoView.this, operation, state.ordinal());
-/* 375 */               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
-/* 376 */                   SdkVideoView.access$400(SdkVideoView.this).onError(state, operation, e);
+                    @Override 
+           public void onError(PlayerState state, int operation, Throwable e) {
+               SLog.m459e("VinePlayer error", e);
+               SdkVideoView.access$300(SdkVideoView.this, operation, state.ordinal());
+               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
+                   SdkVideoView.access$400(SdkVideoView.this).onError(state, operation, e);
                         }
                     }
 
-                    @Override // co.vine.android.embed.player.VinePlayer.EventListener
-/* 381 */           public void onVideoSizeChanged(int width, int height) {
-/* 382 */               SdkVideoView.access$500(SdkVideoView.this, width, height);
-/* 383 */               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
-/* 384 */                   SdkVideoView.access$400(SdkVideoView.this).onVideoSizeChanged(width, height);
+                    @Override 
+           public void onVideoSizeChanged(int width, int height) {
+               SdkVideoView.access$500(SdkVideoView.this, width, height);
+               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
+                   SdkVideoView.access$400(SdkVideoView.this).onVideoSizeChanged(width, height);
                         }
                     }
 
-                    @Override // co.vine.android.embed.player.VinePlayer.EventListener
-/* 389 */           public void onLoopCompleted() {
-/* 390 */               SdkVideoView.access$600(SdkVideoView.this);
-/* 391 */               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
-/* 392 */                   SdkVideoView.access$400(SdkVideoView.this).onLoopCompleted();
+                    @Override 
+           public void onLoopCompleted() {
+               SdkVideoView.access$600(SdkVideoView.this);
+               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
+                   SdkVideoView.access$400(SdkVideoView.this).onLoopCompleted();
                         }
                     }
 
-                    @Override // co.vine.android.embed.player.VinePlayer.EventListener
-/* 397 */           public void onPrepared() {
-/* 398 */               SdkVideoView.access$700(SdkVideoView.this, 4);
-/* 399 */               if (SdkVideoView.access$800(SdkVideoView.this) != null) {
-/* 400 */                   SdkVideoView.access$800(SdkVideoView.this).onPrepared(SdkVideoView.this);
+                    @Override 
+           public void onPrepared() {
+               SdkVideoView.access$700(SdkVideoView.this, 4);
+               if (SdkVideoView.access$800(SdkVideoView.this) != null) {
+                   SdkVideoView.access$800(SdkVideoView.this).onPrepared(SdkVideoView.this);
                         }
-/* 402 */               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
-/* 403 */                   SdkVideoView.access$400(SdkVideoView.this).onPrepared();
-                        }
-                    }
-
-                    @Override // co.vine.android.embed.player.VinePlayer.EventListener
-/* 408 */           public void onFirstFrameRendererd() {
-/* 409 */               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
-/* 410 */                   SdkVideoView.access$400(SdkVideoView.this).onFirstFrameRendererd();
+               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
+                   SdkVideoView.access$400(SdkVideoView.this).onPrepared();
                         }
                     }
 
-                    @Override // co.vine.android.embed.player.VinePlayer.EventListener
-/* 415 */           public void onPastError(Exception error) {
-/* 416 */               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
-/* 417 */                   SdkVideoView.access$400(SdkVideoView.this).onPastError(error);
+                    @Override 
+           public void onFirstFrameRendererd() {
+               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
+                   SdkVideoView.access$400(SdkVideoView.this).onFirstFrameRendererd();
+                        }
+                    }
+
+                    @Override 
+           public void onPastError(Exception error) {
+               if (SdkVideoView.access$400(SdkVideoView.this) != null) {
+                   SdkVideoView.access$400(SdkVideoView.this).onPastError(error);
                         }
                     }
                 }
 
                 @TargetApi(16)
-/* 368 */       private void openVinePlayer(Surface surface) {
+       private void openVinePlayer(Surface surface) {
                     try {
-/* 369 */               this.mVinePlayer = new VinePlayer(this.mContext);
-/* 370 */               this.mVinePlayer.setEventListener(new C04083());
-/* 421 */               this.mVinePlayer.setSurface(surface);
-/* 422 */               this.mVinePlayer.prepareAsync(this.mUri, this.mAutoPlayOnPrepared);
-/* 423 */               attachMediaController();
-/* 424 */               setCurrentState(2);
+               this.mVinePlayer = new VinePlayer(this.mContext);
+               this.mVinePlayer.setEventListener(new C04083());
+               this.mVinePlayer.setSurface(surface);
+               this.mVinePlayer.prepareAsync(this.mUri, this.mAutoPlayOnPrepared);
+               attachMediaController();
+               setCurrentState(2);
                         int i = sTotalVideoViewed + 1;
                         sTotalVideoViewed = i;
-/* 425 */               CrashUtil.set("videosViewed", i);
+               CrashUtil.set("videosViewed", i);
                     } catch (IllegalArgumentException | IllegalStateException | SecurityException ex) {
-/* 427 */               if (this.mReportOpenError) {
-/* 428 */                   CrashUtil.logException(ex, "Exo Unable to open content {}, {}.", this.mUri, getTag());
+               if (this.mReportOpenError) {
+                   CrashUtil.logException(ex, "Exo Unable to open content {}, {}.", this.mUri, getTag());
                         }
-/* 430 */               setCurrentState(-1);
-/* 431 */               this.mTargetState = -1;
-/* 432 */               onError(1, 0);
+               setCurrentState(-1);
+               this.mTargetState = -1;
+               onError(1, 0);
                     }
                 }
 
-/* 443 */       private void openMediaPlayer(Surface surface) {
-/* 444 */           long startTime = System.currentTimeMillis();
-/* 445 */           PlayerMaker holder = new PlayerMaker(null);
-/* 446 */           if (this.SINGLE_PLAYER && singlePlayer == null) {
-/* 448 */               singlePlayer = makePlayerOnMainThread(holder);
+       private void openMediaPlayer(Surface surface) {
+           long startTime = System.currentTimeMillis();
+           PlayerMaker holder = new PlayerMaker(null);
+           if (this.SINGLE_PLAYER && singlePlayer == null) {
+               singlePlayer = makePlayerOnMainThread(holder);
                     }
                     try {
-/* 452 */               if (!this.SINGLE_PLAYER) {
-/* 453 */                   setPlayer(makePlayerOnMainThread(holder));
+               if (!this.SINGLE_PLAYER) {
+                   setPlayer(makePlayerOnMainThread(holder));
                         }
-/* 455 */               MediaPlayer player = getPlayer();
-/* 456 */               if (this.mAudioSession != 0) {
-/* 457 */                   player.setAudioSessionId(this.mAudioSession);
+               MediaPlayer player = getPlayer();
+               if (this.mAudioSession != 0) {
+                   player.setAudioSessionId(this.mAudioSession);
                         } else {
-/* 459 */                   this.mAudioSession = player.getAudioSessionId();
+                   this.mAudioSession = player.getAudioSessionId();
                         }
-/* 461 */               player.setOnPreparedListener(this.mPreparedListener);
-/* 462 */               player.setOnVideoSizeChangedListener(this.mSizeChangedListener);
-/* 463 */               player.setOnCompletionListener(this.mCompletionListener);
-/* 464 */               player.setOnErrorListener(this.mErrorListener);
-/* 465 */               player.setOnInfoListener(this.mOnInfoListener);
-/* 466 */               player.setOnBufferingUpdateListener(this.mBufferingUpdateListener);
-/* 467 */               player.setOnSeekCompleteListener(this.mOnSeekCompleteListener);
-/* 468 */               this.mCurrentBufferPercentage = 0;
-/* 469 */               player.setDataSource(this.mContext, this.mUri, this.mHeaders);
-/* 470 */               player.setSurface(surface);
-/* 471 */               if (this.mLooping) {
-/* 472 */                   player.setLooping(true);
+               player.setOnPreparedListener(this.mPreparedListener);
+               player.setOnVideoSizeChangedListener(this.mSizeChangedListener);
+               player.setOnCompletionListener(this.mCompletionListener);
+               player.setOnErrorListener(this.mErrorListener);
+               player.setOnInfoListener(this.mOnInfoListener);
+               player.setOnBufferingUpdateListener(this.mBufferingUpdateListener);
+               player.setOnSeekCompleteListener(this.mOnSeekCompleteListener);
+               this.mCurrentBufferPercentage = 0;
+               player.setDataSource(this.mContext, this.mUri, this.mHeaders);
+               player.setSurface(surface);
+               if (this.mLooping) {
+                   player.setLooping(true);
                         }
-/* 474 */               setKeepScreenOn(true);
-/* 475 */               player.setAudioStreamType(3);
-/* 476 */               if (this.mMuted) {
-/* 477 */                   player.setVolume(0.0f, 0.0f);
+               setKeepScreenOn(true);
+               player.setAudioStreamType(3);
+               if (this.mMuted) {
+                   player.setVolume(0.0f, 0.0f);
                         }
-/* 479 */               this.mNextSeek = -1;
-/* 480 */               player.prepareAsync();
+               this.mNextSeek = -1;
+               player.prepareAsync();
                         int i = sTotalVideoViewed + 1;
                         sTotalVideoViewed = i;
-/* 481 */               CrashUtil.set("videosViewed", i);
-/* 484 */               setCurrentState(2);
-/* 485 */               attachMediaController();
-/* 486 */               Log.d(TAG, PREPARE_SUCCESS_LOG);
-/* 487 */               this.mPrepareStart = System.currentTimeMillis();
-/* 488 */               long openTime = this.mPrepareStart - startTime;
-/* 489 */               OPEN_ON_MAIN_THREAD = DISABLE_OPEN_ON_SEPARATE_THREAD || openTime < OPEN_ON_MAIN_THREAD_THRESHOLD;
-/* 490 */               SLog.m465i("Open took {}ms", Long.valueOf(openTime));
+               CrashUtil.set("videosViewed", i);
+               setCurrentState(2);
+               attachMediaController();
+               Log.d(TAG, PREPARE_SUCCESS_LOG);
+               this.mPrepareStart = System.currentTimeMillis();
+               long openTime = this.mPrepareStart - startTime;
+               OPEN_ON_MAIN_THREAD = DISABLE_OPEN_ON_SEPARATE_THREAD || openTime < OPEN_ON_MAIN_THREAD_THRESHOLD;
+               SLog.m465i("Open took {}ms", Long.valueOf(openTime));
                     } catch (IOException | IllegalArgumentException | IllegalStateException | SecurityException ex) {
-/* 492 */               if (SLog.sLogsOn) {
-/* 493 */                   SLog.m458e("Error opening video: {}.", (Object) ex.getMessage(), (Throwable) ex);
+               if (SLog.sLogsOn) {
+                   SLog.m458e("Error opening video: {}.", (Object) ex.getMessage(), (Throwable) ex);
                         }
-/* 495 */               if (this.mReportOpenError) {
-/* 496 */                   CrashUtil.logException(ex, "Unable to open content {}, {}.", this.mUri, getTag());
+               if (this.mReportOpenError) {
+                   CrashUtil.logException(ex, "Unable to open content {}, {}.", this.mUri, getTag());
                         }
-/* 498 */               setCurrentState(-1);
-/* 499 */               this.mTargetState = -1;
-/* 500 */               if (Looper.getMainLooper() != Looper.myLooper()) {
-/* 501 */                   this.mUiOpsHandler.post(this.mOnOpenErrorListener);
+               setCurrentState(-1);
+               this.mTargetState = -1;
+               if (Looper.getMainLooper() != Looper.myLooper()) {
+                   this.mUiOpsHandler.post(this.mOnOpenErrorListener);
                         } else {
-/* 503 */                   this.mOnOpenErrorListener.run();
+                   this.mOnOpenErrorListener.run();
                         }
                     }
                 }
 
-/* 508 */       private MediaPlayer makePlayerOnMainThread(PlayerMaker holder) {
-/* 509 */           if (Looper.myLooper() != Looper.getMainLooper()) {
-/* 510 */               this.mUiOpsHandler.postAtFrontOfQueue(holder);
-/* 511 */               while (!holder.isReady()) {
+       private MediaPlayer makePlayerOnMainThread(PlayerMaker holder) {
+           if (Looper.myLooper() != Looper.getMainLooper()) {
+               this.mUiOpsHandler.postAtFrontOfQueue(holder);
+               while (!holder.isReady()) {
                             try {
-/* 513 */                       Thread.sleep(1L);
+                       Thread.sleep(1L);
                             } catch (InterruptedException e) {
-/* 515 */                       SLog.m464i("Waiting failed for player holder.");
+                       SLog.m464i("Waiting failed for player holder.");
                             }
                         }
                     } else {
-/* 519 */               holder.run();
+               holder.run();
                     }
-/* 521 */           return holder.getPlayer();
+           return holder.getPlayer();
                 }
 
-/* 524 */       private String getErrorMessageFromFrameworkError(int frameworkError) {
-/* 525 */           if (frameworkError == -1004) {
-/* 526 */               return "File or network related operation errors.";
+       private String getErrorMessageFromFrameworkError(int frameworkError) {
+           if (frameworkError == -1004) {
+               return "File or network related operation errors.";
                     }
-/* 527 */           if (frameworkError == -1007) {
-/* 528 */               return "Bitstream is not conforming to the related coding standard or file spec.";
+           if (frameworkError == -1007) {
+               return "Bitstream is not conforming to the related coding standard or file spec.";
                     }
-/* 529 */           if (frameworkError == 100) {
-/* 530 */               return "TextureVideoView error. Media server died. In this case, the application must release the MediaPlayer object and instantiate a new one.";
+           if (frameworkError == 100) {
+               return "TextureVideoView error. Media server died. In this case, the application must release the MediaPlayer object and instantiate a new one.";
                     }
-/* 531 */           if (frameworkError == -110) {
-/* 532 */               return "TextureVideoView error. Some operation takes too long to complete, usually more than 3-5 seconds.";
+           if (frameworkError == -110) {
+               return "TextureVideoView error. Some operation takes too long to complete, usually more than 3-5 seconds.";
                     }
-/* 533 */           if (frameworkError == 1) {
-/* 534 */               return "TextureVideoView error. Unspecified media player error.";
+           if (frameworkError == 1) {
+               return "TextureVideoView error. Unspecified media player error.";
                     }
-/* 535 */           if (frameworkError == -1010) {
-/* 536 */               return "TextureVideoView error. Bitstream is conforming to the related coding standard or file spec, but the media framework does not support the feature.";
+           if (frameworkError == -1010) {
+               return "TextureVideoView error. Bitstream is conforming to the related coding standard or file spec, but the media framework does not support the feature.";
                     }
-/* 537 */           if (frameworkError == 200) {
-/* 538 */               return "The video is streamed and its container is not valid for progressive playback i.e the video's index (e.g moov atom) is not at the start of the file.";
+           if (frameworkError == 200) {
+               return "The video is streamed and its container is not valid for progressive playback i.e the video's index (e.g moov atom) is not at the start of the file.";
                     }
-/* 540 */           return "Unknown Error";
+           return "Unknown Error";
                 }
 
-                @Override // android.view.View, co.vine.android.player.VideoViewInterface
-/* 544 */       public void setKeepScreenOn(boolean keepScreenOn) {
-/* 545 */           if (Looper.getMainLooper() == Looper.myLooper()) {
-/* 546 */               super.setKeepScreenOn(keepScreenOn);
+                @Override 
+       public void setKeepScreenOn(boolean keepScreenOn) {
+           if (Looper.getMainLooper() == Looper.myLooper()) {
+               super.setKeepScreenOn(keepScreenOn);
                     } else {
-/* 548 */               post(new RunnableC04094(keepScreenOn));
+               post(new RunnableC04094(keepScreenOn));
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$4 */
-/* 546 */       class RunnableC04094 implements Runnable {
-                    final /* synthetic */ boolean val$keepScreenOn;
+                
+       class RunnableC04094 implements Runnable {
+                    final  boolean val$keepScreenOn;
 
-/* 547 */           RunnableC04094(boolean z) {
+           RunnableC04094(boolean z) {
                         this.val$keepScreenOn = z;
                     }
 
-                    @Override // java.lang.Runnable
-/* 550 */           public void run() {
-/* 551 */               SdkVideoView.access$1001(SdkVideoView.this, this.val$keepScreenOn);
+                    @Override 
+           public void run() {
+               SdkVideoView.access$1001(SdkVideoView.this, this.val$keepScreenOn);
                     }
                 }
 
-/* 557 */       public void setAutoShow(boolean autoShow) {
-/* 558 */           this.mAutoShow = autoShow;
+       public void setAutoShow(boolean autoShow) {
+           this.mAutoShow = autoShow;
                 }
 
-/* 561 */       public void setMediaController(MediaController controller) {
-/* 562 */           if (this.mMediaController != null) {
-/* 563 */               this.mMediaController.hide();
+       public void setMediaController(MediaController controller) {
+           if (this.mMediaController != null) {
+               this.mMediaController.hide();
                     }
-/* 565 */           this.mMediaController = controller;
-/* 566 */           attachMediaController();
+           this.mMediaController = controller;
+           attachMediaController();
                 }
 
-/* 569 */       private void attachMediaController() {
-/* 570 */           if (this.mMediaController != null && hasPlayer()) {
-/* 571 */               this.mMediaController.setMediaPlayer(this);
-/* 572 */               View anchorView = getParent() instanceof View ? (View) getParent() : this;
-/* 574 */               this.mMediaController.setAnchorView(anchorView);
-/* 575 */               this.mMediaController.setEnabled(isInPlaybackState());
+       private void attachMediaController() {
+           if (this.mMediaController != null && hasPlayer()) {
+               this.mMediaController.setMediaPlayer(this);
+               View anchorView = getParent() instanceof View ? (View) getParent() : this;
+               this.mMediaController.setAnchorView(anchorView);
+               this.mMediaController.setEnabled(isInPlaybackState());
                     }
                 }
 
-/* 579 */       public void setOnVideoSizeChangedListener(MediaPlayer.OnVideoSizeChangedListener listener) {
-/* 580 */           this.mCustomOnSizeChangedListener = listener;
+       public void setOnVideoSizeChangedListener(MediaPlayer.OnVideoSizeChangedListener listener) {
+           this.mCustomOnSizeChangedListener = listener;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$5 */
-/* 582 */       class C04105 implements MediaPlayer.OnVideoSizeChangedListener {
-/* 583 */           C04105() {
+                
+       class C04105 implements MediaPlayer.OnVideoSizeChangedListener {
+           C04105() {
                     }
 
-                    @Override // android.media.MediaPlayer.OnVideoSizeChangedListener
-/* 586 */           public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
+                    @Override 
+           public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
                         try {
-/* 587 */                   int w = mp.getVideoWidth();
-/* 588 */                   int h = mp.getVideoHeight();
-/* 589 */                   SdkVideoView.access$500(SdkVideoView.this, w, h);
-/* 590 */                   if (SdkVideoView.access$1100(SdkVideoView.this) != null) {
-/* 591 */                       SdkVideoView.access$1100(SdkVideoView.this).onVideoSizeChanged(mp, w, h);
+                   int w = mp.getVideoWidth();
+                   int h = mp.getVideoHeight();
+                   SdkVideoView.access$500(SdkVideoView.this, w, h);
+                   if (SdkVideoView.access$1100(SdkVideoView.this) != null) {
+                       SdkVideoView.access$1100(SdkVideoView.this).onVideoSizeChanged(mp, w, h);
                             }
                         } catch (IllegalStateException e) {
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$6 */
-/* 597 */       class RunnableC04116 implements Runnable {
-/* 598 */           RunnableC04116() {
+                
+       class RunnableC04116 implements Runnable {
+           RunnableC04116() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 601 */           public void run() {
-/* 602 */               if (SdkVideoView.access$800(SdkVideoView.this) != null) {
-/* 603 */                   SdkVideoView.access$800(SdkVideoView.this).onPrepared(SdkVideoView.this);
+                    @Override 
+           public void run() {
+               if (SdkVideoView.access$800(SdkVideoView.this) != null) {
+                   SdkVideoView.access$800(SdkVideoView.this).onPrepared(SdkVideoView.this);
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$7 */
-/* 606 */       class C04127 implements MediaPlayer.OnPreparedListener {
-/* 607 */           C04127() {
+                
+       class C04127 implements MediaPlayer.OnPreparedListener {
+           C04127() {
                     }
 
-                    @Override // android.media.MediaPlayer.OnPreparedListener
-/* 609 */           public void onPrepared(MediaPlayer mp) {
-/* 610 */               SLog.m442b("Prepare took {} ms", Long.valueOf(System.currentTimeMillis() - SdkVideoView.access$1200(SdkVideoView.this)));
+                    @Override 
+           public void onPrepared(MediaPlayer mp) {
+               SLog.m442b("Prepare took {} ms", Long.valueOf(System.currentTimeMillis() - SdkVideoView.access$1200(SdkVideoView.this)));
                         try {
-/* 612 */                   mp.seekTo(0);
+                   mp.seekTo(0);
                         } catch (Exception e) {
                         }
-/* 616 */               SdkVideoView.access$700(SdkVideoView.this, 4);
-/* 617 */               SdkVideoView.access$1302(SdkVideoView.this, true);
-/* 618 */               if (SdkVideoView.access$1400(SdkVideoView.this)) {
-/* 619 */                   SdkVideoView.access$1500(SdkVideoView.this, 2);
+               SdkVideoView.access$700(SdkVideoView.this, 4);
+               SdkVideoView.access$1302(SdkVideoView.this, true);
+               if (SdkVideoView.access$1400(SdkVideoView.this)) {
+                   SdkVideoView.access$1500(SdkVideoView.this, 2);
                         }
                         try {
-/* 622 */                   SdkVideoView.access$500(SdkVideoView.this, mp.getVideoWidth(), mp.getVideoHeight());
+                   SdkVideoView.access$500(SdkVideoView.this, mp.getVideoWidth(), mp.getVideoHeight());
                         } catch (IllegalStateException e2) {
-/* 624 */                   SLog.m455e("IllegalState happened. ");
+                   SLog.m455e("IllegalState happened. ");
                         }
-/* 626 */               SdkVideoView.access$1600(SdkVideoView.this);
-/* 627 */               SdkVideoView.access$1800(SdkVideoView.this).post(SdkVideoView.access$1700(SdkVideoView.this));
+               SdkVideoView.access$1600(SdkVideoView.this);
+               SdkVideoView.access$1800(SdkVideoView.this).post(SdkVideoView.access$1700(SdkVideoView.this));
                     }
                 }
 
-/* 631 */       private void checkForFrameDrops(String op, long start) {
-/* 632 */           if (SLog.sLogsOn && Looper.getMainLooper() == Looper.myLooper()) {
-/* 633 */               long time = System.currentTimeMillis() - start;
+       private void checkForFrameDrops(String op, long start) {
+           if (SLog.sLogsOn && Looper.getMainLooper() == Looper.myLooper()) {
+               long time = System.currentTimeMillis() - start;
                         if (time > OPEN_ON_MAIN_THREAD_THRESHOLD) {
-/* 635 */                   SLog.m479w("Frame drops caused by {}(): {}", op, Long.valueOf(time));
+                   SLog.m479w("Frame drops caused by {}(): {}", op, Long.valueOf(time));
                         }
                     }
                 }
 
-/* 640 */       private void onPlayerPrepared() {
-/* 641 */           if (this.mMediaController != null) {
-/* 642 */               this.mMediaController.setEnabled(true);
+       private void onPlayerPrepared() {
+           if (this.mMediaController != null) {
+               this.mMediaController.setEnabled(true);
                     }
-/* 645 */           int seekToPosition = this.mSeekWhenPrepared;
-/* 646 */           if (seekToPosition != 0) {
-/* 647 */               mediaOpSeekTo(seekToPosition);
+           int seekToPosition = this.mSeekWhenPrepared;
+           if (seekToPosition != 0) {
+               mediaOpSeekTo(seekToPosition);
                     }
-/* 649 */           if (this.mVideoWidth != 0 && this.mVideoHeight != 0) {
-/* 652 */               if (this.mSurfaceWidth == this.mVideoWidth && this.mSurfaceHeight == this.mVideoHeight) {
-/* 656 */                   if (this.mTargetState == 6) {
-/* 657 */                       start();
-/* 658 */                       if (this.mMediaController != null) {
-/* 659 */                           this.mMediaController.show();
-/* 676 */                           return;
+           if (this.mVideoWidth != 0 && this.mVideoHeight != 0) {
+               if (this.mSurfaceWidth == this.mVideoWidth && this.mSurfaceHeight == this.mVideoHeight) {
+                   if (this.mTargetState == 6) {
+                       start();
+                       if (this.mMediaController != null) {
+                           this.mMediaController.show();
+                           return;
                                 }
-/* 676 */                       return;
+                       return;
                             }
-/* 661 */                   if (!isPlaying()) {
-/* 663 */                       if ((seekToPosition != 0 || getCurrentPosition() > 0) && this.mMediaController != null) {
-/* 665 */                           this.mMediaController.show(0);
-/* 676 */                           return;
+                   if (!isPlaying()) {
+                       if ((seekToPosition != 0 || getCurrentPosition() > 0) && this.mMediaController != null) {
+                           this.mMediaController.show(0);
+                           return;
                                 }
-/* 676 */                       return;
+                       return;
                             }
-/* 676 */                   return;
+                   return;
                         }
-/* 676 */               return;
+               return;
                     }
-/* 672 */           if (this.mTargetState == 6) {
-/* 673 */               start();
-                    }
-                }
-
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$8 */
-/* 677 */       class C04138 implements MediaPlayer.OnCompletionListener {
-/* 678 */           C04138() {
-                    }
-
-                    @Override // android.media.MediaPlayer.OnCompletionListener
-/* 680 */           public void onCompletion(MediaPlayer mp) {
-/* 681 */               SdkVideoView.access$600(SdkVideoView.this);
+           if (this.mTargetState == 6) {
+               start();
                     }
                 }
 
-/* 685 */       private void onComplete() {
-/* 686 */           setCurrentState(5);
-/* 687 */           this.mTargetState = 5;
-/* 688 */           if (this.mMediaController != null) {
-/* 689 */               this.mMediaController.hide();
+                
+       class C04138 implements MediaPlayer.OnCompletionListener {
+           C04138() {
                     }
-/* 691 */           if (this.mOnCompletionListener != null) {
-/* 692 */               this.mOnCompletionListener.onCompletion(this);
+
+                    @Override 
+           public void onCompletion(MediaPlayer mp) {
+               SdkVideoView.access$600(SdkVideoView.this);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$9 */
-/* 695 */       class C04149 implements MediaPlayer.OnErrorListener {
-/* 696 */           C04149() {
+       private void onComplete() {
+           setCurrentState(5);
+           this.mTargetState = 5;
+           if (this.mMediaController != null) {
+               this.mMediaController.hide();
                     }
-
-                    @Override // android.media.MediaPlayer.OnErrorListener
-/* 698 */           public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
-/* 699 */               SdkVideoView.access$300(SdkVideoView.this, framework_err, impl_err);
-/* 700 */               return true;
+           if (this.mOnCompletionListener != null) {
+               this.mOnCompletionListener.onCompletion(this);
                     }
                 }
 
-/* 704 */       private boolean onError(int framework_err, int impl_err) {
-/* 705 */           SLog.m453d("Error: {}, {}, {}, {}.", new Object[]{Integer.valueOf(framework_err), Integer.valueOf(impl_err), this, this.mPath});
-/* 706 */           SLog.m447d("Framework Error: {}", getErrorMessageFromFrameworkError(framework_err));
-/* 707 */           setCurrentState(-1);
-/* 708 */           this.mTargetState = -1;
-/* 709 */           this.mPath = null;
-/* 710 */           if (this.mMediaController != null) {
-/* 711 */               this.mMediaController.hide();
+                
+       class C04149 implements MediaPlayer.OnErrorListener {
+           C04149() {
+                    }
+
+                    @Override 
+           public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
+               SdkVideoView.access$300(SdkVideoView.this, framework_err, impl_err);
+               return true;
+                    }
+                }
+
+       private boolean onError(int framework_err, int impl_err) {
+           SLog.m453d("Error: {}, {}, {}, {}.", new Object[]{Integer.valueOf(framework_err), Integer.valueOf(impl_err), this, this.mPath});
+           SLog.m447d("Framework Error: {}", getErrorMessageFromFrameworkError(framework_err));
+           setCurrentState(-1);
+           this.mTargetState = -1;
+           this.mPath = null;
+           if (this.mMediaController != null) {
+               this.mMediaController.hide();
                     }
                     return this.mOnErrorListener != null && this.mOnErrorListener.onError(this, framework_err, impl_err);
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$10 */
-/* 721 */       class C040110 implements MediaPlayer.OnBufferingUpdateListener {
-/* 722 */           C040110() {
+                
+       class C040110 implements MediaPlayer.OnBufferingUpdateListener {
+           C040110() {
                     }
 
-                    @Override // android.media.MediaPlayer.OnBufferingUpdateListener
-/* 724 */           public void onBufferingUpdate(MediaPlayer mp, int percent) {
-/* 725 */               SdkVideoView.access$1902(SdkVideoView.this, percent);
+                    @Override 
+           public void onBufferingUpdate(MediaPlayer mp, int percent) {
+               SdkVideoView.access$1902(SdkVideoView.this, percent);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$11 */
-/* 727 */       class C040211 implements MediaPlayer.OnSeekCompleteListener {
-/* 728 */           C040211() {
+                
+       class C040211 implements MediaPlayer.OnSeekCompleteListener {
+           C040211() {
                     }
 
-                    @Override // android.media.MediaPlayer.OnSeekCompleteListener
-/* 732 */           public void onSeekComplete(MediaPlayer mp) {
-/* 733 */               SdkVideoView.access$2002(SdkVideoView.this, false);
-/* 734 */               if (SdkVideoView.access$2100(SdkVideoView.this) >= 0) {
-/* 735 */                   int seek = SdkVideoView.access$2100(SdkVideoView.this);
-/* 736 */                   SdkVideoView.access$2102(SdkVideoView.this, -1);
-/* 737 */                   mp.seekTo(seek);
+                    @Override 
+           public void onSeekComplete(MediaPlayer mp) {
+               SdkVideoView.access$2002(SdkVideoView.this, false);
+               if (SdkVideoView.access$2100(SdkVideoView.this) >= 0) {
+                   int seek = SdkVideoView.access$2100(SdkVideoView.this);
+                   SdkVideoView.access$2102(SdkVideoView.this, -1);
+                   mp.seekTo(seek);
                         }
                     }
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 748 */       public void setOnPreparedListener(VideoViewInterface.OnPreparedListener l) {
-/* 749 */           this.mOnPreparedListener = l;
+                @Override 
+       public void setOnPreparedListener(VideoViewInterface.OnPreparedListener l) {
+           this.mOnPreparedListener = l;
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 753 */       public void setCacheKey(CacheKey cacheKey) {
-/* 754 */           this.mCacheKey = cacheKey;
+                @Override 
+       public void setCacheKey(CacheKey cacheKey) {
+           this.mCacheKey = cacheKey;
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 758 */       public CacheKey getCacheKey() {
-/* 759 */           return this.mCacheKey;
+                @Override 
+       public CacheKey getCacheKey() {
+           return this.mCacheKey;
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 762 */       public void setAutoPlayOnPrepared(boolean autoPlay) {
-/* 763 */           this.mAutoPlayOnPrepared = autoPlay;
+                @Override 
+       public void setAutoPlayOnPrepared(boolean autoPlay) {
+           this.mAutoPlayOnPrepared = autoPlay;
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 772 */       public void setOnCompletionListener(VideoViewInterface.OnCompletionListener l) {
-/* 773 */           this.mOnCompletionListener = l;
+                @Override 
+       public void setOnCompletionListener(VideoViewInterface.OnCompletionListener l) {
+           this.mOnCompletionListener = l;
                 }
 
-/* 776 */       public VideoViewInterface.OnCompletionListener getOnCompletionListener() {
-/* 777 */           return this.mOnCompletionListener;
+       public VideoViewInterface.OnCompletionListener getOnCompletionListener() {
+           return this.mOnCompletionListener;
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 788 */       public void setOnErrorListener(VideoViewInterface.OnErrorListener l) {
-/* 789 */           this.mOnErrorListener = l;
+                @Override 
+       public void setOnErrorListener(VideoViewInterface.OnErrorListener l) {
+           this.mOnErrorListener = l;
                 }
 
-/* 798 */       public void setOnInfoListener(MediaPlayer.OnInfoListener l) {
-/* 799 */           this.mOnInfoListener = l;
+       public void setOnInfoListener(MediaPlayer.OnInfoListener l) {
+           this.mOnInfoListener = l;
                 }
 
-/* 802 */       public void setReportOpenError(boolean reportError) {
-/* 803 */           this.mReportOpenError = reportError;
+       public void setReportOpenError(boolean reportError) {
+           this.mReportOpenError = reportError;
                 }
 
-/* 812 */       public void setSurfaceReadyListener(SurfaceReadyListener listener) {
-/* 813 */           this.mSurfaceReadyListener = listener;
+       public void setSurfaceReadyListener(SurfaceReadyListener listener) {
+           this.mSurfaceReadyListener = listener;
                 }
 
-/* 816 */       public void setSurfaceUpdatedListener(SurfaceUpdatedListener listener) {
-/* 817 */           this.mSurfaceUpdatedListener = listener;
+       public void setSurfaceUpdatedListener(SurfaceUpdatedListener listener) {
+           this.mSurfaceUpdatedListener = listener;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$12 */
-/* 818 */       class TextureViewSurfaceTextureListenerC040312 implements TextureView.SurfaceTextureListener {
-/* 819 */           TextureViewSurfaceTextureListenerC040312() {
+                
+       class TextureViewSurfaceTextureListenerC040312 implements TextureView.SurfaceTextureListener {
+           TextureViewSurfaceTextureListenerC040312() {
                     }
 
-                    @Override // android.view.TextureView.SurfaceTextureListener
-/* 822 */           public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-/* 823 */               SLog.m464i("Surface is ready.");
-/* 824 */               if (SdkVideoView.access$2200(SdkVideoView.this) == null) {
-/* 825 */                   SdkVideoView.access$2300(SdkVideoView.this);
+                    @Override 
+           public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+               SLog.m464i("Surface is ready.");
+               if (SdkVideoView.access$2200(SdkVideoView.this) == null) {
+                   SdkVideoView.access$2300(SdkVideoView.this);
                         } else {
-/* 827 */                   SdkVideoView.access$2200(SdkVideoView.this).onSurfaceTextureAvailable(SdkVideoView.this);
+                   SdkVideoView.access$2200(SdkVideoView.this).onSurfaceTextureAvailable(SdkVideoView.this);
                         }
                     }
 
-                    @Override // android.view.TextureView.SurfaceTextureListener
-/* 832 */           public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-/* 833 */               SdkVideoView.access$2402(SdkVideoView.this, width);
-/* 834 */               SdkVideoView.access$2502(SdkVideoView.this, height);
-/* 835 */               boolean isValidState = SdkVideoView.access$2600(SdkVideoView.this) == 6;
-/* 836 */               boolean hasValidSize = SdkVideoView.this.mVideoWidth == width && SdkVideoView.this.mVideoHeight == height;
-/* 837 */               if (SdkVideoView.access$2700(SdkVideoView.this) && isValidState && hasValidSize) {
-/* 838 */                   if (SdkVideoView.access$2800(SdkVideoView.this) != 0) {
-/* 839 */                       SdkVideoView.this.seekTo(SdkVideoView.access$2800(SdkVideoView.this));
+                    @Override 
+           public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+               SdkVideoView.access$2402(SdkVideoView.this, width);
+               SdkVideoView.access$2502(SdkVideoView.this, height);
+               boolean isValidState = SdkVideoView.access$2600(SdkVideoView.this) == 6;
+               boolean hasValidSize = SdkVideoView.this.mVideoWidth == width && SdkVideoView.this.mVideoHeight == height;
+               if (SdkVideoView.access$2700(SdkVideoView.this) && isValidState && hasValidSize) {
+                   if (SdkVideoView.access$2800(SdkVideoView.this) != 0) {
+                       SdkVideoView.this.seekTo(SdkVideoView.access$2800(SdkVideoView.this));
                             }
-/* 841 */                   SdkVideoView.this.start();
+                   SdkVideoView.this.start();
                         }
                     }
 
-                    @Override // android.view.TextureView.SurfaceTextureListener
-/* 847 */           public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-/* 848 */               if (SdkVideoView.access$2900(SdkVideoView.this) != null) {
+                    @Override 
+           public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+               if (SdkVideoView.access$2900(SdkVideoView.this) != null) {
                             SdkVideoView.access$2900(SdkVideoView.this).hide();
                         }
-/* 849 */               if (SdkVideoView.access$3000(SdkVideoView.this) != null) {
-/* 850 */                   SdkVideoView.access$3100(SdkVideoView.this, "surface destroyed", true, false);
+               if (SdkVideoView.access$3000(SdkVideoView.this) != null) {
+                   SdkVideoView.access$3100(SdkVideoView.this, "surface destroyed", true, false);
                         } else {
-/* 852 */                   SdkVideoView.access$3100(SdkVideoView.this, "surface destroyed", true, true);
+                   SdkVideoView.access$3100(SdkVideoView.this, "surface destroyed", true, true);
                         }
                         return true;
                     }
 
-                    @Override // android.view.TextureView.SurfaceTextureListener
-/* 858 */           public void onSurfaceTextureUpdated(SurfaceTexture surface) {
-/* 859 */               if (SdkVideoView.access$3200(SdkVideoView.this) != null) {
-/* 860 */                   SdkVideoView.access$3200(SdkVideoView.this).onSurfaceUpdated();
+                    @Override 
+           public void onSurfaceTextureUpdated(SurfaceTexture surface) {
+               if (SdkVideoView.access$3200(SdkVideoView.this) != null) {
+                   SdkVideoView.access$3200(SdkVideoView.this).onSurfaceUpdated();
                         }
                     }
                 }
 
-/* 865 */       public static void releaseStaticIfNeeded() {
+       public static void releaseStaticIfNeeded() {
                     synchronized (LOCK) {
                         try {
                             try {
-/* 868 */                       if (singlePlayer != null) {
-/* 869 */                           singlePlayer.release();
-/* 870 */                           singlePlayer = null;
+                       if (singlePlayer != null) {
+                           singlePlayer.release();
+                           singlePlayer = null;
                                 }
                             } catch (Exception e) {
-/* 873 */                       SLog.m459e("Failed to release static player.", (Throwable) e);
+                       SLog.m459e("Failed to release static player.", (Throwable) e);
                             }
                         } catch (Throwable th) {
                             throw th;
@@ -1085,314 +1085,314 @@
                     }
                 }
 
-/* 878 */       private void setPlayer(MediaPlayer player) {
-/* 879 */           if (this.SINGLE_PLAYER) {
-/* 880 */               singlePlayer = player;
+       private void setPlayer(MediaPlayer player) {
+           if (this.SINGLE_PLAYER) {
+               singlePlayer = player;
                     } else {
-/* 882 */               this.mMediaPlayer = player;
+               this.mMediaPlayer = player;
                     }
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 886 */       public void stopPlayback() {
-/* 887 */           if (this.SINGLE_PLAYER) {
+                @Override 
+       public void stopPlayback() {
+           if (this.SINGLE_PLAYER) {
                         synchronized (LOCK) {
                             try {
-/* 889 */                       release("stop playback", true, false);
+                       release("stop playback", true, false);
                             } catch (Throwable th) {
                                 throw th;
                             }
                         }
-/* 894 */               return;
+               return;
                     }
-/* 892 */           release("stop playback", true, false);
+           release("stop playback", true, false);
                 }
 
-/* 896 */       private void onVideoSizeChanged(int width, int height) {
-/* 897 */           if (this.mVideoHeight != height || this.mVideoWidth != width) {
-/* 898 */               this.mVideoWidth = width;
-/* 899 */               this.mVideoHeight = height;
-/* 900 */               if (this.mVideoWidth != 0 && this.mVideoHeight != 0) {
-/* 901 */                   this.mUiOpsHandler.post(new RunnableC040413());
+       private void onVideoSizeChanged(int width, int height) {
+           if (this.mVideoHeight != height || this.mVideoWidth != width) {
+               this.mVideoWidth = width;
+               this.mVideoHeight = height;
+               if (this.mVideoWidth != 0 && this.mVideoHeight != 0) {
+                   this.mUiOpsHandler.post(new RunnableC040413());
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$13 */
-/* 899 */       class RunnableC040413 implements Runnable {
-/* 900 */           RunnableC040413() {
+                
+       class RunnableC040413 implements Runnable {
+           RunnableC040413() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 903 */           public void run() {
-/* 904 */               SdkVideoView.this.requestLayout();
+                    @Override 
+           public void run() {
+               SdkVideoView.this.requestLayout();
                     }
                 }
 
-/* 920 */       private void release(String tag, boolean cleartargetstate, boolean runNow) {
-/* 921 */           this.mReleaseTag = tag;
-/* 922 */           this.mShouldClearState = cleartargetstate;
-/* 923 */           if (runNow) {
-/* 924 */               mediaOpRelease();
+       private void release(String tag, boolean cleartargetstate, boolean runNow) {
+           this.mReleaseTag = tag;
+           this.mShouldClearState = cleartargetstate;
+           if (runNow) {
+               mediaOpRelease();
                     } else {
-/* 926 */               removePendingMediaOps();
-/* 927 */               postMediaOp(0);
+               removePendingMediaOps();
+               postMediaOp(0);
                     }
-/* 929 */           setKeepScreenOn(false);
+           setKeepScreenOn(false);
                 }
 
-                @Override // android.view.View
-/* 933 */       public boolean onTouchEvent(@NonNull MotionEvent ev) {
-/* 934 */           if (isInPlaybackState() && this.mMediaController != null) {
-/* 935 */               toggleMediaControlsVisibility();
-/* 937 */               return false;
+                @Override 
+       public boolean onTouchEvent(@NonNull MotionEvent ev) {
+           if (isInPlaybackState() && this.mMediaController != null) {
+               toggleMediaControlsVisibility();
+               return false;
                     }
-/* 937 */           return false;
+           return false;
                 }
 
-                @Override // android.view.View
-/* 941 */       public boolean onTrackballEvent(MotionEvent ev) {
-/* 942 */           if (isInPlaybackState() && this.mMediaController != null) {
-/* 943 */               toggleMediaControlsVisibility();
-/* 945 */               return false;
+                @Override 
+       public boolean onTrackballEvent(MotionEvent ev) {
+           if (isInPlaybackState() && this.mMediaController != null) {
+               toggleMediaControlsVisibility();
+               return false;
                     }
-/* 945 */           return false;
+           return false;
                 }
 
-/* 949 */       public boolean isPlayerPlaying() {
+       public boolean isPlayerPlaying() {
                     boolean r = true;
-/* 950 */           long start = System.currentTimeMillis();
-/* 951 */           if (this.mUseVinePlayer) {
-/* 952 */               if (this.mVinePlayer == null || !this.mVinePlayer.isPlaying()) {
+           long start = System.currentTimeMillis();
+           if (this.mUseVinePlayer) {
+               if (this.mVinePlayer == null || !this.mVinePlayer.isPlaying()) {
                             r = false;
                         }
                     } else if (getPlayer() == null || !getPlayer().isPlaying()) {
                         r = false;
                     }
-/* 956 */           checkForFrameDrops("isPlayerPlaying", start);
-/* 957 */           return r;
+           checkForFrameDrops("isPlayerPlaying", start);
+           return r;
                 }
 
-                @Override // android.view.View, android.view.KeyEvent.Callback
-/* 961 */       public boolean onKeyDown(int keyCode, @NonNull KeyEvent event) {
-/* 962 */           boolean isKeyCodeSupported = (keyCode == 4 || keyCode == 24 || keyCode == 25 || keyCode == 164 || keyCode == 82 || keyCode == 5 || keyCode == 6) ? false : true;
-/* 969 */           if (isInPlaybackState() && isKeyCodeSupported && this.mMediaController != null) {
-/* 970 */               if (keyCode == 79 || keyCode == 85) {
-/* 972 */                   if (getPlayer().isPlaying()) {
-/* 973 */                       pause();
-/* 974 */                       this.mMediaController.show();
+                @Override 
+       public boolean onKeyDown(int keyCode, @NonNull KeyEvent event) {
+           boolean isKeyCodeSupported = (keyCode == 4 || keyCode == 24 || keyCode == 25 || keyCode == 164 || keyCode == 82 || keyCode == 5 || keyCode == 6) ? false : true;
+           if (isInPlaybackState() && isKeyCodeSupported && this.mMediaController != null) {
+               if (keyCode == 79 || keyCode == 85) {
+                   if (getPlayer().isPlaying()) {
+                       pause();
+                       this.mMediaController.show();
                                 return true;
                             }
-/* 976 */                   start();
-/* 977 */                   this.mMediaController.hide();
+                   start();
+                   this.mMediaController.hide();
                             return true;
                         }
-/* 980 */               if (keyCode == 126) {
-/* 981 */                   if (getPlayer().isPlaying()) {
+               if (keyCode == 126) {
+                   if (getPlayer().isPlaying()) {
                                 return true;
                             }
-/* 982 */                   start();
-/* 983 */                   this.mMediaController.hide();
+                   start();
+                   this.mMediaController.hide();
                             return true;
                         }
-/* 986 */               if (keyCode == 86 || keyCode == 127) {
-/* 988 */                   if (!getPlayer().isPlaying()) {
+               if (keyCode == 86 || keyCode == 127) {
+                   if (!getPlayer().isPlaying()) {
                                 return true;
                             }
-/* 989 */                   pause();
-/* 990 */                   this.mMediaController.show();
+                   pause();
+                   this.mMediaController.show();
                             return true;
                         }
-/* 994 */               toggleMediaControlsVisibility();
+               toggleMediaControlsVisibility();
                     }
-/* 998 */           return super.onKeyDown(keyCode, event);
+           return super.onKeyDown(keyCode, event);
                 }
 
-/* 1001 */      private void toggleMediaControlsVisibility() {
-/* 1002 */          if (this.mMediaController.isShowing()) {
-/* 1003 */              this.mMediaController.hide();
+      private void toggleMediaControlsVisibility() {
+          if (this.mMediaController.isShowing()) {
+              this.mMediaController.hide();
                     } else {
-/* 1005 */              this.mMediaController.show();
+              this.mMediaController.show();
                     }
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl, co.vine.android.player.VideoViewInterface
-/* 1009 */      public void start() {
-/* 1010 */          start(true);
+                @Override 
+      public void start() {
+          start(true);
                 }
 
-/* 1015 */      private void mediaOpStart() {
+      private void mediaOpStart() {
                     synchronized (LOCK) {
                         try {
-/* 1017 */                  if (isInPlaybackState()) {
-/* 1018 */                      long start = System.currentTimeMillis();
-/* 1019 */                      if (this.mUseVinePlayer) {
-/* 1020 */                          VinePlayer vinePlayer = this.mVinePlayer;
-/* 1021 */                          if (vinePlayer != null) {
-/* 1022 */                              vinePlayer.resume();
+                  if (isInPlaybackState()) {
+                      long start = System.currentTimeMillis();
+                      if (this.mUseVinePlayer) {
+                          VinePlayer vinePlayer = this.mVinePlayer;
+                          if (vinePlayer != null) {
+                              vinePlayer.resume();
                                     }
                                 } else {
                                     try {
-/* 1026 */                              MediaPlayer player = getPlayer();
-/* 1027 */                              if (player != null) {
-/* 1028 */                                  player.start();
+                              MediaPlayer player = getPlayer();
+                              if (player != null) {
+                                  player.start();
                                         }
                                     } catch (IllegalStateException e) {
-/* 1032 */                              CrashUtil.logOrThrowInDebug(e);
+                              CrashUtil.logOrThrowInDebug(e);
                                     }
                                 }
-/* 1035 */                      checkForFrameDrops("start", start);
-/* 1036 */                      setCurrentState(6);
+                      checkForFrameDrops("start", start);
+                      setCurrentState(6);
                             }
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
-/* 1039 */          if (this.mEnsureVisibilityWhenStart && getVisibility() != 0) {
-/* 1040 */              this.mUiOpsHandler.postDelayed(this.mVisibileStartRunnable, 40L);
+          if (this.mEnsureVisibilityWhenStart && getVisibility() != 0) {
+              this.mUiOpsHandler.postDelayed(this.mVisibileStartRunnable, 40L);
                     }
-/* 1042 */          this.mTargetState = 6;
+          this.mTargetState = 6;
                 }
 
-/* 1045 */      public void start(boolean ensureVisibility) {
-/* 1046 */          this.mEnsureVisibilityWhenStart = ensureVisibility;
-/* 1047 */          postMediaOp(2);
+      public void start(boolean ensureVisibility) {
+          this.mEnsureVisibilityWhenStart = ensureVisibility;
+          postMediaOp(2);
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$14 */
-/* 1048 */      class RunnableC040514 implements Runnable {
-/* 1049 */          RunnableC040514() {
+                
+      class RunnableC040514 implements Runnable {
+          RunnableC040514() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 1052 */          public void run() {
-/* 1053 */              SdkVideoView.this.setVisibility(0);
+                    @Override 
+          public void run() {
+              SdkVideoView.this.setVisibility(0);
                     }
                 }
 
-                @Override // android.view.View
-/* 1058 */      public void setVisibility(int visibility) {
-/* 1059 */          super.setVisibility(visibility);
-/* 1060 */          this.mUiOpsHandler.removeCallbacks(this.mVisibileStartRunnable);
+                @Override 
+      public void setVisibility(int visibility) {
+          super.setVisibility(visibility);
+          this.mUiOpsHandler.removeCallbacks(this.mVisibileStartRunnable);
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl, co.vine.android.player.VideoViewInterface
-/* 1063 */      public void pause() {
-/* 1064 */          if (isInPlaybackState()) {
-/* 1065 */              if (this.mUseVinePlayer) {
-/* 1066 */                  this.mVinePlayer.pause();
-/* 1067 */                  if (this.mVinePlayer.isPaused()) {
-/* 1068 */                      setCurrentState(7);
+                @Override 
+      public void pause() {
+          if (isInPlaybackState()) {
+              if (this.mUseVinePlayer) {
+                  this.mVinePlayer.pause();
+                  if (this.mVinePlayer.isPaused()) {
+                      setCurrentState(7);
                             }
                         } else {
-/* 1071 */                  long start = System.currentTimeMillis();
-/* 1072 */                  if (getPlayer().isPlaying()) {
-/* 1073 */                      getPlayer().pause();
-/* 1074 */                      onPause();
-/* 1075 */                      setCurrentState(7);
+                  long start = System.currentTimeMillis();
+                  if (getPlayer().isPlaying()) {
+                      getPlayer().pause();
+                      onPause();
+                      setCurrentState(7);
                             }
-/* 1077 */                  checkForFrameDrops("pause", start);
+                  checkForFrameDrops("pause", start);
                         }
                     }
-/* 1080 */          this.mTargetState = 7;
+          this.mTargetState = 7;
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 1083 */      public void suspend() {
-/* 1084 */          release("suspend", false, !this.mUseVinePlayer);
+                @Override 
+      public void suspend() {
+          release("suspend", false, !this.mUseVinePlayer);
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 1087 */      public boolean hasStarted() {
-/* 1088 */          return isInPlaybackState();
+                @Override 
+      public boolean hasStarted() {
+          return isInPlaybackState();
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 1091 */      public boolean isPaused() {
+                @Override 
+      public boolean isPaused() {
                     return getCurrentState() == 7;
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 1095 */      public void setLooping(boolean looping) {
-/* 1096 */          this.mLooping = looping;
+                @Override 
+      public void setLooping(boolean looping) {
+          this.mLooping = looping;
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 1099 */      public void resume() {
-/* 1100 */          this.mWasMuted = !this.mMuted;
-/* 1101 */          setMute(this.mMuted);
-/* 1102 */          start();
+                @Override 
+      public void resume() {
+          this.mWasMuted = !this.mMuted;
+          setMute(this.mMuted);
+          start();
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl, co.vine.android.player.VideoViewInterface
-/* 1107 */      public int getDuration() {
+                @Override 
+      public int getDuration() {
                     int duration = -1;
                     try {
-/* 1108 */              if (isInPlaybackState()) {
-/* 1109 */                  if (this.mVinePlayer != null) {
-/* 1110 */                      duration = this.mVinePlayer.getDuration();
+              if (isInPlaybackState()) {
+                  if (this.mVinePlayer != null) {
+                      duration = this.mVinePlayer.getDuration();
                             } else {
-/* 1112 */                      MediaPlayer player = getPlayer();
-/* 1113 */                      if (player != null) {
-/* 1114 */                          duration = player.getDuration();
+                      MediaPlayer player = getPlayer();
+                      if (player != null) {
+                          duration = player.getDuration();
                                 }
                             }
                         }
                     } catch (Exception e) {
-/* 1120 */              CrashUtil.logException(e, "It's ok. probably a race condition.", new Object[0]);
+              CrashUtil.logException(e, "It's ok. probably a race condition.", new Object[0]);
                     }
-/* 1122 */          return duration;
+          return duration;
                 }
 
-                /* JADX WARN: Code duplicated, block: B:14:0x0023  */
-                @Override // android.widget.MediaController.MediaPlayerControl, co.vine.android.player.VideoViewInterface
-/* 1126 */      public int getCurrentPosition() {
+                
+                @Override 
+      public int getCurrentPosition() {
                     int currentPosition;
                     try {
-/* 1127 */              if (isInPlaybackState()) {
-/* 1128 */                  if (this.mVinePlayer != null) {
-/* 1129 */                      currentPosition = this.mVinePlayer.getCurrentPosition();
+              if (isInPlaybackState()) {
+                  if (this.mVinePlayer != null) {
+                      currentPosition = this.mVinePlayer.getCurrentPosition();
                             } else if (getPlayer() != null) {
-/* 1132 */                      currentPosition = getPlayer().getCurrentPosition();
+                      currentPosition = getPlayer().getCurrentPosition();
                             } else {
-/* 1138 */                      currentPosition = 0;
+                      currentPosition = 0;
                             }
                         } else {
-/* 1138 */                  currentPosition = 0;
+                  currentPosition = 0;
                         }
-/* 1138 */              return currentPosition;
+              return currentPosition;
                     } catch (Exception e) {
-/* 1136 */              return -1;
+              return -1;
                     }
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl, co.vine.android.player.VideoViewInterface
-/* 1141 */      public void seekTo(int msec) {
-/* 1142 */          postMediaOp(msec + 1000);
+                @Override 
+      public void seekTo(int msec) {
+          postMediaOp(msec + 1000);
                 }
 
-/* 1145 */      public void mediaOpSeekTo(int msec) {
-/* 1146 */          if (isInPlaybackState()) {
-/* 1147 */              if (!this.mIsSeeking) {
-/* 1148 */                  this.mIsSeeking = true;
-/* 1149 */                  MediaPlayer player = getPlayer();
-/* 1150 */                  if (player != null) {
-/* 1151 */                      player.seekTo(msec);
+      public void mediaOpSeekTo(int msec) {
+          if (isInPlaybackState()) {
+              if (!this.mIsSeeking) {
+                  this.mIsSeeking = true;
+                  MediaPlayer player = getPlayer();
+                  if (player != null) {
+                      player.seekTo(msec);
                             }
-/* 1153 */                  if (this.mUseVinePlayer) {
-/* 1154 */                      Log.w(TAG, "Seek does not work with VinePlayer.");
+                  if (this.mUseVinePlayer) {
+                      Log.w(TAG, "Seek does not work with VinePlayer.");
                             }
                         } else {
-/* 1158 */                  this.mNextSeek = msec;
+                  this.mNextSeek = msec;
                         }
-/* 1160 */              this.mSeekWhenPrepared = 0;
-/* 1164 */              return;
+              this.mSeekWhenPrepared = 0;
+              return;
                     }
-/* 1162 */          this.mSeekWhenPrepared = msec;
+          this.mSeekWhenPrepared = msec;
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl, co.vine.android.player.VideoViewInterface
-/* 1167 */      public boolean isPlaying() {
+                @Override 
+      public boolean isPlaying() {
                     try {
                         return isInPlaybackState() && isPlayerPlaying();
                     } catch (Exception e) {
@@ -1400,124 +1400,124 @@
                     }
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl
-/* 1174 */      public int getBufferPercentage() {
-/* 1175 */          if (hasPlayer()) {
-/* 1176 */              return this.mCurrentBufferPercentage;
+                @Override 
+      public int getBufferPercentage() {
+          if (hasPlayer()) {
+              return this.mCurrentBufferPercentage;
                     }
                     return 0;
                 }
 
-/* 1181 */      public boolean hasControlOfPlayer() {
+      public boolean hasControlOfPlayer() {
                     return !this.SINGLE_PLAYER || (currentView == this && currentUri == this.mUri);
                 }
 
-                @Override // co.vine.android.player.VideoViewInterface
-/* 1185 */      public boolean isInPlaybackState() {
+                @Override 
+      public boolean isInPlaybackState() {
                     return (!hasPlayer() || getCurrentState() == -1 || getCurrentState() == 1 || getCurrentState() == 2) ? false : true;
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl
-/* 1192 */      public boolean canPause() {
-/* 1193 */          return this.mIsPrepared;
+                @Override 
+      public boolean canPause() {
+          return this.mIsPrepared;
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl
-/* 1196 */      public boolean canSeekBackward() {
-/* 1197 */          return this.mIsPrepared;
+                @Override 
+      public boolean canSeekBackward() {
+          return this.mIsPrepared;
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl
-/* 1200 */      public boolean canSeekForward() {
-/* 1201 */          return this.mIsPrepared;
+                @Override 
+      public boolean canSeekForward() {
+          return this.mIsPrepared;
                 }
 
-                @Override // android.widget.MediaController.MediaPlayerControl
-/* 1204 */      public int getAudioSessionId() {
-/* 1205 */          if (this.mAudioSession == 0) {
-/* 1206 */              MediaPlayer foo = new MediaPlayer();
-/* 1207 */              this.mAudioSession = foo.getAudioSessionId();
-/* 1208 */              foo.release();
+                @Override 
+      public int getAudioSessionId() {
+          if (this.mAudioSession == 0) {
+              MediaPlayer foo = new MediaPlayer();
+              this.mAudioSession = foo.getAudioSessionId();
+              foo.release();
                     }
-/* 1210 */          return this.mAudioSession;
+          return this.mAudioSession;
                 }
 
-/* 1213 */      public AttributeSet getAttributes() {
-/* 1214 */          return this.mAttributes;
+      public AttributeSet getAttributes() {
+          return this.mAttributes;
                 }
 
-/* 1217 */      private void postMediaOp(int what) {
-/* 1218 */          if (this.mUseVinePlayer || sRunMediaOpsOnSeparateThread) {
-/* 1219 */              Handler handler = this.mMediaOpHandler;
-/* 1220 */              if (handler != null) {
-/* 1221 */                  handler.sendEmptyMessage(what);
-/* 1229 */                  return;
+      private void postMediaOp(int what) {
+          if (this.mUseVinePlayer || sRunMediaOpsOnSeparateThread) {
+              Handler handler = this.mMediaOpHandler;
+              if (handler != null) {
+                  handler.sendEmptyMessage(what);
+                  return;
                         }
-/* 1229 */              return;
+              return;
                     }
-/* 1224 */          runMediaOps(what);
-/* 1225 */          if (what == 2) {
-/* 1226 */              onPlay();
-                    }
-                }
-
-/* 1231 */      private void removePendingMediaOps() {
-/* 1232 */          Handler handler = this.mMediaOpHandler;
-/* 1233 */          this.mIsSeeking = false;
-/* 1234 */          if (handler != null) {
-/* 1235 */              handler.removeCallbacksAndMessages(null);
+          runMediaOps(what);
+          if (what == 2) {
+              onPlay();
                     }
                 }
 
-                @Override // android.view.View
-/* 1240 */      protected void onDetachedFromWindow() {
-/* 1241 */          this.mUiOpsHandler.removeCallbacks(this.mVisibileStartRunnable);
-/* 1242 */          release("onDetachedFromWindow", true, false);
+      private void removePendingMediaOps() {
+          Handler handler = this.mMediaOpHandler;
+          this.mIsSeeking = false;
+          if (handler != null) {
+              handler.removeCallbacksAndMessages(null);
+                    }
+                }
+
+                @Override 
+      protected void onDetachedFromWindow() {
+          this.mUiOpsHandler.removeCallbacks(this.mVisibileStartRunnable);
+          release("onDetachedFromWindow", true, false);
                     try {
-/* 1244 */              super.onDetachedFromWindow();
+              super.onDetachedFromWindow();
                     } catch (Exception e) {
-/* 1246 */              SurfaceTexture tx = null;
-/* 1247 */              boolean success = true;
+              SurfaceTexture tx = null;
+              boolean success = true;
                         try {
-/* 1249 */                  tx = getSurfaceTexture();
-/* 1250 */                  if (tx != null) {
-/* 1251 */                      tx.release();
+                  tx = getSurfaceTexture();
+                  if (tx != null) {
+                      tx.release();
                             }
                         } catch (Exception e2) {
-/* 1254 */                  success = false;
-/* 1255 */                  CrashUtil.log("Failed to release: {}.", e2);
+                  success = false;
+                  CrashUtil.log("Failed to release: {}.", e2);
                         }
-/* 1257 */              CrashUtil.logException(e, "Failed to detach from window, but it's ok, since we won't use this anyways: {}, {}.", Boolean.valueOf(success), tx);
+              CrashUtil.logException(e, "Failed to detach from window, but it's ok, since we won't use this anyways: {}, {}.", Boolean.valueOf(success), tx);
                     }
-/* 1259 */          this.mMediaOpHandler = null;
-/* 1260 */          if (this.mMediaOpThread != null) {
-/* 1261 */              this.mMediaOpThread.quit();
-/* 1262 */              this.mMediaOpThread = null;
+          this.mMediaOpHandler = null;
+          if (this.mMediaOpThread != null) {
+              this.mMediaOpThread.quit();
+              this.mMediaOpThread = null;
                     }
                 }
 
-/* 1266 */      public void setMute(boolean mute) {
-/* 1267 */          this.mMuted = mute;
-/* 1268 */          postMediaOp(this.mMuted ? 3 : 4);
+      public void setMute(boolean mute) {
+          this.mMuted = mute;
+          postMediaOp(this.mMuted ? 3 : 4);
                 }
 
-/* 1271 */      private void mediaOpChangeVolume(float volume) {
+      private void mediaOpChangeVolume(float volume) {
                     synchronized (LOCK) {
                         try {
-/* 1273 */                  if (isInPlaybackState() && this.mWasMuted != this.mMuted) {
-/* 1274 */                      if (this.mVinePlayer != null) {
-/* 1275 */                          this.mVinePlayer.setVolume(volume);
+                  if (isInPlaybackState() && this.mWasMuted != this.mMuted) {
+                      if (this.mVinePlayer != null) {
+                          this.mVinePlayer.setVolume(volume);
                                 } else {
-/* 1277 */                          MediaPlayer player = getPlayer();
-/* 1278 */                          if (player != null) {
+                          MediaPlayer player = getPlayer();
+                          if (player != null) {
                                         try {
-/* 1280 */                                  player.setVolume(volume, volume);
+                                  player.setVolume(volume, volume);
                                         } catch (IllegalStateException e) {
-/* 1282 */                                  CrashUtil.logException(e);
+                                  CrashUtil.logException(e);
                                         }
                                     }
                                 }
-/* 1286 */                      this.mWasMuted = this.mMuted;
+                      this.mWasMuted = this.mMuted;
                             }
                         } catch (Throwable th) {
                             throw th;
@@ -1525,45 +1525,45 @@
                     }
                 }
 
-/* 1291 */      public boolean isPathPlaying(String newPath) {
+      public boolean isPathPlaying(String newPath) {
                     return hasControlOfPlayer() && newPath.equals(this.mPath);
                 }
 
-/* 1295 */      public static Uri getCurrentUri() {
-/* 1296 */          return currentUri;
+      public static Uri getCurrentUri() {
+          return currentUri;
                 }
 
-/* 1299 */      private void mediaOpOpen() {
+      private void mediaOpOpen() {
                     Handler handler;
                     synchronized (LOCK) {
                         try {
-/* 1301 */                  currentView = this;
-/* 1303 */                  if (this.mUri == null) {
-/* 1304 */                      Log.d(TAG, "mUri  is not ready yet.");
-/* 1346 */                      return;
+                  currentView = this;
+                  if (this.mUri == null) {
+                      Log.d(TAG, "mUri  is not ready yet.");
+                      return;
                             }
-/* 1308 */                  SurfaceTexture texture = null;
-/* 1309 */                  if (isAvailable()) {
-/* 1310 */                      texture = getSurfaceTexture();
+                  SurfaceTexture texture = null;
+                  if (isAvailable()) {
+                      texture = getSurfaceTexture();
                             }
-/* 1312 */                  if (texture == null) {
-/* 1313 */                      boolean show = this.mAutoShow && getVisibility() != 0;
-/* 1314 */                      Log.d(TAG, "Surface is not ready yet, will autoshow ? " + this.mAutoShow + " & " + getVisibility());
-/* 1315 */                      if (show && (handler = getHandler()) != null) {
-/* 1318 */                          handler.post(new RunnableC040615());
+                  if (texture == null) {
+                      boolean show = this.mAutoShow && getVisibility() != 0;
+                      Log.d(TAG, "Surface is not ready yet, will autoshow ? " + this.mAutoShow + " & " + getVisibility());
+                      if (show && (handler = getHandler()) != null) {
+                          handler.post(new RunnableC040615());
                                 }
-/* 1346 */                      return;
+                      return;
                             }
-/* 1328 */                  Surface surface = new Surface(texture);
-/* 1329 */                  Log.d(TAG, "Opening video: " + this.mUri);
-/* 1334 */                  Intent i = new Intent("com.android.music.musicservicecommand");
-/* 1335 */                  i.putExtra("command", "pause");
-/* 1336 */                  this.mContext.sendBroadcast(i);
-/* 1338 */                  release("open", false, true);
-/* 1340 */                  if (this.mUseVinePlayer) {
-/* 1341 */                      openVinePlayer(surface);
+                  Surface surface = new Surface(texture);
+                  Log.d(TAG, "Opening video: " + this.mUri);
+                  Intent i = new Intent("com.android.music.musicservicecommand");
+                  i.putExtra("command", "pause");
+                  this.mContext.sendBroadcast(i);
+                  release("open", false, true);
+                  if (this.mUseVinePlayer) {
+                      openVinePlayer(surface);
                             } else {
-/* 1343 */                      openMediaPlayer(surface);
+                      openMediaPlayer(surface);
                             }
                         } catch (Throwable th) {
                             throw th;
@@ -1571,93 +1571,93 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.player.SdkVideoView$15 */
-/* 1316 */      class RunnableC040615 implements Runnable {
-/* 1317 */          RunnableC040615() {
+                
+      class RunnableC040615 implements Runnable {
+          RunnableC040615() {
                     }
 
-                    @Override // java.lang.Runnable
-/* 1320 */          public void run() {
-/* 1321 */              SdkVideoView.this.setVisibility(0);
+                    @Override 
+          public void run() {
+              SdkVideoView.this.setVisibility(0);
                     }
                 }
 
-/* 1348 */      private void mediaOpRelease() {
-/* 1349 */          MediaPlayer player = getPlayer();
-/* 1350 */          if (player != null) {
+      private void mediaOpRelease() {
+          MediaPlayer player = getPlayer();
+          if (player != null) {
                         try {
-/* 1352 */                  long start = System.currentTimeMillis();
-/* 1353 */                  if (player.isPlaying()) {
-/* 1354 */                      player.stop();
-/* 1355 */                      onPause();
+                  long start = System.currentTimeMillis();
+                  if (player.isPlaying()) {
+                      player.stop();
+                      onPause();
                             }
-/* 1357 */                  checkForFrameDrops(this.mReleaseTag + " stop", start);
+                  checkForFrameDrops(this.mReleaseTag + " stop", start);
                         } catch (IllegalStateException e) {
                         }
                         try {
-/* 1362 */                  long start2 = System.currentTimeMillis();
-/* 1363 */                  player.reset();
-/* 1364 */                  checkForFrameDrops(this.mReleaseTag + " reset", start2);
+                  long start2 = System.currentTimeMillis();
+                  player.reset();
+                  checkForFrameDrops(this.mReleaseTag + " reset", start2);
                         } catch (IllegalStateException e2) {
                         }
-/* 1368 */              if (!this.SINGLE_PLAYER) {
-/* 1369 */                  long start3 = System.currentTimeMillis();
-/* 1370 */                  player.release();
-/* 1371 */                  setPlayer(null);
-/* 1372 */                  checkForFrameDrops(this.mReleaseTag + " release", start3);
+              if (!this.SINGLE_PLAYER) {
+                  long start3 = System.currentTimeMillis();
+                  player.release();
+                  setPlayer(null);
+                  checkForFrameDrops(this.mReleaseTag + " release", start3);
                         }
-/* 1374 */              this.mIsPrepared = false;
-/* 1375 */              setCurrentState(1);
-/* 1376 */              if (this.mShouldClearState) {
-/* 1377 */                  this.mTargetState = 1;
-/* 1378 */                  this.mPath = null;
+              this.mIsPrepared = false;
+              setCurrentState(1);
+              if (this.mShouldClearState) {
+                  this.mTargetState = 1;
+                  this.mPath = null;
                         }
                     }
-/* 1381 */          VinePlayer vp = this.mVinePlayer;
-/* 1382 */          if (vp != null) {
+          VinePlayer vp = this.mVinePlayer;
+          if (vp != null) {
                         try {
-/* 1384 */                  vp.release();
-/* 1388 */                  this.mVinePlayer = null;
+                  vp.release();
+                  this.mVinePlayer = null;
                         } catch (IllegalAccessException e3) {
-/* 1386 */                  throw new RuntimeException(e3);
+                  throw new RuntimeException(e3);
                         }
                     }
                 }
 
-/* 1392 */      private void runMediaOps(int what) {
-/* 1393 */          if (what >= 1000) {
-/* 1394 */              mediaOpSeekTo(what - 1000);
+      private void runMediaOps(int what) {
+          if (what >= 1000) {
+              mediaOpSeekTo(what - 1000);
                     }
                     switch (what) {
                         case 0:
-/* 1398 */                  mediaOpRelease();
+                  mediaOpRelease();
                             break;
                         case 1:
-/* 1402 */                  mediaOpOpen();
+                  mediaOpOpen();
                             break;
                         case 2:
-/* 1406 */                  mediaOpStart();
+                  mediaOpStart();
                             break;
                         case 3:
-/* 1410 */                  mediaOpChangeVolume(0.0f);
+                  mediaOpChangeVolume(0.0f);
                             break;
                         case 4:
-/* 1414 */                  mediaOpChangeVolume(1.0f);
+                  mediaOpChangeVolume(1.0f);
                             break;
                     }
                 }
 
-/* 1419 */      private static class PlayerMaker implements Runnable {
+      private static class PlayerMaker implements Runnable {
                     private MediaPlayer mMp;
 
-/* 1420 */          private PlayerMaker() {
+          private PlayerMaker() {
                     }
 
-/* 1420 */          /* synthetic */ PlayerMaker(RunnableC04001 x0) {
-/* 1421 */              this();
+           PlayerMaker(RunnableC04001 x0) {
+              this();
                     }
 
-/* 1425 */          synchronized MediaPlayer getPlayer() {
+          synchronized MediaPlayer getPlayer() {
                         try {
                         } catch (Throwable th) {
                             throw th;
@@ -1665,12 +1665,12 @@
                         return this.mMp;
                     }
 
-                    @Override // java.lang.Runnable
-/* 1430 */          public void run() {
-/* 1431 */              this.mMp = new MediaPlayer();
+                    @Override 
+          public void run() {
+              this.mMp = new MediaPlayer();
                     }
 
-/* 1434 */          synchronized boolean isReady() {
+          synchronized boolean isReady() {
                         try {
                         } catch (Throwable th) {
                             throw th;

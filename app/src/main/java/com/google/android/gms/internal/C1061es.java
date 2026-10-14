@@ -11,26 +11,26 @@
             import android.view.ViewTreeObserver;
             import java.lang.ref.WeakReference;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.es */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1061es {
 
-                /* JADX INFO: renamed from: mz */
+                
                 protected C1055em f1850mz;
 
-                /* JADX INFO: renamed from: np */
+                
                 protected a f1851np;
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.es$a */
+                
                 public static final class a {
                     public int bottom;
                     public int gravity;
                     public int left;
 
-                    /* JADX INFO: renamed from: nq */
+                    
                     public IBinder f1852nq;
 
-                    /* JADX INFO: renamed from: nr */
+                    
                     public int f1853nr;
                     public int right;
                     public int top;
@@ -45,11 +45,11 @@
                         this.f1852nq = iBinder;
                     }
 
-                    /* synthetic */ a(int i, IBinder iBinder, Object anonymousClass1) {
+                     a(int i, IBinder iBinder, Object anonymousClass1) {
                         this(i, iBinder);
                     }
 
-                    /* JADX INFO: renamed from: ca */
+                    
                     public Bundle m1892ca() {
                         Bundle bundle = new Bundle();
                         bundle.putInt("popupLocationInfo.gravity", this.gravity);
@@ -62,13 +62,13 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.es$b */
+                
                 private static final class b extends C1061es implements View.OnAttachStateChangeListener, ViewTreeObserver.OnGlobalLayoutListener {
 
-                    /* JADX INFO: renamed from: mK */
+                    
                     private boolean f1854mK;
 
-                    /* JADX INFO: renamed from: ns */
+                    
                     private WeakReference<View> f1855ns;
 
                     protected b(C1055em c1055em, int i) {
@@ -76,7 +76,7 @@
                         this.f1854mK = false;
                     }
 
-                    /* JADX INFO: renamed from: f */
+                    
                     private void m1893f(View view) {
                         Display display;
                         int displayId = -1;
@@ -100,14 +100,14 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.internal.C1061es
-                    /* JADX INFO: renamed from: Q */
+                    @Override 
+                    
                     protected void mo1887Q(int i) {
                         this.f1851np = new a(i, null, null);
                     }
 
-                    @Override // com.google.android.gms.internal.C1061es
-                    /* JADX INFO: renamed from: bX */
+                    @Override 
+                    
                     public void mo1888bX() {
                         if (this.f1851np.f1852nq != null) {
                             super.mo1888bX();
@@ -116,8 +116,8 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.internal.C1061es
-                    /* JADX INFO: renamed from: e */
+                    @Override 
+                    
                     public void mo1891e(View view) {
                         this.f1850mz.m1792bT();
                         if (this.f1855ns != null) {
@@ -156,7 +156,7 @@
                         view.getViewTreeObserver().addOnGlobalLayoutListener(this);
                     }
 
-                    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+                    @Override 
                     public void onGlobalLayout() {
                         View view;
                         if (this.f1855ns == null || (view = this.f1855ns.get()) == null) {
@@ -165,12 +165,12 @@
                         m1893f(view);
                     }
 
-                    @Override // android.view.View.OnAttachStateChangeListener
+                    @Override 
                     public void onViewAttachedToWindow(View v) {
                         m1893f(v);
                     }
 
-                    @Override // android.view.View.OnAttachStateChangeListener
+                    @Override 
                     public void onViewDetachedFromWindow(View v) {
                         this.f1850mz.m1792bT();
                         v.removeOnAttachStateChangeListener(this);
@@ -182,36 +182,36 @@
                     mo1887Q(i);
                 }
 
-                /* synthetic */ C1061es(C1055em c1055em, int i, Object anonymousClass1) {
+                 C1061es(C1055em c1055em, int i, Object anonymousClass1) {
                     this(c1055em, i);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static C1061es m1886a(C1055em c1055em, int i) {
                     return C1053ek.m1737bK() ? new b(c1055em, i) : new C1061es(c1055em, i);
                 }
 
-                /* JADX INFO: renamed from: Q */
+                
                 protected void mo1887Q(int i) {
                     this.f1851np = new a(i, new Binder(), null);
                 }
 
-                /* JADX INFO: renamed from: bX */
+                
                 public void mo1888bX() {
                     this.f1850mz.m1785a(this.f1851np.f1852nq, this.f1851np.m1892ca());
                 }
 
-                /* JADX INFO: renamed from: bY */
+                
                 public Bundle m1889bY() {
                     return this.f1851np.m1892ca();
                 }
 
-                /* JADX INFO: renamed from: bZ */
+                
                 public IBinder m1890bZ() {
                     return this.f1851np.f1852nq;
                 }
 
-                /* JADX INFO: renamed from: e */
+                
                 public void mo1891e(View view) {
                 }
 

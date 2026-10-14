@@ -23,9 +23,9 @@
             import java.nio.IntBuffer;
             import java.nio.ShortBuffer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties(inherit = {avutil.class}, value = {@Platform(cinclude = {"<libavcodec/avcodec.h>", "<libavcodec/avfft.h>"}, link = {"avcodec@.55"}), @Platform(preload = {"avcodec-55"}, value = {"windows"})})
-/* 37 */    public class avcodec {
+    public class avcodec {
                 public static final int AVCHROMA_LOC_BOTTOM = 6;
                 public static final int AVCHROMA_LOC_BOTTOMLEFT = 5;
                 public static final int AVCHROMA_LOC_CENTER = 2;
@@ -1321,78 +1321,78 @@
                 public static native void avsubtitle_free(AVSubtitle aVSubtitle);
 
                 static {
-/* 39 */            Loader.load();
-/* 323 */           AV_CODEC_ID_BRENDER_PIX = AV_CODEC_ID_BRENDER_PIX();
-/* 326 */           AV_CODEC_ID_Y41P = AV_CODEC_ID_Y41P();
-/* 329 */           AV_CODEC_ID_ESCAPE130 = AV_CODEC_ID_ESCAPE130();
-/* 332 */           AV_CODEC_ID_EXR = AV_CODEC_ID_EXR();
-/* 335 */           AV_CODEC_ID_AVRP = AV_CODEC_ID_AVRP();
-/* 339 */           AV_CODEC_ID_012V = AV_CODEC_ID_012V();
-/* 342 */           AV_CODEC_ID_G2M = AV_CODEC_ID_G2M();
-/* 345 */           AV_CODEC_ID_AVUI = AV_CODEC_ID_AVUI();
-/* 348 */           AV_CODEC_ID_AYUV = AV_CODEC_ID_AYUV();
-/* 351 */           AV_CODEC_ID_TARGA_Y216 = AV_CODEC_ID_TARGA_Y216();
-/* 354 */           AV_CODEC_ID_V308 = AV_CODEC_ID_V308();
-/* 357 */           AV_CODEC_ID_V408 = AV_CODEC_ID_V408();
-/* 360 */           AV_CODEC_ID_YUV4 = AV_CODEC_ID_YUV4();
-/* 363 */           AV_CODEC_ID_SANM = AV_CODEC_ID_SANM();
-/* 366 */           AV_CODEC_ID_PAF_VIDEO = AV_CODEC_ID_PAF_VIDEO();
-/* 369 */           AV_CODEC_ID_AVRN = AV_CODEC_ID_AVRN();
-/* 372 */           AV_CODEC_ID_CPIA = AV_CODEC_ID_CPIA();
-/* 375 */           AV_CODEC_ID_XFACE = AV_CODEC_ID_XFACE();
-/* 378 */           AV_CODEC_ID_SGIRLE = AV_CODEC_ID_SGIRLE();
-/* 381 */           AV_CODEC_ID_MVC1 = AV_CODEC_ID_MVC1();
-/* 384 */           AV_CODEC_ID_MVC2 = AV_CODEC_ID_MVC2();
-/* 387 */           AV_CODEC_ID_SNOW = AV_CODEC_ID_SNOW();
-/* 390 */           AV_CODEC_ID_WEBP = AV_CODEC_ID_WEBP();
-/* 393 */           AV_CODEC_ID_SMVJPEG = AV_CODEC_ID_SMVJPEG();
-/* 428 */           AV_CODEC_ID_PCM_S24LE_PLANAR = AV_CODEC_ID_PCM_S24LE_PLANAR();
-/* 431 */           AV_CODEC_ID_PCM_S32LE_PLANAR = AV_CODEC_ID_PCM_S32LE_PLANAR();
-/* 434 */           AV_CODEC_ID_PCM_S16BE_PLANAR = AV_CODEC_ID_PCM_S16BE_PLANAR();
-/* 469 */           AV_CODEC_ID_VIMA = AV_CODEC_ID_VIMA();
-/* 472 */           AV_CODEC_ID_ADPCM_AFC = AV_CODEC_ID_ADPCM_AFC();
-/* 475 */           AV_CODEC_ID_ADPCM_IMA_OKI = AV_CODEC_ID_ADPCM_IMA_OKI();
-/* 478 */           AV_CODEC_ID_ADPCM_DTK = AV_CODEC_ID_ADPCM_DTK();
-/* 481 */           AV_CODEC_ID_ADPCM_IMA_RAD = AV_CODEC_ID_ADPCM_IMA_RAD();
-/* 566 */           AV_CODEC_ID_FFWAVESYNTH = AV_CODEC_ID_FFWAVESYNTH();
-/* 569 */           AV_CODEC_ID_SONIC = AV_CODEC_ID_SONIC();
-/* 572 */           AV_CODEC_ID_SONIC_LS = AV_CODEC_ID_SONIC_LS();
-/* 575 */           AV_CODEC_ID_PAF_AUDIO = AV_CODEC_ID_PAF_AUDIO();
-/* 578 */           AV_CODEC_ID_OPUS = AV_CODEC_ID_OPUS();
-/* 581 */           AV_CODEC_ID_TAK = AV_CODEC_ID_TAK();
-/* 584 */           AV_CODEC_ID_EVRC = AV_CODEC_ID_EVRC();
-/* 587 */           AV_CODEC_ID_SMV = AV_CODEC_ID_SMV();
-/* 604 */           AV_CODEC_ID_MICRODVD = AV_CODEC_ID_MICRODVD();
-/* 607 */           AV_CODEC_ID_EIA_608 = AV_CODEC_ID_EIA_608();
-/* 610 */           AV_CODEC_ID_JACOSUB = AV_CODEC_ID_JACOSUB();
-/* 613 */           AV_CODEC_ID_SAMI = AV_CODEC_ID_SAMI();
-/* 616 */           AV_CODEC_ID_REALTEXT = AV_CODEC_ID_REALTEXT();
-/* 619 */           AV_CODEC_ID_SUBVIEWER1 = AV_CODEC_ID_SUBVIEWER1();
-/* 622 */           AV_CODEC_ID_SUBVIEWER = AV_CODEC_ID_SUBVIEWER();
-/* 625 */           AV_CODEC_ID_SUBRIP = AV_CODEC_ID_SUBRIP();
-/* 628 */           AV_CODEC_ID_WEBVTT = AV_CODEC_ID_WEBVTT();
-/* 631 */           AV_CODEC_ID_MPL2 = AV_CODEC_ID_MPL2();
-/* 634 */           AV_CODEC_ID_VPLAYER = AV_CODEC_ID_VPLAYER();
-/* 637 */           AV_CODEC_ID_PJS = AV_CODEC_ID_PJS();
-/* 641 */           AV_CODEC_ID_ASS = AV_CODEC_ID_ASS();
-/* 649 */           AV_CODEC_ID_BINTEXT = AV_CODEC_ID_BINTEXT();
-/* 652 */           AV_CODEC_ID_XBIN = AV_CODEC_ID_XBIN();
-/* 655 */           AV_CODEC_ID_IDF = AV_CODEC_ID_IDF();
-/* 658 */           AV_CODEC_ID_OTF = AV_CODEC_ID_OTF();
-/* 661 */           AV_CODEC_ID_SMPTE_KLV = AV_CODEC_ID_SMPTE_KLV();
-/* 664 */           AV_CODEC_ID_DVD_NAV = AV_CODEC_ID_DVD_NAV();
+            Loader.load();
+           AV_CODEC_ID_BRENDER_PIX = AV_CODEC_ID_BRENDER_PIX();
+           AV_CODEC_ID_Y41P = AV_CODEC_ID_Y41P();
+           AV_CODEC_ID_ESCAPE130 = AV_CODEC_ID_ESCAPE130();
+           AV_CODEC_ID_EXR = AV_CODEC_ID_EXR();
+           AV_CODEC_ID_AVRP = AV_CODEC_ID_AVRP();
+           AV_CODEC_ID_012V = AV_CODEC_ID_012V();
+           AV_CODEC_ID_G2M = AV_CODEC_ID_G2M();
+           AV_CODEC_ID_AVUI = AV_CODEC_ID_AVUI();
+           AV_CODEC_ID_AYUV = AV_CODEC_ID_AYUV();
+           AV_CODEC_ID_TARGA_Y216 = AV_CODEC_ID_TARGA_Y216();
+           AV_CODEC_ID_V308 = AV_CODEC_ID_V308();
+           AV_CODEC_ID_V408 = AV_CODEC_ID_V408();
+           AV_CODEC_ID_YUV4 = AV_CODEC_ID_YUV4();
+           AV_CODEC_ID_SANM = AV_CODEC_ID_SANM();
+           AV_CODEC_ID_PAF_VIDEO = AV_CODEC_ID_PAF_VIDEO();
+           AV_CODEC_ID_AVRN = AV_CODEC_ID_AVRN();
+           AV_CODEC_ID_CPIA = AV_CODEC_ID_CPIA();
+           AV_CODEC_ID_XFACE = AV_CODEC_ID_XFACE();
+           AV_CODEC_ID_SGIRLE = AV_CODEC_ID_SGIRLE();
+           AV_CODEC_ID_MVC1 = AV_CODEC_ID_MVC1();
+           AV_CODEC_ID_MVC2 = AV_CODEC_ID_MVC2();
+           AV_CODEC_ID_SNOW = AV_CODEC_ID_SNOW();
+           AV_CODEC_ID_WEBP = AV_CODEC_ID_WEBP();
+           AV_CODEC_ID_SMVJPEG = AV_CODEC_ID_SMVJPEG();
+           AV_CODEC_ID_PCM_S24LE_PLANAR = AV_CODEC_ID_PCM_S24LE_PLANAR();
+           AV_CODEC_ID_PCM_S32LE_PLANAR = AV_CODEC_ID_PCM_S32LE_PLANAR();
+           AV_CODEC_ID_PCM_S16BE_PLANAR = AV_CODEC_ID_PCM_S16BE_PLANAR();
+           AV_CODEC_ID_VIMA = AV_CODEC_ID_VIMA();
+           AV_CODEC_ID_ADPCM_AFC = AV_CODEC_ID_ADPCM_AFC();
+           AV_CODEC_ID_ADPCM_IMA_OKI = AV_CODEC_ID_ADPCM_IMA_OKI();
+           AV_CODEC_ID_ADPCM_DTK = AV_CODEC_ID_ADPCM_DTK();
+           AV_CODEC_ID_ADPCM_IMA_RAD = AV_CODEC_ID_ADPCM_IMA_RAD();
+           AV_CODEC_ID_FFWAVESYNTH = AV_CODEC_ID_FFWAVESYNTH();
+           AV_CODEC_ID_SONIC = AV_CODEC_ID_SONIC();
+           AV_CODEC_ID_SONIC_LS = AV_CODEC_ID_SONIC_LS();
+           AV_CODEC_ID_PAF_AUDIO = AV_CODEC_ID_PAF_AUDIO();
+           AV_CODEC_ID_OPUS = AV_CODEC_ID_OPUS();
+           AV_CODEC_ID_TAK = AV_CODEC_ID_TAK();
+           AV_CODEC_ID_EVRC = AV_CODEC_ID_EVRC();
+           AV_CODEC_ID_SMV = AV_CODEC_ID_SMV();
+           AV_CODEC_ID_MICRODVD = AV_CODEC_ID_MICRODVD();
+           AV_CODEC_ID_EIA_608 = AV_CODEC_ID_EIA_608();
+           AV_CODEC_ID_JACOSUB = AV_CODEC_ID_JACOSUB();
+           AV_CODEC_ID_SAMI = AV_CODEC_ID_SAMI();
+           AV_CODEC_ID_REALTEXT = AV_CODEC_ID_REALTEXT();
+           AV_CODEC_ID_SUBVIEWER1 = AV_CODEC_ID_SUBVIEWER1();
+           AV_CODEC_ID_SUBVIEWER = AV_CODEC_ID_SUBVIEWER();
+           AV_CODEC_ID_SUBRIP = AV_CODEC_ID_SUBRIP();
+           AV_CODEC_ID_WEBVTT = AV_CODEC_ID_WEBVTT();
+           AV_CODEC_ID_MPL2 = AV_CODEC_ID_MPL2();
+           AV_CODEC_ID_VPLAYER = AV_CODEC_ID_VPLAYER();
+           AV_CODEC_ID_PJS = AV_CODEC_ID_PJS();
+           AV_CODEC_ID_ASS = AV_CODEC_ID_ASS();
+           AV_CODEC_ID_BINTEXT = AV_CODEC_ID_BINTEXT();
+           AV_CODEC_ID_XBIN = AV_CODEC_ID_XBIN();
+           AV_CODEC_ID_IDF = AV_CODEC_ID_IDF();
+           AV_CODEC_ID_OTF = AV_CODEC_ID_OTF();
+           AV_CODEC_ID_SMPTE_KLV = AV_CODEC_ID_SMPTE_KLV();
+           AV_CODEC_ID_DVD_NAV = AV_CODEC_ID_DVD_NAV();
                 }
 
-/* 686 */       public static class AVCodecDescriptor extends Pointer {
+       public static class AVCodecDescriptor extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
                     @Cast({"AVCodecID"})
-                    /* JADX INFO: renamed from: id */
+                    
                     public native int m2377id();
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native AVCodecDescriptor m2378id(int i);
 
                     @MemberGetter
@@ -1414,28 +1414,28 @@
 
 
                     static {
-/* 689 */               Loader.load();
+               Loader.load();
                     }
 
-/* 689 */           public AVCodecDescriptor() {
+           public AVCodecDescriptor() {
                         allocate();
                     }
 
-/* 690 */           public AVCodecDescriptor(int size) {
+           public AVCodecDescriptor(int size) {
                         allocateArray(size);
                     }
 
-/* 691 */           public AVCodecDescriptor(Pointer p) {
-/* 692 */               super(p);
+           public AVCodecDescriptor(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 695 */           public AVCodecDescriptor position(int position) {
-/* 696 */               return (AVCodecDescriptor) super.position(position);
+                    @Override 
+           public AVCodecDescriptor position(int position) {
+               return (AVCodecDescriptor) super.position(position);
                     }
                 }
 
-/* 897 */       public static class RcOverride extends Pointer {
+       public static class RcOverride extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1458,28 +1458,28 @@
 
 
                     static {
-/* 900 */               Loader.load();
+               Loader.load();
                     }
 
-/* 900 */           public RcOverride() {
+           public RcOverride() {
                         allocate();
                     }
 
-/* 901 */           public RcOverride(int size) {
+           public RcOverride(int size) {
                         allocateArray(size);
                     }
 
-/* 902 */           public RcOverride(Pointer p) {
-/* 903 */               super(p);
+           public RcOverride(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 906 */           public RcOverride position(int position) {
-/* 907 */               return (RcOverride) super.position(position);
+                    @Override 
+           public RcOverride position(int position) {
+               return (RcOverride) super.position(position);
                     }
                 }
 
-/* 1124 */      public static class AVPanScan extends Pointer {
+      public static class AVPanScan extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1498,10 +1498,10 @@
 
                     public native AVPanScan height(int i);
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native int m2381id();
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native AVPanScan m2382id(int i);
 
                     public native int width();
@@ -1510,28 +1510,28 @@
 
 
                     static {
-/* 1127 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1127 */          public AVPanScan() {
+          public AVPanScan() {
                         allocate();
                     }
 
-/* 1128 */          public AVPanScan(int size) {
+          public AVPanScan(int size) {
                         allocateArray(size);
                     }
 
-/* 1129 */          public AVPanScan(Pointer p) {
-/* 1130 */              super(p);
+          public AVPanScan(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1133 */          public AVPanScan position(int position) {
-/* 1134 */              return (AVPanScan) super.position(position);
+                    @Override 
+          public AVPanScan position(int position) {
+              return (AVPanScan) super.position(position);
                     }
                 }
 
-/* 1312 */      public static class AVPacket extends Pointer {
+      public static class AVPacket extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1592,57 +1592,57 @@
 
 
                     static {
-/* 1315 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1315 */          public AVPacket() {
+          public AVPacket() {
                         allocate();
                     }
 
-/* 1316 */          public AVPacket(int size) {
+          public AVPacket(int size) {
                         allocateArray(size);
                     }
 
-/* 1317 */          public AVPacket(Pointer p) {
-/* 1318 */              super(p);
+          public AVPacket(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1321 */          public AVPacket position(int position) {
-/* 1322 */              return (AVPacket) super.position(position);
+                    @Override 
+          public AVPacket position(int position) {
+              return (AVPacket) super.position(position);
                     }
 
-/* 1365 */          public static class Destruct_AVPacket extends FunctionPointer {
+          public static class Destruct_AVPacket extends FunctionPointer {
                         private native void allocate();
 
                         @Deprecated
                         public native void call(AVPacket aVPacket);
 
                         static {
-/* 1367 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1367 */              public Destruct_AVPacket(Pointer p) {
-/* 1368 */                  super(p);
+              public Destruct_AVPacket(Pointer p) {
+                  super(p);
                         }
 
-/* 1368 */              protected Destruct_AVPacket() {
+              protected Destruct_AVPacket() {
                             allocate();
                         }
                     }
                 }
 
                 @Opaque
-/* 1412 */      public static class AVCodecInternal extends Pointer {
-/* 1413 */          public AVCodecInternal() {
+      public static class AVCodecInternal extends Pointer {
+          public AVCodecInternal() {
                     }
 
-/* 1414 */          public AVCodecInternal(Pointer p) {
-/* 1415 */              super(p);
+          public AVCodecInternal(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 1434 */      public static class AVCodecContext extends Pointer {
+      public static class AVCodecContext extends Pointer {
                     public static final int AV_EF_AGGRESSIVE = 262144;
                     public static final int AV_EF_BITSTREAM = 2;
                     public static final int AV_EF_BUFFER = 4;
@@ -2656,232 +2656,232 @@
 
 
                     static {
-/* 1437 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1437 */          public AVCodecContext() {
+          public AVCodecContext() {
                         allocate();
                     }
 
-/* 1438 */          public AVCodecContext(int size) {
+          public AVCodecContext(int size) {
                         allocateArray(size);
                     }
 
-/* 1439 */          public AVCodecContext(Pointer p) {
-/* 1440 */              super(p);
+          public AVCodecContext(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 1443 */          public AVCodecContext position(int position) {
-/* 1444 */              return (AVCodecContext) super.position(position);
+                    @Override 
+          public AVCodecContext position(int position) {
+              return (AVCodecContext) super.position(position);
                     }
 
-/* 1678 */          public static class Draw_horiz_band_AVCodecContext_AVFrame_IntPointer_int_int_int extends FunctionPointer {
+          public static class Draw_horiz_band_AVCodecContext_AVFrame_IntPointer_int_int_int extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVCodecContext aVCodecContext, @Const avutil.AVFrame aVFrame, IntPointer intPointer, int i, int i2, int i3);
 
                         static {
-/* 1680 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1680 */              public Draw_horiz_band_AVCodecContext_AVFrame_IntPointer_int_int_int(Pointer p) {
-/* 1681 */                  super(p);
+              public Draw_horiz_band_AVCodecContext_AVFrame_IntPointer_int_int_int(Pointer p) {
+                  super(p);
                         }
 
-/* 1681 */              protected Draw_horiz_band_AVCodecContext_AVFrame_IntPointer_int_int_int() {
+              protected Draw_horiz_band_AVCodecContext_AVFrame_IntPointer_int_int_int() {
                             allocate();
                         }
                     }
 
-/* 1698 */          public static class Get_format_AVCodecContext_IntPointer extends FunctionPointer {
+          public static class Get_format_AVCodecContext_IntPointer extends FunctionPointer {
                         private native void allocate();
 
                         @Cast({"AVPixelFormat"})
                         public native int call(AVCodecContext aVCodecContext, @Cast({"const AVPixelFormat*"}) IntPointer intPointer);
 
                         static {
-/* 1700 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 1700 */              public Get_format_AVCodecContext_IntPointer(Pointer p) {
-/* 1701 */                  super(p);
+              public Get_format_AVCodecContext_IntPointer(Pointer p) {
+                  super(p);
                         }
 
-/* 1701 */              protected Get_format_AVCodecContext_IntPointer() {
+              protected Get_format_AVCodecContext_IntPointer() {
                             allocate();
                         }
                     }
 
-/* 2346 */          public static class Get_buffer_AVCodecContext_AVFrame extends FunctionPointer {
+          public static class Get_buffer_AVCodecContext_AVFrame extends FunctionPointer {
                         private native void allocate();
 
                         @Deprecated
                         public native int call(AVCodecContext aVCodecContext, avutil.AVFrame aVFrame);
 
                         static {
-/* 2348 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 2348 */              public Get_buffer_AVCodecContext_AVFrame(Pointer p) {
-/* 2349 */                  super(p);
+              public Get_buffer_AVCodecContext_AVFrame(Pointer p) {
+                  super(p);
                         }
 
-/* 2349 */              protected Get_buffer_AVCodecContext_AVFrame() {
+              protected Get_buffer_AVCodecContext_AVFrame() {
                             allocate();
                         }
                     }
 
-/* 2366 */          public static class Release_buffer_AVCodecContext_AVFrame extends FunctionPointer {
+          public static class Release_buffer_AVCodecContext_AVFrame extends FunctionPointer {
                         private native void allocate();
 
                         @Deprecated
                         public native void call(AVCodecContext aVCodecContext, avutil.AVFrame aVFrame);
 
                         static {
-/* 2368 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 2368 */              public Release_buffer_AVCodecContext_AVFrame(Pointer p) {
-/* 2369 */                  super(p);
+              public Release_buffer_AVCodecContext_AVFrame(Pointer p) {
+                  super(p);
                         }
 
-/* 2369 */              protected Release_buffer_AVCodecContext_AVFrame() {
+              protected Release_buffer_AVCodecContext_AVFrame() {
                             allocate();
                         }
                     }
 
-/* 2387 */          public static class Reget_buffer_AVCodecContext_AVFrame extends FunctionPointer {
+          public static class Reget_buffer_AVCodecContext_AVFrame extends FunctionPointer {
                         private native void allocate();
 
                         @Deprecated
                         public native int call(AVCodecContext aVCodecContext, avutil.AVFrame aVFrame);
 
                         static {
-/* 2389 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 2389 */              public Reget_buffer_AVCodecContext_AVFrame(Pointer p) {
-/* 2390 */                  super(p);
+              public Reget_buffer_AVCodecContext_AVFrame(Pointer p) {
+                  super(p);
                         }
 
-/* 2390 */              protected Reget_buffer_AVCodecContext_AVFrame() {
+              protected Reget_buffer_AVCodecContext_AVFrame() {
                             allocate();
                         }
                     }
 
-/* 2478 */          public static class Get_buffer2_AVCodecContext_AVFrame_int extends FunctionPointer {
+          public static class Get_buffer2_AVCodecContext_AVFrame_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, avutil.AVFrame aVFrame, int i);
 
                         static {
-/* 2480 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 2480 */              public Get_buffer2_AVCodecContext_AVFrame_int(Pointer p) {
-/* 2481 */                  super(p);
+              public Get_buffer2_AVCodecContext_AVFrame_int(Pointer p) {
+                  super(p);
                         }
 
-/* 2481 */              protected Get_buffer2_AVCodecContext_AVFrame_int() {
+              protected Get_buffer2_AVCodecContext_AVFrame_int() {
                             allocate();
                         }
                     }
 
-/* 2697 */          public static class Rtp_callback_AVCodecContext_Pointer_int_int extends FunctionPointer {
+          public static class Rtp_callback_AVCodecContext_Pointer_int_int extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVCodecContext aVCodecContext, Pointer pointer, int i, int i2);
 
                         static {
-/* 2699 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 2699 */              public Rtp_callback_AVCodecContext_Pointer_int_int(Pointer p) {
-/* 2700 */                  super(p);
+              public Rtp_callback_AVCodecContext_Pointer_int_int(Pointer p) {
+                  super(p);
                         }
 
-/* 2700 */              protected Rtp_callback_AVCodecContext_Pointer_int_int() {
+              protected Rtp_callback_AVCodecContext_Pointer_int_int() {
                             allocate();
                         }
                     }
 
-/* 2997 */          public static class Func_AVCodecContext_Pointer extends FunctionPointer {
+          public static class Func_AVCodecContext_Pointer extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, Pointer pointer);
 
                         static {
-/* 2999 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 2999 */              public Func_AVCodecContext_Pointer(Pointer p) {
-/* 3000 */                  super(p);
+              public Func_AVCodecContext_Pointer(Pointer p) {
+                  super(p);
                         }
 
-/* 3000 */              protected Func_AVCodecContext_Pointer() {
+              protected Func_AVCodecContext_Pointer() {
                             allocate();
                         }
                     }
 
-                    /* JADX INFO: renamed from: com.googlecode.javacv.cpp.avcodec$AVCodecContext$Execute_AVCodecContext_Func_AVCodecContext_Pointer_Pointer_IntPointer_int_int */
-/* 3005 */          public static class C1229xd66950af extends FunctionPointer {
+                    
+          public static class C1229xd66950af extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, Func_AVCodecContext_Pointer func_AVCodecContext_Pointer, Pointer pointer, IntPointer intPointer, int i, int i2);
 
                         static {
-/* 3007 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3007 */              public C1229xd66950af(Pointer p) {
-/* 3008 */                  super(p);
+              public C1229xd66950af(Pointer p) {
+                  super(p);
                         }
 
-/* 3008 */              protected C1229xd66950af() {
+              protected C1229xd66950af() {
                             allocate();
                         }
                     }
 
-/* 3032 */          public static class Func_AVCodecContext_Pointer_int_int extends FunctionPointer {
+          public static class Func_AVCodecContext_Pointer_int_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, Pointer pointer, int i, int i2);
 
                         static {
-/* 3034 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3034 */              public Func_AVCodecContext_Pointer_int_int(Pointer p) {
-/* 3035 */                  super(p);
+              public Func_AVCodecContext_Pointer_int_int(Pointer p) {
+                  super(p);
                         }
 
-/* 3035 */              protected Func_AVCodecContext_Pointer_int_int() {
+              protected Func_AVCodecContext_Pointer_int_int() {
                             allocate();
                         }
                     }
 
-                    /* JADX INFO: renamed from: com.googlecode.javacv.cpp.avcodec$AVCodecContext$Execute2_AVCodecContext_Func_AVCodecContext_Pointer_int_int_Pointer_IntPointer_int */
-/* 3040 */          public static class C1228xdcb218c7 extends FunctionPointer {
+                    
+          public static class C1228xdcb218c7 extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, Func_AVCodecContext_Pointer_int_int func_AVCodecContext_Pointer_int_int, Pointer pointer, IntPointer intPointer, int i);
 
                         static {
-/* 3042 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3042 */              public C1228xdcb218c7(Pointer p) {
-/* 3043 */                  super(p);
+              public C1228xdcb218c7(Pointer p) {
+                  super(p);
                         }
 
-/* 3043 */              protected C1228xdcb218c7() {
+              protected C1228xdcb218c7() {
                             allocate();
                         }
                     }
                 }
 
-/* 3271 */      public static class AVProfile extends Pointer {
+      public static class AVProfile extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2896,38 +2896,38 @@
 
 
                     static {
-/* 3274 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3274 */          public AVProfile() {
+          public AVProfile() {
                         allocate();
                     }
 
-/* 3275 */          public AVProfile(int size) {
+          public AVProfile(int size) {
                         allocateArray(size);
                     }
 
-/* 3276 */          public AVProfile(Pointer p) {
-/* 3277 */              super(p);
+          public AVProfile(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3280 */          public AVProfile position(int position) {
-/* 3281 */              return (AVProfile) super.position(position);
+                    @Override 
+          public AVProfile position(int position) {
+              return (AVProfile) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 3288 */      public static class AVCodecDefault extends Pointer {
-/* 3289 */          public AVCodecDefault() {
+      public static class AVCodecDefault extends Pointer {
+          public AVCodecDefault() {
                     }
 
-/* 3290 */          public AVCodecDefault(Pointer p) {
-/* 3291 */              super(p);
+          public AVCodecDefault(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 3295 */      public static class AVCodec extends Pointer {
+      public static class AVCodec extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -2965,10 +2965,10 @@
                     public native AVCodec flush(Flush_AVCodecContext flush_AVCodecContext);
 
                     @Cast({"AVCodecID"})
-                    /* JADX INFO: renamed from: id */
+                    
                     public native int m2375id();
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native AVCodec m2376id(int i);
 
                     public native Init_AVCodecContext init();
@@ -3039,190 +3039,190 @@
 
 
                     static {
-/* 3298 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3298 */          public AVCodec() {
+          public AVCodec() {
                         allocate();
                     }
 
-/* 3299 */          public AVCodec(int size) {
+          public AVCodec(int size) {
                         allocateArray(size);
                     }
 
-/* 3300 */          public AVCodec(Pointer p) {
-/* 3301 */              super(p);
+          public AVCodec(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3304 */          public AVCodec position(int position) {
-/* 3305 */              return (AVCodec) super.position(position);
+                    @Override 
+          public AVCodec position(int position) {
+              return (AVCodec) super.position(position);
                     }
 
-/* 3361 */          public static class Init_thread_copy_AVCodecContext extends FunctionPointer {
+          public static class Init_thread_copy_AVCodecContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext);
 
                         static {
-/* 3363 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3363 */              public Init_thread_copy_AVCodecContext(Pointer p) {
-/* 3364 */                  super(p);
+              public Init_thread_copy_AVCodecContext(Pointer p) {
+                  super(p);
                         }
 
-/* 3364 */              protected Init_thread_copy_AVCodecContext() {
+              protected Init_thread_copy_AVCodecContext() {
                             allocate();
                         }
                     }
 
-/* 3376 */          public static class Update_thread_context_AVCodecContext_AVCodecContext extends FunctionPointer {
+          public static class Update_thread_context_AVCodecContext_AVCodecContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, @Const AVCodecContext aVCodecContext2);
 
                         static {
-/* 3378 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3378 */              public Update_thread_context_AVCodecContext_AVCodecContext(Pointer p) {
-/* 3379 */                  super(p);
+              public Update_thread_context_AVCodecContext_AVCodecContext(Pointer p) {
+                  super(p);
                         }
 
-/* 3379 */              protected Update_thread_context_AVCodecContext_AVCodecContext() {
+              protected Update_thread_context_AVCodecContext_AVCodecContext() {
                             allocate();
                         }
                     }
 
-/* 3394 */          public static class Init_static_data_AVCodec extends FunctionPointer {
+          public static class Init_static_data_AVCodec extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVCodec aVCodec);
 
                         static {
-/* 3396 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3396 */              public Init_static_data_AVCodec(Pointer p) {
-/* 3397 */                  super(p);
+              public Init_static_data_AVCodec(Pointer p) {
+                  super(p);
                         }
 
-/* 3397 */              protected Init_static_data_AVCodec() {
+              protected Init_static_data_AVCodec() {
                             allocate();
                         }
                     }
 
-/* 3403 */          public static class Init_AVCodecContext extends FunctionPointer {
+          public static class Init_AVCodecContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext);
 
                         static {
-/* 3405 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3405 */              public Init_AVCodecContext(Pointer p) {
-/* 3406 */                  super(p);
+              public Init_AVCodecContext(Pointer p) {
+                  super(p);
                         }
 
-/* 3406 */              protected Init_AVCodecContext() {
+              protected Init_AVCodecContext() {
                             allocate();
                         }
                     }
 
-/* 3411 */          public static class Encode_sub_AVCodecContext_BytePointer_int_AVSubtitle extends FunctionPointer {
+          public static class Encode_sub_AVCodecContext_BytePointer_int_AVSubtitle extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, @Cast({"uint8_t*"}) BytePointer bytePointer, int i, @Const AVSubtitle aVSubtitle);
 
                         static {
-/* 3413 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3413 */              public Encode_sub_AVCodecContext_BytePointer_int_AVSubtitle(Pointer p) {
-/* 3414 */                  super(p);
+              public Encode_sub_AVCodecContext_BytePointer_int_AVSubtitle(Pointer p) {
+                  super(p);
                         }
 
-/* 3414 */              protected Encode_sub_AVCodecContext_BytePointer_int_AVSubtitle() {
+              protected Encode_sub_AVCodecContext_BytePointer_int_AVSubtitle() {
                             allocate();
                         }
                     }
 
-/* 3430 */          public static class Encode2_AVCodecContext_AVPacket_AVFrame_IntPointer extends FunctionPointer {
+          public static class Encode2_AVCodecContext_AVPacket_AVFrame_IntPointer extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, AVPacket aVPacket, @Const avutil.AVFrame aVFrame, IntPointer intPointer);
 
                         static {
-/* 3432 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3432 */              public Encode2_AVCodecContext_AVPacket_AVFrame_IntPointer(Pointer p) {
-/* 3433 */                  super(p);
+              public Encode2_AVCodecContext_AVPacket_AVFrame_IntPointer(Pointer p) {
+                  super(p);
                         }
 
-/* 3433 */              protected Encode2_AVCodecContext_AVPacket_AVFrame_IntPointer() {
+              protected Encode2_AVCodecContext_AVPacket_AVFrame_IntPointer() {
                             allocate();
                         }
                     }
 
-/* 3439 */          public static class Decode_AVCodecContext_Pointer_IntPointer_AVPacket extends FunctionPointer {
+          public static class Decode_AVCodecContext_Pointer_IntPointer_AVPacket extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, Pointer pointer, IntPointer intPointer, AVPacket aVPacket);
 
                         static {
-/* 3441 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3441 */              public Decode_AVCodecContext_Pointer_IntPointer_AVPacket(Pointer p) {
-/* 3442 */                  super(p);
+              public Decode_AVCodecContext_Pointer_IntPointer_AVPacket(Pointer p) {
+                  super(p);
                         }
 
-/* 3442 */              protected Decode_AVCodecContext_Pointer_IntPointer_AVPacket() {
+              protected Decode_AVCodecContext_Pointer_IntPointer_AVPacket() {
                             allocate();
                         }
                     }
 
-/* 3447 */          public static class Close_AVCodecContext extends FunctionPointer {
+          public static class Close_AVCodecContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext);
 
                         static {
-/* 3449 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3449 */              public Close_AVCodecContext(Pointer p) {
-/* 3450 */                  super(p);
+              public Close_AVCodecContext(Pointer p) {
+                  super(p);
                         }
 
-/* 3450 */              protected Close_AVCodecContext() {
+              protected Close_AVCodecContext() {
                             allocate();
                         }
                     }
 
-/* 3459 */          public static class Flush_AVCodecContext extends FunctionPointer {
+          public static class Flush_AVCodecContext extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVCodecContext aVCodecContext);
 
                         static {
-/* 3461 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3461 */              public Flush_AVCodecContext(Pointer p) {
-/* 3462 */                  super(p);
+              public Flush_AVCodecContext(Pointer p) {
+                  super(p);
                         }
 
-/* 3462 */              protected Flush_AVCodecContext() {
+              protected Flush_AVCodecContext() {
                             allocate();
                         }
                     }
                 }
 
-/* 3471 */      public static class AVHWAccel extends Pointer {
+      public static class AVHWAccel extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3240,10 +3240,10 @@
                     public native AVHWAccel end_frame(End_frame_AVCodecContext end_frame_AVCodecContext);
 
                     @Cast({"AVCodecID"})
-                    /* JADX INFO: renamed from: id */
+                    
                     public native int m2379id();
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native AVHWAccel m2380id(int i);
 
                     @MemberGetter
@@ -3274,82 +3274,82 @@
 
 
                     static {
-/* 3474 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3474 */          public AVHWAccel() {
+          public AVHWAccel() {
                         allocate();
                     }
 
-/* 3475 */          public AVHWAccel(int size) {
+          public AVHWAccel(int size) {
                         allocateArray(size);
                     }
 
-/* 3476 */          public AVHWAccel(Pointer p) {
-/* 3477 */              super(p);
+          public AVHWAccel(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3480 */          public AVHWAccel position(int position) {
-/* 3481 */              return (AVHWAccel) super.position(position);
+                    @Override 
+          public AVHWAccel position(int position) {
+              return (AVHWAccel) super.position(position);
                     }
 
-/* 3533 */          public static class Start_frame_AVCodecContext_BytePointer_int extends FunctionPointer {
+          public static class Start_frame_AVCodecContext_BytePointer_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, @Cast({"const uint8_t*"}) BytePointer bytePointer, @Cast({"uint32_t"}) int i);
 
                         static {
-/* 3535 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3535 */              public Start_frame_AVCodecContext_BytePointer_int(Pointer p) {
-/* 3536 */                  super(p);
+              public Start_frame_AVCodecContext_BytePointer_int(Pointer p) {
+                  super(p);
                         }
 
-/* 3536 */              protected Start_frame_AVCodecContext_BytePointer_int() {
+              protected Start_frame_AVCodecContext_BytePointer_int() {
                             allocate();
                         }
                     }
 
-/* 3553 */          public static class Decode_slice_AVCodecContext_BytePointer_int extends FunctionPointer {
+          public static class Decode_slice_AVCodecContext_BytePointer_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, @Cast({"const uint8_t*"}) BytePointer bytePointer, @Cast({"uint32_t"}) int i);
 
                         static {
-/* 3555 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3555 */              public Decode_slice_AVCodecContext_BytePointer_int(Pointer p) {
-/* 3556 */                  super(p);
+              public Decode_slice_AVCodecContext_BytePointer_int(Pointer p) {
+                  super(p);
                         }
 
-/* 3556 */              protected Decode_slice_AVCodecContext_BytePointer_int() {
+              protected Decode_slice_AVCodecContext_BytePointer_int() {
                             allocate();
                         }
                     }
 
-/* 3571 */          public static class End_frame_AVCodecContext extends FunctionPointer {
+          public static class End_frame_AVCodecContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext);
 
                         static {
-/* 3573 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 3573 */              public End_frame_AVCodecContext(Pointer p) {
-/* 3574 */                  super(p);
+              public End_frame_AVCodecContext(Pointer p) {
+                  super(p);
                         }
 
-/* 3574 */              protected End_frame_AVCodecContext() {
+              protected End_frame_AVCodecContext() {
                             allocate();
                         }
                     }
                 }
 
-/* 3600 */      public static class AVPicture extends Pointer {
+      public static class AVPicture extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3372,28 +3372,28 @@
 
 
                     static {
-/* 3603 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3603 */          public AVPicture() {
+          public AVPicture() {
                         allocate();
                     }
 
-/* 3604 */          public AVPicture(int size) {
+          public AVPicture(int size) {
                         allocateArray(size);
                     }
 
-/* 3605 */          public AVPicture(Pointer p) {
-/* 3606 */              super(p);
+          public AVPicture(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3609 */          public AVPicture position(int position) {
-/* 3610 */              return (AVPicture) super.position(position);
+                    @Override 
+          public AVPicture position(int position) {
+              return (AVPicture) super.position(position);
                     }
                 }
 
-/* 3643 */      public static class AVSubtitleRect extends Pointer {
+      public static class AVSubtitleRect extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3407,10 +3407,10 @@
 
                     public native AVSubtitleRect flags(int i);
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public native int m2383h();
 
-                    /* JADX INFO: renamed from: h */
+                    
                     public native AVSubtitleRect m2384h(int i);
 
                     public native int nb_colors();
@@ -3432,48 +3432,48 @@
 
                     public native AVSubtitleRect type(int i);
 
-                    /* JADX INFO: renamed from: w */
+                    
                     public native int m2385w();
 
-                    /* JADX INFO: renamed from: w */
+                    
                     public native AVSubtitleRect m2386w(int i);
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native int m2387x();
 
-                    /* JADX INFO: renamed from: x */
+                    
                     public native AVSubtitleRect m2388x(int i);
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native int m2389y();
 
-                    /* JADX INFO: renamed from: y */
+                    
                     public native AVSubtitleRect m2390y(int i);
 
 
                     static {
-/* 3646 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3646 */          public AVSubtitleRect() {
+          public AVSubtitleRect() {
                         allocate();
                     }
 
-/* 3647 */          public AVSubtitleRect(int size) {
+          public AVSubtitleRect(int size) {
                         allocateArray(size);
                     }
 
-/* 3648 */          public AVSubtitleRect(Pointer p) {
-/* 3649 */              super(p);
+          public AVSubtitleRect(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3652 */          public AVSubtitleRect position(int position) {
-/* 3653 */              return (AVSubtitleRect) super.position(position);
+                    @Override 
+          public AVSubtitleRect position(int position) {
+              return (AVSubtitleRect) super.position(position);
                     }
                 }
 
-/* 3685 */      public static class AVSubtitle extends Pointer {
+      public static class AVSubtitle extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3512,28 +3512,28 @@
 
 
                     static {
-/* 3688 */              Loader.load();
+              Loader.load();
                     }
 
-/* 3688 */          public AVSubtitle() {
+          public AVSubtitle() {
                         allocate();
                     }
 
-/* 3689 */          public AVSubtitle(int size) {
+          public AVSubtitle(int size) {
                         allocateArray(size);
                     }
 
-/* 3690 */          public AVSubtitle(Pointer p) {
-/* 3691 */              super(p);
+          public AVSubtitle(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 3694 */          public AVSubtitle position(int position) {
-/* 3695 */              return (AVSubtitle) super.position(position);
+                    @Override 
+          public AVSubtitle position(int position) {
+              return (AVSubtitle) super.position(position);
                     }
                 }
 
-/* 4331 */      public static class AVCodecParserContext extends Pointer {
+      public static class AVCodecParserContext extends Pointer {
                     public static final int AV_PARSER_PTS_NB = 4;
                     public static final int PARSER_FLAG_COMPLETE_FRAMES = 1;
                     public static final int PARSER_FLAG_FETCHED_OFFSET = 4;
@@ -3683,28 +3683,28 @@
 
 
                     static {
-/* 4334 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4334 */          public AVCodecParserContext() {
+          public AVCodecParserContext() {
                         allocate();
                     }
 
-/* 4335 */          public AVCodecParserContext(int size) {
+          public AVCodecParserContext(int size) {
                         allocateArray(size);
                     }
 
-/* 4336 */          public AVCodecParserContext(Pointer p) {
-/* 4337 */              super(p);
+          public AVCodecParserContext(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 4340 */          public AVCodecParserContext position(int position) {
-/* 4341 */              return (AVCodecParserContext) super.position(position);
+                    @Override 
+          public AVCodecParserContext position(int position) {
+              return (AVCodecParserContext) super.position(position);
                     }
                 }
 
-/* 4495 */      public static class AVCodecParser extends Pointer {
+      public static class AVCodecParser extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3742,157 +3742,157 @@
 
 
                     static {
-/* 4498 */              Loader.load();
+              Loader.load();
                     }
 
-/* 4498 */          public AVCodecParser() {
+          public AVCodecParser() {
                         allocate();
                     }
 
-/* 4499 */          public AVCodecParser(int size) {
+          public AVCodecParser(int size) {
                         allocateArray(size);
                     }
 
-/* 4500 */          public AVCodecParser(Pointer p) {
-/* 4501 */              super(p);
+          public AVCodecParser(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 4504 */          public AVCodecParser position(int position) {
-/* 4505 */              return (AVCodecParser) super.position(position);
+                    @Override 
+          public AVCodecParser position(int position) {
+              return (AVCodecParser) super.position(position);
                     }
 
-/* 4510 */          public static class Parser_init_AVCodecParserContext extends FunctionPointer {
+          public static class Parser_init_AVCodecParserContext extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecParserContext aVCodecParserContext);
 
                         static {
-/* 4512 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 4512 */              public Parser_init_AVCodecParserContext(Pointer p) {
-/* 4513 */                  super(p);
+              public Parser_init_AVCodecParserContext(Pointer p) {
+                  super(p);
                         }
 
-/* 4513 */              protected Parser_init_AVCodecParserContext() {
+              protected Parser_init_AVCodecParserContext() {
                             allocate();
                         }
                     }
 
-                    /* JADX INFO: renamed from: com.googlecode.javacv.cpp.avcodec$AVCodecParser$Parser_parse_AVCodecParserContext_AVCodecContext_PointerPointer_IntPointer_BytePointer_int */
-/* 4518 */          public static class C1230xc6d3326 extends FunctionPointer {
+                    
+          public static class C1230xc6d3326 extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecParserContext aVCodecParserContext, AVCodecContext aVCodecContext, @Cast({"const uint8_t**"}) PointerPointer pointerPointer, IntPointer intPointer, @Cast({"const uint8_t*"}) BytePointer bytePointer, int i);
 
                         static {
-/* 4520 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 4520 */              public C1230xc6d3326(Pointer p) {
-/* 4521 */                  super(p);
+              public C1230xc6d3326(Pointer p) {
+                  super(p);
                         }
 
-/* 4521 */              protected C1230xc6d3326() {
+              protected C1230xc6d3326() {
                             allocate();
                         }
                     }
 
-/* 4529 */          public static class Parser_close_AVCodecParserContext extends FunctionPointer {
+          public static class Parser_close_AVCodecParserContext extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVCodecParserContext aVCodecParserContext);
 
                         static {
-/* 4531 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 4531 */              public Parser_close_AVCodecParserContext(Pointer p) {
-/* 4532 */                  super(p);
+              public Parser_close_AVCodecParserContext(Pointer p) {
+                  super(p);
                         }
 
-/* 4532 */              protected Parser_close_AVCodecParserContext() {
+              protected Parser_close_AVCodecParserContext() {
                             allocate();
                         }
                     }
 
-/* 4537 */          public static class Split_AVCodecContext_BytePointer_int extends FunctionPointer {
+          public static class Split_AVCodecContext_BytePointer_int extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVCodecContext aVCodecContext, @Cast({"const uint8_t*"}) BytePointer bytePointer, int i);
 
                         static {
-/* 4539 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 4539 */              public Split_AVCodecContext_BytePointer_int(Pointer p) {
-/* 4540 */                  super(p);
+              public Split_AVCodecContext_BytePointer_int(Pointer p) {
+                  super(p);
                         }
 
-/* 4540 */              protected Split_AVCodecContext_BytePointer_int() {
+              protected Split_AVCodecContext_BytePointer_int() {
                             allocate();
                         }
                     }
                 }
 
                 @Opaque
-/* 4821 */      public static class ReSampleContext extends Pointer {
-/* 4822 */          public ReSampleContext() {
+      public static class ReSampleContext extends Pointer {
+          public ReSampleContext() {
                     }
 
-/* 4823 */          public ReSampleContext(Pointer p) {
-/* 4824 */              super(p);
+          public ReSampleContext(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Opaque
-/* 4825 */      public static class AVResampleContext extends Pointer {
-/* 4826 */          public AVResampleContext() {
+      public static class AVResampleContext extends Pointer {
+          public AVResampleContext() {
                     }
 
-/* 4827 */          public AVResampleContext(Pointer p) {
-/* 4828 */              super(p);
+          public AVResampleContext(Pointer p) {
+              super(p);
                     }
                 }
 
-/* 5197 */      public static class Func_AVCodecContext_Pointer extends FunctionPointer {
+      public static class Func_AVCodecContext_Pointer extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(AVCodecContext aVCodecContext, Pointer pointer);
 
                     static {
-/* 5199 */              Loader.load();
+              Loader.load();
                     }
 
-/* 5199 */          public Func_AVCodecContext_Pointer(Pointer p) {
-/* 5200 */              super(p);
+          public Func_AVCodecContext_Pointer(Pointer p) {
+              super(p);
                     }
 
-/* 5200 */          protected Func_AVCodecContext_Pointer() {
+          protected Func_AVCodecContext_Pointer() {
                         allocate();
                     }
                 }
 
-/* 5208 */      public static class Func_AVCodecContext_Pointer_int_int extends FunctionPointer {
+      public static class Func_AVCodecContext_Pointer_int_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(AVCodecContext aVCodecContext, Pointer pointer, int i, int i2);
 
                     static {
-/* 5210 */              Loader.load();
+              Loader.load();
                     }
 
-/* 5210 */          public Func_AVCodecContext_Pointer_int_int(Pointer p) {
-/* 5211 */              super(p);
+          public Func_AVCodecContext_Pointer_int_int(Pointer p) {
+              super(p);
                     }
 
-/* 5211 */          protected Func_AVCodecContext_Pointer_int_int() {
+          protected Func_AVCodecContext_Pointer_int_int() {
                         allocate();
                     }
                 }
 
-/* 5295 */      public static class AVBitStreamFilterContext extends Pointer {
+      public static class AVBitStreamFilterContext extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3915,28 +3915,28 @@
 
 
                     static {
-/* 5298 */              Loader.load();
+              Loader.load();
                     }
 
-/* 5298 */          public AVBitStreamFilterContext() {
+          public AVBitStreamFilterContext() {
                         allocate();
                     }
 
-/* 5299 */          public AVBitStreamFilterContext(int size) {
+          public AVBitStreamFilterContext(int size) {
                         allocateArray(size);
                     }
 
-/* 5300 */          public AVBitStreamFilterContext(Pointer p) {
-/* 5301 */              super(p);
+          public AVBitStreamFilterContext(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 5304 */          public AVBitStreamFilterContext position(int position) {
-/* 5305 */              return (AVBitStreamFilterContext) super.position(position);
+                    @Override 
+          public AVBitStreamFilterContext position(int position) {
+              return (AVBitStreamFilterContext) super.position(position);
                     }
                 }
 
-/* 5313 */      public static class AVBitStreamFilter extends Pointer {
+      public static class AVBitStreamFilter extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -3963,169 +3963,169 @@
 
 
                     static {
-/* 5316 */              Loader.load();
+              Loader.load();
                     }
 
-/* 5316 */          public AVBitStreamFilter() {
+          public AVBitStreamFilter() {
                         allocate();
                     }
 
-/* 5317 */          public AVBitStreamFilter(int size) {
+          public AVBitStreamFilter(int size) {
                         allocateArray(size);
                     }
 
-/* 5318 */          public AVBitStreamFilter(Pointer p) {
-/* 5319 */              super(p);
+          public AVBitStreamFilter(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 5322 */          public AVBitStreamFilter position(int position) {
-/* 5323 */              return (AVBitStreamFilter) super.position(position);
+                    @Override 
+          public AVBitStreamFilter position(int position) {
+              return (AVBitStreamFilter) super.position(position);
                     }
 
-                    /* JADX INFO: renamed from: com.googlecode.javacv.cpp.avcodec$AVBitStreamFilter$Filter_AVBitStreamFilterContext_AVCodecContext_BytePointer_PointerPointer_IntPointer_BytePointer_int_int */
-/* 5327 */          public static class C1227x8e582121 extends FunctionPointer {
+                    
+          public static class C1227x8e582121 extends FunctionPointer {
                         private native void allocate();
 
                         public native int call(AVBitStreamFilterContext aVBitStreamFilterContext, AVCodecContext aVCodecContext, @Cast({"const char*"}) BytePointer bytePointer, @Cast({"uint8_t**"}) PointerPointer pointerPointer, IntPointer intPointer, @Cast({"const uint8_t*"}) BytePointer bytePointer2, int i, int i2);
 
                         static {
-/* 5329 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 5329 */              public C1227x8e582121(Pointer p) {
-/* 5330 */                  super(p);
+              public C1227x8e582121(Pointer p) {
+                  super(p);
                         }
 
-/* 5330 */              protected C1227x8e582121() {
+              protected C1227x8e582121() {
                             allocate();
                         }
                     }
 
-/* 5338 */          public static class Close_AVBitStreamFilterContext extends FunctionPointer {
+          public static class Close_AVBitStreamFilterContext extends FunctionPointer {
                         private native void allocate();
 
                         public native void call(AVBitStreamFilterContext aVBitStreamFilterContext);
 
                         static {
-/* 5340 */                  Loader.load();
+                  Loader.load();
                         }
 
-/* 5340 */              public Close_AVBitStreamFilterContext(Pointer p) {
-/* 5341 */                  super(p);
+              public Close_AVBitStreamFilterContext(Pointer p) {
+                  super(p);
                         }
 
-/* 5341 */              protected Close_AVBitStreamFilterContext() {
+              protected Close_AVBitStreamFilterContext() {
                             allocate();
                         }
                     }
                 }
 
-/* 5575 */      public static class Cb_PointerPointer_int extends FunctionPointer {
+      public static class Cb_PointerPointer_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(@Cast({"void**"}) PointerPointer pointerPointer, @Cast({"AVLockOp"}) int i);
 
                     static {
-/* 5577 */              Loader.load();
+              Loader.load();
                     }
 
-/* 5577 */          public Cb_PointerPointer_int(Pointer p) {
-/* 5578 */              super(p);
+          public Cb_PointerPointer_int(Pointer p) {
+              super(p);
                     }
 
-/* 5578 */          protected Cb_PointerPointer_int() {
+          protected Cb_PointerPointer_int() {
                         allocate();
                     }
                 }
 
-/* 5583 */      public static class Cb_Pointer_int extends FunctionPointer {
+      public static class Cb_Pointer_int extends FunctionPointer {
                     private native void allocate();
 
                     public native int call(@ByPtrPtr @Cast({"void**"}) Pointer pointer, @Cast({"AVLockOp"}) int i);
 
                     static {
-/* 5585 */              Loader.load();
+              Loader.load();
                     }
 
-/* 5585 */          public Cb_Pointer_int(Pointer p) {
-/* 5586 */              super(p);
+          public Cb_Pointer_int(Pointer p) {
+              super(p);
                     }
 
-/* 5586 */          protected Cb_Pointer_int() {
+          protected Cb_Pointer_int() {
                         allocate();
                     }
                 }
 
-/* 5684 */      public static class FFTComplex extends Pointer {
+      public static class FFTComplex extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
 
                     @Cast({"FFTSample"})
-                    /* JADX INFO: renamed from: im */
+                    
                     public native float m2391im();
 
-                    /* JADX INFO: renamed from: im */
+                    
                     public native FFTComplex m2392im(float f);
 
                     @Cast({"FFTSample"})
-                    /* JADX INFO: renamed from: re */
+                    
                     public native float m2393re();
 
-                    /* JADX INFO: renamed from: re */
+                    
                     public native FFTComplex m2394re(float f);
 
 
                     static {
-/* 5687 */              Loader.load();
+              Loader.load();
                     }
 
-/* 5687 */          public FFTComplex() {
+          public FFTComplex() {
                         allocate();
                     }
 
-/* 5688 */          public FFTComplex(int size) {
+          public FFTComplex(int size) {
                         allocateArray(size);
                     }
 
-/* 5689 */          public FFTComplex(Pointer p) {
-/* 5690 */              super(p);
+          public FFTComplex(Pointer p) {
+              super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 5693 */          public FFTComplex position(int position) {
-/* 5694 */              return (FFTComplex) super.position(position);
-                    }
-                }
-
-                @Opaque
-/* 5700 */      public static class FFTContext extends Pointer {
-/* 5701 */          public FFTContext() {
-                    }
-
-/* 5702 */          public FFTContext(Pointer p) {
-/* 5703 */              super(p);
+                    @Override 
+          public FFTComplex position(int position) {
+              return (FFTComplex) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 5746 */      public static class RDFTContext extends Pointer {
-/* 5747 */          public RDFTContext() {
+      public static class FFTContext extends Pointer {
+          public FFTContext() {
                     }
 
-/* 5748 */          public RDFTContext(Pointer p) {
-/* 5749 */              super(p);
+          public FFTContext(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Opaque
-/* 5764 */      public static class DCTContext extends Pointer {
-/* 5765 */          public DCTContext() {
+      public static class RDFTContext extends Pointer {
+          public RDFTContext() {
                     }
 
-/* 5766 */          public DCTContext(Pointer p) {
-/* 5767 */              super(p);
+          public RDFTContext(Pointer p) {
+              super(p);
+                    }
+                }
+
+                @Opaque
+      public static class DCTContext extends Pointer {
+          public DCTContext() {
+                    }
+
+          public DCTContext(Pointer p) {
+              super(p);
                     }
                 }
             }

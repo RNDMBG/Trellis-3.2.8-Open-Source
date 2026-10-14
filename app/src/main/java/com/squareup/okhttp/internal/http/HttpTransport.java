@@ -6,85 +6,85 @@
             import okio.Sink;
             import okio.Source;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 27 */    public final class HttpTransport implements Transport {
+            
+    public final class HttpTransport implements Transport {
                 private final HttpConnection httpConnection;
                 private final HttpEngine httpEngine;
 
-/* 28 */        public HttpTransport(HttpEngine httpEngine, HttpConnection httpConnection) {
-/* 30 */            this.httpEngine = httpEngine;
-/* 31 */            this.httpConnection = httpConnection;
+        public HttpTransport(HttpEngine httpEngine, HttpConnection httpConnection) {
+            this.httpEngine = httpEngine;
+            this.httpConnection = httpConnection;
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 34 */        public Sink createRequestBody(Request request, long contentLength) throws IOException {
-/* 35 */            if ("chunked".equalsIgnoreCase(request.header("Transfer-Encoding"))) {
-/* 37 */                return this.httpConnection.newChunkedSink();
+                @Override 
+        public Sink createRequestBody(Request request, long contentLength) throws IOException {
+            if ("chunked".equalsIgnoreCase(request.header("Transfer-Encoding"))) {
+                return this.httpConnection.newChunkedSink();
                     }
                     if (contentLength != -1) {
-/* 42 */                return this.httpConnection.newFixedLengthSink(contentLength);
+                return this.httpConnection.newFixedLengthSink(contentLength);
                     }
-/* 45 */            throw new IllegalStateException("Cannot stream a request body without chunked encoding or a known content length!");
+            throw new IllegalStateException("Cannot stream a request body without chunked encoding or a known content length!");
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 49 */        public void flushRequest() throws IOException {
-/* 50 */            this.httpConnection.flush();
+                @Override 
+        public void flushRequest() throws IOException {
+            this.httpConnection.flush();
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 53 */        public void writeRequestBody(RetryableSink requestBody) throws IOException {
-/* 54 */            this.httpConnection.writeRequestBody(requestBody);
+                @Override 
+        public void writeRequestBody(RetryableSink requestBody) throws IOException {
+            this.httpConnection.writeRequestBody(requestBody);
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 69 */        public void writeRequestHeaders(Request request) throws IOException {
-/* 70 */            this.httpEngine.writingRequestHeaders();
-/* 71 */            String requestLine = RequestLine.get(request, this.httpEngine.getConnection().getRoute().getProxy().type(), this.httpEngine.getConnection().getProtocol());
-/* 74 */            this.httpConnection.writeRequest(request.headers(), requestLine);
+                @Override 
+        public void writeRequestHeaders(Request request) throws IOException {
+            this.httpEngine.writingRequestHeaders();
+            String requestLine = RequestLine.get(request, this.httpEngine.getConnection().getRoute().getProxy().type(), this.httpEngine.getConnection().getProtocol());
+            this.httpConnection.writeRequest(request.headers(), requestLine);
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 77 */        public Response.Builder readResponseHeaders() throws IOException {
-/* 78 */            return this.httpConnection.readResponse();
+                @Override 
+        public Response.Builder readResponseHeaders() throws IOException {
+            return this.httpConnection.readResponse();
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 81 */        public void releaseConnectionOnIdle() throws IOException {
-/* 82 */            if (canReuseConnection()) {
-/* 83 */                this.httpConnection.poolOnIdle();
+                @Override 
+        public void releaseConnectionOnIdle() throws IOException {
+            if (canReuseConnection()) {
+                this.httpConnection.poolOnIdle();
                     } else {
-/* 85 */                this.httpConnection.closeOnIdle();
+                this.httpConnection.closeOnIdle();
                     }
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 90 */        public boolean canReuseConnection() {
+                @Override 
+        public boolean canReuseConnection() {
                     return ("close".equalsIgnoreCase(this.httpEngine.getRequest().header("Connection")) || "close".equalsIgnoreCase(this.httpEngine.getResponse().header("Connection")) || this.httpConnection.isClosed()) ? false : true;
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 107 */       public void emptyTransferStream() throws IOException {
-/* 108 */           this.httpConnection.emptyResponseBody();
+                @Override 
+       public void emptyTransferStream() throws IOException {
+           this.httpConnection.emptyResponseBody();
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 111 */       public Source getTransferStream(CacheRequest cacheRequest) throws IOException {
-/* 112 */           if (!this.httpEngine.hasResponseBody()) {
-/* 113 */               return this.httpConnection.newFixedLengthSource(cacheRequest, 0L);
+                @Override 
+       public Source getTransferStream(CacheRequest cacheRequest) throws IOException {
+           if (!this.httpEngine.hasResponseBody()) {
+               return this.httpConnection.newFixedLengthSource(cacheRequest, 0L);
                     }
-/* 116 */           if ("chunked".equalsIgnoreCase(this.httpEngine.getResponse().header("Transfer-Encoding"))) {
-/* 117 */               return this.httpConnection.newChunkedSource(cacheRequest, this.httpEngine);
+           if ("chunked".equalsIgnoreCase(this.httpEngine.getResponse().header("Transfer-Encoding"))) {
+               return this.httpConnection.newChunkedSource(cacheRequest, this.httpEngine);
                     }
-/* 120 */           long contentLength = OkHeaders.contentLength(this.httpEngine.getResponse());
+           long contentLength = OkHeaders.contentLength(this.httpEngine.getResponse());
                     if (contentLength != -1) {
-/* 122 */               return this.httpConnection.newFixedLengthSource(cacheRequest, contentLength);
+               return this.httpConnection.newFixedLengthSource(cacheRequest, contentLength);
                     }
-/* 128 */           return this.httpConnection.newUnknownLengthSource(cacheRequest);
+           return this.httpConnection.newUnknownLengthSource(cacheRequest);
                 }
 
-                @Override // com.squareup.okhttp.internal.http.Transport
-/* 131 */       public void disconnect(HttpEngine engine) throws IOException {
-/* 132 */           this.httpConnection.closeIfOwnedBy(engine);
+                @Override 
+       public void disconnect(HttpEngine engine) throws IOException {
+           this.httpConnection.closeIfOwnedBy(engine);
                 }
             }

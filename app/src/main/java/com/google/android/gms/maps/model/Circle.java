@@ -4,10 +4,10 @@
             import com.google.android.gms.internal.C1028dm;
             import com.google.android.gms.maps.model.internal.InterfaceC1188b;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class Circle {
 
-                /* JADX INFO: renamed from: qe */
+                
                 private final InterfaceC1188b f2289qe;
 
                 public Circle(InterfaceC1188b delegate) {

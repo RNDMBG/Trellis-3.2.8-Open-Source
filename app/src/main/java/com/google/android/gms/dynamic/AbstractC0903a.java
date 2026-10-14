@@ -15,29 +15,29 @@
             import java.util.Iterator;
             import java.util.LinkedList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.dynamic.a */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public abstract class AbstractC0903a<T extends LifecycleDelegate> {
 
-                /* JADX INFO: renamed from: lV */
+                
                 private T f1006lV;
 
-                /* JADX INFO: renamed from: lW */
+                
                 private Bundle f1007lW;
 
-                /* JADX INFO: renamed from: lX */
+                
                 private LinkedList<a> f1008lX;
 
-                /* JADX INFO: renamed from: lY */
+                
                 private final InterfaceC0906d<T> f1009lY = new AnonymousClass1();
 
-                /* JADX INFO: renamed from: com.google.android.gms.dynamic.a$1, reason: invalid class name */
+                
                 class AnonymousClass1 implements InterfaceC0906d<T> {
                     AnonymousClass1() {
                     }
 
-                    @Override // com.google.android.gms.dynamic.InterfaceC0906d
-                    /* JADX INFO: renamed from: a */
+                    @Override 
+                    
                     public void mo1162a(T t) {
                         AbstractC0903a.m1155a(AbstractC0903a.this, t);
                         Iterator it = AbstractC0903a.m1156a(AbstractC0903a.this).iterator();
@@ -49,17 +49,17 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.dynamic.a$2, reason: invalid class name */
+                
                 class AnonymousClass2 implements a {
 
-                    /* JADX INFO: renamed from: ma */
-                    final /* synthetic */ Activity f1012ma;
+                    
+                    final  Activity f1012ma;
 
-                    /* JADX INFO: renamed from: mb */
-                    final /* synthetic */ Bundle f1013mb;
+                    
+                    final  Bundle f1013mb;
 
-                    /* JADX INFO: renamed from: mc */
-                    final /* synthetic */ Bundle f1014mc;
+                    
+                    final  Bundle f1014mc;
 
                     AnonymousClass2(Activity activity, Bundle bundle, Bundle bundle2) {
                         this.f1012ma = activity;
@@ -67,54 +67,54 @@
                         this.f1014mc = bundle2;
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a.a
-                    /* JADX INFO: renamed from: b */
+                    @Override 
+                    
                     public void mo1163b(LifecycleDelegate lifecycleDelegate) {
                         AbstractC0903a.m1158b(AbstractC0903a.this).onInflate(this.f1012ma, this.f1013mb, this.f1014mc);
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a.a
+                    @Override 
                     public int getState() {
                         return 0;
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.dynamic.a$3, reason: invalid class name */
+                
                 class AnonymousClass3 implements a {
 
-                    /* JADX INFO: renamed from: mc */
-                    final /* synthetic */ Bundle f1016mc;
+                    
+                    final  Bundle f1016mc;
 
                     AnonymousClass3(Bundle bundle) {
                         this.f1016mc = bundle;
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a.a
-                    /* JADX INFO: renamed from: b */
+                    @Override 
+                    
                     public void mo1163b(LifecycleDelegate lifecycleDelegate) {
                         AbstractC0903a.m1158b(AbstractC0903a.this).onCreate(this.f1016mc);
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a.a
+                    @Override 
                     public int getState() {
                         return 1;
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.dynamic.a$4, reason: invalid class name */
+                
                 class AnonymousClass4 implements a {
 
-                    /* JADX INFO: renamed from: mc */
-                    final /* synthetic */ Bundle f1018mc;
+                    
+                    final  Bundle f1018mc;
 
-                    /* JADX INFO: renamed from: md */
-                    final /* synthetic */ FrameLayout f1019md;
+                    
+                    final  FrameLayout f1019md;
 
-                    /* JADX INFO: renamed from: me */
-                    final /* synthetic */ LayoutInflater f1020me;
+                    
+                    final  LayoutInflater f1020me;
 
-                    /* JADX INFO: renamed from: mf */
-                    final /* synthetic */ ViewGroup f1021mf;
+                    
+                    final  ViewGroup f1021mf;
 
                     AnonymousClass4(FrameLayout frameLayout, LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
                         this.f1019md = frameLayout;
@@ -123,90 +123,90 @@
                         this.f1018mc = bundle;
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a.a
-                    /* JADX INFO: renamed from: b */
+                    @Override 
+                    
                     public void mo1163b(LifecycleDelegate lifecycleDelegate) {
                         this.f1019md.removeAllViews();
                         this.f1019md.addView(AbstractC0903a.m1158b(AbstractC0903a.this).onCreateView(this.f1020me, this.f1021mf, this.f1018mc));
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a.a
+                    @Override 
                     public int getState() {
                         return 2;
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.dynamic.a$5, reason: invalid class name */
+                
                 class AnonymousClass5 implements View.OnClickListener {
 
-                    /* JADX INFO: renamed from: gO */
-                    final /* synthetic */ Context f1022gO;
+                    
+                    final  Context f1022gO;
 
-                    /* JADX INFO: renamed from: mg */
-                    final /* synthetic */ int f1024mg;
+                    
+                    final  int f1024mg;
 
                     AnonymousClass5(Context context, int i) {
                         this.f1022gO = context;
                         this.f1024mg = i;
                     }
 
-                    @Override // android.view.View.OnClickListener
+                    @Override 
                     public void onClick(View v) {
                         this.f1022gO.startActivity(GooglePlayServicesUtil.m1012a(this.f1022gO, this.f1024mg, -1));
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.dynamic.a$6, reason: invalid class name */
+                
                 class AnonymousClass6 implements a {
                     AnonymousClass6() {
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a.a
-                    /* JADX INFO: renamed from: b */
+                    @Override 
+                    
                     public void mo1163b(LifecycleDelegate lifecycleDelegate) {
                         AbstractC0903a.m1158b(AbstractC0903a.this).onResume();
                     }
 
-                    @Override // com.google.android.gms.dynamic.AbstractC0903a.a
+                    @Override 
                     public int getState() {
                         return 3;
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.dynamic.a$a */
+                
                 private interface a {
-                    /* JADX INFO: renamed from: b */
+                    
                     void mo1163b(LifecycleDelegate lifecycleDelegate);
 
                     int getState();
                 }
 
-                /* JADX INFO: renamed from: J */
+                
                 private void m1153J(int i) {
                     while (!this.f1008lX.isEmpty() && this.f1008lX.getLast().getState() >= i) {
                         this.f1008lX.removeLast();
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ Bundle m1154a(AbstractC0903a abstractC0903a, Bundle bundle) {
+                
+                static  Bundle m1154a(AbstractC0903a abstractC0903a, Bundle bundle) {
                     abstractC0903a.f1007lW = bundle;
                     return bundle;
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ LifecycleDelegate m1155a(AbstractC0903a abstractC0903a, LifecycleDelegate lifecycleDelegate) {
+                
+                
+                static  LifecycleDelegate m1155a(AbstractC0903a abstractC0903a, LifecycleDelegate lifecycleDelegate) {
                     abstractC0903a.f1006lV = lifecycleDelegate;
                     return lifecycleDelegate;
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ LinkedList m1156a(AbstractC0903a abstractC0903a) {
+                
+                static  LinkedList m1156a(AbstractC0903a abstractC0903a) {
                     return abstractC0903a.f1008lX;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private void m1157a(Bundle bundle, a aVar) {
                     if (this.f1006lV != null) {
                         aVar.mo1163b(this.f1006lV);
@@ -226,12 +226,12 @@
                     mo1160a(this.f1009lY);
                 }
 
-                /* JADX INFO: renamed from: b */
-                static /* synthetic */ LifecycleDelegate m1158b(AbstractC0903a abstractC0903a) {
+                
+                static  LifecycleDelegate m1158b(AbstractC0903a abstractC0903a) {
                     return abstractC0903a.f1006lV;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1159a(FrameLayout frameLayout) {
                     Context context = frameLayout.getContext();
                     int iIsGooglePlayServicesAvailable = GooglePlayServicesUtil.isGooglePlayServicesAvailable(context);
@@ -254,10 +254,10 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 protected abstract void mo1160a(InterfaceC0906d<T> interfaceC0906d);
 
-                /* JADX INFO: renamed from: bP */
+                
                 public T m1161bP() {
                     return this.f1006lV;
                 }

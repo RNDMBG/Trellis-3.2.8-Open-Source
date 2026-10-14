@@ -4,8 +4,8 @@
             import java.io.IOException;
             import java.io.Reader;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 78 */    public class NullReader extends Reader {
+            
+    public class NullReader extends Reader {
                 private boolean eof;
                 private long mark;
                 private final boolean markSupported;
@@ -14,133 +14,133 @@
                 private final long size;
                 private final boolean throwEofException;
 
-/* 79 */        public NullReader(long size) {
-/* 80 */            this(size, true, false);
+        public NullReader(long size) {
+            this(size, true, false);
                 }
 
-/* 93 */        public NullReader(long size, boolean markSupported, boolean throwEofException) {
-/* 67 */            this.mark = -1L;
-/* 95 */            this.size = size;
-/* 96 */            this.markSupported = markSupported;
-/* 97 */            this.throwEofException = throwEofException;
+        public NullReader(long size, boolean markSupported, boolean throwEofException) {
+            this.mark = -1L;
+            this.size = size;
+            this.markSupported = markSupported;
+            this.throwEofException = throwEofException;
                 }
 
-/* 105 */       public long getPosition() {
-/* 106 */           return this.position;
+       public long getPosition() {
+           return this.position;
                 }
 
-/* 114 */       public long getSize() {
-/* 115 */           return this.size;
+       public long getSize() {
+           return this.size;
                 }
 
-                @Override // java.io.Reader, java.io.Closeable, java.lang.AutoCloseable
-/* 125 */       public void close() throws IOException {
-/* 126 */           this.eof = false;
-/* 127 */           this.position = 0L;
-/* 128 */           this.mark = -1L;
+                @Override 
+       public void close() throws IOException {
+           this.eof = false;
+           this.position = 0L;
+           this.mark = -1L;
                 }
 
-                @Override // java.io.Reader
-/* 139 */       public synchronized void mark(int readlimit) {
+                @Override 
+       public synchronized void mark(int readlimit) {
                     try {
                         if (!this.markSupported) {
-/* 141 */                   throw new UnsupportedOperationException("Mark not supported");
+                   throw new UnsupportedOperationException("Mark not supported");
                         }
-/* 143 */               this.mark = this.position;
-/* 144 */               this.readlimit = readlimit;
+               this.mark = this.position;
+               this.readlimit = readlimit;
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
 
-                @Override // java.io.Reader
-/* 153 */       public boolean markSupported() {
-/* 154 */           return this.markSupported;
+                @Override 
+       public boolean markSupported() {
+           return this.markSupported;
                 }
 
-                @Override // java.io.Reader
-/* 168 */       public int read() throws IOException {
-/* 169 */           if (this.eof) {
-/* 170 */               throw new IOException("Read after end of file");
+                @Override 
+       public int read() throws IOException {
+           if (this.eof) {
+               throw new IOException("Read after end of file");
                     }
                     if (this.position == this.size) {
-/* 173 */               return doEndOfFile();
+               return doEndOfFile();
                     }
-/* 175 */           this.position++;
-/* 176 */           return processChar();
+           this.position++;
+           return processChar();
                 }
 
-                @Override // java.io.Reader
-/* 191 */       public int read(char[] chars) throws IOException {
-/* 192 */           return read(chars, 0, chars.length);
+                @Override 
+       public int read(char[] chars) throws IOException {
+           return read(chars, 0, chars.length);
                 }
 
-                @Override // java.io.Reader
-/* 209 */       public int read(char[] chars, int offset, int length) throws IOException {
-/* 210 */           if (this.eof) {
-/* 211 */               throw new IOException("Read after end of file");
+                @Override 
+       public int read(char[] chars, int offset, int length) throws IOException {
+           if (this.eof) {
+               throw new IOException("Read after end of file");
                     }
                     if (this.position == this.size) {
-/* 214 */               return doEndOfFile();
+               return doEndOfFile();
                     }
-/* 216 */           this.position += (long) length;
-/* 217 */           int returnLength = length;
+           this.position += (long) length;
+           int returnLength = length;
                     if (this.position > this.size) {
-/* 219 */               returnLength = length - ((int) (this.position - this.size));
-/* 220 */               this.position = this.size;
+               returnLength = length - ((int) (this.position - this.size));
+               this.position = this.size;
                     }
-/* 222 */           processChars(chars, offset, returnLength);
-/* 223 */           return returnLength;
+           processChars(chars, offset, returnLength);
+           return returnLength;
                 }
 
-                @Override // java.io.Reader
-/* 235 */       public synchronized void reset() throws IOException {
+                @Override 
+       public synchronized void reset() throws IOException {
                     try {
                         if (!this.markSupported) {
-/* 237 */                   throw new UnsupportedOperationException("Mark not supported");
+                   throw new UnsupportedOperationException("Mark not supported");
                         }
                         if (this.mark < 0) {
-/* 240 */                   throw new IOException("No position has been marked");
+                   throw new IOException("No position has been marked");
                         }
                         if (this.position > this.mark + this.readlimit) {
-/* 243 */                   throw new IOException("Marked position [" + this.mark + "] is no longer valid - passed the read limit [" + this.readlimit + "]");
+                   throw new IOException("Marked position [" + this.mark + "] is no longer valid - passed the read limit [" + this.readlimit + "]");
                         }
-/* 247 */               this.position = this.mark;
-/* 248 */               this.eof = false;
+               this.position = this.mark;
+               this.eof = false;
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
 
-                @Override // java.io.Reader
-/* 263 */       public long skip(long numberOfChars) throws IOException {
-/* 264 */           if (this.eof) {
-/* 265 */               throw new IOException("Skip after end of file");
+                @Override 
+       public long skip(long numberOfChars) throws IOException {
+           if (this.eof) {
+               throw new IOException("Skip after end of file");
                     }
                     if (this.position == this.size) {
-/* 268 */               return doEndOfFile();
+               return doEndOfFile();
                     }
-/* 270 */           this.position += numberOfChars;
+           this.position += numberOfChars;
                     if (this.position <= this.size) {
-/* 271 */               return numberOfChars;
+               return numberOfChars;
                     }
-/* 273 */           long returnLength = numberOfChars - (this.position - this.size);
-/* 274 */           this.position = this.size;
-/* 276 */           return returnLength;
+           long returnLength = numberOfChars - (this.position - this.size);
+           this.position = this.size;
+           return returnLength;
                 }
 
-/* 287 */       protected int processChar() {
-/* 288 */           return 0;
+       protected int processChar() {
+           return 0;
                 }
 
-/* 302 */       protected void processChars(char[] chars, int offset, int length) {
+       protected void processChars(char[] chars, int offset, int length) {
                 }
 
-/* 313 */       private int doEndOfFile() throws EOFException {
-/* 314 */           this.eof = true;
-/* 315 */           if (this.throwEofException) {
-/* 316 */               throw new EOFException();
+       private int doEndOfFile() throws EOFException {
+           this.eof = true;
+           if (this.throwEofException) {
+               throw new EOFException();
                     }
-/* 318 */           return -1;
+           return -1;
                 }
             }

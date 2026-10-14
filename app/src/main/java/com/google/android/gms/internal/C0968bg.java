@@ -6,10 +6,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.bg */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C0968bg implements Parcelable.Creator<C0969bh> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m1313a(C0969bh c0969bh, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, c0969bh.versionCode);
@@ -29,12 +29,12 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C0969bh createFromParcel(Parcel x0) {
+                @Override 
+                public  C0969bh createFromParcel(Parcel x0) {
                     return m1314d(x0);
                 }
 
-                /* JADX INFO: renamed from: d */
+                
                 public C0969bh m1314d(Parcel parcel) {
                     int iM1111j = C0901a.m1111j(parcel);
                     int iM1105f = 0;
@@ -107,13 +107,13 @@
                     return new C0969bh(iM1105f, c0966be, iBinderM1114m, iBinderM1114m2, iBinderM1114m3, iBinderM1114m4, strM1113l, zM1102c, strM1113l2, iBinderM1114m5, iM1105f2, iM1105f3, strM1113l3, c1003co);
                 }
 
-                /* JADX INFO: renamed from: h */
+                
                 public C0969bh[] m1315h(int i) {
                     return new C0969bh[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ C0969bh[] newArray(int x0) {
+                @Override 
+                public  C0969bh[] newArray(int x0) {
                     return m1315h(x0);
                 }
             }

@@ -10,25 +10,25 @@
             import com.google.android.gms.wallet.MaskedWalletRequest;
             import com.google.android.gms.wallet.NotifyTransactionStatusRequest;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.gh */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1104gh extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.gh$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1104gh {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.internal.gh$a$a, reason: collision with other inner class name */
+                    
                     private static class C1344a implements InterfaceC1104gh {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2103dG;
 
                         C1344a(IBinder iBinder) {
                             this.f2103dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1104gh
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo2094a(Bundle bundle, InterfaceC1105gi interfaceC1105gi) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             try {
@@ -48,8 +48,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1104gh
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo2095a(FullWalletRequest fullWalletRequest, Bundle bundle, InterfaceC1105gi interfaceC1105gi) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             try {
@@ -75,8 +75,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1104gh
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo2096a(MaskedWalletRequest maskedWalletRequest, Bundle bundle, InterfaceC1105gi interfaceC1105gi) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             try {
@@ -102,8 +102,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1104gh
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo2097a(NotifyTransactionStatusRequest notifyTransactionStatusRequest, Bundle bundle) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             try {
@@ -128,8 +128,8 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.internal.InterfaceC1104gh
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public void mo2098a(String str, String str2, Bundle bundle, InterfaceC1105gi interfaceC1105gi) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             try {
@@ -151,13 +151,13 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2103dG;
                         }
                     }
 
-                    /* JADX INFO: renamed from: as */
+                    
                     public static InterfaceC1104gh m2099as(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -166,7 +166,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1104gh)) ? new C1344a(iBinder) : (InterfaceC1104gh) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:
@@ -198,18 +198,18 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo2094a(Bundle bundle, InterfaceC1105gi interfaceC1105gi) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo2095a(FullWalletRequest fullWalletRequest, Bundle bundle, InterfaceC1105gi interfaceC1105gi) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo2096a(MaskedWalletRequest maskedWalletRequest, Bundle bundle, InterfaceC1105gi interfaceC1105gi) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo2097a(NotifyTransactionStatusRequest notifyTransactionStatusRequest, Bundle bundle) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 void mo2098a(String str, String str2, Bundle bundle, InterfaceC1105gi interfaceC1105gi) throws RemoteException;
             }

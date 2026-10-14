@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.k */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1217k implements Parcelable.Creator<ProxyCard> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2372a(ProxyCard proxyCard, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, proxyCard.getVersionCode());
@@ -19,7 +19,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: X */
+                
                 public ProxyCard m2373X(Parcel parcel) {
                     String strM1113l = null;
                     int iM1105f = 0;
@@ -56,18 +56,18 @@
                     return new ProxyCard(iM1105f3, strM1113l2, strM1113l, iM1105f2, iM1105f);
                 }
 
-                /* JADX INFO: renamed from: aC */
+                
                 public ProxyCard[] m2374aC(int i) {
                     return new ProxyCard[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ ProxyCard createFromParcel(Parcel x0) {
+                @Override 
+                public  ProxyCard createFromParcel(Parcel x0) {
                     return m2373X(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ ProxyCard[] newArray(int x0) {
+                @Override 
+                public  ProxyCard[] newArray(int x0) {
                     return m2374aC(x0);
                 }
             }

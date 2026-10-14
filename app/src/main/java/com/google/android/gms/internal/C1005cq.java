@@ -15,35 +15,35 @@
             import java.util.Map;
             import org.json.JSONException;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.cq */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C1005cq extends WebView implements DownloadListener {
 
-                /* JADX INFO: renamed from: eJ */
+                
                 private final Object f1600eJ;
 
-                /* JADX INFO: renamed from: fg */
+                
                 private C1126x f1601fg;
 
-                /* JADX INFO: renamed from: go */
+                
                 private final C1110h f1602go;
 
-                /* JADX INFO: renamed from: hT */
+                
                 private final C1006cr f1603hT;
 
-                /* JADX INFO: renamed from: hU */
+                
                 private final MutableContextWrapper f1604hU;
 
-                /* JADX INFO: renamed from: hV */
+                
                 private final C1003co f1605hV;
 
-                /* JADX INFO: renamed from: hW */
+                
                 private BinderC0967bf f1606hW;
 
-                /* JADX INFO: renamed from: hX */
+                
                 private boolean f1607hX;
 
-                /* JADX INFO: renamed from: hY */
+                
                 private boolean f1608hY;
 
                 private C1005cq(MutableContextWrapper mutableContextWrapper, C1126x c1126x, boolean z, boolean z2, C1110h c1110h, C1003co c1003co) {
@@ -79,12 +79,12 @@
                     m1463aA();
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static C1005cq m1462a(Context context, C1126x c1126x, boolean z, boolean z2, C1110h c1110h, C1003co c1003co) {
                     return new C1005cq(new MutableContextWrapper(context), c1126x, z, z2, c1110h, c1003co);
                 }
 
-                /* JADX INFO: renamed from: aA */
+                
                 private void m1463aA() {
                     synchronized (this.f1600eJ) {
                         try {
@@ -109,7 +109,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: aB */
+                
                 private void m1464aB() {
                     synchronized (this.f1600eJ) {
                         try {
@@ -123,7 +123,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: aC */
+                
                 private void m1465aC() {
                     synchronized (this.f1600eJ) {
                         try {
@@ -137,7 +137,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1466a(Context context, C1126x c1126x) {
                     synchronized (this.f1600eJ) {
                         try {
@@ -154,7 +154,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1467a(BinderC0967bf binderC0967bf) {
                     synchronized (this.f1600eJ) {
                         try {
@@ -165,7 +165,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1468a(String str, Map<String, ?> map) {
                     StringBuilder sb = new StringBuilder();
                     sb.append("javascript:AFMA_ReceiveMessage('");
@@ -186,21 +186,21 @@
                     loadUrl(sb.toString());
                 }
 
-                /* JADX INFO: renamed from: as */
+                
                 public void m1469as() {
                     HashMap map = new HashMap(1);
                     map.put("version", this.f1605hV.f1596hP);
                     m1468a("onhide", map);
                 }
 
-                /* JADX INFO: renamed from: at */
+                
                 public void m1470at() {
                     HashMap map = new HashMap(1);
                     map.put("version", this.f1605hV.f1596hP);
                     m1468a("onshow", map);
                 }
 
-                /* JADX INFO: renamed from: au */
+                
                 public BinderC0967bf m1471au() {
                     BinderC0967bf binderC0967bf;
                     synchronized (this.f1600eJ) {
@@ -213,7 +213,7 @@
                     return binderC0967bf;
                 }
 
-                /* JADX INFO: renamed from: av */
+                
                 public C1126x m1472av() {
                     C1126x c1126x;
                     synchronized (this.f1600eJ) {
@@ -226,22 +226,22 @@
                     return c1126x;
                 }
 
-                /* JADX INFO: renamed from: aw */
+                
                 public C1006cr m1473aw() {
                     return this.f1603hT;
                 }
 
-                /* JADX INFO: renamed from: ax */
+                
                 public C1110h m1474ax() {
                     return this.f1602go;
                 }
 
-                /* JADX INFO: renamed from: ay */
+                
                 public C1003co m1475ay() {
                     return this.f1605hV;
                 }
 
-                /* JADX INFO: renamed from: az */
+                
                 public boolean m1476az() {
                     boolean z;
                     synchronized (this.f1600eJ) {
@@ -254,7 +254,7 @@
                     return z;
                 }
 
-                /* JADX INFO: renamed from: i */
+                
                 public void m1477i(boolean z) {
                     synchronized (this.f1600eJ) {
                         try {
@@ -266,7 +266,7 @@
                     }
                 }
 
-                @Override // android.webkit.DownloadListener
+                @Override 
                 public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long size) {
                     try {
                         Intent intent = new Intent("android.intent.action.VIEW");
@@ -277,7 +277,7 @@
                     }
                 }
 
-                @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
+                @Override 
                 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
                     synchronized (this.f1600eJ) {
                         try {
@@ -309,7 +309,7 @@
                     }
                 }
 
-                @Override // android.webkit.WebView, android.view.View
+                @Override 
                 public boolean onTouchEvent(MotionEvent event) {
                     if (this.f1602go != null) {
                         this.f1602go.m2126a(event);

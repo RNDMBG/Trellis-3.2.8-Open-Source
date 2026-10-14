@@ -33,11 +33,11 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/**
- * Checks a GitHub releases feed for a newer Vine APK, prompts, downloads and
- * hands the file to the system package installer. Best-effort only: every
- * failure degrades to a status line, never a crash.
- */
+
+
+
+
+
 public final class UpdateManager {
 
     public interface UpdateCallback {
@@ -89,7 +89,7 @@ public final class UpdateManager {
         }
     }
 
-    /** Trellis build number: versionCode - base (3.2.8 stays frozen). */
+    
     public static int currentBuild(Context context) {
         try {
             PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
@@ -100,7 +100,7 @@ public final class UpdateManager {
         }
     }
 
-    /** Silent on failure; shows the Yes/Later dialog only when a newer APK exists. Once per launch. */
+    
     public static void checkOnStartup(final Activity activity) {
         cleanupFinishedDownload(activity.getApplicationContext());
         ensureDownloadReceiver(activity.getApplicationContext());
@@ -199,7 +199,7 @@ public final class UpdateManager {
             if (tagBuild >= 0) {
                 newer = tagBuild > currentBuild(context);
             } else {
-                // Old-style tag without a build number: compare dotted versions.
+                
                 newer = isNewer(currentVersion(context), tag);
                 tagBuild = 0;
             }
@@ -213,7 +213,7 @@ public final class UpdateManager {
         }
     }
 
-    /** Reads the Trellis build number from tags like "build-30". -1 if none. */
+    
     static int parseBuildNumber(String tag) {
         if (tag == null) {
             return -1;
@@ -229,7 +229,7 @@ public final class UpdateManager {
         return -1;
     }
 
-    /** Compares dotted versions, tolerating a leading "v" (v3.2.9 > 3.2.8). */
+    
     static boolean isNewer(String current, String latest) {
         int[] c = splitVersion(current);
         int[] l = splitVersion(latest);
@@ -264,7 +264,7 @@ public final class UpdateManager {
         return out;
     }
 
-    /** A newer build exists: offer install only if the downloaded APK is that exact build. */
+    
     static void handleNewerFound(Activity activity, UpdateInfo info) {
         if (isDownloadReady(activity) && readyBuild(activity) == info.build) {
             showInstallDialog(activity);
@@ -323,7 +323,7 @@ public final class UpdateManager {
         }
     }
 
-    /** System installer prompt first (like tapping an APK in Chrome), Downloads list as fallback. */
+    
     static void tryInstallThenDownloads(Activity activity) {
         try {
             installApk(activity, UpdateConfig.APK_FILE_NAME);
@@ -333,7 +333,7 @@ public final class UpdateManager {
         }
     }
 
-    /** Opens the releases page in the browser so the APK can be grabbed directly. */
+    
     public static void openReleasesPage(Activity activity) {
         try {
             String url = "https://github.com/" + UpdateConfig.GITHUB_OWNER + "/" + UpdateConfig.GITHUB_REPO + "/releases/latest";
@@ -344,7 +344,7 @@ public final class UpdateManager {
         }
     }
 
-    /** Opens the phone's Downloads list so the user taps the APK to install. */
+    
     static void openSystemDownloads(Context context) {
         try {
             Intent intent = new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS);
@@ -369,7 +369,7 @@ public final class UpdateManager {
         }
     }
 
-    /** True when a downloaded update is still waiting to be installed. */
+    
     static boolean isDownloadReady(Context context) {
         try {
             if (!Util.getDefaultSharedPrefs(context).getBoolean(UpdateConfig.PREF_UPDATE_READY, false)) {
@@ -397,7 +397,7 @@ public final class UpdateManager {
         }
     }
 
-    /** Deletes our APK file(s), including suffixed re-download copies. */
+    
     static void deleteStaleApks(Context context) {
         try {
             File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
@@ -430,10 +430,10 @@ public final class UpdateManager {
         }
     }
 
-    /**
-     * Deletes the downloaded APK once it is no longer needed: after the app
-     * was updated past it (current build caught up), the file is stale.
-     */
+    
+
+
+
     static void cleanupFinishedDownload(Context context) {
         try {
             SharedPreferences prefs = Util.getDefaultSharedPrefs(context);
@@ -462,7 +462,7 @@ public final class UpdateManager {
         }
     }
 
-    /** Same download but with a progress popup bound to the calling screen. */
+    
     public static void downloadAndInstall(final Activity activity, String apkUrl, final int build) {
         final Context app = activity.getApplicationContext();
         final long id = enqueueDownload(app, apkUrl);
@@ -564,8 +564,8 @@ public final class UpdateManager {
                 final int fSoFar = soFar;
                 final int fTotal = total;
                 long now = System.currentTimeMillis();
-                // Cumulative average since the (re)start: stays steady
-                // through chunk gaps instead of flickering to zero.
+                
+                
                 final double fMbps = Math.max((soFar / 1048576.0) / Math.max((now - startedAt[0]) / 1000.0, 0.001), 0.0);
                 MAIN.post(new Runnable() {
                     @Override
@@ -635,9 +635,9 @@ public final class UpdateManager {
                 } else if (cancelled[0]) {
                     done = true;
                 } else if (soFar > 0 && soFar == lastProgressBytes && now - lastProgressAt > 45000) {
-                    // No bytes at all for 45s: the connection is dead, not slow
-                    // (even a slow link moves every poll). One restart, then
-                    // give up with an error instead of looping forever.
+                    
+                    
+                    
                     if (restarts < 1) {
                         restarts++;
                         long freshId = restartStalledDownload(appCtx, dm, trackId, build, apkUrl);
@@ -704,10 +704,10 @@ public final class UpdateManager {
         }
     }
 
-    /**
-     * Drops a stalled download and starts over. Returns the new download id,
-     * or -1 when even restarting fails.
-     */
+    
+
+
+
     private static long restartStalledDownload(Context appCtx, DownloadManager dm, long[] trackId, int build, String apkUrl) {
         try {
             long oldId = trackId[0];

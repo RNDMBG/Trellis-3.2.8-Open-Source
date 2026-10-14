@@ -6,10 +6,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             import java.util.ArrayList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.b */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1208b implements Parcelable.Creator<Cart> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2345a(Cart cart, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, cart.getVersionCode());
@@ -19,7 +19,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: O */
+                
                 public Cart m2346O(Parcel parcel) {
                     String strM1113l = null;
                     int iM1111j = C0901a.m1111j(parcel);
@@ -52,18 +52,18 @@
                     return new Cart(iM1105f, strM1113l2, strM1113l, arrayList);
                 }
 
-                /* JADX INFO: renamed from: at */
+                
                 public Cart[] m2347at(int i) {
                     return new Cart[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ Cart createFromParcel(Parcel x0) {
+                @Override 
+                public  Cart createFromParcel(Parcel x0) {
                     return m2346O(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ Cart[] newArray(int x0) {
+                @Override 
+                public  Cart[] newArray(int x0) {
                     return m2347at(x0);
                 }
             }

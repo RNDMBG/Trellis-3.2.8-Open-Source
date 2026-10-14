@@ -9,25 +9,25 @@
             import java.util.ArrayList;
             import java.util.List;
             
-            /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.e */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1191e extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.e$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1191e {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.model.internal.e$a$a, reason: collision with other inner class name */
+                    
                     private static class C1367a implements InterfaceC1191e {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2368dG;
 
                         C1367a(IBinder iBinder) {
                             this.f2368dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
-                        /* JADX INFO: renamed from: a */
+                        @Override 
+                        
                         public boolean mo2322a(InterfaceC1191e interfaceC1191e) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -47,12 +47,12 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2368dG;
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public int getFillColor() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -71,7 +71,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public List getHoles() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -90,7 +90,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public String getId() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -109,7 +109,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public List<LatLng> getPoints() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -128,7 +128,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public int getStrokeColor() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -147,7 +147,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public float getStrokeWidth() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -166,7 +166,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public float getZIndex() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -185,7 +185,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public int hashCodeRemote() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -204,7 +204,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public boolean isGeodesic() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -223,7 +223,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public boolean isVisible() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -242,7 +242,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void remove() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -259,7 +259,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void setFillColor(int color) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -277,7 +277,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void setGeodesic(boolean geodesic) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -295,7 +295,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void setHoles(List holes) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -313,7 +313,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void setPoints(List<LatLng> points) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -331,7 +331,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void setStrokeColor(int color) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -349,7 +349,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void setStrokeWidth(float width) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -367,7 +367,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void setVisible(boolean visible) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -385,7 +385,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.model.internal.InterfaceC1191e
+                        @Override 
                         public void setZIndex(float zIndex) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -404,7 +404,7 @@
                         }
                     }
 
-                    /* JADX INFO: renamed from: ag */
+                    
                     public static InterfaceC1191e m2323ag(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -413,7 +413,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1191e)) ? new C1367a(iBinder) : (InterfaceC1191e) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
                         switch (i) {
                             case 1:
@@ -536,7 +536,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 boolean mo2322a(InterfaceC1191e interfaceC1191e) throws RemoteException;
 
                 int getFillColor() throws RemoteException;

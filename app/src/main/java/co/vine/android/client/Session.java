@@ -4,8 +4,8 @@
             import co.vine.android.api.VineUser;
             import com.flurry.android.FlurryAgent;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 24 */    public class Session {
+            
+    public class Session {
                 private Account mAccount;
                 private String mAvatarUrl;
                 private long mLastLogin;
@@ -23,72 +23,72 @@
                     LOGGING_OUT
                 }
 
-/* 25 */        public Session(String sessionKey, long userId, String name, String avatar, String edition) {
-/* 27 */            this.mSessionKey = sessionKey;
-/* 28 */            this.mUserId = userId;
-/* 29 */            this.mName = name;
-/* 31 */            this.mAvatarUrl = avatar;
+        public Session(String sessionKey, long userId, String name, String avatar, String edition) {
+            this.mSessionKey = sessionKey;
+            this.mUserId = userId;
+            this.mName = name;
+            this.mAvatarUrl = avatar;
                 }
 
-/* 34 */        public String getSessionKey() {
-/* 35 */            return this.mSessionKey;
+        public String getSessionKey() {
+            return this.mSessionKey;
                 }
 
-/* 38 */        public void setSessionKey(String key) {
-/* 39 */            this.mSessionKey = key;
+        public void setSessionKey(String key) {
+            this.mSessionKey = key;
                 }
 
-/* 42 */        public String getName() {
-/* 43 */            return this.mName;
+        public String getName() {
+            return this.mName;
                 }
 
-/* 46 */        public long getUserId() {
-/* 47 */            return this.mUserId;
+        public long getUserId() {
+            return this.mUserId;
                 }
 
-/* 50 */        public String getAvatarUrl() {
-/* 51 */            return this.mAvatarUrl;
+        public String getAvatarUrl() {
+            return this.mAvatarUrl;
                 }
 
-/* 55 */        public void setAvatarUrl(String url) {
-/* 56 */            this.mAvatarUrl = url;
+        public void setAvatarUrl(String url) {
+            this.mAvatarUrl = url;
                 }
 
-/* 59 */        public void setLoginStatus(LoginStatus loginStatus) {
-/* 60 */            this.mLoginStatus = loginStatus;
+        public void setLoginStatus(LoginStatus loginStatus) {
+            this.mLoginStatus = loginStatus;
                 }
 
-/* 63 */        public LoginStatus getLoginStatus() {
-/* 64 */            return this.mLoginStatus;
+        public LoginStatus getLoginStatus() {
+            return this.mLoginStatus;
                 }
 
-/* 67 */        public boolean isLoggedIn() {
-/* 68 */            return this.mLoginStatus.equals(LoginStatus.LOGGED_IN);
+        public boolean isLoggedIn() {
+            return this.mLoginStatus.equals(LoginStatus.LOGGED_IN);
                 }
 
-/* 75 */        public void setName(String login) {
-/* 76 */            this.mName = login;
+        public void setName(String login) {
+            this.mName = login;
                 }
 
-/* 79 */        public void setUserId(long userId) {
-/* 80 */            FlurryAgent.setUserId(String.valueOf(userId));
-/* 81 */            this.mUserId = userId;
+        public void setUserId(long userId) {
+            FlurryAgent.setUserId(String.valueOf(userId));
+            this.mUserId = userId;
                 }
 
-/* 84 */        public String getLoginEmail() {
-/* 85 */            return this.mLoginEmail;
+        public String getLoginEmail() {
+            return this.mLoginEmail;
                 }
 
-/* 88 */        public void setLoginEmail(String loginEmail) {
-/* 89 */            this.mLoginEmail = loginEmail;
+        public void setLoginEmail(String loginEmail) {
+            this.mLoginEmail = loginEmail;
                 }
 
-/* 92 */        public void logout() {
-/* 93 */            this.mLoginEmail = null;
-/* 94 */            this.mSessionKey = null;
-/* 95 */            this.mName = null;
-/* 96 */            this.mUserId = 0L;
-/* 97 */            this.mAvatarUrl = null;
-/* 98 */            this.mLoginStatus = LoginStatus.LOGGED_OUT;
+        public void logout() {
+            this.mLoginEmail = null;
+            this.mSessionKey = null;
+            this.mName = null;
+            this.mUserId = 0L;
+            this.mAvatarUrl = null;
+            this.mLoginStatus = LoginStatus.LOGGED_OUT;
                 }
             }

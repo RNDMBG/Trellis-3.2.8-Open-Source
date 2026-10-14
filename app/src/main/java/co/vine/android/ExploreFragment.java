@@ -42,8 +42,8 @@
             import org.apache.http.client.utils.URLEncodedUtils;
             import org.apache.http.message.BasicNameValuePair;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 49 */    public class ExploreFragment extends BaseControllerFragment implements OnTabChangedListener, TopScrollable, ScrollDeltaScrollView.ScrollDeltaListener {
+            
+    public class ExploreFragment extends BaseControllerFragment implements OnTabChangedListener, TopScrollable, ScrollDeltaScrollView.ScrollDeltaListener {
                 public static final String ARG_TAKE_FOCUS = "take_focus";
                 private static final String PARAM_EDITION = "ed";
                 private static final String PARAM_MODEL = "model";
@@ -64,285 +64,285 @@
                 private View mSadfaceContainer;
                 private WebViewContainerLayout mWebViewContainer;
 
-/* 50 */        static /* synthetic */ RelativeLayout access$100(ExploreFragment x0) {
-/* 51 */            return x0.mProgressContainer;
+        static  RelativeLayout access$100(ExploreFragment x0) {
+            return x0.mProgressContainer;
                 }
 
-/* 50 */        static /* synthetic */ View access$200(ExploreFragment x0) {
-/* 51 */            return x0.mEmpty;
+        static  View access$200(ExploreFragment x0) {
+            return x0.mEmpty;
                 }
 
-/* 50 */        static /* synthetic */ ImageView access$300(ExploreFragment x0) {
-/* 51 */            return x0.mSadface;
+        static  ImageView access$300(ExploreFragment x0) {
+            return x0.mSadface;
                 }
 
-/* 50 */        static /* synthetic */ View access$400(ExploreFragment x0) {
-/* 51 */            return x0.mSadfaceContainer;
+        static  View access$400(ExploreFragment x0) {
+            return x0.mSadfaceContainer;
                 }
 
-/* 50 */        static /* synthetic */ TextView access$500(ExploreFragment x0) {
-/* 51 */            return x0.mEmptyText;
+        static  TextView access$500(ExploreFragment x0) {
+            return x0.mEmptyText;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ExploreFragment$1 */
-/* 77 */        class C02051 extends BroadcastReceiver {
-/* 78 */            C02051() {
+                
+        class C02051 extends BroadcastReceiver {
+            C02051() {
                     }
 
-                    @Override // android.content.BroadcastReceiver
-/* 81 */            public void onReceive(Context context, Intent intent) {
+                    @Override 
+            public void onReceive(Context context, Intent intent) {
                         NetworkInfo ni;
-/* 82 */                ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
-/* 85 */                if (connectivityManager == null) {
-/* 85 */                    ni = null;
+                ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
+                if (connectivityManager == null) {
+                    ni = null;
                         } else {
                             try {
                                 ni = connectivityManager.getActiveNetworkInfo();
                             } catch (SecurityException e) {
-/* 94 */                        return;
+                        return;
                             }
                         }
-/* 88 */                if (ni != null && ni.isConnected()) {
-/* 89 */                    ExploreFragment.this.reloadWebView(true);
+                if (ni != null && ni.isConnected()) {
+                    ExploreFragment.this.reloadWebView(true);
                         }
                     }
                 }
 
-/* 95 */        private static class WebViewInitializedListener implements WebViewContainerLayout.OnWebViewInitializedListener {
-/* 96 */            private WebViewInitializedListener() {
+        private static class WebViewInitializedListener implements WebViewContainerLayout.OnWebViewInitializedListener {
+            private WebViewInitializedListener() {
                     }
 
-/* 96 */            /* synthetic */ WebViewInitializedListener(C02051 x0) {
-/* 97 */                this();
+             WebViewInitializedListener(C02051 x0) {
+                this();
                     }
 
-                    @Override // co.vine.android.views.WebViewContainerLayout.OnWebViewInitializedListener
+                    @Override 
                     @SuppressLint({"SetJavaScriptEnabled"})
-/* 102 */           public void onInitialized(WebView webView) {
-/* 103 */               WebSettings settings = webView.getSettings();
-/* 104 */               settings.setSavePassword(false);
-/* 105 */               settings.setSaveFormData(false);
+           public void onInitialized(WebView webView) {
+               WebSettings settings = webView.getSettings();
+               settings.setSavePassword(false);
+               settings.setSaveFormData(false);
                         try {
-/* 107 */                   settings.setJavaScriptEnabled(true);
+                   settings.setJavaScriptEnabled(true);
                         } catch (Exception e) {
                         }
-/* 111 */               webView.setHorizontalScrollBarEnabled(false);
+               webView.setHorizontalScrollBarEnabled(false);
                     }
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 117 */       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-/* 118 */           View v = inflater.inflate(C0257R.layout.explore, container, false);
-/* 119 */           this.mEmpty = v.findViewById(C0257R.id.empty);
-/* 120 */           this.mEmptyText = (TextView) v.findViewById(C0257R.id.empty_text);
-/* 121 */           this.mProgressContainer = (RelativeLayout) v.findViewById(C0257R.id.progress_container);
-/* 122 */           this.mSadfaceContainer = v.findViewById(C0257R.id.real_sadface);
-/* 123 */           this.mSadface = (ImageView) v.findViewById(C0257R.id.sadface);
-/* 124 */           this.mWebViewContainer = (WebViewContainerLayout) v.findViewById(C0257R.id.webview_container);
-/* 125 */           this.mWebViewContainer.setInitializationListener(new WebViewInitializedListener(null));
-/* 126 */           v.findViewById(C0257R.id.search).setOnClickListener(new ViewOnClickListenerC02062());
-/* 132 */           ((ScrollDeltaScrollView) v.findViewById(C0257R.id.scrollview)).setScrollDeltaListener(this);
-/* 133 */           this.mPrefs = Util.getDefaultSharedPrefs(getActivity());
-/* 134 */           return v;
+                @Override 
+       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+           View v = inflater.inflate(C0257R.layout.explore, container, false);
+           this.mEmpty = v.findViewById(C0257R.id.empty);
+           this.mEmptyText = (TextView) v.findViewById(C0257R.id.empty_text);
+           this.mProgressContainer = (RelativeLayout) v.findViewById(C0257R.id.progress_container);
+           this.mSadfaceContainer = v.findViewById(C0257R.id.real_sadface);
+           this.mSadface = (ImageView) v.findViewById(C0257R.id.sadface);
+           this.mWebViewContainer = (WebViewContainerLayout) v.findViewById(C0257R.id.webview_container);
+           this.mWebViewContainer.setInitializationListener(new WebViewInitializedListener(null));
+           v.findViewById(C0257R.id.search).setOnClickListener(new ViewOnClickListenerC02062());
+           ((ScrollDeltaScrollView) v.findViewById(C0257R.id.scrollview)).setScrollDeltaListener(this);
+           this.mPrefs = Util.getDefaultSharedPrefs(getActivity());
+           return v;
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.ExploreFragment$2 */
-/* 124 */       class ViewOnClickListenerC02062 implements View.OnClickListener {
-/* 125 */           ViewOnClickListenerC02062() {
+                
+       class ViewOnClickListenerC02062 implements View.OnClickListener {
+           ViewOnClickListenerC02062() {
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 128 */           public void onClick(View v) {
-/* 129 */               ExploreFragment.this.startActivity(new Intent(ExploreFragment.this.getActivity(), (Class<?>) SearchActivity.class));
+                    @Override 
+           public void onClick(View v) {
+               ExploreFragment.this.startActivity(new Intent(ExploreFragment.this.getActivity(), (Class<?>) SearchActivity.class));
                     }
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 138 */       public void onViewCreated(View view, Bundle savedInstanceState) {
-/* 139 */           this.mWebViewContainer.onViewCreated();
+                @Override 
+       public void onViewCreated(View view, Bundle savedInstanceState) {
+           this.mWebViewContainer.onViewCreated();
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 143 */       public void onActivityCreated(Bundle savedInstanceState) {
-/* 144 */           super.onActivityCreated(savedInstanceState);
-/* 145 */           this.mExploreUrl = VineAPI.getInstance(getActivity()).getExploreUrl();
-/* 146 */           if (getArguments().getBoolean("take_focus", false)) {
-/* 147 */               HomeTabActivity callback = (HomeTabActivity) getActivity();
-/* 148 */               callback.showPage(2, this);
-/* 149 */               if (BuildUtil.isLogsOn()) {
-/* 150 */                   Log.d(TAG, "Explore tab took focus.");
+                @Override 
+       public void onActivityCreated(Bundle savedInstanceState) {
+           super.onActivityCreated(savedInstanceState);
+           this.mExploreUrl = VineAPI.getInstance(getActivity()).getExploreUrl();
+           if (getArguments().getBoolean("take_focus", false)) {
+               HomeTabActivity callback = (HomeTabActivity) getActivity();
+               callback.showPage(2, this);
+               if (BuildUtil.isLogsOn()) {
+                   Log.d(TAG, "Explore tab took focus.");
                         }
                     }
-/* 153 */           reloadWebView(true);
+           reloadWebView(true);
                 }
 
-                @Override // co.vine.android.BaseControllerFragment, co.vine.android.BaseFragment, android.support.v4.app.Fragment
-/* 157 */       public void onResume() {
-/* 158 */           super.onResume();
-/* 159 */           if (this.mWebViewContainer != null) {
-/* 160 */               this.mWebViewContainer.onResume();
+                @Override 
+       public void onResume() {
+           super.onResume();
+           if (this.mWebViewContainer != null) {
+               this.mWebViewContainer.onResume();
                     }
-/* 162 */           IntentFilter filter = new IntentFilter();
-/* 163 */           filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-/* 164 */           filter.addAction(AppController.ACTION_ABORT_ALL_REQUESTS);
-/* 165 */           getActivity().registerReceiver(this.mConnectivityReceiver, filter, CrossConstants.BROADCAST_PERMISSION, null);
+           IntentFilter filter = new IntentFilter();
+           filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+           filter.addAction(AppController.ACTION_ABORT_ALL_REQUESTS);
+           getActivity().registerReceiver(this.mConnectivityReceiver, filter, CrossConstants.BROADCAST_PERMISSION, null);
                 }
 
-                @Override // co.vine.android.BaseControllerFragment, android.support.v4.app.Fragment
-/* 169 */       public void onPause() {
-/* 170 */           super.onPause();
-/* 171 */           if (this.mWebViewContainer != null) {
-/* 172 */               this.mWebViewContainer.onPause();
+                @Override 
+       public void onPause() {
+           super.onPause();
+           if (this.mWebViewContainer != null) {
+               this.mWebViewContainer.onPause();
                     }
-/* 174 */           getActivity().unregisterReceiver(this.mConnectivityReceiver);
+           getActivity().unregisterReceiver(this.mConnectivityReceiver);
                 }
 
-/* 177 */       public void reloadWebView(boolean cache) {
-/* 178 */           WebView webView = getWebView();
-/* 179 */           if (webView != null) {
-/* 180 */               webView.setVisibility(0);
-/* 181 */               this.mSadfaceContainer.setVisibility(8);
-/* 182 */               webView.setWebViewClient(new VineVideoListWebViewClient());
-/* 183 */               WebSettings s = webView.getSettings();
-/* 184 */               if (cache) {
-/* 185 */                   s.setCacheMode(-1);
+       public void reloadWebView(boolean cache) {
+           WebView webView = getWebView();
+           if (webView != null) {
+               webView.setVisibility(0);
+               this.mSadfaceContainer.setVisibility(8);
+               webView.setWebViewClient(new VineVideoListWebViewClient());
+               WebSettings s = webView.getSettings();
+               if (cache) {
+                   s.setCacheMode(-1);
                         } else {
-/* 187 */                   s.setCacheMode(2);
+                   s.setCacheMode(2);
                         }
-/* 189 */               Map<String, String> headers = new HashMap<>(1);
-/* 190 */               String language = Util.getLocale();
-/* 191 */               if (!TextUtils.isEmpty(language)) {
-/* 192 */                   headers.put(VineAPI.ACCEPT_LANGUAGE_HEADER, language);
+               Map<String, String> headers = new HashMap<>(1);
+               String language = Util.getLocale();
+               if (!TextUtils.isEmpty(language)) {
+                   headers.put(VineAPI.ACCEPT_LANGUAGE_HEADER, language);
                         }
-/* 194 */               VineAPI api = VineAPI.getInstance(getActivity());
-/* 195 */               headers.put(VineAPI.X_VINE_CLIENT, api.getVineClientHeader());
-/* 196 */               if (!BuildUtil.isProduction()) {
-/* 197 */                   headers.put(VineAPI.SECRET_AUTH_HEADER, api.getAuthHeaderSecret());
+               VineAPI api = VineAPI.getInstance(getActivity());
+               headers.put(VineAPI.X_VINE_CLIENT, api.getVineClientHeader());
+               if (!BuildUtil.isProduction()) {
+                   headers.put(VineAPI.SECRET_AUTH_HEADER, api.getAuthHeaderSecret());
                         }
-/* 199 */               String exploreUrl = getExploreUrl();
-/* 200 */               if (BuildUtil.isLogsOn()) {
-/* 201 */                   Log.d(TAG, "Accessing explore url: " + exploreUrl);
+               String exploreUrl = getExploreUrl();
+               if (BuildUtil.isLogsOn()) {
+                   Log.d(TAG, "Accessing explore url: " + exploreUrl);
                         }
-/* 203 */               webView.loadUrl(exploreUrl, headers);
+               webView.loadUrl(exploreUrl, headers);
                     }
                 }
 
-/* 210 */       private String getExploreUrl() {
+       private String getExploreUrl() {
                     String versionName;
                     try {
-/* 211 */               versionName = Util.getVersionName(getActivity());
+               versionName = Util.getVersionName(getActivity());
                     } catch (PackageManager.NameNotFoundException e) {
-/* 214 */               versionName = VALUE_UNDEFINED;
+               versionName = VALUE_UNDEFINED;
                     }
-/* 218 */           String model = String.format(Locale.US, "%s_%s", Build.MANUFACTURER, Build.MODEL);
-/* 220 */           ArrayList<BasicNameValuePair> data = new ArrayList<>();
-/* 222 */           data.add(new BasicNameValuePair(PARAM_MODEL, model.replaceAll("\\s+", "-")));
-/* 223 */           data.add(new BasicNameValuePair("v", versionName));
-/* 224 */           data.add(new BasicNameValuePair(PARAM_OS, VALUE_OS));
-/* 225 */           data.add(new BasicNameValuePair(PARAM_EDITION, SettingsManager.getEdition(getActivity())));
-/* 227 */           return this.mExploreUrl + "?" + URLEncodedUtils.format(data, IoUtils.UTF_8);
+           String model = String.format(Locale.US, "%s_%s", Build.MANUFACTURER, Build.MODEL);
+           ArrayList<BasicNameValuePair> data = new ArrayList<>();
+           data.add(new BasicNameValuePair(PARAM_MODEL, model.replaceAll("\\s+", "-")));
+           data.add(new BasicNameValuePair("v", versionName));
+           data.add(new BasicNameValuePair(PARAM_OS, VALUE_OS));
+           data.add(new BasicNameValuePair(PARAM_EDITION, SettingsManager.getEdition(getActivity())));
+           return this.mExploreUrl + "?" + URLEncodedUtils.format(data, IoUtils.UTF_8);
                 }
 
-                @Override // co.vine.android.widget.OnTabChangedListener
-/* 231 */       public void onMoveAway(int newPosition) {
+                @Override 
+       public void onMoveAway(int newPosition) {
                 }
 
-                @Override // co.vine.android.widget.OnTabChangedListener
-/* 235 */       public void onMoveTo(int oldPosition) {
-/* 236 */           long lastTime = this.mPrefs.getLong(PREF_LAST_REFRESH_TIME, 0L);
-/* 237 */           SharedPreferences.Editor edit = this.mPrefs.edit();
-/* 238 */           long now = System.currentTimeMillis();
-/* 239 */           if (edit != null) {
+                @Override 
+       public void onMoveTo(int oldPosition) {
+           long lastTime = this.mPrefs.getLong(PREF_LAST_REFRESH_TIME, 0L);
+           SharedPreferences.Editor edit = this.mPrefs.edit();
+           long now = System.currentTimeMillis();
+           if (edit != null) {
                         if (lastTime > 0 && REFRESH_INTERVAL + lastTime < now) {
-/* 241 */                   reloadWebView(true);
-/* 242 */                   edit.putLong(PREF_LAST_REFRESH_TIME, now).apply();
+                   reloadWebView(true);
+                   edit.putLong(PREF_LAST_REFRESH_TIME, now).apply();
                         } else if (lastTime <= 0) {
-/* 244 */                   edit.putLong(PREF_LAST_REFRESH_TIME, now).apply();
+                   edit.putLong(PREF_LAST_REFRESH_TIME, now).apply();
                         }
                     }
                 }
 
-/* 249 */       private WebView getWebView() {
-/* 250 */           if (this.mWebViewContainer != null) {
+       private WebView getWebView() {
+           if (this.mWebViewContainer != null) {
                         return this.mWebViewContainer.getWebView();
                     }
                     return null;
                 }
 
-                @Override // com.twitter.android.widget.TopScrollable
-/* 254 */       public boolean scrollTop() {
-/* 255 */           WebView webView = getWebView();
-/* 256 */           if (webView == null) {
+                @Override 
+       public boolean scrollTop() {
+           WebView webView = getWebView();
+           if (webView == null) {
                         return false;
                     }
-/* 257 */           webView.scrollTo(0, 0);
-/* 258 */           return true;
+           webView.scrollTo(0, 0);
+           return true;
                 }
 
-                @Override // co.vine.android.widget.ScrollDeltaScrollView.ScrollDeltaListener
-/* 265 */       public void onScroll(int delta) {
-/* 266 */           ((HomeTabActivity) getActivity()).onScroll(delta);
+                @Override 
+       public void onScroll(int delta) {
+           ((HomeTabActivity) getActivity()).onScroll(delta);
                 }
 
-/* 267 */       class VineVideoListWebViewClient extends WebViewClient {
-/* 268 */           VineVideoListWebViewClient() {
+       class VineVideoListWebViewClient extends WebViewClient {
+           VineVideoListWebViewClient() {
                     }
 
-                    @Override // android.webkit.WebViewClient
-/* 272 */           public boolean shouldOverrideUrlLoading(WebView view, String url) {
-/* 273 */               Uri parsedUri = Uri.parse(url);
-/* 274 */               if (parsedUri.getScheme().equals(HomeTabActivity.SCHEME_VINE)) {
-/* 275 */                   Intent intent = new Intent();
-/* 276 */                   intent.setData(parsedUri);
-/* 278 */                   String host = parsedUri.getHost();
-/* 279 */                   if ("channels".equals(host)) {
-/* 280 */                       intent.setClass(ExploreFragment.this.getActivity(), ExploreChannelsActivity.class);
+                    @Override 
+           public boolean shouldOverrideUrlLoading(WebView view, String url) {
+               Uri parsedUri = Uri.parse(url);
+               if (parsedUri.getScheme().equals(HomeTabActivity.SCHEME_VINE)) {
+                   Intent intent = new Intent();
+                   intent.setData(parsedUri);
+                   String host = parsedUri.getHost();
+                   if ("channels".equals(host)) {
+                       intent.setClass(ExploreFragment.this.getActivity(), ExploreChannelsActivity.class);
                             } else {
-/* 282 */                       intent.setClass(ExploreFragment.this.getActivity(), ExploreVideoListActivity.class);
+                       intent.setClass(ExploreFragment.this.getActivity(), ExploreVideoListActivity.class);
                             }
-/* 284 */                   ExploreFragment.this.startActivity(intent);
-/* 285 */                   return true;
+                   ExploreFragment.this.startActivity(intent);
+                   return true;
                         }
-/* 287 */               return false;
+               return false;
                     }
 
-                    @Override // android.webkit.WebViewClient
-/* 293 */           public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                    @Override 
+           public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                         String message;
-/* 294 */               SLog.dWithTag(ExploreFragment.TAG, "WebViewClient errorCode=" + errorCode);
-/* 297 */               view.setVisibility(8);
-/* 301 */               if (ExploreFragment.access$100(ExploreFragment.this) != null) {
-/* 302 */                   ExploreFragment.access$100(ExploreFragment.this).setVisibility(8);
+               SLog.dWithTag(ExploreFragment.TAG, "WebViewClient errorCode=" + errorCode);
+               view.setVisibility(8);
+               if (ExploreFragment.access$100(ExploreFragment.this) != null) {
+                   ExploreFragment.access$100(ExploreFragment.this).setVisibility(8);
                         }
-/* 304 */               if (ExploreFragment.access$200(ExploreFragment.this) != null) {
-/* 305 */                   ExploreFragment.access$200(ExploreFragment.this).setVisibility(0);
+               if (ExploreFragment.access$200(ExploreFragment.this) != null) {
+                   ExploreFragment.access$200(ExploreFragment.this).setVisibility(0);
                         }
-/* 307 */               if (ExploreFragment.access$300(ExploreFragment.this) != null) {
-/* 308 */                   ExploreFragment.access$400(ExploreFragment.this).setVisibility(0);
+               if (ExploreFragment.access$300(ExploreFragment.this) != null) {
+                   ExploreFragment.access$400(ExploreFragment.this).setVisibility(0);
                         }
-/* 310 */               if (ExploreFragment.access$500(ExploreFragment.this) != null) {
-/* 311 */                   ExploreFragment.access$500(ExploreFragment.this).setVisibility(0);
+               if (ExploreFragment.access$500(ExploreFragment.this) != null) {
+                   ExploreFragment.access$500(ExploreFragment.this).setVisibility(0);
                         }
-/* 315 */               if (errorCode == -2) {
-/* 316 */                   message = ExploreFragment.this.getString(C0257R.string.explore_empty_no_connectivity);
+               if (errorCode == -2) {
+                   message = ExploreFragment.this.getString(C0257R.string.explore_empty_no_connectivity);
                         } else {
-/* 318 */                   message = ExploreFragment.this.getString(C0257R.string.explore_empty_generic);
+                   message = ExploreFragment.this.getString(C0257R.string.explore_empty_generic);
                         }
-/* 320 */               ExploreFragment.access$500(ExploreFragment.this).setText(message);
+               ExploreFragment.access$500(ExploreFragment.this).setText(message);
                     }
 
-                    @Override // android.webkit.WebViewClient
-/* 323 */           public void onPageFinished(WebView view, String url) {
-/* 324 */               ExploreFragment.access$200(ExploreFragment.this).setVisibility(8);
-/* 325 */               view.scrollTo(0, 0);
+                    @Override 
+           public void onPageFinished(WebView view, String url) {
+               ExploreFragment.access$200(ExploreFragment.this).setVisibility(8);
+               view.scrollTo(0, 0);
                     }
                 }
 
-                @Override // android.support.v4.app.Fragment
-/* 330 */       public void onDestroy() {
-/* 331 */           if (this.mWebViewContainer != null) {
-/* 332 */               this.mWebViewContainer.onDestroy();
+                @Override 
+       public void onDestroy() {
+           if (this.mWebViewContainer != null) {
+               this.mWebViewContainer.onDestroy();
                     }
-/* 334 */           super.onDestroy();
+           super.onDestroy();
                 }
             }

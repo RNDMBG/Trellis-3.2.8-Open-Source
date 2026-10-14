@@ -22,9 +22,9 @@
             import com.googlecode.javacpp.annotation.Properties;
             import com.googlecode.javacpp.annotation.StdVector;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties(inherit = {opencv_core.class}, value = {@Platform(include = {"<opencv2/imgproc/imgproc_c.h>", "<opencv2/imgproc/imgproc.hpp>"}, link = {"opencv_imgproc@.2.4"}), @Platform(link = {"opencv_imgproc246"}, value = {"windows"})})
-/* 89 */    public class opencv_imgproc {
+    public class opencv_imgproc {
                 public static final int BORDER_CONSTANT = 0;
                 public static final int BORDER_DEFAULT = 4;
                 public static final int BORDER_ISOLATED = 16;
@@ -725,13 +725,13 @@
                 public static native void sepFilter2D(@opencv_core.InputArray opencv_core.CvArr cvArr, @opencv_core.InputArray opencv_core.CvArr cvArr2, int i, @opencv_core.InputArray opencv_core.CvMat cvMat, @opencv_core.InputArray opencv_core.CvMat cvMat2, @ByVal opencv_core.CvPoint cvPoint, double d, int i2);
 
                 static {
-/* 91 */            Loader.load();
+            Loader.load();
                 }
 
-/* 94 */        public static void tryLoad() {
+        public static void tryLoad() {
                 }
 
-/* 95 */        public static class CvConnectedComp extends Pointer {
+        public static class CvConnectedComp extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -756,28 +756,28 @@
 
 
                     static {
-/* 98 */                Loader.load();
+                Loader.load();
                     }
 
-/* 98 */            public CvConnectedComp() {
+            public CvConnectedComp() {
                         allocate();
                     }
 
-/* 99 */            public CvConnectedComp(int size) {
+            public CvConnectedComp(int size) {
                         allocateArray(size);
                     }
 
-/* 100 */           public CvConnectedComp(Pointer p) {
-/* 101 */               super(p);
+           public CvConnectedComp(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 105 */           public CvConnectedComp position(int position) {
-/* 106 */               return (CvConnectedComp) super.position(position);
+                    @Override 
+           public CvConnectedComp position(int position) {
+               return (CvConnectedComp) super.position(position);
                     }
                 }
 
-/* 391 */       public static class CvMoments extends Pointer {
+       public static class CvMoments extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -856,45 +856,45 @@
 
 
                     static {
-/* 394 */               Loader.load();
+               Loader.load();
                     }
 
-/* 394 */           public CvMoments() {
+           public CvMoments() {
                         allocate();
                     }
 
-/* 395 */           public CvMoments(int size) {
+           public CvMoments(int size) {
                         allocateArray(size);
                     }
 
-/* 396 */           public CvMoments(Pointer p) {
-/* 397 */               super(p);
+           public CvMoments(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 401 */           public CvMoments position(int position) {
-/* 402 */               return (CvMoments) super.position(position);
+                    @Override 
+           public CvMoments position(int position) {
+               return (CvMoments) super.position(position);
                     }
 
-                    /* JADX INFO: renamed from: com.googlecode.javacv.cpp.opencv_imgproc$CvMoments$1 */
-/* 404 */           static class C12341 extends ThreadLocal<CvMoments> {
-/* 405 */               C12341() {
+                    
+           static class C12341 extends ThreadLocal<CvMoments> {
+               C12341() {
                         }
 
 
-                        /* JADX WARN: Can't rename method to resolve collision */
-                        @Override // java.lang.ThreadLocal
-/* 407 */               protected CvMoments initialValue() {
-/* 408 */                   return new CvMoments();
+                        
+                        @Override 
+               protected CvMoments initialValue() {
+                   return new CvMoments();
                         }
                     }
 
-/* 405 */           public static ThreadLocal<CvMoments> createThreadLocal() {
-/* 406 */               return new C12341();
+           public static ThreadLocal<CvMoments> createThreadLocal() {
+               return new C12341();
                     }
                 }
 
-/* 433 */       public static class CvHuMoments extends Pointer {
+       public static class CvHuMoments extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -929,60 +929,60 @@
 
 
                     static {
-/* 436 */               Loader.load();
+               Loader.load();
                     }
 
-/* 436 */           public CvHuMoments() {
+           public CvHuMoments() {
                         allocate();
                     }
 
-/* 437 */           public CvHuMoments(int size) {
+           public CvHuMoments(int size) {
                         allocateArray(size);
                     }
 
-/* 438 */           public CvHuMoments(Pointer p) {
-/* 439 */               super(p);
+           public CvHuMoments(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 443 */           public CvHuMoments position(int position) {
-/* 444 */               return (CvHuMoments) super.position(position);
+                    @Override 
+           public CvHuMoments position(int position) {
+               return (CvHuMoments) super.position(position);
                     }
                 }
 
-/* 464 */       public static class CvDistanceFunction extends FunctionPointer {
+       public static class CvDistanceFunction extends FunctionPointer {
                     private native void allocate();
 
                     public native float call(@Const FloatPointer floatPointer, @Const FloatPointer floatPointer2, Pointer pointer);
 
                     static {
-/* 466 */               Loader.load();
+               Loader.load();
                     }
 
-/* 466 */           public CvDistanceFunction(Pointer p) {
-/* 467 */               super(p);
+           public CvDistanceFunction(Pointer p) {
+               super(p);
                     }
 
-/* 467 */           protected CvDistanceFunction() {
+           protected CvDistanceFunction() {
                         allocate();
                     }
                 }
 
                 @Opaque
-/* 486 */       public static class CvContourScanner extends Pointer {
+       public static class CvContourScanner extends Pointer {
                     static {
-/* 488 */               Loader.load();
+               Loader.load();
                     }
 
-/* 488 */           public CvContourScanner() {
+           public CvContourScanner() {
                     }
 
-/* 489 */           public CvContourScanner(Pointer p) {
-/* 490 */               super(p);
+           public CvContourScanner(Pointer p) {
+               super(p);
                     }
                 }
 
-/* 491 */       public static class CvChainPtReader extends opencv_core.CvSeqReader {
+       public static class CvChainPtReader extends opencv_core.CvSeqReader {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -996,55 +996,55 @@
                     public native CvChainPtReader deltas(int i, int i2, byte b);
 
                     @ByRef
-                    /* JADX INFO: renamed from: pt */
+                    
                     public native opencv_core.CvPoint m2459pt();
 
-                    /* JADX INFO: renamed from: pt */
+                    
                     public native CvChainPtReader m2460pt(opencv_core.CvPoint cvPoint);
 
 
 
                     static {
-/* 494 */               Loader.load();
+               Loader.load();
                     }
 
-/* 494 */           public CvChainPtReader() {
+           public CvChainPtReader() {
                         allocate();
                     }
 
-/* 495 */           public CvChainPtReader(int size) {
+           public CvChainPtReader(int size) {
                         allocateArray(size);
                     }
 
-/* 496 */           public CvChainPtReader(Pointer p) {
-/* 497 */               super(p);
+           public CvChainPtReader(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvSeqReader, com.googlecode.javacpp.Pointer
-/* 501 */           public CvChainPtReader position(int position) {
-/* 502 */               return (CvChainPtReader) super.position(position);
+                    @Override 
+           public CvChainPtReader position(int position) {
+               return (CvChainPtReader) super.position(position);
                     }
                 }
 
-/* 512 */       public static class CvSubdiv2DEdge extends SizeTPointer {
+       public static class CvSubdiv2DEdge extends SizeTPointer {
                     static {
-/* 514 */               Loader.load();
+               Loader.load();
                     }
 
-/* 514 */           public CvSubdiv2DEdge() {
-/* 515 */               super(1);
+           public CvSubdiv2DEdge() {
+               super(1);
                     }
 
-/* 515 */           public CvSubdiv2DEdge(int size) {
-/* 516 */               super(size);
+           public CvSubdiv2DEdge(int size) {
+               super(size);
                     }
 
-/* 516 */           public CvSubdiv2DEdge(Pointer p) {
-/* 517 */               super(p);
+           public CvSubdiv2DEdge(Pointer p) {
+               super(p);
                     }
                 }
 
-/* 520 */       public static class CvQuadEdge2D extends Pointer {
+       public static class CvQuadEdge2D extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1058,70 +1058,70 @@
 
                     public native CvQuadEdge2D next(int i, long j);
 
-                    /* JADX INFO: renamed from: pt */
+                    
                     public native CvQuadEdge2D m2461pt(int i, CvSubdiv2DPoint cvSubdiv2DPoint);
 
-                    /* JADX INFO: renamed from: pt */
+                    
                     public native CvSubdiv2DPoint m2462pt(int i);
 
 
                     static {
-/* 523 */               Loader.load();
+               Loader.load();
                     }
 
-/* 523 */           public CvQuadEdge2D() {
+           public CvQuadEdge2D() {
                         allocate();
                     }
 
-/* 524 */           public CvQuadEdge2D(int size) {
+           public CvQuadEdge2D(int size) {
                         allocateArray(size);
                     }
 
-/* 525 */           public CvQuadEdge2D(Pointer p) {
-/* 526 */               super(p);
+           public CvQuadEdge2D(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 530 */           public CvQuadEdge2D position(int position) {
-/* 531 */               return (CvQuadEdge2D) super.position(position);
-                    }
-
-                    @Cast({"CvSubdiv2DEdge"})
-/* 538 */           public long CV_SUBDIV2D_NEXT_EDGE(@Cast({"CvSubdiv2DEdge"}) long edge) {
-/* 539 */               return next(((int) edge) & 3);
+                    @Override 
+           public CvQuadEdge2D position(int position) {
+               return (CvQuadEdge2D) super.position(position);
                     }
 
                     @Cast({"CvSubdiv2DEdge"})
-/* 541 */           public long cvSubdiv2DNextEdge(@Cast({"CvSubdiv2DEdge"}) long edge) {
-/* 542 */               return CV_SUBDIV2D_NEXT_EDGE(edge);
+           public long CV_SUBDIV2D_NEXT_EDGE(@Cast({"CvSubdiv2DEdge"}) long edge) {
+               return next(((int) edge) & 3);
                     }
 
                     @Cast({"CvSubdiv2DEdge"})
-/* 544 */           public long cvSubdiv2DGetEdge(@Cast({"CvSubdiv2DEdge"}) long edge, @Cast({"CvNextEdgeType"}) int type) {
-/* 545 */               long edge2 = next((((int) edge) + type) & 3);
-/* 546 */               return ((-4) & edge2) + ((((long) (type >> 4)) + edge2) & 3);
+           public long cvSubdiv2DNextEdge(@Cast({"CvSubdiv2DEdge"}) long edge) {
+               return CV_SUBDIV2D_NEXT_EDGE(edge);
                     }
 
                     @Cast({"CvSubdiv2DEdge"})
-/* 548 */           public static long cvSubdiv2DRotateEdge(@Cast({"CvSubdiv2DEdge"}) long edge, int rotate) {
-/* 549 */               return ((-4) & edge) + ((((long) rotate) + edge) & 3);
-                    }
-
-/* 551 */           public CvSubdiv2DPoint cvSubdiv2DEdgeOrg(@Cast({"CvSubdiv2DEdge"}) long edge) {
-/* 552 */               return m2462pt(((int) edge) & 3);
-                    }
-
-/* 554 */           public CvSubdiv2DPoint cvSubdiv2DEdgeDst(@Cast({"CvSubdiv2DEdge"}) long edge) {
-/* 555 */               return m2462pt((((int) edge) + 2) & 3);
+           public long cvSubdiv2DGetEdge(@Cast({"CvSubdiv2DEdge"}) long edge, @Cast({"CvNextEdgeType"}) int type) {
+               long edge2 = next((((int) edge) + type) & 3);
+               return ((-4) & edge2) + ((((long) (type >> 4)) + edge2) & 3);
                     }
 
                     @Cast({"CvSubdiv2DEdge"})
-/* 557 */           public static long cvSubdiv2DSymEdge(@Cast({"CvSubdiv2DEdge"}) long edge) {
-/* 558 */               return 2 ^ edge;
+           public static long cvSubdiv2DRotateEdge(@Cast({"CvSubdiv2DEdge"}) long edge, int rotate) {
+               return ((-4) & edge) + ((((long) rotate) + edge) & 3);
+                    }
+
+           public CvSubdiv2DPoint cvSubdiv2DEdgeOrg(@Cast({"CvSubdiv2DEdge"}) long edge) {
+               return m2462pt(((int) edge) & 3);
+                    }
+
+           public CvSubdiv2DPoint cvSubdiv2DEdgeDst(@Cast({"CvSubdiv2DEdge"}) long edge) {
+               return m2462pt((((int) edge) + 2) & 3);
+                    }
+
+                    @Cast({"CvSubdiv2DEdge"})
+           public static long cvSubdiv2DSymEdge(@Cast({"CvSubdiv2DEdge"}) long edge) {
+               return 2 ^ edge;
                     }
                 }
 
-/* 561 */       public static class CvSubdiv2DPoint extends Pointer {
+       public static class CvSubdiv2DPoint extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1135,43 +1135,43 @@
 
                     public native CvSubdiv2DPoint flags(int i);
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native int m2463id();
 
-                    /* JADX INFO: renamed from: id */
+                    
                     public native CvSubdiv2DPoint m2464id(int i);
 
                     @ByRef
-                    /* JADX INFO: renamed from: pt */
+                    
                     public native opencv_core.CvPoint2D32f m2465pt();
 
-                    /* JADX INFO: renamed from: pt */
+                    
                     public native CvSubdiv2DPoint m2466pt(opencv_core.CvPoint2D32f cvPoint2D32f);
 
 
                     static {
-/* 564 */               Loader.load();
+               Loader.load();
                     }
 
-/* 564 */           public CvSubdiv2DPoint() {
+           public CvSubdiv2DPoint() {
                         allocate();
                     }
 
-/* 565 */           public CvSubdiv2DPoint(int size) {
+           public CvSubdiv2DPoint(int size) {
                         allocateArray(size);
                     }
 
-/* 566 */           public CvSubdiv2DPoint(Pointer p) {
-/* 567 */               super(p);
+           public CvSubdiv2DPoint(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 571 */           public CvSubdiv2DPoint position(int position) {
-/* 572 */               return (CvSubdiv2DPoint) super.position(position);
+                    @Override 
+           public CvSubdiv2DPoint position(int position) {
+               return (CvSubdiv2DPoint) super.position(position);
                     }
                 }
 
-/* 579 */       public static class CvSubdiv2D extends opencv_core.CvGraph {
+       public static class CvSubdiv2D extends opencv_core.CvGraph {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1204,28 +1204,28 @@
 
 
                     static {
-/* 582 */               Loader.load();
+               Loader.load();
                     }
 
-/* 582 */           public CvSubdiv2D() {
+           public CvSubdiv2D() {
                         allocate();
                     }
 
-/* 583 */           public CvSubdiv2D(int size) {
+           public CvSubdiv2D(int size) {
                         allocateArray(size);
                     }
 
-/* 584 */           public CvSubdiv2D(Pointer p) {
-/* 585 */               super(p);
+           public CvSubdiv2D(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacv.cpp.opencv_core.CvGraph, com.googlecode.javacv.cpp.opencv_core.CvSet, com.googlecode.javacv.cpp.opencv_core.CvSeq, com.googlecode.javacpp.Pointer
-/* 589 */           public CvSubdiv2D position(int position) {
-/* 590 */               return (CvSubdiv2D) super.position(position);
+                    @Override 
+           public CvSubdiv2D position(int position) {
+               return (CvSubdiv2D) super.position(position);
                     }
                 }
 
-/* 633 */       public static class CvConvexityDefect extends Pointer {
+       public static class CvConvexityDefect extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1248,62 +1248,62 @@
 
 
                     static {
-/* 636 */               Loader.load();
+               Loader.load();
                     }
 
-/* 636 */           public CvConvexityDefect() {
+           public CvConvexityDefect() {
                         allocate();
                     }
 
-/* 637 */           public CvConvexityDefect(int size) {
+           public CvConvexityDefect(int size) {
                         allocateArray(size);
                     }
 
-/* 638 */           public CvConvexityDefect(Pointer p) {
-/* 639 */               super(p);
+           public CvConvexityDefect(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 643 */           public CvConvexityDefect position(int position) {
-/* 644 */               return (CvConvexityDefect) super.position(position);
+                    @Override 
+           public CvConvexityDefect position(int position) {
+               return (CvConvexityDefect) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 703 */       public static class CvFeatureTree extends Pointer {
+       public static class CvFeatureTree extends Pointer {
                     static {
-/* 705 */               Loader.load();
+               Loader.load();
                     }
 
-/* 705 */           public CvFeatureTree() {
+           public CvFeatureTree() {
                     }
 
-/* 706 */           public CvFeatureTree(Pointer p) {
-/* 707 */               super(p);
+           public CvFeatureTree(Pointer p) {
+               super(p);
                     }
                 }
 
-/* 719 */       public static void cvSmooth(opencv_core.CvArr src, opencv_core.CvArr dst, int smoothtype, int size1) {
-/* 720 */           cvSmooth(src, dst, smoothtype, size1, 0, 0.0d, 0.0d);
+       public static void cvSmooth(opencv_core.CvArr src, opencv_core.CvArr dst, int smoothtype, int size1) {
+           cvSmooth(src, dst, smoothtype, size1, 0, 0.0d, 0.0d);
                 }
 
-/* 739 */       public static void cvResize(opencv_core.CvArr src, opencv_core.CvArr dst) {
-/* 740 */           cvResize(src, dst, 1);
+       public static void cvResize(opencv_core.CvArr src, opencv_core.CvArr dst) {
+           cvResize(src, dst, 1);
                 }
 
-/* 743 */       public static void cvWarpAffine(opencv_core.CvArr src, opencv_core.CvArr dst, opencv_core.CvMat map_matrix) {
-/* 744 */           cvWarpAffine(src, dst, map_matrix, 9, opencv_core.CvScalar.ZERO);
+       public static void cvWarpAffine(opencv_core.CvArr src, opencv_core.CvArr dst, opencv_core.CvMat map_matrix) {
+           cvWarpAffine(src, dst, map_matrix, 9, opencv_core.CvScalar.ZERO);
                 }
 
-/* 755 */       public static void cvWarpPerspective(opencv_core.CvArr src, opencv_core.CvArr dst, opencv_core.CvMat map_matrix) {
-/* 756 */           cvWarpPerspective(src, dst, map_matrix, 9, opencv_core.CvScalar.ZERO);
+       public static void cvWarpPerspective(opencv_core.CvArr src, opencv_core.CvArr dst, opencv_core.CvMat map_matrix) {
+           cvWarpPerspective(src, dst, map_matrix, 9, opencv_core.CvScalar.ZERO);
                 }
 
-/* 773 */       public static void cvUndistort2(opencv_core.CvArr src, opencv_core.CvArr dst, opencv_core.CvMat intrinsic_matrix, opencv_core.CvMat distortion_coeffs) {
-/* 774 */           cvUndistort2(src, dst, intrinsic_matrix, distortion_coeffs, null);
+       public static void cvUndistort2(opencv_core.CvArr src, opencv_core.CvArr dst, opencv_core.CvMat intrinsic_matrix, opencv_core.CvMat distortion_coeffs) {
+           cvUndistort2(src, dst, intrinsic_matrix, distortion_coeffs, null);
                 }
 
-/* 783 */       public static class IplConvKernel extends Pointer {
+       public static class IplConvKernel extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1334,54 +1334,54 @@
 
 
                     static {
-/* 786 */               Loader.load();
+               Loader.load();
                     }
 
-/* 786 */           public IplConvKernel() {
+           public IplConvKernel() {
                         allocate();
                         zero();
                     }
 
-/* 787 */           public IplConvKernel(int size) {
+           public IplConvKernel(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 788 */           public IplConvKernel(Pointer p) {
-/* 789 */               super(p);
+           public IplConvKernel(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 793 */           public IplConvKernel position(int position) {
-/* 794 */               return (IplConvKernel) super.position(position);
+                    @Override 
+           public IplConvKernel position(int position) {
+               return (IplConvKernel) super.position(position);
                     }
 
-/* 798 */           public static IplConvKernel create(int cols, int rows, int anchor_x, int anchor_y, int shape, int[] values) {
-/* 799 */               IplConvKernel p = opencv_imgproc.cvCreateStructuringElementEx(cols, rows, anchor_x, anchor_y, shape, values);
-/* 801 */               if (p != null) {
-/* 802 */                   p.deallocator(new ReleaseDeallocator(p));
+           public static IplConvKernel create(int cols, int rows, int anchor_x, int anchor_y, int shape, int[] values) {
+               IplConvKernel p = opencv_imgproc.cvCreateStructuringElementEx(cols, rows, anchor_x, anchor_y, shape, values);
+               if (p != null) {
+                   p.deallocator(new ReleaseDeallocator(p));
                         }
-/* 804 */               return p;
+               return p;
                     }
 
-/* 807 */           public void release() {
-/* 808 */               deallocate();
+           public void release() {
+               deallocate();
                     }
 
-/* 808 */           static class ReleaseDeallocator extends IplConvKernel implements Pointer.Deallocator {
+           static class ReleaseDeallocator extends IplConvKernel implements Pointer.Deallocator {
 
-/* 810 */               ReleaseDeallocator(IplConvKernel p) {
-/* 811 */                   super(p);
+               ReleaseDeallocator(IplConvKernel p) {
+                   super(p);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 811 */               public void deallocate() {
-/* 812 */                   opencv_imgproc.cvReleaseStructuringElement(this);
+                        @Override 
+               public void deallocate() {
+                   opencv_imgproc.cvReleaseStructuringElement(this);
                         }
                     }
                 }
 
-/* 821 */       public static class IplConvKernelFP extends Pointer {
+       public static class IplConvKernelFP extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1408,42 +1408,42 @@
 
 
                     static {
-/* 824 */               Loader.load();
+               Loader.load();
                     }
 
-/* 824 */           public IplConvKernelFP() {
+           public IplConvKernelFP() {
                         allocate();
                         zero();
                     }
 
-/* 825 */           public IplConvKernelFP(int size) {
+           public IplConvKernelFP(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 826 */           public IplConvKernelFP(Pointer p) {
-/* 827 */               super(p);
+           public IplConvKernelFP(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 831 */           public IplConvKernelFP position(int position) {
-/* 832 */               return (IplConvKernelFP) super.position(position);
+                    @Override 
+           public IplConvKernelFP position(int position) {
+               return (IplConvKernelFP) super.position(position);
                     }
                 }
 
-/* 870 */       public static int cvFindContours(opencv_core.CvArr image, opencv_core.CvMemStorage storage, @ByPtrPtr opencv_core.CvSeq first_contour, int header_size, int mode, int method) {
-/* 871 */           return cvFindContours(image, storage, first_contour, header_size, mode, method, opencv_core.CvPoint.ZERO);
+       public static int cvFindContours(opencv_core.CvArr image, opencv_core.CvMemStorage storage, @ByPtrPtr opencv_core.CvSeq first_contour, int header_size, int mode, int method) {
+           return cvFindContours(image, storage, first_contour, header_size, mode, method, opencv_core.CvPoint.ZERO);
                 }
 
-/* 877 */       public static CvContourScanner cvStartFindContours(opencv_core.CvArr image, opencv_core.CvMemStorage storage, int header_size, int mode, int method) {
-/* 878 */           return cvStartFindContours(image, storage, header_size, mode, method, opencv_core.CvPoint.ZERO);
+       public static CvContourScanner cvStartFindContours(opencv_core.CvArr image, opencv_core.CvMemStorage storage, int header_size, int mode, int method) {
+           return cvStartFindContours(image, storage, header_size, mode, method, opencv_core.CvPoint.ZERO);
                 }
 
-/* 897 */       public static double cvContourPerimeter(Pointer contour) {
-/* 898 */           return cvArcLength(contour, opencv_core.CV_WHOLE_SEQ, 1);
+       public static double cvContourPerimeter(Pointer contour) {
+           return cvArcLength(contour, opencv_core.CV_WHOLE_SEQ, 1);
                 }
 
-/* 931 */       public static class CvHistogram extends Pointer {
+       public static class CvHistogram extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -1473,125 +1473,125 @@
 
 
                     static {
-/* 934 */               Loader.load();
+               Loader.load();
                     }
 
-/* 934 */           public CvHistogram() {
+           public CvHistogram() {
                         allocate();
                         zero();
                     }
 
-/* 935 */           public CvHistogram(int size) {
+           public CvHistogram(int size) {
                         allocateArray(size);
                         zero();
                     }
 
-/* 936 */           public CvHistogram(Pointer p) {
-/* 937 */               super(p);
+           public CvHistogram(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 941 */           public CvHistogram position(int position) {
-/* 942 */               return (CvHistogram) super.position(position);
+                    @Override 
+           public CvHistogram position(int position) {
+               return (CvHistogram) super.position(position);
                     }
 
-/* 946 */           public static CvHistogram create(int dims, int[] sizes, int type, float[][] ranges, int uniform) {
-/* 947 */               CvHistogram h = opencv_imgproc.cvCreateHist(dims, sizes, type, ranges, uniform);
-/* 948 */               if (h != null) {
-/* 949 */                   h.deallocator(new ReleaseDeallocator(h));
+           public static CvHistogram create(int dims, int[] sizes, int type, float[][] ranges, int uniform) {
+               CvHistogram h = opencv_imgproc.cvCreateHist(dims, sizes, type, ranges, uniform);
+               if (h != null) {
+                   h.deallocator(new ReleaseDeallocator(h));
                         }
-/* 951 */               return h;
+               return h;
                     }
 
-/* 954 */           public void release() {
-/* 955 */               deallocate();
+           public void release() {
+               deallocate();
                     }
 
-/* 955 */           static class ReleaseDeallocator extends CvHistogram implements Pointer.Deallocator {
+           static class ReleaseDeallocator extends CvHistogram implements Pointer.Deallocator {
 
-/* 957 */               ReleaseDeallocator(CvHistogram p) {
-/* 958 */                   super(p);
+               ReleaseDeallocator(CvHistogram p) {
+                   super(p);
                         }
 
-                        @Override // com.googlecode.javacpp.Pointer, com.googlecode.javacpp.Pointer.Deallocator
-/* 958 */               public void deallocate() {
-/* 959 */                   opencv_imgproc.cvReleaseHist(this);
+                        @Override 
+               public void deallocate() {
+                   opencv_imgproc.cvReleaseHist(this);
                         }
                     }
                 }
 
-/* 969 */       public static boolean CV_IS_HIST(opencv_core.CvArr hist) {
-/* 970 */           CvHistogram h = new CvHistogram(hist);
+       public static boolean CV_IS_HIST(opencv_core.CvArr hist) {
+           CvHistogram h = new CvHistogram(hist);
                     return (hist == null || (h.type() & (-65536)) != 1111818240 || h.bins() == null) ? false : true;
                 }
 
-/* 973 */       public static boolean CV_IS_UNIFORM_HIST(CvHistogram hist) {
+       public static boolean CV_IS_UNIFORM_HIST(CvHistogram hist) {
                     return (hist.type() & 1024) != 0;
                 }
 
-/* 976 */       public static boolean CV_IS_SPARSE_HIST(CvHistogram hist) {
-/* 977 */           return opencv_core.CV_IS_SPARSE_MAT(hist.bins());
+       public static boolean CV_IS_SPARSE_HIST(CvHistogram hist) {
+           return opencv_core.CV_IS_SPARSE_MAT(hist.bins());
                 }
 
-/* 979 */       public static boolean CV_HIST_HAS_RANGES(CvHistogram hist) {
+       public static boolean CV_HIST_HAS_RANGES(CvHistogram hist) {
                     return (hist.type() & 2048) != 0;
                 }
 
-/* 984 */       public static CvHistogram cvCreateHist(int dims, int[] sizes, int type, float[][] ranges, int uniform) {
+       public static CvHistogram cvCreateHist(int dims, int[] sizes, int type, float[][] ranges, int uniform) {
                     return cvCreateHist(dims, sizes, type, ranges == null ? null : new PointerPointer(ranges), uniform);
                 }
 
-/* 990 */       public static void cvSetHistBinRanges(CvHistogram hist, float[][] ranges, int uniform) {
-/* 991 */           cvSetHistBinRanges(hist, ranges == null ? null : new PointerPointer(ranges), uniform);
+       public static void cvSetHistBinRanges(CvHistogram hist, float[][] ranges, int uniform) {
+           cvSetHistBinRanges(hist, ranges == null ? null : new PointerPointer(ranges), uniform);
                 }
 
-/* 997 */       public static CvHistogram cvMakeHistHeaderForArray(int dims, int[] sizes, CvHistogram hist, float[] data, float[][] ranges, int uniform) {
+       public static CvHistogram cvMakeHistHeaderForArray(int dims, int[] sizes, CvHistogram hist, float[] data, float[][] ranges, int uniform) {
                     return cvMakeHistHeaderForArray(dims, sizes, hist, data, ranges == null ? null : new PointerPointer(ranges), uniform);
                 }
 
-/* 1003 */      public static CvHistogram cvMakeHistHeaderForArray(int dims, int[] sizes, CvHistogram hist, FloatPointer data, float[][] ranges, int uniform) {
+      public static CvHistogram cvMakeHistHeaderForArray(int dims, int[] sizes, CvHistogram hist, FloatPointer data, float[][] ranges, int uniform) {
                     return cvMakeHistHeaderForArray(dims, sizes, hist, data, ranges == null ? null : new PointerPointer(ranges), uniform);
                 }
 
-/* 1019 */      public static void cvCalcArrHist(opencv_core.CvArr[] arr, CvHistogram hist, int accumulate, opencv_core.CvArr mask) {
-/* 1020 */          cvCalcArrHist(new opencv_core.CvArrArray(arr), hist, accumulate, mask);
+      public static void cvCalcArrHist(opencv_core.CvArr[] arr, CvHistogram hist, int accumulate, opencv_core.CvArr mask) {
+          cvCalcArrHist(new opencv_core.CvArrArray(arr), hist, accumulate, mask);
                 }
 
-/* 1024 */      public static void cvCalcHist(opencv_core.IplImage[] arr, CvHistogram hist, int accumulate, opencv_core.CvArr mask) {
-/* 1025 */          cvCalcHist(new opencv_core.IplImageArray(arr), hist, accumulate, mask);
+      public static void cvCalcHist(opencv_core.IplImage[] arr, CvHistogram hist, int accumulate, opencv_core.CvArr mask) {
+          cvCalcHist(new opencv_core.IplImageArray(arr), hist, accumulate, mask);
                 }
 
-/* 1028 */      public static void cvCalcHist(opencv_core.IplImageArray arr, CvHistogram hist, int accumulate, opencv_core.CvArr mask) {
-/* 1029 */          cvCalcArrHist(arr, hist, accumulate, mask);
+      public static void cvCalcHist(opencv_core.IplImageArray arr, CvHistogram hist, int accumulate, opencv_core.CvArr mask) {
+          cvCalcArrHist(arr, hist, accumulate, mask);
                 }
 
-/* 1032 */      public static void cvCalcArrBackProject(opencv_core.CvArr[] image, opencv_core.CvArr dst, CvHistogram hist) {
-/* 1033 */          cvCalcArrBackProject(new opencv_core.CvArrArray(image), dst, hist);
+      public static void cvCalcArrBackProject(opencv_core.CvArr[] image, opencv_core.CvArr dst, CvHistogram hist) {
+          cvCalcArrBackProject(new opencv_core.CvArrArray(image), dst, hist);
                 }
 
-/* 1037 */      public static void cvCalcBackProject(opencv_core.IplImage[] image, opencv_core.CvArr dst, CvHistogram hist) {
-/* 1038 */          cvCalcBackProject(new opencv_core.IplImageArray(image), dst, hist);
+      public static void cvCalcBackProject(opencv_core.IplImage[] image, opencv_core.CvArr dst, CvHistogram hist) {
+          cvCalcBackProject(new opencv_core.IplImageArray(image), dst, hist);
                 }
 
-/* 1041 */      public static void cvCalcBackProject(opencv_core.IplImageArray image, opencv_core.CvArr dst, CvHistogram hist) {
-/* 1042 */          cvCalcArrBackProject(image, dst, hist);
+      public static void cvCalcBackProject(opencv_core.IplImageArray image, opencv_core.CvArr dst, CvHistogram hist) {
+          cvCalcArrBackProject(image, dst, hist);
                 }
 
-/* 1046 */      public static void cvCalcArrBackProjectPatch(opencv_core.CvArr[] image, opencv_core.CvArr dst, @ByVal opencv_core.CvSize range, CvHistogram hist, int method, double factor) {
-/* 1047 */          cvCalcArrBackProjectPatch(new opencv_core.CvArrArray(image), dst, range, hist, method, factor);
+      public static void cvCalcArrBackProjectPatch(opencv_core.CvArr[] image, opencv_core.CvArr dst, @ByVal opencv_core.CvSize range, CvHistogram hist, int method, double factor) {
+          cvCalcArrBackProjectPatch(new opencv_core.CvArrArray(image), dst, range, hist, method, factor);
                 }
 
-/* 1052 */      public static void cvCalcBackProjectPatch(opencv_core.IplImage[] image, opencv_core.CvArr dst, @ByVal opencv_core.CvSize range, CvHistogram hist, int method, double factor) {
-/* 1053 */          cvCalcBackProjectPatch(new opencv_core.IplImageArray(image), dst, range, hist, method, factor);
+      public static void cvCalcBackProjectPatch(opencv_core.IplImage[] image, opencv_core.CvArr dst, @ByVal opencv_core.CvSize range, CvHistogram hist, int method, double factor) {
+          cvCalcBackProjectPatch(new opencv_core.IplImageArray(image), dst, range, hist, method, factor);
                 }
 
-/* 1056 */      public static void cvCalcBackProjectPatch(opencv_core.IplImageArray image, opencv_core.CvArr dst, opencv_core.CvSize range, CvHistogram hist, int method, double factor) {
-/* 1057 */          cvCalcArrBackProjectPatch(image, dst, range, hist, method, factor);
+      public static void cvCalcBackProjectPatch(opencv_core.IplImageArray image, opencv_core.CvArr dst, opencv_core.CvSize range, CvHistogram hist, int method, double factor) {
+          cvCalcArrBackProjectPatch(image, dst, range, hist, method, factor);
                 }
 
                 @NoOffset
                 @Namespace("cv")
-/* 1111 */      public static class BaseRowFilter extends Pointer {
+      public static class BaseRowFilter extends Pointer {
                     public native int anchor();
 
                     public native BaseRowFilter anchor(int i);
@@ -1604,20 +1604,20 @@
                     public native BaseRowFilter ksize(int i);
 
                     static {
-/* 1113 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1113 */          public BaseRowFilter() {
+          public BaseRowFilter() {
                     }
 
-/* 1114 */          public BaseRowFilter(Pointer p) {
-/* 1115 */              super(p);
+          public BaseRowFilter(Pointer p) {
+              super(p);
                     }
                 }
 
                 @NoOffset
                 @Namespace("cv")
-/* 1123 */      public static class BaseColumnFilter extends Pointer {
+      public static class BaseColumnFilter extends Pointer {
                     public native int anchor();
 
                     public native BaseColumnFilter anchor(int i);
@@ -1632,20 +1632,20 @@
                     public native void reset();
 
                     static {
-/* 1125 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1125 */          public BaseColumnFilter() {
+          public BaseColumnFilter() {
                     }
 
-/* 1126 */          public BaseColumnFilter(Pointer p) {
-/* 1127 */              super(p);
+          public BaseColumnFilter(Pointer p) {
+              super(p);
                     }
                 }
 
                 @NoOffset
                 @Namespace("cv")
-/* 1136 */      public static class BaseFilter extends Pointer {
+      public static class BaseFilter extends Pointer {
                     @ByVal
                     public native opencv_core.CvPoint anchor();
 
@@ -1662,20 +1662,20 @@
                     public native void reset();
 
                     static {
-/* 1138 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1138 */          public BaseFilter() {
+          public BaseFilter() {
                     }
 
-/* 1139 */          public BaseFilter(Pointer p) {
-/* 1140 */              super(p);
+          public BaseFilter(Pointer p) {
+              super(p);
                     }
                 }
 
                 @NoOffset
                 @Namespace("cv")
-/* 1149 */      public static class FilterEngine extends Pointer {
+      public static class FilterEngine extends Pointer {
                     private native void allocate();
 
                     private native void allocate(@opencv_core.Ptr BaseFilter baseFilter, @opencv_core.Ptr BaseRowFilter baseRowFilter, @opencv_core.Ptr BaseColumnFilter baseColumnFilter, int i, int i2, int i3, int i4, int i5, @ByVal opencv_core.CvScalar cvScalar);
@@ -1836,24 +1836,24 @@
                     public native FilterEngine wholeSize(opencv_core.CvSize cvSize);
 
                     static {
-/* 1151 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1151 */          public FilterEngine() {
+          public FilterEngine() {
                         allocate();
                     }
 
-/* 1155 */          public FilterEngine(@opencv_core.Ptr BaseFilter _filter2D, @opencv_core.Ptr BaseRowFilter _rowFilter, @opencv_core.Ptr BaseColumnFilter _columnFilter, int srcType, int dstType, int bufType, int _rowBorderType, int _columnBorderType, @ByVal opencv_core.CvScalar _borderValue) {
-/* 1157 */              allocate(_filter2D, _rowFilter, _columnFilter, srcType, dstType, bufType, _rowBorderType, _columnBorderType, _borderValue);
+          public FilterEngine(@opencv_core.Ptr BaseFilter _filter2D, @opencv_core.Ptr BaseRowFilter _rowFilter, @opencv_core.Ptr BaseColumnFilter _columnFilter, int srcType, int dstType, int bufType, int _rowBorderType, int _columnBorderType, @ByVal opencv_core.CvScalar _borderValue) {
+              allocate(_filter2D, _rowFilter, _columnFilter, srcType, dstType, bufType, _rowBorderType, _columnBorderType, _borderValue);
                     }
 
-/* 1159 */          public FilterEngine(Pointer p) {
-/* 1160 */              super(p);
+          public FilterEngine(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Namespace("cv")
-/* 1307 */      public static class GeneralizedHough extends opencv_core.Algorithm {
+      public static class GeneralizedHough extends opencv_core.Algorithm {
                     @opencv_core.Ptr
                     public static native GeneralizedHough create(int i);
 
@@ -1868,19 +1868,19 @@
                     public native void setTemplate(@opencv_core.InputArray opencv_core.CvArr cvArr, @opencv_core.InputArray opencv_core.CvArr cvArr2, @opencv_core.InputArray opencv_core.CvArr cvArr3, @ByVal opencv_core.CvPoint cvPoint);
 
                     static {
-/* 1309 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1309 */          public GeneralizedHough() {
+          public GeneralizedHough() {
                     }
 
-/* 1310 */          public GeneralizedHough(Pointer p) {
-/* 1311 */              super(p);
+          public GeneralizedHough(Pointer p) {
+              super(p);
                     }
                 }
 
                 @Namespace("cv")
-/* 1346 */      public static class CLAHE extends opencv_core.Algorithm {
+      public static class CLAHE extends opencv_core.Algorithm {
                     public native void apply(@opencv_core.InputArray opencv_core.CvArr cvArr, @opencv_core.InputArray opencv_core.CvArr cvArr2);
 
                     public native void collectGarbage();
@@ -1895,14 +1895,14 @@
                     public native void setTilesGridSize(@ByVal opencv_core.CvSize cvSize);
 
                     static {
-/* 1348 */              Loader.load();
+              Loader.load();
                     }
 
-/* 1348 */          public CLAHE() {
+          public CLAHE() {
                     }
 
-/* 1349 */          public CLAHE(Pointer p) {
-/* 1350 */              super(p);
+          public CLAHE(Pointer p) {
+              super(p);
                     }
                 }
             }

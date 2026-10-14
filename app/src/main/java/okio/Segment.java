@@ -1,7 +1,7 @@
             package okio;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 25 */    final class Segment {
+            
+    final class Segment {
                 static final int SIZE = 2048;
                 final byte[] data = new byte[2048];
                 int limit;
@@ -9,69 +9,69 @@
                 int pos;
                 Segment prev;
 
-/* 26 */        Segment() {
+        Segment() {
                 }
 
-/* 52 */        public Segment pop() {
-/* 53 */            Segment result = this.next != this ? this.next : null;
-/* 54 */            this.prev.next = this.next;
-/* 55 */            this.next.prev = this.prev;
-/* 56 */            this.next = null;
-/* 57 */            this.prev = null;
-/* 58 */            return result;
+        public Segment pop() {
+            Segment result = this.next != this ? this.next : null;
+            this.prev.next = this.next;
+            this.next.prev = this.prev;
+            this.next = null;
+            this.prev = null;
+            return result;
                 }
 
-/* 65 */        public Segment push(Segment segment) {
-/* 66 */            segment.prev = this;
-/* 67 */            segment.next = this.next;
-/* 68 */            this.next.prev = segment;
-/* 69 */            this.next = segment;
-/* 70 */            return segment;
+        public Segment push(Segment segment) {
+            segment.prev = this;
+            segment.next = this.next;
+            this.next.prev = segment;
+            this.next = segment;
+            return segment;
                 }
 
-/* 81 */        public Segment split(int byteCount) {
-/* 83 */            int bSize = (this.limit - this.pos) - byteCount;
-/* 84 */            if (byteCount <= 0 || bSize <= 0) {
+        public Segment split(int byteCount) {
+            int bSize = (this.limit - this.pos) - byteCount;
+            if (byteCount <= 0 || bSize <= 0) {
                         throw new IllegalArgumentException();
                     }
-/* 87 */            if (byteCount < bSize) {
-/* 89 */                Segment before = SegmentPool.INSTANCE.take();
-/* 82 */                System.arraycopy(this.data, this.pos, before.data, before.pos, byteCount);
-/* 82 */                this.pos += byteCount;
-/* 82 */                before.limit += byteCount;
-/* 93 */                this.prev.push(before);
-/* 102 */               return before;
+            if (byteCount < bSize) {
+                Segment before = SegmentPool.INSTANCE.take();
+                System.arraycopy(this.data, this.pos, before.data, before.pos, byteCount);
+                this.pos += byteCount;
+                before.limit += byteCount;
+                this.prev.push(before);
+               return before;
                     }
-/* 97 */            Segment after = SegmentPool.INSTANCE.take();
-/* 82 */            System.arraycopy(this.data, this.pos + byteCount, after.data, after.pos, bSize);
-/* 99 */            this.limit -= bSize;
-/* 100 */           after.limit += bSize;
-/* 101 */           push(after);
+            Segment after = SegmentPool.INSTANCE.take();
+            System.arraycopy(this.data, this.pos + byteCount, after.data, after.pos, bSize);
+            this.limit -= bSize;
+           after.limit += bSize;
+           push(after);
                     return this;
                 }
 
-/* 110 */       public void compact() {
-/* 111 */           if (this.prev == this) {
+       public void compact() {
+           if (this.prev == this) {
                         throw new IllegalStateException();
                     }
-/* 112 */           if ((this.prev.limit - this.prev.pos) + (this.limit - this.pos) <= 2048) {
-/* 113 */               writeTo(this.prev, this.limit - this.pos);
-/* 114 */               pop();
-/* 115 */               SegmentPool.INSTANCE.recycle(this);
+           if ((this.prev.limit - this.prev.pos) + (this.limit - this.pos) <= 2048) {
+               writeTo(this.prev, this.limit - this.pos);
+               pop();
+               SegmentPool.INSTANCE.recycle(this);
                     }
                 }
 
-/* 121 */       public void writeTo(Segment sink, int byteCount) {
-/* 122 */           if ((sink.limit - sink.pos) + byteCount > 2048) {
+       public void writeTo(Segment sink, int byteCount) {
+           if ((sink.limit - sink.pos) + byteCount > 2048) {
                         throw new IllegalArgumentException();
                     }
-/* 124 */           if (sink.limit + byteCount > 2048) {
-/* 126 */               System.arraycopy(sink.data, sink.pos, sink.data, 0, sink.limit - sink.pos);
-/* 127 */               sink.limit -= sink.pos;
-/* 128 */               sink.pos = 0;
+           if (sink.limit + byteCount > 2048) {
+               System.arraycopy(sink.data, sink.pos, sink.data, 0, sink.limit - sink.pos);
+               sink.limit -= sink.pos;
+               sink.pos = 0;
                     }
-/* 131 */           System.arraycopy(this.data, this.pos, sink.data, sink.limit, byteCount);
-/* 132 */           sink.limit += byteCount;
-/* 133 */           this.pos += byteCount;
+           System.arraycopy(this.data, this.pos, sink.data, sink.limit, byteCount);
+           sink.limit += byteCount;
+           this.pos += byteCount;
                 }
             }

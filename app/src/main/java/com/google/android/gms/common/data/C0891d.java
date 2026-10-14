@@ -13,71 +13,71 @@
             import java.util.HashMap;
             import java.util.Map;
             
-            /* JADX INFO: renamed from: com.google.android.gms.common.data.d */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public final class C0891d implements SafeParcelable {
                 public static final C0892e CREATOR = new C0892e();
 
-                /* JADX INFO: renamed from: ju */
+                
                 private static final a f956ju = new AnonymousClass1(new String[0], null);
 
-                /* JADX INFO: renamed from: iC */
+                
                 private final int f957iC;
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f958iM;
 
-                /* JADX INFO: renamed from: jm */
+                
                 private final String[] f959jm;
 
-                /* JADX INFO: renamed from: jn */
+                
                 Bundle f960jn;
 
-                /* JADX INFO: renamed from: jo */
+                
                 private final CursorWindow[] f961jo;
 
-                /* JADX INFO: renamed from: jp */
+                
                 private final Bundle f962jp;
 
-                /* JADX INFO: renamed from: jq */
+                
                 int[] f963jq;
 
-                /* JADX INFO: renamed from: jr */
+                
                 int f964jr;
 
-                /* JADX INFO: renamed from: js */
+                
                 private Object f965js;
 
-                /* JADX INFO: renamed from: jt */
+                
                 private boolean f966jt;
                 boolean mClosed;
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.data.d$1, reason: invalid class name */
+                
                 static class AnonymousClass1 extends a {
                     AnonymousClass1(String[] strArr, String str) {
                         super(strArr, str, null);
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.common.data.d$a */
+                
                 public static class a {
 
-                    /* JADX INFO: renamed from: jm */
+                    
                     private final String[] f967jm;
 
-                    /* JADX INFO: renamed from: jv */
+                    
                     private final ArrayList<HashMap<String, Object>> f968jv;
 
-                    /* JADX INFO: renamed from: jw */
+                    
                     private final String f969jw;
 
-                    /* JADX INFO: renamed from: jx */
+                    
                     private final HashMap<Object, Integer> f970jx;
 
-                    /* JADX INFO: renamed from: jy */
+                    
                     private boolean f971jy;
 
-                    /* JADX INFO: renamed from: jz */
+                    
                     private String f972jz;
 
                     private a(String[] strArr, String str) {
@@ -89,17 +89,17 @@
                         this.f972jz = null;
                     }
 
-                    /* synthetic */ a(String[] strArr, String str, AnonymousClass1 anonymousClass1) {
+                     a(String[] strArr, String str, AnonymousClass1 anonymousClass1) {
                         this(strArr, str);
                     }
 
-                    /* JADX INFO: renamed from: b */
-                    static /* synthetic */ String[] m1051b(a aVar) {
+                    
+                    static  String[] m1051b(a aVar) {
                         return aVar.f967jm;
                     }
 
-                    /* JADX INFO: renamed from: c */
-                    static /* synthetic */ ArrayList m1052c(a aVar) {
+                    
+                    static  ArrayList m1052c(a aVar) {
                         return aVar.f968jv;
                     }
                 }
@@ -129,12 +129,12 @@
                     m1039aJ();
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public static C0891d m1033a(int i, Bundle bundle) {
                     return new C0891d(f956ju, i, bundle);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static CursorWindow[] m1034a(a aVar) {
                     int i;
                     int i2;
@@ -217,7 +217,7 @@
                     return (CursorWindow[]) arrayList.toArray(new CursorWindow[arrayList.size()]);
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private void m1035b(String str, int i) {
                     if (this.f960jn == null || !this.f960jn.containsKey(str)) {
                         throw new IllegalArgumentException("No such column: " + str);
@@ -230,24 +230,24 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: r */
+                
                 public static C0891d m1036r(int i) {
                     return m1033a(i, null);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public long m1037a(String str, int i, int i2) {
                     m1035b(str, i);
                     return this.f961jo[i2].getLong(i - this.f963jq[i2], this.f960jn.getInt(str));
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public void m1038a(String str, int i, int i2, CharArrayBuffer charArrayBuffer) {
                     m1035b(str, i);
                     this.f961jo[i2].copyStringToBuffer(i - this.f963jq[i2], this.f960jn.getInt(str), charArrayBuffer);
                 }
 
-                /* JADX INFO: renamed from: aJ */
+                
                 public void m1039aJ() {
                     this.f960jn = new Bundle();
                     for (int i = 0; i < this.f959jm.length; i++) {
@@ -262,33 +262,33 @@
                     this.f964jr = numRows;
                 }
 
-                /* JADX INFO: renamed from: aK */
+                
                 String[] m1040aK() {
                     return this.f959jm;
                 }
 
-                /* JADX INFO: renamed from: aL */
+                
                 CursorWindow[] m1041aL() {
                     return this.f961jo;
                 }
 
-                /* JADX INFO: renamed from: aM */
+                
                 public Bundle m1042aM() {
                     return this.f962jp;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 public int m1043b(String str, int i, int i2) {
                     m1035b(str, i);
                     return this.f961jo[i2].getInt(i - this.f963jq[i2], this.f960jn.getInt(str));
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 public void m1044b(Object obj) {
                     this.f965js = obj;
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 public String m1045c(String str, int i, int i2) {
                     m1035b(str, i);
                     return this.f961jo[i2].getString(i - this.f963jq[i2], this.f960jn.getInt(str));
@@ -309,24 +309,24 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: d */
+                
                 public boolean m1046d(String str, int i, int i2) {
                     m1035b(str, i);
                     return Long.valueOf(this.f961jo[i2].getLong(i - this.f963jq[i2], this.f960jn.getInt(str))).longValue() == 1;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
 
-                /* JADX INFO: renamed from: e */
+                
                 public byte[] m1047e(String str, int i, int i2) {
                     m1035b(str, i);
                     return this.f961jo[i2].getBlob(i - this.f963jq[i2], this.f960jn.getInt(str));
                 }
 
-                /* JADX INFO: renamed from: f */
+                
                 public Uri m1048f(String str, int i, int i2) {
                     String strM1045c = m1045c(str, i, i2);
                     if (strM1045c == null) {
@@ -348,7 +348,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: g */
+                
                 public boolean m1049g(String str, int i, int i2) {
                     m1035b(str, i);
                     return this.f961jo[i2].isNull(i - this.f963jq[i2], this.f960jn.getInt(str));
@@ -378,7 +378,7 @@
                     return z;
                 }
 
-                /* JADX INFO: renamed from: q */
+                
                 public int m1050q(int i) {
                     int i2 = 0;
                     C1028dm.m1606k(i >= 0 && i < this.f964jr);
@@ -392,7 +392,7 @@
                     return i2 == this.f963jq.length ? i2 - 1 : i2;
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel dest, int flags) {
                     C0892e.m1053a(this, dest, flags);
                 }

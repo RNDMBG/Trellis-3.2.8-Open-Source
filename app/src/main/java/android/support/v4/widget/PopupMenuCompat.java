@@ -3,47 +3,47 @@
             import android.os.Build;
             import android.view.View;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 33 */    public class PopupMenuCompat {
+            
+    public class PopupMenuCompat {
                 static final PopupMenuImpl IMPL;
 
                 interface PopupMenuImpl {
                     View.OnTouchListener getDragToOpenListener(Object obj);
                 }
 
-/* 34 */        static class BasePopupMenuImpl implements PopupMenuImpl {
-/* 35 */            BasePopupMenuImpl() {
+        static class BasePopupMenuImpl implements PopupMenuImpl {
+            BasePopupMenuImpl() {
                     }
 
-                    @Override // android.support.v4.widget.PopupMenuCompat.PopupMenuImpl
-/* 38 */            public View.OnTouchListener getDragToOpenListener(Object popupMenu) {
-/* 39 */                return null;
+                    @Override 
+            public View.OnTouchListener getDragToOpenListener(Object popupMenu) {
+                return null;
                     }
                 }
 
-/* 44 */        static class KitKatPopupMenuImpl extends BasePopupMenuImpl {
-/* 45 */            KitKatPopupMenuImpl() {
+        static class KitKatPopupMenuImpl extends BasePopupMenuImpl {
+            KitKatPopupMenuImpl() {
                     }
 
-                    @Override // android.support.v4.widget.PopupMenuCompat.BasePopupMenuImpl, android.support.v4.widget.PopupMenuCompat.PopupMenuImpl
-/* 48 */            public View.OnTouchListener getDragToOpenListener(Object popupMenu) {
-/* 49 */                return PopupMenuCompatKitKat.getDragToOpenListener(popupMenu);
+                    @Override 
+            public View.OnTouchListener getDragToOpenListener(Object popupMenu) {
+                return PopupMenuCompatKitKat.getDragToOpenListener(popupMenu);
                     }
                 }
 
                 static {
-/* 58 */            int version = Build.VERSION.SDK_INT;
-/* 59 */            if (version >= 19) {
-/* 60 */                IMPL = new KitKatPopupMenuImpl();
+            int version = Build.VERSION.SDK_INT;
+            if (version >= 19) {
+                IMPL = new KitKatPopupMenuImpl();
                     } else {
-/* 62 */                IMPL = new BasePopupMenuImpl();
+                IMPL = new BasePopupMenuImpl();
                     }
                 }
 
-/* 65 */        private PopupMenuCompat() {
+        private PopupMenuCompat() {
                 }
 
-/* 89 */        public static View.OnTouchListener getDragToOpenListener(Object popupMenu) {
-/* 90 */            return IMPL.getDragToOpenListener(popupMenu);
+        public static View.OnTouchListener getDragToOpenListener(Object popupMenu) {
+            return IMPL.getDragToOpenListener(popupMenu);
                 }
             }

@@ -9,16 +9,16 @@
             import com.google.android.gms.maps.model.LatLngBounds;
             import com.google.android.gms.maps.model.RuntimeRemoteException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class CameraUpdateFactory {
 
-                /* JADX INFO: renamed from: pe */
+                
                 private static ICameraUpdateFactoryDelegate f2193pe;
 
                 private CameraUpdateFactory() {
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 static void m2195a(ICameraUpdateFactoryDelegate iCameraUpdateFactoryDelegate) {
                     if (f2193pe != null) {
                         return;
@@ -26,7 +26,7 @@
                     f2193pe = (ICameraUpdateFactoryDelegate) C1028dm.m1605e(iCameraUpdateFactoryDelegate);
                 }
 
-                /* JADX INFO: renamed from: ct */
+                
                 private static ICameraUpdateFactoryDelegate m2196ct() {
                     return (ICameraUpdateFactoryDelegate) C1028dm.m1601a(f2193pe, "CameraUpdateFactory is not initialized");
                 }

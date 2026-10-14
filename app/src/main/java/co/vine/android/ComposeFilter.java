@@ -11,58 +11,58 @@
             import co.vine.android.provider.VineSuggestionsProvider;
             import co.vine.android.widget.PopupEditText;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 23 */    public class ComposeFilter extends Filter {
+            
+    public class ComposeFilter extends Filter {
                 private Activity mActivity;
                 private PopupEditText.PopupEditTextListener mCallback;
                 private long mUserId;
 
-                /* JADX WARN: Multi-variable type inference failed */
-/* 24 */        public ComposeFilter(PopupEditText.PopupEditTextListener popupEditTextListener, long userId) {
-/* 26 */            this.mActivity = ((Fragment) popupEditTextListener).getActivity();
-/* 27 */            this.mCallback = popupEditTextListener;
-/* 28 */            this.mUserId = userId;
+                
+        public ComposeFilter(PopupEditText.PopupEditTextListener popupEditTextListener, long userId) {
+            this.mActivity = ((Fragment) popupEditTextListener).getActivity();
+            this.mCallback = popupEditTextListener;
+            this.mUserId = userId;
                 }
 
-                @Override // android.widget.Filter
-/* 32 */        protected Filter.FilterResults performFiltering(CharSequence constraint) {
+                @Override 
+        protected Filter.FilterResults performFiltering(CharSequence constraint) {
                     String selection;
                     Uri uri;
                     Cursor cursor;
-/* 33 */            Filter.FilterResults filterResults = new Filter.FilterResults();
-/* 34 */            if (!TextUtils.isEmpty(constraint)) {
-/* 35 */                CharSequence plainConstraint = constraint.subSequence(1, constraint.length());
-/* 38 */                if (plainConstraint.length() > 0) {
-/* 39 */                    selection = plainConstraint.toString();
+            Filter.FilterResults filterResults = new Filter.FilterResults();
+            if (!TextUtils.isEmpty(constraint)) {
+                CharSequence plainConstraint = constraint.subSequence(1, constraint.length());
+                if (plainConstraint.length() > 0) {
+                    selection = plainConstraint.toString();
                         } else {
-/* 41 */                    selection = null;
+                    selection = null;
                         }
-/* 44 */                if (constraint.toString().startsWith("@")) {
-/* 45 */                    uri = ContentUris.withAppendedId(VineSuggestionsProvider.USERS_URI, this.mUserId);
+                if (constraint.toString().startsWith("@")) {
+                    uri = ContentUris.withAppendedId(VineSuggestionsProvider.USERS_URI, this.mUserId);
                         } else if (constraint.toString().startsWith("#")) {
-/* 47 */                    uri = VineSuggestionsProvider.TAGS_URI;
+                    uri = VineSuggestionsProvider.TAGS_URI;
                         } else {
-/* 49 */                    uri = null;
+                    uri = null;
                         }
-/* 51 */                if (uri != null && (cursor = this.mActivity.getContentResolver().query(uri, null, selection, null, null)) != null) {
-/* 59 */                    filterResults.count = cursor.getCount();
-/* 60 */                    filterResults.values = cursor;
+                if (uri != null && (cursor = this.mActivity.getContentResolver().query(uri, null, selection, null, null)) != null) {
+                    filterResults.count = cursor.getCount();
+                    filterResults.values = cursor;
                         }
                     }
-/* 64 */            return filterResults;
+            return filterResults;
                 }
 
-                @Override // android.widget.Filter
-/* 68 */        protected void publishResults(CharSequence constraint, Filter.FilterResults results) {
-/* 69 */            CursorAdapter typeaheadAdapter = this.mCallback.getPopupAdapter();
-/* 70 */            Cursor prevCursor = typeaheadAdapter.getCursor();
-/* 71 */            if (prevCursor != null) {
-/* 72 */                this.mActivity.stopManagingCursor(prevCursor);
+                @Override 
+        protected void publishResults(CharSequence constraint, Filter.FilterResults results) {
+            CursorAdapter typeaheadAdapter = this.mCallback.getPopupAdapter();
+            Cursor prevCursor = typeaheadAdapter.getCursor();
+            if (prevCursor != null) {
+                this.mActivity.stopManagingCursor(prevCursor);
                     }
-/* 74 */            Cursor cursor = (Cursor) results.values;
-/* 75 */            if (cursor != null) {
-/* 76 */                this.mActivity.startManagingCursor(cursor);
+            Cursor cursor = (Cursor) results.values;
+            if (cursor != null) {
+                this.mActivity.startManagingCursor(cursor);
                     }
-/* 78 */            typeaheadAdapter.changeCursor(cursor);
+            typeaheadAdapter.changeCursor(cursor);
                 }
             }

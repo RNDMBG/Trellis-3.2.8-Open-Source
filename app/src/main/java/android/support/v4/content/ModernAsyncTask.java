@@ -18,8 +18,8 @@
             import java.util.concurrent.atomic.AtomicBoolean;
             import java.util.concurrent.atomic.AtomicInteger;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 45 */    abstract class ModernAsyncTask<Params, Progress, Result> {
+            
+    abstract class ModernAsyncTask<Params, Progress, Result> {
                 private static final int CORE_POOL_SIZE = 5;
                 private static final int KEEP_ALIVE = 1;
                 private static final String LOG_TAG = "AsyncTask";
@@ -44,218 +44,218 @@
 
                 protected abstract Result doInBackground(Params... paramsArr);
 
-/* 46 */        static /* synthetic */ AtomicBoolean access$200(ModernAsyncTask x0) {
-/* 47 */            return x0.mTaskInvoked;
+        static  AtomicBoolean access$200(ModernAsyncTask x0) {
+            return x0.mTaskInvoked;
                 }
 
-/* 46 */        static /* synthetic */ Object access$300(ModernAsyncTask x0, Object x1) {
-/* 47 */            return x0.postResult(x1);
+        static  Object access$300(ModernAsyncTask x0, Object x1) {
+            return x0.postResult(x1);
                 }
 
-/* 46 */        static /* synthetic */ void access$400(ModernAsyncTask x0, Object x1) {
-/* 47 */            x0.postResultIfNotInvoked(x1);
+        static  void access$400(ModernAsyncTask x0, Object x1) {
+            x0.postResultIfNotInvoked(x1);
                 }
 
-/* 46 */        static /* synthetic */ void access$500(ModernAsyncTask x0, Object x1) {
-/* 47 */            x0.finish(x1);
+        static  void access$500(ModernAsyncTask x0, Object x1) {
+            x0.finish(x1);
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.content.ModernAsyncTask$1 */
-/* 52 */        static class ThreadFactoryC00211 implements ThreadFactory {
+                
+        static class ThreadFactoryC00211 implements ThreadFactory {
                     private final AtomicInteger mCount = new AtomicInteger(1);
 
-/* 53 */            ThreadFactoryC00211() {
+            ThreadFactoryC00211() {
                     }
 
-                    @Override // java.util.concurrent.ThreadFactory
-/* 57 */            public Thread newThread(Runnable r) {
-/* 58 */                return new Thread(r, "ModernAsyncTask #" + this.mCount.getAndIncrement());
+                    @Override 
+            public Thread newThread(Runnable r) {
+                return new Thread(r, "ModernAsyncTask #" + this.mCount.getAndIncrement());
                     }
                 }
 
-/* 105 */       public static void init() {
-/* 106 */           sHandler.getLooper();
+       public static void init() {
+           sHandler.getLooper();
                 }
 
-/* 110 */       public static void setDefaultExecutor(Executor exec) {
-/* 111 */           sDefaultExecutor = exec;
+       public static void setDefaultExecutor(Executor exec) {
+           sDefaultExecutor = exec;
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.content.ModernAsyncTask$2 */
-/* 116 */       class C00222 extends WorkerRunnable<Params, Result> {
-/* 117 */           C00222() {
+                
+       class C00222 extends WorkerRunnable<Params, Result> {
+           C00222() {
                         super(null);
                     }
 
-                    @Override // java.util.concurrent.Callable
-/* 119 */           public Result call() throws Exception {
-/* 120 */               ModernAsyncTask.access$200(ModernAsyncTask.this).set(true);
-/* 122 */               Process.setThreadPriority(10);
-/* 123 */               return (Result) ModernAsyncTask.access$300(ModernAsyncTask.this, ModernAsyncTask.this.doInBackground(this.mParams));
+                    @Override 
+           public Result call() throws Exception {
+               ModernAsyncTask.access$200(ModernAsyncTask.this).set(true);
+               Process.setThreadPriority(10);
+               return (Result) ModernAsyncTask.access$300(ModernAsyncTask.this, ModernAsyncTask.this.doInBackground(this.mParams));
                     }
                 }
 
-                /* JADX INFO: renamed from: android.support.v4.content.ModernAsyncTask$3 */
-/* 125 */       class C00233 extends FutureTask<Result> {
-/* 126 */           C00233(Callable callable) {
+                
+       class C00233 extends FutureTask<Result> {
+           C00233(Callable callable) {
                         super(callable);
                     }
 
-                    @Override // java.util.concurrent.FutureTask
-/* 130 */           protected void done() {
+                    @Override 
+           protected void done() {
                         try {
-/* 131 */                   Result result = get();
-/* 133 */                   ModernAsyncTask.access$400(ModernAsyncTask.this, result);
+                   Result result = get();
+                   ModernAsyncTask.access$400(ModernAsyncTask.this, result);
                         } catch (InterruptedException e) {
-/* 135 */                   Log.w(ModernAsyncTask.LOG_TAG, e);
+                   Log.w(ModernAsyncTask.LOG_TAG, e);
                         } catch (CancellationException e2) {
-/* 140 */                   ModernAsyncTask.access$400(ModernAsyncTask.this, null);
+                   ModernAsyncTask.access$400(ModernAsyncTask.this, null);
                         } catch (ExecutionException e3) {
-/* 137 */                   throw new RuntimeException("An error occured while executing doInBackground()", e3.getCause());
+                   throw new RuntimeException("An error occured while executing doInBackground()", e3.getCause());
                         } catch (Throwable t) {
-/* 142 */                   throw new RuntimeException("An error occured while executing doInBackground()", t);
+                   throw new RuntimeException("An error occured while executing doInBackground()", t);
                         }
                     }
                 }
 
-/* 149 */       private void postResultIfNotInvoked(Result result) {
-/* 150 */           boolean wasTaskInvoked = this.mTaskInvoked.get();
-/* 151 */           if (!wasTaskInvoked) {
-/* 152 */               postResult(result);
+       private void postResultIfNotInvoked(Result result) {
+           boolean wasTaskInvoked = this.mTaskInvoked.get();
+           if (!wasTaskInvoked) {
+               postResult(result);
                     }
                 }
 
-/* 156 */       private Result postResult(Result result) {
-/* 157 */           Message message = sHandler.obtainMessage(1, new AsyncTaskResult(this, result));
-/* 159 */           message.sendToTarget();
-/* 160 */           return result;
+       private Result postResult(Result result) {
+           Message message = sHandler.obtainMessage(1, new AsyncTaskResult(this, result));
+           message.sendToTarget();
+           return result;
                 }
 
-/* 168 */       public final Status getStatus() {
-/* 169 */           return this.mStatus;
+       public final Status getStatus() {
+           return this.mStatus;
                 }
 
-/* 196 */       protected void onPreExecute() {
+       protected void onPreExecute() {
                 }
 
-/* 212 */       protected void onPostExecute(Result result) {
+       protected void onPostExecute(Result result) {
                 }
 
-/* 225 */       protected void onProgressUpdate(Progress... values) {
+       protected void onProgressUpdate(Progress... values) {
                 }
 
-/* 243 */       protected void onCancelled(Result result) {
-/* 244 */           onCancelled();
+       protected void onCancelled(Result result) {
+           onCancelled();
                 }
 
-/* 259 */       protected void onCancelled() {
+       protected void onCancelled() {
                 }
 
-/* 272 */       public final boolean isCancelled() {
-/* 273 */           return this.mFuture.isCancelled();
+       public final boolean isCancelled() {
+           return this.mFuture.isCancelled();
                 }
 
-/* 305 */       public final boolean cancel(boolean mayInterruptIfRunning) {
-/* 306 */           return this.mFuture.cancel(mayInterruptIfRunning);
+       public final boolean cancel(boolean mayInterruptIfRunning) {
+           return this.mFuture.cancel(mayInterruptIfRunning);
                 }
 
-/* 320 */       public final Result get() throws ExecutionException, InterruptedException {
-/* 321 */           return this.mFuture.get();
+       public final Result get() throws ExecutionException, InterruptedException {
+           return this.mFuture.get();
                 }
 
-/* 340 */       public final Result get(long timeout, TimeUnit unit) throws ExecutionException, InterruptedException, TimeoutException {
-/* 341 */           return this.mFuture.get(timeout, unit);
+       public final Result get(long timeout, TimeUnit unit) throws ExecutionException, InterruptedException, TimeoutException {
+           return this.mFuture.get(timeout, unit);
                 }
 
-/* 370 */       public final ModernAsyncTask<Params, Progress, Result> execute(Params... params) {
-/* 371 */           return executeOnExecutor(sDefaultExecutor, params);
+       public final ModernAsyncTask<Params, Progress, Result> execute(Params... params) {
+           return executeOnExecutor(sDefaultExecutor, params);
                 }
 
-/* 405 */       public final ModernAsyncTask<Params, Progress, Result> executeOnExecutor(Executor exec, Params... params) {
-/* 406 */           if (this.mStatus != Status.PENDING) {
+       public final ModernAsyncTask<Params, Progress, Result> executeOnExecutor(Executor exec, Params... params) {
+           if (this.mStatus != Status.PENDING) {
                         switch (this.mStatus) {
                             case RUNNING:
-/* 409 */                       throw new IllegalStateException("Cannot execute task: the task is already running.");
+                       throw new IllegalStateException("Cannot execute task: the task is already running.");
                             case FINISHED:
-/* 412 */                       throw new IllegalStateException("Cannot execute task: the task has already been executed (a task can be executed only once)");
+                       throw new IllegalStateException("Cannot execute task: the task has already been executed (a task can be executed only once)");
                         }
                     }
-/* 418 */           this.mStatus = Status.RUNNING;
-/* 420 */           onPreExecute();
-/* 422 */           this.mWorker.mParams = params;
-/* 423 */           exec.execute(this.mFuture);
-/* 425 */           return this;
+           this.mStatus = Status.RUNNING;
+           onPreExecute();
+           this.mWorker.mParams = params;
+           exec.execute(this.mFuture);
+           return this;
                 }
 
-/* 432 */       public static void execute(Runnable runnable) {
-/* 433 */           sDefaultExecutor.execute(runnable);
+       public static void execute(Runnable runnable) {
+           sDefaultExecutor.execute(runnable);
                 }
 
-/* 450 */       protected final void publishProgress(Progress... values) {
-/* 451 */           if (!isCancelled()) {
-/* 452 */               sHandler.obtainMessage(2, new AsyncTaskResult(this, values)).sendToTarget();
+       protected final void publishProgress(Progress... values) {
+           if (!isCancelled()) {
+               sHandler.obtainMessage(2, new AsyncTaskResult(this, values)).sendToTarget();
                     }
                 }
 
-/* 457 */       private void finish(Result result) {
-/* 458 */           if (isCancelled()) {
-/* 459 */               onCancelled(result);
+       private void finish(Result result) {
+           if (isCancelled()) {
+               onCancelled(result);
                     } else {
-/* 461 */               onPostExecute(result);
+               onPostExecute(result);
                     }
-/* 463 */           this.mStatus = Status.FINISHED;
+           this.mStatus = Status.FINISHED;
                 }
 
-/* 464 */       private static class InternalHandler extends Handler {
-/* 465 */           private InternalHandler() {
+       private static class InternalHandler extends Handler {
+           private InternalHandler() {
                     }
 
-/* 465 */           /* synthetic */ InternalHandler(ThreadFactoryC00211 x0) {
-/* 466 */               this();
+            InternalHandler(ThreadFactoryC00211 x0) {
+               this();
                     }
 
-                    /* JADX WARN: Type inference fix 'apply assigned field type' failed
-                    java.lang.UnsupportedOperationException: ArgType.getObject(), call class: class jadx.core.dex.instructions.args.ArgType$UnknownArg
-                    	at jadx.core.dex.instructions.args.ArgType.getObject(ArgType.java:596)
-                    	at jadx.core.dex.attributes.nodes.ClassTypeVarsAttr.getTypeVarsMapFor(ClassTypeVarsAttr.java:35)
-                    	at jadx.core.dex.nodes.utils.TypeUtils.replaceClassGenerics(TypeUtils.java:177)
-                    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.insertExplicitUseCast(FixTypesVisitor.java:397)
-                    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.tryFieldTypeWithNewCasts(FixTypesVisitor.java:359)
-                    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.applyFieldType(FixTypesVisitor.java:309)
-                    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:94)
-                     */
-                    @Override // android.os.Handler
-/* 469 */           public void handleMessage(Message msg) {
-/* 470 */               AsyncTaskResult result = (AsyncTaskResult) msg.obj;
+                    
+
+
+
+
+
+
+
+
+
+                    @Override 
+           public void handleMessage(Message msg) {
+               AsyncTaskResult result = (AsyncTaskResult) msg.obj;
                         switch (msg.what) {
                             case 1:
-/* 474 */                       ModernAsyncTask.access$500(result.mTask, result.mData[0]);
+                       ModernAsyncTask.access$500(result.mTask, result.mData[0]);
                                 break;
                             case 2:
-/* 477 */                       result.mTask.onProgressUpdate(result.mData);
+                       result.mTask.onProgressUpdate(result.mData);
                                 break;
                         }
                     }
                 }
 
-/* 481 */       private static abstract class WorkerRunnable<Params, Result> implements Callable<Result> {
+       private static abstract class WorkerRunnable<Params, Result> implements Callable<Result> {
                     Params[] mParams;
 
-/* 482 */           private WorkerRunnable() {
+           private WorkerRunnable() {
                     }
 
-/* 482 */           /* synthetic */ WorkerRunnable(ThreadFactoryC00211 x0) {
-/* 483 */               this();
+            WorkerRunnable(ThreadFactoryC00211 x0) {
+               this();
                     }
                 }
 
-/* 490 */       private static class AsyncTaskResult<Data> {
+       private static class AsyncTaskResult<Data> {
                     final Data[] mData;
                     final ModernAsyncTask mTask;
 
-/* 491 */           AsyncTaskResult(ModernAsyncTask task, Data... data) {
-/* 493 */               this.mTask = task;
-/* 494 */               this.mData = data;
+           AsyncTaskResult(ModernAsyncTask task, Data... data) {
+               this.mTask = task;
+               this.mData = data;
                     }
                 }
             }

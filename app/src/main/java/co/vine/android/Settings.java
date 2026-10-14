@@ -3,8 +3,8 @@
             import android.content.Context;
             import co.vine.android.util.CommonUtil;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 151 */   public class Settings {
+            
+   public class Settings {
                 public static final String ABOUT = "about";
                 public static final String ATTRIBUTION = "attribution";
                 public static final String CLEAR_CACHE = "cache";
@@ -12,7 +12,7 @@
                 public static final String LOGOUT = "logout";
                 public static final String PASSWORD = "password";
 
-                /* JADX INFO: renamed from: PP */
+                
                 public static final String f91PP = "pp";
                 public static final String PREF_ACCEPT_OON = "accept_out_of_network_messages";
                 public static final String PREF_AUTHORED_POST_COUNT = "profile_authored_post_count";
@@ -69,7 +69,7 @@
                 public static final int[] PROFILE_BACKGROUND_COLORS = {3355443, ReportingFragment.BLOCK_COLOR, 16742733, 16756544, 6864736, 3394751, 7188722, 5276389, 7893196, 15890860};
                 public static final int DEFAULT_PROFILE_COLOR = PROFILE_BACKGROUND_COLORS[0];
 
-/* 152 */       public static boolean isNotificationEnabled(Context context) {
-/* 153 */           return CommonUtil.getDefaultSharedPrefs(context).getBoolean(PREF_NOTIFICATIONS_ENABLED, true);
+       public static boolean isNotificationEnabled(Context context) {
+           return CommonUtil.getDefaultSharedPrefs(context).getBoolean(PREF_NOTIFICATIONS_ENABLED, true);
                 }
             }

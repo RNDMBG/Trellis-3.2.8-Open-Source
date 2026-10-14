@@ -6,30 +6,30 @@
             import com.google.android.gms.internal.C1028dm;
             import com.google.android.gms.maps.internal.C1174r;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class LatLngBounds implements SafeParcelable {
                 public static final LatLngBoundsCreator CREATOR = new LatLngBoundsCreator();
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2312iM;
                 public final LatLng northeast;
                 public final LatLng southwest;
 
                 public static final class Builder {
 
-                    /* JADX INFO: renamed from: qv */
+                    
                     private double f2313qv = Double.POSITIVE_INFINITY;
 
-                    /* JADX INFO: renamed from: qw */
+                    
                     private double f2314qw = Double.NEGATIVE_INFINITY;
 
-                    /* JADX INFO: renamed from: qx */
+                    
                     private double f2315qx = Double.NaN;
 
-                    /* JADX INFO: renamed from: qy */
+                    
                     private double f2316qy = Double.NaN;
 
-                    /* JADX INFO: renamed from: b */
+                    
                     private boolean m2280b(double d) {
                         if (this.f2315qx <= this.f2316qy) {
                             return this.f2315qx <= d && d <= this.f2316qy;
@@ -73,17 +73,17 @@
                     this(1, southwest, northeast);
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private boolean m2274a(double d) {
                     return this.southwest.latitude <= d && d <= this.northeast.latitude;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private static double m2275b(double d, double d2) {
                     return ((d - d2) + 360.0d) % 360.0d;
                 }
 
-                /* JADX INFO: renamed from: b */
+                
                 private boolean m2276b(double d) {
                     if (this.southwest.longitude <= this.northeast.longitude) {
                         return this.southwest.longitude <= d && d <= this.northeast.longitude;
@@ -95,18 +95,18 @@
                     return new Builder();
                 }
 
-                /* JADX INFO: renamed from: c */
+                
                 private static double m2277c(double d, double d2) {
                     return ((d2 - d) + 360.0d) % 360.0d;
                 }
 
-                /* JADX INFO: renamed from: d */
-                static /* synthetic */ double m2278d(double d, double d2) {
+                
+                static  double m2278d(double d, double d2) {
                     return m2275b(d, d2);
                 }
 
-                /* JADX INFO: renamed from: e */
-                static /* synthetic */ double m2279e(double d, double d2) {
+                
+                static  double m2279e(double d, double d2) {
                     return m2277c(d, d2);
                 }
 
@@ -114,7 +114,7 @@
                     return m2274a(point.latitude) && m2276b(point.longitude);
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -168,7 +168,7 @@
                     return C1027dl.m1599d(this).m1600a("southwest", this.southwest).m1600a("northeast", this.northeast).toString();
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel out, int flags) {
                     if (C1174r.m2265cK()) {
                         C1180d.m2298a(this, out, flags);

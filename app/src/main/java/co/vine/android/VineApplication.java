@@ -31,98 +31,98 @@ import co.vine.android.provider.VineDatabaseHelper;
             import java.util.ArrayList;
             import java.util.Locale;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 38 */    public class VineApplication extends DefaultApplicationLike implements Thread.UncaughtExceptionHandler {
+            
+    public class VineApplication extends DefaultApplicationLike implements Thread.UncaughtExceptionHandler {
                 private static VineApplication INSTANCE;
                 private final Application mAppContext;
                 private Thread.UncaughtExceptionHandler sDefaultHandler;
 
-/* 39 */        static /* synthetic */ Application access$000(VineApplication x0) {
-/* 40 */            return x0.mAppContext;
+        static  Application access$000(VineApplication x0) {
+            return x0.mAppContext;
                 }
 
-/* 39 */        static /* synthetic */ void access$100(Context x0, Locale x1, boolean x2) {
-/* 40 */            forceCustomLocale(x0, x1, x2);
+        static  void access$100(Context x0, Locale x1, boolean x2) {
+            forceCustomLocale(x0, x1, x2);
                 }
 
-/* 46 */        public VineApplication(Application appContext) {
-/* 48 */            this.mAppContext = appContext;
-/* 49 */            BuildUtil.bootstrap();
-/* 50 */            NetworkOperation.setLoggerFile(BuildUtil.isLogsOn() ? LogReaderTask.NETWORK_LOG : null);
-/* 51 */            AnalyticsManager.onApplicationInit();
-/* 52 */            MergeResourceManager.onApplicationInit();
-/* 53 */            Session.DEFAULT_FACEBOOK_ID = FacebookVineApp.APP_ID;
-/* 54 */            if (BuildUtil.isLogsOn() && SystemUtil.isRunningOnServiceProcess(appContext)) {
-/* 55 */                FileLogger.getLogger(LogReaderTask.NETWORK_LOG).clear();
+        public VineApplication(Application appContext) {
+            this.mAppContext = appContext;
+            BuildUtil.bootstrap();
+            NetworkOperation.setLoggerFile(BuildUtil.isLogsOn() ? LogReaderTask.NETWORK_LOG : null);
+            AnalyticsManager.onApplicationInit();
+            MergeResourceManager.onApplicationInit();
+            Session.DEFAULT_FACEBOOK_ID = FacebookVineApp.APP_ID;
+            if (BuildUtil.isLogsOn() && SystemUtil.isRunningOnServiceProcess(appContext)) {
+                FileLogger.getLogger(LogReaderTask.NETWORK_LOG).clear();
                     }
                 }
 
-                @Override // com.facebook.buck.android.support.exopackage.DefaultApplicationLike, com.facebook.buck.android.support.exopackage.ApplicationLike
-/* 60 */        public void onCreate() {
-/* 61 */            super.onCreate();
-/* 62 */            if (BuildUtil.isI18nOn()) {
-/* 63 */                Resources resources = this.mAppContext.getResources();
-/* 64 */                if (resources != null) {
-/* 67 */                    forceCustomLocale(this.mAppContext);
+                @Override 
+        public void onCreate() {
+            super.onCreate();
+            if (BuildUtil.isI18nOn()) {
+                Resources resources = this.mAppContext.getResources();
+                if (resources != null) {
+                    forceCustomLocale(this.mAppContext);
                         } else {
-/* 132 */                   return;
+                   return;
                         }
                     }
-/* 70 */            CrashUtil.start(this.mAppContext);
-/* 72 */            Thread.UncaughtExceptionHandler defaultHandler = Thread.getDefaultUncaughtExceptionHandler();
-/* 73 */            if (defaultHandler != this) {
-/* 74 */                this.sDefaultHandler = defaultHandler;
-/* 75 */                Thread.setDefaultUncaughtExceptionHandler(this);
+            CrashUtil.start(this.mAppContext);
+            Thread.UncaughtExceptionHandler defaultHandler = Thread.getDefaultUncaughtExceptionHandler();
+            if (defaultHandler != this) {
+                this.sDefaultHandler = defaultHandler;
+                Thread.setDefaultUncaughtExceptionHandler(this);
                     }
                     try {
-/* 79 */                ArrayList<String> commandLine = new ArrayList<>();
-/* 80 */                commandLine.add("logcat");
-/* 81 */                commandLine.add("-c");
-/* 82 */                Runtime.getRuntime().exec((String[]) commandLine.toArray(new String[commandLine.size()]));
+                ArrayList<String> commandLine = new ArrayList<>();
+                commandLine.add("logcat");
+                commandLine.add("-c");
+                Runtime.getRuntime().exec((String[]) commandLine.toArray(new String[commandLine.size()]));
                     } catch (Throwable th) {
                     }
                     try {
-/* 88 */                CrashUtil.set("RAM Budget", SystemUtil.getMemoryBudgetForLargeMemoryClass(this.mAppContext));
+                CrashUtil.set("RAM Budget", SystemUtil.getMemoryBudgetForLargeMemoryClass(this.mAppContext));
                     } catch (Exception e) {
-/* 90 */                CrashUtil.log("Failed to get ram budeget.");
+                CrashUtil.log("Failed to get ram budeget.");
                     }
                     try {
-/* 94 */                boolean useVinePlayer = ClientFlagsHelper.getUseVinePlayer(this.mAppContext);
-/* 95 */                SdkVideoView.setGlobalUseVinePlayer(useVinePlayer);
-/* 96 */                CrashUtil.set("Using Vine Player", String.valueOf(useVinePlayer));
+                boolean useVinePlayer = ClientFlagsHelper.getUseVinePlayer(this.mAppContext);
+                SdkVideoView.setGlobalUseVinePlayer(useVinePlayer);
+                CrashUtil.set("Using Vine Player", String.valueOf(useVinePlayer));
                     } catch (Exception e2) {
-/* 98 */                CrashUtil.log("Failed to set and get VinePlayer status.");
+                CrashUtil.log("Failed to set and get VinePlayer status.");
                     }
-/* 101 */           if (!BuildUtil.isExplore()) {
-/* 102 */               SLog.m446d("Start changing value.");
+           if (!BuildUtil.isExplore()) {
+               SLog.m446d("Start changing value.");
                         try {
-/* 104 */                   Field field = CursorWindow.class.getDeclaredField("sCursorWindowSize");
-/* 105 */                   field.setAccessible(true);
-/* 106 */                   Object original = field.get(null);
-/* 107 */                   SLog.m447d("Original value: {}.", original);
-/* 108 */                   int target = 10000000;
-/* 109 */                   int ratio = SystemUtil.getMemoryBudgetForLargeMemoryClass(this.mAppContext);
-/* 110 */                   if (ratio == 1) {
-/* 111 */                       target = (int) (((double) 10000000) * 0.8d);
+                   Field field = CursorWindow.class.getDeclaredField("sCursorWindowSize");
+                   field.setAccessible(true);
+                   Object original = field.get(null);
+                   SLog.m447d("Original value: {}.", original);
+                   int target = 10000000;
+                   int ratio = SystemUtil.getMemoryBudgetForLargeMemoryClass(this.mAppContext);
+                   if (ratio == 1) {
+                       target = (int) (((double) 10000000) * 0.8d);
                             }
-/* 113 */                   SLog.m447d("Changing using weighted value: {}", Integer.valueOf(target));
-/* 114 */                   if (((Integer) original).intValue() < target) {
-/* 115 */                       field.set(null, Integer.valueOf(target));
+                   SLog.m447d("Changing using weighted value: {}", Integer.valueOf(target));
+                   if (((Integer) original).intValue() < target) {
+                       field.set(null, Integer.valueOf(target));
                             }
-/* 117 */                   SLog.m446d("Sucessfully updated sCursorWindowSize.");
+                   SLog.m446d("Sucessfully updated sCursorWindowSize.");
                         } catch (Exception e3) {
-/* 119 */                   CrashUtil.logException(e3, "You are too evil.", new Object[0]);
+                   CrashUtil.logException(e3, "You are too evil.", new Object[0]);
                         }
                         try {
-/* 122 */                   Field field2 = CursorWindow.class.getDeclaredField("sCursorWindowSize");
-/* 123 */                   field2.setAccessible(true);
-/* 124 */                   SLog.m447d("Verify value: {}.", field2.get(null));
+                   Field field2 = CursorWindow.class.getDeclaredField("sCursorWindowSize");
+                   field2.setAccessible(true);
+                   SLog.m447d("Verify value: {}.", field2.get(null));
                         } catch (Exception e4) {
-/* 126 */                   CrashUtil.logException(e4, "You are too evil.", new Object[0]);
+                   CrashUtil.logException(e4, "You are too evil.", new Object[0]);
                         }
-/* 128 */               SLog.m446d("End changing value.");
+               SLog.m446d("End changing value.");
                     }
-/* 131 */           INSTANCE = this;
+           INSTANCE = this;
                     schedulePeriodicCacheRefresh();
                 }
 
@@ -151,121 +151,121 @@ import co.vine.android.provider.VineDatabaseHelper;
                 }
 
                 @Nullable
-/* 140 */       public static VineApplication getInstance() {
-/* 141 */           return INSTANCE;
+       public static VineApplication getInstance() {
+           return INSTANCE;
                 }
 
-                @Override // com.facebook.buck.android.support.exopackage.DefaultApplicationLike, com.facebook.buck.android.support.exopackage.ApplicationLike
-/* 145 */       public void onConfigurationChanged(Configuration newConfig) {
-/* 146 */           super.onConfigurationChanged(newConfig);
+                @Override 
+       public void onConfigurationChanged(Configuration newConfig) {
+           super.onConfigurationChanged(newConfig);
                     try {
-/* 148 */               if (BuildUtil.isI18nOn()) {
-/* 149 */                   Locale locale = getCustomLocale(this.mAppContext);
-/* 150 */                   if (newConfig.locale != null) {
-/* 151 */                       CrashUtil.set("locale", newConfig.locale.getDisplayName());
+               if (BuildUtil.isI18nOn()) {
+                   Locale locale = getCustomLocale(this.mAppContext);
+                   if (newConfig.locale != null) {
+                       CrashUtil.set("locale", newConfig.locale.getDisplayName());
                             }
-/* 153 */                   if (locale != null && !locale.equals(newConfig.locale)) {
-/* 154 */                       new Handler().postDelayed(new RunnableC03131(locale), 500L);
+                   if (locale != null && !locale.equals(newConfig.locale)) {
+                       new Handler().postDelayed(new RunnableC03131(locale), 500L);
                             }
                         }
                     } catch (Exception e) {
-/* 163 */               CrashUtil.logException(e);
+               CrashUtil.logException(e);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.VineApplication$1 */
-/* 152 */       class RunnableC03131 implements Runnable {
-                    final /* synthetic */ Locale val$locale;
+                
+       class RunnableC03131 implements Runnable {
+                    final  Locale val$locale;
 
-/* 153 */           RunnableC03131(Locale locale) {
+           RunnableC03131(Locale locale) {
                         this.val$locale = locale;
                     }
 
-                    @Override // java.lang.Runnable
-/* 156 */           public void run() {
-/* 157 */               VineApplication.access$100(VineApplication.access$000(VineApplication.this), this.val$locale, true);
+                    @Override 
+           public void run() {
+               VineApplication.access$100(VineApplication.access$000(VineApplication.this), this.val$locale, true);
                     }
                 }
 
-                @Override // com.facebook.buck.android.support.exopackage.DefaultApplicationLike, com.facebook.buck.android.support.exopackage.ApplicationLike
+                @Override 
                 @TargetApi(14)
-/* 169 */       public void onTrimMemory(int level) {
-/* 170 */           super.onTrimMemory(level);
-/* 171 */           CrashUtil.log("onTrimMemory happened: {}.", Integer.valueOf(level));
-/* 172 */           AppController instance = AppController.getInstance(this.mAppContext);
-/* 173 */           if (instance != null) {
-/* 174 */               instance.onTrimMemory(level);
+       public void onTrimMemory(int level) {
+           super.onTrimMemory(level);
+           CrashUtil.log("onTrimMemory happened: {}.", Integer.valueOf(level));
+           AppController instance = AppController.getInstance(this.mAppContext);
+           if (instance != null) {
+               instance.onTrimMemory(level);
                     }
                 }
 
-                @Override // com.facebook.buck.android.support.exopackage.DefaultApplicationLike, com.facebook.buck.android.support.exopackage.ApplicationLike
-/* 179 */       public void onLowMemory() {
-/* 180 */           super.onLowMemory();
-/* 181 */           CrashUtil.log("onLowMemory happened.");
-/* 182 */           AppController instance = AppController.getInstance(this.mAppContext);
-/* 183 */           if (instance != null) {
-/* 184 */               instance.onLowMemory();
+                @Override 
+       public void onLowMemory() {
+           super.onLowMemory();
+           CrashUtil.log("onLowMemory happened.");
+           AppController instance = AppController.getInstance(this.mAppContext);
+           if (instance != null) {
+               instance.onLowMemory();
                     }
                 }
 
-/* 188 */       public Locale getLocale() {
-/* 189 */           return this.mAppContext.getResources().getConfiguration().locale;
+       public Locale getLocale() {
+           return this.mAppContext.getResources().getConfiguration().locale;
                 }
 
-                @Override // java.lang.Thread.UncaughtExceptionHandler
-/* 193 */       public void uncaughtException(Thread thread, Throwable ex) {
+                @Override 
+       public void uncaughtException(Thread thread, Throwable ex) {
                     String msg;
-/* 194 */           if (ex != null && (msg = ex.getMessage()) != null && (msg.contains("detachFromGLContext") || msg.contains("startPreview") || msg.contains("setParameters"))) {
-/* 201 */               CrashUtil.collectLogs(300, CrashUtil.getDefaultIgnoreCountForLogCollection(ex));
+           if (ex != null && (msg = ex.getMessage()) != null && (msg.contains("detachFromGLContext") || msg.contains("startPreview") || msg.contains("setParameters"))) {
+               CrashUtil.collectLogs(300, CrashUtil.getDefaultIgnoreCountForLogCollection(ex));
                     }
-/* 204 */           if (this.sDefaultHandler != null) {
-/* 205 */               this.sDefaultHandler.uncaughtException(thread, ex);
+           if (this.sDefaultHandler != null) {
+               this.sDefaultHandler.uncaughtException(thread, ex);
                     }
                 }
 
-/* 209 */       public Context getApplicationContext() {
-/* 210 */           return this.mAppContext;
+       public Context getApplicationContext() {
+           return this.mAppContext;
                 }
 
-/* 213 */       private static void forceCustomLocale(Context context, Locale locale, boolean updateResources) {
-/* 214 */           if (locale != null) {
-/* 215 */               Locale.setDefault(locale);
-/* 216 */               VineAPI.getInstance(context).refreshLocale();
-/* 217 */               if (updateResources) {
-/* 218 */                   Resources resources = context.getApplicationContext().getResources();
-/* 219 */                   Configuration config = resources.getConfiguration();
-/* 220 */                   config.locale = locale;
-/* 221 */                   resources.updateConfiguration(config, resources.getDisplayMetrics());
+       private static void forceCustomLocale(Context context, Locale locale, boolean updateResources) {
+           if (locale != null) {
+               Locale.setDefault(locale);
+               VineAPI.getInstance(context).refreshLocale();
+               if (updateResources) {
+                   Resources resources = context.getApplicationContext().getResources();
+                   Configuration config = resources.getConfiguration();
+                   config.locale = locale;
+                   resources.updateConfiguration(config, resources.getDisplayMetrics());
                         }
                     }
                 }
 
-/* 226 */       private static void forceCustomLocale(Context context) {
-/* 227 */           forceCustomLocale(context, getCustomLocale(context), true);
+       private static void forceCustomLocale(Context context) {
+           forceCustomLocale(context, getCustomLocale(context), true);
                 }
 
-/* 230 */       private static Locale getCustomLocale(Context context) {
+       private static Locale getCustomLocale(Context context) {
                     Locale locale;
-/* 231 */           SharedPreferences prefs = Util.getDefaultSharedPrefs(context);
-/* 232 */           if (prefs.getBoolean(Settings.PREF_CUSTOM_LOCALE_ENABLED, false)) {
-/* 233 */               String localeCode = prefs.getString(Settings.PREF_CUSTOM_LOCALE, null);
-/* 234 */               String countryCode = prefs.getString(Settings.PREF_CUSTOME_LOCALE_COUNTRY, null);
-/* 235 */               if (!TextUtils.isEmpty(localeCode)) {
-/* 237 */                   if (!TextUtils.isEmpty(countryCode)) {
-/* 238 */                       locale = new Locale(localeCode, countryCode);
+           SharedPreferences prefs = Util.getDefaultSharedPrefs(context);
+           if (prefs.getBoolean(Settings.PREF_CUSTOM_LOCALE_ENABLED, false)) {
+               String localeCode = prefs.getString(Settings.PREF_CUSTOM_LOCALE, null);
+               String countryCode = prefs.getString(Settings.PREF_CUSTOME_LOCALE_COUNTRY, null);
+               if (!TextUtils.isEmpty(localeCode)) {
+                   if (!TextUtils.isEmpty(countryCode)) {
+                       locale = new Locale(localeCode, countryCode);
                             } else {
-/* 240 */                       locale = new Locale(localeCode);
+                       locale = new Locale(localeCode);
                             }
-/* 242 */                   if (!TextUtils.isEmpty(locale.getISO3Language())) {
-/* 247 */                       return locale;
+                   if (!TextUtils.isEmpty(locale.getISO3Language())) {
+                       return locale;
                             }
                         }
                     }
                     return null;
                 }
 
-/* 250 */       private static boolean isUsEnglishLocale() {
-/* 251 */           String code = Locale.getDefault().getLanguage();
-/* 252 */           return Locale.ENGLISH.getLanguage().equals(code);
+       private static boolean isUsEnglishLocale() {
+           String code = Locale.getDefault().getLanguage();
+           return Locale.ENGLISH.getLanguage().equals(code);
                 }
             }

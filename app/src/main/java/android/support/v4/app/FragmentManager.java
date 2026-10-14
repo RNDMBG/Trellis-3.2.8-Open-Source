@@ -5,8 +5,8 @@
             import java.io.PrintWriter;
             import java.util.List;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 140 */   public abstract class FragmentManager {
+            
+   public abstract class FragmentManager {
                 public static final int POP_BACK_STACK_INCLUSIVE = 1;
 
                 public interface BackStackEntry {
@@ -68,11 +68,11 @@
                 public abstract Fragment.SavedState saveFragmentInstanceState(Fragment fragment);
 
                 @Deprecated
-/* 141 */       public FragmentTransaction openTransaction() {
-/* 142 */           return beginTransaction();
+       public FragmentTransaction openTransaction() {
+           return beginTransaction();
                 }
 
-/* 350 */       public static void enableDebugLogging(boolean enabled) {
-/* 351 */           FragmentManagerImpl.DEBUG = enabled;
+       public static void enableDebugLogging(boolean enabled) {
+           FragmentManagerImpl.DEBUG = enabled;
                 }
             }

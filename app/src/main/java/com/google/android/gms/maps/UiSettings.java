@@ -4,10 +4,10 @@
             import com.google.android.gms.maps.internal.IUiSettingsDelegate;
             import com.google.android.gms.maps.model.RuntimeRemoteException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class UiSettings {
 
-                /* JADX INFO: renamed from: pV */
+                
                 private final IUiSettingsDelegate f2257pV;
 
                 UiSettings(IUiSettingsDelegate delegate) {

@@ -7,29 +7,29 @@
             import android.os.RemoteException;
             import com.google.android.gms.maps.model.CameraPosition;
             
-            /* JADX INFO: renamed from: com.google.android.gms.maps.internal.e */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public interface InterfaceC1161e extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.internal.e$a */
+                
                 public static abstract class a extends Binder implements InterfaceC1161e {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.internal.e$a$a, reason: collision with other inner class name */
+                    
                     private static class C1352a implements InterfaceC1161e {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2268dG;
 
                         C1352a(IBinder iBinder) {
                             this.f2268dG = iBinder;
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2268dG;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.InterfaceC1161e
+                        @Override 
                         public void onCameraChange(CameraPosition position) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -57,7 +57,7 @@
                         attachInterface(this, "com.google.android.gms.maps.internal.IOnCameraChangeListener");
                     }
 
-                    /* JADX INFO: renamed from: P */
+                    
                     public static InterfaceC1161e m2245P(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -66,12 +66,12 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC1161e)) ? new C1352a(iBinder) : (InterfaceC1161e) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.IInterface
+                    @Override 
                     public IBinder asBinder() {
                         return this;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
                         switch (code) {
                             case 1:

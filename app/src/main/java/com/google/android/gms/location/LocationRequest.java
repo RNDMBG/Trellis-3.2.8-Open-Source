@@ -6,7 +6,7 @@
             import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
             import com.google.android.gms.internal.C1027dl;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class LocationRequest implements SafeParcelable {
                 public static final LocationRequestCreator CREATOR = new LocationRequestCreator();
                 public static final int PRIORITY_BALANCED_POWER_ACCURACY = 102;
@@ -14,26 +14,26 @@
                 public static final int PRIORITY_LOW_POWER = 104;
                 public static final int PRIORITY_NO_POWER = 105;
 
-                /* JADX INFO: renamed from: iM */
+                
                 private final int f2184iM;
                 int mPriority;
 
-                /* JADX INFO: renamed from: oC */
+                
                 long f2185oC;
 
-                /* JADX INFO: renamed from: oJ */
+                
                 long f2186oJ;
 
-                /* JADX INFO: renamed from: oK */
+                
                 long f2187oK;
 
-                /* JADX INFO: renamed from: oL */
+                
                 boolean f2188oL;
 
-                /* JADX INFO: renamed from: oM */
+                
                 int f2189oM;
 
-                /* JADX INFO: renamed from: oN */
+                
                 float f2190oN;
 
                 public LocationRequest() {
@@ -58,7 +58,7 @@
                     this.f2190oN = smallestDisplacement;
                 }
 
-                /* JADX INFO: renamed from: X */
+                
                 private static void m2187X(int i) {
                     switch (i) {
                         case 100:
@@ -73,7 +73,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: Y */
+                
                 public static String m2188Y(int i) {
                     switch (i) {
                         case 100:
@@ -91,7 +91,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 private static void m2189a(float f) {
                     if (f < 0.0f) {
                         throw new IllegalArgumentException("invalid displacement: " + f);
@@ -102,14 +102,14 @@
                     return new LocationRequest();
                 }
 
-                /* JADX INFO: renamed from: h */
+                
                 private static void m2190h(long j) {
                     if (j < 0) {
                         throw new IllegalArgumentException("invalid interval: " + j);
                     }
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public int describeContents() {
                     return 0;
                 }
@@ -235,7 +235,7 @@
                     return sb.toString();
                 }
 
-                @Override // android.os.Parcelable
+                @Override 
                 public void writeToParcel(Parcel parcel, int flags) {
                     LocationRequestCreator.m2191a(this, parcel, flags);
                 }

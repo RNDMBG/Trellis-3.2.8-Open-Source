@@ -2,8 +2,8 @@
 
             import com.googlecode.javacv.cpp.avcodec;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 364 */   public enum CipherSuite {
+            
+   public enum CipherSuite {
                 TLS_RSA_WITH_NULL_MD5("SSL_RSA_WITH_NULL_MD5", 1, 5246, 6, 10),
                 TLS_RSA_WITH_NULL_SHA("SSL_RSA_WITH_NULL_SHA", 2, 5246, 6, 10),
                 TLS_RSA_EXPORT_WITH_RC4_40_MD5("SSL_RSA_EXPORT_WITH_RC4_40_MD5", 3, 4346, 6, 10),
@@ -103,11 +103,11 @@
 
                 final String javaName;
 
-/* 365 */       CipherSuite(String javaName, int value, int rfc, int sinceJavaVersion, int sinceAndroidVersion) {
-/* 367 */           this.javaName = javaName;
+       CipherSuite(String javaName, int value, int rfc, int sinceJavaVersion, int sinceAndroidVersion) {
+           this.javaName = javaName;
                 }
 
-/* 370 */       static CipherSuite forJavaName(String javaName) {
+       static CipherSuite forJavaName(String javaName) {
                     return javaName.startsWith("SSL_") ? valueOf("TLS_" + javaName.substring(4)) : valueOf(javaName);
                 }
             }

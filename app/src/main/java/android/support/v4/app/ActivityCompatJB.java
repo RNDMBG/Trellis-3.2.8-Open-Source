@@ -5,20 +5,20 @@
             import android.content.Intent;
             import android.os.Bundle;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 22 */    class ActivityCompatJB {
-/* 23 */        ActivityCompatJB() {
+            
+    class ActivityCompatJB {
+        ActivityCompatJB() {
                 }
 
-/* 25 */        public static void startActivity(Context context, Intent intent, Bundle options) {
-/* 26 */            context.startActivity(intent, options);
+        public static void startActivity(Context context, Intent intent, Bundle options) {
+            context.startActivity(intent, options);
                 }
 
-/* 29 */        public static void startActivityForResult(Activity activity, Intent intent, int requestCode, Bundle options) {
-/* 30 */            activity.startActivityForResult(intent, requestCode, options);
+        public static void startActivityForResult(Activity activity, Intent intent, int requestCode, Bundle options) {
+            activity.startActivityForResult(intent, requestCode, options);
                 }
 
-/* 33 */        public static void finishAffinity(Activity activity) {
-/* 34 */            activity.finishAffinity();
+        public static void finishAffinity(Activity activity) {
+            activity.finishAffinity();
                 }
             }

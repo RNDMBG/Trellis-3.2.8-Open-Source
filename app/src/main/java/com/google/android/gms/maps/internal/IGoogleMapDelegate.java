@@ -21,23 +21,23 @@
             import com.google.android.gms.maps.model.internal.InterfaceC1191e;
             import com.google.android.gms.maps.model.internal.InterfaceC1192f;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public interface IGoogleMapDelegate extends IInterface {
 
-                /* JADX INFO: renamed from: com.google.android.gms.maps.internal.IGoogleMapDelegate$a */
+                
                 public static abstract class AbstractBinderC1151a extends Binder implements IGoogleMapDelegate {
 
-                    /* JADX INFO: renamed from: com.google.android.gms.maps.internal.IGoogleMapDelegate$a$a */
+                    
                     private static class a implements IGoogleMapDelegate {
 
-                        /* JADX INFO: renamed from: dG */
+                        
                         private IBinder f2259dG;
 
                         a(IBinder iBinder) {
                             this.f2259dG = iBinder;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public InterfaceC1188b addCircle(CircleOptions options) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -62,7 +62,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public InterfaceC1189c addGroundOverlay(GroundOverlayOptions options) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -87,7 +87,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public InterfaceC1190d addMarker(MarkerOptions options) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -112,7 +112,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public InterfaceC1191e addPolygon(PolygonOptions options) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -137,7 +137,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public IPolylineDelegate addPolyline(PolylineOptions options) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -162,7 +162,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public InterfaceC1192f addTileOverlay(TileOverlayOptions options) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -187,7 +187,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void animateCamera(InterfaceC0904b update) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -205,7 +205,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void animateCameraWithCallback(InterfaceC0904b update, InterfaceC1158b callback) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -224,7 +224,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void animateCameraWithDurationAndCallback(InterfaceC0904b update, int durationMs, InterfaceC1158b callback) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -244,12 +244,12 @@
                             }
                         }
 
-                        @Override // android.os.IInterface
+                        @Override 
                         public IBinder asBinder() {
                             return this.f2259dG;
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void clear() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -266,7 +266,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public CameraPosition getCameraPosition() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -285,7 +285,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public int getMapType() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -304,7 +304,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public float getMaxZoomLevel() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -323,7 +323,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public float getMinZoomLevel() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -342,7 +342,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public Location getMyLocation() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -361,7 +361,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public IProjectionDelegate getProjection() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -380,7 +380,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public InterfaceC0904b getTestingHelper() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -399,7 +399,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public IUiSettingsDelegate getUiSettings() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -418,7 +418,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public boolean isBuildingsEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -437,7 +437,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public boolean isIndoorEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -456,7 +456,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public boolean isMyLocationEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -475,7 +475,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public boolean isTrafficEnabled() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -494,7 +494,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void moveCamera(InterfaceC0904b update) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -512,7 +512,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setBuildingsEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -530,7 +530,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public boolean setIndoorEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -550,7 +550,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setInfoWindowAdapter(InterfaceC1160d adapter) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -568,7 +568,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setLocationSource(ILocationSourceDelegate source) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -586,7 +586,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setMapType(int type) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -604,7 +604,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setMyLocationEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -622,7 +622,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnCameraChangeListener(InterfaceC1161e listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -640,7 +640,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnInfoWindowClickListener(InterfaceC1162f listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -658,7 +658,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnMapClickListener(InterfaceC1164h listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -676,7 +676,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnMapLoadedCallback(InterfaceC1165i callback) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -694,7 +694,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnMapLongClickListener(InterfaceC1166j listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -712,7 +712,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnMarkerClickListener(InterfaceC1167k listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -730,7 +730,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnMarkerDragListener(InterfaceC1168l listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -748,7 +748,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnMyLocationButtonClickListener(InterfaceC1169m listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -766,7 +766,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setOnMyLocationChangeListener(InterfaceC1170n listener) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -784,7 +784,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setPadding(int left, int top, int right, int bottom) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -805,7 +805,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void setTrafficEnabled(boolean enabled) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -823,7 +823,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void snapshot(InterfaceC1171o callback, InterfaceC0904b bitmap) throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -842,7 +842,7 @@
                             }
                         }
 
-                        @Override // com.google.android.gms.maps.internal.IGoogleMapDelegate
+                        @Override 
                         public void stopAnimation() throws RemoteException {
                             Parcel parcelObtain = Parcel.obtain();
                             Parcel parcelObtain2 = Parcel.obtain();
@@ -860,7 +860,7 @@
                         }
                     }
 
-                    /* JADX INFO: renamed from: K */
+                    
                     public static IGoogleMapDelegate m2228K(IBinder iBinder) {
                         if (iBinder == null) {
                             return null;
@@ -869,7 +869,7 @@
                         return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IGoogleMapDelegate)) ? new a(iBinder) : (IGoogleMapDelegate) iInterfaceQueryLocalInterface;
                     }
 
-                    @Override // android.os.Binder
+                    @Override 
                     public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
                         switch (i) {
                             case 1:

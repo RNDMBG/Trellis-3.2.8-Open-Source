@@ -4,33 +4,33 @@
             import java.io.ByteArrayOutputStream;
             import java.io.IOException;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 31 */    public class ByteArrayDataSink implements DataSink {
+            
+    public class ByteArrayDataSink implements DataSink {
                 private ByteArrayOutputStream stream;
 
-                @Override // com.google.android.exoplayer.upstream.DataSink
-/* 32 */        public DataSink open(DataSpec dataSpec) throws IOException {
+                @Override 
+        public DataSink open(DataSpec dataSpec) throws IOException {
                     if (dataSpec.length == -1) {
-/* 34 */                this.stream = new ByteArrayOutputStream();
+                this.stream = new ByteArrayOutputStream();
                     } else {
-/* 36 */                Assertions.checkArgument(dataSpec.length <= 2147483647L);
-/* 37 */                this.stream = new ByteArrayOutputStream((int) dataSpec.length);
+                Assertions.checkArgument(dataSpec.length <= 2147483647L);
+                this.stream = new ByteArrayOutputStream((int) dataSpec.length);
                     }
-/* 39 */            return this;
+            return this;
                 }
 
-                @Override // com.google.android.exoplayer.upstream.DataSink
-/* 43 */        public void close() throws IOException {
-/* 44 */            this.stream.close();
+                @Override 
+        public void close() throws IOException {
+            this.stream.close();
                 }
 
-                @Override // com.google.android.exoplayer.upstream.DataSink
-/* 48 */        public void write(byte[] buffer, int offset, int length) throws IOException {
-/* 49 */            this.stream.write(buffer, offset, length);
+                @Override 
+        public void write(byte[] buffer, int offset, int length) throws IOException {
+            this.stream.write(buffer, offset, length);
                 }
 
-/* 57 */        public byte[] getData() {
-/* 58 */            if (this.stream == null) {
+        public byte[] getData() {
+            if (this.stream == null) {
                         return null;
                     }
                     return this.stream.toByteArray();

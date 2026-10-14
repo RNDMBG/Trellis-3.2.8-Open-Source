@@ -14,27 +14,27 @@
             import com.google.android.gms.location.LocationRequest;
             import java.util.HashMap;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.ey */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1067ey {
                 private final Context mContext;
 
-                /* JADX INFO: renamed from: oO */
+                
                 private final InterfaceC1072fc<InterfaceC1066ex> f1861oO;
 
-                /* JADX INFO: renamed from: oP */
+                
                 private ContentProviderClient f1862oP = null;
 
-                /* JADX INFO: renamed from: oQ */
+                
                 private boolean f1863oQ = false;
 
-                /* JADX INFO: renamed from: oR */
+                
                 private HashMap<LocationListener, b> f1864oR = new HashMap<>();
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.ey$a */
+                
                 private static class a extends Handler {
 
-                    /* JADX INFO: renamed from: oS */
+                    
                     private final LocationListener f1865oS;
 
                     public a(LocationListener locationListener) {
@@ -46,7 +46,7 @@
                         this.f1865oS = locationListener;
                     }
 
-                    @Override // android.os.Handler
+                    @Override 
                     public void handleMessage(Message msg) {
                         switch (msg.what) {
                             case 1:
@@ -59,17 +59,17 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.ey$b */
+                
                 private static class b extends InterfaceC1129a.a {
 
-                    /* JADX INFO: renamed from: oT */
+                    
                     private Handler f1866oT;
 
                     b(LocationListener locationListener, Looper looper) {
                         this.f1866oT = looper == null ? new a(locationListener) : new a(locationListener, looper);
                     }
 
-                    @Override // com.google.android.gms.location.InterfaceC1129a
+                    @Override 
                     public void onLocationChanged(Location location) {
                         if (this.f1866oT == null) {
                             Log.e("LocationClientHelper", "Received a location in client after calling removeLocationUpdates.");
@@ -91,7 +91,7 @@
                     this.f1861oO = interfaceC1072fc;
                 }
 
-                /* JADX INFO: renamed from: cm */
+                
                 public void m1909cm() {
                     if (this.f1863oQ) {
                         setMockMode(false);

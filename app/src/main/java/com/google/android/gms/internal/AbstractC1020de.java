@@ -18,58 +18,58 @@
             import com.google.android.gms.common.data.C0891d;
             import java.util.ArrayList;
             
-            /* JADX INFO: renamed from: com.google.android.gms.internal.de */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public abstract class AbstractC1020de<T extends IInterface> implements GooglePlayServicesClient {
 
-                /* JADX INFO: renamed from: kO */
+                
                 public static final String[] f1676kO = {"service_esmobile", "service_googleme"};
 
-                /* JADX INFO: renamed from: is */
+                
                 private final String[] f1677is;
 
-                /* JADX INFO: renamed from: kD */
+                
                 private T f1678kD;
 
-                /* JADX INFO: renamed from: kH */
+                
                 private ArrayList<GooglePlayServicesClient.OnConnectionFailedListener> f1682kH;
 
-                /* JADX INFO: renamed from: kK */
+                
                 private AbstractC1020de<T>.e f1685kK;
                 private final Context mContext;
                 final Handler mHandler;
 
-                /* JADX INFO: renamed from: kF */
+                
                 final ArrayList<GooglePlayServicesClient.ConnectionCallbacks> f1680kF = new ArrayList<>();
 
-                /* JADX INFO: renamed from: kG */
+                
                 private boolean f1681kG = false;
 
-                /* JADX INFO: renamed from: kI */
+                
                 private boolean f1683kI = false;
 
-                /* JADX INFO: renamed from: kJ */
+                
                 private final ArrayList<AbstractC1020de<T>.b<?>> f1684kJ = new ArrayList<>();
 
-                /* JADX INFO: renamed from: kL */
+                
                 boolean f1686kL = false;
 
-                /* JADX INFO: renamed from: kM */
+                
                 boolean f1687kM = false;
 
-                /* JADX INFO: renamed from: kN */
+                
                 private final Object f1688kN = new Object();
 
-                /* JADX INFO: renamed from: kE */
+                
                 private ArrayList<GooglePlayServicesClient.ConnectionCallbacks> f1679kE = new ArrayList<>();
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.de$a */
+                
                 final class a extends Handler {
                     public a(Looper looper) {
                         super(looper);
                     }
 
-                    @Override // android.os.Handler
+                    @Override 
                     public void handleMessage(Message msg) {
                         if (msg.what == 1 && !AbstractC1020de.this.isConnecting()) {
                             b bVar = (b) msg.obj;
@@ -112,10 +112,10 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.de$b */
+                
                 protected abstract class b<TListener> {
 
-                    /* JADX INFO: renamed from: kQ */
+                    
                     private boolean f1691kQ = false;
                     private TListener mListener;
 
@@ -123,13 +123,13 @@
                         this.mListener = tlistener;
                     }
 
-                    /* JADX INFO: renamed from: a */
+                    
                     protected abstract void mo1502a(TListener tlistener);
 
-                    /* JADX INFO: renamed from: aF */
+                    
                     protected abstract void mo1503aF();
 
-                    /* JADX INFO: renamed from: be */
+                    
                     public void mo1551be() {
                         TListener tlistener;
                         synchronized (this) {
@@ -162,7 +162,7 @@
                         unregister();
                     }
 
-                    /* JADX INFO: renamed from: bf */
+                    
                     public void mo1552bf() {
                         synchronized (this) {
                             try {
@@ -185,10 +185,10 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.de$c */
+                
                 public abstract class c<TListener> extends AbstractC1020de<T>.b<TListener> {
 
-                    /* JADX INFO: renamed from: jf */
+                    
                     private final C0891d f1692jf;
 
                     public c(TListener tlistener, C0891d c0891d) {
@@ -196,17 +196,17 @@
                         this.f1692jf = c0891d;
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC1020de.b
-                    /* JADX INFO: renamed from: a */
+                    @Override 
+                    
                     protected final void mo1502a(TListener tlistener) {
                         mo1504a(tlistener, this.f1692jf);
                     }
 
-                    /* JADX INFO: renamed from: a */
+                    
                     protected abstract void mo1504a(TListener tlistener, C0891d c0891d);
 
-                    @Override // com.google.android.gms.internal.AbstractC1020de.b
-                    /* JADX INFO: renamed from: aF */
+                    @Override 
+                    
                     protected void mo1503aF() {
                         if (this.f1692jf != null) {
                             this.f1692jf.close();
@@ -215,18 +215,18 @@
 
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.de$d */
+                
                 public static final class d extends InterfaceC1024di.a {
 
-                    /* JADX INFO: renamed from: kR */
+                    
                     private AbstractC1020de f1694kR;
 
                     public d(AbstractC1020de abstractC1020de) {
                         this.f1694kR = abstractC1020de;
                     }
 
-                    @Override // com.google.android.gms.internal.InterfaceC1024di
-                    /* JADX INFO: renamed from: b */
+                    @Override 
+                    
                     public void mo1553b(int i, IBinder iBinder, Bundle bundle) {
                         C1028dm.m1601a("onPostInitComplete can be called only once per call to getServiceFromBroker", this.f1694kR);
                         this.f1694kR.mo1541a(i, iBinder, bundle);
@@ -234,30 +234,30 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.de$e */
+                
                 final class e implements ServiceConnection {
                     e() {
                     }
 
-                    @Override // android.content.ServiceConnection
+                    @Override 
                     public void onServiceConnected(ComponentName component, IBinder binder) {
                         AbstractC1020de.this.m1550u(binder);
                     }
 
-                    @Override // android.content.ServiceConnection
+                    @Override 
                     public void onServiceDisconnected(ComponentName component) {
                         AbstractC1020de.m1533a(AbstractC1020de.this, (IInterface) null);
                         AbstractC1020de.this.m1547bb();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.google.android.gms.internal.de$f */
+                
                 protected final class f extends AbstractC1020de<T>.b<Boolean> {
 
-                    /* JADX INFO: renamed from: kS */
+                    
                     public final Bundle f1697kS;
 
-                    /* JADX INFO: renamed from: kT */
+                    
                     public final IBinder f1698kT;
                     public final int statusCode;
 
@@ -268,7 +268,7 @@
                         this.f1697kS = bundle;
                     }
 
-                    /* JADX INFO: renamed from: a, reason: avoid collision after fix types in other method */
+                    
                     protected void a2(Boolean bool) {
                         if (bool == null) {
                             return;
@@ -304,8 +304,8 @@
                         }
                     }
 
-                    @Override // com.google.android.gms.internal.AbstractC1020de.b
-                    /* JADX INFO: renamed from: aF */
+                    @Override 
+                    
                     protected void mo1503aF() {
                     }
                 }
@@ -320,55 +320,55 @@
                     this.f1677is = strArr;
                 }
 
-                /* JADX WARN: Multi-variable type inference failed */
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ IInterface m1533a(AbstractC1020de abstractC1020de, IInterface iInterface) {
+                
+                
+                static  IInterface m1533a(AbstractC1020de abstractC1020de, IInterface iInterface) {
                     abstractC1020de.f1678kD = iInterface;
                     return iInterface;
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ AbstractC1020de<?>.e m1534a(AbstractC1020de<?> abstractC1020de, AbstractC1020de<?>.e eVar) {
+                
+                static  AbstractC1020de<?>.e m1534a(AbstractC1020de<?> abstractC1020de, AbstractC1020de<?>.e eVar) {
                     abstractC1020de.f1685kK = eVar;
                     return eVar;
                 }
 
-                /* JADX INFO: renamed from: a */
-                static /* synthetic */ Object m1535a(AbstractC1020de abstractC1020de) {
+                
+                static  Object m1535a(AbstractC1020de abstractC1020de) {
                     return abstractC1020de.f1688kN;
                 }
 
-                /* JADX INFO: renamed from: b */
-                static /* synthetic */ ArrayList m1536b(AbstractC1020de abstractC1020de) {
+                
+                static  ArrayList m1536b(AbstractC1020de abstractC1020de) {
                     return abstractC1020de.f1679kE;
                 }
 
-                /* JADX INFO: renamed from: c */
-                static /* synthetic */ ArrayList m1537c(AbstractC1020de abstractC1020de) {
+                
+                static  ArrayList m1537c(AbstractC1020de abstractC1020de) {
                     return abstractC1020de.f1684kJ;
                 }
 
-                /* JADX INFO: renamed from: d */
-                static /* synthetic */ IInterface m1538d(AbstractC1020de abstractC1020de) {
+                
+                static  IInterface m1538d(AbstractC1020de abstractC1020de) {
                     return abstractC1020de.f1678kD;
                 }
 
-                /* JADX INFO: renamed from: e */
-                static /* synthetic */ AbstractC1020de<?>.e m1539e(AbstractC1020de<?> abstractC1020de) {
+                
+                static  AbstractC1020de<?>.e m1539e(AbstractC1020de<?> abstractC1020de) {
                     return abstractC1020de.f1685kK;
                 }
 
-                /* JADX INFO: renamed from: f */
-                static /* synthetic */ Context m1540f(AbstractC1020de abstractC1020de) {
+                
+                static  Context m1540f(AbstractC1020de abstractC1020de) {
                     return abstractC1020de.mContext;
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 protected void mo1541a(int i, IBinder iBinder, Bundle bundle) {
                     this.mHandler.sendMessage(this.mHandler.obtainMessage(1, new f(i, iBinder, bundle)));
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 protected void mo1542a(ConnectionResult connectionResult) {
                     this.mHandler.removeMessages(4);
                     synchronized (this.f1682kH) {
@@ -391,7 +391,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 public final void m1543a(AbstractC1020de<T>.b<?> bVar) {
                     synchronized (this.f1684kJ) {
                         try {
@@ -403,19 +403,19 @@
                     this.mHandler.sendMessage(this.mHandler.obtainMessage(2, bVar));
                 }
 
-                /* JADX INFO: renamed from: a */
+                
                 protected abstract void mo1365a(InterfaceC1025dj interfaceC1025dj, d dVar) throws RemoteException;
 
-                /* JADX INFO: renamed from: a */
+                
                 protected void mo1500a(String... strArr) {
                 }
 
-                /* JADX INFO: renamed from: aY */
+                
                 public final String[] m1544aY() {
                     return this.f1677is;
                 }
 
-                /* JADX INFO: renamed from: aZ */
+                
                 protected void mo1545aZ() {
                     synchronized (this.f1679kE) {
                         try {
@@ -440,18 +440,18 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: ag */
+                
                 protected abstract String mo1366ag();
 
-                /* JADX INFO: renamed from: ah */
+                
                 protected abstract String mo1367ah();
 
-                /* JADX INFO: renamed from: ba */
+                
                 protected Bundle mo1546ba() {
                     return null;
                 }
 
-                /* JADX INFO: renamed from: bb */
+                
                 protected final void m1547bb() {
                     this.mHandler.removeMessages(4);
                     synchronized (this.f1679kE) {
@@ -471,20 +471,20 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: bc */
+                
                 protected final void m1548bc() {
                     if (!isConnected()) {
                         throw new IllegalStateException("Not connected. Call connect() and wait for onConnected() to be called.");
                     }
                 }
 
-                /* JADX INFO: renamed from: bd */
+                
                 protected final T m1549bd() {
                     m1548bc();
                     return this.f1678kD;
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void connect() {
                     this.f1686kL = true;
                     synchronized (this.f1688kN) {
@@ -512,7 +512,7 @@
                     this.mHandler.sendMessage(this.mHandler.obtainMessage(3, 9));
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void disconnect() {
                     this.f1686kL = false;
                     synchronized (this.f1688kN) {
@@ -544,12 +544,12 @@
                     return this.mContext;
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnected() {
                     return this.f1678kD != null;
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnecting() {
                     boolean z;
                     synchronized (this.f1688kN) {
@@ -562,7 +562,7 @@
                     return z;
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionCallbacksRegistered(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     boolean zContains;
                     C1028dm.m1605e(listener);
@@ -576,7 +576,7 @@
                     return zContains;
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public boolean isConnectionFailedListenerRegistered(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     boolean zContains;
                     C1028dm.m1605e(listener);
@@ -590,10 +590,10 @@
                     return zContains;
                 }
 
-                /* JADX INFO: renamed from: p */
+                
                 protected abstract T mo1370p(IBinder iBinder);
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     C1028dm.m1605e(listener);
                     synchronized (this.f1679kE) {
@@ -615,7 +615,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void registerConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     C1028dm.m1605e(listener);
                     synchronized (this.f1682kH) {
@@ -634,7 +634,7 @@
                     }
                 }
 
-                /* JADX INFO: renamed from: u */
+                
                 protected final void m1550u(IBinder iBinder) {
                     try {
                         mo1365a(InterfaceC1025dj.a.m1596w(iBinder), new d(this));
@@ -643,7 +643,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionCallbacks(GooglePlayServicesClient.ConnectionCallbacks listener) {
                     C1028dm.m1605e(listener);
                     synchronized (this.f1679kE) {
@@ -664,7 +664,7 @@
                     }
                 }
 
-                @Override // com.google.android.gms.common.GooglePlayServicesClient
+                @Override 
                 public void unregisterConnectionFailedListener(GooglePlayServicesClient.OnConnectionFailedListener listener) {
                     C1028dm.m1605e(listener);
                     synchronized (this.f1682kH) {

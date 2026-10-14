@@ -16,9 +16,9 @@
             import java.nio.DoubleBuffer;
             import java.nio.IntBuffer;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             @Properties(inherit = {avutil.class}, value = {@Platform(cinclude = {"<libswscale/swscale.h>"}, link = {"swscale@.2"}), @Platform(preload = {"swscale-2"}, value = {"windows"})})
-/* 37 */    public class swscale {
+    public class swscale {
                 public static final int SWS_ACCURATE_RND = 262144;
                 public static final int SWS_AREA = 32;
                 public static final int SWS_BICUBIC = 4;
@@ -160,10 +160,10 @@
                 public static native int swscale_version();
 
                 static {
-/* 39 */            Loader.load();
+            Loader.load();
                 }
 
-/* 162 */       public static class SwsVector extends Pointer {
+       public static class SwsVector extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -178,28 +178,28 @@
 
 
                     static {
-/* 165 */               Loader.load();
+               Loader.load();
                     }
 
-/* 165 */           public SwsVector() {
+           public SwsVector() {
                         allocate();
                     }
 
-/* 166 */           public SwsVector(int size) {
+           public SwsVector(int size) {
                         allocateArray(size);
                     }
 
-/* 167 */           public SwsVector(Pointer p) {
-/* 168 */               super(p);
+           public SwsVector(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 171 */           public SwsVector position(int position) {
-/* 172 */               return (SwsVector) super.position(position);
+                    @Override 
+           public SwsVector position(int position) {
+               return (SwsVector) super.position(position);
                     }
                 }
 
-/* 180 */       public static class SwsFilter extends Pointer {
+       public static class SwsFilter extends Pointer {
                     private native void allocate();
 
                     private native void allocateArray(int i);
@@ -222,34 +222,34 @@
 
 
                     static {
-/* 183 */               Loader.load();
+               Loader.load();
                     }
 
-/* 183 */           public SwsFilter() {
+           public SwsFilter() {
                         allocate();
                     }
 
-/* 184 */           public SwsFilter(int size) {
+           public SwsFilter(int size) {
                         allocateArray(size);
                     }
 
-/* 185 */           public SwsFilter(Pointer p) {
-/* 186 */               super(p);
+           public SwsFilter(Pointer p) {
+               super(p);
                     }
 
-                    @Override // com.googlecode.javacpp.Pointer
-/* 189 */           public SwsFilter position(int position) {
-/* 190 */               return (SwsFilter) super.position(position);
+                    @Override 
+           public SwsFilter position(int position) {
+               return (SwsFilter) super.position(position);
                     }
                 }
 
                 @Opaque
-/* 198 */       public static class SwsContext extends Pointer {
-/* 199 */           public SwsContext() {
+       public static class SwsContext extends Pointer {
+           public SwsContext() {
                     }
 
-/* 200 */           public SwsContext(Pointer p) {
-/* 201 */               super(p);
+           public SwsContext(Pointer p) {
+               super(p);
                     }
                 }
             }

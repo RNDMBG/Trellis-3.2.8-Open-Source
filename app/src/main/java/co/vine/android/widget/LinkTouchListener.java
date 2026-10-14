@@ -9,8 +9,8 @@
             import android.widget.TextView;
             import co.vine.android.client.VineAPI;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 23 */    public class LinkTouchListener implements View.OnTouchListener {
+            
+    public class LinkTouchListener implements View.OnTouchListener {
                 private final Rect mContentRect;
                 private int mLastUrlDownX;
                 private int mLastUrlDownY;
@@ -20,71 +20,71 @@
                 private TextView mTextView;
                 private final int mTouchSlop;
 
-/* 24 */        public LinkTouchListener(TextView tv, int slop, Spannable spannable) {
-/* 26 */            Log.v(VineAPI.RESOURCE_SHARED, "rectangle is " + tv.getLeft() + " | " + tv.getTop() + " | " + tv.getRight() + " | " + tv.getBottom());
-/* 27 */            this.mContentRect = new Rect(tv.getLeft(), tv.getTop(), tv.getRight(), tv.getBottom());
-/* 28 */            this.mLayout = tv.getLayout();
-/* 29 */            this.mTextView = tv;
-/* 30 */            this.mTouchSlop = slop;
-/* 31 */            this.mSpannable = spannable;
+        public LinkTouchListener(TextView tv, int slop, Spannable spannable) {
+            Log.v(VineAPI.RESOURCE_SHARED, "rectangle is " + tv.getLeft() + " | " + tv.getTop() + " | " + tv.getRight() + " | " + tv.getBottom());
+            this.mContentRect = new Rect(tv.getLeft(), tv.getTop(), tv.getRight(), tv.getBottom());
+            this.mLayout = tv.getLayout();
+            this.mTextView = tv;
+            this.mTouchSlop = slop;
+            this.mSpannable = spannable;
                 }
 
-                @Override // android.view.View.OnTouchListener
-/* 35 */        public boolean onTouch(View view, MotionEvent event) {
-/* 36 */            int action = event.getAction() & 255;
-/* 37 */            int x = (int) event.getX();
-/* 38 */            int y = (int) event.getY();
-/* 40 */            Log.v(VineAPI.RESOURCE_SHARED, "on touch, action: " + action + " |x: " + x + " |y: " + y);
-/* 41 */            Log.v(VineAPI.RESOURCE_SHARED, "on touch, view:  |left: " + view.getLeft() + " |right: " + view.getRight());
-/* 43 */            Rect r = this.mContentRect;
-/* 44 */            Layout layout = this.mLayout;
-/* 47 */            int translatedX = r.left + x;
-/* 48 */            int translatedY = r.top + y;
-/* 49 */            int line = layout.getLineForVertical(translatedY);
-/* 51 */            Log.v(VineAPI.RESOURCE_SHARED, "translated x: " + translatedX + " | " + translatedY);
-/* 54 */            int lineMaxX = (int) layout.getLineMax(line);
-/* 58 */            if (translatedX > lineMaxX) {
-/* 59 */                deselectSpan();
-/* 60 */                return false;
+                @Override 
+        public boolean onTouch(View view, MotionEvent event) {
+            int action = event.getAction() & 255;
+            int x = (int) event.getX();
+            int y = (int) event.getY();
+            Log.v(VineAPI.RESOURCE_SHARED, "on touch, action: " + action + " |x: " + x + " |y: " + y);
+            Log.v(VineAPI.RESOURCE_SHARED, "on touch, view:  |left: " + view.getLeft() + " |right: " + view.getRight());
+            Rect r = this.mContentRect;
+            Layout layout = this.mLayout;
+            int translatedX = r.left + x;
+            int translatedY = r.top + y;
+            int line = layout.getLineForVertical(translatedY);
+            Log.v(VineAPI.RESOURCE_SHARED, "translated x: " + translatedX + " | " + translatedY);
+            int lineMaxX = (int) layout.getLineMax(line);
+            if (translatedX > lineMaxX) {
+                deselectSpan();
+                return false;
                     }
-/* 64 */            if (action == 0) {
-/* 65 */                this.mLastUrlDownX = x;
-/* 66 */                this.mLastUrlDownY = y;
+            if (action == 0) {
+                this.mLastUrlDownX = x;
+                this.mLastUrlDownY = y;
                     }
-/* 69 */            int offset = layout.getOffsetForHorizontal(line, translatedX);
-/* 70 */            StyledClickableSpan[] link = (StyledClickableSpan[]) this.mSpannable.getSpans(offset, offset, StyledClickableSpan.class);
-/* 71 */            Log.v(VineAPI.RESOURCE_SHARED, "size is " + link.length);
-/* 72 */            StyledClickableSpan selectedLink = this.mSpan;
-/* 74 */            TextView textView = this.mTextView;
-/* 76 */            Log.v(VineAPI.RESOURCE_SHARED, "contains?" + r.contains(translatedX, translatedY));
-/* 78 */            if (r.contains(translatedX, translatedY) && (action == 1 || action == 0)) {
-/* 80 */                if (action == 1) {
-/* 81 */                    if (selectedLink != null) {
-/* 82 */                        selectedLink.onClick(textView);
-/* 83 */                        deselectSpan();
+            int offset = layout.getOffsetForHorizontal(line, translatedX);
+            StyledClickableSpan[] link = (StyledClickableSpan[]) this.mSpannable.getSpans(offset, offset, StyledClickableSpan.class);
+            Log.v(VineAPI.RESOURCE_SHARED, "size is " + link.length);
+            StyledClickableSpan selectedLink = this.mSpan;
+            TextView textView = this.mTextView;
+            Log.v(VineAPI.RESOURCE_SHARED, "contains?" + r.contains(translatedX, translatedY));
+            if (r.contains(translatedX, translatedY) && (action == 1 || action == 0)) {
+                if (action == 1) {
+                    if (selectedLink != null) {
+                        selectedLink.onClick(textView);
+                        deselectSpan();
                             }
                         } else {
-/* 86 */                    Log.v(VineAPI.RESOURCE_SHARED, "selecting span");
-/* 87 */                    selectedLink.select(true);
-/* 88 */                    this.mSpan = link[0];
-/* 89 */                    textView.invalidate();
+                    Log.v(VineAPI.RESOURCE_SHARED, "selecting span");
+                    selectedLink.select(true);
+                    this.mSpan = link[0];
+                    textView.invalidate();
                         }
-/* 91 */                return true;
+                return true;
                     }
-/* 92 */            if (selectedLink != null && (Math.abs(x - this.mLastUrlDownX) > this.mTouchSlop || Math.abs(y - this.mLastUrlDownY) > this.mTouchSlop)) {
-/* 94 */                Log.v(VineAPI.RESOURCE_SHARED, "deselecting due to slop");
-/* 95 */                deselectSpan();
+            if (selectedLink != null && (Math.abs(x - this.mLastUrlDownX) > this.mTouchSlop || Math.abs(y - this.mLastUrlDownY) > this.mTouchSlop)) {
+                Log.v(VineAPI.RESOURCE_SHARED, "deselecting due to slop");
+                deselectSpan();
                     }
-/* 97 */            return false;
+            return false;
                 }
 
-/* 100 */       private void deselectSpan() {
-/* 101 */           if (this.mSpan != null && this.mSpan.isSelected()) {
-/* 102 */               Log.v(VineAPI.RESOURCE_SHARED, "deselecting span");
-/* 103 */               this.mSpan.select(false);
-/* 104 */               this.mLastUrlDownX = 0;
-/* 105 */               this.mLastUrlDownY = 0;
-/* 106 */               this.mTextView.invalidate();
+       private void deselectSpan() {
+           if (this.mSpan != null && this.mSpan.isSelected()) {
+               Log.v(VineAPI.RESOURCE_SHARED, "deselecting span");
+               this.mSpan.select(false);
+               this.mLastUrlDownX = 0;
+               this.mLastUrlDownY = 0;
+               this.mTextView.invalidate();
                     }
                 }
             }

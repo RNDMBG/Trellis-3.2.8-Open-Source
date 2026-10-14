@@ -6,57 +6,57 @@
             import java.util.ArrayList;
             import java.util.Arrays;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
             public final class RoomConfig {
 
-                /* JADX INFO: renamed from: nM */
+                
                 private final String f1104nM;
 
-                /* JADX INFO: renamed from: nR */
+                
                 private final int f1105nR;
 
-                /* JADX INFO: renamed from: od */
+                
                 private final RoomUpdateListener f1106od;
 
-                /* JADX INFO: renamed from: oe */
+                
                 private final RoomStatusUpdateListener f1107oe;
 
-                /* JADX INFO: renamed from: of */
+                
                 private final RealTimeMessageReceivedListener f1108of;
 
-                /* JADX INFO: renamed from: og */
+                
                 private final String[] f1109og;
 
-                /* JADX INFO: renamed from: oh */
+                
                 private final Bundle f1110oh;
 
-                /* JADX INFO: renamed from: oi */
+                
                 private final boolean f1111oi;
 
                 public static final class Builder {
 
-                    /* JADX INFO: renamed from: nR */
+                    
                     int f1112nR;
 
-                    /* JADX INFO: renamed from: od */
+                    
                     final RoomUpdateListener f1113od;
 
-                    /* JADX INFO: renamed from: oe */
+                    
                     RoomStatusUpdateListener f1114oe;
 
-                    /* JADX INFO: renamed from: of */
+                    
                     RealTimeMessageReceivedListener f1115of;
 
-                    /* JADX INFO: renamed from: oh */
+                    
                     Bundle f1116oh;
 
-                    /* JADX INFO: renamed from: oi */
+                    
                     boolean f1117oi;
 
-                    /* JADX INFO: renamed from: oj */
+                    
                     String f1118oj;
 
-                    /* JADX INFO: renamed from: ok */
+                    
                     ArrayList<String> f1119ok;
 
                     private Builder(RoomUpdateListener updateListener) {
@@ -67,7 +67,7 @@
                         this.f1113od = (RoomUpdateListener) C1028dm.m1601a(updateListener, "Must provide a RoomUpdateListener");
                     }
 
-                    /* synthetic */ Builder(RoomUpdateListener x0, Object x1) {
+                     Builder(RoomUpdateListener x0, Object x1) {
                         this(x0);
                     }
 
@@ -133,7 +133,7 @@
                     }
                 }
 
-                /* synthetic */ RoomConfig(Builder x0, Object x1) {
+                 RoomConfig(Builder x0, Object x1) {
                     this(x0);
                 }
 

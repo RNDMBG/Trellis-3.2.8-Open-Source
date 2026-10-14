@@ -15,8 +15,8 @@ import android.view.Gravity;
             import android.widget.LinearLayout;
             import android.widget.RelativeLayout;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 24 */    public class UsersActivity extends BaseControllerActionBarActivity {
+            
+    public class UsersActivity extends BaseControllerActionBarActivity {
                 public static final String EXTRA_ANCHOR = "anchor";
                 public static final String EXTRA_NOTIFICATION_ID = "notification_id";
                 public static final String EXTRA_POST_ID = "post_id";
@@ -24,36 +24,36 @@ import android.view.Gravity;
                 public static final String EXTRA_USER_ID = "p_id";
                 private UsersFragment mFragment;
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 25 */        protected void onCreate(Bundle savedInstanceState) {
-/* 26 */            super.onCreate(savedInstanceState, C0257R.layout.user_list, true);
-/* 28 */            Intent intent = getIntent();
-/* 30 */            setupActionBar((Boolean) true, (Boolean) true, (String) null, (Boolean) true, (Boolean) true);
-/* 32 */            ActionBar ab = getSupportActionBar();
-/* 34 */            int type = intent.getIntExtra("u_type", 0);
+                @Override 
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState, C0257R.layout.user_list, true);
+            Intent intent = getIntent();
+            setupActionBar((Boolean) true, (Boolean) true, (String) null, (Boolean) true, (Boolean) true);
+            ActionBar ab = getSupportActionBar();
+            int type = intent.getIntExtra("u_type", 0);
                     switch (type) {
                         case 1:
-/* 38 */                    ab.setTitle(C0257R.string.user_following);
+                    ab.setTitle(C0257R.string.user_following);
                             break;
                         case 2:
-/* 42 */                    ab.setTitle(C0257R.string.user_followers);
+                    ab.setTitle(C0257R.string.user_followers);
                             break;
                         case 5:
-/* 46 */                    ab.setTitle(C0257R.string.user_likers);
+                    ab.setTitle(C0257R.string.user_likers);
                             break;
                         case 9:
-/* 50 */                    ab.setTitle(C0257R.string.revines_title);
+                    ab.setTitle(C0257R.string.revines_title);
                             break;
                         case 12:
-/* 54 */                    ab.setTitle("");
+                    ab.setTitle("");
                             break;
                     }
-/* 59 */            if (savedInstanceState == null) {
-/* 60 */                this.mFragment = new UsersFragment();
-/* 61 */                Bundle b = UsersFragment.prepareArguments(intent, false);
-/* 62 */                b.putBoolean("refresh", true);
-/* 63 */                this.mFragment.setArguments(b);
-/* 64 */                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, this.mFragment).commit();
+            if (savedInstanceState == null) {
+                this.mFragment = new UsersFragment();
+                Bundle b = UsersFragment.prepareArguments(intent, false);
+                b.putBoolean("refresh", true);
+                this.mFragment.setArguments(b);
+                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, this.mFragment).commit();
                     }
                     getWindow().getDecorView().post(new Runnable() {
                         @Override
@@ -82,7 +82,7 @@ import android.view.Gravity;
                     }
                 }
 
-                /** Keep the followers/following toolbar aligned with the other Vine screens (On The Rise = 48dp). */
+                
                 private void restoreVineToolbarHeight() {
                     int actionBarId = getResources().getIdentifier("action_bar", "id", getPackageName());
                     View actionBarView = findViewById(actionBarId);
@@ -111,7 +111,7 @@ import android.view.Gravity;
                         }
                         container.setMinimumHeight(height);
                     }
-                    // AppCompat inflates the up button late; re-apply at two delays.
+                    
                     for (long delay : new long[]{250L, 800L}) {
                         final long d = delay;
                         getWindow().getDecorView().postDelayed(new Runnable() {
@@ -126,7 +126,7 @@ import android.view.Gravity;
                 private void centerVineBackButton(View view) {
                     if (isActionBarUpView(view)) {
                         final ImageView image = (ImageView) view;
-                        // Fixed 24dp square everywhere to match base style.
+                        
                         image.setScaleType(ImageView.ScaleType.CENTER);
                         image.setPadding(0, 0, 0, 0);
                         float upDensity = getResources().getDisplayMetrics().density;
@@ -145,7 +145,7 @@ import android.view.Gravity;
                         image.setMinimumWidth(0);
                         image.setMinimumHeight(0);
                         image.setTranslationY(0.0f);
-                        // Center against the 48dp action bar after layout.
+                        
                         image.post(new Runnable() {
                             @Override
                             public void run() {
@@ -163,8 +163,8 @@ import android.view.Gravity;
                                 if (Math.abs(delta) > 0.5f && Math.abs(delta) < 60.0f) {
                                     image.setTranslationY(image.getTranslationY() + delta);
                                 }
-                                // Enlarge touch area without moving the drawable:
-                                // delegate a 56dp x 48dp rect to the small < icon.
+                                
+                                
                                 View parent = (View) image.getParent();
                                 if (parent != null) {
                                     float density = getResources().getDisplayMetrics().density;
@@ -209,30 +209,30 @@ import android.view.Gravity;
                     return upId != 0 && view.getId() == upId;
                 }
 
-/* 71 */        public static void startUserListForNotification(Context context, long notificationId, long anchor) {
-/* 72 */            Intent i = new Intent(context, (Class<?>) UsersActivity.class);
-/* 73 */            i.putExtra("u_type", 12);
-/* 74 */            i.putExtra("notification_id", notificationId);
-/* 75 */            i.putExtra("anchor", anchor);
-/* 76 */            context.startActivity(i);
+        public static void startUserListForNotification(Context context, long notificationId, long anchor) {
+            Intent i = new Intent(context, (Class<?>) UsersActivity.class);
+            i.putExtra("u_type", 12);
+            i.putExtra("notification_id", notificationId);
+            i.putExtra("anchor", anchor);
+            context.startActivity(i);
                 }
 
-/* 79 */        public static void startUserListForReviners(Context context, long postId) {
-/* 80 */            Intent i = new Intent(context, (Class<?>) UsersActivity.class);
-/* 81 */            i.putExtra("post_id", postId);
-/* 82 */            i.putExtra("u_type", 9);
-/* 83 */            context.startActivity(i);
+        public static void startUserListForReviners(Context context, long postId) {
+            Intent i = new Intent(context, (Class<?>) UsersActivity.class);
+            i.putExtra("post_id", postId);
+            i.putExtra("u_type", 9);
+            context.startActivity(i);
                 }
 
-/* 86 */        public static void startUserListForLikers(Context context, long postId) {
-/* 87 */            Intent i = new Intent(context, (Class<?>) UsersActivity.class);
-/* 88 */            i.putExtra("post_id", postId);
-/* 89 */            i.putExtra("u_type", 5);
-/* 90 */            context.startActivity(i);
+        public static void startUserListForLikers(Context context, long postId) {
+            Intent i = new Intent(context, (Class<?>) UsersActivity.class);
+            i.putExtra("post_id", postId);
+            i.putExtra("u_type", 5);
+            context.startActivity(i);
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 94 */        public void onActivityResult(int requestCode, int resultCode, Intent data) {
-/* 95 */            this.mFragment.onActivityResult(requestCode, resultCode, data);
+                @Override 
+        public void onActivityResult(int requestCode, int resultCode, Intent data) {
+            this.mFragment.onActivityResult(requestCode, resultCode, data);
                 }
             }

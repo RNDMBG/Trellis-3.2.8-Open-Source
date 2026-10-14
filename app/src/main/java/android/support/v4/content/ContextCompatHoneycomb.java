@@ -4,16 +4,16 @@
             import android.content.Intent;
             import java.io.File;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 25 */    class ContextCompatHoneycomb {
-/* 26 */        ContextCompatHoneycomb() {
+            
+    class ContextCompatHoneycomb {
+        ContextCompatHoneycomb() {
                 }
 
-/* 29 */        static void startActivities(Context context, Intent[] intents) {
-/* 30 */            context.startActivities(intents);
+        static void startActivities(Context context, Intent[] intents) {
+            context.startActivities(intents);
                 }
 
-/* 33 */        public static File getObbDir(Context context) {
-/* 34 */            return context.getObbDir();
+        public static File getObbDir(Context context) {
+            return context.getObbDir();
                 }
             }

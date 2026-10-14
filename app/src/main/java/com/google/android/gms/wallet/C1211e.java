@@ -5,10 +5,10 @@
             import com.google.android.gms.common.internal.safeparcel.C0901a;
             import com.google.android.gms.common.internal.safeparcel.C0902b;
             
-            /* JADX INFO: renamed from: com.google.android.gms.wallet.e */
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
+            
+            
             public class C1211e implements Parcelable.Creator<LineItem> {
-                /* JADX INFO: renamed from: a */
+                
                 static void m2354a(LineItem lineItem, Parcel parcel, int i) {
                     int iM1152k = C0902b.m1152k(parcel);
                     C0902b.m1150c(parcel, 1, lineItem.getVersionCode());
@@ -21,7 +21,7 @@
                     C0902b.m1131C(parcel, iM1152k);
                 }
 
-                /* JADX INFO: renamed from: R */
+                
                 public LineItem m2355R(Parcel parcel) {
                     int iM1105f = 0;
                     String strM1113l = null;
@@ -66,18 +66,18 @@
                     return new LineItem(iM1105f2, strM1113l5, strM1113l4, strM1113l3, strM1113l2, iM1105f, strM1113l);
                 }
 
-                /* JADX INFO: renamed from: aw */
+                
                 public LineItem[] m2356aw(int i) {
                     return new LineItem[i];
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ LineItem createFromParcel(Parcel x0) {
+                @Override 
+                public  LineItem createFromParcel(Parcel x0) {
                     return m2355R(x0);
                 }
 
-                @Override // android.os.Parcelable.Creator
-                public /* synthetic */ LineItem[] newArray(int x0) {
+                @Override 
+                public  LineItem[] newArray(int x0) {
                     return m2356aw(x0);
                 }
             }

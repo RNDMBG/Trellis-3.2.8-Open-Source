@@ -43,287 +43,287 @@
             import java.util.regex.Pattern;
             import org.apache.commons.io.IOUtils;
             
-            /* JADX INFO: loaded from: C:\Users\asser\AppData\Local\Temp\trellis-jadx-cfb79692985f44a8ae07c92b4a09b391\dex\classes.dex */
-/* 47 */    public class DebugHomeActivity extends BaseControllerActionBarActivity {
+            
+    public class DebugHomeActivity extends BaseControllerActionBarActivity {
                 private static final boolean HIDE_SENSITIVE_DATA;
 
-/* 48 */        static /* synthetic */ void access$000(DebugHomeActivity x0, String x1) {
-/* 49 */            x0.handleDebugQuery(x1);
+        static  void access$000(DebugHomeActivity x0, String x1) {
+            x0.handleDebugQuery(x1);
                 }
 
                 static {
-/* 50 */            HIDE_SENSITIVE_DATA = !BuildUtil.isLogsOn();
+            HIDE_SENSITIVE_DATA = !BuildUtil.isLogsOn();
                 }
 
-                @Override // co.vine.android.BaseActionBarActivity, android.support.v7.app.ActionBarActivity, android.support.v4.app.FragmentActivity, android.app.Activity
-/* 53 */        protected void onCreate(Bundle savedInstanceState) {
-/* 54 */            super.onCreate(savedInstanceState, C0257R.layout.debug_home, true);
-/* 56 */            Session session = this.mAppController.getActiveSession();
-/* 58 */            TextView tv = (TextView) findViewById(C0257R.id.debuginfo);
-/* 59 */            Button b = (Button) findViewById(C0257R.id.writeSessionKeyToLog);
-/* 60 */            if (!HIDE_SENSITIVE_DATA) {
-/* 61 */                b.setOnClickListener(new ViewOnClickListenerC01971(session));
+                @Override 
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState, C0257R.layout.debug_home, true);
+            Session session = this.mAppController.getActiveSession();
+            TextView tv = (TextView) findViewById(C0257R.id.debuginfo);
+            Button b = (Button) findViewById(C0257R.id.writeSessionKeyToLog);
+            if (!HIDE_SENSITIVE_DATA) {
+                b.setOnClickListener(new ViewOnClickListenerC01971(session));
                     } else {
-/* 68 */                b.setVisibility(8);
+                b.setVisibility(8);
                     }
-/* 71 */            setupActionBar((Boolean) true, (Boolean) true, (String) null, (Boolean) true, (Boolean) true);
-/* 73 */            ActionBar ab = getSupportActionBar();
-/* 74 */            if (ab != null) {
-/* 75 */                ab.setTitle("Debug Screen");
+            setupActionBar((Boolean) true, (Boolean) true, (String) null, (Boolean) true, (Boolean) true);
+            ActionBar ab = getSupportActionBar();
+            if (ab != null) {
+                ab.setTitle("Debug Screen");
                     }
-/* 77 */            StringBuilder debugInfo = new StringBuilder();
-/* 79 */            debugInfo.append("Device: " + Build.DEVICE);
-/* 80 */            debugInfo.append("\nModel: " + Build.MODEL);
-/* 81 */            debugInfo.append("\nCPU ABI - ABI2: " + Build.CPU_ABI + " - " + Build.CPU_ABI2);
-/* 82 */            debugInfo.append("\nHardware: " + Build.HARDWARE);
-/* 83 */            debugInfo.append("\nBrand: " + Build.BRAND);
-/* 84 */            debugInfo.append("\nProduct: " + Build.PRODUCT);
-/* 85 */            debugInfo.append("\nManufacturer: " + Build.MANUFACTURER);
-/* 86 */            debugInfo.append("\nBoard: " + Build.BOARD);
-/* 87 */            debugInfo.append("\nCores: " + getNumCores() + IOUtils.LINE_SEPARATOR_UNIX);
-/* 89 */            debugInfo.append("\nAndroid OS Version: " + Build.VERSION.RELEASE + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + Build.VERSION.SDK_INT + Build.VERSION.INCREMENTAL + " (" + Build.VERSION.CODENAME + ")");
-/* 93 */            debugInfo.append("\nApp: ");
-/* 94 */            if (BuildUtil.isExplore()) {
-/* 95 */                debugInfo.append("Explore\n");
+            StringBuilder debugInfo = new StringBuilder();
+            debugInfo.append("Device: " + Build.DEVICE);
+            debugInfo.append("\nModel: " + Build.MODEL);
+            debugInfo.append("\nCPU ABI - ABI2: " + Build.CPU_ABI + " - " + Build.CPU_ABI2);
+            debugInfo.append("\nHardware: " + Build.HARDWARE);
+            debugInfo.append("\nBrand: " + Build.BRAND);
+            debugInfo.append("\nProduct: " + Build.PRODUCT);
+            debugInfo.append("\nManufacturer: " + Build.MANUFACTURER);
+            debugInfo.append("\nBoard: " + Build.BOARD);
+            debugInfo.append("\nCores: " + getNumCores() + IOUtils.LINE_SEPARATOR_UNIX);
+            debugInfo.append("\nAndroid OS Version: " + Build.VERSION.RELEASE + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + Build.VERSION.SDK_INT + Build.VERSION.INCREMENTAL + " (" + Build.VERSION.CODENAME + ")");
+            debugInfo.append("\nApp: ");
+            if (BuildUtil.isExplore()) {
+                debugInfo.append("Explore\n");
                     } else if (BuildUtil.isRegular()) {
-/* 97 */                debugInfo.append("Main\n");
+                debugInfo.append("Main\n");
                     } else {
-/* 99 */                debugInfo.append("Other\n");
+                debugInfo.append("Other\n");
                     }
-/* 102 */           long dbSize = VineDatabaseHelper.getDatabasePath(this).length();
-/* 104 */           debugInfo.append("Main database size: " + (dbSize / 1000000.0d) + " MB\n");
-/* 105 */           debugInfo.append("Authority: " + BuildUtil.getAuthority("") + IOUtils.LINE_SEPARATOR_UNIX);
-/* 106 */           debugInfo.append("Vine Player Enabled: " + SdkVideoView.getGlobalUseVinePlayer() + IOUtils.LINE_SEPARATOR_UNIX);
-/* 108 */           appendMemoryInfo(debugInfo);
+           long dbSize = VineDatabaseHelper.getDatabasePath(this).length();
+           debugInfo.append("Main database size: " + (dbSize / 1000000.0d) + " MB\n");
+           debugInfo.append("Authority: " + BuildUtil.getAuthority("") + IOUtils.LINE_SEPARATOR_UNIX);
+           debugInfo.append("Vine Player Enabled: " + SdkVideoView.getGlobalUseVinePlayer() + IOUtils.LINE_SEPARATOR_UNIX);
+           appendMemoryInfo(debugInfo);
                     try {
-/* 111 */               PackageInfo pi = getPackageManager().getPackageInfo("co.vine.android", 0);
-/* 112 */               debugInfo.append("\nVine for Android Version: ").append(pi.versionName);
-/* 113 */               debugInfo.append("\nVine for Android Build: ").append(pi.versionCode);
-/* 114 */               if (!HIDE_SENSITIVE_DATA) {
-/* 115 */                   debugInfo.append("\nInstalled: ").append(Util.DATE_TIME_RFC1123.format(new Date(pi.firstInstallTime)));
-/* 116 */                   debugInfo.append("\nUpdated: ").append(Util.DATE_TIME_RFC1123.format(new Date(pi.lastUpdateTime)));
+               PackageInfo pi = getPackageManager().getPackageInfo("co.vine.android", 0);
+               debugInfo.append("\nVine for Android Version: ").append(pi.versionName);
+               debugInfo.append("\nVine for Android Build: ").append(pi.versionCode);
+               if (!HIDE_SENSITIVE_DATA) {
+                   debugInfo.append("\nInstalled: ").append(Util.DATE_TIME_RFC1123.format(new Date(pi.firstInstallTime)));
+                   debugInfo.append("\nUpdated: ").append(Util.DATE_TIME_RFC1123.format(new Date(pi.lastUpdateTime)));
                         }
                     } catch (PackageManager.NameNotFoundException e) {
-/* 119 */               SLog.m459e("Cannot parse some info.", (Throwable) e);
+               SLog.m459e("Cannot parse some info.", (Throwable) e);
                     }
-/* 122 */           debugInfo.append("\nHW Encoding Mode: " + BuildUtil.isIsHwEncodingEnabled() + IOUtils.LINE_SEPARATOR_UNIX);
-/* 124 */           debugInfo.append("Build Market: ");
+           debugInfo.append("\nHW Encoding Mode: " + BuildUtil.isIsHwEncodingEnabled() + IOUtils.LINE_SEPARATOR_UNIX);
+           debugInfo.append("Build Market: ");
                     switch (BuildUtil.getMarket()) {
                         case 1:
-/* 127 */                   debugInfo.append("Google\n");
+                   debugInfo.append("Google\n");
                             break;
                         case 2:
-/* 131 */                   debugInfo.append("Amazon\n");
+                   debugInfo.append("Amazon\n");
                             break;
                         case 3:
-/* 135 */                   debugInfo.append("Astar\n");
+                   debugInfo.append("Astar\n");
                             break;
                         default:
-/* 139 */                   debugInfo.append("Other\n");
+                   debugInfo.append("Other\n");
                             break;
                     }
-/* 144 */           DisplayMetrics metrics = new DisplayMetrics();
-/* 145 */           getWindowManager().getDefaultDisplay().getMetrics(metrics);
-/* 147 */           debugInfo.append("\nScreen Density: ");
+           DisplayMetrics metrics = new DisplayMetrics();
+           getWindowManager().getDefaultDisplay().getMetrics(metrics);
+           debugInfo.append("\nScreen Density: ");
                     switch (metrics.densityDpi) {
                         case 120:
-/* 150 */                   debugInfo.append(" LDPI");
+                   debugInfo.append(" LDPI");
                             break;
-                        case avcodec.AV_CODEC_ID_CDXL /* 160 */:
-/* 154 */                   debugInfo.append(" MDPI");
+                        case avcodec.AV_CODEC_ID_CDXL :
+                   debugInfo.append(" MDPI");
                             break;
                         case 213:
-/* 162 */                   debugInfo.append(" TVDPI");
+                   debugInfo.append(" TVDPI");
                             break;
                         case 240:
-/* 158 */                   debugInfo.append(" HDPI");
+                   debugInfo.append(" HDPI");
                             break;
                         case 320:
-/* 166 */                   debugInfo.append(" XHDPI");
+                   debugInfo.append(" XHDPI");
                             break;
                         case 480:
-/* 170 */                   debugInfo.append(" XXHDPI");
+                   debugInfo.append(" XXHDPI");
                             break;
                         default:
-/* 174 */                   debugInfo.append(" UNKNOWN: " + metrics.densityDpi);
+                   debugInfo.append(" UNKNOWN: " + metrics.densityDpi);
                             break;
                     }
-/* 179 */           debugInfo.append("\nScreen Size: " + metrics.widthPixels + "x" + metrics.heightPixels);
-/* 181 */           debugInfo.append("\nNormal Video Playable: " + SystemUtil.isNormalVideoPlayable(this) + " account: " + VineAccountHelper.isNormalVideoPlayable(this));
-/* 183 */           debugInfo.append("\nLogged in user: ").append(session.getLoginEmail());
-/* 184 */           if (!HIDE_SENSITIVE_DATA) {
-/* 185 */               debugInfo.append("\nLogged in user id: ").append(session.getUserId());
-/* 186 */               debugInfo.append("\nLogged in session key: ").append(session.getSessionKey());
+           debugInfo.append("\nScreen Size: " + metrics.widthPixels + "x" + metrics.heightPixels);
+           debugInfo.append("\nNormal Video Playable: " + SystemUtil.isNormalVideoPlayable(this) + " account: " + VineAccountHelper.isNormalVideoPlayable(this));
+           debugInfo.append("\nLogged in user: ").append(session.getLoginEmail());
+           if (!HIDE_SENSITIVE_DATA) {
+               debugInfo.append("\nLogged in user id: ").append(session.getUserId());
+               debugInfo.append("\nLogged in session key: ").append(session.getSessionKey());
                     }
-/* 188 */           debugInfo.append("\nLogged in name: ").append(session.getName());
-/* 189 */           if (!HIDE_SENSITIVE_DATA) {
-/* 190 */               debugInfo.append("\nLogged in avatar: ").append(session.getAvatarUrl());
+           debugInfo.append("\nLogged in name: ").append(session.getName());
+           if (!HIDE_SENSITIVE_DATA) {
+               debugInfo.append("\nLogged in avatar: ").append(session.getAvatarUrl());
                     }
-/* 193 */           AccountManager am = AccountManager.get(this);
-/* 194 */           Account acc = VineAccountHelper.getAccount(this, this.mAppController.getActiveSession().getLoginEmail());
-/* 196 */           if (acc != null) {
-/* 197 */               if (Integer.parseInt(am.getUserData(acc, VineAccountHelper.KEY_LOGIN_TYPE)) == 2) {
-/* 199 */                   debugInfo.append("\nLogged in with Twitter.");
+           AccountManager am = AccountManager.get(this);
+           Account acc = VineAccountHelper.getAccount(this, this.mAppController.getActiveSession().getLoginEmail());
+           if (acc != null) {
+               if (Integer.parseInt(am.getUserData(acc, VineAccountHelper.KEY_LOGIN_TYPE)) == 2) {
+                   debugInfo.append("\nLogged in with Twitter.");
                         } else {
-/* 201 */                   debugInfo.append("\nNot logged in with Twitter.");
+                   debugInfo.append("\nNot logged in with Twitter.");
                         }
-/* 203 */               if (TextUtils.isEmpty(VineAccountHelper.getTwitterToken(am, acc))) {
-/* 204 */                   debugInfo.append("\nNot connected to Twitter.");
+               if (TextUtils.isEmpty(VineAccountHelper.getTwitterToken(am, acc))) {
+                   debugInfo.append("\nNot connected to Twitter.");
                         } else {
-/* 206 */                   debugInfo.append("\nConnected to Twitter.");
+                   debugInfo.append("\nConnected to Twitter.");
                         }
                     }
-/* 210 */           if (!HIDE_SENSITIVE_DATA) {
-/* 211 */               SharedPreferences prefs = GCMRegistrationService.getGCMPreferences(this);
-/* 212 */               debugInfo.append("\n\nGCM: " + prefs.getString(GCMRegistrationService.PREF_REG_ID, "Not registered"));
-/* 213 */               debugInfo.append("\nGCM sent to vinepi: " + prefs.getBoolean(GCMRegistrationService.PREF_REG_ID_SENT, false));
-/* 214 */               debugInfo.append("\n\nAPI: " + VineAPI.getInstance(this).getBaseUrl());
-/* 215 */               debugInfo.append("\nAmazon: " + getString(C0257R.string.amazon_s3));
-/* 216 */               debugInfo.append("\nAmazon Bucket: " + BuildUtil.getAmazonBucket(this));
-/* 217 */               debugInfo.append("\nTwitter: " + getString(C0257R.string.twitter_api));
-/* 218 */               debugInfo.append("\nRTC: " + VineAPI.getInstance(this).getRtcUrl());
-/* 219 */               debugInfo.append("\nMedia: " + VineAPI.getInstance(this).getMediaUrl());
-/* 220 */               debugInfo.append("\nExplore: " + VineAPI.getInstance(this).getExploreUrl());
+           if (!HIDE_SENSITIVE_DATA) {
+               SharedPreferences prefs = GCMRegistrationService.getGCMPreferences(this);
+               debugInfo.append("\n\nGCM: " + prefs.getString(GCMRegistrationService.PREF_REG_ID, "Not registered"));
+               debugInfo.append("\nGCM sent to vinepi: " + prefs.getBoolean(GCMRegistrationService.PREF_REG_ID_SENT, false));
+               debugInfo.append("\n\nAPI: " + VineAPI.getInstance(this).getBaseUrl());
+               debugInfo.append("\nAmazon: " + getString(C0257R.string.amazon_s3));
+               debugInfo.append("\nAmazon Bucket: " + BuildUtil.getAmazonBucket(this));
+               debugInfo.append("\nTwitter: " + getString(C0257R.string.twitter_api));
+               debugInfo.append("\nRTC: " + VineAPI.getInstance(this).getRtcUrl());
+               debugInfo.append("\nMedia: " + VineAPI.getInstance(this).getMediaUrl());
+               debugInfo.append("\nExplore: " + VineAPI.getInstance(this).getExploreUrl());
                     }
-/* 223 */           AppImpl.getInstance().appendDebugInfo(this, debugInfo, HIDE_SENSITIVE_DATA);
-/* 225 */           debugInfo.append("Network Usages:\n");
-/* 226 */           debugInfo.append("Data from HTTP Stack: " + Util.formatFileSize(getResources(), NetworkOperation.sNetworkDataUsed) + IOUtils.LINE_SEPARATOR_UNIX);
-/* 227 */           debugInfo.append("Data from CACHE Layer: " + Util.formatFileSize(getResources(), NetworkOperation.sSavedDataSize) + IOUtils.LINE_SEPARATOR_UNIX);
-/* 229 */           tv.setText(debugInfo.toString());
-/* 231 */           Button button = new Button(this);
-/* 232 */           if (BuildUtil.isLogsOn()) {
-/* 233 */               button.setText("Send Logs");
-/* 234 */               button.setOnClickListener(new ViewOnClickListenerC01982(debugInfo));
+           AppImpl.getInstance().appendDebugInfo(this, debugInfo, HIDE_SENSITIVE_DATA);
+           debugInfo.append("Network Usages:\n");
+           debugInfo.append("Data from HTTP Stack: " + Util.formatFileSize(getResources(), NetworkOperation.sNetworkDataUsed) + IOUtils.LINE_SEPARATOR_UNIX);
+           debugInfo.append("Data from CACHE Layer: " + Util.formatFileSize(getResources(), NetworkOperation.sSavedDataSize) + IOUtils.LINE_SEPARATOR_UNIX);
+           tv.setText(debugInfo.toString());
+           Button button = new Button(this);
+           if (BuildUtil.isLogsOn()) {
+               button.setText("Send Logs");
+               button.setOnClickListener(new ViewOnClickListenerC01982(debugInfo));
                     } else {
-/* 251 */               button.setText("Cause Crash");
-/* 252 */               button.setOnClickListener(new ViewOnClickListenerC01993());
+               button.setText("Cause Crash");
+               button.setOnClickListener(new ViewOnClickListenerC01993());
                     }
-/* 266 */           ((ViewGroup) tv.getParent()).addView(button);
-/* 268 */           if (!HIDE_SENSITIVE_DATA) {
-/* 269 */               EditText query = (EditText) findViewById(C0257R.id.debug_query);
-/* 270 */               findViewById(C0257R.id.debug_query_submit).setOnClickListener(new ViewOnClickListenerC02004(query));
+           ((ViewGroup) tv.getParent()).addView(button);
+           if (!HIDE_SENSITIVE_DATA) {
+               EditText query = (EditText) findViewById(C0257R.id.debug_query);
+               findViewById(C0257R.id.debug_query_submit).setOnClickListener(new ViewOnClickListenerC02004(query));
                     } else {
-/* 277 */               LinearLayout debugQueryParent = (LinearLayout) findViewById(C0257R.id.debug_query_parent);
-/* 278 */               debugQueryParent.setVisibility(8);
+               LinearLayout debugQueryParent = (LinearLayout) findViewById(C0257R.id.debug_query_parent);
+               debugQueryParent.setVisibility(8);
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.DebugHomeActivity$1 */
-/* 59 */        class ViewOnClickListenerC01971 implements View.OnClickListener {
-                    final /* synthetic */ Session val$session;
+                
+        class ViewOnClickListenerC01971 implements View.OnClickListener {
+                    final  Session val$session;
 
-/* 60 */            ViewOnClickListenerC01971(Session session) {
+            ViewOnClickListenerC01971(Session session) {
                         this.val$session = session;
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 63 */            public void onClick(View view) {
-/* 64 */                Log.d("VINEDEBUG", "vine-session-id: " + this.val$session.getSessionKey());
+                    @Override 
+            public void onClick(View view) {
+                Log.d("VINEDEBUG", "vine-session-id: " + this.val$session.getSessionKey());
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.DebugHomeActivity$2 */
-/* 232 */       class ViewOnClickListenerC01982 implements View.OnClickListener {
-                    final /* synthetic */ StringBuilder val$debugInfo;
+                
+       class ViewOnClickListenerC01982 implements View.OnClickListener {
+                    final  StringBuilder val$debugInfo;
 
-/* 233 */           ViewOnClickListenerC01982(StringBuilder sb) {
+           ViewOnClickListenerC01982(StringBuilder sb) {
                         this.val$debugInfo = sb;
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 236 */           public void onClick(View v) {
-/* 237 */               File file = new File(DebugHomeActivity.this.getExternalCacheDir(), "vine_log.txt");
+                    @Override 
+           public void onClick(View v) {
+               File file = new File(DebugHomeActivity.this.getExternalCacheDir(), "vine_log.txt");
                         try {
-/* 239 */                   OutputStreamWriter stream = new OutputStreamWriter(new FileOutputStream(file));
-/* 240 */                   stream.write(this.val$debugInfo.toString());
-/* 241 */                   stream.flush();
-/* 242 */                   stream.close();
-/* 243 */                   Intent intent = new Intent("co.vine.android.intent.action.SEND_LOGS");
-/* 244 */                   DebugHomeActivity.this.startActivity(intent);
+                   OutputStreamWriter stream = new OutputStreamWriter(new FileOutputStream(file));
+                   stream.write(this.val$debugInfo.toString());
+                   stream.flush();
+                   stream.close();
+                   Intent intent = new Intent("co.vine.android.intent.action.SEND_LOGS");
+                   DebugHomeActivity.this.startActivity(intent);
                         } catch (IOException e) {
-/* 246 */                   Toast.makeText(DebugHomeActivity.this, "Failed to send log.", 0).show();
+                   Toast.makeText(DebugHomeActivity.this, "Failed to send log.", 0).show();
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.DebugHomeActivity$3 */
-/* 250 */       class ViewOnClickListenerC01993 implements View.OnClickListener {
+                
+       class ViewOnClickListenerC01993 implements View.OnClickListener {
 
-                    /* JADX INFO: renamed from: i */
+                    
                     int f80i = 0;
 
-/* 251 */           ViewOnClickListenerC01993() {
+           ViewOnClickListenerC01993() {
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 257 */           public void onClick(View v) {
-/* 258 */               this.f80i++;
-/* 259 */               if (this.f80i >= 3) {
-/* 260 */                   throw new RuntimeException(new VineLoggingException());
+                    @Override 
+           public void onClick(View v) {
+               this.f80i++;
+               if (this.f80i >= 3) {
+                   throw new RuntimeException(new VineLoggingException());
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.DebugHomeActivity$4 */
-/* 268 */       class ViewOnClickListenerC02004 implements View.OnClickListener {
-                    final /* synthetic */ EditText val$query;
+                
+       class ViewOnClickListenerC02004 implements View.OnClickListener {
+                    final  EditText val$query;
 
-/* 269 */           ViewOnClickListenerC02004(EditText editText) {
+           ViewOnClickListenerC02004(EditText editText) {
                         this.val$query = editText;
                     }
 
-                    @Override // android.view.View.OnClickListener
-/* 272 */           public void onClick(View v) {
-/* 273 */               DebugHomeActivity.access$000(DebugHomeActivity.this, this.val$query.getText().toString());
+                    @Override 
+           public void onClick(View v) {
+               DebugHomeActivity.access$000(DebugHomeActivity.this, this.val$query.getText().toString());
                     }
                 }
 
                 @TargetApi(11)
-/* 283 */       private void appendMemoryInfo(StringBuilder debugInfo) {
+       private void appendMemoryInfo(StringBuilder debugInfo) {
                     int mb;
-/* 284 */           ActivityManager activityManager = (ActivityManager) getSystemService(HomeTabActivity.TAG_ACTIVITY);
-/* 285 */           ActivityManager.MemoryInfo info = new ActivityManager.MemoryInfo();
-/* 286 */           activityManager.getMemoryInfo(info);
-/* 288 */           if (Build.VERSION.SDK_INT >= 11 && !BuildUtil.isExplore()) {
-/* 289 */               mb = activityManager.getLargeMemoryClass();
+           ActivityManager activityManager = (ActivityManager) getSystemService(HomeTabActivity.TAG_ACTIVITY);
+           ActivityManager.MemoryInfo info = new ActivityManager.MemoryInfo();
+           activityManager.getMemoryInfo(info);
+           if (Build.VERSION.SDK_INT >= 11 && !BuildUtil.isExplore()) {
+               mb = activityManager.getLargeMemoryClass();
                     } else {
-/* 291 */               mb = activityManager.getMemoryClass();
+               mb = activityManager.getMemoryClass();
                     }
-/* 293 */           debugInfo.append("\nMemory Info: " + mb + "MB");
+           debugInfo.append("\nMemory Info: " + mb + "MB");
                 }
 
-/* 305 */       private void handleDebugQuery(String query) {
-/* 306 */           if (query != null) {
-/* 307 */               if (query.startsWith("p:")) {
-/* 308 */                   SingleActivity.start(this, Long.parseLong(query.substring(2)));
+       private void handleDebugQuery(String query) {
+           if (query != null) {
+               if (query.startsWith("p:")) {
+                   SingleActivity.start(this, Long.parseLong(query.substring(2)));
                         }
-/* 310 */               if (query.startsWith("s:")) {
-/* 311 */                   SingleActivity.start(this, query.substring(2));
+               if (query.startsWith("s:")) {
+                   SingleActivity.start(this, query.substring(2));
                         }
-/* 313 */               if (query.startsWith("u:")) {
-/* 314 */                   ProfileActivity.start(this, Long.parseLong(query.substring(2)), "Debug Screen");
+               if (query.startsWith("u:")) {
+                   ProfileActivity.start(this, Long.parseLong(query.substring(2)), "Debug Screen");
                         }
                     }
                 }
 
-                /* JADX INFO: renamed from: co.vine.android.DebugHomeActivity$1CpuFilter, reason: invalid class name */
-/* 319 */       class C1CpuFilter implements FileFilter {
-/* 320 */           C1CpuFilter() {
+                
+       class C1CpuFilter implements FileFilter {
+           C1CpuFilter() {
                     }
 
-                    @Override // java.io.FileFilter
-/* 324 */           public boolean accept(File pathname) {
+                    @Override 
+           public boolean accept(File pathname) {
                         return Pattern.matches("cpu[0-9]+", pathname.getName());
                     }
                 }
 
-/* 333 */       private int getNumCores() {
+       private int getNumCores() {
                     try {
-/* 334 */               File dir = new File("/sys/devices/system/cpu/");
-/* 336 */               File[] files = dir.listFiles(new C1CpuFilter());
-/* 338 */               return files.length;
+               File dir = new File("/sys/devices/system/cpu/");
+               File[] files = dir.listFiles(new C1CpuFilter());
+               return files.length;
                     } catch (Exception e) {
-/* 341 */               return 1;
+               return 1;
                     }
                 }
             }
