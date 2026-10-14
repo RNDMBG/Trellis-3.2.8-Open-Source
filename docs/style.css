@@ -1,15 +1,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#f2f2f2;color:#222;font-size:16px;line-height:1.55}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
-.topbar{background:#00bf8f}
-.topbar-in{display:flex;align-items:center;justify-content:space-between;height:56px}
-.wordmark{color:#fff;font-size:26px;font-weight:800;letter-spacing:.5px}
-.topbar nav a{color:#fff;text-decoration:none;font-size:14px;margin-left:18px;opacity:.95}
-.topbar nav a:hover{text-decoration:underline}
-.navstrip{background:#1d1d1d}
-.navstrip-in{display:flex;gap:14px;align-items:center;height:40px}
-.navdot{width:9px;height:9px;border-radius:50%;background:#666}
-.navdot.on{background:#fff}
+.pagetop{display:flex;align-items:baseline;justify-content:space-between;padding:26px 20px 6px}
+.wordmark{color:#00a179;font-size:24px;font-weight:800;letter-spacing:.5px}
+.pagetop nav a{color:#00a179;text-decoration:none;font-size:14px;margin-left:18px}
+.pagetop nav a:hover{text-decoration:underline}
 main{padding:28px 0 60px}
 .hero{padding:34px 0 10px}
 .hero h1{font-size:34px;line-height:1.2;margin-bottom:12px}
