@@ -751,6 +751,8 @@ looping videos"</string>
     <string name="updates_downloading_title">Downloading</string>
     <string name="updates_install_title">Update</string>
     <string name="updates_install_msg">Would you like to install the update now?</string>
+    <string name="updates_new_build">New build found (%1$s)</string>
+    <string name="updates_github_fallback">Download speeds too low? Try downloading directly from GitHub</string>
     <string name="updates_downloading">Downloading update…</string>
     <string name="later">Later</string>
     <string name="yesterday">Yesterday</string>

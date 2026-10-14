@@ -10,4 +10,5 @@
         </LinearLayout>
         <co.vine.android.views.SwitchImple android:id="@id/updates_auto" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/VineSwitch" />
     </LinearLayout>
+    <TextView android:textSize="14.0sp" android:textColor="#ff33b5e5" android:id="@id/updates_github" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="@string/updates_github_fallback" />
 </LinearLayout>

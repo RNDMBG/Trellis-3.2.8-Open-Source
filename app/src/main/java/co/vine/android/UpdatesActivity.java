@@ -34,6 +34,8 @@ public class UpdatesActivity extends BaseControllerActionBarActivity implements 
                 UpdateManager.setAutoEnabled(UpdatesActivity.this, isChecked);
             }
         });
+        TextView githubRow = (TextView) findViewById(C0257R.id.updates_github);
+        githubRow.setOnClickListener(this);
         refreshStatus();
     }
 
@@ -43,6 +45,10 @@ public class UpdatesActivity extends BaseControllerActionBarActivity implements 
 
     @Override
     public void onClick(View v) {
+        if (v.getId() == C0257R.id.updates_github) {
+            UpdateManager.openReleasesPage(this);
+            return;
+        }
         if (v.getId() == C0257R.id.updates_check) {
             mCheckButton.setEnabled(false);
             mStatus.setText(C0257R.string.updates_checking);
@@ -51,7 +57,7 @@ public class UpdatesActivity extends BaseControllerActionBarActivity implements 
                 public void onResult(UpdateManager.UpdateInfo info) {
                     mCheckButton.setEnabled(true);
                     if (info != null && info.newer && info.apkUrl != null) {
-                        mStatus.setText(info.version);
+                        mStatus.setText(getString(C0257R.string.updates_new_build, info.version));
                         UpdateManager.showUpdateDialog(UpdatesActivity.this, info);
                     } else if (info != null) {
                         mStatus.setText(C0257R.string.updates_uptodate);

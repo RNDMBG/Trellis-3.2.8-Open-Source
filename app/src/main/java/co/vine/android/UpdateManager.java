@@ -333,6 +333,17 @@ public final class UpdateManager {
         }
     }
 
+    /** Opens the releases page in the browser so the APK can be grabbed directly. */
+    public static void openReleasesPage(Activity activity) {
+        try {
+            String url = "https://github.com/" + UpdateConfig.GITHUB_OWNER + "/" + UpdateConfig.GITHUB_REPO + "/releases/latest";
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            activity.startActivity(intent);
+        } catch (Exception e) {
+            CrashUtil.logException(e);
+        }
+    }
+
     /** Opens the phone's Downloads list so the user taps the APK to install. */
     static void openSystemDownloads(Context context) {
         try {

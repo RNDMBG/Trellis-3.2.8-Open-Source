@@ -541,6 +541,7 @@
     <id name="updates_status" />
     <id name="updates_check" />
     <id name="updates_auto" />
+    <id name="updates_github" />
     <id name="privacy_controls" />
     <id name="alert_icon" />
     <id name="favorite_people" />
