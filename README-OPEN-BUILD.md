@@ -21,4 +21,4 @@ The original native recording libraries are `armeabi-v7a` only. They are package
 
 ## Source and licensing status
 
-This is a reverse-engineered recovery, not an official Vine open-source release. See `NOTICE-RECOVERY.md` and `PROJECT-LICENSE.md` before redistributing it. The project additions and compatibility code may be licensed separately, but recovered Vine code, artwork, native libraries, and third-party libraries retain their original ownership and license obligations.
+This is a reverse-engineered recovery, not an official Vine open-source release. See `NOTICE-RECOVERY.md` and `PROJECT-LICENSE.md` before redistributing it. The project additions and compatibility code may be licensed separately, but recovered/decompiled Vine code, artwork, native libraries, and third-party libraries retain their original ownership and license obligations under X (formerly known as Twitter).
