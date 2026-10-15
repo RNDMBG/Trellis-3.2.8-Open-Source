@@ -634,25 +634,25 @@ import java.util.Map;
                     @Override 
            public void onRevine(String reqId, int statusCode, String reasonPhrase, long postId, VineRepost repost) {
                BaseTimelineFragment.this.removeRequest(reqId);
-               if (statusCode >= 200 && statusCode < 300) {
-                   BaseTimelineFragment.this.mRevineCache.revine(postId);
-                   if (repost != null && repost.repostId > 0) {
-                       BaseTimelineFragment.this.mRevineCache.putMyRepostId(postId, repost.repostId);
-                            }
-                   BaseTimelineFragment.this.mAdapter.notifyDataSetChanged();
-                   BaseTimelineFragment.this.mFeedAdapter.updateRevinedCount(postId, true);
-                        }
+                if (statusCode >= 200 && statusCode < 300) {
+                    BaseTimelineFragment.this.mRevineCache.revine(postId);
+                    if (repost != null && repost.repostId > 0) {
+                        BaseTimelineFragment.this.mRevineCache.putMyRepostId(postId, repost.repostId);
+                             }
+                    BaseTimelineFragment.this.mAdapter.notifyDataSetChanged();
+                    BaseTimelineFragment.this.mFeedAdapter.updateRevinedCount(postId, true, repost != null ? repost.repostId : -1L);
+                         }
                     }
 
                     @Override 
            public void onUnrevine(String reqId, int statusCode, String reasonPhrase, long postId) {
                BaseTimelineFragment.this.removeRequest(reqId);
-               if (statusCode >= 200 && statusCode < 300) {
-                   BaseTimelineFragment.this.mRevineCache.unRevine(postId);
-                   BaseTimelineFragment.this.mRevineCache.removeMyRepostId(postId);
-                   BaseTimelineFragment.this.mAdapter.notifyDataSetChanged();
-                   BaseTimelineFragment.this.mFeedAdapter.updateRevinedCount(postId, false);
-                        }
+                if (statusCode >= 200 && statusCode < 300) {
+                    BaseTimelineFragment.this.mRevineCache.unRevine(postId);
+                    BaseTimelineFragment.this.mRevineCache.removeMyRepostId(postId);
+                    BaseTimelineFragment.this.mAdapter.notifyDataSetChanged();
+                    BaseTimelineFragment.this.mFeedAdapter.updateRevinedCount(postId, false, 0L);
+                         }
                     }
 
                     @Override 

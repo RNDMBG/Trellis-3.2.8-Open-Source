@@ -15,6 +15,8 @@
             import org.apache.http.conn.scheme.PlainSocketFactory;
             import org.apache.http.conn.scheme.Scheme;
             import org.apache.http.conn.scheme.SchemeRegistry;
+            import org.apache.http.conn.params.ConnManagerParams;
+            import org.apache.http.conn.params.ConnPerRouteBean;
             import org.apache.http.impl.client.DefaultHttpClient;
             import org.apache.http.params.BasicHttpParams;
             import org.apache.http.params.HttpConnectionParams;
@@ -51,6 +53,8 @@
             HttpConnectionParams.setSoTimeout(httpParams, READ_TIMEOUT);
             HttpConnectionParams.setConnectionTimeout(httpParams, CONNECT_TIMEOUT);
             HttpConnectionParams.setSocketBufferSize(httpParams, 8192);
+            ConnManagerParams.setMaxTotalConnections(httpParams, 30);
+            ConnManagerParams.setMaxConnectionsPerRoute(httpParams, new ConnPerRouteBean(10));
             return httpParams;
                 }
 

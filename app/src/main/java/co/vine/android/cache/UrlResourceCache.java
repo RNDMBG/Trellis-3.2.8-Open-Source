@@ -29,7 +29,7 @@
     public abstract class UrlResourceCache<K extends CacheKey, V extends UrlResource<T>, T, J> {
                 protected static final int IO_BUFFER_SIZE = 4096;
                 static final long NEXT_REQUEST_INTERVAL = 60000;
-                private static final long POST_DELAY_MILLIS = 100;
+                private static final long POST_DELAY_MILLIS = 40;
                 private CacheBinder<K, V> mCacheBinder;
                 protected final Context mContext;
                 private final NetworkOperationFactory<J> mNetworkFactory;
@@ -37,7 +37,7 @@
                 private final LruCache<K, V> mResourceCache;
                 protected static final String TAG = "ResourceCache";
                 protected static final boolean LOGGABLE = Log.isLoggable(TAG, 3);
-                protected static final ExecutorService sExecutor = Executors.newSingleThreadExecutor();
+                protected static final ExecutorService sExecutor = Executors.newFixedThreadPool(4);
                 private static final Handler sMainHandler = new Handler(Looper.getMainLooper());
                 final int[] mLock = new int[0];
                 protected final LinkedHashMap<K, PendingRes> mPendingDownload = new LinkedHashMap<>(20, 10.0f, true);

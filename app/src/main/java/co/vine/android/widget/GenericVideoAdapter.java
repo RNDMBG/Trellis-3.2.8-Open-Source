@@ -308,22 +308,29 @@
                     }
                 }
 
-       public void updateRevinedCount(long postId, boolean revined) {
-           ArrayList<WeakReference<T>> toRemove = new ArrayList<>();
-                    for (WeakReference<T> ref : this.mViewHolders) {
-               GenericFeedViewHolder holder = ref.get();
-               if (holder == null) {
-                   toRemove.add(ref);
-                        } else if (holder.post != null && holder.post.postId == postId) {
-                            
-                            
-                            
+        public void updateRevinedCount(long postId, boolean revined) {
+            updateRevinedCount(postId, revined, -1L);
+                 }
+
+        public void updateRevinedCount(long postId, boolean revined, long myRepostId) {
+            ArrayList<WeakReference<T>> toRemove = new ArrayList<>();
+                     for (WeakReference<T> ref : this.mViewHolders) {
+                GenericFeedViewHolder holder = ref.get();
+                if (holder == null) {
+                    toRemove.add(ref);
+                         } else if (holder.post != null && holder.post.postId == postId) {
+                             
+                             
+                             
                             boolean wasRevined = holder.post.isRevined();
-                            if (revined && !wasRevined) {
-                                holder.post.revinersCount++;
-                            } else if (!revined && wasRevined && holder.post.revinersCount > 0) {
-                                holder.post.revinersCount--;
-                            }
+                             if (revined && !wasRevined) {
+                                 holder.post.revinersCount++;
+                             } else if (!revined && wasRevined && holder.post.revinersCount > 0) {
+                                 holder.post.revinersCount--;
+                             }
+                             if (myRepostId >= 0) {
+                                 holder.post.myRepostId = myRepostId;
+                             }
                             holder.post.setFlagRevined(revined);
                             holder.share.setColor(this.mProfileColor);
                             holder.share.setSelected(revined);

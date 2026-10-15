@@ -845,9 +845,9 @@
                     if (this.mHideProfileReposts && this.mFeedAdapter instanceof FeedAdapter) {
                         ((FeedAdapter) this.mFeedAdapter).removeReposts();
                     }
-           this.mFeedAdapter.onPause(isFocused());
-           fetchContent(3, true, UrlCachePolicy.CACHE_THEN_NETWORK);
-           dismissDropdown();
+            this.mFeedAdapter.onPause(isFocused());
+            fetchContent(3, true, UrlCachePolicy.NETWORK_THEN_CACHE);
+            dismissDropdown();
                 }
 
        private void dismissDropdown() {
