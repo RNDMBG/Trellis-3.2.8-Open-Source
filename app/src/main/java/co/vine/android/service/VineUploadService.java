@@ -516,10 +516,11 @@
                if (upload2 == null) {
                    upload2 = (VineUpload) intent.getParcelableExtra("upload");
                         }
-               if (upload2 == null) {
-                   SLog.m456e("Error posting. No upload via path nor via argument: {}.", path);
-                   return;
-                        }
+                if (upload2 == null) {
+                    SLog.m456e("Error posting. No upload via path nor via argument: {}.", path);
+                    executeNext();
+                    return;
+                         }
                if (TextUtils.isEmpty(upload2.postInfo)) {
                    UploadManager.setPostInfo(this, upload2, getPostInfoFromIntent(intent));
                         }
@@ -998,33 +999,32 @@
                     }
 
                     
-           protected void onPostExecute(Boolean success) {
-               boolean taskSuccessful = success.booleanValue();
-               if (!this.mIsDiscarded) {
-                   if (taskSuccessful) {
-                       this.mExecutionStatus = 2;
-                       if (VineUploadService.ACTION_UPLOAD.equals(this.action) && TextUtils.isEmpty(this.mUpload.postInfo)) {
-                           this.mExecutionStatus = 3;
-                                }
-                            } else {
-                       this.mExecutionStatus = 1;
-                       VineUploadService.this.startService(VineUploadService.getNotifyFailedIntent(getContext()));
-                       if (this.mUpload != null) {
-                           UploadManager.setStatus(getContext(), this.mUpload, 2, null);
-                           if (VineUploadService.ACTION_UPLOAD.equals(this.action) && this.mUpload.isPrivate) {
-                               VineUploadService.access$1000(VineUploadService.this, this.mUpload.path);
-                                    }
-                                }
-                            }
-                   onComplete();
-                        }
-                    }
+            protected void onPostExecute(Boolean success) {
+                boolean taskSuccessful = success.booleanValue();
+                if (!this.mIsDiscarded) {
+                    if (taskSuccessful) {
+                        this.mExecutionStatus = 2;
+                        if (VineUploadService.ACTION_UPLOAD.equals(this.action) && TextUtils.isEmpty(this.mUpload.postInfo)) {
+                            this.mExecutionStatus = 3;
+                                 }
+                             } else {
+                        this.mExecutionStatus = 1;
+                        VineUploadService.this.startService(VineUploadService.getNotifyFailedIntent(getContext()));
+                        if (this.mUpload != null) {
+                            UploadManager.setStatus(getContext(), this.mUpload, 2, null);
+                            if (VineUploadService.ACTION_UPLOAD.equals(this.action) && this.mUpload.isPrivate) {
+                                VineUploadService.access$1000(VineUploadService.this, this.mUpload.path);
+                                     }
+                                 }
+                             }
+                         }
+                onComplete();
+                     }
 
                     @Override 
             protected void onCancelled() {
                 SLog.m448d("Task cancelled. {}, {}.", this.path, this.action);
                 if (!this.mIsDiscarded) {
-                    VineUploadService.access$1100(VineUploadService.this, this.path);
                     this.mExecutionStatus = 1;
                     VineUploadService.this.startService(VineUploadService.getNotifyFailedIntent(getContext()));
                     if (this.mUpload != null) {

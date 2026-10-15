@@ -466,12 +466,6 @@ public final class UpdateManager {
     public static void downloadAndInstall(final Activity activity, String apkUrl, final int build) {
         final Context app = activity.getApplicationContext();
         final long id = enqueueDownload(app, apkUrl);
-        synchronized (PENDING_BUILDS) {
-            PENDING_BUILDS.put(Long.valueOf(id), Integer.valueOf(build));
-        }
-        final long[] trackId = new long[]{id};
-        final boolean[] cancelled = new boolean[1];
-        final String downloadUrl = apkUrl;
         if (id < 0) {
             try {
                 Toast.makeText(app, C0257R.string.updates_error, Toast.LENGTH_LONG).show();
@@ -479,6 +473,12 @@ public final class UpdateManager {
             }
             return;
         }
+        synchronized (PENDING_BUILDS) {
+            PENDING_BUILDS.put(Long.valueOf(id), Integer.valueOf(build));
+        }
+        final long[] trackId = new long[]{id};
+        final boolean[] cancelled = new boolean[1];
+        final String downloadUrl = apkUrl;
         try {
             final android.widget.ProgressBar bar = new android.widget.ProgressBar(activity, null, android.R.attr.progressBarStyleHorizontal);
             bar.setMax(100);
@@ -532,13 +532,13 @@ public final class UpdateManager {
             boolean done = false;
             final long[] startedAt = new long[]{System.currentTimeMillis()};
             long lastProgressAt = startedAt[0];
-            int lastProgressBytes = 0;
+            long lastProgressBytes = 0;
             int restarts = 0;
             while (!done && !cancelled[0]) {
                 long id = trackId[0];
                 int status = -1;
-                int soFar = 0;
-                int total = -1;
+                long soFar = 0;
+                long total = -1;
                 if (dm != null) {
                     DownloadManager.Query query = new DownloadManager.Query();
                     query.setFilterById(id);
@@ -547,8 +547,8 @@ public final class UpdateManager {
                         cursor = dm.query(query);
                         if (cursor != null && cursor.moveToFirst()) {
                             status = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS));
-                            soFar = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-                            total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+                            soFar = cursor.getLong(cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+                            total = cursor.getLong(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
                         }
                     } catch (Exception ignored) {
                     } finally {
@@ -561,8 +561,8 @@ public final class UpdateManager {
                     }
                 }
                 final int fStatus = status;
-                final int fSoFar = soFar;
-                final int fTotal = total;
+                final long fSoFar = soFar;
+                final long fTotal = total;
                 long now = System.currentTimeMillis();
                 
                 
@@ -599,15 +599,17 @@ public final class UpdateManager {
                         }
                     });
                     if (fStatus == DownloadManager.STATUS_SUCCESSFUL) {
-                        markDownloadReady(appCtx, build);
-                        String name;
-                        synchronized (PENDING_NAMES) {
-                            name = PENDING_NAMES.remove(Long.valueOf(id));
+                        File apk = downloadedApkFile(appCtx);
+                        final boolean valid = apk != null && apk.exists() && apk.length() > 0
+                                && (fTotal <= 0 || apk.length() >= fTotal);
+                        if (valid) {
+                            markDownloadReady(appCtx, build);
+                        } else {
+                            clearReadyState(appCtx);
+                            CrashUtil.logException(new java.io.IOException("Update download finished but APK file is missing or truncated"));
                         }
-                        synchronized (PENDING_BUILDS) {
-                            PENDING_BUILDS.remove(Long.valueOf(id));
-                        }
-                        if (name != null) {
+                        forgetDownload(id);
+                        if (valid) {
                             MAIN.post(new Runnable() {
                                 @Override
                                 public void run() {
@@ -615,6 +617,16 @@ public final class UpdateManager {
                                         if (!activity.isFinishing()) {
                                             showInstallDialog(activity);
                                         }
+                                    } catch (Exception ignored) {
+                                    }
+                                }
+                            });
+                        } else {
+                            MAIN.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        Toast.makeText(appCtx, C0257R.string.updates_error, Toast.LENGTH_LONG).show();
                                     } catch (Exception ignored) {
                                     }
                                 }
@@ -634,6 +646,13 @@ public final class UpdateManager {
                     }
                 } else if (cancelled[0]) {
                     done = true;
+                } else if (fStatus == DownloadManager.STATUS_PAUSED) {
+                    lastProgressAt = now;
+                    try {
+                        Thread.sleep(400);
+                    } catch (InterruptedException ignored) {
+                        done = true;
+                    }
                 } else if (soFar > 0 && soFar == lastProgressBytes && now - lastProgressAt > 45000) {
                     
                     
@@ -798,14 +817,13 @@ public final class UpdateManager {
                         }
                     }
                     if (ok) {
-                        int readyBuild = 0;
+                        Integer b;
                         synchronized (PENDING_BUILDS) {
-                            Integer b = PENDING_BUILDS.remove(Long.valueOf(id));
-                            if (b != null) {
-                                readyBuild = b.intValue();
-                            }
+                            b = PENDING_BUILDS.remove(Long.valueOf(id));
                         }
-                        markDownloadReady(app, readyBuild);
+                        if (b != null) {
+                            markDownloadReady(app, b.intValue());
+                        }
                     } else {
                         synchronized (PENDING_BUILDS) {
                             PENDING_BUILDS.remove(Long.valueOf(id));
@@ -828,6 +846,9 @@ public final class UpdateManager {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setDataAndType(uri, "application/vnd.android.package-archive");
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        if (intent.resolveActivity(context.getPackageManager()) == null) {
+            throw new android.content.ActivityNotFoundException("No installer found for " + fileName);
+        }
         context.startActivity(intent);
     }
 

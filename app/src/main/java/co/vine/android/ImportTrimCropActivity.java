@@ -616,6 +616,7 @@
                 private void completeGalleryUpload() {
                     if (this.mFileUri == null || this.mFileUri.getPath() == null) {
                         Util.showCenteredToast(this, getString(C0257R.string.error_import_video_unknown_error));
+                        this.mAddInProgress = false;
                         return;
                     }
                     File thumbnail = new File(getCacheDir(), "gallery_thumb_" + System.currentTimeMillis() + ".jpg");
