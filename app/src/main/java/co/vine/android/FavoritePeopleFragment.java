@@ -159,10 +159,10 @@
                LayoutInflater inflater = LayoutInflater.from(this.mContext);
                         switch (getItemViewType(position)) {
                             case 1:
-                       view = inflater.inflate(C0257R.layout.user_row_favorites_sectioned_view, parent, false);
+                       view = inflater.inflate(R.layout.user_row_favorites_sectioned_view, parent, false);
                                 break;
                             default:
-                       view = inflater.inflate(C0257R.layout.user_row_favorites_view, parent, false);
+                       view = inflater.inflate(R.layout.user_row_favorites_view, parent, false);
                                 break;
                         }
                FavoriteUserViewHolder holder = FavoritePeopleFragment.this.new FavoriteUserViewHolder(view);
@@ -215,8 +215,8 @@
 
            public FavoriteUserViewHolder(View view) {
                super(view);
-               this.sectionTitle = (TextView) view.findViewById(C0257R.id.section_title);
-               this.favorite = (VineToggleButton) view.findViewById(C0257R.id.favorite_button);
+               this.sectionTitle = (TextView) view.findViewById(R.id.section_title);
+               this.favorite = (VineToggleButton) view.findViewById(R.id.favorite_button);
                this.favorite.setOnCheckedChangeListener(FavoritePeopleFragment.this);
                     }
                 }

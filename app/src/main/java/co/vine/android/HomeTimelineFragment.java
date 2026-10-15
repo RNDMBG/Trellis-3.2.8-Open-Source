@@ -119,7 +119,7 @@ import android.text.TextUtils;
            int followCount = sp.getInt(Settings.PREF_FOLLOWING_COUNT, 0);
            if (!sp.getBoolean(PREF_INVITE_BANNER_CLICKED, false) || followCount <= 5) {
                         try {
-                   this.mInviteBottomBanner = (FrameLayout) getView().findViewById(C0257R.id.find_friends);
+                   this.mInviteBottomBanner = (FrameLayout) getView().findViewById(R.id.find_friends);
                    this.mInviteBottomBanner.setOnClickListener(new ViewOnClickListenerC02191());
                    this.mInviteBottomBanner.setVisibility(0);
                    long viewCount = sp.getLong(PREF_INVITE_BANNER_VIEW_COUNT, 0L) + 1;
@@ -143,10 +143,10 @@ import android.text.TextUtils;
            if (shouldShowAddWidget) {
                VineAccountHelper.setDidShowAddWidget(am, account);
                PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(DIALOG_ADD_WIDGET);
-               p.setTitle(C0257R.string.add_capture_widget_title);
-               p.setMessage(C0257R.string.add_capture_widget);
-               p.setNegativeButton(C0257R.string.cancel);
-               p.setPositiveButton(C0257R.string.add_widget);
+               p.setTitle(R.string.add_capture_widget_title);
+               p.setMessage(R.string.add_capture_widget);
+               p.setNegativeButton(R.string.cancel);
+               p.setPositiveButton(R.string.add_widget);
                p.setListener(this.mAddWidgetDialogDoneListener);
                         try {
                    p.show(activity.getSupportFragmentManager());

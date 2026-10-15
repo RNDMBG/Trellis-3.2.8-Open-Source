@@ -26,14 +26,14 @@
                 super.startActivityFromFragment(fragment, intent, requestCode);
                     } catch (ActivityNotFoundException e) {
                 CrashUtil.logException(e);
-                Util.showCenteredToast(this, C0257R.string.unsupported_feature);
+                Util.showCenteredToast(this, R.string.unsupported_feature);
                     }
                 }
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.settings_notifications_alerts, (Boolean) true, (Boolean) true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.settings_notifications_alerts, (Boolean) true, (Boolean) true);
             Bundle extras = getIntent().getExtras();
             if (extras != null && extras.getInt("color", 0) != 0) {
                 setActionBarColor(extras.getInt("color"));
@@ -41,7 +41,7 @@
             this.mNotificationWasEnabled = Settings.isNotificationEnabled(this);
             if (savedInstanceState == null) {
                 NotificationAlertsSettingsFragment fragment = new NotificationAlertsSettingsFragment();
-                getFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment).commit();
+                getFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
                     }
                 }
             }

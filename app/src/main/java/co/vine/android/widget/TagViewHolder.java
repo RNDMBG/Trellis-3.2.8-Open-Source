@@ -2,7 +2,7 @@
 
             import android.view.View;
             import android.widget.TextView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class TagViewHolder {
@@ -10,6 +10,6 @@
                 public TextView tagTitle;
 
         public TagViewHolder(View view) {
-            this.tagTitle = (TextView) view.findViewById(C0257R.id.tag_name);
+            this.tagTitle = (TextView) view.findViewById(R.id.tag_name);
                 }
             }

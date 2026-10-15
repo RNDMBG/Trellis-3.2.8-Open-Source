@@ -16,7 +16,7 @@
             import android.widget.ImageButton;
             import android.widget.LinearLayout;
             import android.widget.RelativeLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.CameraOnboardHelper;
             import co.vine.android.ImportTrimCropActivity;
             import co.vine.android.recorder.BasicVineRecorder;
@@ -95,22 +95,22 @@
                 @Override 
         protected ImageButton onLayoutInflated(LinearLayout parent, LayoutInflater inflater, Fragment fragment) {
             this.mActivity = fragment.getActivity();
-            ImageButton button = (ImageButton) inflater.inflate(C0257R.layout.plugin_option_image_button, (ViewGroup) parent, false);
+            ImageButton button = (ImageButton) inflater.inflate(R.layout.plugin_option_image_button, (ViewGroup) parent, false);
             button.setOnClickListener(this);
-            button.setImageResource(C0257R.drawable.ic_import);
+            button.setImageResource(R.drawable.ic_import);
             if (fragment instanceof RecorderPluginSupportedFragment) {
-                ViewUtil.fillColor(fragment.getResources(), ((RecorderPluginSupportedFragment) fragment).getColor(true), C0257R.drawable.ic_import, button);
+                ViewUtil.fillColor(fragment.getResources(), ((RecorderPluginSupportedFragment) fragment).getColor(true), R.drawable.ic_import, button);
                     }
             button.setAlpha(0.35f);
             button.setOnTouchListener(new ViewOnTouchListenerC04481());
             this.mShouldOnboard = CameraOnboardHelper.getLastCompletedStep(this.mActivity) == null;
             if (this.mShouldOnboard && fragment.getView() != null) {
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(-2, -2);
-                params.addRule(3, C0257R.id.recording_options);
+                params.addRule(3, R.id.recording_options);
                 TooltipView tooltip = new TooltipView(fragment.getActivity());
-                tooltip.setText(C0257R.string.camera_onboarding_grab_video_from_camera_roll);
+                tooltip.setText(R.string.camera_onboarding_grab_video_from_camera_roll);
                 tooltip.setListener(this);
-                RelativeLayout bottomMask = (RelativeLayout) fragment.getView().findViewById(C0257R.id.bottom_mask);
+                RelativeLayout bottomMask = (RelativeLayout) fragment.getView().findViewById(R.id.bottom_mask);
                bottomMask.addView(tooltip, params);
                this.mTooltip = tooltip;
                this.mParentView = parent;
@@ -236,7 +236,7 @@
                if (parent != null && tooltip != null && !tooltip.hasBeenHidden()) {
                    tooltip.updatePosition(parent, parent.getWidth() / 4);
                    ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) tooltip.getLayoutParams();
-                   params.topMargin = tooltip.getResources().getDimensionPixelOffset(C0257R.dimen.tooltipNegativeMargin);
+                   params.topMargin = tooltip.getResources().getDimensionPixelOffset(R.dimen.tooltipNegativeMargin);
                    tooltip.setLayoutParams(params);
                    tooltip.show();
                         }
@@ -336,7 +336,7 @@
                        ImportPlugin.access$400(ImportPlugin.this).setIndeterminate(false);
                        ImportPlugin.access$400(ImportPlugin.this).setCancelable(true);
                        ImportPlugin.access$400(ImportPlugin.this).setProgressStyle(1);
-                       ImportPlugin.access$400(ImportPlugin.this).setProgressDrawable(activity.getResources().getDrawable(C0257R.drawable.progress_horizontal));
+                       ImportPlugin.access$400(ImportPlugin.this).setProgressDrawable(activity.getResources().getDrawable(R.drawable.progress_horizontal));
                        ImportPlugin.access$400(ImportPlugin.this).setOnCancelListener(this);
                             } catch (Throwable th) {
                                 throw th;
@@ -432,7 +432,7 @@
                        ImportPlugin.access$400(ImportPlugin.this).dismiss();
                        ImportPlugin.access$402(ImportPlugin.this, null);
                             }
-                   Util.showCenteredToast(ImportAsyncTask.this.getContext(), ImportAsyncTask.this.getContext().getString(C0257R.string.error_import_video_unknown_error));
+                   Util.showCenteredToast(ImportAsyncTask.this.getContext(), ImportAsyncTask.this.getContext().getString(R.string.error_import_video_unknown_error));
                         }
                     }
 

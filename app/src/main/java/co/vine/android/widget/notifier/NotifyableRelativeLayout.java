@@ -10,7 +10,7 @@
             import android.view.ViewGroup;
             import android.widget.RelativeLayout;
             import android.widget.TextView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.recorder.ViewGoneAnimationListener;
             import co.vine.android.util.Util;
             import co.vine.android.util.ViewUtil;
@@ -52,14 +52,14 @@
         public void init(Context context) {
             Resources res = context.getResources();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService("layout_inflater");
-            View v = inflater.inflate(C0257R.layout.floating_notification, (ViewGroup) null);
-            TextView t = (TextView) v.findViewById(C0257R.id.floating_view);
-            Drawable d = res.getDrawable(C0257R.drawable.vm_notification);
-            this.mVineGreen = res.getColor(C0257R.color.vine_green);
+            View v = inflater.inflate(R.layout.floating_notification, (ViewGroup) null);
+            TextView t = (TextView) v.findViewById(R.id.floating_view);
+            Drawable d = res.getDrawable(R.drawable.vm_notification);
+            this.mVineGreen = res.getColor(R.color.vine_green);
             d.setColorFilter(this.mVineGreen, PorterDuff.Mode.SRC_ATOP);
             ViewUtil.setBackground(t, d);
             addView(v);
-            this.mNotificationMargin = res.getDimensionPixelOffset(C0257R.dimen.tabbar_height) + res.getDimensionPixelOffset(C0257R.dimen.notification_margin);
+            this.mNotificationMargin = res.getDimensionPixelOffset(R.dimen.tabbar_height) + res.getDimensionPixelOffset(R.dimen.notification_margin);
             t.setOnClickListener(new ViewOnClickListenerC05771());
                 }
 
@@ -99,27 +99,27 @@
            if (count <= 0) {
                hideNotification();
                     } else {
-               TextView t = (TextView) findViewById(C0257R.id.floating_view);
-                        t.setText(getResources().getQuantityString(C0257R.plurals.new_messages, count, Integer.valueOf(count)));
+               TextView t = (TextView) findViewById(R.id.floating_view);
+                        t.setText(getResources().getQuantityString(R.plurals.new_messages, count, Integer.valueOf(count)));
                showNotification();
                     }
            this.mCount = count;
                 }
 
        private void showNotification() {
-           View v = findViewById(C0257R.id.floating_view);
+           View v = findViewById(R.id.floating_view);
            v.setVisibility(0);
                 }
 
        private void hideNotification() {
-           View v = findViewById(C0257R.id.floating_view);
+           View v = findViewById(R.id.floating_view);
            v.animate().alpha(0.0f).setDuration(1000L).setListener(new ViewGoneAnimationListener(v));
            v.setVisibility(8);
                 }
 
        public void personalizeColor(int color) {
-           TextView t = (TextView) findViewById(C0257R.id.floating_view);
-           Drawable d = getResources().getDrawable(C0257R.drawable.vm_notification);
+           TextView t = (TextView) findViewById(R.id.floating_view);
+           Drawable d = getResources().getDrawable(R.drawable.vm_notification);
            if (color != this.mVineGreen) {
                color = Util.getColorWithBlackPercentage(color, 0.24f);
                     }

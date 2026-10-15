@@ -13,8 +13,8 @@ import android.view.MenuItem;
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.settings, (Boolean) true, (Boolean) true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.settings, (Boolean) true, (Boolean) true);
             
             
             
@@ -26,7 +26,7 @@ import android.view.MenuItem;
             if (savedInstanceState == null) {
                 SettingsFragment fragment = new SettingsFragment();
                 fragment.setArguments(BaseTimelineFragment.prepareArguments(getIntent()));
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, this.SETTINGS_TAG).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, this.SETTINGS_TAG).commit();
                 this.mFrag = fragment;
         }
         }

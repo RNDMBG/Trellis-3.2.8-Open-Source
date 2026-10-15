@@ -32,7 +32,7 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.search_activity, true);
+            super.onCreate(savedInstanceState, R.layout.search_activity, true);
             
             
             hideOuterSupportActionBar();
@@ -40,41 +40,41 @@
             ActionBar ab = getSupportActionBar();
             if (ab != null) {
                 ab.setDisplayShowCustomEnabled(true);
-                ab.setCustomView(C0257R.layout.search_action_box);
+                ab.setCustomView(R.layout.search_action_box);
                     }
-            EditText query = (EditText) ab.getCustomView().findViewById(C0257R.id.query);
+            EditText query = (EditText) ab.getCustomView().findViewById(R.id.query);
             ViewUtil.reduceTextSizeViaFontScaleIfNeeded(this, 1.1f, 12.0f, query);
             query.setOnEditorActionListener(this);
             query.addTextChangedListener(this);
             query.setInputType(524288);
             query.requestFocus();
             this.mQuery = query;
-            ImageButton clear = (ImageButton) findViewById(C0257R.id.clear);
+            ImageButton clear = (ImageButton) findViewById(R.id.clear);
             clear.setOnClickListener(this);
             this.mClear = clear;
-            this.mTabHost = (FragmentTabHost) findViewById(C0257R.id.tabhost);
-            this.mTabHost.setup(this, getSupportFragmentManager(), C0257R.id.tabFrameLayout);
+            this.mTabHost = (FragmentTabHost) findViewById(R.id.tabhost);
+            this.mTabHost.setup(this, getSupportFragmentManager(), R.id.tabFrameLayout);
             LayoutInflater li = LayoutInflater.from(this);
             Bundle usersArgs = new Bundle();
-            usersArgs.putInt("empty_desc", C0257R.string.no_people_found);
+            usersArgs.putInt("empty_desc", R.string.no_people_found);
             usersArgs.putBoolean("refresh", false);
             TabHost.TabSpec usersSpec = this.mTabHost.newTabSpec("users");
-            View usersIndicator = li.inflate(C0257R.layout.search_tab, (ViewGroup) this.mTabHost.getTabWidget(), false);
-            TextView title = (TextView) usersIndicator.findViewById(C0257R.id.tab_title);
-            title.setText(getString(C0257R.string.people).toUpperCase());
-            ImageView icon = (ImageView) usersIndicator.findViewById(C0257R.id.tab_icon);
-            icon.setImageDrawable(getResources().getDrawable(C0257R.drawable.tab_people));
+            View usersIndicator = li.inflate(R.layout.search_tab, (ViewGroup) this.mTabHost.getTabWidget(), false);
+            TextView title = (TextView) usersIndicator.findViewById(R.id.tab_title);
+            title.setText(getString(R.string.people).toUpperCase());
+            ImageView icon = (ImageView) usersIndicator.findViewById(R.id.tab_icon);
+            icon.setImageDrawable(getResources().getDrawable(R.drawable.tab_people));
             usersSpec.setIndicator(usersIndicator);
             this.mTabHost.addTab(usersSpec, UserSearchFragment.class, usersArgs);
             Bundle tagsArgs = new Bundle();
-            tagsArgs.putInt("empty_desc", C0257R.string.no_tags_found);
+            tagsArgs.putInt("empty_desc", R.string.no_tags_found);
             tagsArgs.putBoolean("refresh", false);
             TabHost.TabSpec tagsSpec = this.mTabHost.newTabSpec("tags");
-            View tagsIndicator = li.inflate(C0257R.layout.search_tab, (ViewGroup) this.mTabHost.getTabWidget(), false);
-            TextView title2 = (TextView) tagsIndicator.findViewById(C0257R.id.tab_title);
-            title2.setText(getString(C0257R.string.tags).toUpperCase());
-            ImageView icon2 = (ImageView) tagsIndicator.findViewById(C0257R.id.tab_icon);
-            icon2.setImageDrawable(getResources().getDrawable(C0257R.drawable.tab_tags));
+            View tagsIndicator = li.inflate(R.layout.search_tab, (ViewGroup) this.mTabHost.getTabWidget(), false);
+            TextView title2 = (TextView) tagsIndicator.findViewById(R.id.tab_title);
+            title2.setText(getString(R.string.tags).toUpperCase());
+            ImageView icon2 = (ImageView) tagsIndicator.findViewById(R.id.tab_icon);
+            icon2.setImageDrawable(getResources().getDrawable(R.drawable.tab_tags));
             tagsSpec.setIndicator(tagsIndicator);
             this.mTabHost.addTab(tagsSpec, TagSearchFragment.class, tagsArgs);
             modernShowDivider();
@@ -100,7 +100,7 @@
 
                 @Override 
        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-           ImageButton cancel = (ImageButton) findViewById(C0257R.id.clear);
+           ImageButton cancel = (ImageButton) findViewById(R.id.clear);
            if (charSequence.length() > 0) {
                cancel.setVisibility(0);
                     } else {

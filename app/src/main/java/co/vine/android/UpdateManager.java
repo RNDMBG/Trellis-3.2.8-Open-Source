@@ -279,15 +279,15 @@ public final class UpdateManager {
     public static void showUpdateDialog(final Activity activity, final UpdateInfo info) {
         try {
             new AlertDialog.Builder(activity)
-                    .setTitle(C0257R.string.updates_available_title)
-                    .setMessage(activity.getString(C0257R.string.updates_available_msg) + " (build " + info.build + ")")
-                    .setPositiveButton(C0257R.string.yes, new DialogInterface.OnClickListener() {
+                    .setTitle(R.string.updates_available_title)
+                    .setMessage(activity.getString(R.string.updates_available_msg) + " (build " + info.build + ")")
+                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             downloadAndInstall(activity, info.apkUrl, info.build);
                         }
                     })
-                    .setNegativeButton(C0257R.string.later, new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.later, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
@@ -303,15 +303,15 @@ public final class UpdateManager {
     public static void showInstallDialog(final Activity activity) {
         try {
             new AlertDialog.Builder(activity)
-                    .setTitle(C0257R.string.updates_install_title)
-                    .setMessage(activity.getString(C0257R.string.updates_install_msg))
-                    .setPositiveButton(C0257R.string.yes, new DialogInterface.OnClickListener() {
+                    .setTitle(R.string.updates_install_title)
+                    .setMessage(activity.getString(R.string.updates_install_msg))
+                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             tryInstallThenDownloads(activity);
                         }
                     })
-                    .setNegativeButton(C0257R.string.later, new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.later, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
@@ -460,7 +460,7 @@ public final class UpdateManager {
         long id = enqueueDownload(context.getApplicationContext(), apkUrl);
         if (id < 0) {
             try {
-                Toast.makeText(context.getApplicationContext(), C0257R.string.updates_error, Toast.LENGTH_LONG).show();
+                Toast.makeText(context.getApplicationContext(), R.string.updates_error, Toast.LENGTH_LONG).show();
             } catch (Exception ignored) {
             }
         } else {
@@ -485,7 +485,7 @@ public final class UpdateManager {
                 sDownloadActive = false;
             }
             try {
-                Toast.makeText(app, C0257R.string.updates_error, Toast.LENGTH_LONG).show();
+                Toast.makeText(app, R.string.updates_error, Toast.LENGTH_LONG).show();
             } catch (Exception ignored) {
             }
             return;
@@ -503,11 +503,11 @@ public final class UpdateManager {
             int pad = (int) (24.0f * activity.getResources().getDisplayMetrics().density + 0.5f);
             bar.setPadding(pad, pad / 2, pad, 0);
             final AlertDialog dialog = new AlertDialog.Builder(activity)
-                    .setTitle(C0257R.string.updates_downloading_title)
-                    .setMessage(app.getString(C0257R.string.updates_downloading))
+                    .setTitle(R.string.updates_downloading_title)
+                    .setMessage(app.getString(R.string.updates_downloading))
                     .setView(bar)
                     .setCancelable(false)
-                    .setNegativeButton(C0257R.string.cancel, new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface d, int which) {
                             try {
@@ -644,7 +644,7 @@ public final class UpdateManager {
                                 @Override
                                 public void run() {
                                     try {
-                                        Toast.makeText(appCtx, C0257R.string.updates_error, Toast.LENGTH_LONG).show();
+                                        Toast.makeText(appCtx, R.string.updates_error, Toast.LENGTH_LONG).show();
                                     } catch (Exception ignored) {
                                     }
                                 }
@@ -656,7 +656,7 @@ public final class UpdateManager {
                             @Override
                             public void run() {
                                 try {
-                                    Toast.makeText(appCtx, C0257R.string.updates_error, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(appCtx, R.string.updates_error, Toast.LENGTH_LONG).show();
                                 } catch (Exception ignored) {
                                 }
                             }
@@ -692,7 +692,7 @@ public final class UpdateManager {
                                     } catch (Exception ignored) {
                                     }
                                     try {
-                                        Toast.makeText(appCtx, C0257R.string.updates_error, Toast.LENGTH_LONG).show();
+                                        Toast.makeText(appCtx, R.string.updates_error, Toast.LENGTH_LONG).show();
                                     } catch (Exception ignored) {
                                     }
                                 }
@@ -709,7 +709,7 @@ public final class UpdateManager {
                                 } catch (Exception ignored) {
                                 }
                                 try {
-                                    Toast.makeText(appCtx, C0257R.string.updates_error, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(appCtx, R.string.updates_error, Toast.LENGTH_LONG).show();
                                 } catch (Exception ignored) {
                                 }
                             }
@@ -793,7 +793,7 @@ public final class UpdateManager {
                 return -1L;
             }
             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(apkUrl));
-            request.setTitle(app.getString(C0257R.string.updates_title));
+            request.setTitle(app.getString(R.string.updates_title));
             request.setMimeType("application/vnd.android.package-archive");
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
             request.setDestinationInExternalFilesDir(app, Environment.DIRECTORY_DOWNLOADS, UpdateConfig.APK_FILE_NAME);

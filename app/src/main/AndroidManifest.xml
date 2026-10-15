@@ -117,6 +117,7 @@
         </service>
         <service android:label="@string/notif_service_label" android:name="co.vine.android.service.GCMRegistrationService"/>
         <service android:label="@string/notif_service_label" android:name="co.vine.android.service.GCMNotificationService"/>
+        <service android:exported="false" android:name="co.vine.android.service.ActivityPollJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
         <service android:label="@string/chat_service_label" android:name="co.vine.android.service.RealTimeChatService" android:process=":record"/>
         <uses-library android:name="com.sonymobile.camera.addon.api" android:required="false"/>
         <activity android:launchMode="standard" android:name="co.vine.android.PostActivity"/>

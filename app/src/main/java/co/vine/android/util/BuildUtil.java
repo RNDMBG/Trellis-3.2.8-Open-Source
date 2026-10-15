@@ -5,7 +5,7 @@
             import android.support.v4.os.EnvironmentCompat;
             import android.text.TextUtils;
             import android.util.Log;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.HomeTabActivity;
             import co.vine.android.recorder.RecordConfigUtils;
             import com.edisonwang.android.slog.SLog;
@@ -67,8 +67,8 @@
                 CrossConstants.AUTHORITY = "co.vine.android";
                     }
             CrossConstants.BROADCAST_PERMISSION = CrossConstants.AUTHORITY + ".BROADCAST";
-            CrossConstants.RES_RAW_CA = C0257R.raw.cacerts;
-            CrossConstants.RES_VINE_GREEN = C0257R.color.vine_green;
+            CrossConstants.RES_RAW_CA = R.raw.cacerts;
+            CrossConstants.RES_VINE_GREEN = R.color.vine_green;
                 }
 
         public static String getVersionName(Context context) {
@@ -144,43 +144,43 @@
                 }
 
        public static String getBaseUrl(Resources context) {
-           return context.getString(C0257R.string.vine_api);
+           return context.getString(R.string.vine_api);
                 }
 
        public static String getWebsiteUrl(Context context) {
-           return context.getString(C0257R.string.vine_www);
+           return context.getString(R.string.vine_www);
                 }
 
        public static String getMediaUrl(Resources context) {
-           return context.getString(C0257R.string.vine_media_api);
+           return context.getString(R.string.vine_media_api);
                 }
 
        public static String getAmazonBucket(Context context) {
-           return context.getString(C0257R.string.amazon_bucket);
+           return context.getString(R.string.amazon_bucket);
                 }
 
        public static String getExploreUrl(Resources context) {
-           return context.getString(C0257R.string.explore_url);
+           return context.getString(R.string.explore_url);
                 }
 
        public static String getExplorePath(Resources context) {
-           return context.getString(C0257R.string.explore_url_path);
+           return context.getString(R.string.explore_url_path);
                 }
 
        public static String getConfigUrl(Resources context) {
-           return context.getString(C0257R.string.vine_config);
+           return context.getString(R.string.vine_config);
                 }
 
        public static String getStatusUrl(Context context) {
-           return context.getString(C0257R.string.status_url);
+           return context.getString(R.string.status_url);
                 }
 
        public static String getRtcUrl(Resources context) {
-           return context.getString(C0257R.string.rtc_url);
+           return context.getString(R.string.rtc_url);
                 }
 
        public static String getSenderId(Context context) {
-           return context.getString(C0257R.string.sender_id);
+           return context.getString(R.string.sender_id);
                 }
 
        public static void bootstrap() {

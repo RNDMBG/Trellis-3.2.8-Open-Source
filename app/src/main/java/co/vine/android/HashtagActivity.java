@@ -13,7 +13,7 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, false);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, false);
             setupActionBar((Boolean) true, (Boolean) true, (String) null, (Boolean) true, (Boolean) true);
             Intent intent = getIntent();
             ActionBar ab = getSupportActionBar();
@@ -25,7 +25,7 @@
                 Bundle b = ExploreTimelineFragment.prepareArguments(intent, false);
                 b.putBoolean("refresh", true);
                 explore.setArguments(b);
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, explore, FRAGMENT_TAG).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, explore, FRAGMENT_TAG).commit();
                     }
                 }
 
@@ -36,7 +36,7 @@
 
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(C0257R.menu.mute, menu);
+            getMenuInflater().inflate(R.menu.mute, menu);
             return super.onCreateOptionsMenu(menu);
                 }
 

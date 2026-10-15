@@ -3,7 +3,7 @@
             import android.app.Activity;
             import android.content.Intent;
             import android.os.Bundle;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import com.edisonwang.android.slog.SLog;
             
             
@@ -24,7 +24,7 @@
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(C0257R.layout.com_facebook_login_activity_layout);
+            setContentView(R.layout.com_facebook_login_activity_layout);
             if (savedInstanceState != null) {
                 this.callingPackage = savedInstanceState.getString(SAVED_CALLING_PKG_KEY);
                 this.authorizationClient = (AuthorizationClient) savedInstanceState.getSerializable(SAVED_AUTH_CLIENT);
@@ -56,12 +56,12 @@
 
                     @Override 
             public void onBackgroundProcessingStarted() {
-                LoginActivity.this.findViewById(C0257R.id.com_facebook_login_activity_progress_bar).setVisibility(0);
+                LoginActivity.this.findViewById(R.id.com_facebook_login_activity_progress_bar).setVisibility(0);
                     }
 
                     @Override 
             public void onBackgroundProcessingStopped() {
-                LoginActivity.this.findViewById(C0257R.id.com_facebook_login_activity_progress_bar).setVisibility(8);
+                LoginActivity.this.findViewById(R.id.com_facebook_login_activity_progress_bar).setVisibility(8);
                     }
                 }
 
@@ -91,7 +91,7 @@
        public void onPause() {
            super.onPause();
            this.authorizationClient.cancelCurrentHandler();
-           findViewById(C0257R.id.com_facebook_login_activity_progress_bar).setVisibility(8);
+           findViewById(R.id.com_facebook_login_activity_progress_bar).setVisibility(8);
                 }
 
                 @Override 

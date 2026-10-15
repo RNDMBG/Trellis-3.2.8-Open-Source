@@ -7,7 +7,7 @@
             import android.widget.BaseAdapter;
             import android.widget.CursorAdapter;
             import android.widget.TextView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.util.CrashUtil;
             
             
@@ -26,15 +26,15 @@
                 private final int[] mTypes;
 
         public SectionAdapter(BaseAdapter[] adapters) {
-            this(null, null, null, adapters, C0257R.layout.section_divider, 0);
+            this(null, null, null, adapters, R.layout.section_divider, 0);
                 }
 
         public SectionAdapter(BaseAdapter[] adapters, int defaultType) {
-            this(null, null, null, adapters, C0257R.layout.section_divider, defaultType);
+            this(null, null, null, adapters, R.layout.section_divider, defaultType);
                 }
 
         public SectionAdapter(int[] types, int[] stringIds, BaseAdapter[] adapters) {
-            this(null, types, stringIds, adapters, C0257R.layout.section_divider, 0);
+            this(null, types, stringIds, adapters, R.layout.section_divider, 0);
                 }
 
                 
@@ -171,7 +171,7 @@
                        if (pos == 0) {
                            if (view == null) {
                                view = inflater.inflate(this.mSectionLayout, parent, false);
-                               view.setTag(view.findViewById(C0257R.id.text));
+                               view.setTag(view.findViewById(R.id.text));
                                     }
                            int[] strings = this.mStringResIds;
                            int stringResId = strings[index % strings.length];

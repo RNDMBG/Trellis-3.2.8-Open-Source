@@ -371,12 +371,12 @@
            this.mProfileHeaderAdapter.bindUser(user);
            if (user.hasFollowApprovalPending() && !this.mHeaderAdded) {
                LayoutInflater inflater = LayoutInflater.from(getActivity());
-               LinearLayout approvalPending = (LinearLayout) inflater.inflate(C0257R.layout.follow_request_approval_pending, (ViewGroup) null, false);
+               LinearLayout approvalPending = (LinearLayout) inflater.inflate(R.layout.follow_request_approval_pending, (ViewGroup) null, false);
                if (this.mListView != null) {
                    this.mListView.addHeaderView(approvalPending);
-                   RelativeLayout pendingFollowAccept = (RelativeLayout) approvalPending.findViewById(C0257R.id.follow_request_accept_container);
+                   RelativeLayout pendingFollowAccept = (RelativeLayout) approvalPending.findViewById(R.id.follow_request_accept_container);
                    pendingFollowAccept.setOnClickListener(this);
-                   RelativeLayout pendingFollowReject = (RelativeLayout) approvalPending.findViewById(C0257R.id.follow_request_reject_container);
+                   RelativeLayout pendingFollowReject = (RelativeLayout) approvalPending.findViewById(R.id.follow_request_reject_container);
                    pendingFollowReject.setOnClickListener(this);
                    this.mFollowHeader = approvalPending;
                    this.mHeaderAdded = true;
@@ -397,7 +397,7 @@
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
            if (!this.mIsMe) {
-               inflater.inflate(C0257R.menu.profile, menu);
+               inflater.inflate(R.menu.profile, menu);
                     }
                 }
 
@@ -406,7 +406,7 @@
                     Bitmap bitmap;
            int id = item.getItemId();
            Activity activity = getActivity();
-           if (id == C0257R.id.block_or_report) {
+           if (id == R.id.block_or_report) {
                if (this.mUser != null) {
                    if (!this.mUser.isBlocking()) {
                        Intent i = new Intent(getActivity(), (Class<?>) ReportingActivity.class);
@@ -421,7 +421,7 @@
                         }
                return true;
                     }
-           if (id == C0257R.id.hide_revines) {
+           if (id == R.id.hide_revines) {
                if (this.mUser != null) {
                    if (this.mUser.areRepostsEnabled()) {
                        addRequest(this.mAppController.disableReposts(this.mUserId));
@@ -431,7 +431,7 @@
                         }
                return true;
                     }
-           if (id == C0257R.id.share_profile) {
+           if (id == R.id.share_profile) {
                if (this.mUser != null) {
                    FlurryUtils.trackShareProfile();
                    FragmentActivity context = getActivity();
@@ -439,16 +439,16 @@
                    share.setType("text/plain");
                    share.addFlags(524288);
                    share.putExtra("android.intent.extra.SUBJECT", "");
-                   share.putExtra("android.intent.extra.TEXT", context.getString(C0257R.string.share_profile_txt, new Object[]{this.mUser.username, String.valueOf(this.mUser.userId)}).replace("vine://user", BuildUtil.getWebsiteUrl(context) + "/u"));
-                   startActivity(Intent.createChooser(share, getString(C0257R.string.send)));
+                   share.putExtra("android.intent.extra.TEXT", context.getString(R.string.share_profile_txt, new Object[]{this.mUser.username, String.valueOf(this.mUser.userId)}).replace("vine://user", BuildUtil.getWebsiteUrl(context) + "/u"));
+                   startActivity(Intent.createChooser(share, getString(R.string.send)));
                         }
                return true;
                     }
-           if (id == C0257R.id.create_shortcut) {
+           if (id == R.id.create_shortcut) {
                if (this.mUser != null) {
                    this.mUserProfileImageKeyForShortcut = new ImageKey(this.mUser.avatarUrl, true);
                    if (TextUtils.isEmpty(this.mUser.avatarUrl) || Util.isDefaultAvatarUrl(this.mUser.avatarUrl)) {
-                       bitmap = BitmapFactory.decodeResource(getResources(), C0257R.drawable.avatar_large);
+                       bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.avatar_large);
                             } else {
                        bitmap = this.mAppController.getPhotoBitmap(this.mUserProfileImageKeyForShortcut);
                             }
@@ -456,15 +456,15 @@
                        addProfileShortCut(bitmap);
                             }
                         }
-                    } else if (id == C0257R.id.favorite_user && this.mUser != null) {
+                    } else if (id == R.id.favorite_user && this.mUser != null) {
                this.mFavoriteUser = !this.mFavoriteUser;
                this.mAppController.favoriteUser(this.mUserId, this.mFavoriteUser, this.mUser.isFollowing());
                getActivity().supportInvalidateOptionsMenu();
                if (this.mFavoriteUser) {
-                   ModalView modal = new ModalView(getActivity(), this.mRootView, C0257R.layout.favorite_user_modal);
+                   ModalView modal = new ModalView(getActivity(), this.mRootView, R.layout.favorite_user_modal);
                    if (!TextUtils.isEmpty(this.mUser.username)) {
-                       TextView textView = (TextView) modal.findViewById(C0257R.id.description);
-                       textView.setText(getString(C0257R.string.favorited_confirmation, this.mUser.username));
+                       TextView textView = (TextView) modal.findViewById(R.id.description);
+                       textView.setText(getString(R.string.favorited_confirmation, this.mUser.username));
                             }
                         }
                if (this.mTooltipOverlay != null) {
@@ -490,29 +490,29 @@
                addIntent.putExtra("android.intent.extra.shortcut.ICON", scaledBitmap);
                addIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
                activity.getApplicationContext().sendBroadcast(addIntent);
-               Util.showCenteredToast(activity, C0257R.string.shorcut_created);
+               Util.showCenteredToast(activity, R.string.shorcut_created);
                     }
                 }
 
                 @Override 
        public void onPrepareOptionsMenu(Menu menu) {
            boolean isBlocking = this.mUser != null && this.mUser.isBlocking();
-           MenuItem block = menu.findItem(C0257R.id.block_or_report);
+           MenuItem block = menu.findItem(R.id.block_or_report);
            if (block != null) {
                if (isBlocking) {
-                   block.setTitle(C0257R.string.unblock_person);
+                   block.setTitle(R.string.unblock_person);
                         } else {
-                   block.setTitle(C0257R.string.block_or_report);
+                   block.setTitle(R.string.block_or_report);
                         }
                     }
-           this.mHideRevines = menu.findItem(C0257R.id.hide_revines);
+           this.mHideRevines = menu.findItem(R.id.hide_revines);
            boolean revinesEnabled = this.mUser == null || this.mUser.areRepostsEnabled();
            setRevineOptionText(this.mUser, revinesEnabled);
-           MenuItem favoriteUser = menu.findItem(C0257R.id.favorite_user);
+           MenuItem favoriteUser = menu.findItem(R.id.favorite_user);
            if (favoriteUser != null) {
                favoriteUser.setVisible(isBlocking ? false : true);
                if (!isBlocking) {
-                   favoriteUser.setIcon(this.mFavoriteUser ? C0257R.drawable.btn_favorite_profile_pressed : C0257R.drawable.btn_favorite_profile_default);
+                   favoriteUser.setIcon(this.mFavoriteUser ? R.drawable.btn_favorite_profile_pressed : R.drawable.btn_favorite_profile_default);
                         }
                     }
                 }
@@ -539,8 +539,8 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View view = createView(inflater, C0257R.layout.msg_list_fragment_profile, container);
-           this.mRootView = (ViewGroup) view.findViewById(C0257R.id.layout_root);
+           View view = createView(inflater, R.layout.msg_list_fragment_profile, container);
+           this.mRootView = (ViewGroup) view.findViewById(R.id.layout_root);
            return view;
                 }
 
@@ -558,7 +558,7 @@
                         }
                     }
            this.mBold = new TypefacesSpan(null, Typefaces.get(getActivity()).getContentTypeface(1, 4));
-           this.mVineGreen = getActivity().getResources().getColor(C0257R.color.vine_green);
+           this.mVineGreen = getActivity().getResources().getColor(R.color.vine_green);
            setup(this.mTakeFocus);
                     bindCachedProfileWhileLoading();
                 }
@@ -630,10 +630,10 @@
                    hideRevines.setVisible(false);
                         } else if (repostsEnabled) {
                    hideRevines.setVisible(true);
-                   hideRevines.setTitle(C0257R.string.hide_revines);
+                   hideRevines.setTitle(R.string.hide_revines);
                         } else {
                    hideRevines.setVisible(true);
-                   hideRevines.setTitle(C0257R.string.show_revines);
+                   hideRevines.setTitle(R.string.show_revines);
                         }
                     }
                 }
@@ -742,11 +742,11 @@
        public void onClick(View view) {
                     View v;
            int id = view.getId();
-           if (id == C0257R.id.user_image || id == C0257R.id.profile_follow || id == C0257R.id.settings) {
+           if (id == R.id.user_image || id == R.id.profile_follow || id == R.id.settings) {
                this.mProfileHeaderAdapter.onProfileHeaderClick(view, this, this.mUser);
                return;
                     }
-           if (id == C0257R.id.message_button) {
+           if (id == R.id.message_button) {
                         if (this.mWaitingToStartUserId == -1) {
                    this.mWaitingToStartUserId = this.mUserId;
                    this.mAppController.fetchConversationRowIdFromUserRemoteId(this.mUserId, 1);
@@ -754,27 +754,27 @@
                         }
                return;
                     }
-           if (id == C0257R.id.postsParent || id == C0257R.id.likesParent) {
+           if (id == R.id.postsParent || id == R.id.likesParent) {
                this.mProfileHeaderAdapter.onProfileHeaderClick(view, this, this.mUser);
                return;
                     }
-           if (id == C0257R.id.follow_request_accept_container) {
+           if (id == R.id.follow_request_accept_container) {
                this.mAppController.acceptFollowRequest(this.mAppController.getActiveSession(), this.mUserId);
                return;
                     }
-           if (id == C0257R.id.follow_request_reject_container) {
+           if (id == R.id.follow_request_reject_container) {
                this.mAppController.acceptRejectRequest(this.mAppController.getActiveSession(), this.mUserId);
                return;
                     }
-           if (id == C0257R.id.posts_dropdown) {
+           if (id == R.id.posts_dropdown) {
                onDropDownClicked();
                return;
                     }
-           if (id == C0257R.id.postsDropDownHideRevine) {
+           if (id == R.id.postsDropDownHideRevine) {
                Resources res = getResources();
                if (this.mUser != null && res != null && (v = getView()) != null) {
-                   View postsButton = v.findViewById(C0257R.id.postsParent);
-                   View dropDown = v.findViewById(C0257R.id.postsLikeDropDown);
+                   View postsButton = v.findViewById(R.id.postsParent);
+                   View dropDown = v.findViewById(R.id.postsLikeDropDown);
                    if (dropDown != null) {
                        if (dropDown.getVisibility() == 0) {
                            dismissDropdown();
@@ -782,17 +782,17 @@
                                 }
                        if (postsButton != null) {
                            ProfileHeaderAdapter.DropdownHolder tag = (ProfileHeaderAdapter.DropdownHolder) dropDown.getTag();
-                           String hideRevines = res.getString(this.mHideProfileReposts ? C0257R.string.show_revines : C0257R.string.hide_revines);
+                           String hideRevines = res.getString(this.mHideProfileReposts ? R.string.show_revines : R.string.hide_revines);
                            tag.revineParent.setVisibility(0);
                            Util.setTextWithSpan(this.mBold, hideRevines, tag.revineLabel);
                            SpannableStringBuilder contentSb = new SpannableStringBuilder(hideRevines);
                            Util.safeSetSpan(contentSb, this.mBold, 0, contentSb.length(), 33);
                            tag.revineLabel.setText(contentSb);
-                           tag.revineIcon.setImageResource(this.mHideProfileReposts ? C0257R.drawable.ic_show_revines : C0257R.drawable.ic_hide_revines);
+                           tag.revineIcon.setImageResource(this.mHideProfileReposts ? R.drawable.ic_show_revines : R.drawable.ic_hide_revines);
                            Animation anim = new HeightAnimation(getActivity(), dropDown, true, 300L);
                            anim.setAnimationListener(this.mDrawerListener);
                            dropDown.startAnimation(anim);
-                           View arrowImage = v.findViewById(C0257R.id.profile_arrow_image);
+                           View arrowImage = v.findViewById(R.id.profile_arrow_image);
                            if (arrowImage instanceof ImageView) {
                                if (this.mProfileBackground == Settings.DEFAULT_PROFILE_COLOR) {
                                    ((ImageView) arrowImage).setColorFilter(new PorterDuffColorFilter((-16777216) | this.mVineGreen, PorterDuff.Mode.SRC_IN));
@@ -810,10 +810,10 @@
                         }
                return;
                     }
-           if (id == C0257R.id.followers || id == C0257R.id.following) {
+           if (id == R.id.followers || id == R.id.following) {
                Intent i = new Intent(getActivity(), (Class<?>) UsersActivity.class);
                i.putExtra("p_id", this.mUserId);
-               int type = view.getId() == C0257R.id.followers ? 2 : 1;
+               int type = view.getId() == R.id.followers ? 2 : 1;
                i.putExtra("u_type", type);
                startActivity(i);
                return;
@@ -824,7 +824,7 @@
                 @Override 
        public boolean onLongClick(View view) {
            int id = view.getId();
-           if (id != C0257R.id.user_image && id != C0257R.id.profile_follow && id != C0257R.id.settings) {
+           if (id != R.id.user_image && id != R.id.profile_follow && id != R.id.settings) {
                         return false;
                     }
            this.mProfileHeaderAdapter.onProfileHeaderLongClick(view);
@@ -853,13 +853,13 @@
        private void dismissDropdown() {
            View view = getView();
            if (view != null) {
-               View dropDown = view.findViewById(C0257R.id.postsLikeDropDown);
+               View dropDown = view.findViewById(R.id.postsLikeDropDown);
                if (dropDown != null) {
                    Animation anim = new HeightAnimation(getActivity(), dropDown, false, 300L);
                    anim.setAnimationListener(this.mDrawerListener);
                    dropDown.startAnimation(anim);
                         }
-               View arrowImage = view.findViewById(C0257R.id.profile_arrow_image);
+               View arrowImage = view.findViewById(R.id.profile_arrow_image);
                if (arrowImage instanceof ImageView) {
                    ((ImageView) arrowImage).setColorFilter(new PorterDuffColorFilter(1275068416, PorterDuff.Mode.SRC_IN));
                         }
@@ -1084,20 +1084,20 @@
                       ProfileFragment.access$400(ProfileFragment.this).blocking = userBlocked ? 1 : 0;
                             }
                   ProfileFragment.this.getActivity().supportInvalidateOptionsMenu();
-                  String username = isUsernameValid() ? ProfileFragment.access$400(ProfileFragment.this).username : ProfileFragment.this.getString(C0257R.string.username_placeholder);
+                  String username = isUsernameValid() ? ProfileFragment.access$400(ProfileFragment.this).username : ProfileFragment.this.getString(R.string.username_placeholder);
                   if (!TextUtils.isEmpty(blockedUsername)) {
                       username = blockedUsername;
                             }
                   if (userBlocked) {
-                      Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.user_blocked, username));
+                      Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.user_blocked, username));
                       VineDatabaseHelper dbHelper = VineDatabaseHelper.getDatabaseHelper(ProfileFragment.this.getActivity());
                       dbHelper.removeUserWithType(ProfileFragment.access$1200(ProfileFragment.this), 2, true, Vine.UserGroupsView.CONTENT_URI_FOLLOWERS);
                       return;
                             }
-                  Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.user_blocked_error));
+                  Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.user_blocked_error));
                   return;
                         }
-              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.user_blocked_error));
+              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.user_blocked_error));
                     }
 
                     @Override 
@@ -1107,20 +1107,20 @@
                       ProfileFragment.access$400(ProfileFragment.this).blocking = !userUnblocked ? 1 : 0;
                             }
                   ProfileFragment.this.getActivity().supportInvalidateOptionsMenu();
-                  String username = isUsernameValid() ? ProfileFragment.access$400(ProfileFragment.this).username : ProfileFragment.this.getString(C0257R.string.username_placeholder);
+                  String username = isUsernameValid() ? ProfileFragment.access$400(ProfileFragment.this).username : ProfileFragment.this.getString(R.string.username_placeholder);
                   if (!TextUtils.isEmpty(blockedUsername)) {
                       username = blockedUsername;
                             }
                   if (userUnblocked) {
-                      Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.user_unblocked, username));
+                      Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.user_unblocked, username));
                       ProfileFragment.this.addRequest(ProfileFragment.this.mAppController.fetchUser(ProfileFragment.access$1200(ProfileFragment.this), UrlCachePolicy.FORCE_REFRESH));
                       return;
                             } else {
-                      Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.user_blocked_error));
+                      Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.user_blocked_error));
                       return;
                             }
                         }
-              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.user_unblocked_error));
+              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.user_unblocked_error));
                     }
 
                     @Override 
@@ -1131,17 +1131,17 @@
                           ProfileFragment.access$400(ProfileFragment.this).repostsEnabled = success ? 1 : 0;
                           ProfileFragment.this.getActivity().supportInvalidateOptionsMenu();
                           if (success) {
-                              String username = isUsernameValid() ? ProfileFragment.access$400(ProfileFragment.this).username : ProfileFragment.this.getString(C0257R.string.username_placeholder_alt);
-                              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.reposts_enabled, username));
+                              String username = isUsernameValid() ? ProfileFragment.access$400(ProfileFragment.this).username : ProfileFragment.this.getString(R.string.username_placeholder_alt);
+                              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.reposts_enabled, username));
                               return;
                                     } else {
-                              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.reposts_enabled_fail));
+                              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.reposts_enabled_fail));
                               return;
                                     }
                                 }
                       return;
                             }
-                  Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.reposts_enabled_fail));
+                  Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.reposts_enabled_fail));
                         }
                     }
 
@@ -1153,17 +1153,17 @@
                           ProfileFragment.access$400(ProfileFragment.this).repostsEnabled = success ? 0 : 1;
                           ProfileFragment.this.getActivity().supportInvalidateOptionsMenu();
                           if (success) {
-                              String username = isUsernameValid() ? ProfileFragment.access$400(ProfileFragment.this).username : ProfileFragment.this.getString(C0257R.string.username_placeholder_alt);
-                              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.reposts_disabled, username));
+                              String username = isUsernameValid() ? ProfileFragment.access$400(ProfileFragment.this).username : ProfileFragment.this.getString(R.string.username_placeholder_alt);
+                              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.reposts_disabled, username));
                               return;
                                     } else {
-                              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.reposts_disabled_fail));
+                              Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.reposts_disabled_fail));
                               return;
                                     }
                                 }
                       return;
                             }
-                  Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(C0257R.string.reposts_disabled_fail));
+                  Util.showDefaultToast(ProfileFragment.this.getActivity(), ProfileFragment.this.getString(R.string.reposts_disabled_fail));
                         }
                     }
 
@@ -1171,7 +1171,7 @@
           public void onReportUserComplete(String reqId, int statusCode, String reasonPhrase) {
                         Activity activity;
               if (statusCode != 200 && (activity = ProfileFragment.this.getActivity()) != null) {
-                  Util.showDefaultToast(activity, ProfileFragment.this.getString(C0257R.string.user_reported_error));
+                  Util.showDefaultToast(activity, ProfileFragment.this.getString(R.string.user_reported_error));
                         }
                     }
 
@@ -1195,7 +1195,7 @@
           public void onRespondFollowRequestComplete(String reqId, int statusCode, String reasonPhrase, boolean accept, long userId) {
               if (statusCode == 200) {
                   if (ProfileFragment.access$1400(ProfileFragment.this) != null) {
-                      View inner = ProfileFragment.access$1400(ProfileFragment.this).findViewById(C0257R.id.follow_request_header_inner);
+                      View inner = ProfileFragment.access$1400(ProfileFragment.this).findViewById(R.id.follow_request_header_inner);
                       inner.setLayoutParams(new LinearLayout.LayoutParams(-1, 0));
                       ProfileFragment.access$1400(ProfileFragment.this).setVisibility(8);
                       return;
@@ -1203,9 +1203,9 @@
                   return;
                         }
               if (accept) {
-                  Util.showCenteredToast(ProfileFragment.this.getActivity(), C0257R.string.accept_failed);
+                  Util.showCenteredToast(ProfileFragment.this.getActivity(), R.string.accept_failed);
                         } else {
-                  Util.showCenteredToast(ProfileFragment.this.getActivity(), C0257R.string.deny_failed);
+                  Util.showCenteredToast(ProfileFragment.this.getActivity(), R.string.deny_failed);
                         }
                     }
 
@@ -1231,7 +1231,7 @@
               if (statusCode != 200) {
                   ProfileFragment.access$1702(ProfileFragment.this, ProfileFragment.access$1700(ProfileFragment.this) ? false : true);
                   ProfileFragment.this.getActivity().supportInvalidateOptionsMenu();
-                  Util.showCenteredToast(ProfileFragment.this.getActivity(), C0257R.string.generic_error);
+                  Util.showCenteredToast(ProfileFragment.this.getActivity(), R.string.generic_error);
                         } else if (user != null && !user.isFollowing()) {
                   user.following = 1;
                   ProfileFragment.this.mProfileHeaderAdapter.updateFollowButtonState(user);
@@ -1272,7 +1272,7 @@
 
                     @Override 
           public View getView(int i, View view, ViewGroup root) {
-                        return this.blocked ? LayoutInflater.from(ProfileFragment.this.getActivity()).inflate(C0257R.layout.profile_blocked, root, false) : LayoutInflater.from(ProfileFragment.this.getActivity()).inflate(C0257R.layout.profile_locked, root, false);
+                        return this.blocked ? LayoutInflater.from(ProfileFragment.this.getActivity()).inflate(R.layout.profile_blocked, root, false) : LayoutInflater.from(ProfileFragment.this.getActivity()).inflate(R.layout.profile_locked, root, false);
                     }
                 }
 
@@ -1307,9 +1307,9 @@
           public void run() {
                         View anchor;
               Activity context = ProfileFragment.this.getActivity();
-              if (!OnboardHelper.getFavoriteUserTooltipShown(context) && (anchor = context.findViewById(C0257R.id.favorite_user)) != null && ProfileFragment.access$400(ProfileFragment.this) != null) {
+              if (!OnboardHelper.getFavoriteUserTooltipShown(context) && (anchor = context.findViewById(R.id.favorite_user)) != null && ProfileFragment.access$400(ProfileFragment.this) != null) {
                   String user = TextUtils.isEmpty(ProfileFragment.access$400(ProfileFragment.this).username) ? "" : ProfileFragment.access$400(ProfileFragment.this).username;
-                  TooltipOverlayView overlay = new TooltipOverlayView(context, ProfileFragment.this.getString(C0257R.string.favorite_user_tooltip, user));
+                  TooltipOverlayView overlay = new TooltipOverlayView(context, ProfileFragment.this.getString(R.string.favorite_user_tooltip, user));
                   ProfileFragment.access$1800(ProfileFragment.this).addView(overlay);
                   overlay.showTooltip(anchor);
                   ProfileFragment.access$1902(ProfileFragment.this, overlay);

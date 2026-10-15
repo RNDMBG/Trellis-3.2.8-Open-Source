@@ -24,14 +24,14 @@
                 }
 
         public UploadsAdapter(Context context, AppController appController, int flags) {
-            this(context, appController, flags, C0257R.color.uploads_list_divider);
+            this(context, appController, flags, R.color.uploads_list_divider);
                 }
 
                 @Override 
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            View v = layoutInflater.inflate(C0257R.layout.upload_row_view, parent, false);
-            v.findViewById(C0257R.id.divider).setBackgroundColor(this.mDividerColor);
+            View v = layoutInflater.inflate(R.layout.upload_row_view, parent, false);
+            v.findViewById(R.id.divider).setBackgroundColor(this.mDividerColor);
             UploadViewHolder holder = new UploadViewHolder(v);
             v.setTag(holder);
             return v;
@@ -40,7 +40,7 @@
                 @Override 
         public void bindView(View view, Context context, Cursor cursor) {
             UploadViewHolder holder = (UploadViewHolder) view.getTag();
-            holder.status.setText(C0257R.string.upload_failed);
+            holder.status.setText(R.string.upload_failed);
             holder.retry.setVisibility(8);
             if (cursor.getPosition() == 0) {
                 holder.retry.setVisibility(0);
@@ -57,10 +57,10 @@
                     public ImageView thumbnail;
 
             public UploadViewHolder(View view) {
-                this.thumbnail = (ImageView) view.findViewById(C0257R.id.thumbnail);
-                this.status = (TextView) view.findViewById(C0257R.id.status_message);
-                this.retry = (ImageView) view.findViewById(C0257R.id.retry);
-                this.progressView = (RegularProgressView) view.findViewById(C0257R.id.progress_view);
+                this.thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+                this.status = (TextView) view.findViewById(R.id.status_message);
+                this.retry = (ImageView) view.findViewById(R.id.retry);
+                this.progressView = (RegularProgressView) view.findViewById(R.id.progress_view);
                     }
                 }
             }

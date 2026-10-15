@@ -55,18 +55,18 @@
             ActionBar ab = getSupportActionBar();
             if (ab != null) {
                 ab.setDisplayShowCustomEnabled(true);
-                ab.setCustomView(C0257R.layout.search_action_box);
+                ab.setCustomView(R.layout.search_action_box);
                 ViewGroup customView = (ViewGroup) ab.getCustomView();
                 TextView title = (TextView) customView.findViewById(2131427378);
-                title.setText(C0257R.string.find_friends);
-                EditText query = (EditText) customView.findViewById(C0257R.id.query);
+                title.setText(R.string.find_friends);
+                EditText query = (EditText) customView.findViewById(R.id.query);
                 ViewUtil.reduceTextSizeViaFontScaleIfNeeded(this, 1.1f, 12.0f, query);
                 query.setOnEditorActionListener(this);
                 query.addTextChangedListener(this);
                 query.setInputType(524288);
                 query.setPadding(0, 0, 0, 0);
                 this.mQuery = query;
-                ImageButton clear = (ImageButton) customView.findViewById(C0257R.id.clear);
+                ImageButton clear = (ImageButton) customView.findViewById(R.id.clear);
                 clear.setOnClickListener(this);
                 this.mClear = clear;
                 showSearchBar(false);
@@ -113,13 +113,13 @@
        public boolean onCreateOptionsMenu(Menu menu) {
                     switch (this.mViewPager.getCurrentItem()) {
                         case 1:
-                   getMenuInflater().inflate(C0257R.menu.nux_done, menu);
+                   getMenuInflater().inflate(R.menu.nux_done, menu);
                             break;
                         default:
-                   getMenuInflater().inflate(C0257R.menu.nux_next, menu);
+                   getMenuInflater().inflate(R.menu.nux_next, menu);
                             break;
                     }
-           MenuItem search = menu.findItem(C0257R.id.search);
+           MenuItem search = menu.findItem(R.id.search);
            ComponentCallbacks currentFragment = this.mTabsAdapter.getCurrentFragment();
            if ((currentFragment instanceof FilterableFriendsList) && search != null) {
                search.setVisible(((FilterableFriendsList) currentFragment).shouldShowSearchIcon());
@@ -140,10 +140,10 @@
                     } else if (id == 2131427941) {
                this.mViewPager.setCurrentItem(1);
                     } else if (!this.mUserIdsToFollow.isEmpty()) {
-               ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
+               ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
                this.mProgressDialog = dialog;
                dialog.setProgressStyle(0);
-               dialog.setMessage(getString(C0257R.string.following_friends));
+               dialog.setMessage(getString(R.string.following_friends));
                         try {
                    dialog.show();
                         } catch (Exception e) {
@@ -158,27 +158,27 @@
 
        private void addContactsTab() {
            TabHost.TabSpec tabSpec = this.mTabHost.newTabSpec(FindFriendsBaseActivity.TAG_ADDRESS_BOOK);
-           tabSpec.setIndicator(getTabIndicator(C0257R.string.contacts, C0257R.color.find_friend_address));
+           tabSpec.setIndicator(getTabIndicator(R.string.contacts, R.color.find_friend_address));
            Bundle bundle = new Bundle();
            if (this.mIsTwitterReg) {
                bundle.putBoolean("take_focus", false);
                     }
-           bundle.putInt("empty_desc", C0257R.string.find_friends_address_no_friends);
+           bundle.putInt("empty_desc", R.string.find_friends_address_no_friends);
            this.mTabsAdapter.addTab(tabSpec, FindFriendsNUXAddressFragment.class, bundle);
                 }
 
        private void addTwitterTab() {
            TabHost.TabSpec tabSpec = this.mTabHost.newTabSpec("twitter");
-           tabSpec.setIndicator(getTabIndicator(C0257R.string.twitter, C0257R.color.find_friend_twitter));
+           tabSpec.setIndicator(getTabIndicator(R.string.twitter, R.color.find_friend_twitter));
            Bundle bundle = new Bundle();
            bundle.putBoolean("from_sign_up", true);
-           bundle.putInt("empty_desc", C0257R.string.find_friends_twitter_no_friends);
+           bundle.putInt("empty_desc", R.string.find_friends_twitter_no_friends);
            this.mTabsAdapter.addTab(tabSpec, FindFriendsTwitterFragment.class, bundle);
                 }
 
        private TabIndicator getTabIndicator(int tabTextId, int colorResId) {
-           TabIndicator indicator = TabIndicator.newTextIndicator(LayoutInflater.from(this), C0257R.layout.normal_tab_indicator, this.mTabHost, tabTextId, false);
-           ColorStateList indicatorStateList = TabIndicator.createTextColorList(getResources().getColor(colorResId), getResources().getColor(C0257R.color.light_light_gray));
+           TabIndicator indicator = TabIndicator.newTextIndicator(LayoutInflater.from(this), R.layout.normal_tab_indicator, this.mTabHost, tabTextId, false);
+           ColorStateList indicatorStateList = TabIndicator.createTextColorList(getResources().getColor(colorResId), getResources().getColor(R.color.light_light_gray));
            TextView indicatorText = indicator.getIndicatorText();
            indicatorText.setTypeface(Typefaces.get(this).boldContent);
            indicatorText.setTextColor(indicatorStateList);
@@ -297,8 +297,8 @@
            ActionBar ab = getSupportActionBar();
            if (ab != null) {
                ViewGroup customView = (ViewGroup) ab.getCustomView();
-               EditText query = (EditText) customView.findViewById(C0257R.id.query);
-               ImageButton clear = (ImageButton) customView.findViewById(C0257R.id.clear);
+               EditText query = (EditText) customView.findViewById(R.id.query);
+               ImageButton clear = (ImageButton) customView.findViewById(R.id.clear);
                TextView title = (TextView) customView.findViewById(2131427378);
                query.setVisibility(show ? 0 : 8);
                clear.setVisibility(show ? 0 : 8);

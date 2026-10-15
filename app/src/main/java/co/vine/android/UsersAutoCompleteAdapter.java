@@ -33,13 +33,13 @@
             super((Context) activity, (Cursor) null, true);
             this.mAppController = appController;
             this.mViewHolders = new ArrayList<>();
-            this.mProfileImageSize = activity.getResources().getDimensionPixelOffset(C0257R.dimen.user_image_size);
+            this.mProfileImageSize = activity.getResources().getDimensionPixelOffset(R.dimen.user_image_size);
                 }
 
                 @Override 
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            View rowView = layoutInflater.inflate(C0257R.layout.user_dropdown_row_view, parent, false);
+            View rowView = layoutInflater.inflate(R.layout.user_dropdown_row_view, parent, false);
             UserDropDownViewHolder vh = new UserDropDownViewHolder(rowView);
             vh.image.setScaleType(ImageView.ScaleType.FIT_CENTER);
             this.mViewHolders.add(new WeakReference<>(vh));
@@ -55,7 +55,7 @@
             if (!TextUtils.isEmpty(url)) {
                 ImageKey key = new ImageKey(url, this.mProfileImageSize, this.mProfileImageSize, true);
                 if (Util.isDefaultAvatarUrl(url)) {
-                    Util.safeSetDefaultAvatar(holder.image, Util.ProfileImageSize.MEDIUM, (-16777216) | this.mContext.getResources().getColor(C0257R.color.vine_green));
+                    Util.safeSetDefaultAvatar(holder.image, Util.ProfileImageSize.MEDIUM, (-16777216) | this.mContext.getResources().getColor(R.color.vine_green));
                         } else {
                     holder.avatarUrl = key;
                     setUserImage(holder, this.mAppController.getPhotoBitmap(key));
@@ -97,8 +97,8 @@
                     public final TextView userNameView;
 
            public UserDropDownViewHolder(View rowView) {
-               this.image = (ImageView) rowView.findViewById(C0257R.id.user_image);
-               this.userNameView = (TextView) rowView.findViewById(C0257R.id.username);
+               this.image = (ImageView) rowView.findViewById(R.id.user_image);
+               this.userNameView = (TextView) rowView.findViewById(R.id.username);
                     }
                 }
 
@@ -129,7 +129,7 @@
            if (bmp != null) {
                holder.image.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), bmp));
                     } else {
-               holder.image.setImageResource(C0257R.drawable.circle_shape_light);
+               holder.image.setImageResource(R.drawable.circle_shape_light);
                     }
                 }
             }

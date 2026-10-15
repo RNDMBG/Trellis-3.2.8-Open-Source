@@ -24,9 +24,9 @@
 
                 @Override 
         public void onCreate(Bundle bun) {
-            super.onCreate(bun, C0257R.layout.webview_activity, false);
+            super.onCreate(bun, R.layout.webview_activity, false);
             Bundle b = getIntent().getExtras();
-            WebView webView = (WebView) findViewById(C0257R.id.webview);
+            WebView webView = (WebView) findViewById(R.id.webview);
             this.mReqId = b.getString(VineService.EXTRA_REQUEST_ID);
             String captchaUrl = b.getString("captcha_url");
             WebSettings settings = webView.getSettings();

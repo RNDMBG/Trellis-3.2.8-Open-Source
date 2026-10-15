@@ -31,9 +31,9 @@
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
             LayoutInflater inflater = LayoutInflater.from(getActivity());
-            View title = inflater.inflate(C0257R.layout.list_header, (ViewGroup) null);
+            View title = inflater.inflate(R.layout.list_header, (ViewGroup) null);
             this.mListView.addHeaderView(title);
-            ((TextView) title.findViewById(C0257R.id.subtitle)).setText(C0257R.string.find_friends_address_subtitle);
+            ((TextView) title.findViewById(R.id.subtitle)).setText(R.string.find_friends_address_subtitle);
                 }
 
                 @Override 
@@ -45,10 +45,10 @@
                 if (VineAccountHelper.shouldShowStoreContactsPrompt(am, account)) {
                     PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1);
                     p.setListener(this.mStoreContactDialogDoneListener);
-                    p.setMessage(C0257R.string.store_contacts_desc);
-                    p.setTitle(C0257R.string.store_contacts);
-                    p.setNegativeButton(C0257R.string.f87no);
-                    p.setPositiveButton(C0257R.string.f88ok);
+                    p.setMessage(R.string.store_contacts_desc);
+                    p.setTitle(R.string.store_contacts);
+                    p.setNegativeButton(R.string.no);
+                    p.setPositiveButton(R.string.ok);
                     p.setCancelable(false);
                     p.show(getFragmentManager());
                     return;
@@ -113,7 +113,7 @@
                    FlurryUtils.trackFindFriendsAddressCount(count);
                         } else {
                    FindFriendsAddressFragment.this.showSadface(true);
-                   Util.showCenteredToast(FindFriendsAddressFragment.this.getActivity(), C0257R.string.find_friends_address_error);
+                   Util.showCenteredToast(FindFriendsAddressFragment.this.getActivity(), R.string.find_friends_address_error);
                    FlurryUtils.trackFindFriendsAddressFailure();
                         }
                     }

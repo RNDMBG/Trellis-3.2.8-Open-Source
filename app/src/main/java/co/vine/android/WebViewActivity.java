@@ -27,8 +27,8 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.webview_activity, false);
-            WebView webView = (WebView) findViewById(C0257R.id.webview);
+            super.onCreate(savedInstanceState, R.layout.webview_activity, false);
+            WebView webView = (WebView) findViewById(R.id.webview);
             webView.setWebViewClient(new WebViewClient());
             WebSettings settings = webView.getSettings();
             settings.setJavaScriptEnabled(true);
@@ -44,22 +44,22 @@
                         }
                         switch (b.getInt("type")) {
                             case 1:
-                        webView.loadUrl(getString(C0257R.string.privacy_policy_url), headers);
+                        webView.loadUrl(getString(R.string.privacy_policy_url), headers);
                                 break;
                             case 2:
-                        webView.loadUrl(getString(C0257R.string.tos_url), headers);
+                        webView.loadUrl(getString(R.string.tos_url), headers);
                                 break;
                             case 3:
-                        webView.loadUrl(getString(C0257R.string.privacy_policy_twitter_url), headers);
+                        webView.loadUrl(getString(R.string.privacy_policy_twitter_url), headers);
                                 break;
                             case 4:
-                        webView.loadUrl(getString(C0257R.string.tos_twitter_url), headers);
+                        webView.loadUrl(getString(R.string.tos_twitter_url), headers);
                                 break;
                             case 5:
                         if (BuildUtil.isAStar()) {
                             webView.loadUrl("file:///android_asset/astar_attribution.html");
                                 } else {
-                            webView.loadUrl(getString(C0257R.string.attribution_url), headers);
+                            webView.loadUrl(getString(R.string.attribution_url), headers);
                                 }
                                 break;
                         }
@@ -74,8 +74,8 @@
 
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(C0257R.menu.done, menu);
-            menu.findItem(C0257R.id.done).setEnabled(true);
+            getMenuInflater().inflate(R.menu.done, menu);
+            menu.findItem(R.id.done).setEnabled(true);
                     return true;
                 }
 

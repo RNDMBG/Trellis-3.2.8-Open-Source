@@ -11,8 +11,8 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.select_channel_title, (Boolean) true, (Boolean) true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.select_channel_title, (Boolean) true, (Boolean) true);
             if (savedInstanceState == null) {
                 Intent intent = getIntent();
                 ChannelsListFragment fragment = new ChannelsListFragment();
@@ -21,7 +21,7 @@
                 intent.putExtra("take_focus", true);
                 intent.putExtra("selected_channel", selectedChannel);
                 fragment.setArguments(BaseCursorListFragment.prepareArguments(intent, false));
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
                     }
                 }
             }

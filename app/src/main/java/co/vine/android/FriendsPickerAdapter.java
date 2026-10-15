@@ -56,7 +56,7 @@
                 @Override 
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            View v = layoutInflater.inflate(C0257R.layout.recipient_picker_friends_row, parent, false);
+            View v = layoutInflater.inflate(R.layout.recipient_picker_friends_row, parent, false);
             FriendsPickerViewHolder holder = new FriendsPickerViewHolder(context, this.mSelectedBackgroundMap, v);
             this.mViewHolders.add(new WeakReference<>(holder));
             v.setTag(holder);
@@ -123,7 +123,7 @@
                     }
            int color = holder.recipient.color;
            if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-               color = 16777215 & this.mContext.getResources().getColor(C0257R.color.vine_green);
+               color = 16777215 & this.mContext.getResources().getColor(R.color.vine_green);
                     }
            holder.username.setText(holder.recipient.display);
            holder.username.setTextColor((-16777216) | color);

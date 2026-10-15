@@ -23,15 +23,15 @@
 
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true, true);
-            setupActionBar((Boolean) false, (Boolean) true, C0257R.string.show_me, (Boolean) false, (Boolean) false);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true, true);
+            setupActionBar((Boolean) false, (Boolean) true, R.string.show_me, (Boolean) false, (Boolean) false);
             if (savedInstanceState == null) {
                 Intent intent = new Intent();
                 ChannelsListFragment fragment = new ChannelsListFragment();
                 intent.putExtra("take_focus", true);
                 intent.putExtra(ChannelsListFragment.ARG_SHOW_CHANNEL_FOLLOW, true);
                 fragment.setArguments(BaseCursorListFragment.prepareArguments(intent, false));
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, "channels_list").commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, "channels_list").commit();
                     }
             this.mAppSessionListener = new ChannelsListNUXListener(this, null);
             FlurryUtils.trackNuxScreenDisplayed("channel_follow");
@@ -56,7 +56,7 @@
                 }
 
         private void showSkipConfirmation() {
-            PromptDialogSupportFragment dialog = PromptDialogSupportFragment.newInstance(1).setMessage(C0257R.string.NUX_are_you_sure_you_want_to_skip).setNegativeButton(C0257R.string.NUX_yes_im_sure).setPositiveButton(C0257R.string.NUX_go_back);
+            PromptDialogSupportFragment dialog = PromptDialogSupportFragment.newInstance(1).setMessage(R.string.NUX_are_you_sure_you_want_to_skip).setNegativeButton(R.string.NUX_yes_im_sure).setPositiveButton(R.string.NUX_go_back);
             dialog.setListener(new C01621());
                     try {
                 dialog.show(getSupportFragmentManager());
@@ -83,10 +83,10 @@
                 }
 
         private void followChannelsAndFinish(ChannelsListFragment fragment) {
-            ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
+            ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
             this.mProgressDialog = dialog;
             dialog.setProgressStyle(0);
-            dialog.setMessage(getString(C0257R.string.following_channels));
+            dialog.setMessage(getString(R.string.following_channels));
                     try {
                 dialog.show();
                     } catch (Exception e) {

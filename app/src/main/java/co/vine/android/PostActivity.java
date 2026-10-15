@@ -39,10 +39,10 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
             setRequestedOrientation(1);
             if (savedInstanceState == null) {
-                setupActionBar((Boolean) true, (Boolean) true, C0257R.string.share_title, (Boolean) true, (Boolean) true);
+                setupActionBar((Boolean) true, (Boolean) true, R.string.share_title, (Boolean) true, (Boolean) true);
                 Intent intent = getIntent();
                 String path = intent.getData().getPath();
                 PostFragment frag = new PostFragment();
@@ -52,7 +52,7 @@
                 BasicVineRecorder.sTimeTaken = intent.getLongExtra(AG_CAMERA_WAIT_TIME, 0L);
                 RecordController.sMaxKnownStopTime = intent.getLongExtra(AG_COMBINE_WAIT_TIME, 0L);
                 this.mFrag = frag;
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, frag, "post").commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag, "post").commit();
                     }
                 }
 

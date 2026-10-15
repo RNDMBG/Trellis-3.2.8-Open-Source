@@ -57,19 +57,19 @@
             super.onCreate(savedInstanceState);
             setHasOptionsMenu(true);
             this.mHandler = new Handler();
-            ((SignUpPagerActivity) getActivity()).setBarTitle(C0257R.string.login_sign_up);
+            ((SignUpPagerActivity) getActivity()).setBarTitle(R.string.login_sign_up);
                 }
 
                 @Override 
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            this.mEmailAddress = (EditText) view.findViewById(C0257R.id.signup_email);
-            this.mPassword = (EditText) view.findViewById(C0257R.id.signup_password);
-            this.mPhone = (EditText) view.findViewById(C0257R.id.signup_phone);
+            this.mEmailAddress = (EditText) view.findViewById(R.id.signup_email);
+            this.mPassword = (EditText) view.findViewById(R.id.signup_password);
+            this.mPhone = (EditText) view.findViewById(R.id.signup_phone);
             this.mPhone.setOnEditorActionListener(new C02861());
-            TextView termsOfServiceView = (TextView) view.findViewById(C0257R.id.tos_line_2);
+            TextView termsOfServiceView = (TextView) view.findViewById(R.id.tos_line_2);
             StyleSpan[] boldStyle = {new StyleSpan(1), new StyleSpan(1)};
-            Spanned spanned = Util.getSpannedText(boldStyle, getString(C0257R.string.sign_up_tos_line_2), CommonUtil.MARKER_QUOTES);
+            Spanned spanned = Util.getSpannedText(boldStyle, getString(R.string.sign_up_tos_line_2), CommonUtil.MARKER_QUOTES);
             termsOfServiceView.setText(spanned);
             termsOfServiceView.setMovementMethod(LinkMovementMethod.getInstance());
             Spannable clickSpannable = (Spannable) termsOfServiceView.getText();
@@ -78,12 +78,12 @@
             int start = spanned.getSpanStart(spans[0]);
             int end = spanned.getSpanEnd(spans[0]);
             StyledClickableSpan clickableSpan = new StyledClickableSpan(1, null, this);
-            clickableSpan.setColor(resources.getColor(C0257R.color.text_fineprint));
+            clickableSpan.setColor(resources.getColor(R.color.text_fineprint));
             Util.safeSetSpan(clickSpannable, clickableSpan, start, end, 33);
             int start2 = spanned.getSpanStart(spans[1]);
             int end2 = spanned.getSpanEnd(spans[1]);
             StyledClickableSpan clickableSpan2 = new StyledClickableSpan(2, null, this);
-            clickableSpan2.setColor(resources.getColor(C0257R.color.text_fineprint));
+            clickableSpan2.setColor(resources.getColor(R.color.text_fineprint));
             Util.safeSetSpan(clickSpannable, clickableSpan2, start2, end2, 33);
             ContactsHelper.loadContacts(this, this);
                 }
@@ -107,13 +107,13 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup root, Bundle savedInstanceState) {
-           return inflater.inflate(C0257R.layout.sign_up_flow_details, root, false);
+           return inflater.inflate(R.layout.sign_up_flow_details, root, false);
                 }
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-           inflater.inflate(C0257R.menu.done, menu);
-           MenuItem doneButton = menu.findItem(C0257R.id.done);
+           inflater.inflate(R.menu.done, menu);
+           MenuItem doneButton = menu.findItem(R.id.done);
            doneButton.setEnabled(true);
                 }
 
@@ -144,20 +144,20 @@
        private boolean validateAndDisplayToastIfCredentialsInvalid() {
            String emailAddress = this.mEmailAddress.getText().toString();
            if (emailAddress.isEmpty()) {
-               Util.showCenteredToast(getActivity(), C0257R.string.login_empty_email);
+               Util.showCenteredToast(getActivity(), R.string.login_empty_email);
                         return false;
                     }
            if (!AuthenticationUtils.isEmailAddressValid(emailAddress)) {
-               Util.showCenteredToast(getActivity(), C0257R.string.login_invalid_email);
+               Util.showCenteredToast(getActivity(), R.string.login_invalid_email);
                         return false;
                     }
            AuthenticationUtils.Result passwordValidationResult = AuthenticationUtils.validatePassword(this.mPassword.getText().toString());
                     switch (passwordValidationResult) {
                         case EMPTY:
-                   Util.showCenteredToast(getActivity(), C0257R.string.login_empty_password);
+                   Util.showCenteredToast(getActivity(), R.string.login_empty_password);
                             return false;
                         case TOO_SHORT:
-                   Util.showCenteredToast(getActivity(), C0257R.string.login_password_too_short);
+                   Util.showCenteredToast(getActivity(), R.string.login_password_too_short);
                             return false;
                         default:
                    return true;

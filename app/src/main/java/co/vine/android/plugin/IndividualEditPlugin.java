@@ -17,7 +17,7 @@
             import android.widget.RelativeLayout;
             import android.widget.Toast;
             import co.vine.android.AbstractRecordingActivity;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.dragsort.DragSortWidget;
             import co.vine.android.player.SdkVideoView;
             import co.vine.android.recorder.RecordConfigUtils;
@@ -177,45 +177,45 @@
            Activity activity = fragment.getActivity();
            Resources res = activity.getResources();
            setEdited(false);
-           this.mEditorButtons = view.findViewById(C0257R.id.editorButtons);
+           this.mEditorButtons = view.findViewById(R.id.editorButtons);
            this.mEditorButtons.setOnTouchListener(new ViewOnTouchListenerC04521());
-           this.mEditorDoneButton = view.findViewById(C0257R.id.editorDoneButton);
+           this.mEditorDoneButton = view.findViewById(R.id.editorDoneButton);
            this.mEditorDoneButton.setOnClickListener(new ViewOnClickListenerC04532());
-           this.mEditorCancelButton = view.findViewById(C0257R.id.editorCancelButton);
+           this.mEditorCancelButton = view.findViewById(R.id.editorCancelButton);
            this.mEditorCancelButton.setOnClickListener(new ViewOnClickListenerC04543());
-           this.mIndividualEditContainer = view.findViewById(C0257R.id.individual_edit_tools_container);
-           this.mDuplicateButton = this.mIndividualEditContainer.findViewById(C0257R.id.duplicateButton);
+           this.mIndividualEditContainer = view.findViewById(R.id.individual_edit_tools_container);
+           this.mDuplicateButton = this.mIndividualEditContainer.findViewById(R.id.duplicateButton);
            this.mDuplicateButton.setOnClickListener(this);
            this.mDuplicateButton.setOnTouchListener(this);
-           this.mTrashButton = this.mIndividualEditContainer.findViewById(C0257R.id.trashCanButtonIndividual);
+           this.mTrashButton = this.mIndividualEditContainer.findViewById(R.id.trashCanButtonIndividual);
            this.mTrashButton.setOnClickListener(this);
            this.mTrashButton.setOnTouchListener(this);
-           this.mSilenceButton = this.mIndividualEditContainer.findViewById(C0257R.id.silenceButton);
+           this.mSilenceButton = this.mIndividualEditContainer.findViewById(R.id.silenceButton);
            this.mSilenceButton.setOnClickListener(this);
            this.mSilenceButton.setOnTouchListener(this);
            Point size = SystemUtil.getDisplaySize(activity);
            this.mTwoThirdXOnScreen = (size.x * 2) / 3;
            this.mOneThirdXOnScreen = size.x / 3;
            this.mSize = size.x;
-           int selectedTrimColor = res.getColor(C0257R.color.timebar_selected_color);
-           this.mProgressView = (RegularProgressView) view.findViewById(C0257R.id.edit_progress);
-           this.mProgressView.setSelectedColor(res.getColor(C0257R.color.trim_yellow));
-           this.mProgressView.setColor(res.getColor(C0257R.color.vine_green));
-           this.mDragSortWidget = (DragSortWidget) view.findViewById(C0257R.id.thumbnail_list);
+           int selectedTrimColor = res.getColor(R.color.timebar_selected_color);
+           this.mProgressView = (RegularProgressView) view.findViewById(R.id.edit_progress);
+           this.mProgressView.setSelectedColor(res.getColor(R.color.trim_yellow));
+           this.mProgressView.setColor(res.getColor(R.color.vine_green));
+           this.mDragSortWidget = (DragSortWidget) view.findViewById(R.id.thumbnail_list);
            this.mDragSortWidget.setFloatViewInteractionListener(this);
-           this.mAllDeletedOverlay = inflater.inflate(C0257R.layout.plugin_all_deleted_overlay, (ViewGroup) this.mDragSortWidget, false);
-           RelativeLayout trimmerContainer = (RelativeLayout) view.findViewById(C0257R.id.above_bottom_mask_container);
+           this.mAllDeletedOverlay = inflater.inflate(R.layout.plugin_all_deleted_overlay, (ViewGroup) this.mDragSortWidget, false);
+           RelativeLayout trimmerContainer = (RelativeLayout) view.findViewById(R.id.above_bottom_mask_container);
            if (this.mTrimmer == null) {
-               RangeSeekBar trimmer = new RangeSeekBar((NinePatchDrawable) activity.getResources().getDrawable(C0257R.drawable.scrub_left), (NinePatchDrawable) activity.getResources().getDrawable(C0257R.drawable.scrub_right), 0, 100, activity, selectedTrimColor, activity.getResources().getColor(C0257R.color.black_thirty_five_percent));
+               RangeSeekBar trimmer = new RangeSeekBar((NinePatchDrawable) activity.getResources().getDrawable(R.drawable.scrub_left), (NinePatchDrawable) activity.getResources().getDrawable(R.drawable.scrub_right), 0, 100, activity, selectedTrimColor, activity.getResources().getColor(R.color.black_thirty_five_percent));
                trimmer.setSelectedMinValue(0);
                trimmer.setSelectedMaxValue(100);
                trimmer.setVisibility(8);
                trimmer.setOnRangeSeekBarChangeListener(this);
-               int height = activity.getResources().getDimensionPixelSize(C0257R.dimen.trimmer_height);
+               int height = activity.getResources().getDimensionPixelSize(R.dimen.trimmer_height);
                trimmer.setLayoutParams(new RelativeLayout.LayoutParams(-1, height));
                trimmerContainer.addView(trimmer);
                RelativeLayout.LayoutParams param = (RelativeLayout.LayoutParams) trimmerContainer.getLayoutParams();
-               param.bottomMargin = activity.getResources().getDimensionPixelOffset(C0257R.dimen.trimmer_margin);
+               param.bottomMargin = activity.getResources().getDimensionPixelOffset(R.dimen.trimmer_margin);
                trimmerContainer.setLayoutParams(param);
                this.mTrimmer = trimmer;
                     }
@@ -337,9 +337,9 @@
                            int dialogId = this.mManager.getDialogIdForPlugin(this, 0);
                            PromptDialogFragment dialog = activity.createDialogForPlugins(dialogId);
                            dialog.setListener(this.mUnsavedChangesEditedListener);
-                           dialog.setMessage(C0257R.string.cancel_edited_changes_confirm);
-                           dialog.setPositiveButton(C0257R.string.save);
-                           dialog.setNegativeButton(C0257R.string.discard_changes);
+                           dialog.setMessage(R.string.cancel_edited_changes_confirm);
+                           dialog.setPositiveButton(R.string.save);
+                           dialog.setNegativeButton(R.string.discard_changes);
                            activity.showDialog(dialog);
                                 } else {
                            recorder.setEditMode(false, true);
@@ -824,9 +824,9 @@
                         }
                if (this.mActivity != null) {
                    if (this.mToast == null) {
-                       this.mToast = Toast.makeText(this.mActivity, C0257R.string.error_duplicate_too_long, 0);
+                       this.mToast = Toast.makeText(this.mActivity, R.string.error_duplicate_too_long, 0);
                             } else {
-                       this.mToast.setText(C0257R.string.error_duplicate_too_long);
+                       this.mToast.setText(R.string.error_duplicate_too_long);
                             }
                    this.mToast.show();
                         }

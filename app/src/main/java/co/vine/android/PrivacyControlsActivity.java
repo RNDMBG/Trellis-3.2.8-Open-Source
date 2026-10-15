@@ -9,15 +9,15 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.privacy, (Boolean) true, (Boolean) true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.privacy, (Boolean) true, (Boolean) true);
             Bundle extras = getIntent().getExtras();
             if (extras != null && extras.getInt("color", 0) != 0) {
                 setActionBarColor(extras.getInt("color"));
                     }
             if (savedInstanceState == null) {
                 PrivacyControlsFragment frag = new PrivacyControlsFragment();
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, frag, PRIVACY_CONTROLS_TAG).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag, PRIVACY_CONTROLS_TAG).commit();
                     }
                 }
 

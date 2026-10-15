@@ -188,7 +188,7 @@
 
                 @Override 
        public void onCreate(Bundle savedInstanceState) {
-           super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true, true);
+           super.onCreate(savedInstanceState, R.layout.fragment_layout, true, true);
            Intent intent = getIntent();
            this.mIntentionalObjectCounter.add();
            this.mConversationRowId = intent.getLongExtra("conversation_row_id", -1L);
@@ -215,7 +215,7 @@
                b.putSerializable("arg_encoder_version", this.mVersion);
                b.putLong("conversation_row_id", this.mConversationRowId);
                fragment.setArguments(b);
-               getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
+               getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
                     }
            this.mMainHandler = new Handler(Looper.getMainLooper());
            this.mAppController.getConversationRemoteId(this.mConversationRowId);
@@ -259,26 +259,26 @@
            b.putLong("conversation_row_id", this.mConversationRowId);
            b.putBoolean("am_following_recipient", this.mAmFollowingRecipient);
            fragment.setArguments(b);
-           getSupportFragmentManager().beginTransaction().replace(C0257R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
+           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
                 }
 
                 @Override 
        public boolean onCreateOptionsMenu(Menu menu) {
-           getMenuInflater().inflate(C0257R.menu.conversation, menu);
+           getMenuInflater().inflate(R.menu.conversation, menu);
            if (this.mAmFollowingRecipient || this.mDirectUserId <= 0 || TextUtils.isEmpty(this.mRecipientUserName) || this.mIsDirectUserExternal) {
-               menu.removeItem(C0257R.id.follow_user);
+               menu.removeItem(R.id.follow_user);
                     } else {
-               MenuItem item = menu.findItem(C0257R.id.follow_user);
-                        item.setTitle(String.format(getString(C0257R.string.follow_user_conversation), this.mRecipientUserName));
+               MenuItem item = menu.findItem(R.id.follow_user);
+                        item.setTitle(String.format(getString(R.string.follow_user_conversation), this.mRecipientUserName));
                     }
                     if (this.mDirectUserId > 0 && !TextUtils.isEmpty(this.mRecipientUserName) && !this.mIsDirectUserExternal) {
-               MenuItem item2 = menu.findItem(C0257R.id.ignore);
-                        item2.setTitle(String.format(getString(C0257R.string.ignore_user), this.mRecipientUserName));
-               MenuItem item3 = menu.findItem(C0257R.id.go_to_user_profile);
-                        item3.setTitle(String.format(getString(C0257R.string.go_to_profile_conversation), this.mRecipientUserName));
+               MenuItem item2 = menu.findItem(R.id.ignore);
+                        item2.setTitle(String.format(getString(R.string.ignore_user), this.mRecipientUserName));
+               MenuItem item3 = menu.findItem(R.id.go_to_user_profile);
+                        item3.setTitle(String.format(getString(R.string.go_to_profile_conversation), this.mRecipientUserName));
                     } else {
-               menu.removeItem(C0257R.id.ignore);
-               menu.removeItem(C0257R.id.go_to_user_profile);
+               menu.removeItem(R.id.ignore);
+               menu.removeItem(R.id.go_to_user_profile);
                     }
            return super.onCreateOptionsMenu(menu);
                 }
@@ -312,18 +312,18 @@
        public void showDeleteDialog() {
            PromptDialogFragment p = PromptDialogFragment.newInstance(0);
            p.setListener(this.mListener);
-           p.setMessage(C0257R.string.delete_conversation_prompt);
-           p.setPositiveButton(C0257R.string.delete_yes);
-           p.setNegativeButton(C0257R.string.cancel);
+           p.setMessage(R.string.delete_conversation_prompt);
+           p.setPositiveButton(R.string.delete_yes);
+           p.setNegativeButton(R.string.cancel);
            p.show(getFragmentManager());
                 }
 
        public void showIgnoreDialog() {
            PromptDialogFragment p = PromptDialogFragment.newInstance(1);
            p.setListener(this.mListener);
-           p.setMessage(C0257R.string.ignore_conversation_prompt);
-           p.setPositiveButton(C0257R.string.ignore_yes);
-           p.setNegativeButton(C0257R.string.cancel);
+           p.setMessage(R.string.ignore_conversation_prompt);
+           p.setPositiveButton(R.string.ignore_yes);
+           p.setNegativeButton(R.string.cancel);
            p.show(getFragmentManager());
                 }
 
@@ -529,9 +529,9 @@
            this.mMessageIdToDelete = messageId;
            PromptDialogFragment p = PromptDialogFragment.newInstance(2);
            p.setListener(this.mListener);
-           p.setMessage(C0257R.string.delete_message_prompt);
-           p.setPositiveButton(C0257R.string.delete_yes);
-           p.setNegativeButton(C0257R.string.cancel);
+           p.setMessage(R.string.delete_message_prompt);
+           p.setPositiveButton(R.string.delete_yes);
+           p.setNegativeButton(R.string.cancel);
                     try {
                p.show(getFragmentManager());
                     } catch (IllegalStateException e) {
@@ -705,7 +705,7 @@
                     @Override 
            public void onFollowComplete(String reqId, int statusCode, String reasonPhrase, long userId) {
                if (statusCode == 200 && ConversationActivity.access$1300(ConversationActivity.this) == userId && ConversationActivity.this.mMenu != null) {
-                   ConversationActivity.this.mMenu.removeItem(C0257R.id.follow_user);
+                   ConversationActivity.this.mMenu.removeItem(R.id.follow_user);
                         }
                     }
 

@@ -17,15 +17,15 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
             setRequestedOrientation(1);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.timeline_post_title, (Boolean) true, (Boolean) true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.timeline_post_title, (Boolean) true, (Boolean) true);
             Intent intent = getIntent();
             if (savedInstanceState == null) {
                 Fragment fragment = new SingleFragment();
                 intent.putExtra("take_focus", true);
                 fragment.setArguments(BaseArrayListFragment.prepareArguments(intent, false));
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
                     }
                 }
 
@@ -36,7 +36,7 @@
 
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(C0257R.menu.mute, menu);
+            getMenuInflater().inflate(R.menu.mute, menu);
             return super.onCreateOptionsMenu(menu);
                 }
 

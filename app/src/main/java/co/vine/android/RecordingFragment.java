@@ -188,7 +188,7 @@
                return new RecordingFile(folder, session, savedSession, dirty, folder == extraFolder);
                     } catch (IOException e3) {
                SLog.m459e("Error creating folder: " + this.mFolder, (Throwable) e3);
-               Toast.makeText(activity, C0257R.string.storage_not_ready_start, 0).show();
+               Toast.makeText(activity, R.string.storage_not_ready_start, 0).show();
                activity.finish();
                return null;
                     }
@@ -219,14 +219,14 @@
                this.mRsm = this.mVersion.getManager(activity);
                Resources res = getResources();
                this.mPluginManager = new BaseRecorderPluginManager(activity.getPluginList());
-               LinearLayout optionView = (LinearLayout) activity.findViewById(C0257R.id.recording_options);
+               LinearLayout optionView = (LinearLayout) activity.findViewById(R.id.recording_options);
                if (optionView == null) {
                    throw new IllegalArgumentException("Invalid activity");
                         }
                this.mPluginManager.createLayouts(optionView, activity.getLayoutInflater(), this);
                this.mPluginManager.onActivityCreated(activity);
                this.mPluginManager.setMessagingMode(this.mIsMessaging);
-               this.mRecorder = new VineRecorder(this.mVersion, this.mPluginManager, this.mStartWithEdit, activity.getScreenSize(), this.mFileFileToUse != null && this.mStartWithEdit, activity.hasPreviewedAlready(), determineSessionFileForSwap(true), activity, (ViewGroup) activity.findViewById(C0257R.id.videoViewContainer), C0257R.id.recording_options, C0257R.id.thumbnail_list, C0257R.id.progress, C0257R.id.cameraView, C0257R.id.finishButton, C0257R.id.top_mask, C0257R.id.bottom_mask, C0257R.string.finish_processing_last, C0257R.string.opening_camera, C0257R.id.play_button_container, C0257R.id.thumbnail_overlay, C0257R.id.root_layout, res.getDimensionPixelSize(C0257R.dimen.editor_segment_padding), res.getDimensionPixelSize(C0257R.dimen.editor_buttons_height), C0257R.id.finish_loading_overlay, C0257R.id.preview_loading_overlay, C0257R.id.progress_overlay, activity.getResources().getDrawable(C0257R.drawable.progress_horizontal), AbstractRecordingActivity.getDeviceIssueStringGetter(activity), false, this.mIsMessaging, this.mMediaActionSound, getString(C0257R.string.importing), getText(C0257R.string.getting_ready), getText(C0257R.string.finish_processing_1), getText(C0257R.string.finish_processing_2), getText(C0257R.string.finish_processing_3));
+               this.mRecorder = new VineRecorder(this.mVersion, this.mPluginManager, this.mStartWithEdit, activity.getScreenSize(), this.mFileFileToUse != null && this.mStartWithEdit, activity.hasPreviewedAlready(), determineSessionFileForSwap(true), activity, (ViewGroup) activity.findViewById(R.id.videoViewContainer), R.id.recording_options, R.id.thumbnail_list, R.id.progress, R.id.cameraView, R.id.finishButton, R.id.top_mask, R.id.bottom_mask, R.string.finish_processing_last, R.string.opening_camera, R.id.play_button_container, R.id.thumbnail_overlay, R.id.root_layout, res.getDimensionPixelSize(R.dimen.editor_segment_padding), res.getDimensionPixelSize(R.dimen.editor_buttons_height), R.id.finish_loading_overlay, R.id.preview_loading_overlay, R.id.progress_overlay, activity.getResources().getDrawable(R.drawable.progress_horizontal), AbstractRecordingActivity.getDeviceIssueStringGetter(activity), false, this.mIsMessaging, this.mMediaActionSound, getString(R.string.importing), getText(R.string.getting_ready), getText(R.string.finish_processing_1), getText(R.string.finish_processing_2), getText(R.string.finish_processing_3));
                         try {
                    this.mRecorder.playStartRecordingSound();
                         } catch (NullPointerException e) {
@@ -234,7 +234,7 @@
                         }
                     } catch (IOException e2) {
                SLog.m459e("Error creating folder. ", (Throwable) e2);
-               Toast.makeText(activity, C0257R.string.storage_not_ready_start, 0).show();
+               Toast.makeText(activity, R.string.storage_not_ready_start, 0).show();
                activity.finish();
                     } catch (VerifyError e3) {
                SLog.m455e("Invalid recorder object.");
@@ -247,7 +247,7 @@
            if (this.mRecorder.finalFile != null && (activity = (AbstractRecordingActivity) getActivity()) != null) {
                if (detectedInvalidSession) {
                    CrashUtil.logException(new IllegalStateException("Detected invalid session."));
-                   Util.showCenteredToast(activity, C0257R.string.invalid_recording);
+                   Util.showCenteredToast(activity, R.string.invalid_recording);
                    activity.finish();
                         } else {
                    activity.mProgressContainerWidth = ((ViewGroup) this.mRecorder.getCameraView().getParent()).getMeasuredWidth();
@@ -275,11 +275,11 @@
            this.mRecipientUsername = args.getString("recipient_username");
            this.mColor = args.getInt("color", 0);
            if (this.mColor == Settings.DEFAULT_PROFILE_COLOR || this.mColor <= 0) {
-               this.mColor = getResources().getColor(C0257R.color.vine_green) & ViewCompat.MEASURED_SIZE_MASK;
+               this.mColor = getResources().getColor(R.color.vine_green) & ViewCompat.MEASURED_SIZE_MASK;
                     }
            if (!this.mIsMessaging) {
                this.mColor = ViewCompat.MEASURED_SIZE_MASK;
-               this.mSecondaryColor = getResources().getColor(C0257R.color.vine_green) | (-16777216);
+               this.mSecondaryColor = getResources().getColor(R.color.vine_green) | (-16777216);
                     } else {
                this.mSecondaryColor = this.mColor | (-16777216);
                     }
@@ -294,24 +294,24 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View view = inflater.inflate(C0257R.layout.record, container, false);
-           View topMask = view.findViewById(C0257R.id.top_mask);
-           View bottomMask = view.findViewById(C0257R.id.bottom_mask);
+           View view = inflater.inflate(R.layout.record, container, false);
+           View topMask = view.findViewById(R.id.top_mask);
+           View bottomMask = view.findViewById(R.id.bottom_mask);
            Resources res = getResources();
            if (this.mIsMessaging) {
-               int color = res.getColor(C0257R.color.capture_background_vm);
+               int color = res.getColor(R.color.capture_background_vm);
                topMask.setBackgroundColor(color);
                bottomMask.setBackgroundColor(color);
-               ProgressView progress = (ProgressView) view.findViewById(C0257R.id.progress);
+               ProgressView progress = (ProgressView) view.findViewById(R.id.progress);
                progress.setBackgroundColor(color);
                progress.setColor(this.mHalfColor);
                     }
-           View xButton = view.findViewById(C0257R.id.capture_x);
-           ViewUtil.fillColor(res, this.mColor, C0257R.drawable.ic_x_large, xButton);
-           View arrow = view.findViewById(C0257R.id.finish_arrow);
-           ViewUtil.fillColor(res, this.mColor, C0257R.drawable.ic_arrow_large, arrow);
+           View xButton = view.findViewById(R.id.capture_x);
+           ViewUtil.fillColor(res, this.mColor, R.drawable.ic_x_large, xButton);
+           View arrow = view.findViewById(R.id.finish_arrow);
+           ViewUtil.fillColor(res, this.mColor, R.drawable.ic_arrow_large, arrow);
            if (this.mIsMessaging) {
-               TypefacesTextView name = (TypefacesTextView) view.findViewById(C0257R.id.recipient_name);
+               TypefacesTextView name = (TypefacesTextView) view.findViewById(R.id.recipient_name);
                name.setWeight(3);
                name.setTypeface(Typefaces.get(getActivity()).mediumContent);
                name.setVisibility(0);
@@ -319,7 +319,7 @@
                    name.setText(this.mRecipientUsername);
                         }
                     }
-           View topOverlayView = view.findViewById(C0257R.id.progress_overlay);
+           View topOverlayView = view.findViewById(R.id.progress_overlay);
            if (this.mTopOverlay != null) {
                topOverlayView.setVisibility(0);
                ViewUtil.setBackground(getResources(), topOverlayView, this.mTopOverlay);
@@ -335,7 +335,7 @@
        public void onViewCreated(View view, Bundle savedInstanceState) {
            super.onViewCreated(view, savedInstanceState);
            if (this.mIsMessaging) {
-               View options = getActivity().findViewById(C0257R.id.recording_options);
+               View options = getActivity().findViewById(R.id.recording_options);
                ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) options.getLayoutParams();
                int margin = (int) (((double) this.mScreenSize.x) * 0.1d);
                params.setMargins(margin, 0, margin, 0);

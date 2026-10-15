@@ -125,7 +125,7 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            onCreate(savedInstanceState, C0257R.layout.import_trim_crop_activity, true, true);
+            onCreate(savedInstanceState, R.layout.import_trim_crop_activity, true, true);
                 }
 
                 @Override 
@@ -148,19 +148,19 @@
                     }
             Point size = SystemUtil.getDisplaySize((Activity) this);
             this.mHandler = new Handler(Looper.getMainLooper());
-            ViewGroup rootView = (ViewGroup) findViewById(C0257R.id.import_view_root);
-            this.mVideoContainer = (FrameLayout) findViewById(C0257R.id.video_container);
-            this.mPlayButton = (ImageButton) findViewById(C0257R.id.import_play_button);
-           this.mProgressView = (RegularProgressView) findViewById(C0257R.id.import_progress_view);
-           this.mProgressView.setSelectedColor(getResources().getColor(C0257R.color.vine_green));
-           this.mProgressView.setColor(getResources().getColor(C0257R.color.trim_yellow));
+            ViewGroup rootView = (ViewGroup) findViewById(R.id.import_view_root);
+            this.mVideoContainer = (FrameLayout) findViewById(R.id.video_container);
+            this.mPlayButton = (ImageButton) findViewById(R.id.import_play_button);
+           this.mProgressView = (RegularProgressView) findViewById(R.id.import_progress_view);
+           this.mProgressView.setSelectedColor(getResources().getColor(R.color.vine_green));
+           this.mProgressView.setColor(getResources().getColor(R.color.trim_yellow));
            this.mStartRatio = this.mStartDurationMs / this.mMaxDurationMs;
            this.mProgressView.setProgressRatio(this.mStartRatio);
            this.mProgressView.setSelectedSection(0.0f, this.mStartRatio);
-           findViewById(C0257R.id.importTitle).setOnClickListener(new ViewOnClickListenerC02241());
-           findViewById(C0257R.id.trimCropBackButton).setOnClickListener(new ViewOnClickListenerC02252());
-           findViewById(C0257R.id.add).setOnClickListener(new ViewOnClickListenerC02263());
-           int height = getResources().getDimensionPixelSize(C0257R.dimen.carousel_height);
+           findViewById(R.id.importTitle).setOnClickListener(new ViewOnClickListenerC02241());
+           findViewById(R.id.trimCropBackButton).setOnClickListener(new ViewOnClickListenerC02252());
+           findViewById(R.id.add).setOnClickListener(new ViewOnClickListenerC02263());
+           int height = getResources().getDimensionPixelSize(R.dimen.carousel_height);
            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(-1, height);
            ThumbnailRangeFinderLayout thumbnailRangeFinder = new ThumbnailRangeFinderLayout(this, (int) (this.mStartRatio * size.x));
            thumbnailRangeFinder.setListener(this);
@@ -178,10 +178,10 @@
                pickerIntent.setType("video/*");
                pickerIntent.putExtra("android.intent.extra.LOCAL_ONLY", true);
                         try {
-                   startActivityForResult(Intent.createChooser(pickerIntent, getString(C0257R.string.pick_video)), 2);
+                   startActivityForResult(Intent.createChooser(pickerIntent, getString(R.string.pick_video)), 2);
                    return;
                         } catch (ActivityNotFoundException e) {
-                   Util.showCenteredToast(this, getString(C0257R.string.unsupported_feature) + " \n (" + getString(C0257R.string.pick_video) + ") ");
+                   Util.showCenteredToast(this, getString(R.string.unsupported_feature) + " \n (" + getString(R.string.pick_video) + ") ");
                    return;
                         }
                     }
@@ -234,7 +234,7 @@
                if (requestCode == 2 && data != null) {
                    Uri uri = data.getData();
                             if (uri == null) {
-                                Util.showCenteredToast(this, getString(C0257R.string.error_import_video_unknown_error));
+                                Util.showCenteredToast(this, getString(R.string.error_import_video_unknown_error));
                                 finish();
                                 return;
                             }
@@ -249,7 +249,7 @@
                        onUriResult(uri, false);
                        return;
                             } catch (Throwable th) {
-                       showInvalidVideoError(uri, C0257R.string.error_import_video_unknown_error, "Failed to validate video.");
+                       showInvalidVideoError(uri, R.string.error_import_video_unknown_error, "Failed to validate video.");
                        return;
                             }
                         }
@@ -538,7 +538,7 @@
 
                 @Override 
        public boolean onCreateOptionsMenu(Menu menu) {
-           getMenuInflater().inflate(C0257R.menu.import_trim, menu);
+           getMenuInflater().inflate(R.menu.import_trim, menu);
            return true;
                 }
 
@@ -615,7 +615,7 @@
 
                 private void completeGalleryUpload() {
                     if (this.mFileUri == null || this.mFileUri.getPath() == null) {
-                        Util.showCenteredToast(this, getString(C0257R.string.error_import_video_unknown_error));
+                        Util.showCenteredToast(this, getString(R.string.error_import_video_unknown_error));
                         this.mAddInProgress = false;
                         return;
                     }
@@ -638,7 +638,7 @@
                     } catch (Throwable error) {
                         CrashUtil.logException(error, "Failed to queue gallery video", new Object[0]);
                         this.mAddInProgress = false;
-                        Util.showCenteredToast(this, getString(C0257R.string.error_import_video_unknown_error));
+                        Util.showCenteredToast(this, getString(R.string.error_import_video_unknown_error));
                     } finally {
                         if (frame != null) {
                             frame.recycle();

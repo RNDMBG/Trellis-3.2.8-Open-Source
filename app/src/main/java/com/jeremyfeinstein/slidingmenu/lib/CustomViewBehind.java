@@ -12,7 +12,7 @@
             import android.view.MotionEvent;
             import android.view.View;
             import android.view.ViewGroup;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class CustomViewBehind extends ViewGroup {
@@ -401,7 +401,7 @@
 
        public void drawSelector(View content, Canvas canvas, float openPercent) {
            if (this.mSelectorEnabled && this.mSelectorDrawable != null && this.mSelectedView != null) {
-               String tag = (String) this.mSelectedView.getTag(C0257R.id.selected_view);
+               String tag = (String) this.mSelectedView.getTag(R.id.selected_view);
                if (tag.equals("CustomViewBehindSelectedView")) {
                    canvas.save();
                    int offset = (int) (this.mSelectorDrawable.getWidth() * openPercent);
@@ -427,12 +427,12 @@
 
        public void setSelectedView(View v) {
            if (this.mSelectedView != null) {
-               this.mSelectedView.setTag(C0257R.id.selected_view, null);
+               this.mSelectedView.setTag(R.id.selected_view, null);
                this.mSelectedView = null;
                     }
            if (v != null && v.getParent() != null) {
                this.mSelectedView = v;
-               this.mSelectedView.setTag(C0257R.id.selected_view, "CustomViewBehindSelectedView");
+               this.mSelectedView.setTag(R.id.selected_view, "CustomViewBehindSelectedView");
                invalidate();
                     }
                 }

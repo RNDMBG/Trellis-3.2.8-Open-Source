@@ -57,10 +57,10 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.debug_home, true);
+            super.onCreate(savedInstanceState, R.layout.debug_home, true);
             Session session = this.mAppController.getActiveSession();
-            TextView tv = (TextView) findViewById(C0257R.id.debuginfo);
-            Button b = (Button) findViewById(C0257R.id.writeSessionKeyToLog);
+            TextView tv = (TextView) findViewById(R.id.debuginfo);
+            Button b = (Button) findViewById(R.id.writeSessionKeyToLog);
             if (!HIDE_SENSITIVE_DATA) {
                 b.setOnClickListener(new ViewOnClickListenerC01971(session));
                     } else {
@@ -178,9 +178,9 @@
                debugInfo.append("\n\nGCM: " + prefs.getString(GCMRegistrationService.PREF_REG_ID, "Not registered"));
                debugInfo.append("\nGCM sent to vinepi: " + prefs.getBoolean(GCMRegistrationService.PREF_REG_ID_SENT, false));
                debugInfo.append("\n\nAPI: " + VineAPI.getInstance(this).getBaseUrl());
-               debugInfo.append("\nAmazon: " + getString(C0257R.string.amazon_s3));
+               debugInfo.append("\nAmazon: " + getString(R.string.amazon_s3));
                debugInfo.append("\nAmazon Bucket: " + BuildUtil.getAmazonBucket(this));
-               debugInfo.append("\nTwitter: " + getString(C0257R.string.twitter_api));
+               debugInfo.append("\nTwitter: " + getString(R.string.twitter_api));
                debugInfo.append("\nRTC: " + VineAPI.getInstance(this).getRtcUrl());
                debugInfo.append("\nMedia: " + VineAPI.getInstance(this).getMediaUrl());
                debugInfo.append("\nExplore: " + VineAPI.getInstance(this).getExploreUrl());
@@ -200,10 +200,10 @@
                     }
            ((ViewGroup) tv.getParent()).addView(button);
            if (!HIDE_SENSITIVE_DATA) {
-               EditText query = (EditText) findViewById(C0257R.id.debug_query);
-               findViewById(C0257R.id.debug_query_submit).setOnClickListener(new ViewOnClickListenerC02004(query));
+               EditText query = (EditText) findViewById(R.id.debug_query);
+               findViewById(R.id.debug_query_submit).setOnClickListener(new ViewOnClickListenerC02004(query));
                     } else {
-               LinearLayout debugQueryParent = (LinearLayout) findViewById(C0257R.id.debug_query_parent);
+               LinearLayout debugQueryParent = (LinearLayout) findViewById(R.id.debug_query_parent);
                debugQueryParent.setVisibility(8);
                     }
                 }

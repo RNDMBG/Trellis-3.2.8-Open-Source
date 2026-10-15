@@ -12,12 +12,12 @@
 
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.crop_photo);
-            this.mSaveButton = (Button) findViewById(C0257R.id.save_button);
+            super.onCreate(savedInstanceState, R.layout.crop_photo);
+            this.mSaveButton = (Button) findViewById(R.id.save_button);
             this.mSaveButton.setEnabled(false);
             this.mView.setCropType(2);
-            ViewUtil.reduceTextSizeViaFontScaleIfNeeded(this, 1.1f, 12.0f, (TextView) findViewById(C0257R.id.save_button), (TextView) findViewById(C0257R.id.cancel_button));
-            setupActionBar((Boolean) null, (Boolean) true, C0257R.string.crop_photo_title, (Boolean) null, (Boolean) true);
+            ViewUtil.reduceTextSizeViaFontScaleIfNeeded(this, 1.1f, 12.0f, (TextView) findViewById(R.id.save_button), (TextView) findViewById(R.id.cancel_button));
+            setupActionBar((Boolean) null, (Boolean) true, R.string.crop_photo_title, (Boolean) null, (Boolean) true);
                 }
 
                 @Override 

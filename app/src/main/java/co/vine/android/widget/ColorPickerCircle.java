@@ -9,7 +9,7 @@
             import android.support.annotation.NonNull;
             import android.util.AttributeSet;
             import android.widget.ImageView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.Settings;
             import co.vine.android.util.ViewUtil;
             
@@ -37,9 +37,9 @@
             super(context, attrs, defStyleAttr);
             this.mIndexChangeRunnable = new RunnableC05481();
             Resources res = getResources();
-            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.ColorPickerCircle, defStyleAttr, 0);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ColorPickerCircle, defStyleAttr, 0);
             a.recycle();
-            this.mWhiteCircle = res.getDrawable(C0257R.drawable.circle_shape_white);
+            this.mWhiteCircle = res.getDrawable(R.drawable.circle_shape_white);
                 }
 
                 @Override 
@@ -61,7 +61,7 @@
 
         public void setIndex(int index) {
             this.mIndex = index;
-            Drawable d = getResources().getDrawable(C0257R.drawable.circle_shape_light);
+            Drawable d = getResources().getDrawable(R.drawable.circle_shape_light);
             d.setColorFilter(Settings.PROFILE_BACKGROUND_COLORS[index] | (-16777216), PorterDuff.Mode.SRC_ATOP);
             ViewUtil.setBackground(this, d);
             invalidate();

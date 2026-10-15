@@ -37,7 +37,7 @@
             this.mAvatars = new HashMap<>();
             this.mAppController = appController;
             this.mViewHolders = new ArrayList<>();
-            this.mProfileImageSize = context.getResources().getDimensionPixelOffset(C0257R.dimen.user_image_size);
+            this.mProfileImageSize = context.getResources().getDimensionPixelOffset(R.dimen.user_image_size);
                 }
 
                 @Override 
@@ -48,7 +48,7 @@
                 @Override 
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            View v = layoutInflater.inflate(C0257R.layout.menu_friends_row, parent, false);
+            View v = layoutInflater.inflate(R.layout.menu_friends_row, parent, false);
             FriendsViewHolder holder = new FriendsViewHolder(context, v);
             this.mViewHolders.add(new WeakReference<>(holder));
             v.setTag(holder);
@@ -163,7 +163,7 @@
            if (bmp != null) {
                holder.image.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), bmp));
                     } else {
-               holder.image.setImageResource(C0257R.drawable.circle_shape_light);
+               holder.image.setImageResource(R.drawable.circle_shape_light);
                     }
                 }
 
@@ -183,12 +183,12 @@
                     public TextView sectionTitle;
 
            public FriendsViewHolder(Context context, View view) {
-               this.friendName = (TextView) view.findViewById(C0257R.id.friend_name);
-               this.image = (ImageView) view.findViewById(C0257R.id.user_image);
-               this.sectionIndicator = view.findViewById(C0257R.id.section_indicator);
-               this.sectionTitle = (TextView) view.findViewById(C0257R.id.section_title);
-               this.sectionSort = (TextView) view.findViewById(C0257R.id.section_sort);
-               this.divider = view.findViewById(C0257R.id.divider);
+               this.friendName = (TextView) view.findViewById(R.id.friend_name);
+               this.image = (ImageView) view.findViewById(R.id.user_image);
+               this.sectionIndicator = view.findViewById(R.id.section_indicator);
+               this.sectionTitle = (TextView) view.findViewById(R.id.section_title);
+               this.sectionSort = (TextView) view.findViewById(R.id.section_sort);
+               this.divider = view.findViewById(R.id.divider);
                Util.styleSectionHeader(context, this.sectionTitle, this.sectionSort);
                     }
                 }

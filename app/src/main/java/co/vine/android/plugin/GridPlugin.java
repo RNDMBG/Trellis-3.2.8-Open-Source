@@ -11,7 +11,7 @@
             import android.widget.CompoundButton;
             import android.widget.LinearLayout;
             import android.widget.ToggleButton;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.animation.SimpleAnimationListener;
             import co.vine.android.util.analytics.FlurryUtils;
             
@@ -150,15 +150,15 @@
 
                 @Override 
        protected ToggleButton onLayoutInflated(LinearLayout view, LayoutInflater inflater, Fragment fragment) {
-           ViewGroup rootLayout = (ViewGroup) fragment.getView().findViewById(C0257R.id.root_layout);
-           View grid = inflater.inflate(C0257R.layout.plugin_grid_view, rootLayout, false);
+           ViewGroup rootLayout = (ViewGroup) fragment.getView().findViewById(R.id.root_layout);
+           View grid = inflater.inflate(R.layout.plugin_grid_view, rootLayout, false);
            rootLayout.addView(grid);
            this.mGrid = new WeakReferenceView(grid);
-           ToggleButton button = (ToggleButton) inflater.inflate(C0257R.layout.plugin_tool_toggle, (ViewGroup) view, false);
+           ToggleButton button = (ToggleButton) inflater.inflate(R.layout.plugin_tool_toggle, (ViewGroup) view, false);
            button.setText((CharSequence) null);
            button.setTextOn(null);
            button.setTextOff(null);
-           button.setBackgroundResource(C0257R.drawable.ic_grid);
+           button.setBackgroundResource(R.drawable.ic_grid);
            button.setAlpha(0.35f);
            button.setOnCheckedChangeListener(new GridCheckChangedListener(this.mSecondaryColor));
            if (this.mGrid.getVisibility() == 0) {

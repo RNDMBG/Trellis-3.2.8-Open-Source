@@ -17,7 +17,6 @@
             import android.widget.LinearLayout;
             import android.widget.RelativeLayout;
             import android.widget.TextView;
-            import co.vine.android.C0257R;
             import co.vine.android.util.AppCompactProxy;
             import co.vine.android.util.ViewUtil;
             import java.util.ArrayList;
@@ -98,16 +97,16 @@
                 }
 
        public void onCreate() {
-           this.mActionBarContainer = (RelativeLayout) LayoutInflater.from(this.mActivity).inflate(C0257R.layout.fake_action_bar, (ViewGroup) null);
-           this.mActionBar = (RelativeLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar);
+           this.mActionBarContainer = (RelativeLayout) LayoutInflater.from(this.mActivity).inflate(co.vine.android.R.layout.fake_action_bar, (ViewGroup) null);
+           this.mActionBar = (RelativeLayout) this.mActionBarContainer.findViewById(co.vine.android.R.id.fake_action_bar);
            ViewUtil.setActionBarHeight(this.mActivity, this.mActionBar);
-           this.mDistanceMarker = this.mActionBarContainer.findViewById(C0257R.id.distance_marker);
+           this.mDistanceMarker = this.mActionBarContainer.findViewById(co.vine.android.R.id.distance_marker);
            ViewUtil.setActionBarHeight(this.mActivity, this.mDistanceMarker);
-           this.mActionBarLeft = (RelativeLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar_left);
-           this.mActionBarRight = (LinearLayout) this.mActionBarContainer.findViewById(C0257R.id.fake_action_bar_right);
-           this.mBackIcon = (ImageView) this.mActionBar.findViewById(C0257R.id.ab_back_button);
-           this.mHomeIcon = (ImageView) this.mActionBar.findViewById(C0257R.id.ab_home_button);
-           this.mTitleView = (TextView) this.mActionBar.findViewById(C0257R.id.ab_title_view);
+           this.mActionBarLeft = (RelativeLayout) this.mActionBarContainer.findViewById(co.vine.android.R.id.fake_action_bar_left);
+           this.mActionBarRight = (LinearLayout) this.mActionBarContainer.findViewById(co.vine.android.R.id.fake_action_bar_right);
+           this.mBackIcon = (ImageView) this.mActionBar.findViewById(co.vine.android.R.id.ab_back_button);
+           this.mHomeIcon = (ImageView) this.mActionBar.findViewById(co.vine.android.R.id.ab_home_button);
+           this.mTitleView = (TextView) this.mActionBar.findViewById(co.vine.android.R.id.ab_title_view);
                 }
 
        public ImageView getBackIcon() {

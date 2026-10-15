@@ -8,9 +8,9 @@
     public class FavoritePeopleActivity extends BaseControllerActionBarActivity {
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.user_list, true);
+            super.onCreate(savedInstanceState, R.layout.user_list, true);
             Intent intent = getIntent();
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.favorite_people, (Boolean) true, (Boolean) true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.favorite_people, (Boolean) true, (Boolean) true);
             Bundle extras = getIntent().getExtras();
             if (extras != null && extras.getInt("color", 0) != 0) {
                 setActionBarColor(extras.getInt("color"));
@@ -20,7 +20,7 @@
                 Bundle b = BaseArrayListFragment.prepareArguments(intent, false);
                 b.putBoolean("refresh", true);
                 fragment.setArguments(b);
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
                     }
                 }
 

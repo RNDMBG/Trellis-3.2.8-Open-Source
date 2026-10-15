@@ -100,16 +100,16 @@
 
                 @Override 
        protected Dialog onCreateDialog(int id) {
-           ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
+           ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
            dialog.setProgressStyle(0);
            dialog.setCanceledOnTouchOutside(false);
            dialog.setOnCancelListener(this);
                     switch (id) {
                         case 0:
-                   dialog.setMessage(getString(C0257R.string.cropping_image));
+                   dialog.setMessage(getString(R.string.cropping_image));
                             return dialog;
                         case 1:
-                   dialog.setMessage(getString(C0257R.string.loading_image));
+                   dialog.setMessage(getString(R.string.loading_image));
                             return dialog;
                         default:
                    return super.onCreateDialog(id);
@@ -167,7 +167,7 @@
                        activity.mBitmapLoaded = true;
                        activity.onBitmapProcessingDone(bmp);
                             } else {
-                       Toast.makeText(CropActivity.this, C0257R.string.load_image_failure, 1).show();
+                       Toast.makeText(CropActivity.this, R.string.load_image_failure, 1).show();
                        CropActivity.this.removeDialog(1);
                        CropActivity.this.setResult(0);
                        CropActivity.this.finish();
@@ -181,7 +181,7 @@
            if (success) {
                setResult(-1, intent);
                     } else {
-               Toast.makeText(this, C0257R.string.cropping_image_failure, 1).show();
+               Toast.makeText(this, R.string.cropping_image_failure, 1).show();
                setResult(0);
                     }
            finish();

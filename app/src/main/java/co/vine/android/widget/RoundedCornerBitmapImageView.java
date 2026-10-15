@@ -14,7 +14,7 @@
             import android.support.annotation.NonNull;
             import android.util.AttributeSet;
             import android.widget.ImageView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class RoundedCornerBitmapImageView extends ImageView {
@@ -31,8 +31,8 @@
 
         public RoundedCornerBitmapImageView(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
-            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.RoundedCornerImageView, defStyle, 0);
-            this.mRadius = a.getDimensionPixelSize(0, 0);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundedCornerImageView, defStyle, 0);
+            this.mRadius = a.getDimensionPixelSize(R.styleable.RoundedCornerImageView_cornerRadius, 0);
                 }
 
                 @Override 

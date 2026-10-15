@@ -12,7 +12,7 @@
             import android.widget.ImageButton;
             import android.widget.LinearLayout;
             import android.widget.RelativeLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.Settings;
             import co.vine.android.recorder.AbstractEncodingRunnable;
             import co.vine.android.recorder.VineRecorder;
@@ -94,33 +94,33 @@
 
                 @Override 
         protected ImageButton onLayoutInflated(LinearLayout view, LayoutInflater inflater, Fragment fragment) {
-            this.mButton = (ImageButton) inflater.inflate(C0257R.layout.plugin_overlay_image_button, (ViewGroup) view, false);
+            this.mButton = (ImageButton) inflater.inflate(R.layout.plugin_overlay_image_button, (ViewGroup) view, false);
             this.mButton.setOnClickListener(this);
             this.mButton.setAlpha(0.35f);
             ViewGroup vg = (ViewGroup) fragment.getView();
-            ViewGroup overlay = (ViewGroup) inflater.inflate(C0257R.layout.plugin_overlay_layout, vg, false);
-            this.mDrawingView = (DrawingView) overlay.findViewById(C0257R.id.drawing_view);
+            ViewGroup overlay = (ViewGroup) inflater.inflate(R.layout.plugin_overlay_layout, vg, false);
+            this.mDrawingView = (DrawingView) overlay.findViewById(R.id.drawing_view);
             this.mDrawingView.setDrawingEnabled(false);
             this.mDrawingView.setEditEnabled(false);
-            this.mDrawTools = overlay.findViewById(C0257R.id.drawTools);
+            this.mDrawTools = overlay.findViewById(R.id.drawTools);
             this.mDrawTools.setVisibility(8);
-            this.mEditTools = overlay.findViewById(C0257R.id.editTools);
+            this.mEditTools = overlay.findViewById(R.id.editTools);
             this.mEditTools.setVisibility(8);
-            this.mEditTools.findViewById(C0257R.id.save).setOnClickListener(new ViewOnClickListenerC04321());
-            this.mEditTools.findViewById(C0257R.id.restore).setOnClickListener(new ViewOnClickListenerC04332());
-            this.mColors[0] = fragment.getResources().getColor(C0257R.color.vine_green);
+            this.mEditTools.findViewById(R.id.save).setOnClickListener(new ViewOnClickListenerC04321());
+            this.mEditTools.findViewById(R.id.restore).setOnClickListener(new ViewOnClickListenerC04332());
+            this.mColors[0] = fragment.getResources().getColor(R.color.vine_green);
                     for (int i = 1; i < Settings.PROFILE_BACKGROUND_COLORS.length; i++) {
                 this.mColors[i] = Settings.PROFILE_BACKGROUND_COLORS[i] | (-16777216);
                     }
-            Button sizeButton = (Button) overlay.findViewById(C0257R.id.size);
+            Button sizeButton = (Button) overlay.findViewById(R.id.size);
             sizeButton.setText(String.valueOf(this.mSizes[this.mCurrentSize]));
             sizeButton.setOnClickListener(new ViewOnClickListenerC04343(sizeButton));
-            Button colorButton = (Button) overlay.findViewById(C0257R.id.color);
+            Button colorButton = (Button) overlay.findViewById(R.id.color);
            colorButton.setBackgroundColor(this.mColors[this.mCurrentColor]);
            colorButton.setOnClickListener(new ViewOnClickListenerC04354(colorButton));
-           overlay.findViewById(C0257R.id.undo).setOnClickListener(new ViewOnClickListenerC04365());
-           overlay.findViewById(C0257R.id.clear).setOnClickListener(new ViewOnClickListenerC04376());
-           Button advanceButton = (Button) overlay.findViewById(C0257R.id.advance);
+           overlay.findViewById(R.id.undo).setOnClickListener(new ViewOnClickListenerC04365());
+           overlay.findViewById(R.id.clear).setOnClickListener(new ViewOnClickListenerC04376());
+           Button advanceButton = (Button) overlay.findViewById(R.id.advance);
            advanceButton.setText("+" + this.mAdvanceFrames[this.mCurrentAdvanceValue]);
            advanceButton.setLongClickable(true);
            advanceButton.setOnLongClickListener(new ViewOnLongClickListenerC04387(advanceButton));

@@ -62,7 +62,7 @@
                 @Override 
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            View alertsRowHeader = LayoutInflater.from(getActivity()).inflate(C0257R.layout.notification_alerts_row, (ViewGroup) null);
+            View alertsRowHeader = LayoutInflater.from(getActivity()).inflate(R.layout.notification_alerts_row, (ViewGroup) null);
             alertsRowHeader.setOnClickListener(new ViewOnClickListenerC02451());
             this.mListView.addHeaderView(alertsRowHeader, null, false);
                 }
@@ -83,10 +83,10 @@
                 @Override 
         public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
             if (this.mSucceeded) {
-                inflater.inflate(C0257R.menu.save, menu);
-                MenuItem menuItem = menu.findItem(C0257R.id.done);
+                inflater.inflate(R.menu.save, menu);
+                MenuItem menuItem = menu.findItem(R.id.done);
                 menuItem.setEnabled(true);
-                menu.findItem(C0257R.id.done).setEnabled(true);
+                menu.findItem(R.id.done).setEnabled(true);
                     }
                 }
 
@@ -125,7 +125,7 @@
            public void onSaveNotificationSettingsComplete(String reqId, int statusCode, String reasonPhrase) {
                if (statusCode != 200) {
                    if (TextUtils.isEmpty(reasonPhrase)) {
-                       Toast.makeText(NotificationSettingsFragment.this.getActivity(), C0257R.string.error_server, 1).show();
+                       Toast.makeText(NotificationSettingsFragment.this.getActivity(), R.string.error_server, 1).show();
                        return;
                             } else {
                        Toast.makeText(NotificationSettingsFragment.this.getActivity(), reasonPhrase, 1).show();
@@ -178,11 +178,11 @@
                     @Override 
                     @Nullable
            public View getView(int position, View convertView, ViewGroup parent) {
-               int layout = C0257R.layout.notification_setting_check;
+               int layout = R.layout.notification_setting_check;
                int type = getItemViewType(position);
                if (convertView == null) {
                    if (type == 1) {
-                       layout = C0257R.layout.notification_settings_spinner;
+                       layout = R.layout.notification_settings_spinner;
                             }
                    convertView = LayoutInflater.from(this.mContext).inflate(layout, (ViewGroup) null);
                         }
@@ -246,13 +246,13 @@
 
            public void setSelected(Resources res, boolean selected, View view) {
                if (selected) {
-                   Drawable bg = res.getDrawable(C0257R.drawable.ic_circle_selected).mutate();
-                   int color = res.getColor(C0257R.color.vine_green);
+                   Drawable bg = res.getDrawable(R.drawable.ic_circle_selected).mutate();
+                   int color = res.getColor(R.color.vine_green);
                    bg.setColorFilter(new PorterDuffColorFilter((-16777216) | color, PorterDuff.Mode.SRC_IN));
                    ViewUtil.setBackground(view, bg);
                         } else {
-                   Drawable bg2 = res.getDrawable(C0257R.drawable.ic_circle_default);
-                   bg2.setColorFilter(new PorterDuffColorFilter(res.getColor(C0257R.color.btn_circle_stroke), PorterDuff.Mode.SRC_IN));
+                   Drawable bg2 = res.getDrawable(R.drawable.ic_circle_default);
+                   bg2.setColorFilter(new PorterDuffColorFilter(res.getColor(R.color.btn_circle_stroke), PorterDuff.Mode.SRC_IN));
                    ViewUtil.setBackground(view, bg2);
                         }
                view.setSelected(selected);
@@ -274,11 +274,11 @@
                         TextView title;
 
                public NotificationSettingsViewHolder(View view) {
-                   this.header = view.findViewById(C0257R.id.header);
-                   this.headerText = (TextView) view.findViewById(C0257R.id.header_text);
+                   this.header = view.findViewById(R.id.header);
+                   this.headerText = (TextView) view.findViewById(R.id.header_text);
                    this.title = (TextView) view.findViewById(2131427387);
-                   this.spinner = (Spinner) view.findViewById(C0257R.id.spinner);
-                   this.selectionIndicator = view.findViewById(C0257R.id.selection_indicator);
+                   this.spinner = (Spinner) view.findViewById(R.id.spinner);
+                   this.selectionIndicator = view.findViewById(R.id.selection_indicator);
                         }
                     }
                 }
@@ -315,7 +315,7 @@
                if (convertView != null) {
                    res = convertView;
                         } else {
-                   res = LayoutInflater.from(this.mContext).inflate(C0257R.layout.settings_spinner_row_item, (ViewGroup) null);
+                   res = LayoutInflater.from(this.mContext).inflate(R.layout.settings_spinner_row_item, (ViewGroup) null);
                         }
                TextView t = (TextView) res.findViewById(2131427387);
                t.setText((CharSequence) choice.first);

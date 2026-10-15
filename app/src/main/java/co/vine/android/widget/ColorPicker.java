@@ -5,7 +5,7 @@
             import android.util.AttributeSet;
             import android.view.View;
             import android.view.ViewGroup;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.Settings;
             
             
@@ -31,7 +31,7 @@
         public ColorPicker(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
             Resources res = context.getResources();
-            this.mMinPadding = res.getDimensionPixelOffset(C0257R.dimen.color_picker_min_padding);
+            this.mMinPadding = res.getDimensionPixelOffset(R.dimen.color_picker_min_padding);
                 }
 
                 @Override 

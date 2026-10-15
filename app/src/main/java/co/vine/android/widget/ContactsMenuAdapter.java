@@ -9,7 +9,7 @@
             import android.widget.ArrayAdapter;
             import android.widget.ImageView;
             import android.widget.TextView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.ContactEntry;
             import co.vine.android.util.Util;
             import java.lang.ref.WeakReference;
@@ -42,7 +42,7 @@
                     boolean showDivider;
             if (convertView == null || !(convertView.getTag() instanceof ContactsPickerViewHolder)) {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
-                convertView = inflater.inflate(C0257R.layout.menu_contacts_row, parent, false);
+                convertView = inflater.inflate(R.layout.menu_contacts_row, parent, false);
                 holder = new ContactsPickerViewHolder(getContext(), convertView);
                 convertView.setTag(holder);
                     } else {
@@ -81,7 +81,7 @@
             holder.phoneIndicator.setVisibility(showPhone ? 0 : 8);
             holder.contactId = entry.contactId;
            if (position == 0) {
-               holder.sectionTitle.setText(getContext().getString(C0257R.string.contacts));
+               holder.sectionTitle.setText(getContext().getString(R.string.contacts));
                holder.sectionTitle.setVisibility(0);
                     } else {
                holder.sectionTitle.setVisibility(8);
@@ -122,13 +122,13 @@
                     public TextView username;
 
            public ContactsPickerViewHolder(Context context, View v) {
-               this.emailIndicator = (ImageView) v.findViewById(C0257R.id.email_indicator);
-               this.phoneIndicator = (ImageView) v.findViewById(C0257R.id.phone_indicator);
-               this.sectionIndicator = v.findViewById(C0257R.id.section_indicator);
-               this.sectionTitle = (TextView) v.findViewById(C0257R.id.section_title);
-               this.sectionSort = (TextView) v.findViewById(C0257R.id.section_sort);
-               this.username = (TextView) v.findViewById(C0257R.id.contact_name);
-               this.divider = v.findViewById(C0257R.id.divider);
+               this.emailIndicator = (ImageView) v.findViewById(R.id.email_indicator);
+               this.phoneIndicator = (ImageView) v.findViewById(R.id.phone_indicator);
+               this.sectionIndicator = v.findViewById(R.id.section_indicator);
+               this.sectionTitle = (TextView) v.findViewById(R.id.section_title);
+               this.sectionSort = (TextView) v.findViewById(R.id.section_sort);
+               this.username = (TextView) v.findViewById(R.id.contact_name);
+               this.divider = v.findViewById(R.id.divider);
                Util.styleSectionHeader(context, this.sectionTitle, this.sectionSort);
                     }
                 }

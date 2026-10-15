@@ -756,4 +756,11 @@ looping videos"</string>
     <string name="updates_downloading">Downloading update…</string>
     <string name="later">Later</string>
     <string name="yesterday">Yesterday</string>
+    <string name="notif_channel_activity">Activity</string>
+    <string name="notif_liked">%1$s liked your video</string>
+    <string name="notif_commented">%1$s commented on your video</string>
+    <string name="notif_reposted">%1$s revined your video</string>
+    <string name="notif_followed">%1$s followed you</string>
+    <string name="notif_mentioned">%1$s mentioned you</string>
+    <string name="notif_summary">%1$d new notifications</string>
 </resources>

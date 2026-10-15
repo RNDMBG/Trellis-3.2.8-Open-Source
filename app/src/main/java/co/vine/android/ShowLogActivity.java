@@ -13,12 +13,12 @@
     public class ShowLogActivity extends BaseActionBarActivity {
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.debug_home, false, true);
+            super.onCreate(savedInstanceState, R.layout.debug_home, false, true);
             File file = new File(getIntent().getAction());
-            TextView tv = (TextView) findViewById(C0257R.id.debuginfo);
-            Button button = (Button) findViewById(C0257R.id.writeSessionKeyToLog);
+            TextView tv = (TextView) findViewById(R.id.debuginfo);
+            Button button = (Button) findViewById(R.id.writeSessionKeyToLog);
             button.setText("Clear Logs");
-            findViewById(C0257R.id.debug_query_parent).setVisibility(8);
+            findViewById(R.id.debug_query_parent).setVisibility(8);
             ActionBar ab = getSupportActionBar();
             if (ab != null) {
                 ab.setTitle("Log " + file.getName());

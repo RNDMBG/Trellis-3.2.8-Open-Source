@@ -151,8 +151,11 @@
                        return;
                             }
                         }
-               DecoderInfo selectedDecoderInfo = MediaCodecUtil.getDecoderInfo(mimeType);
-               String selectedDecoderName = selectedDecoderInfo.name;
+                DecoderInfo selectedDecoderInfo = MediaCodecUtil.getDecoderInfo(mimeType);
+                if (selectedDecoderInfo == null) {
+                    throw new ExoPlaybackException("No decoder available for " + mimeType);
+                         }
+                String selectedDecoderName = selectedDecoderInfo.name;
                if (requiresSecureDecoder) {
                    selectedDecoderName = getSecureDecoderName(selectedDecoderName);
                         }

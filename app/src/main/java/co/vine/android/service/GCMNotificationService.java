@@ -21,7 +21,7 @@
             import android.support.annotation.NonNull;
             import android.support.v4.app.NotificationCompat;
             import android.text.TextUtils;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.Settings;
             import co.vine.android.StartActivity;
             import co.vine.android.api.VineParsers;
@@ -349,10 +349,10 @@
        private void buildNotification(VineSingleNotification notification, NotificationGroup group) {
                     String message;
                     String message2;
-           int w = getResources().getDimensionPixelSize(C0257R.dimen.notification_panel_height);
+           int w = getResources().getDimensionPixelSize(R.dimen.notification_panel_height);
            NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
            builder.setAutoCancel(true);
-           builder.setSmallIcon(C0257R.drawable.ic_vine_status_bar);
+           builder.setSmallIcon(R.drawable.ic_vine_status_bar);
            Intent notificationIntent = new Intent(this, (Class<?>) StartActivity.class);
            notificationIntent.putExtra("notification", notification);
                     switch (group.notificationGroupId) {
@@ -364,7 +364,7 @@
                    notificationIntent.putExtra(EXTRA_NOTIFICATION_TYPE_ID, notification.notificationTypeId);
                    builder.setContentTitle(notification.title);
                    builder.setContentText(Util.toPrettyComment(notification));
-                   Bitmap icon = BitmapFactory.decodeResource(getResources(), C0257R.drawable.ic_favorite_intro);
+                   Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_favorite_intro);
                    group.icon = Bitmap.createScaledBitmap(icon, w, w, true);
                    if (icon != group.icon) {
                        icon.recycle();
@@ -375,7 +375,7 @@
                    if (!TextUtils.isEmpty(notification.url)) {
                        notificationIntent.setData(Uri.parse(notification.url));
                             }
-                   builder.setContentTitle(getString(C0257R.string.activity_notification_big_title));
+                   builder.setContentTitle(getString(R.string.activity_notification_big_title));
                    builder.setContentText(Util.toPrettyComment(notification));
                             break;
                     }
@@ -383,7 +383,7 @@
                group.avatarImageKey = new ImageKey(notification.avatarUrl, w, w, true);
                group.icon = this.mAppController.getPhotoBitmap(group.avatarImageKey);
                     } else {
-               group.icon = BitmapFactory.decodeResource(getResources(), 2130837952);
+               group.icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
                     }
            if (group.notificationGroupId == 2) {
                         for (ImageKey imageKey : notification.imageKeys) {
@@ -403,13 +403,13 @@
                             }
                         }
                if (notification.messageCount > 1) {
-                   message2 = getString(C0257R.string.message_notification_title_plural, new Object[]{Util.getUsernameFromActivity(notification.comment), Integer.valueOf(notification.messageCount)});
+                   message2 = getString(R.string.message_notification_title_plural, new Object[]{Util.getUsernameFromActivity(notification.comment), Integer.valueOf(notification.messageCount)});
                         } else {
                    message2 = Util.stripUsernameEntities(notification.comment);
                         }
                builder.setContentTitle(message2);
                SLog.m446d("Notification - " + message2);
-               builder.setSubText(getString(C0257R.string.message_notification_subtext));
+               builder.setSubText(getString(R.string.message_notification_subtext));
                     }
            ArrayList<VineSingleNotification> unclearedNotifications = group.notifications;
            if (unclearedNotifications == null) {
@@ -418,16 +418,16 @@
            if (unclearedNotifications.size() > 1) {
                NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
                if (group.notificationGroupId == 1) {
-                   inboxStyle.setBigContentTitle(getString(C0257R.string.activity_notification_big_title));
+                   inboxStyle.setBigContentTitle(getString(R.string.activity_notification_big_title));
                         } else {
-                   inboxStyle.setBigContentTitle(getString(C0257R.string.message_notification_big_title));
+                   inboxStyle.setBigContentTitle(getString(R.string.message_notification_big_title));
                         }
                         for (VineSingleNotification unclearedNotification : unclearedNotifications) {
                    if (group.notificationGroupId == 2) {
                        if (notification.messageCount > 1) {
-                           message = getString(C0257R.string.message_notification_title_plural, new Object[]{Util.getUsernameFromActivity(unclearedNotification.comment), Integer.valueOf(unclearedNotification.messageCount)});
+                           message = getString(R.string.message_notification_title_plural, new Object[]{Util.getUsernameFromActivity(unclearedNotification.comment), Integer.valueOf(unclearedNotification.messageCount)});
                                 } else {
-                           message = getString(C0257R.string.message_notification_title_single, new Object[]{Util.getUsernameFromActivity(unclearedNotification.comment), Integer.valueOf(unclearedNotification.messageCount)});
+                           message = getString(R.string.message_notification_title_single, new Object[]{Util.getUsernameFromActivity(unclearedNotification.comment), Integer.valueOf(unclearedNotification.messageCount)});
                                 }
                             } else {
                        message = Util.toPrettyComment(unclearedNotification);
@@ -436,7 +436,7 @@
                         }
                builder.setStyle(inboxStyle);
                builder.setNumber(unclearedNotifications.size());
-               builder.setSubText(getString(C0257R.string.activity_notification_subtext));
+               builder.setSubText(getString(R.string.activity_notification_subtext));
                     }
            if (group.notificationGroupId == 2 && unclearedNotifications.size() == 1) {
                SLog.m446d("Notification - converstaion.");
@@ -451,7 +451,7 @@
            int defaults = 0;
            if (sp.getBoolean(Settings.PREF_NOTIFICATIONS_SOUND, true)) {
                if (group.notificationGroupId == 2) {
-                   builder.setSound(Util.getUriFromResouce(this, C0257R.raw.vm_notification));
+                   builder.setSound(Util.getUriFromResouce(this, R.raw.vm_notification));
                         } else {
                    String ringtonePath = sp.getString(Settings.PREF_NOTIFICATIONS_RINGTONE, "");
                    if (!TextUtils.isEmpty(ringtonePath)) {

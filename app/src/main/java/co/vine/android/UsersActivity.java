@@ -26,23 +26,23 @@ import android.view.Gravity;
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.user_list, true);
+            super.onCreate(savedInstanceState, R.layout.user_list, true);
             Intent intent = getIntent();
             setupActionBar((Boolean) true, (Boolean) true, (String) null, (Boolean) true, (Boolean) true);
             ActionBar ab = getSupportActionBar();
             int type = intent.getIntExtra("u_type", 0);
                     switch (type) {
                         case 1:
-                    ab.setTitle(C0257R.string.user_following);
+                    ab.setTitle(R.string.user_following);
                             break;
                         case 2:
-                    ab.setTitle(C0257R.string.user_followers);
+                    ab.setTitle(R.string.user_followers);
                             break;
                         case 5:
-                    ab.setTitle(C0257R.string.user_likers);
+                    ab.setTitle(R.string.user_likers);
                             break;
                         case 9:
-                    ab.setTitle(C0257R.string.revines_title);
+                    ab.setTitle(R.string.revines_title);
                             break;
                         case 12:
                     ab.setTitle("");
@@ -53,7 +53,7 @@ import android.view.Gravity;
                 Bundle b = UsersFragment.prepareArguments(intent, false);
                 b.putBoolean("refresh", true);
                 this.mFragment.setArguments(b);
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, this.mFragment).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, this.mFragment).commit();
                     }
                     getWindow().getDecorView().post(new Runnable() {
                         @Override

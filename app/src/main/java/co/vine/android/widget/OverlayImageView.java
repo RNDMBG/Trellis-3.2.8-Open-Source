@@ -7,7 +7,7 @@
             import android.support.annotation.NonNull;
             import android.util.AttributeSet;
             import android.widget.ImageView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class OverlayImageView extends ImageView {
@@ -33,8 +33,8 @@
 
         private void init(Context context, AttributeSet attrs) {
             if (attrs != null) {
-                TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.OverlayImageView);
-                Drawable d = a.getDrawable(0);
+                TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.OverlayImageView);
+                Drawable d = a.getDrawable(R.styleable.OverlayImageView_overlayDrawable);
                 if (d != null) {
                     setOverlayDrawable(d);
                         }

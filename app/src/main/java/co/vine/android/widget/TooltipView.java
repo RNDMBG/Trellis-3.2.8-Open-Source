@@ -11,7 +11,7 @@
             import android.widget.LinearLayout;
             import android.widget.RelativeLayout;
             import android.widget.TextView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.animation.SimpleAnimationListener;
             
             
@@ -38,15 +38,15 @@
             setOrientation(1);
             this.mTextBounds = new Rect();
             ImageView nib = new ImageView(context);
-            nib.setImageResource(C0257R.drawable.nib_up);
+            nib.setImageResource(R.drawable.nib_up);
             nib.setScaleType(ImageView.ScaleType.CENTER);
-            int padding = getResources().getDimensionPixelSize(C0257R.dimen.spacing_small);
-            int paddingLeftRight = getResources().getDimensionPixelSize(C0257R.dimen.tooltip_left_right_padding);
+            int padding = getResources().getDimensionPixelSize(R.dimen.spacing_small);
+            int paddingLeftRight = getResources().getDimensionPixelSize(R.dimen.tooltip_left_right_padding);
             TextView tooltip = new TextView(context);
-            tooltip.setBackgroundResource(C0257R.drawable.rounded_corner_rect_5);
+            tooltip.setBackgroundResource(R.drawable.rounded_corner_rect_5);
             tooltip.setGravity(17);
             tooltip.setPadding(paddingLeftRight, padding, paddingLeftRight, padding);
-            tooltip.setTextColor(getResources().getColor(C0257R.color.solid_black));
+            tooltip.setTextColor(getResources().getColor(R.color.solid_black));
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(-2, -2);
             params.gravity = 3;
             addView(nib, params);
@@ -54,8 +54,8 @@
             setOnClickListener(new ViewOnClickListenerC05701());
             this.mNib = nib;
             this.mTooltip = tooltip;
-            this.mScreenPadding = getResources().getDimensionPixelSize(C0257R.dimen.spacing_small) * 2;
-            this.mTextViewPadding = getResources().getDimensionPixelSize(C0257R.dimen.tooltip_left_right_padding) * 2;
+            this.mScreenPadding = getResources().getDimensionPixelSize(R.dimen.spacing_small) * 2;
+            this.mTextViewPadding = getResources().getDimensionPixelSize(R.dimen.tooltip_left_right_padding) * 2;
                 }
 
                 

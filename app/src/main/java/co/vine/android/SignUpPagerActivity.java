@@ -74,12 +74,12 @@
 
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.sign_up_flow, false);
+            super.onCreate(savedInstanceState, R.layout.sign_up_flow, false);
             Intent intent = getIntent();
             if (intent != null) {
                 this.mFinish = intent.getBooleanExtra("finish", false);
                     }
-            this.mPager = (ConfigurableViewPager) findViewById(C0257R.id.pager);
+            this.mPager = (ConfigurableViewPager) findViewById(R.id.pager);
             this.mPager.setSwipingEnabled(false);
             this.mPager.setAdapter(new SignUpPagerAdapter(getSupportFragmentManager()));
             this.mAppSessionListener = new SignUpListener();
@@ -133,8 +133,8 @@
                     switch (this.mPager.getCurrentItem()) {
                         case 0:
                    if (this.mTwitterUser != null) {
-                       ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
-                       dialog.setMessage(getString(C0257R.string.login_validating));
+                       ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
+                       dialog.setMessage(getString(R.string.login_validating));
                        dialog.setProgress(0);
                        DialogUtils.showDialogUnsafe(dialog);
                        this.mProgressDialog = dialog;
@@ -155,10 +155,10 @@
                             }
                             break;
                         case 1:
-                   ProgressDialog dialog2 = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
+                   ProgressDialog dialog2 = new ProgressDialog(this, R.style.ProgressDialogTheme);
                    this.mProgressDialog = dialog2;
                    dialog2.setProgressStyle(0);
-                   dialog2.setMessage(getString(C0257R.string.signing_up));
+                   dialog2.setMessage(getString(R.string.signing_up));
                    DialogUtils.showDialogUnsafe(dialog2);
                    this.mAppController.signUp(this.mLogin, this.mPassword, this.mName, this.mPhone, this.mProfile, null, null);
                             break;
@@ -278,7 +278,7 @@
                                         }
                                     } catch (VineLoggingException e) {
                                SignUpPagerActivity.this.dismissDialog();
-                               Util.showCenteredToast(SignUpPagerActivity.this, C0257R.string.failed_to_add_account_on_device);
+                               Util.showCenteredToast(SignUpPagerActivity.this, R.string.failed_to_add_account_on_device);
                                CrashUtil.logException(e);
                                SignUpPagerActivity.this.finish();
                                return;
@@ -287,10 +287,10 @@
                                 case 2:
                            if (SignUpPagerActivity.access$000(SignUpPagerActivity.this) != null) {
                                FlurryUtils.trackNuxAccountCreated("twitter");
-                               ProgressDialog dialog = new ProgressDialog(SignUpPagerActivity.this, C0257R.style.ProgressDialogTheme);
+                               ProgressDialog dialog = new ProgressDialog(SignUpPagerActivity.this, R.style.ProgressDialogTheme);
                                SignUpPagerActivity.this.mProgressDialog = dialog;
                                dialog.setProgressStyle(0);
-                               dialog.setMessage(SignUpPagerActivity.this.getString(C0257R.string.signing_up));
+                               dialog.setMessage(SignUpPagerActivity.this.getString(R.string.signing_up));
                                DialogUtils.showDialogUnsafe(dialog);
                                SignUpPagerActivity.this.mAppController.loginCheckTwitter(SignUpPagerActivity.access$000(SignUpPagerActivity.this).twitterUsername, SignUpPagerActivity.access$000(SignUpPagerActivity.this).twitterToken, SignUpPagerActivity.access$000(SignUpPagerActivity.this).twitterSecret, SignUpPagerActivity.access$000(SignUpPagerActivity.this).userId, false);
                                     } else {
@@ -305,7 +305,7 @@
                if (!TextUtils.isEmpty(reasonPhrase)) {
                    Util.showCenteredToast(SignUpPagerActivity.this, reasonPhrase);
                         } else {
-                   Util.showCenteredToast(SignUpPagerActivity.this, C0257R.string.error_sign_up);
+                   Util.showCenteredToast(SignUpPagerActivity.this, R.string.error_sign_up);
                         }
                     }
 
@@ -313,7 +313,7 @@
            public void onLoginComplete(Session session, String reqId, int statusCode, String reasonPhrase, int errorCode, VineLogin login) {
                SignUpPagerActivity.this.dismissDialog();
                if (statusCode == 200) {
-                   Util.showCenteredToast(SignUpPagerActivity.this, SignUpPagerActivity.this.getString(C0257R.string.login_success));
+                   Util.showCenteredToast(SignUpPagerActivity.this, SignUpPagerActivity.this.getString(R.string.login_success));
                    if (SignUpPagerActivity.access$300(SignUpPagerActivity.this)) {
                        SignUpPagerActivity.this.setResult(-1);
                        SignUpPagerActivity.this.finish();
@@ -331,7 +331,7 @@
                if (!TextUtils.isEmpty(reasonPhrase)) {
                    Util.showCenteredToast(SignUpPagerActivity.this, reasonPhrase);
                         } else {
-                   Util.showCenteredToast(SignUpPagerActivity.this, C0257R.string.error_sign_up);
+                   Util.showCenteredToast(SignUpPagerActivity.this, R.string.error_sign_up);
                         }
                     }
 
@@ -354,7 +354,7 @@
                            return;
                                 }
                             } catch (VineLoggingException e) {
-                       Util.showCenteredToast(SignUpPagerActivity.this, C0257R.string.failed_to_add_account_on_device);
+                       Util.showCenteredToast(SignUpPagerActivity.this, R.string.failed_to_add_account_on_device);
                        CrashUtil.logException(e);
                        SignUpPagerActivity.this.dismissDialog();
                        SignUpPagerActivity.this.finish();

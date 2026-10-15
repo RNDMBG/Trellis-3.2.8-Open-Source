@@ -46,6 +46,7 @@
             import co.vine.android.drawable.CenteredTextDrawable;
             import co.vine.android.network.UrlCachePolicy;
             import co.vine.android.prefetch.PrefetchManager;
+            import co.vine.android.service.ActivityPollJobService;
             import co.vine.android.service.GCMNotificationService;
             import co.vine.android.service.GCMRegistrationService;
             import co.vine.android.service.VineService;
@@ -209,8 +210,9 @@
 
                 @Override 
        public void onCreate(Bundle savedInstanceState) {
-           super.onCreate(savedInstanceState, C0257R.layout.main, true);
-           if (BuildUtil.isExplore()) {
+            super.onCreate(savedInstanceState, R.layout.main, true);
+            ActivityPollJobService.schedule(this);
+            if (BuildUtil.isExplore()) {
                setupTabs();
                     }
            if (SLog.sLogsOn) {
@@ -238,9 +240,9 @@
                VineAccountHelper.migratePassword(am, acc, this);
                SharedPreferences prefs = Util.getDefaultSharedPrefs(this);
                IconTabHost tabHost = this.mTabHost;
-               this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
-               this.mViewPager.setPageMargin(getResources().getDimensionPixelSize(C0257R.dimen.home_pager_margin));
-               this.mViewPager.setPageMarginDrawable(C0257R.color.bg_grouped_list);
+               this.mViewPager = (ViewPager) findViewById(R.id.pager);
+               this.mViewPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.home_pager_margin));
+               this.mViewPager.setPageMarginDrawable(R.color.bg_grouped_list);
                this.mViewPager.setOffscreenPageLimit(3);
                this.mTabsAdapter = new HomeTabTabsAdapter(tabHost);
                LayoutInflater inflater = getLayoutInflater();
@@ -248,28 +250,28 @@
                tabHost.setOnTabClickedListener(this);
                processStartIntent(intent);
                Resources res = getResources();
-               this.mDisabledTabColor = res.getColor(C0257R.color.solid_dark_gray);
-               this.mEnabledTabColor = res.getColor(C0257R.color.vine_green);
+               this.mDisabledTabColor = res.getColor(R.color.solid_dark_gray);
+               this.mEnabledTabColor = res.getColor(R.color.vine_green);
                Bundle timelineBundle = new Bundle();
-               timelineBundle.putInt("empty_desc", C0257R.string.failed_to_load_posts);
-               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.activity_tab_indicator, C0257R.drawable.ic_home, "home"), HomeTimelineFragment.class, timelineBundle);
+               timelineBundle.putInt("empty_desc", R.string.failed_to_load_posts);
+               this.mTabsAdapter.addTab(newTabSpec(inflater, R.layout.activity_tab_indicator, R.drawable.ic_home, "home"), HomeTimelineFragment.class, timelineBundle);
                restoreActivityState();
                Bundle activityBundle = new Bundle();
                activityBundle.putBoolean("take_focus", this.mShowActivityFeed);
-               activityBundle.putInt("empty_desc", C0257R.string.activity_empty);
-               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.activity_tab_indicator, C0257R.drawable.ic_activity, TAG_ACTIVITY), ActivityFragment.class, activityBundle);
+               activityBundle.putInt("empty_desc", R.string.activity_empty);
+               this.mTabsAdapter.addTab(newTabSpec(inflater, R.layout.activity_tab_indicator, R.drawable.ic_activity, TAG_ACTIVITY), ActivityFragment.class, activityBundle);
                Bundle exploreBundle = new Bundle();
                if (TextUtils.equals(this.mRecentTab, TAG_EXPLORE)) {
                    exploreBundle.putBoolean("take_focus", true);
                         }
-               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.home_tab_indicator, C0257R.drawable.ic_explore, TAG_EXPLORE), ExploreFragment.class, exploreBundle);
+               this.mTabsAdapter.addTab(newTabSpec(inflater, R.layout.home_tab_indicator, R.drawable.ic_explore, TAG_EXPLORE), ExploreFragment.class, exploreBundle);
                Bundle profileBundle = new Bundle();
                if (TextUtils.equals(this.mRecentTab, "profile")) {
                    profileBundle.putBoolean("take_focus", true);
                         }
                profileBundle.putLong("user_id", appController.getActiveId());
                profileBundle.putBoolean("refresh", true);
-               this.mTabsAdapter.addTab(newTabSpec(inflater, C0257R.layout.home_tab_indicator, C0257R.drawable.ic_profile, "profile"), ProfileFragment.class, profileBundle);
+               this.mTabsAdapter.addTab(newTabSpec(inflater, R.layout.home_tab_indicator, R.drawable.ic_profile, "profile"), ProfileFragment.class, profileBundle);
                Session session = this.mAppController.getActiveSession();
                this.mAppController.determineCleanup(session);
                this.mActivityCount = prefs.getInt(Settings.PREF_UNREAD_NOTIFICATION_COUNT, 0);
@@ -638,7 +640,7 @@
                         }
                if (requestCode == 1 && resultCode == -1) {
                    if (BuildUtil.isExplore() && this.mMenu != null) {
-                       this.mMenu.removeItem(C0257R.id.capture);
+                       this.mMenu.removeItem(R.id.capture);
                        return;
                             }
                    return;
@@ -677,7 +679,7 @@
                throw new RuntimeException("Your content must have a TabHost whose id attribute is 'android.R.id.tabhost'");
                     }
            this.mTabHost.setup();
-           this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
+           this.mViewPager = (ViewPager) findViewById(R.id.pager);
                 }
 
        public static void start(Activity activity, String tag) {
@@ -688,12 +690,12 @@
 
                 @Override 
        public boolean onCreateOptionsMenu(Menu menu) {
-           getMenuInflater().inflate(C0257R.menu.home, menu);
+           getMenuInflater().inflate(R.menu.home, menu);
            SharedPreferences prefs = Util.getDefaultSharedPrefs(this);
            if (BuildUtil.isExplore() && prefs.getBoolean(Settings.PREF_GINGERBREAD_NOTIF_DISMISSED, false)) {
-               menu.removeItem(C0257R.id.capture);
+               menu.removeItem(R.id.capture);
                     }
-           this.mInboxMenu = menu.findItem(C0257R.id.inbox);
+           this.mInboxMenu = menu.findItem(R.id.inbox);
            invalidateMessagesBadge();
            this.mMenu = menu;
            return super.onCreateOptionsMenu(menu);
@@ -708,7 +710,7 @@
                    inboxBadgeDrawable = (CenteredTextDrawable) currentDrawable;
                         }
                if (inboxBadgeDrawable == null) {
-                   inboxBadgeDrawable = new CenteredTextDrawable(res, C0257R.drawable.vm_bubble_outline, C0257R.drawable.vm_bubble_fill);
+                   inboxBadgeDrawable = new CenteredTextDrawable(res, R.drawable.vm_bubble_outline, R.drawable.vm_bubble_fill);
                    inboxBadgeDrawable.setColorFilter(1, new PorterDuffColorFilter(Util.getProfileColor(this) | (-16777216), PorterDuff.Mode.SRC_IN));
                    int padding = (int) (6.0f * res.getDisplayMetrics().density);
                    inboxBadgeDrawable.setTextPadding(new Rect(padding, padding, padding, padding));
@@ -717,7 +719,7 @@
                    inboxBadgeDrawable.setTextSize(TypedValue.applyDimension(2, 12.0f, res.getDisplayMetrics()));
                         }
                if (this.mMessageCount == 0) {
-                   this.mInboxMenu.setIcon(C0257R.drawable.ic_action_inbox);
+                   this.mInboxMenu.setIcon(R.drawable.ic_action_inbox);
                         } else {
                    inboxBadgeDrawable.setText(this.mMessageCount > 99 ? "99+" : String.valueOf(this.mMessageCount));
                    this.mInboxMenu.setIcon(inboxBadgeDrawable);
@@ -784,7 +786,7 @@
            drawable1.setStroke((int) (2.0f * density), -14408668);
            drawable1.setShape(0);
            drawable1.setCornerRadius(4.0f * density);
-           drawable1.setColor(res.getColor(C0257R.color.vine_green));
+           drawable1.setColor(res.getColor(R.color.vine_green));
            drawable1.setSize((int) (19.0f * density), (int) (20.0f * density));
            CenteredTextDrawable textDrawable = new CenteredTextDrawable(drawable1);
            textDrawable.setTextColor(-1);
@@ -796,28 +798,28 @@
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
            int id = item.getItemId();
-           if (id == C0257R.id.find_friends) {
+           if (id == R.id.find_friends) {
                FlurryUtils.trackVisitFindFriends("Menu");
                startActivity(new Intent(this, (Class<?>) FindFriendsActivity.class));
                         return true;
                     }
-           if (id == C0257R.id.settings) {
+           if (id == R.id.settings) {
                FlurryUtils.trackVisitSettings("Menu");
                startActivityForResult(new Intent(this, (Class<?>) SettingsActivity.class), 1);
                         return true;
                     }
-           if (id == C0257R.id.search) {
+           if (id == R.id.search) {
                FlurryUtils.trackVisitSearch("Menu");
                startActivity(new Intent(this, (Class<?>) SearchActivity.class));
                         return true;
                     }
-           if (id == C0257R.id.inbox) {
+           if (id == R.id.inbox) {
                FlurryUtils.trackVisitInbox("Menu");
                getSlidingMenu().toggle(true);
                         return true;
                     }
-           if (id == C0257R.id.gingerbread_notif_button && BuildUtil.isExplore()) {
-               Intent intent = ViewOverlayActivity.getIntent(this, C0257R.layout.main_gb_notif, C0257R.id.gingerbread_notif_button, 0);
+           if (id == R.id.gingerbread_notif_button && BuildUtil.isExplore()) {
+               Intent intent = ViewOverlayActivity.getIntent(this, R.layout.main_gb_notif, R.id.gingerbread_notif_button, 0);
                startActivityForResult(intent, 1);
                         return true;
                     }
@@ -829,16 +831,16 @@
            int toastResId = -1;
                     switch (((Integer) view.getTag()).intValue()) {
                         case 1:
-                   toastResId = C0257R.string.tab_title_timeline;
+                   toastResId = R.string.tab_title_timeline;
                             break;
                         case 2:
-                   toastResId = C0257R.string.tab_title_activity;
+                   toastResId = R.string.tab_title_activity;
                             break;
                         case 3:
-                   toastResId = C0257R.string.tab_title_explore;
+                   toastResId = R.string.tab_title_explore;
                             break;
                         case 4:
-                   toastResId = C0257R.string.tab_title_profile;
+                   toastResId = R.string.tab_title_profile;
                             break;
                     }
            if (toastResId > 0) {
@@ -908,7 +910,7 @@
                         } else {
                    Context applicationContext = HomeTabActivity.this.getApplicationContext();
                             if (reasonPhrase == null) {
-                                reasonPhrase = HomeTabActivity.this.getString(C0257R.string.generic_error);
+                                reasonPhrase = HomeTabActivity.this.getString(R.string.generic_error);
                             }
                             Util.showCenteredToast(applicationContext, reasonPhrase);
                         }
@@ -1004,13 +1006,13 @@
                               String userId = trimSegment(data.getLastPathSegment());
                               ProfileActivity.start(this, Long.parseLong(userId), "Deep Link: /u/<userId>");
                                     } catch (NumberFormatException e) {
-                              Util.showCenteredToast(this, C0257R.string.invalid_link);
+                              Util.showCenteredToast(this, R.string.invalid_link);
                               finish();
                                     }
                                 } else if (PREFIX_CONFIRM_EMAIL.equals(pathPrefix)) {
                           this.mAppController.verifyEmail(this.mAppController.getActiveSession(), data.getLastPathSegment());
                           this.mProgressDialog = new ProgressDialog(this);
-                          this.mProgressDialog.setMessage(getString(C0257R.string.login_validating));
+                          this.mProgressDialog.setMessage(getString(R.string.login_validating));
                                     try {
                               this.mProgressDialog.show();
                                     } catch (Exception e2) {

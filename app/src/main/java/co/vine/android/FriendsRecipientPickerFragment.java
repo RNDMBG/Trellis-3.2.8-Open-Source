@@ -53,7 +53,7 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return createView(inflater, C0257R.layout.recipient_friends_fragment, container);
+            return createView(inflater, R.layout.recipient_friends_fragment, container);
                 }
 
                 @Override 
@@ -76,7 +76,7 @@
                 @Override 
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            this.mFindFriendsCta = (Button) view.findViewById(C0257R.id.find_friends);
+            this.mFindFriendsCta = (Button) view.findViewById(R.id.find_friends);
             this.mFindFriendsCta.setOnClickListener(this);
             this.mFindFriendsCta.bringToFront();
                 }

@@ -13,7 +13,7 @@
             import android.widget.ImageView;
             import android.widget.LinearLayout;
             import android.widget.ToggleButton;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.recorder.BasicVineRecorder;
             import co.vine.android.recorder.PictureConverter;
             import co.vine.android.recorder.RecordConfigUtils;
@@ -82,17 +82,17 @@
 
                 @Override 
         protected ToggleButton onLayoutInflated(LinearLayout view, LayoutInflater inflater, Fragment fragment) {
-            ViewGroup rootLayout = (ViewGroup) fragment.getView().findViewById(C0257R.id.root_layout);
-            View ghostView = inflater.inflate(C0257R.layout.plugin_ghost_view, rootLayout, false);
+            ViewGroup rootLayout = (ViewGroup) fragment.getView().findViewById(R.id.root_layout);
+            View ghostView = inflater.inflate(R.layout.plugin_ghost_view, rootLayout, false);
             ghostView.setAlpha(0.35f);
             rootLayout.addView(ghostView);
             this.mGhostView = new WeakReferenceView(ghostView);
-            ToggleButton button = (ToggleButton) inflater.inflate(C0257R.layout.plugin_tool_toggle, (ViewGroup) view, false);
+            ToggleButton button = (ToggleButton) inflater.inflate(R.layout.plugin_tool_toggle, (ViewGroup) view, false);
             button.setText((CharSequence) null);
             button.setTextOn(null);
             button.setTextOff(null);
             button.setAlpha(0.35f);
-            button.setBackgroundResource(C0257R.drawable.ic_ghost);
+            button.setBackgroundResource(R.drawable.ic_ghost);
             button.setOnCheckedChangeListener(new OnGhostCheckedChangedListener(this, this.mSecondaryColor));
             return button;
                 }

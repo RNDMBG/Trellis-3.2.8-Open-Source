@@ -61,10 +61,10 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View v = inflater.inflate(C0257R.layout.confirm_phone_enter_number, container, false);
-            EditText phoneNumberBox = (EditText) v.findViewById(C0257R.id.phone_number_box);
-            TextView confirmation = (TextView) v.findViewById(C0257R.id.enter_number_message);
-            confirmation.setText(getString(C0257R.string.confirm_phone_start));
+            View v = inflater.inflate(R.layout.confirm_phone_enter_number, container, false);
+            EditText phoneNumberBox = (EditText) v.findViewById(R.id.phone_number_box);
+            TextView confirmation = (TextView) v.findViewById(R.id.enter_number_message);
+            confirmation.setText(getString(R.string.confirm_phone_start));
             String phone = this.mPhone;
             if (!TextUtils.isEmpty(phone)) {
                 phoneNumberBox.setText(phone);
@@ -110,8 +110,8 @@
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-           inflater.inflate(C0257R.menu.next, menu);
-           this.mNext = menu.findItem(C0257R.id.next);
+           inflater.inflate(R.menu.next, menu);
+           this.mNext = menu.findItem(R.id.next);
            this.mNext.setEnabled(this.mNextEnabled);
            super.onCreateOptionsMenu(menu, inflater);
                 }
@@ -134,7 +134,7 @@
                this.mPhone = e.toString();
                PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1, 3);
                p.setListener(new C01672());
-                        p.setTitle(C0257R.string.verify_your_number).setMessage(getString(C0257R.string.is_this_your_number, this.mPhone)).setPositiveButton(C0257R.string.f88ok).setNeutralButton(C0257R.string.cancel).show(getActivity().getSupportFragmentManager());
+                        p.setTitle(R.string.verify_your_number).setMessage(getString(R.string.is_this_your_number, this.mPhone)).setPositiveButton(R.string.ok).setNeutralButton(R.string.cancel).show(getActivity().getSupportFragmentManager());
                         return true;
                     }
            return super.onOptionsItemSelected(item);
@@ -156,7 +156,7 @@
                            args.putString("phone_number", ConfirmationFlowEntryFragment.access$100(ConfirmationFlowEntryFragment.this));
                            args.putBoolean("from_sign_up", false);
                            frag.setArguments(args);
-                           activity.getSupportFragmentManager().beginTransaction().setCustomAnimations(C0257R.anim.slide_in_from_right, C0257R.anim.slide_out_to_left).replace(C0257R.id.fragment_container, frag).commit();
+                           activity.getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_from_right, R.anim.slide_out_to_left).replace(R.id.fragment_container, frag).commit();
                                 }
                                 break;
                         }

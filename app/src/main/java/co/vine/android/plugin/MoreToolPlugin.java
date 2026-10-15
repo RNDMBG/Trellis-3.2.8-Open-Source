@@ -9,7 +9,7 @@
             import android.widget.ImageButton;
             import android.widget.LinearLayout;
             import android.widget.RelativeLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.CameraOnboardHelper;
             import co.vine.android.recorder.VineRecorder;
             import co.vine.android.widget.ToolDrawerLinearLayout;
@@ -86,20 +86,20 @@
 
                 @Override 
         public LinearLayout onLayout(ViewGroup parent, LayoutInflater inflater, Fragment fragment) {
-            LinearLayout view = (LinearLayout) inflater.inflate(C0257R.layout.plugin_base_tool, parent, false);
+            LinearLayout view = (LinearLayout) inflater.inflate(R.layout.plugin_base_tool, parent, false);
             view.setOnClickListener(this);
-            ViewGroup layout = (ViewGroup) inflater.inflate(C0257R.layout.plugin_option_image_button_with_nib, parent, false);
-            this.mNib = layout.findViewById(C0257R.id.nib);
-            ImageButton button = (ImageButton) layout.findViewById(C0257R.id.option_image_button);
+            ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.plugin_option_image_button_with_nib, parent, false);
+            this.mNib = layout.findViewById(R.id.nib);
+            ImageButton button = (ImageButton) layout.findViewById(R.id.option_image_button);
             button.setOnClickListener(this);
-            button.setImageResource(C0257R.drawable.ic_tools);
+            button.setImageResource(R.drawable.ic_tools);
             button.setAlpha(0.35f);
             view.addView(layout);
-            ViewGroup viewGroup = (ViewGroup) fragment.getView().findViewById(C0257R.id.recording_sub_options_bar);
+            ViewGroup viewGroup = (ViewGroup) fragment.getView().findViewById(R.id.recording_sub_options_bar);
                     for (RecorderPlugin<?, ?> plugin : this.mPlugins) {
                 plugin.createLayout(viewGroup, inflater, fragment);
                     }
-            this.mDrawer = (ToolDrawerLinearLayout) fragment.getView().findViewById(C0257R.id.recording_sub_options);
+            this.mDrawer = (ToolDrawerLinearLayout) fragment.getView().findViewById(R.id.recording_sub_options);
             this.mButton = button;
             this.mFragment = fragment;
             this.mParent = parent;
@@ -153,7 +153,7 @@
            if (this.mActivity != null) {
                if (this.mViewSpec == 0) {
                    ViewGroup parent = (ViewGroup) this.mDrawer.getParent();
-                   this.mViewSpec = View.MeasureSpec.makeMeasureSpec(parent.getMeasuredHeight() - parent.findViewById(C0257R.id.recording_options).getMeasuredHeight(), 0);
+                   this.mViewSpec = View.MeasureSpec.makeMeasureSpec(parent.getMeasuredHeight() - parent.findViewById(R.id.recording_options).getMeasuredHeight(), 0);
                    int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
                    DisplayMetrics metrics = new DisplayMetrics();
                    this.mActivity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -191,13 +191,13 @@
                boolean shouldOnboard = "delete".equals(lastStep) || CameraOnboardHelper.STEP_DELETE_2.equals(lastStep);
                if (shouldOnboard && this.mFragment.getView() != null) {
                    RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(-2, -2);
-                   params.addRule(3, C0257R.id.recording_options);
+                   params.addRule(3, R.id.recording_options);
                    if (this.mTooltip == null) {
                        TooltipView tooltip = new TooltipView(this.mActivity);
-                       tooltip.setText(C0257R.string.camera_onboarding_more_camera_tools);
+                       tooltip.setText(R.string.camera_onboarding_more_camera_tools);
                        tooltip.setListener(this);
                        this.mTooltip = tooltip;
-                       RelativeLayout bottomMask = (RelativeLayout) this.mFragment.getView().findViewById(C0257R.id.bottom_mask);
+                       RelativeLayout bottomMask = (RelativeLayout) this.mFragment.getView().findViewById(R.id.bottom_mask);
                        bottomMask.addView(this.mTooltip, params);
                             }
                    showToolTip();

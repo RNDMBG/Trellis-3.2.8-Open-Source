@@ -9,7 +9,7 @@
             import android.view.inputmethod.EditorInfo;
             import android.view.inputmethod.InputConnection;
             import android.view.inputmethod.InputConnectionWrapper;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.views.SdkEditText;
             
             
@@ -45,9 +45,9 @@
                 }
 
         public void init(Context context, AttributeSet attrs) {
-            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.VineTextView, C0257R.attr.vineEditTextStyle, 0);
-            int style = a.getInt(1, 0);
-            this.mWeight = a.getInt(0, 2);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.VineTextView, R.attr.vineEditTextStyle, 0);
+            int style = a.getInt(R.styleable.VineTextView_textStyle, 0);
+            this.mWeight = a.getInt(R.styleable.VineTextView_textWeight, 2);
             a.recycle();
             setTypeface(Typefaces.get(context).getContentTypeface(style, this.mWeight), style);
                 }

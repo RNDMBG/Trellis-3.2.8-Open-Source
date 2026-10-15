@@ -8,7 +8,7 @@
             import android.util.AttributeSet;
             import android.util.FloatMath;
             import android.view.View;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.VineLoggingException;
             import co.vine.android.util.CrashUtil;
             
@@ -25,11 +25,11 @@
                 private final RectF mTabBounds;
 
         public ViewPagerScrollBar(Context context) {
-            this(context, null, C0257R.attr.viewPagerScrollBarStyle);
+            this(context, null, R.attr.viewPagerScrollBarStyle);
                 }
 
         public ViewPagerScrollBar(Context context, AttributeSet attrs) {
-            this(context, attrs, C0257R.attr.viewPagerScrollBarStyle);
+            this(context, attrs, R.attr.viewPagerScrollBarStyle);
                 }
 
         public ViewPagerScrollBar(Context context, AttributeSet attrs, int defStyle) {
@@ -40,9 +40,9 @@
             this.mNavBottomSet = false;
             this.mPaint = new Paint();
             this.mTabBounds = new RectF();
-            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.ViewPagerScrollBar, defStyle, 0);
-            int colorArrayRes = a.getResourceId(2, 0);
-            this.mHeight = a.getDimensionPixelSize(1, 0);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewPagerScrollBar, defStyle, 0);
+            int colorArrayRes = a.getResourceId(R.styleable.ViewPagerScrollBar_lineColors, 0);
+            this.mHeight = a.getDimensionPixelSize(R.styleable.ViewPagerScrollBar_scrollBarHeight, 0);
             if (colorArrayRes > 0) {
                 TypedArray ta = context.getResources().obtainTypedArray(colorArrayRes);
                 this.mColorIds = new int[ta.length()];
@@ -52,7 +52,7 @@
                 ta.recycle();
                 this.mPaint.setColor(this.mColorIds[0]);
                     } else {
-                this.mPaint.setColor(a.getColor(0, -1));
+                this.mPaint.setColor(a.getColor(R.styleable.ViewPagerScrollBar_tabColor, -1));
                     }
             a.recycle();
                 }

@@ -11,7 +11,7 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
             setRequestedOrientation(1);
             Intent intent = getIntent();
             int titleResId = intent.getIntExtra("title", 0);
@@ -23,7 +23,7 @@
                 ImageFragment fragment = new ImageFragment();
                 intent.putExtra("take_focus", true);
                 fragment.setArguments(BaseCursorListFragment.prepareArguments(intent, false));
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
                     }
                 }
 

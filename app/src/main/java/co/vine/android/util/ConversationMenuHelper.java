@@ -18,7 +18,7 @@
             import android.widget.TextView;
             import co.vine.android.AbstractRecordingActivity;
             import co.vine.android.BaseControllerActionBarActivity;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.ConversationActivity;
             import co.vine.android.FriendSearchAdapter;
             import co.vine.android.InboxFragment;
@@ -104,35 +104,35 @@
 
         public void setupConversationSlidingMenu() {
             this.mAppController = AppController.getInstance(this.mActivity);
-            View view = this.mActivity.setBehindContentView(C0257R.layout.conversation_menu);
-            this.mSearchField = (EditText) view.findViewById(C0257R.id.search_field);
+            View view = this.mActivity.setBehindContentView(R.layout.conversation_menu);
+            this.mSearchField = (EditText) view.findViewById(R.id.search_field);
             this.mSearchField.addTextChangedListener(this);
-            this.mActionContainer = (ViewGroup) view.findViewById(C0257R.id.menu_action_container);
+            this.mActionContainer = (ViewGroup) view.findViewById(R.id.menu_action_container);
             setPersonalizedColor(Util.getProfileColor(this.mActivity));
-            this.mSearchContainer = (ViewGroup) view.findViewById(C0257R.id.menu_search_container);
-            this.mSearchResultView = (RefreshableListView) view.findViewById(C0257R.id.search_result);
+            this.mSearchContainer = (ViewGroup) view.findViewById(R.id.menu_search_container);
+            this.mSearchResultView = (RefreshableListView) view.findViewById(R.id.search_result);
             this.mSearchResultView.setOnItemClickListener(this);
-            this.mSearchOnBackgroundView = view.findViewById(C0257R.id.saerch_toggle_background_view);
+            this.mSearchOnBackgroundView = view.findViewById(R.id.saerch_toggle_background_view);
             this.mSearchOnBackgroundView.setOnClickListener(new ViewOnClickListenerC05271());
-            this.mSadFace = view.findViewById(C0257R.id.search_real_sadface);
-           this.mNothingFoundText = view.findViewById(C0257R.id.search_empty_text);
-           view.findViewById(C0257R.id.menu_vm_capture).setOnClickListener(this);
-           view.findViewById(C0257R.id.menu_search).setOnClickListener(this);
-           view.findViewById(C0257R.id.clear_search).setOnClickListener(this);
-           ViewUtil.setActionBarHeight(this.mActivity, view.findViewById(C0257R.id.menu_list_header));
-           this.mSearchInProgress = (ProgressBar) view.findViewById(C0257R.id.search_in_progress);
+            this.mSadFace = view.findViewById(R.id.search_real_sadface);
+           this.mNothingFoundText = view.findViewById(R.id.search_empty_text);
+           view.findViewById(R.id.menu_vm_capture).setOnClickListener(this);
+           view.findViewById(R.id.menu_search).setOnClickListener(this);
+           view.findViewById(R.id.clear_search).setOnClickListener(this);
+           ViewUtil.setActionBarHeight(this.mActivity, view.findViewById(R.id.menu_list_header));
+           this.mSearchInProgress = (ProgressBar) view.findViewById(R.id.search_in_progress);
            setSlidingActionBarEnabled(true);
            SlidingMenu sm = getSlidingMenu();
            sm.setShadowWidth(35);
-           sm.setBehindOffset(this.mActivity.getResources().getDimensionPixelSize(C0257R.dimen.sliding_menu_offset));
+           sm.setBehindOffset(this.mActivity.getResources().getDimensionPixelSize(R.dimen.sliding_menu_offset));
            sm.setTouchModeAbove(1);
-           ((TouchableRelativeLayout) this.mActivity.findViewById(C0257R.id.menu_content)).setTouchListener(new ViewBehindTouchListener(this.mActivity, sm));
+           ((TouchableRelativeLayout) this.mActivity.findViewById(R.id.menu_content)).setTouchListener(new ViewBehindTouchListener(this.mActivity, sm));
            FragmentManager fm = this.mActivity.getSupportFragmentManager();
            Fragment frag = fm.findFragmentByTag(TAG_INBOX_FRAGMENT);
            if (frag == null) {
                this.mInboxFragment = new InboxFragment();
                FragmentTransaction ft = fm.beginTransaction();
-               ft.add(C0257R.id.menu_content, this.mInboxFragment, TAG_INBOX_FRAGMENT);
+               ft.add(R.id.menu_content, this.mInboxFragment, TAG_INBOX_FRAGMENT);
                ft.commit();
                     } else {
                this.mInboxFragment = (InboxFragment) frag;
@@ -160,11 +160,11 @@
                 @Override 
        public void onClick(View view) {
            int id = view.getId();
-           if (id == C0257R.id.menu_vm_capture) {
+           if (id == R.id.menu_vm_capture) {
                Util.startActionOnRecordingAvailable(this.mActivity, AbstractRecordingActivity.getIntentForMessaging(this.mActivity, 0, "New VM"), 0);
-                    } else if (id == C0257R.id.menu_search) {
+                    } else if (id == R.id.menu_search) {
                toggleContactSearch(true);
-                    } else if (id == C0257R.id.clear_search) {
+                    } else if (id == R.id.clear_search) {
                toggleContactSearch(false);
                     }
                 }
@@ -270,7 +270,7 @@
 
        public void setPersonalizedColor(int profileBackground) {
            if (profileBackground == Settings.DEFAULT_PROFILE_COLOR || profileBackground <= 0) {
-               profileBackground = 16777215 & this.mActivity.getResources().getColor(C0257R.color.vine_green);
+               profileBackground = 16777215 & this.mActivity.getResources().getColor(R.color.vine_green);
                     }
            this.mProfileColor = (-16777216) | profileBackground;
            this.mActionContainer.setBackgroundColor(this.mProfileColor);

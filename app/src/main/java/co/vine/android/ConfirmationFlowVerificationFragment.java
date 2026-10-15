@@ -92,9 +92,9 @@
             this.mAppSessionListener = new ConfirmationSessionListener(this, null);
             setHasOptionsMenu(true);
             this.mHandler = new Handler(Looper.getMainLooper());
-            this.mFadeOutAnimation = AnimationUtils.loadAnimation(getActivity(), C0257R.anim.fade_out_fast);
+            this.mFadeOutAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out_fast);
             this.mFadeOutAnimation.setAnimationListener(this.mFadeListener);
-            this.mFadeInAnimation = AnimationUtils.loadAnimation(getActivity(), C0257R.anim.fade_in_fast);
+            this.mFadeInAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in_fast);
             this.mFadeInAnimation.setAnimationListener(this.mFadeListener);
             Bundle args = getArguments();
             if (args != null) {
@@ -113,23 +113,23 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View v = inflater.inflate(C0257R.layout.confirm_phone_verify, container, false);
+            View v = inflater.inflate(R.layout.confirm_phone_verify, container, false);
             if (v == null) {
                 return null;
                     }
-            this.mMessage = (TextView) v.findViewById(C0257R.id.confirm_phone_message);
-            this.mMessage.setText(getString(C0257R.string.confirm_phone_message, this.mPhone));
+            this.mMessage = (TextView) v.findViewById(R.id.confirm_phone_message);
+            this.mMessage.setText(getString(R.string.confirm_phone_message, this.mPhone));
             if (this.mFromSignup) {
-                View skip = v.findViewById(C0257R.id.skip);
+                View skip = v.findViewById(R.id.skip);
                 skip.setVisibility(0);
                 skip.setOnClickListener(this);
                     }
-            EditText confirmationBox = (EditText) v.findViewById(C0257R.id.phone_number_box);
+            EditText confirmationBox = (EditText) v.findViewById(R.id.phone_number_box);
             confirmationBox.addTextChangedListener(new C01681(confirmationBox));
            this.mConfirmationBox = confirmationBox;
-           this.mErrorMessage = (TextView) v.findViewById(C0257R.id.incorrect_code_message);
-           this.mSendAgain = v.findViewById(C0257R.id.confirm_send_again);
-           this.mProgressBar = (ProgressBar) v.findViewById(C0257R.id.submit_code_in_progress);
+           this.mErrorMessage = (TextView) v.findViewById(R.id.incorrect_code_message);
+           this.mSendAgain = v.findViewById(R.id.confirm_send_again);
+           this.mProgressBar = (ProgressBar) v.findViewById(R.id.submit_code_in_progress);
            return v;
                 }
 
@@ -167,8 +167,8 @@
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-           inflater.inflate(C0257R.menu.done, menu);
-           this.mDone = menu.findItem(C0257R.id.done);
+           inflater.inflate(R.menu.done, menu);
+           this.mDone = menu.findItem(R.id.done);
            super.onCreateOptionsMenu(menu, inflater);
                 }
 
@@ -311,7 +311,7 @@
                             }
                    return;
                         }
-                        Util.showCenteredToast(activity, ConfirmationFlowVerificationFragment.this.getString(C0257R.string.confirm_phone_again, phone));
+                        Util.showCenteredToast(activity, ConfirmationFlowVerificationFragment.this.getString(R.string.confirm_phone_again, phone));
                     }
 
                     @Override 
@@ -320,7 +320,7 @@
                ConfirmationFlowVerificationFragment.access$900(ConfirmationFlowVerificationFragment.this, false);
                ConfirmationFlowVerificationFragment.access$100(ConfirmationFlowVerificationFragment.this, true);
                if (statusCode == 200) {
-                   Util.showCenteredToast(activity, C0257R.string.confirm_phone_success);
+                   Util.showCenteredToast(activity, R.string.confirm_phone_success);
                    ConfirmationFlowVerificationFragment.this.getActivity().setResult(ConfirmationFlowActivity.RESULT_VERIFY_PHONE_SUCCESS);
                    ConfirmationFlowVerificationFragment.this.getActivity().finish();
                         } else {
@@ -328,7 +328,7 @@
                    if (!TextUtils.isEmpty(reasonPhrase)) {
                        ConfirmationFlowVerificationFragment.access$1000(ConfirmationFlowVerificationFragment.this).setText(reasonPhrase);
                             } else {
-                       ConfirmationFlowVerificationFragment.access$1000(ConfirmationFlowVerificationFragment.this).setText(C0257R.string.confirm_phone_error);
+                       ConfirmationFlowVerificationFragment.access$1000(ConfirmationFlowVerificationFragment.this).setText(R.string.confirm_phone_error);
                             }
                         }
                     }

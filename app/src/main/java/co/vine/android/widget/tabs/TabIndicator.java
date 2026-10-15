@@ -12,7 +12,6 @@
             import android.widget.RelativeLayout;
             import android.widget.TabHost;
             import android.widget.TextView;
-            import co.vine.android.C0257R;
             
             
     public class TabIndicator extends RelativeLayout {
@@ -58,9 +57,9 @@
                 @Override 
         protected void onFinishInflate() {
             super.onFinishInflate();
-            this.mTabText = (TextView) findViewById(C0257R.id.tab_text);
-            this.mNewIndicator = (ImageView) findViewById(C0257R.id.new_indicator);
-            this.mIcon = (ImageView) findViewById(C0257R.id.icon);
+            this.mTabText = (TextView) findViewById(co.vine.android.R.id.tab_text);
+            this.mNewIndicator = (ImageView) findViewById(co.vine.android.R.id.new_indicator);
+            this.mIcon = (ImageView) findViewById(co.vine.android.R.id.icon);
                 }
 
         public ImageView getNewIndicator() {

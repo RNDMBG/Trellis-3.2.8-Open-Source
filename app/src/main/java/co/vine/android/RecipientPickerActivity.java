@@ -87,23 +87,23 @@
 
                 @Override 
        public void onCreate(Bundle savedInstanceState) {
-           super.onCreate(savedInstanceState, C0257R.layout.recipient_picker_activity, true);
+           super.onCreate(savedInstanceState, R.layout.recipient_picker_activity, true);
            Intent intent = getIntent();
-           this.mVineGreen = getResources().getColor(C0257R.color.vine_green);
+           this.mVineGreen = getResources().getColor(R.color.vine_green);
            this.mVideoPath = intent.getStringExtra("video_path");
-           setupActionBar((Boolean) false, (Boolean) true, C0257R.string.send_to, (Boolean) true, (Boolean) true);
+           setupActionBar((Boolean) false, (Boolean) true, R.string.send_to, (Boolean) true, (Boolean) true);
            this.mProfileColor = Util.getDefaultSharedPrefs(this).getInt("profile_background", Settings.DEFAULT_PROFILE_COLOR);
            if (this.mProfileColor == Settings.DEFAULT_PROFILE_COLOR || this.mProfileColor <= 0) {
-               this.mProfileColor = 16777215 & getResources().getColor(C0257R.color.vine_green);
+               this.mProfileColor = 16777215 & getResources().getColor(R.color.vine_green);
                     }
            this.mProfileColor = (-16777216) | this.mProfileColor;
-           ViewPagerScrollBar scrollBar = (ViewPagerScrollBar) findViewById(C0257R.id.scrollbar);
+           ViewPagerScrollBar scrollBar = (ViewPagerScrollBar) findViewById(R.id.scrollbar);
            scrollBar.setLineColor(this.mProfileColor);
            scrollBar.setRange(2);
-           ColorStateList indicatorStateList = TabIndicator.createTextColorList(this.mProfileColor, getResources().getColor(C0257R.color.light_light_gray));
-           ViewPager viewPager = (ViewPager) findViewById(C0257R.id.pager);
-           viewPager.setPageMargin(getResources().getDimensionPixelSize(C0257R.dimen.home_pager_margin));
-           viewPager.setPageMarginDrawable(C0257R.color.bg_grouped_list);
+           ColorStateList indicatorStateList = TabIndicator.createTextColorList(this.mProfileColor, getResources().getColor(R.color.light_light_gray));
+           ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+           viewPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.home_pager_margin));
+           viewPager.setPageMarginDrawable(R.color.bg_grouped_list);
            viewPager.setOffscreenPageLimit(1);
            IconTabHost tabHost = this.mTabHost;
            TabsAdapter tabsAdapter = new TabsAdapter(this, tabHost, viewPager, scrollBar);
@@ -114,8 +114,8 @@
            Bundle friendsBundle = new Bundle();
            friendsBundle.putString("tag", "friends");
            friendsBundle.putBoolean("refresh", true);
-           friendsBundle.putInt("empty_desc", C0257R.string.no_friends_found);
-           TabIndicator indicator = TabIndicator.newTextIndicator(inflater, C0257R.layout.normal_tab_indicator, tabHost, C0257R.string.tab_title_vine_friends, false);
+           friendsBundle.putInt("empty_desc", R.string.no_friends_found);
+           TabIndicator indicator = TabIndicator.newTextIndicator(inflater, R.layout.normal_tab_indicator, tabHost, R.string.tab_title_vine_friends, false);
            TextView indicatorText = indicator.getIndicatorText();
            indicatorText.setTextColor(indicatorStateList);
            indicatorText.setTypeface(Typefaces.get(this).boldContent);
@@ -123,8 +123,8 @@
            Bundle contactsBundle = new Bundle();
            contactsBundle.putString("tag", TAG_ADDRESS_BOOK);
            contactsBundle.putBoolean("refresh", false);
-           contactsBundle.putInt("empty_desc", C0257R.string.no_contacts_found);
-           TabIndicator indicator2 = TabIndicator.newTextIndicator(inflater, C0257R.layout.normal_tab_indicator, tabHost, C0257R.string.tab_title_address_book, false);
+           contactsBundle.putInt("empty_desc", R.string.no_contacts_found);
+           TabIndicator indicator2 = TabIndicator.newTextIndicator(inflater, R.layout.normal_tab_indicator, tabHost, R.string.tab_title_address_book, false);
            TextView indicatorText2 = indicator2.getIndicatorText();
            indicatorText2.setTextColor(indicatorStateList);
            indicatorText2.setTypeface(Typefaces.get(this).regularContentBold);
@@ -135,9 +135,9 @@
            this.mSharedVideoUrl = getIntent().getStringExtra(EXTRA_SHARED_VIDEO_URL);
            this.mSharedThumbnailUrl = getIntent().getStringExtra(EXTRA_SHARED_THUMB_URL);
            ViewGroup background = (ViewGroup) findViewById(android.R.id.tabs);
-           background.setBackgroundColor(getResources().getColor(C0257R.color.solid_white));
-           this.mFlowLayout = (FlowLayout) findViewById(C0257R.id.picked_recipient_flow);
-           TypefacesEditText query = (TypefacesEditText) inflater.inflate(C0257R.layout.recipient_picker_edit_text, (ViewGroup) this.mFlowLayout, false);
+           background.setBackgroundColor(getResources().getColor(R.color.solid_white));
+           this.mFlowLayout = (FlowLayout) findViewById(R.id.picked_recipient_flow);
+           TypefacesEditText query = (TypefacesEditText) inflater.inflate(R.layout.recipient_picker_edit_text, (ViewGroup) this.mFlowLayout, false);
            query.setKeyboardListener(this);
            query.addTextChangedListener(this);
            query.setInputType(524288);
@@ -176,7 +176,7 @@
            super.onPostCreate(savedInstanceState);
            Resources res = getResources();
            FakeActionBar fakeActionBar = getFakeActionBar();
-           Drawable backIcon = res.getDrawable(C0257R.drawable.ic_arrow_back_large);
+           Drawable backIcon = res.getDrawable(R.drawable.ic_arrow_back_large);
            backIcon.setColorFilter(new PorterDuffColorFilter(this.mProfileColor, PorterDuff.Mode.SRC_IN));
            fakeActionBar.getBackIcon().setImageDrawable(backIcon);
            fakeActionBar.getTitleView().setTypeface(Typefaces.get(this).mediumContent);
@@ -187,10 +187,10 @@
        private void addSendIcon() {
            Resources res = getResources();
            FakeActionBar fakeActionBar = getFakeActionBar();
-           int gray = res.getColor(C0257R.color.light_light_gray);
+           int gray = res.getColor(R.color.light_light_gray);
            ImageView sendButton = new C02592(this, gray);
            ViewGroup.LayoutParams params = new ViewGroup.LayoutParams((int) (((double) this.mDensity) * 36.5d), (int) (((double) this.mDensity) * 36.5d));
-           sendButton.setImageResource(C0257R.drawable.ic_action_send);
+           sendButton.setImageResource(R.drawable.ic_action_send);
            sendButton.setOnClickListener(new ViewOnClickListenerC02603());
            sendButton.setLayoutParams(params);
            sendButton.setScaleType(ImageView.ScaleType.CENTER);
@@ -287,9 +287,9 @@
 
        private void invalidateDisplayForExtra(int n) {
            if (n == 1) {
-               this.mLastExtra.display = getString(C0257R.string.and_x_others_single);
+               this.mLastExtra.display = getString(R.string.and_x_others_single);
                     } else {
-               this.mLastExtra.display = getString(C0257R.string.and_x_others_plural, new Object[]{Integer.valueOf(n)});
+               this.mLastExtra.display = getString(R.string.and_x_others_plural, new Object[]{Integer.valueOf(n)});
                     }
                 }
 
@@ -361,7 +361,7 @@
                throw new RuntimeException("Your content must have a TabHost whose id attribute is 'android.R.id.tabhost'");
                     }
            this.mTabHost.setup();
-           this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
+           this.mViewPager = (ViewPager) findViewById(R.id.pager);
                 }
 
                 @Override 
@@ -491,7 +491,7 @@
        private View bindOrCreateViewForRecipient(int position, View convertView, VineRecipient recipient, boolean isSelected) {
                     GradientDrawable gbg;
            if (convertView == null) {
-               convertView = getLayoutInflater().inflate(C0257R.layout.recipient_picker_item, (ViewGroup) this.mFlowLayout, false);
+               convertView = getLayoutInflater().inflate(R.layout.recipient_picker_item, (ViewGroup) this.mFlowLayout, false);
                     }
            TypefacesTextView displayTextView = (TypefacesTextView) ((RelativeLayout) convertView).getChildAt(0);
            displayTextView.setOnClickListener(new RecipientItemClickListener(recipient, position));
@@ -513,7 +513,7 @@
                     } else {
                gbg.setStroke(0, 0);
                gbg.setColor(recipient.color | (-16777216));
-               displayTextView.setTextColor(getResources().getColor(C0257R.color.solid_white));
+               displayTextView.setTextColor(getResources().getColor(R.color.solid_white));
                     }
            ViewUtil.setBackground(displayTextView, gbg);
            displayTextView.setText(recipient.display);

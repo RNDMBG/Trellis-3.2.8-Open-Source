@@ -27,7 +27,7 @@
             import android.widget.ListView;
             import android.widget.RelativeLayout;
             import android.widget.Scroller;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.util.CrashUtil;
             import co.vine.android.util.ViewUtil;
             import co.vine.android.views.SdkListView;
@@ -88,39 +88,39 @@
                 }
 
        public RefreshableListView(Context context, AttributeSet attrs) {
-           this(context, attrs, C0257R.attr.refreshableListViewStyle);
+           this(context, attrs, R.attr.refreshableListViewStyle);
                 }
 
        public RefreshableListView(Context context, AttributeSet attrs, int defStyle) {
            super(context, attrs, defStyle);
            this.mHeaderViewInfos = new ArrayList<>();
            this.mFooterViewInfos = new ArrayList<>();
-           TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.RefreshableListView, defStyle, 0);
+           TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RefreshableListView, defStyle, 0);
            this.mPixelScale = getResources().getDisplayMetrics().density;
-           this.mPullBackgroundColor = a.getColor(C0257R.styleable.RefreshableListView_pullBackgroundColor, -1);
-           Drawable divider = a.getDrawable(C0257R.styleable.RefreshableListView_pullDivider);
+           this.mPullBackgroundColor = a.getColor(R.styleable.RefreshableListView_pullBackgroundColor, -1);
+           Drawable divider = a.getDrawable(R.styleable.RefreshableListView_pullDivider);
            this.mScroller = new Scroller(context);
            this.mScrollRunnable = new ScrollRunnable();
            LayoutInflater inflater = LayoutInflater.from(context);
-           int layout = a.getResourceId(C0257R.styleable.RefreshableListView_refreshHeader, C0257R.layout.pull_to_refresh);
+           int layout = a.getResourceId(R.styleable.RefreshableListView_refreshHeader, R.layout.pull_to_refresh);
            if (layout == 0) {
-               layout = C0257R.layout.pull_to_refresh;
+               layout = R.layout.pull_to_refresh;
                     }
            RelativeLayout v = (RelativeLayout) inflater.inflate(layout, (ViewGroup) this, false);
            if (divider != null) {
-               View dividerView = v.findViewById(C0257R.id.refresh_divider);
+               View dividerView = v.findViewById(R.id.refresh_divider);
                dividerView.setBackgroundDrawable(divider);
                dividerView.setVisibility(0);
                     }
-           this.mLoading = (ImageView) v.findViewById(C0257R.id.refresh_loading);
-           this.mRefreshTriangle1 = (ImageView) v.findViewById(C0257R.id.refresh_triangle_1);
+           this.mLoading = (ImageView) v.findViewById(R.id.refresh_loading);
+           this.mRefreshTriangle1 = (ImageView) v.findViewById(R.id.refresh_triangle_1);
            this.mRefreshView = v;
            ViewConfiguration config = ViewConfiguration.get(getContext());
            this.mTouchSlop = config.getScaledTouchSlop();
            ViewGroup.LayoutParams p = v.getLayoutParams();
            v.setLayoutParams(new AbsListView.LayoutParams(p.width, p.height, -1));
-           int footerLayout = a.getResourceId(C0257R.styleable.RefreshableListView_refreshFooter, C0257R.layout.list_footer_view);
-           this.mFooterLayoutId = footerLayout == 0 ? C0257R.layout.list_footer_view : footerLayout;
+           int footerLayout = a.getResourceId(R.styleable.RefreshableListView_refreshFooter, R.layout.list_footer_view);
+           this.mFooterLayoutId = footerLayout == 0 ? R.layout.list_footer_view : footerLayout;
            this.mLoadingAnimation = new AnimateLoader(this.mLoading);
            a.recycle();
                 }
@@ -132,8 +132,8 @@
            if (this.mRefreshTriangle1 != null) {
                this.mRefreshTriangle1.setVisibility(8);
                     }
-           this.mLoading = (ImageView) header.findViewById(C0257R.id.refresh_loading);
-           this.mRefreshTriangle1 = (ImageView) header.findViewById(C0257R.id.refresh_triangle_1);
+           this.mLoading = (ImageView) header.findViewById(R.id.refresh_loading);
+           this.mRefreshTriangle1 = (ImageView) header.findViewById(R.id.refresh_triangle_1);
            this.mLoadingAnimation = new AnimateLoader(this.mLoading);
            this.mUnderNavRefreshHeader = header;
            header.setBackgroundColor(this.mPullBackgroundColor);
@@ -362,8 +362,8 @@
                 }
 
        public void colorizePTR(int color) {
-           ViewUtil.fillColor(getResources(), color, C0257R.id.refresh_loading, this.mLoading);
-           ViewUtil.fillColor(getResources(), color, C0257R.id.refresh_triangle_1, this.mRefreshTriangle1);
+           ViewUtil.fillColor(getResources(), color, R.id.refresh_loading, this.mLoading);
+           ViewUtil.fillColor(getResources(), color, R.id.refresh_triangle_1, this.mRefreshTriangle1);
                 }
 
        public void startRefresh() {
@@ -485,7 +485,7 @@
                            LayoutInflater inflater = LayoutInflater.from(getContext());
                            View footerView = inflater.inflate(this.mFooterLayoutId, (ViewGroup) null);
                            addFooterView(footerView, null, false);
-                           this.mFooterView = footerView.findViewById(C0257R.id.footer_content);
+                           this.mFooterView = footerView.findViewById(R.id.footer_content);
                                 }
                        this.mAdapter = new RefreshViewListAdapter(this.mHeaderViewInfos, this.mFooterViewInfos, adapter, this.mDataSetObserver);
                             }

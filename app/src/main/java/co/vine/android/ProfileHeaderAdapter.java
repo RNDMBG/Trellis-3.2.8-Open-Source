@@ -90,7 +90,7 @@
             this.mBlocked = blocked;
             this.mFollowEventSource = followEventSource;
             Resources res = context.getResources();
-            this.mNumberUnSelectedColor = res.getColor(C0257R.color.black_thirty_five_percent);
+            this.mNumberUnSelectedColor = res.getColor(R.color.black_thirty_five_percent);
             this.mBold = new TypefacesSpan(null, Typefaces.get(this.mContext).getContentTypeface(1, 4));
             this.mRegular = new TypefacesSpan(null, Typefaces.get(this.mContext).getContentTypeface(0, 2));
             this.mShowActionsContainer = showActionsContainer;
@@ -115,14 +115,14 @@
                 @Override 
        public View getView(int i, View convertView, ViewGroup root) {
            if (convertView == null) {
-               convertView = LayoutInflater.from(this.mContext).inflate(C0257R.layout.profile_header, root, false);
+               convertView = LayoutInflater.from(this.mContext).inflate(R.layout.profile_header, root, false);
                this.mHolder = new ProfileViewHolder(convertView);
                this.mHolder.pager.setAdapter(new ProfileViewPagerAdapter(this, null));
                this.mHolder.pager.setOnPageChangeListener(this);
                this.mHolder.progress.setVisibility(0);
                this.mHolder.dots.setFinalIcon(false);
                                this.mHolder.dots.setNumberOfDots(2);
-                this.mHolder.dots.setDotPadding(this.mContext.getResources().getDimensionPixelOffset(C0257R.dimen.profile_dot_padding));
+                this.mHolder.dots.setDotPadding(this.mContext.getResources().getDimensionPixelOffset(R.dimen.profile_dot_padding));
                this.mHolder.dropDownHolder.revineParent.setOnClickListener(this.mFragment);
                this.mHolder.profileActions.setVisibility(this.mShowActionsContainer ? 0 : 8);
                if (this.mUser != null) {
@@ -153,7 +153,7 @@
                         }
                int tabSelectedColor = profileUser.profileBackground;
                if (tabSelectedColor == Settings.DEFAULT_PROFILE_COLOR || tabSelectedColor <= 0) {
-                   tabSelectedColor = this.mContext.getResources().getColor(C0257R.color.vine_green);
+                   tabSelectedColor = this.mContext.getResources().getColor(R.color.vine_green);
                         }
                this.mTabSelectedColor = tabSelectedColor | (-16777216);
                holder.profileTabArrowImage.setColorFilter(new PorterDuffColorFilter(1275068416, PorterDuff.Mode.SRC_IN));
@@ -212,15 +212,15 @@
                             if (profileUser.loopCount > 2147483647L) {
                        profileUser.loopCount = 2147483647L;
                             }
-                   holderDetails.userLoopCount.setText(res.getQuantityString(C0257R.plurals.profile_loops, (int) profileUser.loopCount, Util.numberFormat(res, profileUser.loopCount, false)));
-                   invalidateCountAndTabColor(1, profileUser.likeCount, res, C0257R.plurals.profile_likes, holder.likesLabel);
-                   invalidateCountAndTabColor(0, profileUser.postCount, res, C0257R.plurals.profile_posts, holder.postsLabel);
+                   holderDetails.userLoopCount.setText(res.getQuantityString(R.plurals.profile_loops, (int) profileUser.loopCount, Util.numberFormat(res, profileUser.loopCount, false)));
+                   invalidateCountAndTabColor(1, profileUser.likeCount, res, R.plurals.profile_likes, holder.likesLabel);
+                   invalidateCountAndTabColor(0, profileUser.postCount, res, R.plurals.profile_posts, holder.postsLabel);
                         }
                holderMain.imageFrame.setVisibility(0);
                holder.progress.setVisibility(8);
                holder.profileTabArrow.setOnClickListener(this.mListener);
-               invalidateCount(profileUser.followerCount, res, C0257R.plurals.profile_followers, holderMain.followers);
-               invalidateCount(profileUser.followingCount, res, C0257R.plurals.profile_following, holderMain.following);
+               invalidateCount(profileUser.followerCount, res, R.plurals.profile_followers, holderMain.followers);
+               invalidateCount(profileUser.followingCount, res, R.plurals.profile_following, holderMain.following);
                holderMain.followers.setOnClickListener(this.mListener);
                holderMain.following.setOnClickListener(this.mListener);
                     }
@@ -271,10 +271,10 @@
            Resources res = this.mContext.getResources();
            if (res != null && holder != null) {
                if (tabToUpdate == 0) {
-                   invalidateCountAndTabColor(0, count, res, C0257R.plurals.profile_posts, holder.postsLabel);
+                   invalidateCountAndTabColor(0, count, res, R.plurals.profile_posts, holder.postsLabel);
                    invalidateTabColor(1, holder.likesLabel);
                         } else {
-                   invalidateCountAndTabColor(1, count, res, C0257R.plurals.profile_likes, holder.likesLabel);
+                   invalidateCountAndTabColor(1, count, res, R.plurals.profile_likes, holder.likesLabel);
                    invalidateTabColor(0, holder.postsLabel);
                         }
                     }
@@ -283,17 +283,17 @@
        private void setupMessageButton(Button messageButton, VineUser profileUser) {
            int color = profileUser.profileBackground;
            if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-               color = 16777215 & this.mContext.getResources().getColor(C0257R.color.vine_green);
+               color = 16777215 & this.mContext.getResources().getColor(R.color.vine_green);
                     }
            messageButton.setTextColor((-16777216) | color);
            Resources res = this.mContext.getResources();
-           ViewUtil.fillColor(res, 1023410176 | color, C0257R.drawable.btn_profile, messageButton);
+           ViewUtil.fillColor(res, 1023410176 | color, R.drawable.btn_profile, messageButton);
                 }
 
        private void setupFollowButton(Button followButton, VineUser user) {
            int color = user.profileBackground;
            if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-               color = this.mContext.getResources().getColor(C0257R.color.vine_green);
+               color = this.mContext.getResources().getColor(R.color.vine_green);
                     }
            int color2 = color | (-16777216);
            if (user.hasFollowRequested()) {
@@ -306,42 +306,42 @@
            followButton.setActivated(this.mFollowState == 2);
            Resources res = this.mContext.getResources();
            if (this.mFollowState == 2) {
-               followButton.setTextColor(res.getColor(C0257R.color.solid_white));
-               followButton.setText(res.getString(C0257R.string.following));
+               followButton.setTextColor(res.getColor(R.color.solid_white));
+               followButton.setText(res.getString(R.string.following));
                     } else if (this.mFollowState == 1) {
                followButton.setTextColor(color2 | (-16777216));
-               followButton.setText(res.getString(C0257R.string.follow));
+               followButton.setText(res.getString(R.string.follow));
                     }
            if (this.mFollowState != 3) {
-               ViewUtil.fillColor(res, color2, C0257R.drawable.follow_button, followButton);
+               ViewUtil.fillColor(res, color2, R.drawable.follow_button, followButton);
                followButton.setPadding(0, 0, 0, 0);
                return;
                     }
-           int gray = res.getColor(C0257R.color.solid_dark_gray);
-           ViewUtil.fillColor(res, gray, C0257R.drawable.follow_button, followButton);
+           int gray = res.getColor(R.color.solid_dark_gray);
+           ViewUtil.fillColor(res, gray, R.drawable.follow_button, followButton);
            followButton.setTextColor(gray);
-           followButton.setText(res.getString(C0257R.string.follow_requested));
-           followButton.setPadding(res.getDimensionPixelSize(C0257R.dimen.standard_spacing), 0, 0, 0);
+           followButton.setText(res.getString(R.string.follow_requested));
+           followButton.setPadding(res.getDimensionPixelSize(R.dimen.standard_spacing), 0, 0, 0);
                 }
 
        public void onProfileHeaderLongClick(View view) {
-           if (view.getId() == C0257R.id.user_image && this.mUser != null && this.mUser.userId == this.mAppController.getActiveId()) {
+           if (view.getId() == R.id.user_image && this.mUser != null && this.mUser.userId == this.mAppController.getActiveId()) {
                FlurryUtils.trackProfileImageClick(true);
                view.performHapticFeedback(0);
-               ImageActivity.start(this.mContext, this.mUser.avatarUrl, C0257R.string.sign_up_profile_photo);
+               ImageActivity.start(this.mContext, this.mUser.avatarUrl, R.string.sign_up_profile_photo);
                     }
                 }
 
        public void onProfileHeaderClick(View view, ProfileFragment fragment, VineUser user) {
            Context context = this.mContext;
            int id = view.getId();
-           if (id == C0257R.id.settings) {
+           if (id == R.id.settings) {
                FlurryUtils.trackVisitFindFriends("Profile");
                Intent intent = new Intent(context, (Class<?>) SettingsActivity.class);
                context.startActivity(intent);
                return;
                     }
-           if (id == C0257R.id.profile_follow) {
+           if (id == R.id.profile_follow) {
                if (this.mFollowState == 2) {
                    fragment.addRequest(this.mAppController.unfollowUser(this.mAppController.getActiveSession(), this.mHolder.userId, true));
                    user.following = 0;
@@ -364,13 +364,13 @@
                         }
                return;
                     }
-           if (id == C0257R.id.likesParent || id == C0257R.id.postsParent) {
+           if (id == R.id.likesParent || id == R.id.postsParent) {
                if (this.mFragment.getActivity() instanceof HomeTabActivity) {
                    ((HomeTabActivity) this.mFragment.getActivity()).resetNav();
                         }
                changeSelectedTab(view.getId());
                     } else {
-               if (id != C0257R.id.user_image || this.mUser == null) {
+               if (id != R.id.user_image || this.mUser == null) {
                    return;
                         }
                         if (this.mUser.userId == this.mAppController.getActiveId()) {
@@ -378,17 +378,17 @@
                    context.startActivity(new Intent(context, (Class<?>) SettingsActivity.class));
                         } else {
                    FlurryUtils.trackProfileImageClick(false);
-                   ImageActivity.start(context, this.mUser.avatarUrl, C0257R.string.sign_up_profile_photo);
+                   ImageActivity.start(context, this.mUser.avatarUrl, R.string.sign_up_profile_photo);
                         }
                     }
                 }
 
        public void changeSelectedTab(int tabId) {
            if (this.mHolder != null) {
-               if (tabId == C0257R.id.postsParent) {
+               if (tabId == R.id.postsParent) {
                    this.mCurrentTab = 0;
                    this.mFragment.changeMode(1);
-                        } else if (tabId == C0257R.id.likesParent) {
+                        } else if (tabId == R.id.likesParent) {
                    this.mCurrentTab = 1;
                    this.mFragment.changeMode(2);
                         }
@@ -407,7 +407,7 @@
 
        private void setImage(Bitmap bmp) {
            if (bmp == null) {
-               this.mHolderPagerMain.imageView.setImageResource(C0257R.drawable.avatar_large);
+               this.mHolderPagerMain.imageView.setImageResource(R.drawable.avatar_large);
                if (this.mUser != null && this.mUser.userId == this.mAppController.getActiveId()) {
                    this.mHolderPagerMain.imageAction.setVisibility(0);
                    return;
@@ -463,7 +463,7 @@
                LayoutInflater inflater = (LayoutInflater) container.getContext().getSystemService("layout_inflater");
                         switch (position) {
                             case 0:
-                       View v = inflater.inflate(C0257R.layout.profile_header_pager_main, container, false);
+                       View v = inflater.inflate(R.layout.profile_header_pager_main, container, false);
                        ProfileHeaderAdapter.access$102(ProfileHeaderAdapter.this, new PagerMainViewHolder(v));
                        container.addView(v);
                        if (ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this) == null) {
@@ -472,7 +472,7 @@
                        ProfileHeaderAdapter.this.bindUser(ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this));
                                 return v;
                             case 1:
-                       View v2 = inflater.inflate(C0257R.layout.profile_header_pager_details, container, false);
+                       View v2 = inflater.inflate(R.layout.profile_header_pager_details, container, false);
                        ProfileHeaderAdapter.access$302(ProfileHeaderAdapter.this, new PagerDetailsViewHolder(v2));
                        container.addView(v2);
                        if (ProfileHeaderAdapter.access$200(ProfileHeaderAdapter.this) != null) {
@@ -502,13 +502,13 @@
                     public ImageView verified;
 
            public PagerMainViewHolder(View v) {
-               this.imageFrame = (ImageView) v.findViewById(C0257R.id.user_image_frame);
-               this.username = (TextView) v.findViewById(C0257R.id.username);
-               this.verified = (ImageView) v.findViewById(C0257R.id.profile_verified);
-               this.imageView = (ImageView) v.findViewById(C0257R.id.user_image);
-               this.imageAction = (ImageView) v.findViewById(C0257R.id.user_image_action);
-               this.followers = (TypefacesTextView) v.findViewById(C0257R.id.followers);
-               this.following = (TypefacesTextView) v.findViewById(C0257R.id.following);
+               this.imageFrame = (ImageView) v.findViewById(R.id.user_image_frame);
+               this.username = (TextView) v.findViewById(R.id.username);
+               this.verified = (ImageView) v.findViewById(R.id.profile_verified);
+               this.imageView = (ImageView) v.findViewById(R.id.user_image);
+               this.imageAction = (ImageView) v.findViewById(R.id.user_image_action);
+               this.followers = (TypefacesTextView) v.findViewById(R.id.followers);
+               this.following = (TypefacesTextView) v.findViewById(R.id.following);
                     }
                 }
 
@@ -519,10 +519,10 @@
                     public TextView userLoopCount;
 
            public PagerDetailsViewHolder(View v) {
-               this.parent = v.findViewById(C0257R.id.measurableParent);
-               this.location = (TextView) v.findViewById(C0257R.id.location);
-               this.description = (TextView) v.findViewById(C0257R.id.description);
-               this.userLoopCount = (TextView) v.findViewById(C0257R.id.userLoopCount);
+               this.parent = v.findViewById(R.id.measurableParent);
+               this.location = (TextView) v.findViewById(R.id.location);
+               this.description = (TextView) v.findViewById(R.id.description);
+               this.userLoopCount = (TextView) v.findViewById(R.id.userLoopCount);
                     }
                 }
 
@@ -545,21 +545,21 @@
                     public long userId;
 
            public ProfileViewHolder(View v) {
-               this.pager = (ViewPager) v.findViewById(C0257R.id.pager);
-               this.profileBackground = (RelativeLayout) v.findViewById(C0257R.id.profile_content_outer);
-               this.follow = (Button) v.findViewById(C0257R.id.profile_follow);
-               this.settings = (Button) v.findViewById(C0257R.id.settings);
-               this.messageButton = (Button) v.findViewById(C0257R.id.message_button);
-               this.postsParent = v.findViewById(C0257R.id.postsParent);
-               this.postsLabel = (TypefacesTextView) v.findViewById(C0257R.id.postsLabel);
-               this.likesParent = v.findViewById(C0257R.id.likesParent);
-               this.likesLabel = (TypefacesTextView) v.findViewById(C0257R.id.likesLabel);
-               this.progress = (ProgressBar) v.findViewById(C0257R.id.profile_progress);
-               this.profileTabArrow = (ViewGroup) v.findViewById(C0257R.id.posts_dropdown);
-               this.profileTabArrowImage = (ImageView) v.findViewById(C0257R.id.profile_arrow_image);
-               this.dots = (DotIndicators) v.findViewById(C0257R.id.dots);
-               this.profileActions = (ViewGroup) v.findViewById(C0257R.id.profile_actions_container);
-               View dropDown = v.findViewById(C0257R.id.postsLikeDropDown);
+               this.pager = (ViewPager) v.findViewById(R.id.pager);
+               this.profileBackground = (RelativeLayout) v.findViewById(R.id.profile_content_outer);
+               this.follow = (Button) v.findViewById(R.id.profile_follow);
+               this.settings = (Button) v.findViewById(R.id.settings);
+               this.messageButton = (Button) v.findViewById(R.id.message_button);
+               this.postsParent = v.findViewById(R.id.postsParent);
+               this.postsLabel = (TypefacesTextView) v.findViewById(R.id.postsLabel);
+               this.likesParent = v.findViewById(R.id.likesParent);
+               this.likesLabel = (TypefacesTextView) v.findViewById(R.id.likesLabel);
+               this.progress = (ProgressBar) v.findViewById(R.id.profile_progress);
+               this.profileTabArrow = (ViewGroup) v.findViewById(R.id.posts_dropdown);
+               this.profileTabArrowImage = (ImageView) v.findViewById(R.id.profile_arrow_image);
+               this.dots = (DotIndicators) v.findViewById(R.id.dots);
+               this.profileActions = (ViewGroup) v.findViewById(R.id.profile_actions_container);
+               View dropDown = v.findViewById(R.id.postsLikeDropDown);
                this.dropDownHolder = new DropdownHolder(dropDown);
                dropDown.setTag(this.dropDownHolder);
                     }
@@ -571,9 +571,9 @@
                     public final View revineParent;
 
            public DropdownHolder(View v) {
-               this.revineParent = v.findViewById(C0257R.id.postsDropDownHideRevine);
-               this.revineLabel = (TextView) v.findViewById(C0257R.id.postsDropDownHideRevineLabel);
-               this.revineIcon = (ImageView) v.findViewById(C0257R.id.postsDropDownHideRevineIcon);
+               this.revineParent = v.findViewById(R.id.postsDropDownHideRevine);
+               this.revineLabel = (TextView) v.findViewById(R.id.postsDropDownHideRevineLabel);
+               this.revineIcon = (ImageView) v.findViewById(R.id.postsDropDownHideRevineIcon);
                     }
                 }
 

@@ -8,7 +8,7 @@
             import android.view.ViewGroup;
             import android.view.animation.Animation;
             import android.view.animation.AnimationUtils;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.CameraOnboardHelper;
             import co.vine.android.animation.SimpleAnimationListener;
             import co.vine.android.recorder.VineRecorder;
@@ -43,8 +43,8 @@
             this.mActivity = fragment.getActivity();
             this.mIsOnboarding = !CameraOnboardHelper.getHasShownOverlay(this.mActivity);
             if (this.mIsOnboarding) {
-                ViewGroup rootView = (ViewGroup) fragment.getView().findViewById(C0257R.id.root_layout);
-                this.mImportOnboardOverlay = (ViewGroup) inflater.inflate(C0257R.layout.plugin_import_onboard, rootView, false);
+                ViewGroup rootView = (ViewGroup) fragment.getView().findViewById(R.id.root_layout);
+                this.mImportOnboardOverlay = (ViewGroup) inflater.inflate(R.layout.plugin_import_onboard, rootView, false);
                 rootView.addView(this.mImportOnboardOverlay);
                 CameraOnboardHelper.setHasShownOverlay(this.mActivity, true);
                 return null;
@@ -94,7 +94,7 @@
         private void fadeOutOnboardOverlay() {
             if (this.mIsOnboarding && this.mImportOnboardOverlay != null && this.mImportOnboardOverlay.getVisibility() == 0 && !this.mIsFadingOutAlready) {
                 if (this.mActivity != null) {
-                    Animation fadeOut = AnimationUtils.loadAnimation(this.mActivity, C0257R.anim.fade_out);
+                    Animation fadeOut = AnimationUtils.loadAnimation(this.mActivity, R.anim.fade_out);
                     fadeOut.setAnimationListener(this.mImportOnboardingFadeListener);
                     this.mImportOnboardOverlay.startAnimation(fadeOut);
                     return;

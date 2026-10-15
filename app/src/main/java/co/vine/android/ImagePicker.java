@@ -39,10 +39,10 @@
         public void captureImage(int requestCode) {
             File profileFile = ImageUtils.getTempPic(this.mActivity, false, this.mActiveUserId);
             if (profileFile == null || !ImageUtils.hasEnoughExternalStorageForNewPhoto(this.mActivity)) {
-                Toast.makeText(this.mActivity, C0257R.string.camera_photo_error, 0).show();
+                Toast.makeText(this.mActivity, R.string.camera_photo_error, 0).show();
                 return;
                     }
-            String profile = this.mActivity.getString(C0257R.string.profile_title);
+            String profile = this.mActivity.getString(R.string.profile_title);
             ContentValues values = new ContentValues();
             values.put("title", profile);
             values.put("description", profile);
@@ -52,7 +52,7 @@
                     try {
                 this.mActivity.startActivityForResult(i, requestCode);
                     } catch (ActivityNotFoundException e) {
-                Util.showCenteredToast(this.mActivity, C0257R.string.unsupported_feature);
+                Util.showCenteredToast(this.mActivity, R.string.unsupported_feature);
                 ImageUtils.deleteTempPic(uri);
                 this.mListener.setAvatarUrl(null);
                     }
@@ -63,7 +63,7 @@
                     try {
                 this.mActivity.startActivityForResult(intent, requestCode);
                     } catch (ActivityNotFoundException e) {
-                Util.showCenteredToast(this.mActivity, C0257R.string.unsupported_feature);
+                Util.showCenteredToast(this.mActivity, R.string.unsupported_feature);
                     }
                 }
 
@@ -98,7 +98,7 @@
 
                     @Override 
             public void run() {
-                Toast.makeText(ImagePicker.access$000(ImagePicker.this), C0257R.string.profile_image_save_error, 0).show();
+                Toast.makeText(ImagePicker.access$000(ImagePicker.this), R.string.profile_image_save_error, 0).show();
                     }
                 }
             }

@@ -82,8 +82,8 @@
                 this.mPrivate = prefs.getBoolean(Settings.PREF_PRIVATE, false);
                 this.mExplicit = prefs.getBoolean(Settings.PREF_EXPLICIT, false);
                     }
-            ProgressDialog prog = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-            prog.setMessage(getString(C0257R.string.content_controls_updating));
+            ProgressDialog prog = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+            prog.setMessage(getString(R.string.content_controls_updating));
             prog.setProgressStyle(0);
             this.mProgress = prog;
                 }
@@ -99,37 +99,37 @@
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
             ViewUtil.reduceTextSizeViaFontScaleIfNeeded(getActivity(), 1.1f, 10.0f, (TextView) this.mView.findViewById(2131427459), (TextView) this.mView.findViewById(2131427465));
-            ViewUtil.reduceTextSizeViaFontScaleIfNeeded(getActivity(), 1.1f, 5.0f, (TextView) this.mView.findViewById(C0257R.id.text3), (TextView) this.mView.findViewById(C0257R.id.explicit_description_settings));
+            ViewUtil.reduceTextSizeViaFontScaleIfNeeded(getActivity(), 1.1f, 5.0f, (TextView) this.mView.findViewById(R.id.text3), (TextView) this.mView.findViewById(R.id.explicit_description_settings));
                 }
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            this.mView = inflater.inflate(C0257R.layout.content_controls, container, false);
+            this.mView = inflater.inflate(R.layout.content_controls, container, false);
             return this.mView;
                 }
 
                 @Override 
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            SwitchInterface pSwitch = (SwitchInterface) view.findViewById(C0257R.id.private_switch);
-            SwitchInterface eSwitch = (SwitchInterface) view.findViewById(C0257R.id.explicit_switch);
-            this.mPrivateIcon = (ImageView) view.findViewById(C0257R.id.private_icon);
+            SwitchInterface pSwitch = (SwitchInterface) view.findViewById(R.id.private_switch);
+            SwitchInterface eSwitch = (SwitchInterface) view.findViewById(R.id.explicit_switch);
+            this.mPrivateIcon = (ImageView) view.findViewById(R.id.private_icon);
            if (this.mPrivate) {
-               this.mPrivateIcon.setImageResource(C0257R.drawable.ic_settings_private_on);
+               this.mPrivateIcon.setImageResource(R.drawable.ic_settings_private_on);
                pSwitch.setChecked(true);
                     } else {
-               this.mPrivateIcon.setImageResource(C0257R.drawable.ic_settings_private_off);
+               this.mPrivateIcon.setImageResource(R.drawable.ic_settings_private_off);
                     }
            if (BuildUtil.isExplore()) {
-               view.findViewById(C0257R.id.explicit_row_container_settings).setVisibility(8);
-               view.findViewById(C0257R.id.explicit_description_settings).setVisibility(8);
+               view.findViewById(R.id.explicit_row_container_settings).setVisibility(8);
+               view.findViewById(R.id.explicit_description_settings).setVisibility(8);
                     } else {
-               this.mExplicitIcon = (ImageView) view.findViewById(C0257R.id.explicit_icon);
+               this.mExplicitIcon = (ImageView) view.findViewById(R.id.explicit_icon);
                if (this.mExplicit) {
-                   this.mExplicitIcon.setImageResource(C0257R.drawable.ic_settings_explicit_on);
+                   this.mExplicitIcon.setImageResource(R.drawable.ic_settings_explicit_on);
                    eSwitch.setChecked(true);
                         } else {
-                   this.mExplicitIcon.setImageResource(C0257R.drawable.ic_settings_explicit_off);
+                   this.mExplicitIcon.setImageResource(R.drawable.ic_settings_explicit_off);
                         }
                     }
            pSwitch.setOnCheckedChangeListener(this);
@@ -153,7 +153,7 @@
                                 break;
                             default:
                        ContentControlsFragment.access$002(ContentControlsFragment.this, false);
-                       ContentControlsFragment.access$200(ContentControlsFragment.this).setImageResource(C0257R.drawable.ic_settings_private_off);
+                       ContentControlsFragment.access$200(ContentControlsFragment.this).setImageResource(R.drawable.ic_settings_private_off);
                        ContentControlsFragment.access$300(ContentControlsFragment.this).setOnCheckedChangeListener(null);
                        ContentControlsFragment.access$300(ContentControlsFragment.this).setChecked(false);
                        ContentControlsFragment.access$300(ContentControlsFragment.this).setOnCheckedChangeListener(ContentControlsFragment.this);
@@ -177,7 +177,7 @@
                                 break;
                             default:
                        ContentControlsFragment.access$002(ContentControlsFragment.this, false);
-                       ContentControlsFragment.access$200(ContentControlsFragment.this).setImageResource(C0257R.drawable.ic_settings_private_on);
+                       ContentControlsFragment.access$200(ContentControlsFragment.this).setImageResource(R.drawable.ic_settings_private_on);
                        ContentControlsFragment.access$300(ContentControlsFragment.this).setOnCheckedChangeListener(null);
                        ContentControlsFragment.access$300(ContentControlsFragment.this).setChecked(true);
                        ContentControlsFragment.access$300(ContentControlsFragment.this).setOnCheckedChangeListener(ContentControlsFragment.this);
@@ -201,7 +201,7 @@
                                 break;
                             default:
                        ContentControlsFragment.access$402(ContentControlsFragment.this, false);
-                       ContentControlsFragment.access$500(ContentControlsFragment.this).setImageResource(C0257R.drawable.ic_settings_explicit_off);
+                       ContentControlsFragment.access$500(ContentControlsFragment.this).setImageResource(R.drawable.ic_settings_explicit_off);
                        ContentControlsFragment.access$600(ContentControlsFragment.this).setOnCheckedChangeListener(null);
                        ContentControlsFragment.access$600(ContentControlsFragment.this).setChecked(false);
                        ContentControlsFragment.access$600(ContentControlsFragment.this).setOnCheckedChangeListener(ContentControlsFragment.this);
@@ -225,7 +225,7 @@
                                 break;
                             default:
                        ContentControlsFragment.access$402(ContentControlsFragment.this, true);
-                       ContentControlsFragment.access$500(ContentControlsFragment.this).setImageResource(C0257R.drawable.ic_settings_explicit_on);
+                       ContentControlsFragment.access$500(ContentControlsFragment.this).setImageResource(R.drawable.ic_settings_explicit_on);
                        ContentControlsFragment.access$600(ContentControlsFragment.this).setOnCheckedChangeListener(null);
                        ContentControlsFragment.access$600(ContentControlsFragment.this).setChecked(true);
                        ContentControlsFragment.access$600(ContentControlsFragment.this).setOnCheckedChangeListener(ContentControlsFragment.this);
@@ -239,44 +239,44 @@
            int id = compoundButton.getId();
            if (id == 2131427460) {
                if (on) {
-                   this.mPrivateIcon.setImageResource(C0257R.drawable.ic_settings_private_on);
+                   this.mPrivateIcon.setImageResource(R.drawable.ic_settings_private_on);
                    PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1);
-                   p.setTitle(C0257R.string.content_controls_protect_my_posts);
-                   p.setMessage(C0257R.string.content_controls_protect_my_posts_message);
-                   p.setNegativeButton(C0257R.string.cancel);
-                   p.setPositiveButton(C0257R.string.content_controls_protect);
+                   p.setTitle(R.string.content_controls_protect_my_posts);
+                   p.setMessage(R.string.content_controls_protect_my_posts_message);
+                   p.setNegativeButton(R.string.cancel);
+                   p.setPositiveButton(R.string.content_controls_protect);
                    p.setListener(this.mProtectPostDialogDoneListner);
                    p.show(getActivity().getSupportFragmentManager());
                    return;
                         }
-               this.mPrivateIcon.setImageResource(C0257R.drawable.ic_settings_private_off);
+               this.mPrivateIcon.setImageResource(R.drawable.ic_settings_private_off);
                PromptDialogSupportFragment p2 = PromptDialogSupportFragment.newInstance(2);
-               p2.setTitle(C0257R.string.content_controls_unprotect_my_posts);
-               p2.setMessage(C0257R.string.content_controls_unprotect_my_posts_message);
-               p2.setNegativeButton(C0257R.string.cancel);
-               p2.setPositiveButton(C0257R.string.content_controls_unprotect);
+               p2.setTitle(R.string.content_controls_unprotect_my_posts);
+               p2.setMessage(R.string.content_controls_unprotect_my_posts_message);
+               p2.setNegativeButton(R.string.cancel);
+               p2.setPositiveButton(R.string.content_controls_unprotect);
                p2.setListener(this.mUnProtectPostDialogDoneListner);
                p2.show(getActivity().getSupportFragmentManager());
                return;
                     }
            if (id == 2131427466) {
                if (on) {
-                   this.mExplicitIcon.setImageResource(C0257R.drawable.ic_settings_explicit_on);
+                   this.mExplicitIcon.setImageResource(R.drawable.ic_settings_explicit_on);
                    PromptDialogSupportFragment p3 = PromptDialogSupportFragment.newInstance(3);
-                   p3.setTitle(C0257R.string.content_controls_explicit_my_posts);
-                   p3.setMessage(C0257R.string.content_controls_explicit_my_posts_message);
-                   p3.setNegativeButton(C0257R.string.cancel);
-                   p3.setPositiveButton(C0257R.string.content_controls_make_explicit);
+                   p3.setTitle(R.string.content_controls_explicit_my_posts);
+                   p3.setMessage(R.string.content_controls_explicit_my_posts_message);
+                   p3.setNegativeButton(R.string.cancel);
+                   p3.setPositiveButton(R.string.content_controls_make_explicit);
                    p3.setListener(this.mExplictOnDoneListner);
                    p3.show(getActivity().getSupportFragmentManager());
                    return;
                         }
-               this.mExplicitIcon.setImageResource(C0257R.drawable.ic_settings_explicit_off);
+               this.mExplicitIcon.setImageResource(R.drawable.ic_settings_explicit_off);
                PromptDialogSupportFragment p4 = PromptDialogSupportFragment.newInstance(4);
-               p4.setTitle(C0257R.string.content_controls_unexplicit_my_posts);
-               p4.setMessage(C0257R.string.content_controls_unexplicit_my_posts_message);
-               p4.setNegativeButton(C0257R.string.cancel);
-               p4.setPositiveButton(C0257R.string.content_controls_unmake_explicit);
+               p4.setTitle(R.string.content_controls_unexplicit_my_posts);
+               p4.setMessage(R.string.content_controls_unexplicit_my_posts_message);
+               p4.setNegativeButton(R.string.cancel);
+               p4.setPositiveButton(R.string.content_controls_unmake_explicit);
                p4.setListener(this.mExplictOffDoneListner);
                p4.show(getFragmentManager());
                     }
@@ -299,7 +299,7 @@
                         } else if (!TextUtils.isEmpty(reasonPhrase)) {
                    Util.showCenteredToast(activity, reasonPhrase);
                         } else {
-                   Util.showCenteredToast(activity, C0257R.string.content_controls_update_fail);
+                   Util.showCenteredToast(activity, R.string.content_controls_update_fail);
                         }
                     }
 
@@ -316,7 +316,7 @@
                         } else if (!TextUtils.isEmpty(reasonPhrase)) {
                    Util.showCenteredToast(activity, reasonPhrase);
                         } else {
-                   Util.showCenteredToast(activity, C0257R.string.content_controls_update_fail);
+                   Util.showCenteredToast(activity, R.string.content_controls_update_fail);
                         }
                     }
                 }

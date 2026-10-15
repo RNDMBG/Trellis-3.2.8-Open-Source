@@ -27,7 +27,7 @@ import android.util.Log;
             import android.util.Log;
             import android.util.Pair;
             import co.vine.android.AppImpl;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.HomeTabActivity;
             import co.vine.android.StartActivity;
             import co.vine.android.api.ComplaintMenuOption;
@@ -767,7 +767,7 @@ import android.util.Log;
                                bundle2.putString(REASON_PHRASE, error2.message);
                                bundle.putInt("error_code", error2.errorCode);
                                     } else {
-                               bundle2.putString(REASON_PHRASE, getString(C0257R.string.error_unknown));
+                               bundle2.putString(REASON_PHRASE, getString(R.string.error_unknown));
                                     }
                            bundle2.putInt(EXECUTION_CODE, 1);
                                 }
@@ -850,7 +850,7 @@ import android.util.Log;
                            if (error3 != null) {
                                bundle2.putString(REASON_PHRASE, error3.message);
                                     } else {
-                               bundle2.putString(REASON_PHRASE, getString(C0257R.string.error_unknown));
+                               bundle2.putString(REASON_PHRASE, getString(R.string.error_unknown));
                                     }
                            bundle2.putInt(EXECUTION_CODE, 1);
                                 }
@@ -901,7 +901,7 @@ import android.util.Log;
                                     } else {
                               error = (VineError) vp.getParsedObject();
                               if (error == null) {
-                                  reasonPhrase = getString(C0257R.string.error_server);
+                                  reasonPhrase = getString(R.string.error_server);
                                         } else {
                                   SLog.m448d("Got error: {} {}", Integer.valueOf(error.errorCode), error.message);
                                   int code = error.errorCode;
@@ -962,7 +962,7 @@ import android.util.Log;
                                   statusCode = 200;
                                         } else {
                                   statusCode = 500;
-                                  reasonPhrase = res.getString(C0257R.string.error_xauth);
+                                  reasonPhrase = res.getString(R.string.error_xauth);
                                   CrashUtil.log("Twitter access_token response contained empty params. screenName={},token={}, tokenSecret={}", screenName, token4, tokenSecret3);
                                         }
                               bundle.putString(EXTRA_PASSWORD, null);
@@ -970,16 +970,16 @@ import android.util.Log;
                               if (e3.getStatusCode() == 401) {
                                   statusCode = 401;
                                   if (Util.isXauth2FactorError(e3)) {
-                                      reasonPhrase = res.getString(C0257R.string.error_auth_2_factor_error);
+                                      reasonPhrase = res.getString(R.string.error_auth_2_factor_error);
                                             } else {
-                                      reasonPhrase = res.getString(C0257R.string.error_auth_username_pass);
+                                      reasonPhrase = res.getString(R.string.error_auth_username_pass);
                                             }
                                         } else if (e3.isCausedByNetworkIssue()) {
                                   statusCode = 500;
-                                  reasonPhrase = res.getString(C0257R.string.error_auth_check_internet_connection);
+                                  reasonPhrase = res.getString(R.string.error_auth_check_internet_connection);
                                         } else {
                                   statusCode = 500;
-                                  reasonPhrase = res.getString(C0257R.string.error_xauth);
+                                  reasonPhrase = res.getString(R.string.error_xauth);
                                         }
                               bundle.putString(EXTRA_PASSWORD, null);
                                     }
@@ -2334,7 +2334,7 @@ import android.util.Log;
                                     }
                           thumbPath = CommonUtil.FILE_SCHEME + RecordConfigUtils.getThumbnailPath(upload.path);
                           if (upload.status == 2) {
-                              errorReason = getString(C0257R.string.message_failed_tap_to_retry);
+                              errorReason = getString(R.string.message_failed_tap_to_retry);
                               errorCode = -2;
                                     }
                                 }
@@ -2411,7 +2411,7 @@ import android.util.Log;
                                                 for (i = 0; i < n; i++) {
                                           notif = uniqueNotifications.valueAt(i);
                                           if (notif.messageCount > 1) {
-                                              notif.comment = getString(C0257R.string.message_notification_title_plural, new Object[]{Util.getUsernameFromActivity(notif.comment), Integer.valueOf(notif.messageCount)});
+                                              notif.comment = getString(R.string.message_notification_title_plural, new Object[]{Util.getUsernameFromActivity(notif.comment), Integer.valueOf(notif.messageCount)});
                                                     }
                                           unclearedNotifications.add(notif);
                                                     if (notif.conversationRowId == notification.conversationRowId) {
@@ -2455,7 +2455,7 @@ import android.util.Log;
                                             while (i < n) {
                                       notif = uniqueNotifications.valueAt(i);
                                       if (notif.messageCount > 1) {
-                                          notif.comment = getString(C0257R.string.message_notification_title_plural, new Object[]{Util.getUsernameFromActivity(notif.comment), Integer.valueOf(notif.messageCount)});
+                                          notif.comment = getString(R.string.message_notification_title_plural, new Object[]{Util.getUsernameFromActivity(notif.comment), Integer.valueOf(notif.messageCount)});
                                                 }
                                       unclearedNotifications.add(notif);
                                                 if (notif.conversationRowId == notification.conversationRowId) {
@@ -2487,7 +2487,7 @@ import android.util.Log;
                             case 100:
                       String uploadPath = bundle.getString("upload_path");
                       if (!TextUtils.isEmpty(uploadPath)) {
-                          databaseHelper.setMessageError(uploadPath, -2, getString(C0257R.string.message_failed_tap_to_retry));
+                          databaseHelper.setMessageError(uploadPath, -2, getString(R.string.message_failed_tap_to_retry));
                                 }
                                 break;
                             case 101:
@@ -3228,15 +3228,15 @@ VineAPI.addParam(url, VineAPI.RESOURCE_GROUPED, 1);
                       if (error.errorCode == VineKnownErrors.CAPTCHA.code) {
                           upload.captchaUrl = error.data;
                           if (upload.isPrivate) {
-                              VineDatabaseHelper.getDatabaseHelper(this).setMessageError(upload.mergedMessageId, error.errorCode, getString(C0257R.string.message_failed_tap_to_retry));
+                              VineDatabaseHelper.getDatabaseHelper(this).setMessageError(upload.mergedMessageId, error.errorCode, getString(R.string.message_failed_tap_to_retry));
                                     }
                                 }
                       if (upload.isPrivate) {
-                          VineDatabaseHelper.getDatabaseHelper(this).setMessageError(upload.mergedMessageId, error.errorCode, getString(C0257R.string.message_failed_tap_to_retry));
+                          VineDatabaseHelper.getDatabaseHelper(this).setMessageError(upload.mergedMessageId, error.errorCode, getString(R.string.message_failed_tap_to_retry));
                                 }
                             } else {
                       if (upload.isPrivate) {
-                          VineDatabaseHelper.getDatabaseHelper(this).setMessageError(upload.mergedMessageId, -1, getString(C0257R.string.message_failed_tap_to_retry));
+                          VineDatabaseHelper.getDatabaseHelper(this).setMessageError(upload.mergedMessageId, -1, getString(R.string.message_failed_tap_to_retry));
                                 }
                       SLog.dWithTag(TAG, "Post failed: Unknown error while posting path=" + path);
                             }
@@ -3286,10 +3286,10 @@ VineAPI.addParam(url, VineAPI.RESOURCE_GROUPED, 1);
               if (vpmr != null) {
                   if (vpmr.recipient != null && vpmr.recipient.key.equals("phoneNumber") && vpmr.shareUrl != null) {
                       if (smsFormatter == null) {
-                          smsFormatter = getString(C0257R.string.sms_text);
+                          smsFormatter = getString(R.string.sms_text);
                                 }
                       if (smsFooter == null) {
-                          smsFooter = getString(C0257R.string.sms_footer);
+                          smsFooter = getString(R.string.sms_footer);
                                 }
                       if (TextUtils.isEmpty(info.message) || info.maxLoops > 0) {
                           text = String.format(smsFormatter, vpmr.shareUrl);

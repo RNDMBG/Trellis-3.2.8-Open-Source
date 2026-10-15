@@ -4,7 +4,7 @@
             import android.content.res.TypedArray;
             import android.graphics.drawable.Drawable;
             import android.util.AttributeSet;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.dragsort.DragSortWidget;
             
             
@@ -24,23 +24,23 @@
                 @Override 
         protected TypedArray getStylingArray(Context context, AttributeSet attrs, int defStyle) {
             if (defStyle == 0) {
-                defStyle = C0257R.attr.dragSortWidgetStyle;
+                defStyle = R.attr.dragSortWidgetStyle;
                     }
-            return context.obtainStyledAttributes(attrs, C0257R.styleable.DragSortWidget, defStyle, 0);
+            return context.obtainStyledAttributes(attrs, R.styleable.DragSortWidget, defStyle, 0);
                 }
 
                 @Override 
         protected int getFloatViewDefaultSize(TypedArray a) {
-            return a.getDimensionPixelSize(2, 0);
+            return a.getDimensionPixelSize(R.styleable.DragSortWidget_floatViewSize, 0);
                 }
 
                 @Override 
         protected Drawable getFloatViewActivatedDrawable(TypedArray a) {
-            return a.getDrawable(1);
+            return a.getDrawable(R.styleable.DragSortWidget_floatViewActivatedDrawable);
                 }
 
                 @Override 
         protected Drawable getActiveDrawable(TypedArray a) {
-            return a.getDrawable(0);
+            return a.getDrawable(R.styleable.DragSortWidget_activatedDrawable);
                 }
             }

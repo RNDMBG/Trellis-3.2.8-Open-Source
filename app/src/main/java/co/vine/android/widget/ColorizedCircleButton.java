@@ -8,7 +8,7 @@
             import android.support.annotation.NonNull;
             import android.util.AttributeSet;
             import android.widget.ImageView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class ColorizedCircleButton extends ImageView {
@@ -30,7 +30,7 @@
         public ColorizedCircleButton(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
             Resources res = getResources();
-            this.mGray = res.getColor(C0257R.color.black_thirty_percent);
+            this.mGray = res.getColor(R.color.black_thirty_percent);
             this.mColor = this.mGray;
             this.mIcon = getDrawable();
                 }

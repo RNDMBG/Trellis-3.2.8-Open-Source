@@ -172,18 +172,18 @@
            View emptyView = v.findViewById(android.R.id.empty);
            if (emptyView != null) {
                listView.setEmptyView(emptyView);
-               this.mEmptyProgress = (ProgressBar) emptyView.findViewById(C0257R.id.list_empty_progress);
+               this.mEmptyProgress = (ProgressBar) emptyView.findViewById(R.id.list_empty_progress);
                if (getActivity() instanceof HomeTabActivity) {
                    ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) this.mEmptyProgress.getLayoutParams();
-                   params.topMargin = getActivity().getResources().getDimensionPixelSize(C0257R.dimen.tabbar_height);
+                   params.topMargin = getActivity().getResources().getDimensionPixelSize(R.dimen.tabbar_height);
                         }
                     }
            this.mEmptyView = emptyView;
-           this.mEmptyText = (TextView) v.findViewById(C0257R.id.empty_text);
+           this.mEmptyText = (TextView) v.findViewById(R.id.empty_text);
            if (this.mEmptyTextStringRes > 0 && this.mEmptyText != null) {
                this.mEmptyText.setText(this.mEmptyTextStringRes);
                     }
-           this.mSadface = v.findViewById(C0257R.id.real_sadface);
+           this.mSadface = v.findViewById(R.id.real_sadface);
            if (this.mRefreshable) {
                ((RefreshableListView) listView).setRefreshListener(this);
                     }
@@ -195,7 +195,7 @@
                 }
 
        protected View createDefaultView(LayoutInflater inflater, ViewGroup container) {
-           return createView(inflater, C0257R.layout.msg_list_fragment, container);
+           return createView(inflater, R.layout.msg_list_fragment, container);
                 }
 
                 @Override 
@@ -405,7 +405,7 @@
                                 }
                             }
                    this.mSadface.setVisibility(0);
-                   View sadFace = this.mSadface.findViewById(C0257R.id.sadface);
+                   View sadFace = this.mSadface.findViewById(R.id.sadface);
                    if (sadFace != null) {
                        sadFace.setVisibility(showFrown ? 0 : 8);
                        return;

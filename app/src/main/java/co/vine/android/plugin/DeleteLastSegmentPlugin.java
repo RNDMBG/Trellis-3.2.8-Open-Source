@@ -11,7 +11,7 @@
             import android.widget.ImageButton;
             import android.widget.LinearLayout;
             import android.widget.RelativeLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.CameraOnboardHelper;
             import co.vine.android.recorder.RecordSegment;
             import co.vine.android.recorder.VineRecorder;
@@ -74,9 +74,9 @@
         protected ImageButton onLayoutInflated(LinearLayout parent, LayoutInflater inflater, Fragment fragment) {
             this.mFragment = fragment;
             this.mParent = parent;
-            ImageButton button = (ImageButton) inflater.inflate(C0257R.layout.plugin_option_image_button, (ViewGroup) parent, false);
+            ImageButton button = (ImageButton) inflater.inflate(R.layout.plugin_option_image_button, (ViewGroup) parent, false);
             button.setOnClickListener(this);
-            button.setImageResource(C0257R.drawable.ic_backspace_default);
+            button.setImageResource(R.drawable.ic_backspace_default);
             button.setAlpha(0.35f);
             return button;
                 }
@@ -98,11 +98,11 @@
         private void showOnboardTooltip(int stringResId) {
             if (this.mFragment.getView() != null) {
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(-2, -2);
-                params.addRule(3, C0257R.id.recording_options);
+                params.addRule(3, R.id.recording_options);
                 TooltipView tooltip = new TooltipView(this.mActivity);
                 tooltip.setText(stringResId);
                 tooltip.setListener(this);
-                RelativeLayout bottomMask = (RelativeLayout) this.mFragment.getView().findViewById(C0257R.id.bottom_mask);
+                RelativeLayout bottomMask = (RelativeLayout) this.mFragment.getView().findViewById(R.id.bottom_mask);
                 bottomMask.addView(tooltip, params);
                 bottomMask.post(new RunnableC04211(tooltip));
                 this.mTooltip = tooltip;
@@ -122,7 +122,7 @@
                 if (DeleteLastSegmentPlugin.access$000(DeleteLastSegmentPlugin.this) != null) {
                     this.val$tooltip.updatePosition(DeleteLastSegmentPlugin.access$000(DeleteLastSegmentPlugin.this));
                     ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) this.val$tooltip.getLayoutParams();
-                    params.topMargin = this.val$tooltip.getResources().getDimensionPixelOffset(C0257R.dimen.tooltipNegativeMargin);
+                    params.topMargin = this.val$tooltip.getResources().getDimensionPixelOffset(R.dimen.tooltipNegativeMargin);
                     this.val$tooltip.setLayoutParams(params);
                     this.val$tooltip.show();
                         }
@@ -166,7 +166,7 @@
            VineRecorder r = getRecorder();
            Activity activity = this.mActivity;
            if (activity != null && r != null) {
-               ViewGroup rootView = (ViewGroup) activity.findViewById(C0257R.id.thumbnail_list);
+               ViewGroup rootView = (ViewGroup) activity.findViewById(R.id.thumbnail_list);
                ArrayList<RecordSegment> segments = r.getEditedSegments();
                int segmentSize = segments.size();
                if (segmentSize > 0 && !this.mIsSelected) {
@@ -176,7 +176,7 @@
                            lastIndex = i;
                                 }
                             }
-                   if (r.highlightSegment(lastIndex, activity.getResources().getColor(C0257R.color.plugin_delete_selected_segment))) {
+                   if (r.highlightSegment(lastIndex, activity.getResources().getColor(R.color.plugin_delete_selected_segment))) {
                        this.mIsSelected = true;
                        if (this.mTouchView == null) {
                            this.mTouchView = new View(this.mActivity);
@@ -189,7 +189,7 @@
                            this.mTooltip.hide();
                            String lastStep = CameraOnboardHelper.getLastCompletedStep(this.mActivity);
                            if ("delete".equals(lastStep)) {
-                               showOnboardTooltip(C0257R.string.camera_onboarding_undo_step_two);
+                               showOnboardTooltip(R.string.camera_onboarding_undo_step_two);
                                     }
                                 }
                             }
@@ -239,7 +239,7 @@
        private void invalidateView() {
            ImageButton view = getInflatedChild();
            if (view != null) {
-               view.setImageResource(this.mIsSelected ? C0257R.drawable.ic_backspace_pressed : C0257R.drawable.ic_backspace_default);
+               view.setImageResource(this.mIsSelected ? R.drawable.ic_backspace_pressed : R.drawable.ic_backspace_default);
                invalidateButtonState();
                int[] loc = new int[2];
                ((View) view.getParent()).getLocationInWindow(loc);
@@ -280,7 +280,7 @@
 
                     @Override 
            public void run() {
-               DeleteLastSegmentPlugin.access$700(DeleteLastSegmentPlugin.this, C0257R.string.camera_onboarding_undo_step_one);
+               DeleteLastSegmentPlugin.access$700(DeleteLastSegmentPlugin.this, R.string.camera_onboarding_undo_step_one);
                     }
                 }
 

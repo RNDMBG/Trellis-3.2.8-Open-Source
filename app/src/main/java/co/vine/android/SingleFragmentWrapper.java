@@ -58,11 +58,11 @@
                 }
 
         public View onCreateLockedView(View v, SpanClickListener listener) {
-            TextView tv = (TextView) v.findViewById(C0257R.id.lock_text);
+            TextView tv = (TextView) v.findViewById(R.id.lock_text);
             tv.setMovementMethod(LinkMovementMethod.getInstance());
             StyledClickableSpan styled = new StyledClickableSpan(1, Long.valueOf(this.mUserId), listener);
-            styled.setColor(this.mFragment.getResources().getColor(C0257R.color.vine_green));
-            Spanned sp = Util.getSpannedText(new Object[]{styled}, this.mFragment.getString(C0257R.string.post_locked, this.mUsername), CommonUtil.MARKER_QUOTES);
+            styled.setColor(this.mFragment.getResources().getColor(R.color.vine_green));
+            Spanned sp = Util.getSpannedText(new Object[]{styled}, this.mFragment.getString(R.string.post_locked, this.mUsername), CommonUtil.MARKER_QUOTES);
             tv.setText(sp);
             return v;
                 }

@@ -22,7 +22,7 @@
 
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
                     
                     
                     android.app.ActionBar platformActionBar = getActionBar();
@@ -40,15 +40,15 @@
             if ("tag".equals(data.getHost())) {
                 ab.setTitle("#" + data.getLastPathSegment());
                     } else if (ExploreTimelineFragment.CATEGORY_ON_THE_RISE.equals(data.getHost())) {
-                ab.setTitle(C0257R.string.on_the_rise);
+                ab.setTitle(R.string.on_the_rise);
                     } else if (ExploreTimelineFragment.CATEGORY_POPULAR_NOW.equals(data.getHost())) {
-                ab.setTitle(C0257R.string.popular_now);
+                ab.setTitle(R.string.popular_now);
                     } else if ("timelines".equals(data.getHost())) {
                 String title = data.getQueryParameter("title");
                 if (!TextUtils.isEmpty(title)) {
                     ab.setTitle(title.replace('+', ' '));
                         } else {
-                    ab.setTitle(getString(C0257R.string.tab_title_timeline));
+                    ab.setTitle(getString(R.string.tab_title_timeline));
                         }
                     } else {
                 Toast.makeText(this, "All post is not supported at this moment, it's just here to tease you. ", 0).show();
@@ -59,7 +59,7 @@
                 ExploreTimelineFragment fragment = new ExploreTimelineFragment();
                 intent.putExtra("refresh", true);
                 fragment.setArguments(ExploreTimelineFragment.prepareArguments(intent, true, data.getHost(), data.getLastPathSegment(), data));
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, FRAGMENT_TAG).commit();
                     }
                 }
 
@@ -75,7 +75,7 @@
 
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(C0257R.menu.mute, menu);
+            getMenuInflater().inflate(R.menu.mute, menu);
             return super.onCreateOptionsMenu(menu);
                 }
 

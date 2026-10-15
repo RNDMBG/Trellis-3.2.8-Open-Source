@@ -71,13 +71,13 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View v = createView(inflater, C0257R.layout.msg_list_fragment_activity, container);
+            View v = createView(inflater, R.layout.msg_list_fragment_activity, container);
             this.mListView.setDividerHeight(0);
             this.mAdapter = new ActivityAdapter(getActivity(), this.mListView, this.mAppController, this);
             this.mListView.setAdapter((ListAdapter) this.mAdapter);
             if (getActivity() instanceof HomeTabActivity) {
-                View header = LayoutInflater.from(getActivity()).inflate(C0257R.layout.under_nav_header, (ViewGroup) null);
-                ((PinnedHeaderListView) this.mListView).setRefreshHeader(header, getResources().getDimensionPixelSize(C0257R.dimen.tabbar_height));
+                View header = LayoutInflater.from(getActivity()).inflate(R.layout.under_nav_header, (ViewGroup) null);
+                ((PinnedHeaderListView) this.mListView).setRefreshHeader(header, getResources().getDimensionPixelSize(R.dimen.tabbar_height));
                 this.mListView.addHeaderView(header, null, false);
                     }
             return v;
@@ -176,7 +176,7 @@
                             break;
                         case 2:
                         default:
-                   if (view.getId() == C0257R.id.user_image) {
+                   if (view.getId() == R.id.user_image) {
                        ProfileActivity.start(getActivity(), ((Long) tag).longValue(), EVENT_SOURCE_TITLE);
                             }
                             break;
@@ -196,11 +196,11 @@
        public void onClick(View view) {
            ActivityAdapter adapter = (ActivityAdapter) this.mAdapter;
            int id = view.getId();
-           if (id == C0257R.id.user_image) {
+           if (id == R.id.user_image) {
                ProfileActivity.start(getActivity(), ((Long) view.getTag()).longValue(), EVENT_SOURCE_TITLE);
                return;
                     }
-           if (id == C0257R.id.follow) {
+           if (id == R.id.follow) {
                long userId = ((Long) view.getTag()).longValue();
                if (!((ActivityAdapter) this.mAdapter).isFollowing(userId)) {
                    adapter.follow(userId);
@@ -276,7 +276,7 @@
                             }
                    if (ActivityFragment.this.mAdapter.getCount() == 0 && count == 0 && followRequestCount == 0) {
                        if (statusCode != 200) {
-                           ActivityFragment.this.mEmptyTextStringRes = C0257R.string.failed_to_load_activity;
+                           ActivityFragment.this.mEmptyTextStringRes = R.string.failed_to_load_activity;
                            ActivityFragment.this.mEmptyText.setText(ActivityFragment.this.mEmptyTextStringRes);
                                 }
                        ActivityFragment.this.showSadface(true);

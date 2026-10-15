@@ -21,7 +21,7 @@
             import android.support.v4.app.Fragment;
             import android.text.TextUtils;
             import co.vine.android.AppImpl;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.LoginTwitterActivity;
             import co.vine.android.Settings;
             import co.vine.android.StartActivity;
@@ -327,7 +327,7 @@
                            listener.onLoginComplete(VineAccountHelper.getCachedActiveSession(), reqId, statusCode, reasonPhrase, errorCode, vl);
                                 }
                             } catch (VineLoggingException e) {
-                       Util.showCenteredToast(this.mContext, C0257R.string.failed_to_add_account_on_device);
+                       Util.showCenteredToast(this.mContext, R.string.failed_to_add_account_on_device);
                        CrashUtil.logException(e);
                       return;
                             }

@@ -49,14 +49,14 @@
                 @Override 
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            RelativeLayout relativeLayout = (RelativeLayout) getView().findViewById(C0257R.id.layout_root);
-            ViewGroup searchHintContainer = (ViewGroup) LayoutInflater.from(getActivity()).inflate(C0257R.layout.search_hint_container, (ViewGroup) null);
-            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(-1, getResources().getDimensionPixelSize(C0257R.dimen.spacing_large));
+            RelativeLayout relativeLayout = (RelativeLayout) getView().findViewById(R.id.layout_root);
+            ViewGroup searchHintContainer = (ViewGroup) LayoutInflater.from(getActivity()).inflate(R.layout.search_hint_container, (ViewGroup) null);
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(-1, getResources().getDimensionPixelSize(R.dimen.spacing_large));
             params.addRule(10, -1);
             searchHintContainer.setLayoutParams(params);
             searchHintContainer.setOnClickListener(this.mCallback);
             relativeLayout.addView(searchHintContainer);
-            this.mSearchHint = (TextView) searchHintContainer.findViewById(C0257R.id.search_hint_title);
+            this.mSearchHint = (TextView) searchHintContainer.findViewById(R.id.search_hint_title);
             this.mSearchHintContainer = searchHintContainer;
                 }
 
@@ -86,7 +86,7 @@
                     this.mSearchHintContainer.setVisibility(0);
                     this.mSearchHintContainer.bringToFront();
                         }
-                this.mSearchHint.setText(resources.getString(C0257R.string.search_hint, partialQuery));
+                this.mSearchHint.setText(resources.getString(R.string.search_hint, partialQuery));
                     }
                 }
 

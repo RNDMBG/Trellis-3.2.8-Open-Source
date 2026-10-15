@@ -9,7 +9,7 @@
             import android.support.annotation.NonNull;
             import android.view.MotionEvent;
             import android.view.View;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class TrimTimeBar extends View {
@@ -53,17 +53,17 @@
             this.mSelectedBar = new Rect();
             this.mProgressPaint = new Paint();
             this.mSelectedPaint = new Paint();
-            this.mProgressPaint.setColor(getResources().getColor(C0257R.color.timebar_background_color));
-            this.mSelectedPaint.setColor(getResources().getColor(C0257R.color.timebar_selected_color));
+            this.mProgressPaint.setColor(getResources().getColor(R.color.timebar_background_color));
+            this.mSelectedPaint.setColor(getResources().getColor(R.color.timebar_selected_color));
             this.mTrimStartTime = 0;
             this.mTrimEndTime = 0;
             this.mTrimStartScrubberLeft = 0;
             this.mTrimEndScrubberLeft = 0;
             this.mTrimStartScrubberTop = 0;
             this.mTrimEndScrubberTop = 0;
-            this.mTrimStartScrubber = BitmapFactory.decodeResource(getResources(), C0257R.drawable.scrub_left);
-            this.mTrimEndScrubber = BitmapFactory.decodeResource(getResources(), C0257R.drawable.scrub_right);
-            this.mScrubberPadding = getResources().getDimensionPixelSize(C0257R.dimen.scrubber_padding);
+            this.mTrimStartScrubber = BitmapFactory.decodeResource(getResources(), R.drawable.scrub_left);
+            this.mTrimEndScrubber = BitmapFactory.decodeResource(getResources(), R.drawable.scrub_right);
+            this.mScrubberPadding = getResources().getDimensionPixelSize(R.dimen.scrubber_padding);
                 }
 
         private void update() {
@@ -73,7 +73,7 @@
                 }
 
         public int getPreferredHeight() {
-            int defaultHeight = getResources().getDimensionPixelSize(C0257R.dimen.time_bar_default_height);
+            int defaultHeight = getResources().getDimensionPixelSize(R.dimen.time_bar_default_height);
             if (this.mTrimStartScrubber == null) {
                         return defaultHeight;
                     }
@@ -100,7 +100,7 @@
                 @Override 
        protected void onLayout(boolean changed, int l, int t, int r, int b) {
            int w = r - l;
-           int topBottomMargin = getResources().getDimensionPixelSize(C0257R.dimen.time_bar_top_bottom_padding);
+           int topBottomMargin = getResources().getDimensionPixelSize(R.dimen.time_bar_top_bottom_padding);
            int leftRightMargin = this.mTrimStartScrubber.getWidth() / 2;
            this.mTrimStartScrubberTop = 0;
            this.mTrimEndScrubberTop = 0;

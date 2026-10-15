@@ -92,7 +92,7 @@
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-           setContentView(C0257R.layout.option_list);
+           setContentView(R.layout.option_list);
            Bundle b = getIntent().getExtras();
            if (b != null) {
                this.mPostTwitter = b.getBoolean(EXTRA_POST_TWITTER, false);
@@ -111,46 +111,46 @@
                this.mIsFavoriteUser = b.getBoolean(EXTRA_FAVORITE_USER, false);
                     }
            Resources res = getResources();
-           this.mArrayAdapter = new OptionArrayAdapter(this, C0257R.layout.post_more_row);
+           this.mArrayAdapter = new OptionArrayAdapter(this, R.layout.post_more_row);
            ArrayList<Option> items = new ArrayList<>();
            if (this.mVm) {
-               items.add(new Option(3, res.getString(C0257R.string.share_vm)));
+               items.add(new Option(3, res.getString(R.string.share_vm)));
                     }
            if (this.mRevine) {
-               int revineStringId = this.mWasRevined ? C0257R.string.unrevine_list_option : C0257R.string.revine_list_option;
+               int revineStringId = this.mWasRevined ? R.string.unrevine_list_option : R.string.revine_list_option;
                items.add(new Option(9, res.getString(revineStringId)));
                     }
            if (this.mOriginalPost) {
-               items.add(new Option(8, res.getString(C0257R.string.original_post)));
+               items.add(new Option(8, res.getString(R.string.original_post)));
                     }
            ArrayList<Option> items2 = new ArrayList<>();
            if (this.mPostTwitter) {
-               items2.add(new Option(1, res.getString(C0257R.string.share_twitter)));
+               items2.add(new Option(1, res.getString(R.string.share_twitter)));
                     }
            if (this.mPostFacebook) {
-               items2.add(new Option(2, res.getString(C0257R.string.share_facebook)));
+               items2.add(new Option(2, res.getString(R.string.share_facebook)));
                     }
            if (this.mShareOther) {
-               items2.add(new Option(4, res.getString(C0257R.string.share_other)));
+               items2.add(new Option(4, res.getString(R.string.share_other)));
                     }
            if (this.mUnfollow) {
-               items.add(new Option(12, res.getString(C0257R.string.unfollow)));
+               items.add(new Option(12, res.getString(R.string.unfollow)));
                     }
            if (this.mReport) {
-               items.add(new Option(5, res.getString(C0257R.string.block_or_report)));
+               items.add(new Option(5, res.getString(R.string.block_or_report)));
                     }
            if (this.mDelete) {
-               items.add(new Option(6, res.getString(C0257R.string.delete_post)));
+               items.add(new Option(6, res.getString(R.string.delete_post)));
                     }
            if (this.mIsFavoriteUser) {
-               items.add(new Option(11, res.getString(C0257R.string.unfavorite)));
+               items.add(new Option(11, res.getString(R.string.unfavorite)));
                     }
            if (items2.size() > 0) {
-               items.add(new Option(10, res.getString(C0257R.string.more_options)));
-               items2.add(new Option(7, res.getString(C0257R.string.cancel)));
+               items.add(new Option(10, res.getString(R.string.more_options)));
+               items2.add(new Option(7, res.getString(R.string.cancel)));
                     }
            this.mItems2 = items2;
-           items.add(new Option(7, res.getString(C0257R.string.cancel)));
+           items.add(new Option(7, res.getString(R.string.cancel)));
            invalidateOptions(items);
                 }
 
@@ -205,9 +205,9 @@
                         case 6:
                    PromptDialogSupportFragment promptDialogFragment = PromptDialogSupportFragment.newInstance(2);
                    promptDialogFragment.setListener(this.mReportDeleteDialogDoneListener);
-                   promptDialogFragment.setMessage(C0257R.string.delete_confirm);
-                   promptDialogFragment.setPositiveButton(C0257R.string.delete_post);
-                   promptDialogFragment.setNeutralButton(C0257R.string.cancel);
+                   promptDialogFragment.setMessage(R.string.delete_confirm);
+                   promptDialogFragment.setPositiveButton(R.string.delete_post);
+                   promptDialogFragment.setNeutralButton(R.string.cancel);
                    promptDialogFragment.show(getSupportFragmentManager());
                             break;
                         case 7:
@@ -372,8 +372,8 @@
                    Intent share = new Intent("android.intent.action.SEND");
                    share.setType("text/plain");
                    share.addFlags(524288);
-                   share.putExtra("android.intent.extra.SUBJECT", res.getString(C0257R.string.share_post_subject, name));
-                   share.putExtra("android.intent.extra.TEXT", res.getString(C0257R.string.share_post_text, name, url));
+                   share.putExtra("android.intent.extra.SUBJECT", res.getString(R.string.share_post_subject, name));
+                   share.putExtra("android.intent.extra.TEXT", res.getString(R.string.share_post_text, name, url));
                    intent = share;
                         } else if (ACTION_ORIGINAL_POST.equals(action)) {
                    long postId4 = data.getLongExtra("post_id", 0L);
@@ -425,11 +425,11 @@
            public View getView(int position, View convertView, ViewGroup parent) {
                View v = super.getView(position, convertView, parent);
                Option option = getItem(position);
-               TextView title = (TextView) v.findViewById(C0257R.id.item);
+               TextView title = (TextView) v.findViewById(R.id.item);
                if (option.f82id == 7) {
-                   title.setTextColor(PostOptionsDialogActivity.this.getResources().getColor(C0257R.color.solid_light_gray_vm));
+                   title.setTextColor(PostOptionsDialogActivity.this.getResources().getColor(R.color.solid_light_gray_vm));
                         } else {
-                   title.setTextColor(PostOptionsDialogActivity.this.getResources().getColor(C0257R.color.soft_black));
+                   title.setTextColor(PostOptionsDialogActivity.this.getResources().getColor(R.color.soft_black));
                         }
                title.setText(option.text);
                v.setTag(Integer.valueOf(option.f82id));

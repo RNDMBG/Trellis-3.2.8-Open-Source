@@ -464,11 +464,11 @@
            CrashUtil.log("AbstractRecordingActivity {} pid: {}, action tag {}.", this, Integer.valueOf(Process.myPid()), action);
            this.mIntentionalObjectCounter.add();
            FlurryUtils.trackRecordingStart();
-           super.onCreate(savedInstanceState, C0257R.layout.record_draft, false, true);
+           super.onCreate(savedInstanceState, R.layout.record_draft, false, true);
            this.mHelper.bindCameraService(this);
            this.mScreenSize = SystemUtil.getDisplaySize((Activity) this);
                     if (SystemUtil.getMemoryRatio(this, true) < 1.0d) {
-               Util.showCenteredToast(this, C0257R.string.unsupported_feature_recording);
+               Util.showCenteredToast(this, R.string.unsupported_feature_recording);
                finish();
                return;
                     }
@@ -492,34 +492,34 @@
            startService(VineUploadService.getClearNotificationsIntent(this));
            Resources resources = getResources();
            this.mPreviewRatio = 0.85f;
-           this.mDraftRoot = findViewById(C0257R.id.drafts_root);
+           this.mDraftRoot = findViewById(R.id.drafts_root);
            this.mDraftRoot.setVisibility(8);
-           this.mViewPager = (DraftViewPager) findViewById(C0257R.id.pager);
-           this.mDots = (DotIndicators) findViewById(C0257R.id.dots);
+           this.mViewPager = (DraftViewPager) findViewById(R.id.pager);
+           this.mDots = (DotIndicators) findViewById(R.id.dots);
            this.mPreviewDimen = (int) (this.mScreenSize.x * this.mPreviewRatio);
-           this.mPreviewOverlay = findViewById(C0257R.id.preview_overlay);
-           this.mProgressOverlay = findViewById(C0257R.id.progress_overlay);
-           this.mDraftMaskTop = findViewById(C0257R.id.toDraftTopMask);
+           this.mPreviewOverlay = findViewById(R.id.preview_overlay);
+           this.mProgressOverlay = findViewById(R.id.progress_overlay);
+           this.mDraftMaskTop = findViewById(R.id.toDraftTopMask);
            this.mDraftMaskTop.setOnClickListener(this.mEmptyClicker);
-           this.mDraftMaskLeft = findViewById(C0257R.id.toDraftLeftMask);
+           this.mDraftMaskLeft = findViewById(R.id.toDraftLeftMask);
            this.mDraftMaskLeft.setOnClickListener(this.mEmptyClicker);
-           this.mDraftMaskRight = findViewById(C0257R.id.toDraftRightMask);
+           this.mDraftMaskRight = findViewById(R.id.toDraftRightMask);
            this.mDraftMaskRight.setOnClickListener(this.mEmptyClicker);
-           this.mDraftMaskParent = findViewById(C0257R.id.toDraftParent);
-           this.mDraftTrashContainer = findViewById(C0257R.id.draftsTrashContainer);
-           this.mDraftTrashBackground = findViewById(C0257R.id.draftsTrashBackground);
-           this.mDraftTrashButton = findViewById(C0257R.id.draftsTrashButton);
+           this.mDraftMaskParent = findViewById(R.id.toDraftParent);
+           this.mDraftTrashContainer = findViewById(R.id.draftsTrashContainer);
+           this.mDraftTrashBackground = findViewById(R.id.draftsTrashBackground);
+           this.mDraftTrashButton = findViewById(R.id.draftsTrashButton);
            this.mDraftTrashButton.setOnClickListener(new ViewOnClickListenerC01383());
            this.mDraftTrashButton.setOnTouchListener(new ViewOnTouchListenerC01394());
-           this.mDragUpToDeleteView = (DragUpToDeleteContainer) findViewById(C0257R.id.upDragger);
+           this.mDragUpToDeleteView = (DragUpToDeleteContainer) findViewById(R.id.upDragger);
            this.mDragUpToDeleteView.setVisibility(8);
            this.mDragUpToDeleteView.setInteractionListner(this);
            this.mDraftTrashContainer.setVisibility(8);
-           int draftProgDimen = resources.getDimensionPixelOffset(C0257R.dimen.draft_progress_view_height);
-           int progressDimen = resources.getDimensionPixelOffset(C0257R.dimen.progress_view_height);
+           int draftProgDimen = resources.getDimensionPixelOffset(R.dimen.draft_progress_view_height);
+           int progressDimen = resources.getDimensionPixelOffset(R.dimen.progress_view_height);
            this.mTopMaskHeight = progressDimen + draftProgDimen;
            this.mSideMaskWidth = (this.mScreenSize.x / 2) - (this.mPreviewDimen / 2);
-           View pagerLeftMask = findViewById(C0257R.id.pagerLeftMask);
+           View pagerLeftMask = findViewById(R.id.pagerLeftMask);
            ViewGroup.LayoutParams params = pagerLeftMask.getLayoutParams();
            params.width = (int) (this.mPreviewRatio + (this.mScreenSize.x * ((1.0f - this.mPreviewRatio) / 2.0f)));
            pagerLeftMask.setLayoutParams(params);
@@ -535,20 +535,20 @@
                     } else {
                this.mFirstDraftLaunch = true;
                     }
-           int bottomRowDimen = resources.getDimensionPixelOffset(C0257R.dimen.draft_dots_height);
+           int bottomRowDimen = resources.getDimensionPixelOffset(R.dimen.draft_dots_height);
            ViewGroup.LayoutParams viewPagerLayout = this.mViewPager.getLayoutParams();
            viewPagerLayout.height = this.mScreenSize.x + progressDimen + bottomRowDimen;
            this.mViewPager.setLayoutParams(viewPagerLayout);
-           int dotsHeight = resources.getDimensionPixelOffset(C0257R.dimen.draft_dots_height);
+           int dotsHeight = resources.getDimensionPixelOffset(R.dimen.draft_dots_height);
            this.mDots.setY(this.mScreenSize.x + progressDimen + (dotsHeight / 4));
-           this.mLargeThumbnailOverlay = (ImageView) findViewById(C0257R.id.large_thumbnail_overlay);
-           this.mAnimationPreviewOverlay = findViewById(C0257R.id.animation_preview_overlay);
-           this.mCameraIconOverlay = findViewById(C0257R.id.draft_camera_icon_overlay);
+           this.mLargeThumbnailOverlay = (ImageView) findViewById(R.id.large_thumbnail_overlay);
+           this.mAnimationPreviewOverlay = findViewById(R.id.animation_preview_overlay);
+           this.mCameraIconOverlay = findViewById(R.id.draft_camera_icon_overlay);
            this.mCameraIconOverlay.setVisibility(8);
-           this.mCameraIconOverlayImage = findViewById(C0257R.id.preview_icon);
-           this.mDraftFullMask = findViewById(C0257R.id.draft_full_mask);
-           this.mSlowFadeIn = AnimationUtils.loadAnimation(this, C0257R.anim.slow_fade_in);
-           this.mCameraIconFadeIn = AnimationUtils.loadAnimation(this, C0257R.anim.slow_fade_in);
+           this.mCameraIconOverlayImage = findViewById(R.id.preview_icon);
+           this.mDraftFullMask = findViewById(R.id.draft_full_mask);
+           this.mSlowFadeIn = AnimationUtils.loadAnimation(this, R.anim.slow_fade_in);
+           this.mCameraIconFadeIn = AnimationUtils.loadAnimation(this, R.anim.slow_fade_in);
            if (!this.mIsMessaging) {
                SharedPreferences prefs = getSharedPreferences(BasicVineRecorder.PREFS_CAPTURE, 0);
                int launchCount = prefs.getInt(PREF_CAPTURE_LAUNCH_COUNT, 0) + 1;
@@ -840,7 +840,7 @@
                                     }
                                 }
                        WeakReference<DraftFragment> fragment3 = this.mDraftFragments.get(i);
-                       if (fragment3 != null && (ref = fragment3.get()) != null && (fragView = ref.getView()) != null && (toSet = fragView.findViewById(C0257R.id.draft_container)) != null && this.mDragUpToDeleteView != null) {
+                       if (fragment3 != null && (ref = fragment3.get()) != null && (fragView = ref.getView()) != null && (toSet = fragView.findViewById(R.id.draft_container)) != null && this.mDragUpToDeleteView != null) {
                            this.mDragUpToDeleteView.setView(toSet, this.mViewPager.getLeftOfSelectedFragment());
                            if (!this.mAnimatingIntoDrafts || i < numDrafts) {
                                this.mDraftTrashContainer.setVisibility(0);
@@ -949,9 +949,9 @@
            RecordingFragment fragment = getActiveRecordingFragment();
            if (fragment != null) {
                this.mPromptDialog = PromptDialogFragment.newInstance(0);
-               this.mPromptDialog.setMessage(fragment.isSavedSession() ? C0257R.string.save_draft_old_confirm : C0257R.string.save_draft_new_confirm);
-               this.mPromptDialog.setPositiveButton(C0257R.string.save);
-               this.mPromptDialog.setNegativeButton(C0257R.string.discard_changes);
+               this.mPromptDialog.setMessage(fragment.isSavedSession() ? R.string.save_draft_old_confirm : R.string.save_draft_new_confirm);
+               this.mPromptDialog.setPositiveButton(R.string.save);
+               this.mPromptDialog.setNegativeButton(R.string.discard_changes);
                this.mPromptDialog.setListener(listener);
                         try {
                    this.mPromptDialog.show(getFragmentManager());
@@ -1075,7 +1075,7 @@
                as.addAnimation(ViewUtil.makeResizeAnimation(ViewUtil.ResizeAnimationType.COLLAPSE_WIDTH, this.mDraftMaskLeft, 0));
                as.addAnimation(ViewUtil.makeResizeAnimation(ViewUtil.ResizeAnimationType.COLLAPSE_WIDTH, this.mDraftMaskRight, 0));
                     }
-           as.addAnimation(AnimationUtils.loadAnimation(this, C0257R.anim.fade_out));
+           as.addAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out));
            as.setAnimationListener(new C01449(animate));
           as.setDuration(300L);
           this.mDragUpToDeleteView.setView(null, this.mViewPager.getLeftOfSelectedFragment());
@@ -1135,8 +1135,8 @@
               this.mDraftMaskParent.setVisibility(0);
               this.mCameraIconOverlayImage.setVisibility(8);
               Resources r = getResources();
-              int progressDimen = r.getDimensionPixelSize(C0257R.dimen.progress_view_height);
-              int draftProgressDimen = r.getDimensionPixelOffset(C0257R.dimen.draft_progress_view_height);
+              int progressDimen = r.getDimensionPixelSize(R.dimen.progress_view_height);
+              int draftProgressDimen = r.getDimensionPixelOffset(R.dimen.draft_progress_view_height);
               int topMaskHeight = this.mTopMaskHeight;
               if (goToCamera) {
                   topMaskHeight += draftProgressDimen;
@@ -1335,9 +1335,9 @@
           fragment.setStartWithEdit(startWithEdit);
           FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
           if (isNew) {
-              ft.add(C0257R.id.fragment_container, fragment);
+              ft.add(R.id.fragment_container, fragment);
                     } else {
-              ft.replace(C0257R.id.fragment_container, fragment);
+              ft.replace(R.id.fragment_container, fragment);
                     }
                     try {
               ft.commit();
@@ -1402,7 +1402,7 @@
           this.mStep = 1;
           this.mHasPreviewedAlready = true;
                     try {
-              getSupportFragmentManager().beginTransaction().replace(C0257R.id.fragment_container, fragment).commit();
+              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
               if (this.mCurrentFragment instanceof RecordingFragment) {
                   ((RecordingFragment) this.mCurrentFragment).release();
                         }
@@ -1584,7 +1584,7 @@
           int[] previewLocation = new int[2];
           View thumbnailView = ref.getThumbnailView();
           thumbnailView.getLocationOnScreen(previewLocation);
-          int yOffset = getResources().getDimensionPixelOffset(C0257R.dimen.draft_overlay_offset);
+          int yOffset = getResources().getDimensionPixelOffset(R.dimen.draft_overlay_offset);
           FloatingViewUtils.buildFloatingViewFor(this, thumbnailView, this.mPreviewOverlay, thumbnailView.getWidth(), previewLocation[0], previewLocation[1] - yOffset);
           int[] progressLocation = new int[2];
           View progressView = ref.getProgressView();
@@ -1600,8 +1600,8 @@
           int size = sessions.size();
           if (size > 9) {
               this.mPromptDialog = PromptDialogFragment.newInstance(3);
-              this.mPromptDialog.setMessage(C0257R.string.too_many_drafts);
-              this.mPromptDialog.setPositiveButton(C0257R.string.f88ok);
+              this.mPromptDialog.setMessage(R.string.too_many_drafts);
+              this.mPromptDialog.setPositiveButton(R.string.ok);
               this.mPromptDialog.show(getFragmentManager());
               sessions.remove(size - 1);
                     }
@@ -1619,7 +1619,7 @@
           if (this.mIsResumed) {
                         switch (id) {
                             case 1:
-                      Animation fadeOut = AnimationUtils.loadAnimation(this, C0257R.anim.fade_out);
+                      Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
                       this.mDraftRoot.startAnimation(fadeOut);
                       hideDrafts(false);
                       swapFolder("PreviewAnimationFinish", (File) tag);
@@ -1764,9 +1764,9 @@
       public void showDeleteDialog() {
           PromptDialogFragment p = PromptDialogFragment.newInstance(1);
           p.setListener(this.mDeleteDialogDoneListener);
-          p.setMessage(C0257R.string.delete_draft_confirm);
-          p.setPositiveButton(C0257R.string.delete_yes);
-          p.setNegativeButton(C0257R.string.cancel);
+          p.setMessage(R.string.delete_draft_confirm);
+          p.setPositiveButton(R.string.delete_yes);
+          p.setNegativeButton(R.string.cancel);
           p.show(getFragmentManager());
                 }
 
@@ -1787,7 +1787,7 @@
                       WeakReference<DraftFragment> item = this.mDraftFragments.get(this.mCurrentPage);
                       View toSet = null;
                       if (item != null && (ref = item.get()) != null) {
-                          toSet = ref.getView().findViewById(C0257R.id.draft_container);
+                          toSet = ref.getView().findViewById(R.id.draft_container);
                                 }
                       this.mDragUpToDeleteView.setView(toSet, this.mViewPager.getLeftOfSelectedFragment());
                                 return true;
@@ -1821,7 +1821,7 @@
           this.mCurrentFragment = null;
           CrashUtil.log("[mem] AbstractRecordingActivity {} Destroyed.", this);
           FlurryUtils.trackRecordingDestroy();
-          View root = findViewById(C0257R.id.recording_root);
+          View root = findViewById(R.id.recording_root);
                     try {
               unbindDrawables(root);
                     } catch (Exception e2) {
@@ -1848,8 +1848,8 @@
           WeakReference<DraftFragment> currentFragmentRef = this.mDraftFragments.get(this.mCurrentPage);
           if (currentFragmentRef != null) {
               DraftFragment currentFragment = currentFragmentRef.get();
-              Animation fadeOut = AnimationUtils.loadAnimation(this, C0257R.anim.quick_fade_out);
-              int offset = getResources().getDimensionPixelOffset(C0257R.dimen.draft_overlay_offset);
+              Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.quick_fade_out);
+              int offset = getResources().getDimensionPixelOffset(R.dimen.draft_overlay_offset);
               int margin = TypedValue.complexToDimensionPixelOffset(6, getResources().getDisplayMetrics());
               if (this.mCurrentPage > 0) {
                   DraftFragment prevFragment = this.mDraftFragments.get(this.mCurrentPage - 1).get();
@@ -1957,8 +1957,8 @@
               this.mIsGoingToRecord = true;
               float fullSize = this.mScreenSize.x;
               float ratio = fullSize / iconView.getLayoutParams().width;
-              int top = getResources().getDimensionPixelOffset(C0257R.dimen.progress_view_height);
-              int topOffset = getResources().getDimensionPixelOffset(C0257R.dimen.draft_overlay_offset);
+              int top = getResources().getDimensionPixelOffset(R.dimen.progress_view_height);
+              int topOffset = getResources().getDimensionPixelOffset(R.dimen.draft_overlay_offset);
               int[] location = new int[2];
               iconView.getLocationInWindow(location);
               previewIcon.setVisibility(8);

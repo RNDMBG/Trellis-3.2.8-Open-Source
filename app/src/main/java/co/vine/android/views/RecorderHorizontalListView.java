@@ -4,7 +4,7 @@
             import android.content.res.TypedArray;
             import android.graphics.drawable.Drawable;
             import android.util.AttributeSet;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class RecorderHorizontalListView extends HorizontalListView {
@@ -22,21 +22,21 @@
 
                 @Override 
         protected float getFillWidthHeightRatio(TypedArray a) {
-            return a.getFloat(3, 0.0f);
+            return a.getFloat(R.styleable.HorizontalListView_fillWidthHeightRatio, 0.0f);
                 }
 
                 @Override 
         protected int getEdgePadding(TypedArray a) {
-            return a.getDimensionPixelSize(2, 0);
+            return a.getDimensionPixelSize(R.styleable.HorizontalListView_edgePadding, 0);
                 }
 
                 @Override 
         protected void initializeDividerStyles(TypedArray a) {
-            Drawable divider = a.getDrawable(0);
+            Drawable divider = a.getDrawable(R.styleable.HorizontalListView_listDivider);
             if (divider != null) {
                 setDivider(divider);
                     }
-            int dividerWidth = a.getDimensionPixelSize(1, 0);
+            int dividerWidth = a.getDimensionPixelSize(R.styleable.HorizontalListView_dividerWidth, 0);
             if (dividerWidth > 0) {
                 setDividerWidth(dividerWidth);
                     }
@@ -45,8 +45,8 @@
                 @Override 
         protected TypedArray getStylingArray(Context context, AttributeSet attrs, int defStyle) {
             if (defStyle == 0) {
-                defStyle = C0257R.attr.horizontalListViewStyle;
+                defStyle = R.attr.horizontalListViewStyle;
                     }
-            return context.obtainStyledAttributes(attrs, C0257R.styleable.HorizontalListView, defStyle, 0);
+            return context.obtainStyledAttributes(attrs, R.styleable.HorizontalListView, defStyle, 0);
                 }
             }

@@ -33,15 +33,15 @@
         public void onCreate(Bundle icicle) {
             super.onCreate(icicle);
             requestWindowFeature(3);
-            setContentView(C0257R.layout.login);
+            setContentView(R.layout.login);
             getWindow().setFeatureDrawableResource(3, android.R.drawable.ic_dialog_alert);
             this.mAccountManager = AccountManager.get(this);
             Intent intent = getIntent();
             this.mLoginEmail = intent.getStringExtra("username");
             this.mConfirmCredentials = Boolean.valueOf(intent.getBooleanExtra(PARAM_CONFIRM_CREDENTIALS, false));
-            TextView usernameView = (TextView) findViewById(C0257R.id.login_username);
+            TextView usernameView = (TextView) findViewById(R.id.login_username);
             usernameView.setText(this.mLoginEmail);
-            this.mPasswordEditView = (EditText) findViewById(C0257R.id.login_password);
+            this.mPasswordEditView = (EditText) findViewById(R.id.login_password);
                 }
 
         public void onClickHandler(View view) {
@@ -84,8 +84,8 @@
        protected Dialog onCreateDialog(int id) {
                     switch (id) {
                         case 1:
-                   ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
-                   dialog.setMessage(getText(C0257R.string.login_logging_in));
+                   ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
+                   dialog.setMessage(getText(R.string.login_logging_in));
                    dialog.setIndeterminate(true);
                    dialog.setCancelable(true);
                             return dialog;

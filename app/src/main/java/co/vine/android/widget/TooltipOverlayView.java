@@ -8,7 +8,7 @@
             import android.view.animation.AlphaAnimation;
             import android.view.animation.Animation;
             import android.widget.RelativeLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.animation.SimpleAnimationListener;
             
             
@@ -25,7 +25,7 @@
         public TooltipOverlayView(Context context, String message) {
             super(context);
             setOnClickListener(this);
-            setBackgroundDrawable(new ColorDrawable(getResources().getColor(C0257R.color.bg_tooltip_overlay)));
+            setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.bg_tooltip_overlay)));
             TooltipView tooltip = new TooltipView(context);
             tooltip.setText(message);
             tooltip.setClickable(false);

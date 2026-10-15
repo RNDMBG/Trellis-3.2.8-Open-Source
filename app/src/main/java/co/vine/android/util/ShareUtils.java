@@ -1,19 +1,19 @@
             package co.vine.android.util;
 
             import android.content.Context;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.client.AppController;
             
             
     public class ShareUtils {
         public static String getSmsMessage(Context context) {
             BuildUtil.getMarket();
-            return getShareMyProfileMessage(context, C0257R.string.find_friends_invite_sms);
+            return getShareMyProfileMessage(context, R.string.find_friends_invite_sms);
                 }
 
         public static String getEmailMessage(Context context) {
             BuildUtil.getMarket();
-            return getShareMyProfileMessage(context, C0257R.string.find_friends_invite_email);
+            return getShareMyProfileMessage(context, R.string.find_friends_invite_email);
                 }
 
         private static String getShareMyProfileMessage(Context context, int stringId) {

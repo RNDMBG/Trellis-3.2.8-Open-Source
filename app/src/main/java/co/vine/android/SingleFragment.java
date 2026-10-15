@@ -45,7 +45,7 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                    return this.mWrapper.isLocked() ? this.mWrapper.onCreateLockedView(createView(inflater, C0257R.layout.post_locked_list, container), this) : super.onCreateView(inflater, container, savedInstanceState);
+                    return this.mWrapper.isLocked() ? this.mWrapper.onCreateLockedView(createView(inflater, R.layout.post_locked_list, container), this) : super.onCreateView(inflater, container, savedInstanceState);
                 }
 
                 @Override 
@@ -116,7 +116,7 @@
                 @Override 
        public void onClick(View view) {
            int id = view.getId();
-           if (id == C0257R.id.more_options) {
+           if (id == R.id.more_options) {
                VinePost post = (VinePost) view.getTag();
                FragmentActivity activity = getActivity();
                if (activity != null) {

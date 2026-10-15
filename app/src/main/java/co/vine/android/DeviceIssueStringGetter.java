@@ -12,10 +12,10 @@
                 private final String mStorageNotReady;
 
         public DeviceIssueStringGetter(Context context) {
-            this.mCannotConnectToCamera = context.getString(C0257R.string.camera_failed_to_open);
-            this.mNotEnoughSpace = context.getString(C0257R.string.failed_to_start_recording_space);
-            this.mGenericError = context.getString(C0257R.string.unsupported_feature_recording);
-            this.mStorageNotReady = context.getString(C0257R.string.storage_not_ready);
+            this.mCannotConnectToCamera = context.getString(R.string.camera_failed_to_open);
+            this.mNotEnoughSpace = context.getString(R.string.failed_to_start_recording_space);
+            this.mGenericError = context.getString(R.string.unsupported_feature_recording);
+            this.mStorageNotReady = context.getString(R.string.storage_not_ready);
                 }
 
         private String getGenericError(DeviceIssue issue) {

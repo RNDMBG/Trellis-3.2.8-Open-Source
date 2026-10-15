@@ -62,7 +62,7 @@
             if (((ExploreChannelsActivity) getActivity()).hasTabs()) {
                 setUpUnderNavHeader();
                 ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) this.mEmptyProgress.getLayoutParams();
-                params.topMargin = getActivity().getResources().getDimensionPixelSize(C0257R.dimen.tabbar_height);
+                params.topMargin = getActivity().getResources().getDimensionPixelSize(R.dimen.tabbar_height);
                     }
                 }
 

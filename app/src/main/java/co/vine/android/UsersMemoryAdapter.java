@@ -40,7 +40,7 @@
             this.mFollow = follow;
             this.mListener = listener;
             this.mFriendships = friendships;
-            this.mProfileImageSize = context.getResources().getDimensionPixelOffset(C0257R.dimen.user_image_size);
+            this.mProfileImageSize = context.getResources().getDimensionPixelOffset(R.dimen.user_image_size);
                 }
 
                 @Override 
@@ -58,7 +58,7 @@
 
         public View newView(int position, ViewGroup parent) {
             LayoutInflater layoutInflater = LayoutInflater.from(this.mContext);
-            View v = layoutInflater.inflate(C0257R.layout.user_row_view, parent, false);
+            View v = layoutInflater.inflate(R.layout.user_row_view, parent, false);
             UserViewHolder holder = new UserViewHolder(v);
             if (this.mFollow) {
                 holder.followButton.setOnClickListener(this.mListener);
@@ -94,9 +94,9 @@
                             }
                    followButton.setTag(new FollowButtonViewHolder(userId, following));
                    if (following) {
-                       followButton.setBackgroundResource(C0257R.drawable.btn_following_default);
+                       followButton.setBackgroundResource(R.drawable.btn_following_default);
                             } else {
-                       followButton.setBackgroundResource(C0257R.drawable.btn_follow_default);
+                       followButton.setBackgroundResource(R.drawable.btn_follow_default);
                             }
                         } else {
                    followButton.setVisibility(8);
@@ -106,7 +106,7 @@
            if (!TextUtils.isEmpty(url)) {
                ImageKey key = new ImageKey(url, this.mProfileImageSize, this.mProfileImageSize, true);
                if (Util.isDefaultAvatarUrl(url)) {
-                   Util.safeSetDefaultAvatar(holder.image, Util.ProfileImageSize.MEDIUM, (-16777216) | this.mContext.getResources().getColor(C0257R.color.vine_green));
+                   Util.safeSetDefaultAvatar(holder.image, Util.ProfileImageSize.MEDIUM, (-16777216) | this.mContext.getResources().getColor(R.color.vine_green));
                    return;
                         } else {
                    holder.avatarUrl = key;
@@ -169,7 +169,7 @@
            if (bmp != null) {
                holder.image.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), bmp));
                     } else {
-               holder.image.setImageResource(C0257R.drawable.circle_shape_light);
+               holder.image.setImageResource(R.drawable.circle_shape_light);
                     }
                 }
 

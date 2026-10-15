@@ -6,7 +6,7 @@
             import android.graphics.Paint;
             import android.os.Handler;
             import android.view.View;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import java.util.ArrayList;
             
             
@@ -35,7 +35,7 @@
 
         private void init(Context context, int paddingLeft) {
             this.mThumbnails = new ArrayList<>();
-            this.preferredHeight = getResources().getDimensionPixelSize(C0257R.dimen.carousel_height);
+            this.preferredHeight = getResources().getDimensionPixelSize(R.dimen.carousel_height);
             this.mUiHandler = new Handler(context.getMainLooper());
             this.mLeftPadding = paddingLeft;
             setPadding(paddingLeft, 0, 0, 0);

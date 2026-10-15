@@ -209,11 +209,11 @@
            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
            this.mMyColor = prefs.getInt("profile_background", Settings.DEFAULT_PROFILE_COLOR);
            Resources res = activity.getResources();
-           this.mSharedDescSize = res.getDimension(C0257R.dimen.font_size_default);
-           this.mSidePadding = res.getDimension(C0257R.dimen.conversation_side_padding);
-           this.mAvatarMargin = res.getDimension(C0257R.dimen.conversation_avatar_size) + res.getDimension(C0257R.dimen.spacing_small);
+           this.mSharedDescSize = res.getDimension(R.dimen.font_size_default);
+           this.mSidePadding = res.getDimension(R.dimen.conversation_side_padding);
+           this.mAvatarMargin = res.getDimension(R.dimen.conversation_avatar_size) + res.getDimension(R.dimen.spacing_small);
            this.mBoldSpan = new TypefacesSpan(null, Typefaces.get(this.mContext).getContentTypeface(1, 3));
-           this.mDarkGreySpan = new ColoredSpan(res.getColor(C0257R.color.solid_dark_gray));
+           this.mDarkGreySpan = new ColoredSpan(res.getColor(R.color.solid_dark_gray));
            this.mVineDateFormatter = new VineDateFormatter(res);
            this.mVineDateFormatter.refreshDates();
            this.mVineDateFormatter.addSpanForDateSection(this.mBoldSpan);
@@ -225,9 +225,9 @@
            LayoutInflater layoutInflater = LayoutInflater.from(context);
                     boolean isCurrentUser = ((long) cursor.getInt(3)) == this.mMyUserId;
            if (isCurrentUser) {
-               v = layoutInflater.inflate(C0257R.layout.message_row_view_me, parent, false);
+               v = layoutInflater.inflate(R.layout.message_row_view_me, parent, false);
                     } else {
-               v = layoutInflater.inflate(C0257R.layout.message_row_view, parent, false);
+               v = layoutInflater.inflate(R.layout.message_row_view, parent, false);
                     }
            ConversationViewHolder holder = new ConversationViewHolder(v);
            holder.videoContainer.setVisibility(0);
@@ -300,7 +300,7 @@
        private void setupUserImageImage(VinePrivateMessage vpm, ConversationViewHolder holder, ImageView userImage, boolean isError) {
            if (isError) {
                userImage.setColorFilter((ColorFilter) null);
-               userImage.setImageResource(C0257R.drawable.ic_failed_delivery_light);
+               userImage.setImageResource(R.drawable.ic_failed_delivery_light);
                return;
                     }
            if (Util.isDefaultAvatarUrl(vpm.avatarUrl)) {
@@ -366,7 +366,7 @@
                color = Settings.DEFAULT_PROFILE_COLOR;
                     }
            if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-               color = 16777215 & this.mContext.getResources().getColor(C0257R.color.vine_green);
+               color = 16777215 & this.mContext.getResources().getColor(R.color.vine_green);
                     }
            holder.color = color;
            boolean isSharedPost = vpm.postId > 0;
@@ -386,7 +386,7 @@
            holder.vanishTimerText.setVisibility(8);
            if (deletedSharedPost) {
                holder.videoImage.setScaleType(ImageView.ScaleType.CENTER);
-               holder.videoImage.setBackgroundColor(res.getColor(C0257R.color.solid_light_gray));
+               holder.videoImage.setBackgroundColor(res.getColor(R.color.solid_light_gray));
                     } else {
                holder.videoImage.setScaleType(ImageView.ScaleType.FIT_XY);
                holder.videoImage.setBackgroundColor(res.getColor(android.R.color.transparent));
@@ -408,7 +408,7 @@
                     } else {
                if (deletedSharedPost) {
                    holder.videoContainer.setOnClickListener(null);
-                   holder.videoImage.setImageResource(C0257R.drawable.background_sadface);
+                   holder.videoImage.setImageResource(R.drawable.background_sadface);
                         } else {
                    holder.videoContainer.setOnClickListener(holder.videoListener);
                    holder.videoImage.setImageBitmap(null);
@@ -445,14 +445,14 @@
                        messageContainerMessage.setTextColor((-16777216) | color);
                        if (!TextUtils.isEmpty(message)) {
                            if (isCurrentUser) {
-                               ViewUtil.fillColor(res, 855638016 | color, C0257R.drawable.bubble, messageContainerMessage);
-                               ViewUtil.fillColor(res, 855638016 | color, C0257R.drawable.vm_nib_me, holder.nibsChatNib);
+                               ViewUtil.fillColor(res, 855638016 | color, R.drawable.bubble, messageContainerMessage);
+                               ViewUtil.fillColor(res, 855638016 | color, R.drawable.vm_nib_me, holder.nibsChatNib);
                                     } else if (this.mMyColor != color) {
-                               ViewUtil.fillColor(res, 855638016 | color, C0257R.drawable.bubble, messageContainerMessage);
-                               ViewUtil.fillColor(res, 855638016 | color, C0257R.drawable.vm_nib_you, holder.nibsChatNib);
+                               ViewUtil.fillColor(res, 855638016 | color, R.drawable.bubble, messageContainerMessage);
+                               ViewUtil.fillColor(res, 855638016 | color, R.drawable.vm_nib_you, holder.nibsChatNib);
                                     } else {
-                               ViewUtil.fillColor(res, (-16777216) | color, C0257R.drawable.bubble, messageContainerMessage);
-                               ViewUtil.fillColor(res, (-16777216) | color, C0257R.drawable.vm_nib_you, holder.nibsChatNib);
+                               ViewUtil.fillColor(res, (-16777216) | color, R.drawable.bubble, messageContainerMessage);
+                               ViewUtil.fillColor(res, (-16777216) | color, R.drawable.vm_nib_you, holder.nibsChatNib);
                                messageContainerMessage.setTextColor(-1);
                                     }
                                 } else {
@@ -462,12 +462,12 @@
                        if (TextUtils.isEmpty(message)) {
                            messageContainerMessage.setVisibility(8);
                                 } else {
-                           int grayTextColor = res.getColor(C0257R.color.solid_light_gray_vm);
-                           int grayBubbleColor = res.getColor(C0257R.color.solid_light_gray_bubble_vm);
+                           int grayTextColor = res.getColor(R.color.solid_light_gray_vm);
+                           int grayBubbleColor = res.getColor(R.color.solid_light_gray_bubble_vm);
                            messageContainerMessage.setVisibility(0);
                            messageContainerMessage.setTextColor(grayTextColor);
-                           ViewUtil.fillColor(res, grayBubbleColor, C0257R.drawable.bubble, messageContainerMessage);
-                           ViewUtil.fillColor(res, grayBubbleColor, C0257R.drawable.vm_nib_me, holder.nibsChatNib);
+                           ViewUtil.fillColor(res, grayBubbleColor, R.drawable.bubble, messageContainerMessage);
+                           ViewUtil.fillColor(res, grayBubbleColor, R.drawable.vm_nib_me, holder.nibsChatNib);
                                 }
                        if (holder.errorMessage != null) {
                            holder.errorMessage.setVisibility(0);
@@ -581,7 +581,7 @@
            int color2 = color | (-16777216);
            if (deleted || post == null || post.username == null) {
                SpannableStringBuilder sb = new SpannableStringBuilder();
-                        sb.append((CharSequence) this.mContext.getString(isCurrentUser ? C0257R.string.share_vm_sender_deleted : C0257R.string.share_vm_receiver_deleted));
+                        sb.append((CharSequence) this.mContext.getString(isCurrentUser ? R.string.share_vm_sender_deleted : R.string.share_vm_receiver_deleted));
                Util.safeSetSpan(sb, this.mDarkGreySpan, 0, sb.length(), 33);
                view.setText(sb);
                if (post != null && post.username == null) {
@@ -591,7 +591,7 @@
                return;
                     }
            if (post.sharedVmSb == null) {
-               String string = this.mContext.getString(isCurrentUser ? C0257R.string.share_vm_sender_text : C0257R.string.share_vm_receiver_text);
+               String string = this.mContext.getString(isCurrentUser ? R.string.share_vm_sender_text : R.string.share_vm_receiver_text);
                post.sharedVmSb = new SpannableStringBuilder();
                SpannableStringBuilder sharedVmSb = post.sharedVmSb;
                int start = string.indexOf("{");
@@ -660,7 +660,7 @@
                return;
                     }
            if (deletedSharedPost || post == null) {
-               SpannableStringBuilder sb = new SpannableStringBuilder(this.mActivity.getString(C0257R.string.share_vm_deleted));
+               SpannableStringBuilder sb = new SpannableStringBuilder(this.mActivity.getString(R.string.share_vm_deleted));
                Util.safeSetSpan(sb, this.mDarkGreySpan, 0, sb.length(), 33);
                textView.setText(sb);
                return;
@@ -1078,7 +1078,7 @@
               vpm.vanishedViewedSb = new SpannableStringBuilder();
               Long memVanishedDate = this.mVanishedIdDateMap.get(Long.valueOf(vpm.messageId));
               Date vanishedDate = new Date(memVanishedDate != null ? memVanishedDate.longValue() : vpm.vanishedDate);
-              String viewedString = this.mActivity.getString(C0257R.string.viewed);
+              String viewedString = this.mActivity.getString(R.string.viewed);
               String dateString = DateFormat.format("hh:mm aa", vanishedDate).toString();
               int start = viewedString.indexOf("%s");
               int end = start + dateString.length();
@@ -1126,7 +1126,7 @@
                     VinePrivateMessage message;
           int position = holder.position;
           if (bitmap == null) {
-              imageView.setBackgroundColor(this.mContext.getResources().getColor(C0257R.color.solid_light_gray));
+              imageView.setBackgroundColor(this.mContext.getResources().getColor(R.color.solid_light_gray));
               imageView.setImageBitmap(null);
               return false;
                     }
@@ -1138,7 +1138,7 @@
                         }
                     }
           if (setBlurredImage) {
-              imageView.setBackgroundColor(this.mContext.getResources().getColor(C0257R.color.solid_white));
+              imageView.setBackgroundColor(this.mContext.getResources().getColor(R.color.solid_white));
               imageView.setImageDrawable(this.mWaitingBg);
               this.mCurrentBlurBitmap = bitmap;
               this.mCurrentBlurImageView = imageView;
@@ -1255,9 +1255,9 @@
           public void run() {
               ConversationAdapter.access$1100(ConversationAdapter.this).startService(VineUploadService.getVMPostIntent(ConversationAdapter.access$1000(ConversationAdapter.this), this.val$vpm.uploadPath, true, this.val$vpm.messageRowId, this.val$vpm.conversationRowId, null, this.val$vpm.message, this.val$vpm.postId, this.val$vpm.videoUrl, this.val$vpm.thumbnailUrl, this.val$vpm.maxLoops));
               ViewGroup parent = (ViewGroup) this.val$v.getParent();
-              View progress = parent.findViewById(C0257R.id.retry_progress_normal);
+              View progress = parent.findViewById(R.id.retry_progress_normal);
               if (progress == null) {
-                  progress = parent.findViewById(C0257R.id.retry_progress_top);
+                  progress = parent.findViewById(R.id.retry_progress_top);
                         }
               if (progress != null) {
                   progress.setVisibility(0);
@@ -1367,34 +1367,34 @@
                     public SdkVideoView videoView;
 
           public ConversationViewHolder(View v) {
-              this.messageContainer = (ViewGroup) v.findViewById(C0257R.id.message_container);
-              this.messageContainerUserImage = (ImageView) v.findViewById(C0257R.id.message_container_user_image);
-              this.messageContainerMessage = (TextView) v.findViewById(C0257R.id.message_container_message);
-              this.topMessageContainer = (ViewGroup) v.findViewById(C0257R.id.top_message_container);
-              this.topMessageContainerUserImage = (ImageView) v.findViewById(C0257R.id.top_message_container_user_image);
-              this.topMessageContainerMessage = (TextView) v.findViewById(C0257R.id.top_message_container_message);
-              this.vanishThumbnailOverlay = v.findViewById(C0257R.id.vanish_thumbnail_overlay);
-              this.vanishMessageOverlay = (TextView) v.findViewById(C0257R.id.vanish_message_overlay);
-              this.vanishMessageContainer = v.findViewById(C0257R.id.vanish_message_container);
-              this.vanishUserImage = (ImageView) v.findViewById(C0257R.id.vanish_container_user_image);
-              this.vanishPlayButton = v.findViewById(C0257R.id.vanish_play_button);
-              this.vanishTimerText = (TextView) v.findViewById(C0257R.id.vanish_timer);
-              this.postMessageContainer = (ViewGroup) v.findViewById(C0257R.id.post_message_container);
-              this.postMessageContainerMessage = (TextView) v.findViewById(C0257R.id.post_message_container_message);
-              this.userImageProgressNormal = v.findViewById(C0257R.id.retry_progress_normal);
-              this.userImageProgressTop = v.findViewById(C0257R.id.retry_progress_top);
-              this.secondaryMessageContainer = v.findViewById(C0257R.id.secondary_message_container);
-              this.secondaryMessageContainerMessage = (TextView) v.findViewById(C0257R.id.secondary_message_container_message);
-              this.videoContainer = v.findViewById(C0257R.id.video_container);
-              this.videoImage = (ImageView) v.findViewById(C0257R.id.video_image);
-              this.videoView = (SdkVideoView) v.findViewById(C0257R.id.video_view);
-              this.loadImage = v.findViewById(C0257R.id.video_load_image);
-              this.errorMessage = (TextView) v.findViewById(C0257R.id.error_message);
-              this.bottomPaddingView = v.findViewById(C0257R.id.message_bottom_padding_for_last_item);
-              this.nibs = v.findViewById(C0257R.id.nibs);
-              this.postNibs = v.findViewById(C0257R.id.shared_post_nibs);
-              this.nibsChatNib = v.findViewById(C0257R.id.nibs_chat_nib);
-              this.timestamp = (TextView) v.findViewById(C0257R.id.timestampText);
+              this.messageContainer = (ViewGroup) v.findViewById(R.id.message_container);
+              this.messageContainerUserImage = (ImageView) v.findViewById(R.id.message_container_user_image);
+              this.messageContainerMessage = (TextView) v.findViewById(R.id.message_container_message);
+              this.topMessageContainer = (ViewGroup) v.findViewById(R.id.top_message_container);
+              this.topMessageContainerUserImage = (ImageView) v.findViewById(R.id.top_message_container_user_image);
+              this.topMessageContainerMessage = (TextView) v.findViewById(R.id.top_message_container_message);
+              this.vanishThumbnailOverlay = v.findViewById(R.id.vanish_thumbnail_overlay);
+              this.vanishMessageOverlay = (TextView) v.findViewById(R.id.vanish_message_overlay);
+              this.vanishMessageContainer = v.findViewById(R.id.vanish_message_container);
+              this.vanishUserImage = (ImageView) v.findViewById(R.id.vanish_container_user_image);
+              this.vanishPlayButton = v.findViewById(R.id.vanish_play_button);
+              this.vanishTimerText = (TextView) v.findViewById(R.id.vanish_timer);
+              this.postMessageContainer = (ViewGroup) v.findViewById(R.id.post_message_container);
+              this.postMessageContainerMessage = (TextView) v.findViewById(R.id.post_message_container_message);
+              this.userImageProgressNormal = v.findViewById(R.id.retry_progress_normal);
+              this.userImageProgressTop = v.findViewById(R.id.retry_progress_top);
+              this.secondaryMessageContainer = v.findViewById(R.id.secondary_message_container);
+              this.secondaryMessageContainerMessage = (TextView) v.findViewById(R.id.secondary_message_container_message);
+              this.videoContainer = v.findViewById(R.id.video_container);
+              this.videoImage = (ImageView) v.findViewById(R.id.video_image);
+              this.videoView = (SdkVideoView) v.findViewById(R.id.video_view);
+              this.loadImage = v.findViewById(R.id.video_load_image);
+              this.errorMessage = (TextView) v.findViewById(R.id.error_message);
+              this.bottomPaddingView = v.findViewById(R.id.message_bottom_padding_for_last_item);
+              this.nibs = v.findViewById(R.id.nibs);
+              this.postNibs = v.findViewById(R.id.shared_post_nibs);
+              this.nibsChatNib = v.findViewById(R.id.nibs_chat_nib);
+              this.timestamp = (TextView) v.findViewById(R.id.timestampText);
                     }
                 }
 

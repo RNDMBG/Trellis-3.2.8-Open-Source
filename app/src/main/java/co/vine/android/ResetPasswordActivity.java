@@ -21,12 +21,12 @@
 
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.reset_password, false);
+            super.onCreate(savedInstanceState, R.layout.reset_password, false);
             InputMethodManager imm = (InputMethodManager) getSystemService("input_method");
             imm.showSoftInputFromInputMethod(getWindow().getDecorView().getWindowToken(), 0);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.password_reset_title, (Boolean) true, (Boolean) true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.password_reset_title, (Boolean) true, (Boolean) true);
             this.mAppSessionListener = new ResetPasswordListener(this, null);
-            this.mEmailAddress = (EditText) findViewById(C0257R.id.email);
+            this.mEmailAddress = (EditText) findViewById(R.id.email);
             this.mEmailAddress.setTypeface(Typefaces.get(this).getContentTypeface(0, 4));
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
@@ -44,7 +44,7 @@
 
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(C0257R.menu.reset_password, menu);
+            getMenuInflater().inflate(R.menu.reset_password, menu);
             return true;
                 }
 
@@ -53,16 +53,16 @@
             if (item.getItemId() == 2131427946) {
                 String emailAddress = this.mEmailAddress.getText().toString();
                 if (emailAddress.isEmpty()) {
-                    Util.showCenteredToast(this, C0257R.string.login_empty_email);
+                    Util.showCenteredToast(this, R.string.login_empty_email);
                             return false;
                         }
                 if (!AuthenticationUtils.isEmailAddressValid(emailAddress)) {
-                    Util.showCenteredToast(this, C0257R.string.login_invalid_email);
+                    Util.showCenteredToast(this, R.string.login_invalid_email);
                             return false;
                         }
-                ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
+                ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
                 dialog.setProgress(0);
-                dialog.setMessage(getString(C0257R.string.dialog_sending));
+                dialog.setMessage(getString(R.string.dialog_sending));
                 dialog.show();
                 this.mProgressDialog = dialog;
                 this.mAppController.resetPassword(this.mEmailAddress.getText().toString());
@@ -97,18 +97,18 @@
                ResetPasswordActivity.this.dismissDialog();
                         switch (statusCode) {
                             case 200:
-                       error = C0257R.string.password_reset_confirm;
+                       error = R.string.password_reset_confirm;
                                 break;
                             case 404:
-                       error = C0257R.string.password_reset_not_found;
+                       error = R.string.password_reset_not_found;
                                 break;
                             default:
-                       error = C0257R.string.password_reset_error;
+                       error = R.string.password_reset_error;
                                 break;
                         }
                PromptDialogSupportFragment fragment = PromptDialogSupportFragment.newInstance(1);
                fragment.setMessage(error);
-               fragment.setPositiveButton(C0257R.string.f88ok);
+               fragment.setPositiveButton(R.string.ok);
                fragment.show(ResetPasswordActivity.this.getSupportFragmentManager());
                     }
                 }

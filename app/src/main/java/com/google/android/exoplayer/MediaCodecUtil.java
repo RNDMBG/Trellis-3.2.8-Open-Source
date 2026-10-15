@@ -32,7 +32,7 @@
                 }
 
         private static synchronized Pair<MediaCodecInfo, MediaCodecInfo.CodecCapabilities> getMediaCodecInfo(String mimeType) {
-                    Pair<MediaCodecInfo, MediaCodecInfo.CodecCapabilities> pair;
+                    Pair<MediaCodecInfo, MediaCodecInfo.CodecCapabilities> pair = null;
                     try {
                         Pair<MediaCodecInfo, MediaCodecInfo.CodecCapabilities> result = codecs.get(mimeType);
                 if (result != null) {
@@ -55,18 +55,17 @@
                                         }
                                     }
                                 }
-                            }
-                    pair = null;
-                        }
+                             }
+                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                     return pair;
                 }
 
-       private static boolean isOmxCodec(String name) {
-           return name.startsWith("OMX.");
-                }
+        private static boolean isOmxCodec(String name) {
+            return name.startsWith("OMX.") || name.startsWith("c2.");
+                 }
 
        private static boolean isAdaptive(MediaCodecInfo.CodecCapabilities capabilities) {
            if (Util.SDK_INT >= 19) {

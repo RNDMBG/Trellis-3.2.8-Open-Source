@@ -19,14 +19,14 @@ public class UpdatesActivity extends BaseControllerActionBarActivity implements 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState, C0257R.layout.updates, true);
-        setupActionBar((Boolean) true, (Boolean) true, C0257R.string.updates_title, (Boolean) true, (Boolean) true);
+        super.onCreate(savedInstanceState, R.layout.updates, true);
+        setupActionBar((Boolean) true, (Boolean) true, R.string.updates_title, (Boolean) true, (Boolean) true);
         UpdateManager.ensureDownloadReceiver(getApplicationContext());
 
-        mStatus = (TextView) findViewById(C0257R.id.updates_status);
-        mCheckButton = (Button) findViewById(C0257R.id.updates_check);
+        mStatus = (TextView) findViewById(R.id.updates_status);
+        mCheckButton = (Button) findViewById(R.id.updates_check);
         mCheckButton.setOnClickListener(this);
-        mAutoSwitch = (co.vine.android.views.SwitchInterface) findViewById(C0257R.id.updates_auto);
+        mAutoSwitch = (co.vine.android.views.SwitchInterface) findViewById(R.id.updates_auto);
         mAutoSwitch.setChecked(UpdateManager.isAutoEnabled(this));
         mAutoSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -34,42 +34,42 @@ public class UpdatesActivity extends BaseControllerActionBarActivity implements 
                 UpdateManager.setAutoEnabled(UpdatesActivity.this, isChecked);
             }
         });
-        TextView githubRow = (TextView) findViewById(C0257R.id.updates_github);
+        TextView githubRow = (TextView) findViewById(R.id.updates_github);
         githubRow.setOnClickListener(this);
         refreshStatus();
     }
 
     private void refreshStatus() {
-        mStatus.setText(getString(C0257R.string.updates_title) + " - " + UpdateManager.currentVersion(this) + " (build " + UpdateManager.currentBuild(this) + ")");
+        mStatus.setText(getString(R.string.updates_title) + " - " + UpdateManager.currentVersion(this) + " (build " + UpdateManager.currentBuild(this) + ")");
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == C0257R.id.updates_github) {
+        if (v.getId() == R.id.updates_github) {
             UpdateManager.openReleasesPage(this);
             return;
         }
-        if (v.getId() == C0257R.id.updates_check) {
+        if (v.getId() == R.id.updates_check) {
             mCheckButton.setEnabled(false);
-            mStatus.setText(C0257R.string.updates_checking);
+            mStatus.setText(R.string.updates_checking);
             UpdateManager.checkForUpdate(this, new UpdateManager.UpdateCallback() {
                 @Override
                 public void onResult(UpdateManager.UpdateInfo info) {
                     mCheckButton.setEnabled(true);
                     if (info != null && info.newer && info.apkUrl != null) {
-                        mStatus.setText(getString(C0257R.string.updates_new_build, info.version));
+                        mStatus.setText(getString(R.string.updates_new_build, info.version));
                         UpdateManager.showUpdateDialog(UpdatesActivity.this, info);
                     } else if (info != null) {
-                        mStatus.setText(C0257R.string.updates_uptodate);
+                        mStatus.setText(R.string.updates_uptodate);
                     } else {
-                        mStatus.setText(C0257R.string.updates_error);
+                        mStatus.setText(R.string.updates_error);
                     }
                 }
 
                 @Override
                 public void onError() {
                     mCheckButton.setEnabled(true);
-                    mStatus.setText(C0257R.string.updates_error);
+                    mStatus.setText(R.string.updates_error);
                 }
             });
         }

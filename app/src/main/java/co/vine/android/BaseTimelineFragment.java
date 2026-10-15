@@ -257,8 +257,8 @@ import java.util.Map;
                 }
 
        public void setUpUnderNavHeader() {
-           View header = LayoutInflater.from(getActivity()).inflate(C0257R.layout.under_nav_header, (ViewGroup) null);
-           ((PinnedHeaderListView) this.mListView).setRefreshHeader(header, getResources().getDimensionPixelSize(C0257R.dimen.tabbar_height));
+           View header = LayoutInflater.from(getActivity()).inflate(R.layout.under_nav_header, (ViewGroup) null);
+           ((PinnedHeaderListView) this.mListView).setRefreshHeader(header, getResources().getDimensionPixelSize(R.dimen.tabbar_height));
            addHeaderView(header, null, false);
                 }
 
@@ -326,11 +326,11 @@ import java.util.Map;
                 @Override 
        public void onClick(View view) {
            int id = view.getId();
-           if (id == C0257R.id.like) {
+           if (id == R.id.like) {
                like((VinePost) view.getTag(), true);
                return;
                     }
-           if (id == C0257R.id.more_options) {
+           if (id == R.id.more_options) {
                VinePost post = (VinePost) view.getTag();
                FragmentActivity activity = getActivity();
                if (activity != null) {
@@ -340,7 +340,7 @@ import java.util.Map;
                         }
                return;
                     }
-           if (id == C0257R.id.share || id == C0257R.id.share_post) {
+           if (id == R.id.share || id == R.id.share_post) {
                VinePost post2 = (VinePost) view.getTag();
                FragmentActivity activity2 = getActivity();
                if (activity2 != null) {
@@ -354,7 +354,7 @@ import java.util.Map;
                         }
                return;
                     }
-           if (id == C0257R.id.clear_client_flags_banner) {
+           if (id == R.id.clear_client_flags_banner) {
                hideClientFlagsBanner();
                this.mClientFlagsBannerWasDismissed = true;
                     }
@@ -426,14 +426,14 @@ import java.util.Map;
        protected void showClientFlagsBanner() {
            if (this.mClientFlagsBannerParent == null) {
                ListView listView = this.mListView;
-               RelativeLayout bannerParent = (RelativeLayout) LayoutInflater.from(getActivity()).inflate(C0257R.layout.zero_rating_banner, (ViewGroup) listView, false);
-               ImageButton clearButton = (ImageButton) bannerParent.findViewById(C0257R.id.clear_client_flags_banner);
-               clearButton.setColorFilter(getResources().getColor(C0257R.color.clear_client_flags_banner));
+               RelativeLayout bannerParent = (RelativeLayout) LayoutInflater.from(getActivity()).inflate(R.layout.zero_rating_banner, (ViewGroup) listView, false);
+               ImageButton clearButton = (ImageButton) bannerParent.findViewById(R.id.clear_client_flags_banner);
+               clearButton.setColorFilter(getResources().getColor(R.color.clear_client_flags_banner));
                clearButton.setOnClickListener(this);
                listView.addHeaderView(bannerParent);
                this.mClientFlagsBannerParent = bannerParent;
                     }
-           ViewGroup container = (ViewGroup) this.mClientFlagsBannerParent.findViewById(C0257R.id.collapsible);
+           ViewGroup container = (ViewGroup) this.mClientFlagsBannerParent.findViewById(R.id.collapsible);
            int visibility = container.getVisibility();
            container.setVisibility(0);
            if (visibility != 0) {
@@ -458,7 +458,7 @@ import java.util.Map;
 
        private void hideClientFlagsBanner() {
            if (this.mClientFlagsBannerParent != null) {
-               this.mClientFlagsBannerParent.findViewById(C0257R.id.collapsible).setVisibility(8);
+               this.mClientFlagsBannerParent.findViewById(R.id.collapsible).setVisibility(8);
                     }
                 }
 
@@ -573,9 +573,9 @@ import java.util.Map;
                PendingRequest req = BaseTimelineFragment.this.removeRequest(reqId);
                if (req != null) {
                    if (statusCode == 200) {
-                       Util.showCenteredToast(BaseTimelineFragment.this.getActivity(), C0257R.string.post_reported);
+                       Util.showCenteredToast(BaseTimelineFragment.this.getActivity(), R.string.post_reported);
                             } else {
-                       Util.showCenteredToast(BaseTimelineFragment.this.getActivity(), C0257R.string.post_reported_error);
+                       Util.showCenteredToast(BaseTimelineFragment.this.getActivity(), R.string.post_reported_error);
                             }
                         }
                     }
@@ -595,9 +595,9 @@ import java.util.Map;
                     }
                     if (req != null) {
                         if (statusCode >= 200 && statusCode < 300) {
-                       Util.showCenteredToast(BaseTimelineFragment.this.getActivity(), C0257R.string.post_deleted);
+                       Util.showCenteredToast(BaseTimelineFragment.this.getActivity(), R.string.post_deleted);
                         } else {
-                       Util.showCenteredToast(BaseTimelineFragment.this.getActivity(), C0257R.string.post_deleted_error);
+                       Util.showCenteredToast(BaseTimelineFragment.this.getActivity(), R.string.post_deleted_error);
                         }
                     }
                 }

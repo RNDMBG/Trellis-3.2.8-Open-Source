@@ -9,7 +9,7 @@
             import android.view.ViewGroup;
             import android.widget.Button;
             import android.widget.LinearLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.recorder.BasicVineRecorder;
             import co.vine.android.recorder.RecordConfigUtils;
             import co.vine.android.util.ViewUtil;
@@ -34,11 +34,11 @@
             public boolean onTouch(View v, MotionEvent event) {
                         switch (event.getAction()) {
                             case 0:
-                        ViewUtil.fillColor(this.res, this.color, C0257R.drawable.ic_front_facing, v);
+                        ViewUtil.fillColor(this.res, this.color, R.drawable.ic_front_facing, v);
                         v.setAlpha(1.0f);
                                 break;
                             case 1:
-                        ViewUtil.fillColor(this.res, this.color, C0257R.drawable.ic_front_facing, v);
+                        ViewUtil.fillColor(this.res, this.color, R.drawable.ic_front_facing, v);
                         v.setAlpha(0.35f);
                                 break;
                         }
@@ -49,12 +49,12 @@
                 
                 @Override 
         protected Button onLayoutInflated(LinearLayout view, LayoutInflater inflater, Fragment fragment) {
-            Button button = (Button) inflater.inflate(C0257R.layout.plugin_tool_regular_button, (ViewGroup) view, false);
-            button.setBackgroundResource(C0257R.drawable.ic_front_facing);
+            Button button = (Button) inflater.inflate(R.layout.plugin_tool_regular_button, (ViewGroup) view, false);
+            button.setBackgroundResource(R.drawable.ic_front_facing);
             if (fragment instanceof RecorderPluginSupportedFragment) {
                 int color = ((RecorderPluginSupportedFragment) fragment).getColor(true);
                 Resources res = fragment.getResources();
-                ViewUtil.fillColor(res, color, C0257R.drawable.ic_front_facing, button);
+                ViewUtil.fillColor(res, color, R.drawable.ic_front_facing, button);
                 button.setOnTouchListener(new CameraSwitcherPluginTouchListener(res, color));
                     } else {
                 button.setOnTouchListener(BaseToolPlugin.createOnToolTouchedListener());

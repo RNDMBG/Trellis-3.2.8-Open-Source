@@ -3,7 +3,7 @@
             import android.content.Context;
             import android.content.Intent;
             import android.net.Uri;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.CommentsActivity;
             import co.vine.android.ExploreChannelsActivity;
             import co.vine.android.ExploreVideoListActivity;
@@ -78,7 +78,7 @@
                        SingleActivity.start(context, Long.parseLong(linkUri.getLastPathSegment()));
                                 break;
                             } catch (NumberFormatException e) {
-                       Util.showCenteredToast(context, C0257R.string.invalid_link);
+                       Util.showCenteredToast(context, R.string.invalid_link);
                        return;
                             }
                         case "posts":
@@ -137,7 +137,7 @@
                long postId = Long.parseLong(linkUri.getLastPathSegment());
                SingleActivity.start(context, postId);
                     } catch (NumberFormatException e) {
-               Util.showCenteredToast(context, C0257R.string.invalid_link);
+               Util.showCenteredToast(context, R.string.invalid_link);
                     }
                 }
 
@@ -150,7 +150,7 @@
                     try {
                ProfileActivity.start(context, Long.parseLong(lastPathSegment), "LinkDispatcher");
                     } catch (NumberFormatException e) {
-               Util.showCenteredToast(context, C0257R.string.invalid_link);
+               Util.showCenteredToast(context, R.string.invalid_link);
                     }
                 }
             }

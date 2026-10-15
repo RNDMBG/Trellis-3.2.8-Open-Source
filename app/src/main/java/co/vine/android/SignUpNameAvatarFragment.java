@@ -137,7 +137,7 @@
                         }
                     }
            setHasOptionsMenu(true);
-           ((SignUpPagerActivity) getActivity()).setBarTitle(C0257R.string.login_sign_up);
+           ((SignUpPagerActivity) getActivity()).setBarTitle(R.string.login_sign_up);
            Bundle bundle = getArguments();
            if (bundle != null && bundle.containsKey("user")) {
                this.mLogin = (VineLogin) bundle.getParcelable("user");
@@ -149,10 +149,10 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup root, Bundle savedInstanceState) {
-           View view = inflater.inflate(C0257R.layout.sign_up_flow_name, root, false);
-           TextView mTos = (TextView) view.findViewById(C0257R.id.tos_line_2);
+           View view = inflater.inflate(R.layout.sign_up_flow_name, root, false);
+           TextView mTos = (TextView) view.findViewById(R.id.tos_line_2);
            StyleSpan[] boldStyle = {new StyleSpan(1), new StyleSpan(1)};
-           Spanned spanned = Util.getSpannedText(boldStyle, getString(C0257R.string.sign_up_tos_line_2), CommonUtil.MARKER_QUOTES);
+           Spanned spanned = Util.getSpannedText(boldStyle, getString(R.string.sign_up_tos_line_2), CommonUtil.MARKER_QUOTES);
            mTos.setText(spanned);
            mTos.setMovementMethod(LinkMovementMethod.getInstance());
            Spannable clickSpannable = (Spannable) mTos.getText();
@@ -161,12 +161,12 @@
            int start = spanned.getSpanStart(spans[0]);
            int end = spanned.getSpanEnd(spans[0]);
            StyledClickableSpan clickableSpan = new StyledClickableSpan(1, null, this);
-           clickableSpan.setColor(res.getColor(C0257R.color.text_fineprint));
+           clickableSpan.setColor(res.getColor(R.color.text_fineprint));
            Util.safeSetSpan(clickSpannable, clickableSpan, start, end, 33);
            int start2 = spanned.getSpanStart(spans[1]);
            int end2 = spanned.getSpanEnd(spans[1]);
            StyledClickableSpan clickableSpan2 = new StyledClickableSpan(2, null, this);
-           clickableSpan2.setColor(res.getColor(C0257R.color.text_fineprint));
+           clickableSpan2.setColor(res.getColor(R.color.text_fineprint));
            Util.safeSetSpan(clickSpannable, clickableSpan2, start2, end2, 33);
            return view;
                 }
@@ -185,26 +185,26 @@
                 @Override 
        public void onViewCreated(View view, Bundle savedInstanceState) {
            super.onViewCreated(view, savedInstanceState);
-           this.mName = (EditText) view.findViewById(C0257R.id.sign_up_username);
+           this.mName = (EditText) view.findViewById(R.id.sign_up_username);
            this.mName.addTextChangedListener(this);
            this.mName.setOnEditorActionListener(new C02891());
-           this.mPhoneNumberContainer = (ViewGroup) view.findViewById(C0257R.id.phone_tos_container);
-           this.mPhoneNumber = (EditText) view.findViewById(C0257R.id.signup_name_phone);
+           this.mPhoneNumberContainer = (ViewGroup) view.findViewById(R.id.phone_tos_container);
+           this.mPhoneNumber = (EditText) view.findViewById(R.id.signup_name_phone);
            this.mPhoneNumber.addTextChangedListener(this);
            this.mPhoneNumber.setOnEditorActionListener(new C02902());
-           View userImageRoot = view.findViewById(C0257R.id.user_image_container);
-           this.mProfileImageAction = (ImageView) userImageRoot.findViewById(C0257R.id.user_image_action);
+           View userImageRoot = view.findViewById(R.id.user_image_container);
+           this.mProfileImageAction = (ImageView) userImageRoot.findViewById(R.id.user_image_action);
            this.mProfileImageAction.setVisibility(0);
            userImageRoot.setOnClickListener(this);
-           this.mProfileImage = (ImageView) userImageRoot.findViewById(C0257R.id.user_image);
-           this.mFollowVineOnTwitterCheckBox = (CheckBox) view.findViewById(C0257R.id.twitter_vine_follow_enabled);
+           this.mProfileImage = (ImageView) userImageRoot.findViewById(R.id.user_image);
+           this.mFollowVineOnTwitterCheckBox = (CheckBox) view.findViewById(R.id.twitter_vine_follow_enabled);
            this.mFollowVineOnTwitterCheckBox.setChecked(true);
            this.mFollowVineOnTwitterCheckBox.setEnabled(true);
-           LinearLayout followVineLayout = (LinearLayout) view.findViewById(C0257R.id.follow_vine_on_twitter_selection);
+           LinearLayout followVineLayout = (LinearLayout) view.findViewById(R.id.follow_vine_on_twitter_selection);
            followVineLayout.setOnClickListener(new ViewOnClickListenerC02913());
            if (this.mLogin != null) {
-               ProgressDialog dialog = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-               dialog.setMessage(getString(C0257R.string.loading));
+               ProgressDialog dialog = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+               dialog.setMessage(getString(R.string.loading));
                dialog.setProgress(0);
                dialog.show();
                this.mProgress = dialog;
@@ -248,8 +248,8 @@
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-           inflater.inflate(C0257R.menu.next, menu);
-           this.mNextButton = menu.findItem(C0257R.id.next);
+           inflater.inflate(R.menu.next, menu);
+           this.mNextButton = menu.findItem(R.id.next);
            if (this.mNextButton != null) {
                this.mNextButton.setEnabled(validate());
                     }
@@ -259,7 +259,7 @@
            if (this.mProfileUri != null || this.mHasPromptedForPhoto || this.mPhotoAttached) {
                         return false;
                     }
-           PromptDialogSupportFragment promptDialogSupportFragment = PromptDialogSupportFragment.newInstance(1).setMessage(C0257R.string.profile_photo_prompt).setPositiveButton(C0257R.string.set_photo).setNegativeButton(C0257R.string.skip);
+           PromptDialogSupportFragment promptDialogSupportFragment = PromptDialogSupportFragment.newInstance(1).setMessage(R.string.profile_photo_prompt).setPositiveButton(R.string.set_photo).setNegativeButton(R.string.skip);
            promptDialogSupportFragment.setListener(this);
                     try {
                promptDialogSupportFragment.show(getActivity().getSupportFragmentManager());
@@ -350,12 +350,12 @@
            if (this.mPhotoAttached) {
                PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(3);
                p.setTargetFragment(this, 0);
-               p.setTitle(C0257R.string.sign_up_profile_photo).setPositiveButton(C0257R.string.remove_photo).setNeutralButton(C0257R.string.take_photo).setNegativeButton(C0257R.string.choose_photo).show(getActivity().getSupportFragmentManager());
+               p.setTitle(R.string.sign_up_profile_photo).setPositiveButton(R.string.remove_photo).setNeutralButton(R.string.take_photo).setNegativeButton(R.string.choose_photo).show(getActivity().getSupportFragmentManager());
                     } else {
                PromptDialogSupportFragment p2 = PromptDialogSupportFragment.newInstance(2);
                p2.setTargetFragment(this, 0);
                         try {
-                   p2.setTitle(C0257R.string.sign_up_profile_photo).setPositiveButton(C0257R.string.take_photo).setNeutralButton(C0257R.string.choose_photo).show(getActivity().getSupportFragmentManager());
+                   p2.setTitle(R.string.sign_up_profile_photo).setPositiveButton(R.string.take_photo).setNeutralButton(R.string.choose_photo).show(getActivity().getSupportFragmentManager());
                         } catch (IllegalStateException e) {
                    CrashUtil.logException(e);
                         }
@@ -372,12 +372,12 @@
            if (bitmap != null) {
                this.mProfileImage.setImageDrawable(new RecyclableBitmapDrawable(this.mProfileImage.getResources(), bitmap));
                this.mProfileImage.setColorFilter((ColorFilter) null);
-               this.mProfileImageAction.setImageResource(C0257R.drawable.avatar_edit);
+               this.mProfileImageAction.setImageResource(R.drawable.avatar_edit);
                this.mPhotoAttached = true;
                return;
                     }
-           this.mProfileImage.setImageResource(C0257R.drawable.blank_avatar_nux);
-           this.mProfileImageAction.setImageResource(C0257R.drawable.avatar_add);
+           this.mProfileImage.setImageResource(R.drawable.blank_avatar_nux);
+           this.mProfileImageAction.setImageResource(R.drawable.avatar_add);
            this.mPhotoAttached = false;
                 }
 
@@ -491,7 +491,7 @@
                    SignUpNameAvatarFragment.access$400(SignUpNameAvatarFragment.this).setVisibility(0);
                    SignUpNameAvatarFragment.access$502(SignUpNameAvatarFragment.this, null);
                    if (!user.defaultProfileImage) {
-                       int w = SignUpNameAvatarFragment.this.getResources().getDimensionPixelSize(C0257R.dimen.user_image_size_large);
+                       int w = SignUpNameAvatarFragment.this.getResources().getDimensionPixelSize(R.dimen.user_image_size_large);
                        ImageKey key = new ImageKey(user.profileUrl, w, w, true);
                        Bitmap bm = SignUpNameAvatarFragment.this.mAppController.getPhotoBitmap(key);
                        SignUpNameAvatarFragment.access$600(SignUpNameAvatarFragment.this, bm);

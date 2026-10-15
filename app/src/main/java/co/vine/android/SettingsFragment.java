@@ -419,8 +419,8 @@
                     }
            if (!ClientFlagsHelper.prefetchEnabled(getActivity())) {
                View view = getView();
-               view.findViewById(C0257R.id.sync).setVisibility(8);
-               view.findViewById(C0257R.id.sync_divider).setVisibility(8);
+               view.findViewById(R.id.sync).setVisibility(8);
+               view.findViewById(R.id.sync_divider).setVisibility(8);
                     }
                 }
 
@@ -454,7 +454,7 @@
                 @Override 
                 @SuppressLint({"NewApi"})
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View v = inflater.inflate(C0257R.layout.settings, container, false);
+           View v = inflater.inflate(R.layout.settings, container, false);
            Resources res = getResources();
            setOriginalPreferenceValues();
            if (savedInstanceState != null) {
@@ -469,26 +469,26 @@
                this.mBackgroundColor = savedInstanceState.getInt(STATE_BACKGROUND_COLOR);
                this.mColorIndex = savedInstanceState.getInt(STATE_COLOR_INDEX);
                     }
-           this.mScrollView = (ScrollView) v.findViewById(C0257R.id.scrollview);
-           this.mEmailVerified = (ImageView) v.findViewById(C0257R.id.email_verified);
+           this.mScrollView = (ScrollView) v.findViewById(R.id.scrollview);
+           this.mEmailVerified = (ImageView) v.findViewById(R.id.email_verified);
            this.mEmailVerified.setOnClickListener(this);
-           this.mPhoneVerified = (ImageView) v.findViewById(C0257R.id.phone_verified);
+           this.mPhoneVerified = (ImageView) v.findViewById(R.id.phone_verified);
            this.mPhoneVerified.setOnClickListener(this);
-           ColorPicker colorPicker = (ColorPicker) v.findViewById(C0257R.id.color_picker);
+           ColorPicker colorPicker = (ColorPicker) v.findViewById(R.id.color_picker);
            colorPicker.setOnColorClickListener(this);
            colorPicker.setColorIndex(this.mColorIndex);
-           ViewGroup profileBackground = (ViewGroup) v.findViewById(C0257R.id.user_image_container);
+           ViewGroup profileBackground = (ViewGroup) v.findViewById(R.id.user_image_container);
            profileBackground.setBackgroundColor(this.mBackgroundColor | (-16777216));
            this.mProfileBackground = profileBackground;
            setActionBarColor(this.mBackgroundColor);
-           TextView privacyControls = (TextView) v.findViewById(C0257R.id.privacy_controls);
+           TextView privacyControls = (TextView) v.findViewById(R.id.privacy_controls);
            privacyControls.setOnClickListener(this);
-           TextView syncControls = (TextView) v.findViewById(C0257R.id.sync);
+           TextView syncControls = (TextView) v.findViewById(R.id.sync);
            syncControls.setOnClickListener(this);
-           TextView updatesRow = (TextView) v.findViewById(C0257R.id.updates);
+           TextView updatesRow = (TextView) v.findViewById(R.id.updates);
            updatesRow.setOnClickListener(this);
-           this.mAvatarImageView = (ImageView) v.findViewById(C0257R.id.user_image);
-           this.mAvatarActionView = (ImageView) v.findViewById(C0257R.id.user_image_action);
+           this.mAvatarImageView = (ImageView) v.findViewById(R.id.user_image);
+           this.mAvatarActionView = (ImageView) v.findViewById(R.id.user_image_action);
            this.mAvatarActionView.setVisibility(0);
            String avatarUrl = this.mAvatarUri == null ? "" : this.mAvatarUri.toString();
            this.mAvatarImageView.setOnClickListener(this);
@@ -497,49 +497,49 @@
                     } else if (TextUtils.isEmpty(avatarUrl) || Util.isDefaultAvatarUrl(avatarUrl)) {
                setImage(null, false);
                     } else {
-               int dimen = res.getDimensionPixelOffset(C0257R.dimen.user_image_size_large);
+               int dimen = res.getDimensionPixelOffset(R.dimen.user_image_size_large);
                this.mAvatarKey = new ImageKey(avatarUrl, dimen, dimen, true);
                Bitmap bmp = this.mAppController.getPhotoBitmap(this.mAvatarKey);
                setImage(bmp, false);
                     }
-           EditText editTextName = (EditText) v.findViewById(C0257R.id.name);
+           EditText editTextName = (EditText) v.findViewById(R.id.name);
            editTextName.setText(this.mName);
            editTextName.addTextChangedListener(new C02751());
-           EditText editTextDescription = (EditText) v.findViewById(C0257R.id.description);
+           EditText editTextDescription = (EditText) v.findViewById(R.id.description);
            editTextDescription.setText(this.mDescription);
-           editTextDescription.setHint(C0257R.string.settings_description);
+           editTextDescription.setHint(R.string.settings_description);
            editTextDescription.addTextChangedListener(new C02772());
-           EditText editTextLocation = (EditText) v.findViewById(C0257R.id.location);
+           EditText editTextLocation = (EditText) v.findViewById(R.id.location);
            editTextLocation.setText(this.mLocation);
-           editTextLocation.setHint(C0257R.string.settings_location);
+           editTextLocation.setHint(R.string.settings_location);
            editTextLocation.addTextChangedListener(new C02783());
-           TypingEditText editTextEmail = (TypingEditText) v.findViewById(C0257R.id.settings_email);
+           TypingEditText editTextEmail = (TypingEditText) v.findViewById(R.id.settings_email);
            editTextEmail.setText(this.mEmail);
            editTextEmail.setInputType(32);
            editTextEmail.setTypingListener(this);
            this.mEditTextEmail = editTextEmail;
            editTextEmail.addTextChangedListener(new C02794());
-           TypingEditText editTextPhone = (TypingEditText) v.findViewById(C0257R.id.settings_phone);
+           TypingEditText editTextPhone = (TypingEditText) v.findViewById(R.id.settings_phone);
            editTextPhone.setText(this.mPhone);
            editTextPhone.setInputType(3);
            editTextPhone.addTextChangedListener(new C02805());
            editTextPhone.setTypingListener(this);
            this.mEditTextPhone = editTextPhone;
-           this.mEditionsSpinner = (Spinner) v.findViewById(C0257R.id.edition);
+           this.mEditionsSpinner = (Spinner) v.findViewById(R.id.edition);
            this.mEditionsSpinner.setFocusable(false);
            this.mEditionsSpinner.setOnItemSelectedListener(new C02816());
-           v.findViewById(C0257R.id.edition_container).setOnClickListener(this);
-           v.findViewById(C0257R.id.edition_label).setOnClickListener(this);
+           v.findViewById(R.id.edition_container).setOnClickListener(this);
+           v.findViewById(R.id.edition_label).setOnClickListener(this);
            this.mSpinnerAdapter = new EditionsSpinnerAdapter();
            this.mEditionsSpinner.setAdapter((SpinnerAdapter) this.mSpinnerAdapter);
-           TextView password = (TextView) v.findViewById(C0257R.id.settings_password);
+           TextView password = (TextView) v.findViewById(R.id.settings_password);
            password.setOnClickListener(this);
-           TextView content = (TextView) v.findViewById(C0257R.id.content_controls);
+           TextView content = (TextView) v.findViewById(R.id.content_controls);
            content.setOnClickListener(this);
-           this.mNotifications = (ViewGroup) v.findViewById(C0257R.id.notification_settings);
+           this.mNotifications = (ViewGroup) v.findViewById(R.id.notification_settings);
            if (BuildUtil.isGoogle()) {
                this.mNotifications.setVisibility(0);
-               this.mAlertIcon = (ImageView) this.mNotifications.findViewById(C0257R.id.alert_icon);
+               this.mAlertIcon = (ImageView) this.mNotifications.findViewById(R.id.alert_icon);
                this.mErrorCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getActivity());
                if (this.mErrorCode != 0) {
                    this.mAlertIcon.setVisibility(0);
@@ -551,15 +551,15 @@
                     } else {
                this.mNotifications.setVisibility(8);
                     }
-           TextView findFriends = (TextView) v.findViewById(C0257R.id.find_friends);
+           TextView findFriends = (TextView) v.findViewById(R.id.find_friends);
            findFriends.setOnClickListener(this);
-           TextView inviteViaText = (TextView) v.findViewById(C0257R.id.invite_via_text);
+           TextView inviteViaText = (TextView) v.findViewById(R.id.invite_via_text);
            inviteViaText.setOnClickListener(this);
-           TextView inviteViaEmail = (TextView) v.findViewById(C0257R.id.invite_via_email);
+           TextView inviteViaEmail = (TextView) v.findViewById(R.id.invite_via_email);
            inviteViaEmail.setOnClickListener(this);
-           RelativeLayout twitterConnect = (RelativeLayout) v.findViewById(C0257R.id.twitter_connect);
-           twitterConnect.setBackgroundResource(C0257R.drawable.bg_selectable_item);
-           TextView twitterConnectedTextView = (TextView) twitterConnect.findViewById(C0257R.id.twitter_connect_value);
+           RelativeLayout twitterConnect = (RelativeLayout) v.findViewById(R.id.twitter_connect);
+           twitterConnect.setBackgroundResource(R.drawable.bg_selectable_item);
+           TextView twitterConnectedTextView = (TextView) twitterConnect.findViewById(R.id.twitter_connect_value);
            AccountManager am = AccountManager.get(getActivity());
            Account acc = VineAccountHelper.getAccount(getActivity(), this.mAppController.getActiveSession().getLoginEmail());
            if (acc != null && VineAccountHelper.getLoginType(am, acc).intValue() == 2) {
@@ -569,48 +569,48 @@
                twitterConnectedTextView.setText("");
                this.mTwitterLogin = true;
                     } else {
-               twitterConnectedTextView.setText(C0257R.string.settings_connect_to_twitter_summary);
+               twitterConnectedTextView.setText(R.string.settings_connect_to_twitter_summary);
                this.mTwitterLogin = false;
                     }
            twitterConnect.setOnClickListener(this);
-           RelativeLayout facebookConnect = (RelativeLayout) v.findViewById(C0257R.id.facebook_connect);
+           RelativeLayout facebookConnect = (RelativeLayout) v.findViewById(R.id.facebook_connect);
            facebookConnect.setOnClickListener(this);
-           TextView facebookLabel = (TextView) v.findViewById(C0257R.id.facebook_label);
-           facebookLabel.setText(C0257R.string.facebook);
-           this.mFacebookValue = (TextView) v.findViewById(C0257R.id.facebook_value);
+           TextView facebookLabel = (TextView) v.findViewById(R.id.facebook_label);
+           facebookLabel.setText(R.string.facebook);
+           this.mFacebookValue = (TextView) v.findViewById(R.id.facebook_value);
            invalidateFacebookSessionUI();
            facebookConnect.setOnClickListener(this);
-           RelativeLayout clearCache = (RelativeLayout) v.findViewById(C0257R.id.clear_cache);
+           RelativeLayout clearCache = (RelativeLayout) v.findViewById(R.id.clear_cache);
            clearCache.setOnClickListener(this);
-           TextView clearCacheLabel = (TextView) v.findViewById(C0257R.id.clear_cache_label);
-           clearCacheLabel.setText(getString(C0257R.string.settings_cache_size));
-           this.mClearCacheValue = (TextView) v.findViewById(C0257R.id.clear_cache_value);
+           TextView clearCacheLabel = (TextView) v.findViewById(R.id.clear_cache_label);
+           clearCacheLabel.setText(getString(R.string.settings_cache_size));
+           this.mClearCacheValue = (TextView) v.findViewById(R.id.clear_cache_value);
            new GetCacheSizeAsyncTask().execute(new Void[0]);
-           TextView termsOfService = (TextView) v.findViewById(C0257R.id.terms_of_service);
+           TextView termsOfService = (TextView) v.findViewById(R.id.terms_of_service);
            termsOfService.setOnClickListener(this);
-           TextView privacyPolicy = (TextView) v.findViewById(C0257R.id.privacy_policy);
+           TextView privacyPolicy = (TextView) v.findViewById(R.id.privacy_policy);
            privacyPolicy.setOnClickListener(this);
-           TextView attribution = (TextView) v.findViewById(C0257R.id.attribution);
+           TextView attribution = (TextView) v.findViewById(R.id.attribution);
            attribution.setOnClickListener(this);
-           TextView deactivateAccount = (TextView) v.findViewById(C0257R.id.deactivate_account);
+           TextView deactivateAccount = (TextView) v.findViewById(R.id.deactivate_account);
            deactivateAccount.setOnClickListener(this);
-           Button logout = (Button) v.findViewById(C0257R.id.logout);
+           Button logout = (Button) v.findViewById(R.id.logout);
            logout.setOnClickListener(this);
-           LinearLayout version = (LinearLayout) v.findViewById(C0257R.id.version);
-           TextView tv = (TextView) v.findViewById(C0257R.id.version_number);
+           LinearLayout version = (LinearLayout) v.findViewById(R.id.version);
+           TextView tv = (TextView) v.findViewById(R.id.version_number);
                     try {
                PackageInfo pi = getActivity().getPackageManager().getPackageInfo("co.vine.android", 0);
-               tv.setText(getString(C0257R.string.settings_about_summary, pi.versionName));
+               tv.setText(getString(R.string.settings_about_summary, pi.versionName));
                     } catch (PackageManager.NameNotFoundException e) {
                Log.d(TAG, "Error retrieving package info:", e);
                     }
            version.setOnClickListener(this);
            if (BuildUtil.isI18nOn()) {
-               TextView locale = (TextView) v.findViewById(C0257R.id.locale);
+               TextView locale = (TextView) v.findViewById(R.id.locale);
                locale.setVisibility(0);
                locale.setOnClickListener(this);
                     }
-           TextView favoritePeople = (TextView) v.findViewById(C0257R.id.favorite_people);
+           TextView favoritePeople = (TextView) v.findViewById(R.id.favorite_people);
            favoritePeople.setOnClickListener(new ViewOnClickListenerC02827());
            return v;
                 }
@@ -701,9 +701,9 @@
        private void invalidateFacebookSessionUI() {
            this.mFbSession = this.mAppController.getValidFacebookSession(getActivity(), true);
            if (this.mFbSession != null) {
-               this.mFacebookValue.setText(C0257R.string.settings_connected);
+               this.mFacebookValue.setText(R.string.settings_connected);
                     } else {
-               this.mFacebookValue.setText(C0257R.string.settings_not_connected);
+               this.mFacebookValue.setText(R.string.settings_not_connected);
                     }
                 }
 
@@ -715,9 +715,9 @@
            FragmentActivity activity = getActivity();
            if (isDirty() && activity != null) {
                PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(3);
-               p.setMessage(C0257R.string.settings_unsaved_changes);
-               p.setNeutralButton(C0257R.string.settings_continue_editing);
-               p.setPositiveButton(C0257R.string.settings_discard);
+               p.setMessage(R.string.settings_unsaved_changes);
+               p.setNeutralButton(R.string.settings_continue_editing);
+               p.setPositiveButton(R.string.settings_discard);
                p.setTargetFragment(this, 0);
                p.show(activity.getSupportFragmentManager());
                return;
@@ -732,10 +732,10 @@
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-           inflater.inflate(C0257R.menu.save, menu);
-           MenuItem menuItem = menu.findItem(C0257R.id.done);
+           inflater.inflate(R.menu.save, menu);
+           MenuItem menuItem = menu.findItem(R.id.done);
            menuItem.setEnabled(true);
-           menu.findItem(C0257R.id.done).setEnabled(true);
+           menu.findItem(R.id.done).setEnabled(true);
                 }
 
                 @Override 
@@ -759,7 +759,7 @@
                 @Override 
        public void onTypingTimeout(View v) {
            int id = v.getId();
-           if (id == C0257R.id.settings_email || id == C0257R.id.settings_phone) {
+           if (id == R.id.settings_email || id == R.id.settings_phone) {
                updateVerificationIcons();
                     }
                 }
@@ -816,8 +816,8 @@
                    SettingsFragment.access$1800(SettingsFragment.this).dismiss();
                         }
                if (statusCode != 200) {
-                   Util.showCenteredToast(SettingsFragment.this.getActivity(), C0257R.string.error_facebook_send_token);
-                   SettingsFragment.access$1900(SettingsFragment.this).setText(C0257R.string.settings_not_connected);
+                   Util.showCenteredToast(SettingsFragment.this.getActivity(), R.string.error_facebook_send_token);
+                   SettingsFragment.access$1900(SettingsFragment.this).setText(R.string.settings_not_connected);
                         } else {
                    SettingsFragment.access$2000(SettingsFragment.this);
                         }
@@ -853,7 +853,7 @@
                    return;
                         }
                if (TextUtils.isEmpty(reasonPhrase)) {
-                   Util.showCenteredToast(activity, C0257R.string.update_profile_error);
+                   Util.showCenteredToast(activity, R.string.update_profile_error);
                         } else {
                    Util.showCenteredToast(activity, reasonPhrase);
                         }
@@ -888,21 +888,21 @@
                if (SettingsFragment.access$1800(SettingsFragment.this) != null) {
                    SettingsFragment.access$1800(SettingsFragment.this).dismiss();
                         }
-               TextView valueTextView = (TextView) SettingsFragment.this.getView().findViewById(C0257R.id.twitter_connect_value);
-               TextView label = (TextView) SettingsFragment.this.getView().findViewById(C0257R.id.twitter_connect_label);
+               TextView valueTextView = (TextView) SettingsFragment.this.getView().findViewById(R.id.twitter_connect_value);
+               TextView label = (TextView) SettingsFragment.this.getView().findViewById(R.id.twitter_connect_label);
                if (statusCode == 200 && userId > 0 && !TextUtils.isEmpty(token) && !TextUtils.isEmpty(secret)) {
-                   label.setText(C0257R.string.settings_connected_to_twitter);
+                   label.setText(R.string.settings_connected_to_twitter);
                    valueTextView.setText('@' + username);
                    VineAccountHelper.saveTwitterInfo(SettingsFragment.this.getActivity(), SettingsFragment.access$2400(SettingsFragment.this).getActiveSession().getLoginEmail(), username, token, secret, userId);
                    SettingsFragment.access$2502(SettingsFragment.this, true);
                    SettingsFragment.access$2600(SettingsFragment.this).edit().putBoolean(Settings.PREF_TWITTER_CONNECTED, true).apply();
                    return;
                         }
-               label.setText(C0257R.string.settings_connect_to_twitter);
-               valueTextView.setText(C0257R.string.settings_connect_to_twitter_summary);
+               label.setText(R.string.settings_connect_to_twitter);
+               valueTextView.setText(R.string.settings_connect_to_twitter_summary);
                SettingsFragment.access$2502(SettingsFragment.this, false);
                if (TextUtils.isEmpty(reasonPhrase)) {
-                   reasonPhrase = SettingsFragment.this.getResources().getString(C0257R.string.settings_error_connect_to_twitter);
+                   reasonPhrase = SettingsFragment.this.getResources().getString(R.string.settings_error_connect_to_twitter);
                         }
                Util.showCenteredToast(SettingsFragment.this.getActivity(), reasonPhrase);
                     }
@@ -912,18 +912,18 @@
                if (SettingsFragment.access$1800(SettingsFragment.this) != null) {
                    SettingsFragment.access$1800(SettingsFragment.this).dismiss();
                         }
-               TextView valueTextView = (TextView) SettingsFragment.this.getView().findViewById(C0257R.id.twitter_connect_value);
-               TextView label = (TextView) SettingsFragment.this.getView().findViewById(C0257R.id.twitter_connect_label);
+               TextView valueTextView = (TextView) SettingsFragment.this.getView().findViewById(R.id.twitter_connect_value);
+               TextView label = (TextView) SettingsFragment.this.getView().findViewById(R.id.twitter_connect_label);
                if (statusCode == 200) {
-                   label.setText(C0257R.string.settings_connect_to_twitter);
-                   valueTextView.setText(C0257R.string.settings_connect_to_twitter_summary);
+                   label.setText(R.string.settings_connect_to_twitter);
+                   valueTextView.setText(R.string.settings_connect_to_twitter_summary);
                    VineAccountHelper.removeTwitterInfo(SettingsFragment.this.getActivity(), SettingsFragment.access$2400(SettingsFragment.this).getActiveSession().getLoginEmail());
                    SettingsFragment.access$2502(SettingsFragment.this, false);
                    SettingsFragment.access$2100(SettingsFragment.this).putBoolean(Settings.PREF_TWITTER_CONNECTED, false).apply();
                    return;
                         }
                if (TextUtils.isEmpty(reasonPhrase)) {
-                   reasonPhrase = SettingsFragment.this.getResources().getString(C0257R.string.settings_error_disconnect_from_twitter);
+                   reasonPhrase = SettingsFragment.this.getResources().getString(R.string.settings_error_disconnect_from_twitter);
                         }
                Util.showCenteredToast(SettingsFragment.this.getActivity(), reasonPhrase);
                     }
@@ -946,10 +946,10 @@
                         }
                if (success) {
                    SettingsFragment.access$2400(SettingsFragment.this).logout();
-                   messageId = C0257R.string.settings_account_deactivation_success;
+                   messageId = R.string.settings_account_deactivation_success;
                    SLog.m446d("User account successfully deactivated");
                         } else {
-                   messageId = C0257R.string.settings_account_deactivation_fail;
+                   messageId = R.string.settings_account_deactivation_fail;
                    SLog.m446d("User account deactivation failed");
                         }
                Util.showCenteredToast(SettingsFragment.this.getActivity(), messageId);
@@ -976,9 +976,9 @@
                if (statusCode == 200) {
                    PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(10);
                    p.setTargetFragment(SettingsFragment.this, 0);
-                   p.setNeutralButton(android.R.string.ok).setMessage(C0257R.string.confirm_email_sent).show(SettingsFragment.this.getActivity().getSupportFragmentManager());
+                   p.setNeutralButton(android.R.string.ok).setMessage(R.string.confirm_email_sent).show(SettingsFragment.this.getActivity().getSupportFragmentManager());
                         } else {
-                   String reason = reasonPhrase != null ? reasonPhrase : SettingsFragment.this.getString(C0257R.string.generic_error);
+                   String reason = reasonPhrase != null ? reasonPhrase : SettingsFragment.this.getString(R.string.generic_error);
                    Util.showCenteredToast(SettingsFragment.this.getActivity(), reason);
                         }
                     }
@@ -992,10 +992,10 @@
        private void setImage(Bitmap bmp, boolean edited) {
            this.mThumbnail = bmp;
            if (bmp == null) {
-               this.mAvatarImageView.setImageResource(C0257R.drawable.avatar_large);
-               this.mAvatarActionView.setImageResource(C0257R.drawable.avatar_add);
+               this.mAvatarImageView.setImageResource(R.drawable.avatar_large);
+               this.mAvatarActionView.setImageResource(R.drawable.avatar_add);
                     } else {
-               this.mAvatarActionView.setImageResource(edited ? C0257R.drawable.avatar_check : C0257R.drawable.avatar_edit);
+               this.mAvatarActionView.setImageResource(edited ? R.drawable.avatar_check : R.drawable.avatar_edit);
                this.mAvatarImageView.setImageDrawable(new RecyclableBitmapDrawable(this.mAvatarImageView.getResources(), bmp));
                     }
                 }
@@ -1008,7 +1008,7 @@
                String action = args.getString(BaseFragment.ARG_ACTION);
                if (HomeTabActivity.ACTION_VERIFICATION_COMPLETE.equals(action)) {
                    ScrollView scrollView = this.mScrollView;
-                   View verified = scrollView.findViewById(C0257R.id.settings_phone_label);
+                   View verified = scrollView.findViewById(R.id.settings_phone_label);
                    scrollView.post(new RunnableC02849(scrollView, verified));
                         }
                     }
@@ -1016,8 +1016,8 @@
            this.mInviteSmsIntent.setType("vnd.android-dir/mms-sms");
            this.mInviteSmsIntent.putExtra("sms_body", ShareUtils.getSmsMessage(getActivity()));
            if (this.mInviteSmsIntent.resolveActivity(getActivity().getPackageManager()) == null) {
-               this.mScrollView.findViewById(C0257R.id.invite_via_text).setVisibility(8);
-               this.mScrollView.findViewById(C0257R.id.invite_via_text_divider).setVisibility(8);
+               this.mScrollView.findViewById(R.id.invite_via_text).setVisibility(8);
+               this.mScrollView.findViewById(R.id.invite_via_text_divider).setVisibility(8);
                     }
                 }
 
@@ -1048,14 +1048,14 @@
                       String token = extras.getStringExtra(Twitter.EXTRA_TOKEN);
                       String secret = extras.getStringExtra(Twitter.EXTRA_TOKEN_SECRET);
                       long userId = extras.getLongExtra("user_id", 0L);
-                      ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-                      d.setMessage(getString(C0257R.string.sign_up_authorizing));
+                      ProgressDialog d = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+                      d.setMessage(getString(R.string.sign_up_authorizing));
                       d.setProgress(0);
                       d.show();
                       this.mProgress = d;
                       this.mAppController.connectTwitter(this.mAppController.getActiveSession(), username, token, secret, userId);
                             } else {
-                      Util.showCenteredToast(getActivity(), C0257R.string.error_twitter_sdk);
+                      Util.showCenteredToast(getActivity(), R.string.error_twitter_sdk);
                             }
                             break;
                         case 2:
@@ -1064,14 +1064,14 @@
                       String token2 = extras.getStringExtra("token");
                       String secret2 = extras.getStringExtra("secret");
                       long userId2 = extras.getLongExtra("user_id", 0L);
-                      ProgressDialog d2 = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-                      d2.setMessage(getString(C0257R.string.sign_up_authorizing));
+                      ProgressDialog d2 = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+                      d2.setMessage(getString(R.string.sign_up_authorizing));
                       d2.setProgress(0);
                       d2.show();
                       this.mProgress = d2;
                       this.mAppController.connectTwitter(this.mAppController.getActiveSession(), username2, token2, secret2, userId2);
                             } else if (resultCode != 0) {
-                      Util.showCenteredToast(getActivity(), C0257R.string.error_xauth);
+                      Util.showCenteredToast(getActivity(), R.string.error_xauth);
                             }
                             break;
                         case 3:
@@ -1110,7 +1110,7 @@
                                 }
                       getActivity().startService(GCMRegistrationService.getRegisterIntent(activity, this.mAppController.getActiveId()));
                             } else {
-                      Util.showCenteredToast(getActivity(), C0257R.string.toast_gms_resolution_failed);
+                      Util.showCenteredToast(getActivity(), R.string.toast_gms_resolution_failed);
                             }
                             break;
                         case 7:
@@ -1136,7 +1136,7 @@
                               if (session.getPermissions().contains(AppController.PUBLISH_ACTIONS)) {
                                   AppController.setPendingFacebookToken(getActivity(), session.getAccessToken());
                                   ProgressDialog d3 = new ProgressDialog(getActivity(), 2);
-                                  d3.setMessage(getString(C0257R.string.login_logging_in));
+                                  d3.setMessage(getString(R.string.login_logging_in));
                                   d3.setProgress(0);
                                   d3.show();
                                   this.mProgress = d3;
@@ -1166,7 +1166,7 @@
 
                     @Override 
           public void run() {
-              Util.showCenteredToast(SettingsFragment.this.getActivity(), C0257R.string.publish_to_facebook_toast);
+              Util.showCenteredToast(SettingsFragment.this.getActivity(), R.string.publish_to_facebook_toast);
                     }
                 }
 
@@ -1177,7 +1177,7 @@
 
                 @Override 
       public boolean onOptionsItemSelected(MenuItem item) {
-          if (item.getItemId() == C0257R.id.done) {
+          if (item.getItemId() == R.id.done) {
               if (isDirty()) {
                   updateProfile(this.mAvatarUri);
                         } else {
@@ -1240,8 +1240,8 @@
                               this.mFbSession.closeAndClearTokenInformation();
                                     }
                           invalidateFacebookSessionUI();
-                          ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-                          d.setMessage(getString(C0257R.string.logging_out));
+                          ProgressDialog d = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+                          d.setMessage(getString(R.string.logging_out));
                           d.setProgress(0);
                           d.show();
                           this.mProgress = d;
@@ -1252,8 +1252,8 @@
                         case 5:
                             switch (which) {
                                 case -1:
-                          ProgressDialog d2 = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-                          d2.setMessage(getString(C0257R.string.settings_disconnecting_twitter));
+                          ProgressDialog d2 = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+                          d2.setMessage(getString(R.string.settings_disconnecting_twitter));
                           d2.setProgress(0);
                           d2.show();
                           this.mProgress = d2;
@@ -1264,8 +1264,8 @@
                         case 6:
                             switch (which) {
                                 case -1:
-                          ProgressDialog d3 = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-                          d3.setMessage(getString(C0257R.string.settings_clearing_cache));
+                          ProgressDialog d3 = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+                          d3.setMessage(getString(R.string.settings_clearing_cache));
                           d3.setProgress(0);
                           d3.show();
                           this.mProgress = d3;
@@ -1276,8 +1276,8 @@
                         case 7:
                             switch (which) {
                                 case -1:
-                          ProgressDialog d4 = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-                          d4.setMessage(getString(C0257R.string.settings_deactivating_account));
+                          ProgressDialog d4 = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+                          d4.setMessage(getString(R.string.settings_deactivating_account));
                           d4.setProgress(0);
                           d4.show();
                           this.mProgress = d4;
@@ -1322,11 +1322,11 @@
                 @Override 
       public void onClick(View view) {
           int id = view.getId();
-          if (id == C0257R.id.facebook_connect) {
+          if (id == R.id.facebook_connect) {
               if (this.mFbSession != null) {
                   PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(11);
                   p.setTargetFragment(this, 0);
-                  p.setTitle(C0257R.string.settings_disconnect_dialog).setPositiveButton(C0257R.string.yes).setNegativeButton(C0257R.string.cancel);
+                  p.setTitle(R.string.settings_disconnect_dialog).setPositiveButton(R.string.yes).setNegativeButton(R.string.cancel);
                             try {
                       p.show(getActivity().getSupportFragmentManager());
                       return;
@@ -1347,11 +1347,11 @@
                   return;
                         }
                     }
-          if (id == C0257R.id.user_image) {
+          if (id == R.id.user_image) {
               if (this.mAvatarUri != null && !Util.isDefaultAvatarUrl(this.mAvatarUri.toString())) {
                   PromptDialogSupportFragment p2 = PromptDialogSupportFragment.newInstance(2);
                   p2.setTargetFragment(this, 0);
-                  p2.setTitle(C0257R.string.sign_up_profile_photo).setPositiveButton(C0257R.string.remove_photo).setNeutralButton(C0257R.string.take_photo).setNegativeButton(C0257R.string.choose_photo);
+                  p2.setTitle(R.string.sign_up_profile_photo).setPositiveButton(R.string.remove_photo).setNeutralButton(R.string.take_photo).setNegativeButton(R.string.choose_photo);
                             try {
                       p2.show(getActivity().getSupportFragmentManager());
                       return;
@@ -1362,7 +1362,7 @@
                         }
               PromptDialogSupportFragment p3 = PromptDialogSupportFragment.newInstance(1);
               p3.setTargetFragment(this, 0);
-              p3.setTitle(C0257R.string.sign_up_profile_photo).setPositiveButton(C0257R.string.take_photo).setNeutralButton(C0257R.string.choose_photo);
+              p3.setTitle(R.string.sign_up_profile_photo).setPositiveButton(R.string.take_photo).setNeutralButton(R.string.choose_photo);
                         try {
                   p3.show(getActivity().getSupportFragmentManager());
                   return;
@@ -1371,12 +1371,12 @@
                   return;
                         }
                     }
-          if (id == C0257R.id.twitter_connect) {
+          if (id == R.id.twitter_connect) {
               if (this.mTwitterLogin) {
                   PromptDialogSupportFragment p4 = PromptDialogSupportFragment.newInstance(5);
-                  p4.setMessage(C0257R.string.settings_disconnect_twitter);
-                  p4.setPositiveButton(C0257R.string.settings_disconnect_dialog);
-                  p4.setNegativeButton(C0257R.string.cancel);
+                  p4.setMessage(R.string.settings_disconnect_twitter);
+                  p4.setPositiveButton(R.string.settings_disconnect_dialog);
+                  p4.setNegativeButton(R.string.cancel);
                   p4.setTargetFragment(this, 0);
                             try {
                       p4.show(getActivity().getSupportFragmentManager());
@@ -1391,11 +1391,11 @@
               AppController.startTwitterAuthWithFinish(twitter, activity);
               return;
                     }
-          if (id == C0257R.id.logout) {
+          if (id == R.id.logout) {
               PromptDialogSupportFragment p5 = PromptDialogSupportFragment.newInstance(4);
-              p5.setMessage(C0257R.string.logout_confirm);
-              p5.setPositiveButton(C0257R.string.logout);
-              p5.setNegativeButton(C0257R.string.cancel);
+              p5.setMessage(R.string.logout_confirm);
+              p5.setPositiveButton(R.string.logout);
+              p5.setNegativeButton(R.string.cancel);
               p5.setTargetFragment(this, 0);
                         try {
                   p5.show(getActivity().getSupportFragmentManager());
@@ -1405,7 +1405,7 @@
                   return;
                         }
                     }
-          if (id == C0257R.id.settings_password) {
+          if (id == R.id.settings_password) {
               Intent i = new Intent(getActivity(), (Class<?>) ResetPasswordActivity.class);
               if (!TextUtils.isEmpty(this.mEmail)) {
                   i.putExtra("email", this.mEmail);
@@ -1414,84 +1414,84 @@
               startActivity(i);
               return;
                     }
-          if (id == C0257R.id.content_controls) {
+          if (id == R.id.content_controls) {
               FlurryUtils.trackContentControls();
               Intent intent = new Intent(getActivity(), (Class<?>) ContentControlsActivity.class);
               intent.putExtra("color", this.mBackgroundColor);
               startActivity(intent);
               return;
                     }
-          if (id == C0257R.id.privacy_controls) {
+          if (id == R.id.privacy_controls) {
               Intent intent2 = new Intent(getActivity(), (Class<?>) PrivacyControlsActivity.class);
               intent2.putExtra("color", this.mBackgroundColor);
               startActivity(intent2);
               return;
                     }
-          if (id == C0257R.id.sync) {
+          if (id == R.id.sync) {
               Intent intent3 = new Intent(getActivity(), (Class<?>) SyncControlsActivity.class);
               intent3.putExtra("color", this.mBackgroundColor);
               startActivity(intent3);
               return;
                     }
-                              if (id == C0257R.id.updates) {
+                              if (id == R.id.updates) {
                         startActivity(new Intent(getActivity(), (Class<?>) UpdatesActivity.class));
                         return;
                     }
-                    if (id == C0257R.id.find_friends) {
+                    if (id == R.id.find_friends) {
               FlurryUtils.trackVisitFindFriends("Settings");
               startActivity(new Intent(getActivity(), (Class<?>) FindFriendsActivity.class));
               return;
                     }
-          if (id == C0257R.id.invite_via_email) {
+          if (id == R.id.invite_via_email) {
               FlurryUtils.trackInvite("email", "Settings");
               Intent intent4 = new Intent("android.intent.action.SENDTO", Uri.fromParts("mailto", "", null));
-              intent4.putExtra("android.intent.extra.SUBJECT", getString(C0257R.string.find_friends_invite_email_subject));
+              intent4.putExtra("android.intent.extra.SUBJECT", getString(R.string.find_friends_invite_email_subject));
               intent4.putExtra("android.intent.extra.TEXT", ShareUtils.getEmailMessage(getActivity()));
-              startActivity(Intent.createChooser(intent4, getString(C0257R.string.find_friends_email_choose_title)));
+              startActivity(Intent.createChooser(intent4, getString(R.string.find_friends_email_choose_title)));
               return;
                     }
-          if (id == C0257R.id.invite_via_text) {
+          if (id == R.id.invite_via_text) {
               FlurryUtils.trackInvite("sms", "Settings");
-              startActivity(Intent.createChooser(this.mInviteSmsIntent, getString(C0257R.string.send)));
+              startActivity(Intent.createChooser(this.mInviteSmsIntent, getString(R.string.send)));
               return;
                     }
-          if (id == C0257R.id.clear_cache) {
+          if (id == R.id.clear_cache) {
               PromptDialogSupportFragment p6 = PromptDialogSupportFragment.newInstance(6);
-              p6.setMessage(C0257R.string.settings_clear_cache_confirm_dialog);
-              p6.setNegativeButton(C0257R.string.cancel);
-              p6.setPositiveButton(C0257R.string.settings_clear_cache_confirm_button);
+              p6.setMessage(R.string.settings_clear_cache_confirm_dialog);
+              p6.setNegativeButton(R.string.cancel);
+              p6.setPositiveButton(R.string.settings_clear_cache_confirm_button);
               p6.setTargetFragment(this, 0);
               p6.show(getActivity().getSupportFragmentManager());
               return;
                     }
-          if (id == C0257R.id.privacy_policy) {
+          if (id == R.id.privacy_policy) {
               FlurryUtils.trackPrivacyPolicy();
               Intent i2 = new Intent(getActivity(), (Class<?>) WebViewActivity.class);
               i2.putExtra("type", 1);
               startActivity(i2);
               return;
                     }
-          if (id == C0257R.id.terms_of_service) {
+          if (id == R.id.terms_of_service) {
               FlurryUtils.trackTos();
               Intent i3 = new Intent(getActivity(), (Class<?>) WebViewActivity.class);
               i3.putExtra("type", 2);
               startActivity(i3);
               return;
                     }
-          if (id == C0257R.id.attribution) {
+          if (id == R.id.attribution) {
               FlurryUtils.trackAttribution();
               Intent i4 = new Intent(getActivity(), (Class<?>) WebViewActivity.class);
               i4.putExtra("type", 5);
               startActivity(i4);
               return;
                     }
-          if (id == C0257R.id.deactivate_account) {
+          if (id == R.id.deactivate_account) {
               FlurryUtils.trackDeactivateAccount();
               PromptDialogSupportFragment p7 = PromptDialogSupportFragment.newInstance(7);
-              p7.setMessage(C0257R.string.settings_deactivate_account_dialog);
-              p7.setTitle(C0257R.string.settings_deactivate_account_title);
-              p7.setNegativeButton(C0257R.string.cancel);
-              p7.setPositiveButton(C0257R.string.settings_deactivate_account_confirm);
+              p7.setMessage(R.string.settings_deactivate_account_dialog);
+              p7.setTitle(R.string.settings_deactivate_account_title);
+              p7.setNegativeButton(R.string.cancel);
+              p7.setPositiveButton(R.string.settings_deactivate_account_confirm);
               p7.setTargetFragment(this, 0);
                         try {
                   p7.show(getActivity().getSupportFragmentManager());
@@ -1501,7 +1501,7 @@
                   return;
                         }
                     }
-          if (id == C0257R.id.version) {
+          if (id == R.id.version) {
               this.mVersionTapCount++;
               if (this.mVersionTapCount >= 6) {
                   this.mVersionTapCount = 0;
@@ -1521,16 +1521,16 @@
                   return;
                         }
                     }
-          if (id == C0257R.id.locale) {
+          if (id == R.id.locale) {
               LocaleDialog ldf = LocaleDialog.newInstance();
               ldf.show(getActivity().getSupportFragmentManager(), "locale");
               return;
                     }
-          if (id == C0257R.id.edition_container || id == C0257R.id.edition_label) {
+          if (id == R.id.edition_container || id == R.id.edition_label) {
               this.mEditionsSpinner.performClick();
               return;
                     }
-          if (id == C0257R.id.notification_settings || id == C0257R.id.alert_icon) {
+          if (id == R.id.notification_settings || id == R.id.alert_icon) {
               if (this.mErrorCode != 0) {
                   Dialog errorDialog = GooglePlayServicesUtil.getErrorDialog(this.mErrorCode, getActivity(), 6);
                   errorDialog.show();
@@ -1543,11 +1543,11 @@
                   return;
                         }
                     }
-          if (id == C0257R.id.email_verified) {
+          if (id == R.id.email_verified) {
               if (!this.mIsEmailVerified) {
                   PromptDialogSupportFragment p8 = PromptDialogSupportFragment.newInstance(8);
                   p8.setTargetFragment(this, 0);
-                            p8.setPositiveButton(C0257R.string.confirm_email_yes).setMessage(getString(C0257R.string.confirm_email_prompt, this.mEmail)).setNeutralButton(android.R.string.cancel);
+                            p8.setPositiveButton(R.string.confirm_email_yes).setMessage(getString(R.string.confirm_email_prompt, this.mEmail)).setNeutralButton(android.R.string.cancel);
                             try {
                       p8.show(getActivity().getSupportFragmentManager());
                       return;
@@ -1558,7 +1558,7 @@
                         }
               return;
                     }
-          if (id == C0257R.id.phone_verified && !this.mIsPhoneVerified) {
+          if (id == R.id.phone_verified && !this.mIsPhoneVerified) {
               getActivity().startActivityForResult(ConfirmationFlowActivity.getIntent(getActivity(), this.mPhone, false), 7);
                     }
                 }
@@ -1569,26 +1569,26 @@
               if (activity == null) {
                             return false;
                         }
-              Util.showCenteredToast(activity, C0257R.string.name_length_toast);
+              Util.showCenteredToast(activity, R.string.name_length_toast);
                         return false;
                     }
           if (this.mLocation.length() > 32) {
               if (activity == null) {
                             return false;
                         }
-              Util.showCenteredToast(activity, C0257R.string.API_ERROR_LOCATION_INVALID_LENGTH);
+              Util.showCenteredToast(activity, R.string.API_ERROR_LOCATION_INVALID_LENGTH);
                         return false;
                     }
           if (this.mDescription.length() > 140) {
               if (activity == null) {
                             return false;
                         }
-              Util.showCenteredToast(activity, C0257R.string.API_ERROR_DESCRIPTION_INVALID_LENGTH);
+              Util.showCenteredToast(activity, R.string.API_ERROR_DESCRIPTION_INVALID_LENGTH);
                         return false;
                     }
           if (activity != null) {
-              ProgressDialog progressDialog = new ProgressDialog(activity, C0257R.style.ProgressDialogTheme);
-              progressDialog.setMessage(getString(C0257R.string.settings_updating));
+              ProgressDialog progressDialog = new ProgressDialog(activity, R.style.ProgressDialogTheme);
+              progressDialog.setMessage(getString(R.string.settings_updating));
               progressDialog.show();
               this.mProgress = progressDialog;
                     }
@@ -1607,9 +1607,9 @@
                     } else if (res != null) {
               this.mEmailVerified.setVisibility(0);
               if (this.mIsEmailVerified) {
-                  this.mEmailVerified.setImageDrawable(res.getDrawable(C0257R.drawable.ic_settings_check));
+                  this.mEmailVerified.setImageDrawable(res.getDrawable(R.drawable.ic_settings_check));
                         } else {
-                  this.mEmailVerified.setImageDrawable(res.getDrawable(C0257R.drawable.ic_settings_alert));
+                  this.mEmailVerified.setImageDrawable(res.getDrawable(R.drawable.ic_settings_alert));
                         }
                     }
           if (this.mEditTextPhone != null && TextUtils.isEmpty(this.mEditTextPhone.getText().toString())) {
@@ -1619,9 +1619,9 @@
           this.mPhoneVerified.setVisibility(0);
           if (res != null) {
               if (this.mIsPhoneVerified) {
-                  this.mPhoneVerified.setImageDrawable(res.getDrawable(C0257R.drawable.ic_settings_check));
+                  this.mPhoneVerified.setImageDrawable(res.getDrawable(R.drawable.ic_settings_check));
                         } else {
-                  this.mPhoneVerified.setImageDrawable(res.getDrawable(C0257R.drawable.ic_settings_alert));
+                  this.mPhoneVerified.setImageDrawable(res.getDrawable(R.drawable.ic_settings_alert));
                         }
                     }
                 }
@@ -1686,7 +1686,7 @@
               if (view != null) {
                   res = view;
                         } else {
-                  res = LayoutInflater.from(SettingsFragment.this.getActivity()).inflate(C0257R.layout.settings_spinner_row_item, (ViewGroup) null);
+                  res = LayoutInflater.from(SettingsFragment.this.getActivity()).inflate(R.layout.settings_spinner_row_item, (ViewGroup) null);
                         }
               TextView t = (TextView) res.findViewById(2131427387);
               t.setText(getEditionName(i));
@@ -1704,7 +1704,7 @@
               if (view != null) {
                   res = view;
                         } else {
-                  res = LayoutInflater.from(SettingsFragment.this.getActivity()).inflate(C0257R.layout.settings_spinner_row_item, (ViewGroup) null);
+                  res = LayoutInflater.from(SettingsFragment.this.getActivity()).inflate(R.layout.settings_spinner_row_item, (ViewGroup) null);
                         }
               TextView t = (TextView) res.findViewById(2131427387);
               t.setText(getEditionName(i));

@@ -9,7 +9,7 @@
             import android.view.View;
             import android.view.ViewGroup;
             import android.widget.ImageView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.drawable.RecyclableBitmapDrawable;
             
             
@@ -33,7 +33,7 @@
 
         public ImagePreference(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
-            setLayoutResource(C0257R.layout.image_preference);
+            setLayoutResource(R.layout.image_preference);
             setSelectable(false);
             this.mContext = context;
                 }
@@ -42,7 +42,7 @@
         protected View onCreateView(ViewGroup parent) {
             View v = super.onCreateView(parent);
             ViewGroup.LayoutParams params = v.getLayoutParams();
-            params.height = (int) this.mContext.getResources().getDimension(C0257R.dimen.image_preference_height);
+            params.height = (int) this.mContext.getResources().getDimension(R.dimen.image_preference_height);
             v.setLayoutParams(params);
             return v;
                 }
@@ -78,8 +78,8 @@
                 @Override 
         protected void onBindView(@NonNull View view) {
             super.onBindView(view);
-            this.mImage = (ImageView) view.findViewById(C0257R.id.user_image);
-            this.mBorder = (ImageView) view.findViewById(C0257R.id.user_image_frame);
+            this.mImage = (ImageView) view.findViewById(R.id.user_image);
+            this.mBorder = (ImageView) view.findViewById(R.id.user_image_frame);
             this.mListener.onImagePeferenceBound(this);
                 }
             }

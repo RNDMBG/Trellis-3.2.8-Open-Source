@@ -8,6 +8,6 @@
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(C0257R.xml.notification_preferences);
+            addPreferencesFromResource(R.xml.notification_preferences);
                 }
             }

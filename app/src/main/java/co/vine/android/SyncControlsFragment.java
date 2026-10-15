@@ -161,11 +161,11 @@
                Resources res = activity.getResources();
                int minutes = (int) (getInterval() / CommonUtil.MINUTE_MILLIS);
                if (minutes >= 60) {
-                   text = res.getQuantityString(C0257R.plurals.time_hours_verbose, minutes / 60, Integer.valueOf(minutes / 60));
+                   text = res.getQuantityString(R.plurals.time_hours_verbose, minutes / 60, Integer.valueOf(minutes / 60));
                         } else {
-                   text = res.getQuantityString(C0257R.plurals.time_mins_verbose, minutes, Integer.valueOf(minutes));
+                   text = res.getQuantityString(R.plurals.time_mins_verbose, minutes, Integer.valueOf(minutes));
                         }
-               this.mIntervalDescription.setText(res.getString(C0257R.string.sync_interval_desc, text));
+               this.mIntervalDescription.setText(res.getString(R.string.sync_interval_desc, text));
                     }
                 }
 
@@ -176,9 +176,9 @@
                         for (int i = 0; i < INTERVALS.length; i++) {
                    int minutes = (int) (INTERVALS[i] / CommonUtil.MINUTE_MILLIS);
                    if (minutes >= 60) {
-                       this.mIntervalStrings[i] = res.getString(C0257R.string.sync_interval_desc, res.getQuantityString(C0257R.plurals.time_hours_verbose, minutes / 60, Integer.valueOf(minutes / 60)));
+                       this.mIntervalStrings[i] = res.getString(R.string.sync_interval_desc, res.getQuantityString(R.plurals.time_hours_verbose, minutes / 60, Integer.valueOf(minutes / 60)));
                             } else {
-                       this.mIntervalStrings[i] = res.getString(C0257R.string.sync_interval_desc, res.getQuantityString(C0257R.plurals.time_mins_verbose, minutes, Integer.valueOf(minutes)));
+                       this.mIntervalStrings[i] = res.getString(R.string.sync_interval_desc, res.getQuantityString(R.plurals.time_mins_verbose, minutes, Integer.valueOf(minutes)));
                             }
                         }
                     }
@@ -188,18 +188,18 @@
            FragmentActivity activity = getActivity();
            if (this.mSyncDescription != null && this.mPrefetchManager != null && activity != null) {
                if (this.mPrefetchManager.isSyncPending()) {
-                   this.mSyncDescription.setText(activity.getString(C0257R.string.sync_now_pending));
+                   this.mSyncDescription.setText(activity.getString(R.string.sync_now_pending));
                    return;
                         }
                long startTime = this.mPrefetchManager.getCurrentSyncStartTime();
                         if (startTime > 0) {
-                   this.mSyncDescription.setText(activity.getString(C0257R.string.sync_now_in_progress));
+                   this.mSyncDescription.setText(activity.getString(R.string.sync_now_in_progress));
                    return;
                         }
                long lastSync = this.mPrefetchManager.getLastSync();
                String text = null;
                         if (lastSync > 0) {
-                   text = activity.getResources().getString(C0257R.string.sync_now_desc, Util.getRelativeTimeString(activity, lastSync, true));
+                   text = activity.getResources().getString(R.string.sync_now_desc, Util.getRelativeTimeString(activity, lastSync, true));
                         }
                if (SLog.sLogsOn) {
                    long next = this.mPrefetchManager.getNextSync();
@@ -281,17 +281,17 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           ViewGroup vg = (ViewGroup) inflater.inflate(C0257R.layout.settings_sub, container, false);
-           this.mSyncOnOffSwitcher = addSwitcher(inflater, vg, C0257R.string.sync_enabled, C0257R.string.sync_enabled_desc, new C03032());
-           View intervalView = addText(inflater, vg, C0257R.string.sync_interval, C0257R.string.sync_interval_desc);
-           this.mIntervalDescription = (TextView) intervalView.findViewById(C0257R.id.description);
+           ViewGroup vg = (ViewGroup) inflater.inflate(R.layout.settings_sub, container, false);
+           this.mSyncOnOffSwitcher = addSwitcher(inflater, vg, R.string.sync_enabled, R.string.sync_enabled_desc, new C03032());
+           View intervalView = addText(inflater, vg, R.string.sync_interval, R.string.sync_interval_desc);
+           this.mIntervalDescription = (TextView) intervalView.findViewById(R.id.description);
            intervalView.setOnClickListener(new ViewOnClickListenerC03043());
-           this.mChargingRequiredSwitcher = addSwitcher(inflater, vg, C0257R.string.while_charging_only, C0257R.string.while_charging_only_desc, new C03054());
-           this.mWifiOnlySwitcher = addSwitcher(inflater, vg, C0257R.string.while_wifi_only, C0257R.string.while_wifi_only_desc, new C03065());
-           this.mRoamingAllowedSwitcher = addSwitcher(inflater, vg, C0257R.string.roaming, C0257R.string.roaming_desc, new C03076());
-           ViewGroup doitNow = (ViewGroup) addText(inflater, vg, C0257R.string.sync_now, C0257R.string.sync_now_never);
+           this.mChargingRequiredSwitcher = addSwitcher(inflater, vg, R.string.while_charging_only, R.string.while_charging_only_desc, new C03054());
+           this.mWifiOnlySwitcher = addSwitcher(inflater, vg, R.string.while_wifi_only, R.string.while_wifi_only_desc, new C03065());
+           this.mRoamingAllowedSwitcher = addSwitcher(inflater, vg, R.string.roaming, R.string.roaming_desc, new C03076());
+           ViewGroup doitNow = (ViewGroup) addText(inflater, vg, R.string.sync_now, R.string.sync_now_never);
            doitNow.setOnClickListener(new ViewOnClickListenerC03087());
-           this.mSyncDescription = (TextView) doitNow.findViewById(C0257R.id.description);
+           this.mSyncDescription = (TextView) doitNow.findViewById(R.id.description);
            return vg;
                 }
 
@@ -411,22 +411,22 @@
                 }
 
        private View addText(LayoutInflater inflater, ViewGroup parent, int labelString, int descString) {
-           View view = inflater.inflate(C0257R.layout.settings_text_row, parent, false);
-           ((TextView) view.findViewById(C0257R.id.label)).setText(labelString);
-           ((TextView) view.findViewById(C0257R.id.description)).setText(descString);
+           View view = inflater.inflate(R.layout.settings_text_row, parent, false);
+           ((TextView) view.findViewById(R.id.label)).setText(labelString);
+           ((TextView) view.findViewById(R.id.description)).setText(descString);
            parent.addView(view);
-           inflater.inflate(C0257R.layout.settings_sub_divider, parent, true);
+           inflater.inflate(R.layout.settings_sub_divider, parent, true);
            return view;
                 }
 
        private SwitchInterface addSwitcher(LayoutInflater inflater, ViewGroup parent, int labelString, int descString, CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
-           View view = inflater.inflate(C0257R.layout.settings_switch_row, parent, false);
-           SwitchInterface switcher = (SwitchInterface) view.findViewById(C0257R.id.switcher);
+           View view = inflater.inflate(R.layout.settings_switch_row, parent, false);
+           SwitchInterface switcher = (SwitchInterface) view.findViewById(R.id.switcher);
            switcher.setOnCheckedChangeListener(onCheckedChangeListener);
-           ((TextView) view.findViewById(C0257R.id.label)).setText(labelString);
-           ((TextView) view.findViewById(C0257R.id.description)).setText(descString);
+           ((TextView) view.findViewById(R.id.label)).setText(labelString);
+           ((TextView) view.findViewById(R.id.description)).setText(descString);
            parent.addView(view);
-           inflater.inflate(C0257R.layout.settings_sub_divider, parent, true);
+           inflater.inflate(R.layout.settings_sub_divider, parent, true);
            return switcher;
                 }
             }

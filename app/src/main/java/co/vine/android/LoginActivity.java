@@ -56,15 +56,15 @@
 
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.login, false);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.login_sign_in, (Boolean) true, (Boolean) true);
+            super.onCreate(savedInstanceState, R.layout.login, false);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.login_sign_in, (Boolean) true, (Boolean) true);
             this.mAppSessionListener = new LoginSessionListener(this, null);
-            this.mEmailAddress = (EditText) findViewById(C0257R.id.login_username);
-            this.mPassword = (EditText) findViewById(C0257R.id.login_password);
+            this.mEmailAddress = (EditText) findViewById(R.id.login_username);
+            this.mPassword = (EditText) findViewById(R.id.login_password);
             this.mPassword.setOnEditorActionListener(new C02391());
             StyleSpan[] mStyleSpanBoldSingle = {new StyleSpan(1)};
-            Spanned resetPasswordSpan = Util.getSpannedText(mStyleSpanBoldSingle, getString(C0257R.string.login_forgot_password), CommonUtil.MARKER_QUOTES);
-            TextView mResetPassword = (TextView) findViewById(C0257R.id.login_reset_password);
+            Spanned resetPasswordSpan = Util.getSpannedText(mStyleSpanBoldSingle, getString(R.string.login_forgot_password), CommonUtil.MARKER_QUOTES);
+            TextView mResetPassword = (TextView) findViewById(R.id.login_reset_password);
             mResetPassword.setText(resetPasswordSpan, TextView.BufferType.SPANNABLE);
             mResetPassword.setOnClickListener(new ViewOnClickListenerC02402());
             Intent intent = getIntent();
@@ -97,7 +97,7 @@
 
                     @Override 
             public void onClick(View view) {
-                if (view.getId() == C0257R.id.login_reset_password) {
+                if (view.getId() == R.id.login_reset_password) {
                     Intent intent = new Intent(LoginActivity.this, (Class<?>) ResetPasswordActivity.class);
                     String email = LoginActivity.access$400(LoginActivity.this).getText().toString();
                     if (!TextUtils.isEmpty(email)) {
@@ -110,13 +110,13 @@
 
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(C0257R.menu.login, menu);
+            getMenuInflater().inflate(R.menu.login, menu);
             return true;
                 }
 
                 @Override 
         public boolean onOptionsItemSelected(MenuItem item) {
-            if (item.getItemId() != C0257R.id.sign_in) {
+            if (item.getItemId() != R.id.sign_in) {
                         return super.onOptionsItemSelected(item);
                     }
            if (validateAndDisplayToastIfCredentialsInvalid()) {
@@ -128,20 +128,20 @@
        private boolean validateAndDisplayToastIfCredentialsInvalid() {
            String emailAddress = this.mEmailAddress.getText().toString();
            if (emailAddress.isEmpty()) {
-               Util.showCenteredToast(this, C0257R.string.login_empty_email);
+               Util.showCenteredToast(this, R.string.login_empty_email);
                         return false;
                     }
            if (!AuthenticationUtils.isEmailAddressValid(emailAddress)) {
-               Util.showCenteredToast(this, C0257R.string.login_invalid_email);
+               Util.showCenteredToast(this, R.string.login_invalid_email);
                         return false;
                     }
            AuthenticationUtils.Result passwordValidationResult = AuthenticationUtils.validatePassword(this.mPassword.getText().toString());
                     switch (passwordValidationResult) {
                         case EMPTY:
-                   Util.showCenteredToast(this, C0257R.string.login_empty_password);
+                   Util.showCenteredToast(this, R.string.login_empty_password);
                             return false;
                         case TOO_SHORT:
-                   Util.showCenteredToast(this, C0257R.string.login_password_too_short);
+                   Util.showCenteredToast(this, R.string.login_password_too_short);
                             return false;
                         default:
                    return true;
@@ -151,9 +151,9 @@
        private void login(boolean reactivate) {
            String emailAddress = this.mEmailAddress.getText().toString();
            String password = this.mPassword.getText().toString();
-           ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
+           ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
            dialog.setProgressStyle(0);
-           dialog.setMessage(getString(C0257R.string.login_logging_in));
+           dialog.setMessage(getString(R.string.login_logging_in));
            DialogUtils.showDialogUnsafe(dialog);
            this.mProgressDialog = dialog;
            Session session = this.mAppController.getSession(emailAddress);
@@ -172,10 +172,10 @@
                         default:
                    if (errorCode == VineKnownErrors.ACCOUNT_DEACTIVATED.code) {
                        PromptDialogSupportFragment dialogFragment = PromptDialogSupportFragment.newInstance(1);
-                       dialogFragment.setMessage(C0257R.string.settings_activate_account_dialog);
-                       dialogFragment.setTitle(C0257R.string.settings_activate_account_title);
-                       dialogFragment.setNegativeButton(C0257R.string.cancel);
-                       dialogFragment.setPositiveButton(C0257R.string.settings_activate_account_confirm);
+                       dialogFragment.setMessage(R.string.settings_activate_account_dialog);
+                       dialogFragment.setTitle(R.string.settings_activate_account_title);
+                       dialogFragment.setNegativeButton(R.string.cancel);
+                       dialogFragment.setPositiveButton(R.string.settings_activate_account_confirm);
                        dialogFragment.setListener(this.mActivateAccountDialogDoneListener);
                        dialogFragment.show(getSupportFragmentManager());
                             } else {

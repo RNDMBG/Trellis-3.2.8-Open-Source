@@ -92,7 +92,7 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View view = createView(inflater, C0257R.layout.find_friends_address_list_fragment, container);
+           View view = createView(inflater, R.layout.find_friends_address_list_fragment, container);
            this.mListView.setDividerHeight(0);
            return view;
                 }
@@ -133,8 +133,8 @@
            showProgress(fetchType);
                     switch (fetchType) {
                         case 3:
-                   ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-                   d.setMessage(getString(C0257R.string.finding_friends_address));
+                   ProgressDialog d = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+                   d.setMessage(getString(R.string.finding_friends_address));
                    d.setProgressStyle(0);
                    d.show();
                    this.mProgressDialog = d;

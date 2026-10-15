@@ -5,7 +5,7 @@ import android.util.Log;
             import android.content.SharedPreferences;
             import android.content.res.Resources;
             import android.text.TextUtils;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.api.VineClientFlags;
             import co.vine.android.cache.text.TextCache;
             import co.vine.android.network.HeaderInjecter;
@@ -146,8 +146,8 @@ import android.util.Log;
            
            
            this.mBaseUrl = BuildUtil.getBaseUrl(resources);
-           this.mAmazonUrl = resources.getString(C0257R.string.amazon_s3);
-           this.mTwitterUrl = resources.getString(C0257R.string.twitter_api);
+           this.mAmazonUrl = resources.getString(R.string.amazon_s3);
+           this.mTwitterUrl = resources.getString(R.string.twitter_api);
            this.mRtcUrl = savedRtcHost != null ? SCHEME_HTTPS + savedRtcHost : BuildUtil.getRtcUrl(resources);
            this.mMediaUrl = savedMediaHost != null ? SCHEME_HTTPS + savedMediaHost : BuildUtil.getMediaUrl(resources);
            this.mExploreUrl = savedExploreHost != null ? SCHEME_HTTP + savedExploreHost : BuildUtil.getExploreUrl(resources);
@@ -258,7 +258,7 @@ import android.util.Log;
                 }
 
        public String getAuthHeaderSecret() {
-           return this.mContext.getResources().getString(C0257R.string.app_secret);
+           return this.mContext.getResources().getString(R.string.app_secret);
                 }
 
        public StringBuilder buildUrl(Object... paths) {

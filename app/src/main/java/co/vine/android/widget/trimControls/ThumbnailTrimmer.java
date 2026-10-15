@@ -9,7 +9,7 @@
             import android.support.annotation.NonNull;
             import android.view.MotionEvent;
             import android.view.View;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class ThumbnailTrimmer extends View {
@@ -42,18 +42,18 @@
                 }
 
         private void init(int paddingLeft) {
-            this.mTrimScrubber = (NinePatchDrawable) getResources().getDrawable(C0257R.drawable.scrub_right);
+            this.mTrimScrubber = (NinePatchDrawable) getResources().getDrawable(R.drawable.scrub_right);
             this.scrubberDrawableWidth = this.mTrimScrubber.getMinimumWidth();
-            this.mScrubberPadding = getResources().getDimensionPixelSize(C0257R.dimen.scrubber_padding);
-            this.mCarouselPadding = getResources().getDimensionPixelSize(C0257R.dimen.carousel_padding);
+            this.mScrubberPadding = getResources().getDimensionPixelSize(R.dimen.scrubber_padding);
+            this.mCarouselPadding = getResources().getDimensionPixelSize(R.dimen.carousel_padding);
             this.mScrubberRect = new Rect();
             this.mScrubberPaint = new Paint();
             this.mScrubberPaint.setColor(0);
-            this.mStrokeWidth = getResources().getDimensionPixelOffset(C0257R.dimen.trimmer_stroke_width);
+            this.mStrokeWidth = getResources().getDimensionPixelOffset(R.dimen.trimmer_stroke_width);
             this.mOutlineRect = new Rect();
             this.mOutlinePaint = new Paint();
             this.mOutlinePaint.setStyle(Paint.Style.STROKE);
-            this.mOutlinePaint.setColor(getResources().getColor(C0257R.color.trim_yellow));
+            this.mOutlinePaint.setColor(getResources().getColor(R.color.trim_yellow));
             this.mOutlinePaint.setStrokeWidth(this.mStrokeWidth);
             this.mDeselectedRect = new Rect();
             this.mFrontDeselectedRect = new Rect();

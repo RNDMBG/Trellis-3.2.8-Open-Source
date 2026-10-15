@@ -127,7 +127,7 @@
                                     break;
                                 default:
                            if (TextUtils.isEmpty(reasonPhrase)) {
-                               reasonPhrase = TagSearchFragment.this.getString(C0257R.string.error_unknown);
+                               reasonPhrase = TagSearchFragment.this.getString(R.string.error_unknown);
                                     }
                            Util.showCenteredToast(TagSearchFragment.this.getActivity(), reasonPhrase);
                                     break;

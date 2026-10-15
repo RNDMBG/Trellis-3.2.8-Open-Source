@@ -18,13 +18,13 @@
 
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(C0257R.menu.capture, menu);
+            getMenuInflater().inflate(R.menu.capture, menu);
             return super.onCreateOptionsMenu(menu);
                 }
 
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
             ActionBar platformActionBar = getActionBar();
             if (platformActionBar != null) {
                 platformActionBar.hide();
@@ -34,7 +34,7 @@
                 CrashUtil.logException(new VineLoggingException(), "App controller is null here, and now? " + this.mAppController, new Object[0]);
                     }
             if (this.mAppController != null && this.mAppController.isLoggedIn()) {
-                setupActionBar((Boolean) true, (Boolean) true, C0257R.string.comments_title, (Boolean) true, (Boolean) true);
+                setupActionBar((Boolean) true, (Boolean) true, R.string.comments_title, (Boolean) true, (Boolean) true);
                 Intent intent = getIntent();
                 if (savedInstanceState == null) {
                     CommentsFragment fragment = new CommentsFragment();
@@ -43,10 +43,10 @@
                     args.putLong("post_id", intent.getLongExtra("post_id", -1L));
                     args.putLong("repost_id", intent.getLongExtra("repost_id", -1L));
                     args.putLong("post_author_id", intent.getLongExtra("post_author_id", -1L));
-                    args.putInt("empty_desc", C0257R.string.comments_empty);
+                    args.putInt("empty_desc", R.string.comments_empty);
                     args.putBoolean("hide_keyboard", hideKeyboard);
                     fragment.setArguments(args);
-                    getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, TAG).commit();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, TAG).commit();
                         }
                     }
                 }

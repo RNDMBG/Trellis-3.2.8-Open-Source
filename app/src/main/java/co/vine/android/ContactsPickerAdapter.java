@@ -58,7 +58,7 @@
                     ContactsPickerViewHolder holder;
             if (convertView == null) {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
-                convertView = inflater.inflate(C0257R.layout.recipient_picker_contacts_row, parent, false);
+                convertView = inflater.inflate(R.layout.recipient_picker_contacts_row, parent, false);
                 holder = new ContactsPickerViewHolder(convertView);
                 convertView.setTag(holder);
                     } else {
@@ -193,11 +193,11 @@
                     public TextView username;
 
            public ContactsPickerViewHolder(View v) {
-               this.emailIndicator = (ImageView) v.findViewById(C0257R.id.email_indicator);
-               this.phoneIndicator = (ImageView) v.findViewById(C0257R.id.phone_indicator);
-               this.separator = (TextView) v.findViewById(C0257R.id.separator);
-               this.username = (TextView) v.findViewById(C0257R.id.contact_name);
-               this.divider = v.findViewById(C0257R.id.divider);
+               this.emailIndicator = (ImageView) v.findViewById(R.id.email_indicator);
+               this.phoneIndicator = (ImageView) v.findViewById(R.id.phone_indicator);
+               this.separator = (TextView) v.findViewById(R.id.separator);
+               this.username = (TextView) v.findViewById(R.id.contact_name);
+               this.divider = v.findViewById(R.id.divider);
                     }
                 }
             }

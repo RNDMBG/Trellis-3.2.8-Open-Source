@@ -149,22 +149,22 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View v = inflater.inflate(C0257R.layout.find_friends_twitter_list_fragment, container, false);
+           View v = inflater.inflate(R.layout.find_friends_twitter_list_fragment, container, false);
            this.mListView = (ListView) v.findViewById(android.R.id.list);
            this.mListView.setEmptyView(v.findViewById(android.R.id.empty));
            this.mListView.setDividerHeight(0);
            this.mListView.setOnItemClickListener(this);
-           this.mContactsCountContainer = (RelativeLayout) v.findViewById(C0257R.id.contacts_count_container);
-           this.mContactsText = (TextView) v.findViewById(C0257R.id.contacts_text);
-           this.mSelectAllToggle = (TextView) v.findViewById(C0257R.id.select_all_toggle);
+           this.mContactsCountContainer = (RelativeLayout) v.findViewById(R.id.contacts_count_container);
+           this.mContactsText = (TextView) v.findViewById(R.id.contacts_text);
+           this.mSelectAllToggle = (TextView) v.findViewById(R.id.select_all_toggle);
            this.mSelectAllToggle.setOnClickListener(this);
            getTwitterTokenAndSecretFromAccountManager();
-           Button actionButton = (Button) v.findViewById(C0257R.id.friends_btn);
+           Button actionButton = (Button) v.findViewById(R.id.friends_btn);
            if (this.mToken != null && this.mSecret != null) {
                actionButton.setVisibility(8);
                fetchTwitterFriends(this.mToken, this.mSecret);
                     } else {
-               actionButton.setText(Util.getSpannedText(this.mBold, getString(C0257R.string.find_friends_twitter_cta), CommonUtil.MARKER_QUOTES));
+               actionButton.setText(Util.getSpannedText(this.mBold, getString(R.string.find_friends_twitter_cta), CommonUtil.MARKER_QUOTES));
                actionButton.setOnClickListener(this);
                     }
            return v;
@@ -175,9 +175,9 @@
            super.onViewCreated(view, savedInstanceState);
            if (!this.mFromSignup) {
                LayoutInflater inflater = LayoutInflater.from(getActivity());
-               View title = inflater.inflate(C0257R.layout.list_header, (ViewGroup) null);
+               View title = inflater.inflate(R.layout.list_header, (ViewGroup) null);
                this.mListView.addHeaderView(title);
-               ((TextView) title.findViewById(C0257R.id.subtitle)).setText(C0257R.string.find_friends_twitter_subtitle);
+               ((TextView) title.findViewById(R.id.subtitle)).setText(R.string.find_friends_twitter_subtitle);
                     }
                 }
 
@@ -251,7 +251,7 @@
            Account ac = VineAccountHelper.getAccount(activity, uniqueLogin);
            if (ac == null) {
                CrashUtil.logException(new VineLoggingException("Find Friends Twitter account was null"), "Find Friends Twitter account was null. UniqueLogin: {} ", uniqueLogin);
-               Util.showCenteredToast(activity, C0257R.string.find_friends_twitter_error);
+               Util.showCenteredToast(activity, R.string.find_friends_twitter_error);
                     } else {
                AccountManager am = AccountManager.get(getActivity());
                this.mToken = am.getUserData(ac, VineAccountHelper.KEY_TWITTER_TOKEN);
@@ -260,9 +260,9 @@
                 }
 
        private void fetchTwitterFriends(String token, String secret) {
-           ProgressDialog dialog = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
+           ProgressDialog dialog = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
            dialog.setProgress(0);
-           dialog.setMessage(getString(C0257R.string.finding_friends_twitter));
+           dialog.setMessage(getString(R.string.finding_friends_twitter));
            dialog.show();
            this.mProgressDialog = dialog;
            this.mAppController.fetchTwitterFriends(this.mAppController.getActiveSession(), token, secret);
@@ -278,7 +278,7 @@
                        fetchTwitterFriends(this.mToken, this.mSecret);
                             } else if (resultCode != 0) {
                        dismissProgressDialog();
-                       Util.showCenteredToast(getActivity(), C0257R.string.find_friends_twitter_sdk_error);
+                       Util.showCenteredToast(getActivity(), R.string.find_friends_twitter_sdk_error);
                             }
                             break;
                         case 2:
@@ -329,7 +329,7 @@
            if (id == 2131427576) {
                this.mSelected = this.mSelected ? false : true;
                this.mActivity.toggleFollowAll(this.mSelected, this.mTwitterFriends, this.mFriendships);
-               this.mSelectAllToggle.setText(this.mSelected ? C0257R.string.deselect_all : C0257R.string.select_all);
+               this.mSelectAllToggle.setText(this.mSelected ? R.string.deselect_all : R.string.select_all);
                this.mCursorAdapter.notifyDataSetChanged();
                     }
                 }
@@ -413,20 +413,20 @@
                    FlurryUtils.trackFindFriendsTwitterCount(count);
                    if (FindFriendsTwitterFragment.access$100(FindFriendsTwitterFragment.this) && count > 0) {
                        FindFriendsTwitterFragment.access$200(FindFriendsTwitterFragment.this).setVisibility(0);
-                       FindFriendsTwitterFragment.access$300(FindFriendsTwitterFragment.this).setText(FindFriendsTwitterFragment.this.getString(C0257R.string.find_friends_twitter_count, Integer.valueOf(count)));
-                       FindFriendsTwitterFragment.access$500(FindFriendsTwitterFragment.this).setText(FindFriendsTwitterFragment.access$400(FindFriendsTwitterFragment.this) ? C0257R.string.deselect_all : C0257R.string.select_all);
+                       FindFriendsTwitterFragment.access$300(FindFriendsTwitterFragment.this).setText(FindFriendsTwitterFragment.this.getString(R.string.find_friends_twitter_count, Integer.valueOf(count)));
+                       FindFriendsTwitterFragment.access$500(FindFriendsTwitterFragment.this).setText(FindFriendsTwitterFragment.access$400(FindFriendsTwitterFragment.this) ? R.string.deselect_all : R.string.select_all);
                        FindFriendsTwitterFragment.access$700(FindFriendsTwitterFragment.this).addUsersToFollow(users, FindFriendsTwitterFragment.access$600(FindFriendsTwitterFragment.this));
                        FindFriendsTwitterFragment.access$800(FindFriendsTwitterFragment.this).addAll(users);
                        return;
                             }
                    if (count == 0) {
-                       Util.showCenteredToast(FindFriendsTwitterFragment.this.getActivity(), C0257R.string.find_friends_twitter_no_friends);
+                       Util.showCenteredToast(FindFriendsTwitterFragment.this.getActivity(), R.string.find_friends_twitter_no_friends);
                        return;
                             }
                    return;
                         }
                FlurryUtils.trackFindFriendsTwitterFailure();
-               Util.showCenteredToast(FindFriendsTwitterFragment.this.getActivity(), C0257R.string.find_friends_twitter_error);
+               Util.showCenteredToast(FindFriendsTwitterFragment.this.getActivity(), R.string.find_friends_twitter_error);
                     }
 
                     @Override 

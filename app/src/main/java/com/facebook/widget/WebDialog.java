@@ -19,7 +19,7 @@
             import android.widget.FrameLayout;
             import android.widget.ImageView;
             import android.widget.LinearLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import com.facebook.FacebookDialogException;
             import com.facebook.FacebookException;
             import com.facebook.FacebookOperationCanceledException;
@@ -217,7 +217,7 @@
        private void createCrossImage() {
            this.crossImageView = new ImageView(getContext());
            this.crossImageView.setOnClickListener(new ViewOnClickListenerC07833());
-           Drawable crossDrawable = getContext().getResources().getDrawable(C0257R.drawable.com_facebook_close);
+           Drawable crossDrawable = getContext().getResources().getDrawable(R.drawable.com_facebook_close);
            this.crossImageView.setImageDrawable(crossDrawable);
            this.crossImageView.setVisibility(4);
                 }

@@ -10,7 +10,7 @@
             import android.widget.ImageView;
             import android.widget.ProgressBar;
             import android.widget.RelativeLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class TrimControllerOverlay extends FrameLayout implements View.OnClickListener, TrimTimeBar.Listener {
@@ -57,7 +57,7 @@
             addView(spinner, wrapContent);
             this.mProgressBar = spinner;
             ImageView playPauseView = new ImageView(context);
-            playPauseView.setImageResource(C0257R.drawable.btn_import_play);
+            playPauseView.setImageResource(R.drawable.btn_import_play);
             playPauseView.setScaleType(ImageView.ScaleType.CENTER);
             playPauseView.setFocusable(true);
             playPauseView.setClickable(true);

@@ -25,7 +25,7 @@
                 @Override 
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            View rowView = layoutInflater.inflate(C0257R.layout.tag_row_view, (ViewGroup) null);
+            View rowView = layoutInflater.inflate(R.layout.tag_row_view, (ViewGroup) null);
             TagDropDownViewHolder vh = new TagDropDownViewHolder(rowView);
             this.mViewHolders.add(new WeakReference<>(vh));
             rowView.setTag(vh);
@@ -68,7 +68,7 @@
                     public long userId;
 
             public TagDropDownViewHolder(View rowView) {
-                this.tagName = (TextView) rowView.findViewById(C0257R.id.tag_name);
+                this.tagName = (TextView) rowView.findViewById(R.id.tag_name);
                     }
                 }
             }

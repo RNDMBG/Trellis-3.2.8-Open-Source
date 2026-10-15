@@ -18,10 +18,14 @@
             String action = intent.getAction();
             SLog.m447d("Received device boot message {}.", action);
             if (!"android.intent.action.PACKAGE_REPLACED".equals(action) || (data = intent.getData()) == null || context.getPackageName().equals(data.getSchemeSpecificPart())) {
-                        try {
-                    context.startService(new Intent(context, (Class<?>) ResourceService.class));
-                    context.startService(new Intent(context, (Class<?>) VineService.class).setAction(VineService.ACTION_DEVICE_BOOT).putExtras(Bundle.EMPTY));
-                        } catch (SecurityException e) {
+                         try {
+                     co.vine.android.service.ActivityPollJobService.schedule(context);
+                         } catch (Exception ignored) {
+                         }
+                         try {
+                     context.startService(new Intent(context, (Class<?>) ResourceService.class));
+                     context.startService(new Intent(context, (Class<?>) VineService.class).setAction(VineService.ACTION_DEVICE_BOOT).putExtras(Bundle.EMPTY));
+                         } catch (SecurityException e) {
                     CrashUtil.logException(e);
                         }
                     }

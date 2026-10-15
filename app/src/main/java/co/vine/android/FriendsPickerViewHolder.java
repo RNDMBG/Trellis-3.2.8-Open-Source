@@ -26,11 +26,11 @@
         public FriendsPickerViewHolder(Context context, SparseArray<Drawable> colorMap, View v) {
             super(v);
             this.mColoredIndicatorMap = colorMap;
-            this.selectionIndicator = v.findViewById(C0257R.id.selection_indicator);
-            this.sectionIndicator = v.findViewById(C0257R.id.section_indicator);
-            this.sectionTitle = (TextView) v.findViewById(C0257R.id.section_title);
-            this.sectionSort = (TextView) v.findViewById(C0257R.id.section_sort);
-            this.divider = v.findViewById(C0257R.id.divider);
+            this.selectionIndicator = v.findViewById(R.id.selection_indicator);
+            this.sectionIndicator = v.findViewById(R.id.section_indicator);
+            this.sectionTitle = (TextView) v.findViewById(R.id.section_title);
+            this.sectionSort = (TextView) v.findViewById(R.id.section_sort);
+            this.divider = v.findViewById(R.id.divider);
             Util.styleSectionHeader(context, this.sectionTitle, this.sectionSort);
                 }
 
@@ -38,20 +38,20 @@
             if (selected) {
                 Drawable bg = null;
                 if (this.recipient.color <= 0 || this.recipient.color == Settings.DEFAULT_PROFILE_COLOR) {
-                    this.recipient.color = res.getColor(C0257R.color.vine_green);
+                    this.recipient.color = res.getColor(R.color.vine_green);
                         } else {
                     bg = this.mColoredIndicatorMap.get(this.recipient.color);
                         }
                 if (bg == null) {
-                    bg = res.getDrawable(C0257R.drawable.ic_circle_selected).mutate();
+                    bg = res.getDrawable(R.drawable.ic_circle_selected).mutate();
                     bg.setColorFilter(new PorterDuffColorFilter((-16777216) | this.recipient.color, PorterDuff.Mode.SRC_IN));
                     this.mColoredIndicatorMap.put(this.recipient.color, bg);
                         }
                 ViewUtil.setBackground(this.selectionIndicator, bg);
                 return;
                     }
-            Drawable bg2 = res.getDrawable(C0257R.drawable.ic_circle_default);
-            bg2.setColorFilter(new PorterDuffColorFilter(res.getColor(C0257R.color.btn_circle_stroke), PorterDuff.Mode.SRC_IN));
+            Drawable bg2 = res.getDrawable(R.drawable.ic_circle_default);
+            bg2.setColorFilter(new PorterDuffColorFilter(res.getColor(R.color.btn_circle_stroke), PorterDuff.Mode.SRC_IN));
             ViewUtil.setBackground(this.selectionIndicator, bg2);
                 }
             }

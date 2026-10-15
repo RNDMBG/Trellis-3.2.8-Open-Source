@@ -73,14 +73,14 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View v = inflater.inflate(C0257R.layout.locale_preference, container, false);
-            RadioButton system = (RadioButton) v.findViewById(C0257R.id.system_locale);
-            RadioButton custom = (RadioButton) v.findViewById(C0257R.id.custom_locale);
+            View v = inflater.inflate(R.layout.locale_preference, container, false);
+            RadioButton system = (RadioButton) v.findViewById(R.id.system_locale);
+            RadioButton custom = (RadioButton) v.findViewById(R.id.custom_locale);
             SharedPreferences prefs = Util.getDefaultSharedPrefs(getActivity());
             boolean customEnabled = prefs.getBoolean(Settings.PREF_CUSTOM_LOCALE_ENABLED, false);
             system.setChecked(!customEnabled);
             custom.setChecked(customEnabled);
-            Spinner locales = (Spinner) v.findViewById(C0257R.id.locales_spinner);
+            Spinner locales = (Spinner) v.findViewById(R.id.locales_spinner);
             locales.setAdapter((SpinnerAdapter) this.mLocalesAdapter);
             if (prefs.contains(Settings.PREF_CUSTOM_LOCALE)) {
                 String customLocaleCode = prefs.getString(Settings.PREF_CUSTOM_LOCALE, "");
@@ -97,11 +97,11 @@
                             }
                         }
                     }
-           RadioGroup localeOptions = (RadioGroup) v.findViewById(C0257R.id.locale_group);
+           RadioGroup localeOptions = (RadioGroup) v.findViewById(R.id.locale_group);
            if (customEnabled) {
-               localeOptions.check(C0257R.id.custom_locale);
+               localeOptions.check(R.id.custom_locale);
                     } else {
-               localeOptions.check(C0257R.id.system_locale);
+               localeOptions.check(R.id.system_locale);
                     }
            localeOptions.setOnCheckedChangeListener(new C02381());
            locales.setEnabled(customEnabled);

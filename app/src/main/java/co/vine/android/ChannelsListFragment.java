@@ -89,15 +89,15 @@
                 this.mCursorAdapter = new ChannelsAdapter(getActivity(), this.mAppController, 0);
                     }
             ListView listview = this.mListView;
-            listview.setBackgroundColor(getResources().getColor(C0257R.color.solid_white));
-            listview.setDivider(getResources().getDrawable(C0257R.drawable.rule_horizontal_5));
+            listview.setBackgroundColor(getResources().getColor(R.color.solid_white));
+            listview.setDivider(getResources().getDrawable(R.drawable.rule_horizontal_5));
             if (savedInstanceState == null && this.mShowChannelFollow) {
-                View header = LayoutInflater.from(getActivity()).inflate(C0257R.layout.channel_row_view, (ViewGroup) listview, false);
-                header.setLayoutParams(new AbsListView.LayoutParams(-1, getResources().getDimensionPixelSize(C0257R.dimen.channel_row_height)));
+                View header = LayoutInflater.from(getActivity()).inflate(R.layout.channel_row_view, (ViewGroup) listview, false);
+                header.setLayoutParams(new AbsListView.LayoutParams(-1, getResources().getDimensionPixelSize(R.dimen.channel_row_height)));
                 ChannelViewHolder tmp = new ChannelViewHolder(header);
                 tmp.channelImage.setVisibility(8);
                tmp.followButton.setVisibility(0);
-               tmp.channelTitle.setText(C0257R.string.all_featured_posts);
+               tmp.channelTitle.setText(R.string.all_featured_posts);
                this.mSelectAllButton = tmp.followButton;
                listview.addHeaderView(header);
                     }
@@ -106,12 +106,12 @@
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-           inflater.inflate(C0257R.menu.next, menu);
+           inflater.inflate(R.menu.next, menu);
                 }
 
                 @Override 
        public void onPrepareOptionsMenu(Menu menu) {
-           MenuItem next = menu.findItem(C0257R.id.next);
+           MenuItem next = menu.findItem(R.id.next);
            next.setEnabled(true);
                 }
 
@@ -234,7 +234,7 @@
                     @Override 
            public View newView(Context context, Cursor cursor, ViewGroup parent) {
                LayoutInflater layoutInflater = LayoutInflater.from(context);
-               View v = layoutInflater.inflate(C0257R.layout.channel_row_view, parent, false);
+               View v = layoutInflater.inflate(R.layout.channel_row_view, parent, false);
                ChannelViewHolder holder = ChannelsListFragment.this.new ChannelViewHolder(v);
                this.mViewHolders.add(new WeakReference<>(holder));
                v.setTag(holder);
@@ -254,9 +254,9 @@
                         } catch (Exception e) {
                         }
                         if (channelId == ChannelsListFragment.access$300(ChannelsListFragment.this)) {
-                   view.setBackground(ChannelsListFragment.this.getResources().getDrawable(C0257R.color.generic_selected));
+                   view.setBackground(ChannelsListFragment.this.getResources().getDrawable(R.color.generic_selected));
                         } else {
-                   view.setBackground(ChannelsListFragment.this.getResources().getDrawable(C0257R.drawable.bg_generic));
+                   view.setBackground(ChannelsListFragment.this.getResources().getDrawable(R.drawable.bg_generic));
                         }
                if (ChannelsListFragment.this.getResources().getDisplayMetrics().densityDpi < 240) {
                    iconFullUrl = cursor.getString(8);
@@ -310,7 +310,7 @@
                    return;
                         }
                holder.channelImage.setImageBitmap(null);
-               holder.channelImage.setBackgroundColor(this.mContext.getResources().getColor(C0257R.color.solid_light_gray));
+               holder.channelImage.setBackgroundColor(this.mContext.getResources().getColor(R.color.solid_light_gray));
                     }
                 }
 
@@ -324,11 +324,11 @@
                     public ViewGroup rootLayout;
 
            public ChannelViewHolder(View view) {
-               this.channelImage = (ImageView) view.findViewById(C0257R.id.channel_image);
-               this.channelTitle = (TextView) view.findViewById(C0257R.id.channel);
-               this.followButton = (VineToggleButton) view.findViewById(C0257R.id.follow_button);
+               this.channelImage = (ImageView) view.findViewById(R.id.channel_image);
+               this.channelTitle = (TextView) view.findViewById(R.id.channel);
+               this.followButton = (VineToggleButton) view.findViewById(R.id.follow_button);
                this.followButton.setOnCheckedChangeListener(ChannelsListFragment.this);
-               this.rootLayout = (ViewGroup) view.findViewById(C0257R.id.root_layout);
+               this.rootLayout = (ViewGroup) view.findViewById(R.id.root_layout);
                if (ChannelsListFragment.access$400(ChannelsListFragment.this)) {
                    this.rootLayout.setOnClickListener(new ViewOnClickListenerC01611(ChannelsListFragment.this));
                         }
@@ -376,7 +376,7 @@
                if (holder instanceof ChannelViewHolder) {
                    color = ((ChannelViewHolder) holder).channelColor;
                         } else {
-                   color = getResources().getColor(C0257R.color.vine_green);
+                   color = getResources().getColor(R.color.vine_green);
                         }
                bg.setColorFilter(color, PorterDuff.Mode.SRC_IN);
                     }

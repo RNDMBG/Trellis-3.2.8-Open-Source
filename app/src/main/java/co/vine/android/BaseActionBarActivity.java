@@ -151,9 +151,9 @@ import android.widget.ImageView;
        protected void applyDefaultTitleViewStylingToFakeActionBar() {
            Resources res = getResources();
            FakeActionBar fakeActionBar = getFakeActionBar();
-           fakeActionBar.getTitleView().setTextColor(res.getColor(C0257R.color.primary_text));
+           fakeActionBar.getTitleView().setTextColor(res.getColor(R.color.primary_text));
            fakeActionBar.getTitleView().setTypeface(Typefaces.get(this).mediumContent);
-           fakeActionBar.getTitleView().setTextSize(0, res.getDimensionPixelSize(C0257R.dimen.font_size_large));
+           fakeActionBar.getTitleView().setTextSize(0, res.getDimensionPixelSize(R.dimen.font_size_large));
                 }
 
                 @Override 
@@ -260,7 +260,7 @@ import android.widget.ImageView;
                this.mFakeActionBar.onCreate();
                requestWindowFeature(1);
                     }
-           this.mVineGreen = getResources().getColor(C0257R.color.vine_green);
+           this.mVineGreen = getResources().getColor(R.color.vine_green);
            if (isSlidingMenuEnabled()) {
                SLog.m464i("Sliding menu is enabled.");
                this.mSlidingMenuHelper = createSlidingMenuHelper();
@@ -314,7 +314,7 @@ import android.widget.ImageView;
 
                 @Override 
        public boolean onCreateOptionsMenu(Menu menu) {
-           updateMuteActionState(menu.findItem(C0257R.id.audio));
+           updateMuteActionState(menu.findItem(R.id.audio));
            this.mMenu = menu;
            if (this.mFakeActionBar != null) {
                this.mFakeActionBar.onCreateOptionsMenu(this.mMenu, true);
@@ -344,7 +344,7 @@ import android.widget.ImageView;
                ViewServer.get(this).setFocusedWindow(this);
                     }
            if (this.mMenu != null) {
-               updateMuteActionState(this.mMenu.findItem(C0257R.id.audio));
+               updateMuteActionState(this.mMenu.findItem(R.id.audio));
                     }
            this.mDefaultPluginManager.onResume(this);
                     registerReceiver(this.mFinishReceiver, FINISH_INTENT_FILTER, CrossConstants.BROADCAST_PERMISSION, null);
@@ -410,7 +410,7 @@ import android.widget.ImageView;
            if (menu != null) {
                boolean isMuted = MuteUtil.isMuted(this);
                SLog.m447d("Is muted? {}", Boolean.valueOf(isMuted));
-               menu.setTitle(isMuted ? C0257R.string.unmute : C0257R.string.mute);
+               menu.setTitle(isMuted ? R.string.unmute : R.string.mute);
                     }
                 }
 
@@ -884,11 +884,11 @@ import android.widget.ImageView;
                             return true;
                         }
                     }
-           if (id == C0257R.id.capture) {
+           if (id == R.id.capture) {
                AppImpl.getInstance().startCapture(this);
                         return true;
                     }
-           if (id == C0257R.id.audio) {
+           if (id == R.id.audio) {
                MuteUtil.setMuted(this, !MuteUtil.isMuted(this));
                updateMuteActionState(item);
                         return true;
@@ -910,7 +910,7 @@ import android.widget.ImageView;
                         }
                if (this instanceof HomeTabActivity) {
                    if (profileBackground == Settings.DEFAULT_PROFILE_COLOR || profileBackground <= 0 || profileBackground == (Settings.DEFAULT_PROFILE_COLOR | (-16777216))) {
-                       ((HomeTabActivity) this).setProfileColor(getResources().getColor(C0257R.color.vine_green));
+                       ((HomeTabActivity) this).setProfileColor(getResources().getColor(R.color.vine_green));
                             } else {
                        ((HomeTabActivity) this).setProfileColor(profileBackground | (-16777216));
                             }

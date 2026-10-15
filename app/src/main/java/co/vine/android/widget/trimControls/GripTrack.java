@@ -8,7 +8,7 @@
             import android.graphics.RectF;
             import android.view.MotionEvent;
             import android.view.View;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class GripTrack extends View {
@@ -33,10 +33,10 @@
             this.mRightRect = new Rect();
             this.mGripHandle = new RectF();
             Resources res = getResources();
-            this.mGripBgPaint.setColor(res.getColor(C0257R.color.gripTrackBackground));
-            this.mGripHandlePaint.setColor(res.getColor(C0257R.color.white_forty_percent));
-            this.mGripHandleWidth = res.getDimensionPixelSize(C0257R.dimen.grip_handle_width);
-            this.mGripHandleHeight = res.getDimensionPixelSize(C0257R.dimen.grip_handle_height);
+            this.mGripBgPaint.setColor(res.getColor(R.color.gripTrackBackground));
+            this.mGripHandlePaint.setColor(res.getColor(R.color.white_forty_percent));
+            this.mGripHandleWidth = res.getDimensionPixelSize(R.dimen.grip_handle_width);
+            this.mGripHandleHeight = res.getDimensionPixelSize(R.dimen.grip_handle_height);
             this.mGripTrackTouchListener = listener;
                 }
 

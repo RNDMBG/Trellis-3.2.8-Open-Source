@@ -12,7 +12,7 @@
             import android.view.animation.ScaleAnimation;
             import android.widget.Button;
             import android.widget.LinearLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.animation.SimpleAnimationListener;
             import co.vine.android.recorder.BasicVineRecorder;
             import co.vine.android.util.ViewUtil;
@@ -57,9 +57,9 @@
 
                 @Override 
         protected Button onLayoutInflated(LinearLayout view, LayoutInflater inflater, Fragment fragment) {
-            this.mFocusIndicator = new WeakReferenceView(fragment.getView().findViewById(C0257R.id.focus_indicator));
-            Button button = (Button) inflater.inflate(C0257R.layout.plugin_tool_regular_button, (ViewGroup) view, false);
-            button.setBackgroundResource(C0257R.drawable.ic_focus);
+            this.mFocusIndicator = new WeakReferenceView(fragment.getView().findViewById(R.id.focus_indicator));
+            Button button = (Button) inflater.inflate(R.layout.plugin_tool_regular_button, (ViewGroup) view, false);
+            button.setBackgroundResource(R.drawable.ic_focus);
             button.setAlpha(0.35f);
             ViewGroup.LayoutParams indicatorParams = this.mFocusIndicator.getLayoutParams();
             if (indicatorParams == null) {
@@ -113,7 +113,7 @@
             BasicVineRecorder recorder = getRecorder();
             if (focusView != null && recorder != null && this.mActivity != null) {
                 boolean canChangeFocus = recorder.canChangeFocus();
-                Drawable d = canChangeFocus ? this.mActivity.getResources().getDrawable(C0257R.drawable.ic_focus) : this.mActivity.getResources().getDrawable(C0257R.drawable.ic_focus_disabled);
+                Drawable d = canChangeFocus ? this.mActivity.getResources().getDrawable(R.drawable.ic_focus) : this.mActivity.getResources().getDrawable(R.drawable.ic_focus_disabled);
                 focusView.setAlpha(canChangeFocus ? 0.35f : 0.175f);
                 if (this.mIsMessaging) {
                     d.setColorFilter(this.mSecondaryColor, PorterDuff.Mode.SRC_ATOP);

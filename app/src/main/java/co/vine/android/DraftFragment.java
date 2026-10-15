@@ -69,12 +69,12 @@
                     public SdkVideoView videoView;
 
             public DraftPageViewHolder(View v, String videoUrl) {
-                this.videoView = (SdkVideoView) v.findViewById(C0257R.id.videoView);
+                this.videoView = (SdkVideoView) v.findViewById(R.id.videoView);
                 this.videoUrl = videoUrl;
-                this.containerView = (ViewGroup) v.findViewById(C0257R.id.videoViewContainer);
-                this.progressView = (ProgressView) v.findViewById(C0257R.id.progress);
-                this.thumb = (ImageView) v.findViewById(C0257R.id.thumb);
-                this.draftContainer = (RelativeLayout) v.findViewById(C0257R.id.draft_container);
+                this.containerView = (ViewGroup) v.findViewById(R.id.videoViewContainer);
+                this.progressView = (ProgressView) v.findViewById(R.id.progress);
+                this.thumb = (ImageView) v.findViewById(R.id.thumb);
+                this.draftContainer = (RelativeLayout) v.findViewById(R.id.draft_container);
                     }
                 }
 
@@ -135,14 +135,14 @@
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup root, Bundle savedInstanceState) {
            Resources res = getResources();
-           View v = inflater.inflate(C0257R.layout.draft_page, root, false);
+           View v = inflater.inflate(R.layout.draft_page, root, false);
            DraftPageViewHolder holder = new DraftPageViewHolder(v, this.mVideoUrl);
-           int progressHeight = res.getDimensionPixelOffset(C0257R.dimen.progress_view_height);
-           int draftProgressHeight = res.getDimensionPixelOffset(C0257R.dimen.draft_progress_view_height);
+           int progressHeight = res.getDimensionPixelOffset(R.dimen.progress_view_height);
+           int draftProgressHeight = res.getDimensionPixelOffset(R.dimen.draft_progress_view_height);
            RelativeLayout.LayoutParams containerParams = (RelativeLayout.LayoutParams) holder.draftContainer.getLayoutParams();
            containerParams.topMargin = progressHeight + draftProgressHeight;
            holder.draftContainer.setLayoutParams(containerParams);
-           RelativeLayout videoContainer = (RelativeLayout) v.findViewById(C0257R.id.videoViewContainer);
+           RelativeLayout videoContainer = (RelativeLayout) v.findViewById(R.id.videoViewContainer);
            videoContainer.setDrawingCacheEnabled(true);
            ViewGroup.LayoutParams params = videoContainer.getLayoutParams();
            params.height = this.mDimen;
@@ -154,7 +154,7 @@
            progressLayoutParams.width = this.mDimen;
            holder.progressView.setLayoutParams(progressLayoutParams);
            holder.progressView.setProgressRatio(this.mProgress / 6000.0f);
-           View mask = v.findViewById(C0257R.id.draftPageMask);
+           View mask = v.findViewById(R.id.draftPageMask);
            ViewGroup.LayoutParams params2 = mask.getLayoutParams();
            params2.width = this.mDimen;
            params2.height = ((AbstractRecordingActivity) getActivity()).getScreenSize().y;
@@ -175,8 +175,8 @@
            this.mVideoView.setLooping(true);
            this.mVideoView.setOnErrorListener(this);
            this.mVideoView.setSurfaceReadyListener(this);
-           this.mFadeIn = AnimationUtils.loadAnimation(getActivity(), C0257R.anim.fade_in);
-           this.mQuickFadeOut = AnimationUtils.loadAnimation(getActivity(), C0257R.anim.quick_fade_out);
+           this.mFadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
+           this.mQuickFadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.quick_fade_out);
            v.setDrawingCacheEnabled(true);
            v.setDrawingCacheQuality(1048576);
            return v;

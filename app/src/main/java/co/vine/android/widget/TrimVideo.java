@@ -6,7 +6,7 @@
             import android.os.Bundle;
             import android.os.Handler;
             import android.view.ViewGroup;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.player.SdkVideoView;
             import co.vine.android.player.StaticSizeVideoView;
             import co.vine.android.player.VideoViewInterface;
@@ -39,7 +39,7 @@
                 }
 
         public TrimVideo(ViewGroup rootView, Activity activity, Uri videoUri) {
-            StaticSizeVideoView videoView = (StaticSizeVideoView) rootView.findViewById(C0257R.id.sdkVideoView);
+            StaticSizeVideoView videoView = (StaticSizeVideoView) rootView.findViewById(R.id.sdkVideoView);
             videoView.setUseVinePlayer(false);
             videoView.setOnErrorListener(this);
             videoView.setOnCompletionListener(this);

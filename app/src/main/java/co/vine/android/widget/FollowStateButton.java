@@ -6,7 +6,7 @@
             import android.graphics.PorterDuff;
             import android.util.AttributeSet;
             import android.widget.Button;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.Settings;
             import co.vine.android.api.VineUser;
             
@@ -41,30 +41,30 @@
 
         public FollowStateButton(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
-            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.FollowStateButton, defStyle, 0);
-            this.mSelfDrawableRes = a.getResourceId(0, C0257R.drawable.btn_profile_settings);
-            this.mNotFollowingDrawableRes = a.getResourceId(3, C0257R.drawable.btn_profile_follow);
-            this.mFollowingDrawableRes = a.getResourceId(6, C0257R.drawable.btn_profile_following);
-            this.mFollowRequestedDrawableRes = a.getResourceId(9, C0257R.drawable.btn_profile_pending);
-            this.mSelfText = a.getResourceId(1, C0257R.string.settings);
-            this.mNotFollowingText = a.getResourceId(4, C0257R.string.follow);
-            this.mFollowingText = a.getResourceId(7, C0257R.string.following);
-            this.mFollowRequestedText = a.getResourceId(10, C0257R.string.follow_requested);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FollowStateButton, defStyle, 0);
+            this.mSelfDrawableRes = a.getResourceId(R.styleable.FollowStateButton_selfDrawable, R.drawable.btn_profile_settings);
+            this.mNotFollowingDrawableRes = a.getResourceId(R.styleable.FollowStateButton_notFollowingDrawable, R.drawable.btn_profile_follow);
+            this.mFollowingDrawableRes = a.getResourceId(R.styleable.FollowStateButton_followingDrawable, R.drawable.btn_profile_following);
+            this.mFollowRequestedDrawableRes = a.getResourceId(R.styleable.FollowStateButton_followRequestedDrawable, R.drawable.btn_profile_pending);
+            this.mSelfText = a.getResourceId(R.styleable.FollowStateButton_selfString, R.string.settings);
+            this.mNotFollowingText = a.getResourceId(R.styleable.FollowStateButton_notFollowingString, R.string.follow);
+            this.mFollowingText = a.getResourceId(R.styleable.FollowStateButton_followingString, R.string.following);
+            this.mFollowRequestedText = a.getResourceId(R.styleable.FollowStateButton_followRequestedString, R.string.follow_requested);
             Resources res = getResources();
-            this.mSelfTextColor = a.getColor(2, res.getColor(C0257R.color.settings_btn_text));
-            this.mNotFollowingTextColor = a.getColor(5, res.getColor(C0257R.color.not_following_btn_text));
-            this.mFollowingTextColor = a.getColor(5, res.getColor(C0257R.color.following_btn_text));
-            this.mFollowRequestedTextColor = a.getColor(11, res.getColor(C0257R.color.not_following_btn_text));
-            this.mColor = res.getColor(C0257R.color.vine_green);
+            this.mSelfTextColor = a.getColor(R.styleable.FollowStateButton_selfTextColor, res.getColor(R.color.settings_btn_text));
+            this.mNotFollowingTextColor = a.getColor(R.styleable.FollowStateButton_notFollowingTextColor, res.getColor(R.color.not_following_btn_text));
+            this.mFollowingTextColor = a.getColor(R.styleable.FollowStateButton_notFollowingTextColor, res.getColor(R.color.following_btn_text));
+            this.mFollowRequestedTextColor = a.getColor(R.styleable.FollowStateButton_followRequestedTextColor, res.getColor(R.color.not_following_btn_text));
+            this.mColor = res.getColor(R.color.vine_green);
             a.recycle();
-            setPadding(getResources().getDimensionPixelSize(C0257R.dimen.follow_request_left_padding), 0, 0, 0);
+            setPadding(getResources().getDimensionPixelSize(R.dimen.follow_request_left_padding), 0, 0, 0);
             invalidate();
                 }
 
         public void setUser(long ownerId, VineUser user) {
             this.mColor = user.profileBackground;
             if (this.mColor == Settings.DEFAULT_PROFILE_COLOR || this.mColor <= 0) {
-               this.mColor = getResources().getColor(C0257R.color.vine_green);
+               this.mColor = getResources().getColor(R.color.vine_green);
                     }
            this.mColor |= -16777216;
                     if (ownerId == user.userId) {

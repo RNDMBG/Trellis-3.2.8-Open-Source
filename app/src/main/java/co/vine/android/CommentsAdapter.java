@@ -62,7 +62,7 @@
             this.mBoldSpan = new TypefacesSpan(null, Typefaces.get(context).getContentTypeface(1, 3));
             this.mAppController = appController;
             this.mListener = listener;
-            this.mVineGreen = context.getResources().getColor(C0257R.color.vine_green);
+            this.mVineGreen = context.getResources().getColor(R.color.vine_green);
                 }
 
         private void loadSpamCommentIds(Context context, long postId) {
@@ -77,12 +77,12 @@
                 }
 
         public View newView() {
-            RelativeLayout layout = (RelativeLayout) LayoutInflater.from(this.mContext).inflate(C0257R.layout.comment_row_view, (ViewGroup) null, false);
+            RelativeLayout layout = (RelativeLayout) LayoutInflater.from(this.mContext).inflate(R.layout.comment_row_view, (ViewGroup) null, false);
             CommentViewHolder h = new CommentViewHolder();
-            h.profileImage = (ImageView) layout.findViewById(C0257R.id.profile_image);
-           h.content = (TextView) layout.findViewById(C0257R.id.content);
+            h.profileImage = (ImageView) layout.findViewById(R.id.profile_image);
+           h.content = (TextView) layout.findViewById(R.id.content);
            h.content.setMovementMethod(LinkMovementMethod.getInstance());
-           h.timestamp = (TextView) layout.findViewById(C0257R.id.timestamp);
+           h.timestamp = (TextView) layout.findViewById(R.id.timestamp);
            layout.setTag(h);
            this.mViewHolders.add(new WeakReference<>(h));
            return layout;
@@ -146,7 +146,7 @@
            if (profileImage != null) {
                h.profileImage.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), profileImage));
                     } else {
-               ViewUtil.setBackground(h.profileImage, this.mContext.getResources().getDrawable(C0257R.drawable.circle_shape_light));
+               ViewUtil.setBackground(h.profileImage, this.mContext.getResources().getDrawable(R.drawable.circle_shape_light));
                h.profileImage.setImageDrawable(null);
                     }
                 }

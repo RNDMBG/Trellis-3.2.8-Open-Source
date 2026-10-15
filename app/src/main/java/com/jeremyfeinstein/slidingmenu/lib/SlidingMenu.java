@@ -24,7 +24,6 @@
             import android.view.WindowManager;
             import android.widget.FrameLayout;
             import android.widget.RelativeLayout;
-            import co.vine.android.C0257R;
             import java.lang.reflect.Method;
             
             
@@ -115,27 +114,27 @@
            this.mViewAbove.setCustomViewBehind(this.mViewBehind);
            this.mViewBehind.setCustomViewAbove(this.mViewAbove);
            this.mViewAbove.setOnPageChangeListener(new C12441());
-           TypedArray ta = context.obtainStyledAttributes(attrs, C0257R.styleable.SlidingMenu);
-           int mode = ta.getInt(C0257R.styleable.SlidingMenu_mode, 0);
+           TypedArray ta = context.obtainStyledAttributes(attrs, co.vine.android.R.styleable.SlidingMenu);
+           int mode = ta.getInt(co.vine.android.R.styleable.SlidingMenu_mode, 0);
            setMode(mode);
-           int viewAbove = ta.getResourceId(C0257R.styleable.SlidingMenu_viewAbove, -1);
+           int viewAbove = ta.getResourceId(co.vine.android.R.styleable.SlidingMenu_viewAbove, -1);
            if (viewAbove != -1) {
                setContent(viewAbove);
                     } else {
                setContent(new FrameLayout(context));
                     }
-           int viewBehind = ta.getResourceId(C0257R.styleable.SlidingMenu_viewBehind, -1);
+           int viewBehind = ta.getResourceId(co.vine.android.R.styleable.SlidingMenu_viewBehind, -1);
            if (viewBehind != -1) {
                setMenu(viewBehind);
                     } else {
                setMenu(new FrameLayout(context));
                     }
-           int touchModeAbove = ta.getInt(C0257R.styleable.SlidingMenu_touchModeAbove, 0);
+           int touchModeAbove = ta.getInt(co.vine.android.R.styleable.SlidingMenu_touchModeAbove, 0);
            setTouchModeAbove(touchModeAbove);
-           int touchModeBehind = ta.getInt(C0257R.styleable.SlidingMenu_touchModeBehind, 0);
+           int touchModeBehind = ta.getInt(co.vine.android.R.styleable.SlidingMenu_touchModeBehind, 0);
            setTouchModeBehind(touchModeBehind);
-           int offsetBehind = (int) ta.getDimension(C0257R.styleable.SlidingMenu_behindOffset, -1.0f);
-           int widthBehind = (int) ta.getDimension(C0257R.styleable.SlidingMenu_behindWidth, -1.0f);
+           int offsetBehind = (int) ta.getDimension(co.vine.android.R.styleable.SlidingMenu_behindOffset, -1.0f);
+           int widthBehind = (int) ta.getDimension(co.vine.android.R.styleable.SlidingMenu_behindWidth, -1.0f);
            if (offsetBehind != -1 && widthBehind != -1) {
                throw new IllegalStateException("Cannot set both behindOffset and behindWidth for a SlidingMenu");
                     }
@@ -146,21 +145,21 @@
                     } else {
                setBehindOffset(0);
                     }
-           float scrollOffsetBehind = ta.getFloat(C0257R.styleable.SlidingMenu_behindScrollScale, 0.33f);
+           float scrollOffsetBehind = ta.getFloat(co.vine.android.R.styleable.SlidingMenu_behindScrollScale, 0.33f);
            setBehindScrollScale(scrollOffsetBehind);
-           int shadowRes = ta.getResourceId(C0257R.styleable.SlidingMenu_shadowDrawable, -1);
+           int shadowRes = ta.getResourceId(co.vine.android.R.styleable.SlidingMenu_shadowDrawable, -1);
            if (shadowRes != -1) {
                setShadowDrawable(shadowRes);
                     }
-           int shadowWidth = (int) ta.getDimension(C0257R.styleable.SlidingMenu_shadowWidth, 0.0f);
+           int shadowWidth = (int) ta.getDimension(co.vine.android.R.styleable.SlidingMenu_shadowWidth, 0.0f);
            setShadowWidth(shadowWidth);
-           boolean fadeEnabled = ta.getBoolean(C0257R.styleable.SlidingMenu_fadeEnabled, true);
+           boolean fadeEnabled = ta.getBoolean(co.vine.android.R.styleable.SlidingMenu_fadeEnabled, true);
            setFadeEnabled(fadeEnabled);
-           float fadeDeg = ta.getFloat(C0257R.styleable.SlidingMenu_fadeDegree, 0.33f);
+           float fadeDeg = ta.getFloat(co.vine.android.R.styleable.SlidingMenu_fadeDegree, 0.33f);
            setFadeDegree(fadeDeg);
-           boolean selectorEnabled = ta.getBoolean(C0257R.styleable.SlidingMenu_selectorEnabled, false);
+           boolean selectorEnabled = ta.getBoolean(co.vine.android.R.styleable.SlidingMenu_selectorEnabled, false);
            setSelectorEnabled(selectorEnabled);
-           int selectorRes = ta.getResourceId(C0257R.styleable.SlidingMenu_selectorDrawable, -1);
+           int selectorRes = ta.getResourceId(co.vine.android.R.styleable.SlidingMenu_selectorDrawable, -1);
            if (selectorRes != -1) {
                setSelectorDrawable(selectorRes);
                     }

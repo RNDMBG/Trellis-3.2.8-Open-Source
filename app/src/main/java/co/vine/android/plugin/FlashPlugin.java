@@ -7,7 +7,7 @@
             import android.view.ViewGroup;
             import android.widget.Button;
             import android.widget.LinearLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.recorder.VineRecorder;
             
             
@@ -51,8 +51,8 @@
 
                 @Override 
         protected Button onLayoutInflated(LinearLayout view, LayoutInflater inflater, Fragment fragment) {
-            Button button = (Button) inflater.inflate(C0257R.layout.plugin_tool_regular_button, (ViewGroup) view, false);
-            button.setBackgroundResource(C0257R.drawable.ic_flash);
+            Button button = (Button) inflater.inflate(R.layout.plugin_tool_regular_button, (ViewGroup) view, false);
+            button.setBackgroundResource(R.drawable.ic_flash);
             button.setAlpha(0.35f);
             return button;
                 }

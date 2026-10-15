@@ -164,7 +164,7 @@
                 @Override 
        public void onCreate(Bundle savedInstanceState) {
                     ActionBar ab;
-           super.onCreate(savedInstanceState, C0257R.layout.start, false);
+           super.onCreate(savedInstanceState, R.layout.start, false);
            if ((getIntent().getFlags() & 4194304) != 0 && "android.intent.action.MAIN".equals(getIntent().getAction())) {
                finish();
                return;
@@ -181,7 +181,7 @@
                         } catch (SQLiteException e) {
                    SharedPreferences prefs = Util.getDefaultSharedPrefs(this);
                    CrashUtil.logException(e, "pref_log_startup_fail: {}.", Integer.valueOf(prefs.getInt(PREF_LOG_STARTUP_FAIL, 0)));
-                   Util.showCenteredToast(this, C0257R.string.startup_error);
+                   Util.showCenteredToast(this, R.string.startup_error);
                    prefs.edit().putInt(PREF_LOG_STARTUP_FAIL, 1).apply();
                    finish();
                    return;
@@ -193,28 +193,28 @@
                    ClientFlagsHelper.fetchClientFlags(this, false, false);
                    TypefacesSpan boldSpan = new TypefacesSpan(Typefaces.get(this).getContentTypeface(1, 4));
                    TypefacesSpan[] mStyleSpanBoldSingle = {boldSpan};
-                   Button signUpEmail = (Button) findViewById(C0257R.id.start_sign_up_email);
-                   signUpEmail.setText(getString(C0257R.string.start_signup_email).replace("\"", ""));
+                   Button signUpEmail = (Button) findViewById(R.id.start_sign_up_email);
+                   signUpEmail.setText(getString(R.string.start_signup_email).replace("\"", ""));
                    signUpEmail.setOnClickListener(this);
-                   Button signUpTwitter = (Button) findViewById(C0257R.id.sign_up_twitter);
-                   signUpTwitter.setText(getString(C0257R.string.start_signup_twitter).replace("\"", ""));
+                   Button signUpTwitter = (Button) findViewById(R.id.sign_up_twitter);
+                   signUpTwitter.setText(getString(R.string.start_signup_twitter).replace("\"", ""));
                    signUpTwitter.setOnClickListener(this);
-                   TextView signIn = (TextView) findViewById(C0257R.id.start_sign_in);
+                   TextView signIn = (TextView) findViewById(R.id.start_sign_in);
                    signIn.setMovementMethod(LinkMovementMethod.getInstance());
-                   Spanned spanned = Util.getSpannedText(mStyleSpanBoldSingle, getString(C0257R.string.start_already_signed_in), CommonUtil.MARKER_QUOTES);
+                   Spanned spanned = Util.getSpannedText(mStyleSpanBoldSingle, getString(R.string.start_already_signed_in), CommonUtil.MARKER_QUOTES);
                    signIn.setText(spanned);
                    Spannable spannable = (Spannable) signIn.getText();
                    int start = spanned.getSpanStart(boldSpan);
                    int end = spanned.getSpanEnd(boldSpan);
-                   Util.safeSetSpan(spannable, new ForegroundColorSpan(getResources().getColor(C0257R.color.solid_white)), start, end, 33);
+                   Util.safeSetSpan(spannable, new ForegroundColorSpan(getResources().getColor(R.color.solid_white)), start, end, 33);
                    signIn.setOnClickListener(this);
                    this.mTwitter = this.mAppController.getTwitter();
-                   this.mVideoView = (VideoViewInterface) findViewById(C0257R.id.start_video);
+                   this.mVideoView = (VideoViewInterface) findViewById(R.id.start_video);
                    this.mVideoView.setKeepScreenOn(true);
                    this.mVideoView.setLooping(true);
                    if (SystemUtil.isNormalVideoPlayable(this) == SystemUtil.PrefBooleanState.UNKNOWN) {
                        SLog.m464i("Video test started.");
-                       this.mVideoView.setVideoPathDirect(SystemUtil.getPathFromResourceRaw(this, C0257R.raw.vine_splash));
+                       this.mVideoView.setVideoPathDirect(SystemUtil.getPathFromResourceRaw(this, R.raw.vine_splash));
                        this.mVideoView.setOnErrorListener(new C02971());
                        this.mVideoView.setOnPreparedListener(new C02982());
                             } else {
@@ -230,7 +230,7 @@
                         }
                     } catch (RuntimeException e2) {
                CrashUtil.logException(e2, "Failed to process intent: " + getCallingPackage() + " - " + getIntent().getAction() + " - " + getCallingActivity(), new Object[0]);
-               Util.showCenteredToast(this, C0257R.string.startup_error);
+               Util.showCenteredToast(this, R.string.startup_error);
                finish();
                     }
                 }
@@ -277,7 +277,7 @@
            this.mVideoView.setAutoPlayOnPrepared(true);
            this.mVideoView.setOnPreparedListener(null);
            this.mVideoView.setOnErrorListener(null);
-           this.mVideoView.setVideoPathDirect(SystemUtil.getPathFromResourceRaw(this, C0257R.raw.vine_splash));
+           this.mVideoView.setVideoPathDirect(SystemUtil.getPathFromResourceRaw(this, R.raw.vine_splash));
            this.mVideoView.seekTo(this.mStopPosition);
            this.mVideoView.start();
                 }
@@ -358,7 +358,7 @@
                 @Override 
        public void onClick(View view) {
            int id = view.getId();
-           if (id == C0257R.id.start_sign_in) {
+           if (id == R.id.start_sign_in) {
                if (this.mLoginRequest) {
                    startActivity(LoginActivity.getIntentWithFinish(this));
                    return;
@@ -367,7 +367,7 @@
                    return;
                         }
                     }
-           if (id == C0257R.id.start_sign_up_email) {
+           if (id == R.id.start_sign_up_email) {
                Bundle extras = new Bundle();
                if (this.mLoginRequest) {
                    extras.putBoolean("finish", true);
@@ -376,7 +376,7 @@
                FlurryUtils.trackNuxStarted("email");
                return;
                     }
-           if (id == C0257R.id.sign_up_twitter) {
+           if (id == R.id.sign_up_twitter) {
                         try {
                    if (!this.mTwitter.startAuthActivityForResult(this, 1)) {
                        if (this.mLoginRequest) {
@@ -410,9 +410,9 @@
                String username = data.getStringExtra("screen_name");
                String mToken = data.getStringExtra(Twitter.EXTRA_TOKEN);
                String mSecret = data.getStringExtra(Twitter.EXTRA_TOKEN_SECRET);
-               ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
+               ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
                dialog.setProgressStyle(0);
-               dialog.setMessage(getString(C0257R.string.sign_up_authorizing));
+               dialog.setMessage(getString(R.string.sign_up_authorizing));
                dialog.show();
                this.mProgressDialog = dialog;
                this.mAppController.loginCheckTwitter(username, mToken, mSecret, data.getLongExtra("user_id", 0L), reactivate);
@@ -438,7 +438,7 @@
                            return;
                                 }
                             } catch (VineLoggingException e) {
-                       Util.showCenteredToast(StartActivity.this, C0257R.string.failed_to_add_account_on_device);
+                       Util.showCenteredToast(StartActivity.this, R.string.failed_to_add_account_on_device);
                        CrashUtil.logException(e);
                        StartActivity.this.finish();
                        return;
@@ -452,10 +452,10 @@
                         } else {
                    if (errorCode == VineKnownErrors.ACCOUNT_DEACTIVATED.code) {
                        PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1);
-                       p.setMessage(C0257R.string.settings_activate_account_dialog);
-                       p.setTitle(C0257R.string.settings_activate_account_title);
-                       p.setNegativeButton(C0257R.string.cancel);
-                       p.setPositiveButton(C0257R.string.settings_activate_account_confirm);
+                       p.setMessage(R.string.settings_activate_account_dialog);
+                       p.setTitle(R.string.settings_activate_account_title);
+                       p.setNegativeButton(R.string.cancel);
+                       p.setPositiveButton(R.string.settings_activate_account_confirm);
                        p.setListener(new C02991());
                        p.show(StartActivity.this.getSupportFragmentManager());
                        return;

@@ -107,26 +107,26 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            ViewGroup vg = (ViewGroup) inflater.inflate(C0257R.layout.settings_sub, container, false);
-            addSwitcher(inflater, vg, C0257R.string.settings_accepts_oon, C0257R.string.settings_accepts_oon_desc, this.mAcceptOon, 3);
-            addSwitcher(inflater, vg, C0257R.string.settings_address_book, C0257R.string.settings_address_book_desc, this.mAllowAddressBook, 4);
-            addSwitcher(inflater, vg, C0257R.string.email_discoverability, C0257R.string.email_discoverability_desc, this.mEmailDiscoverable, 0);
-            addSwitcher(inflater, vg, C0257R.string.phone_discoverability, C0257R.string.phone_discoverability_desc, this.mPhoneDiscoverable, 1);
-            addSwitcher(inflater, vg, C0257R.string.twitter_discoverability, C0257R.string.twitter_discoverability_desc, this.mTwitterDiscoverable, 2);
+            ViewGroup vg = (ViewGroup) inflater.inflate(R.layout.settings_sub, container, false);
+            addSwitcher(inflater, vg, R.string.settings_accepts_oon, R.string.settings_accepts_oon_desc, this.mAcceptOon, 3);
+            addSwitcher(inflater, vg, R.string.settings_address_book, R.string.settings_address_book_desc, this.mAllowAddressBook, 4);
+            addSwitcher(inflater, vg, R.string.email_discoverability, R.string.email_discoverability_desc, this.mEmailDiscoverable, 0);
+            addSwitcher(inflater, vg, R.string.phone_discoverability, R.string.phone_discoverability_desc, this.mPhoneDiscoverable, 1);
+            addSwitcher(inflater, vg, R.string.twitter_discoverability, R.string.twitter_discoverability_desc, this.mTwitterDiscoverable, 2);
             return vg;
                 }
 
         private void addSwitcher(LayoutInflater inflater, ViewGroup parent, int labelString, int descString, boolean initialCondition, int type) {
-            View view = inflater.inflate(C0257R.layout.settings_switch_row, parent, false);
-            SwitchInterface switcher = (SwitchInterface) view.findViewById(C0257R.id.switcher);
+            View view = inflater.inflate(R.layout.settings_switch_row, parent, false);
+            SwitchInterface switcher = (SwitchInterface) view.findViewById(R.id.switcher);
             if (initialCondition) {
                 switcher.setChecked(true);
                     }
             switcher.setOnCheckedChangeListener(new PrivacyControlOnCheckChangedListener(this, type, null));
-            ((TextView) view.findViewById(C0257R.id.label)).setText(labelString);
-            ((TextView) view.findViewById(C0257R.id.description)).setText(descString);
+            ((TextView) view.findViewById(R.id.label)).setText(labelString);
+            ((TextView) view.findViewById(R.id.description)).setText(descString);
             parent.addView(view);
-            inflater.inflate(C0257R.layout.settings_sub_divider, parent, true);
+            inflater.inflate(R.layout.settings_sub_divider, parent, true);
                 }
 
        class PrivacyControlOnCheckChangedListener implements CompoundButton.OnCheckedChangeListener {
@@ -178,7 +178,7 @@
                    editor.apply();
                    return;
                         }
-               Util.showCenteredToast(activity, C0257R.string.privacy_controls_update_fail);
+               Util.showCenteredToast(activity, R.string.privacy_controls_update_fail);
                     }
 
                     @Override 
@@ -194,7 +194,7 @@
                             }
                    return;
                         }
-               Util.showCenteredToast(activity, C0257R.string.privacy_controls_update_fail);
+               Util.showCenteredToast(activity, R.string.privacy_controls_update_fail);
                     }
 
                     @Override 
@@ -212,7 +212,7 @@
                    Util.getDefaultSharedPrefs(PrivacyControlsFragment.this.getActivity()).edit().putBoolean(pref, enable).apply();
                    return;
                         }
-               Util.showCenteredToast(activity, C0257R.string.privacy_controls_update_fail);
+               Util.showCenteredToast(activity, R.string.privacy_controls_update_fail);
                     }
                 }
             }

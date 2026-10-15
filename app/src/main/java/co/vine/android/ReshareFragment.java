@@ -176,22 +176,22 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View v = inflater.inflate(C0257R.layout.reshare, container, false);
-           this.mCaption = (EditText) v.findViewById(C0257R.id.caption);
-           this.mThumbnailView = (ImageView) v.findViewById(C0257R.id.thumbnail);
+           View v = inflater.inflate(R.layout.reshare, container, false);
+           this.mCaption = (EditText) v.findViewById(R.id.caption);
+           this.mThumbnailView = (ImageView) v.findViewById(R.id.thumbnail);
            return v;
                 }
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
            if (!isDetached()) {
-               inflater.inflate(C0257R.menu.reshare, menu);
-               MenuItem menuItem = menu.findItem(C0257R.id.done);
+               inflater.inflate(R.menu.reshare, menu);
+               MenuItem menuItem = menu.findItem(R.id.done);
                         try {
                    if ("facebook".equals(this.mNetwork)) {
-                       menuItem.setTitle(getString(C0257R.string.share_action_facebook).toUpperCase());
+                       menuItem.setTitle(getString(R.string.share_action_facebook).toUpperCase());
                             } else if ("twitter".equals(this.mNetwork)) {
-                       menuItem.setTitle(getString(C0257R.string.share_action_twitter).toUpperCase());
+                       menuItem.setTitle(getString(R.string.share_action_twitter).toUpperCase());
                             }
                    super.onCreateOptionsMenu(menu, inflater);
                         } catch (IllegalStateException e) {
@@ -204,7 +204,7 @@
            if (item.getItemId() == 2131427939) {
                int characterLimit = (140 - this.mShareUrl.length()) - 1;
                if ("twitter".equals(this.mNetwork) && this.mCaption.getText().length() > characterLimit) {
-                   Util.showCenteredToast(getActivity(), getString(C0257R.string.reshare_tweet_length_exceeded, Integer.valueOf(characterLimit)));
+                   Util.showCenteredToast(getActivity(), getString(R.string.reshare_tweet_length_exceeded, Integer.valueOf(characterLimit)));
                             return true;
                         }
                if (validateSocialConnect()) {
@@ -212,15 +212,15 @@
                    imm.hideSoftInputFromWindow(this.mCaption.getWindowToken(), 0);
                    String message = this.mCaption.getText().toString();
                    this.mAppController.sharePost(this.mNetwork, message, this.mPostId);
-                   ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-                   d.setMessage(getString(C0257R.string.sharing_post));
+                   ProgressDialog d = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+                   d.setMessage(getString(R.string.sharing_post));
                    d.setProgress(0);
                    d.show();
                    this.mShareProgress = d;
                             return true;
                         }
                String properNetwork = this.mNetwork.substring(0, 1).toUpperCase() + this.mNetwork.substring(1);
-               Util.showCenteredToast(getActivity(), getString(C0257R.string.share_failed_invalid_session, properNetwork));
+               Util.showCenteredToast(getActivity(), getString(R.string.share_failed_invalid_session, properNetwork));
                getActivity().finish();
                         return true;
                     }
@@ -240,8 +240,8 @@
                return;
                     }
            if (this.mProgress == null || !this.mProgress.isShowing()) {
-               ProgressDialog d = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-               d.setMessage(getString(C0257R.string.login_logging_in));
+               ProgressDialog d = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+               d.setMessage(getString(R.string.login_logging_in));
                d.setProgress(0);
                d.show();
                this.mProgress = d;
@@ -294,7 +294,7 @@
 
                     @Override 
            public void run() {
-               Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.publish_to_facebook_toast);
+               Util.showCenteredToast(ReshareFragment.this.getActivity(), R.string.publish_to_facebook_toast);
                     }
                 }
 
@@ -303,7 +303,7 @@
                this.mThumbnailView.setImageDrawable(new RecyclableBitmapDrawable(this.mThumbnailView.getResources(), bitmap));
                     } else {
                this.mThumbnailView.setImageBitmap(null);
-               this.mThumbnailView.setBackgroundColor(getResources().getColor(C0257R.color.solid_light_gray));
+               this.mThumbnailView.setBackgroundColor(getResources().getColor(R.color.solid_light_gray));
                     }
                 }
 
@@ -318,13 +318,13 @@
                         }
                if (statusCode != 200) {
                    if (!TextUtils.isEmpty(reasonPhrase)) {
-                       Util.showCenteredToast(ReshareFragment.this.getActivity(), ReshareFragment.this.getString(C0257R.string.error_share_post, reasonPhrase));
+                       Util.showCenteredToast(ReshareFragment.this.getActivity(), ReshareFragment.this.getString(R.string.error_share_post, reasonPhrase));
                             }
                         } else {
                    if ("facebook".equals(ReshareFragment.access$100(ReshareFragment.this))) {
-                       Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.share_facebook_success);
+                       Util.showCenteredToast(ReshareFragment.this.getActivity(), R.string.share_facebook_success);
                             } else if ("twitter".equals(ReshareFragment.access$100(ReshareFragment.this))) {
-                       Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.share_twitter_success);
+                       Util.showCenteredToast(ReshareFragment.this.getActivity(), R.string.share_twitter_success);
                             }
                    ReshareFragment.this.getActivity().finish();
                         }
@@ -336,7 +336,7 @@
                    ReshareFragment.access$200(ReshareFragment.this).dismiss();
                         }
                if (statusCode != 200) {
-                   Util.showCenteredToast(ReshareFragment.this.getActivity(), C0257R.string.error_facebook_send_token);
+                   Util.showCenteredToast(ReshareFragment.this.getActivity(), R.string.error_facebook_send_token);
                    ReshareFragment.this.getActivity().finish();
                         }
                     }

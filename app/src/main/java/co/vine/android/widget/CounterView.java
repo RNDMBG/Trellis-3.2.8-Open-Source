@@ -7,7 +7,7 @@
             import android.graphics.Typeface;
             import android.util.AttributeSet;
             import android.view.View;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import java.util.ArrayList;
             import java.util.concurrent.TimeUnit;
             
@@ -187,8 +187,8 @@
                    this.mMaxTextHeight = this.mBounds[i].height();
                         }
                     }
-           this.mInterCharacterSpacingX = getResources().getDimensionPixelSize(C0257R.dimen.counter_horizontal_text_spacing);
-           this.mInterCharacterSpacingY = getResources().getDimensionPixelSize(C0257R.dimen.counter_vertical_text_spacing);
+           this.mInterCharacterSpacingX = getResources().getDimensionPixelSize(R.dimen.counter_horizontal_text_spacing);
+           this.mInterCharacterSpacingY = getResources().getDimensionPixelSize(R.dimen.counter_vertical_text_spacing);
                 }
 
        public CounterView(Context context, AttributeSet attrs) {

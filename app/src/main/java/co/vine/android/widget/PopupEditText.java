@@ -27,7 +27,7 @@
             import android.widget.ListAdapter;
             import android.widget.MultiAutoCompleteTextView;
             import android.widget.PopupWindow;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.api.VineEntity;
             import co.vine.android.api.VineTypeAhead;
             import co.vine.android.util.CrashUtil;
@@ -108,21 +108,21 @@
                 }
 
        public PopupEditText(Context context, AttributeSet attrs) {
-           this(context, attrs, C0257R.attr.popupEditTextStyle);
+           this(context, attrs, R.attr.popupEditTextStyle);
                 }
 
        public PopupEditText(Context context, AttributeSet attrs, int defStyle) {
            super(context, attrs, defStyle);
             this.mShowRequested = false;
-           TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.PopupEditText, defStyle, 0);
-           this.mDropDownVerticalOffset = a.getDimensionPixelOffset(0, 0);
-           this.mDropDownHorizontalOffset = a.getDimensionPixelOffset(1, 0);
-           this.mThreshold = a.getInteger(2, 0);
-           DropDownListView listView = new DropDownListView(context, null, C0257R.attr.popupEditListStyle);
-           listView.setDividerHeight(getResources().getDimensionPixelSize(C0257R.dimen.divider_thickness));
+           TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PopupEditText, defStyle, 0);
+           this.mDropDownVerticalOffset = a.getDimensionPixelOffset(R.styleable.PopupEditText_dropDownVerticalOffset, 0);
+           this.mDropDownHorizontalOffset = a.getDimensionPixelOffset(R.styleable.PopupEditText_dropDownHorizontalOffset, 0);
+           this.mThreshold = a.getInteger(R.styleable.PopupEditText_threshold, 0);
+           DropDownListView listView = new DropDownListView(context, null, R.attr.popupEditListStyle);
+           listView.setDividerHeight(getResources().getDimensionPixelSize(R.dimen.divider_thickness));
            listView.setOnItemClickListener(this);
            this.mDropDownList = listView;
-           PopupWindow popupWindow = new PopupWindow(context, attrs, C0257R.attr.popupEditTextStyle);
+           PopupWindow popupWindow = new PopupWindow(context, attrs, R.attr.popupEditTextStyle);
            popupWindow.setSoftInputMode(16);
            popupWindow.setOutsideTouchable(false);
            popupWindow.setContentView(listView);
@@ -375,7 +375,7 @@
                    int tokenEnd = tokenStart + item.token.length();
                    VineEntity entity = new VineEntity(item.type, item.token, null, tokenStart, tokenEnd, userId);
                    SpannableStringBuilder ssb = new SpannableStringBuilder(replacement);
-                   ForegroundColorSpan span = new ForegroundColorSpan(getResources().getColor(C0257R.color.vine_green));
+                   ForegroundColorSpan span = new ForegroundColorSpan(getResources().getColor(R.color.vine_green));
                    Util.safeSetSpan(ssb, span, 0, item.token.length(), 0);
                    editable.replace(tokenStart, end, ssb);
                    this.mEntityRanges.put(Integer.valueOf(tokenStart), new VineEntity.Range(tokenEnd, entity, span));
@@ -389,7 +389,7 @@
 
        public void putEntity(int start, int end, VineEntity e) {
            Editable editable = getText();
-           ForegroundColorSpan span = new ForegroundColorSpan(getResources().getColor(C0257R.color.vine_green));
+           ForegroundColorSpan span = new ForegroundColorSpan(getResources().getColor(R.color.vine_green));
            SpannableStringBuilder ssb = new SpannableStringBuilder(e.title);
            Util.safeSetSpan(ssb, span, 0, e.end - e.start, 0);
            editable.replace(start, end, ssb);

@@ -28,7 +28,7 @@
             import android.widget.ListView;
             import android.widget.RelativeLayout;
             import co.vine.android.BaseTimelineFragment;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.CommentsActivity;
             import co.vine.android.ProfileActivity;
             import co.vine.android.VineLoggingException;
@@ -197,20 +197,20 @@
            this.mLogger.m488d("Adapter constructed, accelerated? {}", Boolean.valueOf(listView.isHardwareAccelerated()));
            this.mPlayCurrentPositionRunnable = new PlayCurrentPositionRunnable(this, null);
            Resources res = context.getResources();
-           this.mFeedLocationPinDrawable = res.getDrawable(C0257R.drawable.ic_feed_map_pin);
-           this.mPinnedHeaderHeight = res.getDimensionPixelSize(C0257R.dimen.post_header_height);
+           this.mFeedLocationPinDrawable = res.getDrawable(R.drawable.ic_feed_map_pin);
+           this.mPinnedHeaderHeight = res.getDimensionPixelSize(R.dimen.post_header_height);
            timelineFragment.addHeaderView(new LinearLayout(this.mContext), null, false);
            this.mLoopCountThread = new HandlerThread("loop-count-handler");
            this.mLoopCountThread.start();
            this.mLoopCountHandler = new Handler(this.mLoopCountThread.getLooper());
-           this.mDividerScrollAwayPadding = res.getDimensionPixelSize(C0257R.dimen.divider_scroll_away_padding);
-           this.mDoubleTapBitmap = BitmapFactory.decodeResource(res, C0257R.drawable.double_tap);
-           this.mDoubleTapWink_1 = BitmapFactory.decodeResource(res, C0257R.drawable.btn_wink_1);
-           this.mDoubleTapWink_2 = BitmapFactory.decodeResource(res, C0257R.drawable.btn_wink_2);
-           this.mDoubleTapWink_3 = BitmapFactory.decodeResource(res, C0257R.drawable.btn_wink_3);
+           this.mDividerScrollAwayPadding = res.getDimensionPixelSize(R.dimen.divider_scroll_away_padding);
+           this.mDoubleTapBitmap = BitmapFactory.decodeResource(res, R.drawable.double_tap);
+           this.mDoubleTapWink_1 = BitmapFactory.decodeResource(res, R.drawable.btn_wink_1);
+           this.mDoubleTapWink_2 = BitmapFactory.decodeResource(res, R.drawable.btn_wink_2);
+           this.mDoubleTapWink_3 = BitmapFactory.decodeResource(res, R.drawable.btn_wink_3);
            this.mDoubleTapToLikeOnPause = ClientFlagsHelper.doubleTapToLikeOnPause(this.mContext);
-           this.mPostHeaderPaddingSmall = res.getDimensionPixelOffset(C0257R.dimen.post_header_padding_small);
-           this.mPostHeaderPaddingLarge = res.getDimensionPixelOffset(C0257R.dimen.post_header_padding_large);
+           this.mPostHeaderPaddingSmall = res.getDimensionPixelOffset(R.dimen.post_header_padding_small);
+           this.mPostHeaderPaddingLarge = res.getDimensionPixelOffset(R.dimen.post_header_padding_large);
                 }
 
        private int calculateCurrentPosition() {
@@ -825,24 +825,24 @@
 
                 
        public View newView(ViewGroup viewGroup) {
-           View viewInflate = this.mInflater.inflate(C0257R.layout.post_row_view, viewGroup, false);
-           RelativeLayout relativeLayout = (RelativeLayout) viewInflate.findViewById(C0257R.id.videoContainer);
+           View viewInflate = this.mInflater.inflate(R.layout.post_row_view, viewGroup, false);
+           RelativeLayout relativeLayout = (RelativeLayout) viewInflate.findViewById(R.id.videoContainer);
            ViewGroup.LayoutParams layoutParams = relativeLayout.getLayoutParams();
            layoutParams.height = this.mDimen;
            layoutParams.width = this.mDimen;
            relativeLayout.setLayoutParams(layoutParams);
-           ImageView imageView = (ImageView) viewInflate.findViewById(C0257R.id.video_image);
+           ImageView imageView = (ImageView) viewInflate.findViewById(R.id.video_image);
            ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
            layoutParams2.width = this.mDimen;
            layoutParams2.height = this.mDimen;
            imageView.setLayoutParams(layoutParams2);
            FeedViewHolder feedViewHolder = new FeedViewHolder(viewInflate);
-           feedViewHolder.doubleTapView = (MultiPhaseBitmapView) viewInflate.findViewById(C0257R.id.doubleTapView);
+           feedViewHolder.doubleTapView = (MultiPhaseBitmapView) viewInflate.findViewById(R.id.doubleTapView);
            feedViewHolder.doubleTapView.setBitmaps(this.mDoubleTapBitmap, this.mDoubleTapWink_1, this.mDoubleTapWink_2, this.mDoubleTapWink_3);
            feedViewHolder.videoImage = imageView;
-           feedViewHolder.videoImageTop = (ImageView) relativeLayout.findViewById(C0257R.id.video_image_top);
+           feedViewHolder.videoImageTop = (ImageView) relativeLayout.findViewById(R.id.video_image_top);
            feedViewHolder.videoImageTop.setLayoutParams(layoutParams2);
-           feedViewHolder.videoView = (SdkVideoView) relativeLayout.findViewById(C0257R.id.videoView);
+           feedViewHolder.videoView = (SdkVideoView) relativeLayout.findViewById(R.id.videoView);
            VideoContaineTouchListener videoContaineTouchListener = new VideoContaineTouchListener(feedViewHolder);
            relativeLayout.setOnClickListener(videoContaineTouchListener);
            relativeLayout.setOnTouchListener(videoContaineTouchListener);
@@ -867,7 +867,7 @@
                     @Override 
            public boolean onTouch(View view, MotionEvent event) {
                if (event.getAction() == 1 && (FeedAdapter.this.mListView instanceof PinnedHeaderListView)) {
-                   TooltipOverlayView tooltip = new TooltipOverlayView(FeedAdapter.this.mContext, FeedAdapter.this.mContext.getString(C0257R.string.loops_hint));
+                   TooltipOverlayView tooltip = new TooltipOverlayView(FeedAdapter.this.mContext, FeedAdapter.this.mContext.getString(R.string.loops_hint));
                    PinnedHeaderListView listView = (PinnedHeaderListView) FeedAdapter.this.mListView;
                    boolean touchedPinned = listView.isAbsoluteTouchInPinnedHeader(event);
                    int[] absoluteLoc = new int[2];
@@ -921,10 +921,10 @@
                h.bylineIcon.setImageDrawable(this.mRevineDrawable);
                long userId = post.repost.userId;
                         if (userId == this.mAppController.getActiveId()) {
-                   h.revineAndBylineText.setText(this.mContext.getString(C0257R.string.revine_line_me));
+                   h.revineAndBylineText.setText(this.mContext.getString(R.string.revine_line_me));
                         } else if (post.repost.username != null) {
                    h.revineAndBylineText.setOnClickListener(new ViewOnClickListenerC05618(userId));
-                   String revinedBy = this.mContext.getString(C0257R.string.revine_line, post.repost.username);
+                   String revinedBy = this.mContext.getString(R.string.revine_line, post.repost.username);
                    SpannableStringBuilder revinedBySb = new SpannableStringBuilder(revinedBy);
                    h.revineAndBylineText.setMovementMethod(LinkMovementMethod.getInstance());
                    h.revineAndBylineText.setText(revinedBySb);
@@ -1335,7 +1335,7 @@
           if (topLevelView == null) {
                         return null;
                     }
-          View pinnedView = topLevelView.findViewById(C0257R.id.top_content_container);
+          View pinnedView = topLevelView.findViewById(R.id.top_content_container);
           if (pinnedView != null) {
               pinnedView.setBackgroundColor(-1);
                     }
@@ -1394,7 +1394,7 @@
           if (h.post.dateString == null) {
               h.post.dateString = Util.getRelativeTimeString(this.mContext, post.created, false);
               if (hasVenue) {
-                  h.post.dateString = this.mContext.getString(C0257R.string.date_and_location_formatted, h.post.dateString, post.venueData.venueName.trim());
+                  h.post.dateString = this.mContext.getString(R.string.date_and_location_formatted, h.post.dateString, post.venueData.venueName.trim());
                         }
                     }
           h.timestamp.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, hasVenue ? this.mFeedLocationPinDrawable : null, (Drawable) null);

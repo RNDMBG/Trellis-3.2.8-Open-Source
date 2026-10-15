@@ -12,7 +12,6 @@
             import android.support.annotation.NonNull;
             import android.util.AttributeSet;
             import android.widget.ImageView;
-            import co.vine.android.C0257R;
             
             
     public class MaskedImageView extends ImageView {
@@ -31,8 +30,8 @@
 
         public MaskedImageView(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
-            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.MaskedImageView, defStyle, 0);
-            this.mMaskResId = a.getResourceId(0, 0);
+            TypedArray a = context.obtainStyledAttributes(attrs, co.vine.android.R.styleable.MaskedImageView, defStyle, 0);
+            this.mMaskResId = a.getResourceId(co.vine.android.R.styleable.MaskedImageView_mask, 0);
             a.recycle();
             init();
                 }

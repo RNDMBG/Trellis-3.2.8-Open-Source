@@ -17,7 +17,7 @@ package co.vine.android;
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
                     
                     
                     
@@ -26,14 +26,14 @@ package co.vine.android;
                         platformActionBar.hide();
                     }
             setRequestedOrientation(1);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.profile_screen_title, (Boolean) true, (Boolean) true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.profile_screen_title, (Boolean) true, (Boolean) true);
             Intent intent = getIntent();
             if (savedInstanceState == null) {
                 ProfileFragment fragment = new ProfileFragment();
                 intent.putExtra("refresh", true);
                 intent.putExtra("take_focus", true);
                 fragment.setArguments(BaseArrayListFragment.prepareArguments(intent, true));
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, "profile").commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, "profile").commit();
                     }
                 }
 
@@ -44,7 +44,7 @@ package co.vine.android;
 
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(C0257R.menu.mute, menu);
+            getMenuInflater().inflate(R.menu.mute, menu);
             this.mShowCaptureIcon = false;
             return super.onCreateOptionsMenu(menu);
                 }

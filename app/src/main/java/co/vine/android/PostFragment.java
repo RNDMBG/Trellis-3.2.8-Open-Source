@@ -122,7 +122,7 @@
            this.mTwitter = new Twitter(TwitterVineApp.API_KEY, TwitterVineApp.API_SECRET);
            this.mAppSessionListener = new PostSessionListener();
            this.mIsRetry = getArguments().getBoolean("is_retry", false);
-           mToastLengthExceeded = Toast.makeText(getActivity(), C0257R.string.caption_length_exceeded, 1);
+           mToastLengthExceeded = Toast.makeText(getActivity(), R.string.caption_length_exceeded, 1);
            mToastLengthExceeded.setGravity(17, 0, 0);
            if (savedInstanceState == null) {
                this.mChannelId = -1L;
@@ -223,10 +223,10 @@
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
            int id = item.getItemId();
-           if (id == C0257R.id.share) {
+           if (id == R.id.share) {
                return post();
                     }
-           if (id == C0257R.id.mention) {
+           if (id == R.id.mention) {
                insertText("@");
                     } else if (id == 2131427933) {
                insertText("#");
@@ -263,7 +263,7 @@
                    SLog.m459e("Failed to delete session folder.", (Throwable) e);
                         }
                if (this.mIsFromSony) {
-                   showProgressDialog(C0257R.string.share_posting);
+                   showProgressDialog(R.string.share_posting);
                    new Handler().postDelayed(new RunnableC02501(activity), 750L);
                         } else {
                    activity.startActivity(new Intent(activity, (Class<?>) HomeTabActivity.class).setFlags(avformat.AVFMT_SEEK_TO_PTS));
@@ -353,23 +353,23 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View v = inflater.inflate(C0257R.layout.post_share, container, false);
-           View addToChannel = v.findViewById(C0257R.id.add_to_channel_container);
-           this.mAddToChannelIcon = (ImageView) addToChannel.findViewById(C0257R.id.add_to_channel_icon);
-           this.mAddToChannelText = (TextView) addToChannel.findViewById(C0257R.id.add_to_channel_text);
+           View v = inflater.inflate(R.layout.post_share, container, false);
+           View addToChannel = v.findViewById(R.id.add_to_channel_container);
+           this.mAddToChannelIcon = (ImageView) addToChannel.findViewById(R.id.add_to_channel_icon);
+           this.mAddToChannelText = (TextView) addToChannel.findViewById(R.id.add_to_channel_text);
            this.mAddToChannel = addToChannel;
-           this.mPostVine = (SwitchInterface) v.findViewById(C0257R.id.post_to_vine_switch);
-           this.mPostTwitter = (SwitchInterface) v.findViewById(C0257R.id.post_to_twitter_switch);
-           this.mPostFacebook = (SwitchInterface) v.findViewById(C0257R.id.post_to_facebook_switch);
-           this.mImagePreview = (ImageView) v.findViewById(C0257R.id.image_preview);
-           PopupEditText edit = (PopupEditText) v.findViewById(C0257R.id.caption);
+           this.mPostVine = (SwitchInterface) v.findViewById(R.id.post_to_vine_switch);
+           this.mPostTwitter = (SwitchInterface) v.findViewById(R.id.post_to_twitter_switch);
+           this.mPostFacebook = (SwitchInterface) v.findViewById(R.id.post_to_facebook_switch);
+           this.mImagePreview = (ImageView) v.findViewById(R.id.image_preview);
+           PopupEditText edit = (PopupEditText) v.findViewById(R.id.caption);
            edit.setAdapter(this.mUsersAdapter);
            this.mTokenizer = new ComposeTokenizer(this);
            edit.setTokenizer(this.mTokenizer, this, this.mAppController.getTypeaheadThrottle());
            edit.setPopupEditTextListener(this);
            this.mCaption = edit;
-           this.mPostToTwitterText = (TextView) v.findViewById(C0257R.id.post_to_twitter_text);
-           this.mPostToFacebookText = (TextView) v.findViewById(C0257R.id.post_to_facebook_text);
+           this.mPostToTwitterText = (TextView) v.findViewById(R.id.post_to_twitter_text);
+           this.mPostToFacebookText = (TextView) v.findViewById(R.id.post_to_facebook_text);
            this.mAddToChannel.setOnClickListener(this);
            this.mAddToChannel.setOnLongClickListener(this);
            this.mPostVine.setChecked(true);
@@ -379,33 +379,33 @@
            this.mPostTwitter.setOnCheckedChangeListener(this);
            this.mPostFacebook.setChecked(false);
            this.mPostFacebook.setOnCheckedChangeListener(this);
-           v.findViewById(C0257R.id.done_button).setOnClickListener(this);
+           v.findViewById(R.id.done_button).setOnClickListener(this);
            return v;
                 }
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-           inflater.inflate(C0257R.menu.share, menu);
+           inflater.inflate(R.menu.share, menu);
                 }
 
                 @Override 
        public void onClick(View view) {
            int id = view.getId();
-           if (id == C0257R.id.add_to_channel_container) {
+           if (id == R.id.add_to_channel_container) {
                Intent intent = new Intent(getActivity(), (Class<?>) ChannelsListActivity.class);
                intent.putExtra("selected_channel", this.mChannelId);
                getActivity().startActivityForResult(intent, 3);
-                    } else if (id == C0257R.id.done_button) {
+                    } else if (id == R.id.done_button) {
                post();
                     }
                 }
 
                 @Override 
        public boolean onLongClick(View view) {
-           if (view.getId() != C0257R.id.add_to_channel_container) {
+           if (view.getId() != R.id.add_to_channel_container) {
                         return false;
                     }
-           this.mAddToChannelText.setText(C0257R.string.add_to_channel);
+           this.mAddToChannelText.setText(R.string.add_to_channel);
            this.mChannelId = -1L;
            this.mAddToChannelIcon.setSelected(false);
            FlurryUtils.trackChannelChange("Channel removed");
@@ -415,21 +415,21 @@
                 @Override 
        public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
            int id = compoundButton.getId();
-           if (id == C0257R.id.post_to_vine_switch) {
+           if (id == R.id.post_to_vine_switch) {
                this.mPostTwitter.setEnabled(checked);
                this.mPostFacebook.setEnabled(checked);
                if (!checked) {
                    this.mPostTwitter.setChecked(false);
-                   this.mPostToTwitterText.setTextColor(getActivity().getResources().getColor(C0257R.color.solid_gray));
+                   this.mPostToTwitterText.setTextColor(getActivity().getResources().getColor(R.color.solid_gray));
                    this.mPostFacebook.setChecked(false);
-                   this.mPostToFacebookText.setTextColor(getActivity().getResources().getColor(C0257R.color.solid_gray));
+                   this.mPostToFacebookText.setTextColor(getActivity().getResources().getColor(R.color.solid_gray));
                    return;
                         }
-               this.mPostToTwitterText.setTextColor(getActivity().getResources().getColor(C0257R.color.primary_text));
-               this.mPostToFacebookText.setTextColor(getActivity().getResources().getColor(C0257R.color.primary_text));
+               this.mPostToTwitterText.setTextColor(getActivity().getResources().getColor(R.color.primary_text));
+               this.mPostToFacebookText.setTextColor(getActivity().getResources().getColor(R.color.primary_text));
                return;
                     }
-           if (id == C0257R.id.post_to_facebook_switch) {
+           if (id == R.id.post_to_facebook_switch) {
                if (!this.mPostVine.isChecked()) {
                    this.mPostFacebook.setChecked(false);
                    return;
@@ -449,7 +449,7 @@
                         }
                return;
                     }
-           if (id == C0257R.id.post_to_twitter_switch) {
+           if (id == R.id.post_to_twitter_switch) {
                if (!this.mPostVine.isChecked()) {
                    this.mPostTwitter.setChecked(false);
                    return;
@@ -526,7 +526,7 @@
                                if (session.getPermissions().contains(AppController.PUBLISH_ACTIONS)) {
                                    AppController.setPendingFacebookToken(getActivity(), session.getAccessToken());
                                    this.mAppController.sendFacebookToken();
-                                   showProgressDialog(C0257R.string.login_logging_in);
+                                   showProgressDialog(R.string.login_logging_in);
                                         } else {
                                    getActivity().runOnUiThread(new RunnableC02512());
                                    this.mAppController.connectToFacebookPublish(this);
@@ -552,7 +552,7 @@
 
                     @Override 
            public void run() {
-               Util.showCenteredToast(PostFragment.this.getActivity(), C0257R.string.publish_to_facebook_toast);
+               Util.showCenteredToast(PostFragment.this.getActivity(), R.string.publish_to_facebook_toast);
                     }
                 }
 
@@ -564,7 +564,7 @@
            public void onConnectFacebookComplete(String reqId, int statusCode, String reasonPhrase) {
                PostFragment.this.dismissProgressDialog();
                if (statusCode != 200) {
-                   Util.showCenteredToast(PostFragment.this.getActivity(), C0257R.string.error_facebook_send_token);
+                   Util.showCenteredToast(PostFragment.this.getActivity(), R.string.error_facebook_send_token);
                    PostFragment.access$000(PostFragment.this).setChecked(false);
                         }
                     }

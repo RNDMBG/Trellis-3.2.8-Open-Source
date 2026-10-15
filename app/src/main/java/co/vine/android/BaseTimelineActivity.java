@@ -21,7 +21,7 @@
                 @Override 
         public boolean onCreateOptionsMenu(Menu menu) {
             if (this.mShowCaptureIcon && isAutoCaptureIconEnabled() && !BuildUtil.isExplore()) {
-                getMenuInflater().inflate(C0257R.menu.capture, menu);
+                getMenuInflater().inflate(R.menu.capture, menu);
                     }
             return super.onCreateOptionsMenu(menu);
                 }

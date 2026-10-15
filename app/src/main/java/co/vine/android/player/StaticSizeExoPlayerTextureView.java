@@ -40,6 +40,7 @@
                 private final int[] mPlayerInitLock;
                 private Runnable mPlayerInitRunnable;
                 private VideoSizeChangedListener mSizeListener;
+                private Surface mSurface;
                 private SurfaceTexture mSurfaceTexture;
                 private MediaCodecVideoTrackRenderer mVideoRenderer;
                 private int mWidth;
@@ -216,10 +217,18 @@
                     }
                 }
 
-       private void setPlayerSurface() {
-           if (this.mPlayer != null && this.mVideoRenderer != null && this.mSurfaceTexture != null) {
-               this.mPlayer.sendMessage(this.mVideoRenderer, 1, new Surface(this.mSurfaceTexture));
+        private void setPlayerSurface() {
+            if (this.mPlayer != null && this.mVideoRenderer != null && this.mSurfaceTexture != null) {
+                if (this.mSurface != null) {
+                    try {
+                        this.mSurface.release();
+                    } catch (Exception ignored) {
                     }
+                    this.mSurface = null;
+                }
+                this.mSurface = new Surface(this.mSurfaceTexture);
+                this.mPlayer.sendMessage(this.mVideoRenderer, 1, this.mSurface);
+                     }
                 }
 
                 
@@ -371,11 +380,18 @@
            setTransform(m);
                 }
 
-       public void release() {
-           if (this.mPlayer != null) {
-               this.mPlayer.release();
-               this.mPlayer = null;
-                    }
+        public void release() {
+            if (this.mPlayer != null) {
+                this.mPlayer.release();
+                this.mPlayer = null;
+                     }
+            if (this.mSurface != null) {
+                try {
+                    this.mSurface.release();
+                } catch (Exception ignored) {
+                }
+                this.mSurface = null;
+                     }
            Thread initThread = this.mInitThread;
            if (initThread != null) {
                Thread.State state = initThread.getState();

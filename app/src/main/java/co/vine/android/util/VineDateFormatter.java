@@ -3,7 +3,7 @@
             import android.content.res.Resources;
             import android.text.SpannableStringBuilder;
             import android.text.style.TypefaceSpan;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import java.text.SimpleDateFormat;
             import java.util.Calendar;
             import java.util.Date;
@@ -23,8 +23,8 @@
                 private final String mYesterday;
 
         public VineDateFormatter(Resources res) {
-            this.mTimeFormat = new SimpleDateFormat(res.getString(C0257R.string.vm_time_format));
-            String dateTimePlacer = res.getString(C0257R.string.vm_date_format);
+            this.mTimeFormat = new SimpleDateFormat(res.getString(R.string.vm_time_format));
+            String dateTimePlacer = res.getString(R.string.vm_date_format);
             int dateTimePlacerStart1 = dateTimePlacer.indexOf("%1$s");
             int dateTimePlacerStart2 = dateTimePlacer.indexOf("%2$s");
             this.mIsDateBeforeTime = dateTimePlacerStart1 < dateTimePlacerStart2;
@@ -33,11 +33,11 @@
                     } else {
                 this.mDateTimePlacerPart1 = dateTimePlacer.substring(dateTimePlacerStart1);
                     }
-            this.mDateFormatLong = new SimpleDateFormat(res.getString(C0257R.string.date_format_long));
-            this.mDateFormatShort = new SimpleDateFormat(res.getString(C0257R.string.date_format_short));
+            this.mDateFormatLong = new SimpleDateFormat(res.getString(R.string.date_format_long));
+            this.mDateFormatShort = new SimpleDateFormat(res.getString(R.string.date_format_short));
             this.mDateSectionSpans = new HashSet<>();
             this.mTimeSectionSpans = new HashSet<>();
-            this.mYesterday = res.getString(C0257R.string.yesterday);
+            this.mYesterday = res.getString(R.string.yesterday);
                 }
 
         public void refreshDates() {

@@ -228,4 +228,97 @@
     <attr name="lineColors" format="reference" />
     <attr name="textWeight" format="integer" />
     <attr name="textStyle" format="integer" />
+    <declare-styleable name="AnimatingCircle">
+        <attr name="backgroundColor" />
+        <attr name="radius" />
+        <attr name="duration" />
+    </declare-styleable>
+    <declare-styleable name="ColorPickerCircle">
+        <attr name="circleColor" />
+    </declare-styleable>
+    <declare-styleable name="CroppableImageView">
+        <attr name="cropRectPadding" />
+        <attr name="cropRectStrokeColor" />
+        <attr name="cropShadowColor" />
+    </declare-styleable>
+    <declare-styleable name="DragSortWidget">
+        <attr name="activatedDrawable" />
+        <attr name="floatViewActivatedDrawable" />
+        <attr name="floatViewSize" />
+    </declare-styleable>
+    <declare-styleable name="FollowStateButton">
+        <attr name="selfDrawable" />
+        <attr name="selfString" />
+        <attr name="selfTextColor" />
+        <attr name="notFollowingDrawable" />
+        <attr name="notFollowingString" />
+        <attr name="notFollowingTextColor" />
+        <attr name="followingDrawable" />
+        <attr name="followingString" />
+        <attr name="followingTextColor" />
+        <attr name="followRequestedDrawable" />
+        <attr name="followRequestedString" />
+        <attr name="followRequestedTextColor" />
+    </declare-styleable>
+    <declare-styleable name="HorizontalListView">
+        <attr name="listDivider" />
+        <attr name="dividerWidth" />
+        <attr name="edgePadding" />
+        <attr name="fillWidthHeightRatio" />
+    </declare-styleable>
+    <declare-styleable name="MaskedImageView">
+        <attr name="mask" />
+    </declare-styleable>
+    <declare-styleable name="OverlayImageView">
+        <attr name="overlayDrawable" />
+    </declare-styleable>
+    <declare-styleable name="PopupEditText">
+        <attr name="dropDownVerticalOffset" />
+        <attr name="dropDownHorizontalOffset" />
+        <attr name="threshold" />
+    </declare-styleable>
+    <declare-styleable name="RefreshableListView">
+        <attr name="refreshHeader" />
+        <attr name="refreshFooter" />
+        <attr name="pullText" />
+        <attr name="loadingText" />
+        <attr name="pullBackgroundColor" />
+        <attr name="pullDivider" />
+        <attr name="refreshTriangle1" />
+        <attr name="refreshTriangle2" />
+        <attr name="refreshTriangle3" />
+        <attr name="rotateUpAnim" />
+        <attr name="rotateDownAnim" />
+    </declare-styleable>
+    <declare-styleable name="RoundedCornerImageView">
+        <attr name="cornerRadius" />
+    </declare-styleable>
+    <declare-styleable name="RoundedDivider">
+        <attr name="roundedDividerColor" />
+    </declare-styleable>
+    <declare-styleable name="SlidingMenu">
+        <attr name="mode" />
+        <attr name="viewAbove" />
+        <attr name="viewBehind" />
+        <attr name="behindOffset" />
+        <attr name="behindWidth" />
+        <attr name="behindScrollScale" />
+        <attr name="touchModeAbove" />
+        <attr name="touchModeBehind" />
+        <attr name="shadowDrawable" />
+        <attr name="shadowWidth" />
+        <attr name="fadeEnabled" />
+        <attr name="fadeDegree" />
+        <attr name="selectorEnabled" />
+        <attr name="selectorDrawable" />
+    </declare-styleable>
+    <declare-styleable name="ViewPagerScrollBar">
+        <attr name="tabColor" />
+        <attr name="scrollBarHeight" />
+        <attr name="lineColors" />
+    </declare-styleable>
+    <declare-styleable name="VineTextView">
+        <attr name="textWeight" />
+        <attr name="textStyle" />
+    </declare-styleable>
 </resources>

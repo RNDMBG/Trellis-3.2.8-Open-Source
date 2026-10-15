@@ -12,7 +12,7 @@
             import android.util.AttributeSet;
             import android.util.TypedValue;
             import android.view.View;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.util.SystemUtil;
             
             
@@ -66,9 +66,9 @@
         public AnimatingCircle(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
             Resources res = context.getResources();
-            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.AnimatingCircle, defStyle, 0);
-            this.mBackgroundColor = a.getColor(0, res.getColor(C0257R.color.draft_record_bg));
-            this.mRadius = a.getDimensionPixelOffset(1, res.getDimensionPixelOffset(C0257R.dimen.rect_circle_radius));
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AnimatingCircle, defStyle, 0);
+            this.mBackgroundColor = a.getColor(R.styleable.AnimatingCircle_backgroundColor, res.getColor(R.color.draft_record_bg));
+            this.mRadius = a.getDimensionPixelOffset(R.styleable.AnimatingCircle_radius, res.getDimensionPixelOffset(R.dimen.rect_circle_radius));
             a.recycle();
             this.mPaint = new Paint();
             this.mClearPaint = new Paint();
@@ -84,7 +84,7 @@
            float hypotenuse = adjacent / ((float) COSINE_45_DEGREES);
            float f = hypotenuse / this.mRadius;
            this.mHypoteneuse = hypotenuse;
-           this.mXOffset = res.getDimensionPixelOffset(C0257R.dimen.animating_circle_left_offset);
+           this.mXOffset = res.getDimensionPixelOffset(R.dimen.animating_circle_left_offset);
            this.mXMargin = TypedValue.complexToDimensionPixelOffset(6, res.getDisplayMetrics());
            this.mRunnable = new AnimationRunnable();
            float animationDistance = this.mHypoteneuse - this.mRadius;

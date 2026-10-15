@@ -12,17 +12,17 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
             setRequestedOrientation(1);
             Intent intent = getIntent();
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.upload_list_title, (Boolean) false, (Boolean) true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.upload_list_title, (Boolean) false, (Boolean) true);
             if (savedInstanceState == null) {
                 this.mFragment = new UploadsListFragment();
                 intent.putExtra("take_focus", true);
                 intent.putExtra("refresh", false);
-                intent.putExtra("empty_desc", C0257R.string.no_pending_uploads);
+                intent.putExtra("empty_desc", R.string.no_pending_uploads);
                 this.mFragment.setArguments(BaseCursorListFragment.prepareArguments(intent, false));
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, this.mFragment).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, this.mFragment).commit();
                     }
                 }
 

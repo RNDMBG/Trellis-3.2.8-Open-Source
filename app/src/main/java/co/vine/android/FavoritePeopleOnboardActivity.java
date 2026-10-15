@@ -29,7 +29,7 @@
                 private ArrayList<VineUser> mUsers;
                 private HashMap<Long, ImageKey> mImageKeys = new HashMap<>();
                 private ArrayList<ImageView> mImageViews = new ArrayList<>();
-                private int[] mProfileColorIds = {C0257R.color.face_overlay_1, C0257R.color.face_overlay_2, C0257R.color.face_overlay_3, C0257R.color.face_overlay_4, C0257R.color.face_overlay_5, C0257R.color.face_overlay_6};
+                private int[] mProfileColorIds = {R.color.face_overlay_1, R.color.face_overlay_2, R.color.face_overlay_3, R.color.face_overlay_4, R.color.face_overlay_5, R.color.face_overlay_6};
                 private View.OnClickListener faceTapListener = new ViewOnClickListenerC02081();
 
         static  void access$100(FavoritePeopleOnboardActivity x0) {
@@ -67,17 +67,32 @@
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
                     Bitmap bm;
-            super.onCreate(savedInstanceState, C0257R.layout.favorites_onboard, true, true);
+            super.onCreate(savedInstanceState, R.layout.favorites_onboard, true, true);
+            try {
+                android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+                if (actionBar != null) {
+                    actionBar.hide();
+                }
+            } catch (Exception ignored) {
+            }
+            if (getFakeActionBar() != null) {
+                if (getFakeActionBar().getActionBar() != null) {
+                    getFakeActionBar().getActionBar().setVisibility(View.GONE);
+                }
+                if (getFakeActionBar().getDistanceMaker() != null) {
+                    getFakeActionBar().getDistanceMaker().setVisibility(View.GONE);
+                }
+            }
             this.mAppSessionListener = new FavoritePeopleOnboardListener(this, null);
-            this.mProgressBar = (ProgressBar) findViewById(C0257R.id.progress_bar);
-            this.mFaceCarouselLayout = (ViewGroup) findViewById(C0257R.id.face_carousel_layout);
+            this.mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+            this.mFaceCarouselLayout = (ViewGroup) findViewById(R.id.face_carousel_layout);
             Intent intent = getIntent();
             if (intent != null) {
                 this.mUsers = intent.getParcelableArrayListExtra("users");
                 if (this.mUsers != null) {
-                    this.mStrokeWidth = getResources().getDimensionPixelSize(C0257R.dimen.favorite_face_stroke_width);
-                    int width = getResources().getDimensionPixelSize(C0257R.dimen.favorite_face_width);
-                    int[] imageViewIds = {C0257R.id.face_1, C0257R.id.face_2, C0257R.id.face_3, C0257R.id.face_4, C0257R.id.face_5, C0257R.id.face_6};
+                    this.mStrokeWidth = getResources().getDimensionPixelSize(R.dimen.favorite_face_stroke_width);
+                    int width = getResources().getDimensionPixelSize(R.dimen.favorite_face_width);
+                    int[] imageViewIds = {R.id.face_1, R.id.face_2, R.id.face_3, R.id.face_4, R.id.face_5, R.id.face_6};
                     this.mImagesToShow = Math.min(this.mUsers.size(), imageViewIds.length);
                     this.mReadyFaces = 0;
                             for (int i = 0; i < this.mImagesToShow; i++) {
@@ -104,9 +119,9 @@
                 @Override 
         public void onClick(View view) {
             int id = view.getId();
-           if (id == C0257R.id.pick_now) {
+           if (id == R.id.pick_now) {
                pickNowAndDismiss();
-                    } else if (id == C0257R.id.no_thanks) {
+                    } else if (id == R.id.no_thanks) {
                FlurryUtils.trackOnboardingDismissed("no_thanks");
                finish();
                     }
@@ -172,6 +187,6 @@
                 @Override 
        public void finish() {
            super.finish();
-           overridePendingTransition(C0257R.anim.slide_in_from_bottom, C0257R.anim.slide_out_to_bottom);
+           overridePendingTransition(R.anim.slide_in_from_bottom, R.anim.slide_out_to_bottom);
                 }
             }

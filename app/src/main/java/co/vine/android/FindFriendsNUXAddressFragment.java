@@ -87,9 +87,9 @@
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View v = super.onCreateView(inflater, container, savedInstanceState);
-            this.mContactsCountContainer = (RelativeLayout) v.findViewById(C0257R.id.contacts_count_container);
-            this.mContactsText = (TextView) v.findViewById(C0257R.id.contacts_text);
-            this.mSelectAllToggle = (TextView) v.findViewById(C0257R.id.select_all_toggle);
+            this.mContactsCountContainer = (RelativeLayout) v.findViewById(R.id.contacts_count_container);
+            this.mContactsText = (TextView) v.findViewById(R.id.contacts_text);
+            this.mSelectAllToggle = (TextView) v.findViewById(R.id.select_all_toggle);
             this.mSelectAllToggle.setOnClickListener(this);
             return v;
                 }
@@ -109,10 +109,10 @@
             if (!this.mFetched) {
                 PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1);
                 p.setListener(this.mStoreContactDialogDoneListener);
-                p.setMessage(C0257R.string.store_contacts_desc);
-                p.setTitle(C0257R.string.store_contacts);
-                p.setNegativeButton(C0257R.string.f87no);
-                p.setPositiveButton(C0257R.string.f88ok);
+                p.setMessage(R.string.store_contacts_desc);
+                p.setTitle(R.string.store_contacts);
+                p.setNegativeButton(R.string.no);
+                p.setPositiveButton(R.string.ok);
                 p.setCancelable(false);
                 p.show(getFragmentManager());
                     }
@@ -146,7 +146,7 @@
            if (id == 2131427576) {
                this.mSelected = !this.mSelected;
                this.mActivity.toggleFollowAll(this.mSelected, this.mAddressFriends, this.mFriendships);
-               this.mSelectAllToggle.setText(this.mSelected ? C0257R.string.deselect_all : C0257R.string.select_all);
+               this.mSelectAllToggle.setText(this.mSelected ? R.string.deselect_all : R.string.select_all);
                this.mCursorAdapter.notifyDataSetChanged();
                     }
                 }
@@ -201,8 +201,8 @@
                             } else {
                        FindFriendsNUXAddressFragment.this.showSadface(false);
                        FindFriendsNUXAddressFragment.access$200(FindFriendsNUXAddressFragment.this).setVisibility(0);
-                       FindFriendsNUXAddressFragment.access$300(FindFriendsNUXAddressFragment.this).setText(FindFriendsNUXAddressFragment.this.getString(C0257R.string.find_friends_contacts_count, Integer.valueOf(count)));
-                       FindFriendsNUXAddressFragment.access$500(FindFriendsNUXAddressFragment.this).setText(FindFriendsNUXAddressFragment.access$400(FindFriendsNUXAddressFragment.this) ? C0257R.string.deselect_all : C0257R.string.select_all);
+                       FindFriendsNUXAddressFragment.access$300(FindFriendsNUXAddressFragment.this).setText(FindFriendsNUXAddressFragment.this.getString(R.string.find_friends_contacts_count, Integer.valueOf(count)));
+                       FindFriendsNUXAddressFragment.access$500(FindFriendsNUXAddressFragment.this).setText(FindFriendsNUXAddressFragment.access$400(FindFriendsNUXAddressFragment.this) ? R.string.deselect_all : R.string.select_all);
                        FindFriendsNUXAddressFragment.access$600(FindFriendsNUXAddressFragment.this).addUsersToFollow(users, FindFriendsNUXAddressFragment.this.mFriendships);
                        FindFriendsNUXAddressFragment.access$700(FindFriendsNUXAddressFragment.this).addAll(users);
                             }
@@ -210,7 +210,7 @@
                    return;
                         }
                FindFriendsNUXAddressFragment.this.showSadface(true);
-               Util.showCenteredToast(FindFriendsNUXAddressFragment.this.getActivity(), C0257R.string.find_friends_address_error);
+               Util.showCenteredToast(FindFriendsNUXAddressFragment.this.getActivity(), R.string.find_friends_address_error);
                FlurryUtils.trackFindFriendsAddressFailure();
                     }
 

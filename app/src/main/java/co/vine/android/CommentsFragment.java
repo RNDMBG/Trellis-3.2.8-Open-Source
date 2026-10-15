@@ -182,15 +182,15 @@
            PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(0);
            p.setListener(this.mBlockDoneListener);
            p.setMessage(messageId);
-           p.setPositiveButton(C0257R.string.f87no);
-           p.setNegativeButton(C0257R.string.yes);
+           p.setPositiveButton(R.string.no);
+           p.setNegativeButton(R.string.yes);
            p.show(getFragmentManager());
                 }
 
                 @Override 
        public void onCreate(Bundle savedInstanceState) {
            super.onCreate(savedInstanceState);
-           this.DATE_FORMAT.applyPattern(getResources().getString(C0257R.string.datetime_format_long));
+           this.DATE_FORMAT.applyPattern(getResources().getString(R.string.datetime_format_long));
            if (savedInstanceState != null && savedInstanceState.containsKey(STATE_FETCHED)) {
                this.mFetched = savedInstanceState.getBoolean(STATE_FETCHED);
                     }
@@ -205,13 +205,13 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           return createView(inflater, C0257R.layout.comments_thread, container);
+           return createView(inflater, R.layout.comments_thread, container);
                 }
 
                 @Override 
        public void onViewCreated(View view, Bundle savedInstanceState) {
            super.onViewCreated(view, savedInstanceState);
-           PopupEditText edit = (PopupEditText) view.findViewById(C0257R.id.edit_reply);
+           PopupEditText edit = (PopupEditText) view.findViewById(R.id.edit_reply);
            edit.setOnEditorActionListener(this);
            edit.setAdapter(this.mTypeaheadAdapter);
            this.mTokenizer = new ComposeTokenizer(this);
@@ -223,9 +223,9 @@
            this.mPostId = args.getLong("post_id");
            this.mRepostId = args.getLong("repost_id");
            this.mPostAuthorId = args.getLong("post_author_id");
-           this.mSendButton = (ImageView) view.findViewById(C0257R.id.send_button);
+           this.mSendButton = (ImageView) view.findViewById(R.id.send_button);
            this.mSendButton.setOnClickListener(this);
-           this.mSendButton.setColorFilter((-16777216) | getResources().getColor(C0257R.color.btn_pressed_fill), PorterDuff.Mode.SRC_ATOP);
+           this.mSendButton.setColorFilter((-16777216) | getResources().getColor(R.color.btn_pressed_fill), PorterDuff.Mode.SRC_ATOP);
            this.mListView.setOnItemLongClickListener(this);
            this.mListView.setOnItemClickListener(this);
            this.mAdapter = new CommentsAdapter(getActivity(), this.mPostId, this.mAppController, this);
@@ -259,7 +259,7 @@
                    return;
                         }
                if (blocked) {
-                   Util.showDefaultToast(getActivity(), getString(C0257R.string.user_blocked, this.mSelectedUsername));
+                   Util.showDefaultToast(getActivity(), getString(R.string.user_blocked, this.mSelectedUsername));
                         }
                     }
                 }
@@ -281,16 +281,16 @@
 
                 @Override 
        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-           inflater.inflate(C0257R.menu.comments, menu);
+           inflater.inflate(R.menu.comments, menu);
            super.onCreateOptionsMenu(menu, inflater);
                 }
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
            int id = item.getItemId();
-           if (id == C0257R.id.mention) {
+           if (id == R.id.mention) {
                insertText("@");
-                    } else if (id == C0257R.id.tag) {
+                    } else if (id == R.id.tag) {
                insertText("#");
                     } else {
                return super.onOptionsItemSelected(item);
@@ -340,8 +340,8 @@
        public void postComment(EditText editText) {
            if (validate(editText)) {
               final String pendingComment = editText.getText().toString();
-               ProgressDialog dialog = new ProgressDialog(getActivity(), C0257R.style.ProgressDialogTheme);
-               dialog.setMessage(getString(C0257R.string.comments_posting));
+               ProgressDialog dialog = new ProgressDialog(getActivity(), R.style.ProgressDialogTheme);
+               dialog.setMessage(getString(R.string.comments_posting));
                dialog.setProgressStyle(0);
                dialog.show();
                this.mProgressDialog = dialog;
@@ -383,7 +383,7 @@
 
                 @Override 
        public void onClick(View view) {
-           if (view.getId() == C0257R.id.send_button) {
+           if (view.getId() == R.id.send_button) {
                sendComment();
                     } else {
                CommentViewHolder h = (CommentViewHolder) view.getTag();
@@ -429,7 +429,7 @@
 
                 @Override 
        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-           if (v.getId() != C0257R.id.edit_reply) {
+           if (v.getId() != R.id.edit_reply) {
                         return false;
                     }
            if (actionId == 4) {
@@ -440,7 +440,7 @@
 
        private void sendComment() {
            if (editTextLength() > 140) {
-               Util.showTopToast(getActivity(), C0257R.string.comment_length_exceeded);
+               Util.showTopToast(getActivity(), R.string.comment_length_exceeded);
                return;
                     }
            postComment(this.mEdit);
@@ -515,7 +515,7 @@
 
                     @Override 
            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-               if (item.getItemId() == C0257R.id.action_reply) {
+               if (item.getItemId() == R.id.action_reply) {
                    CommentsFragment.access$100(CommentsFragment.this);
                         } else {
                    showDialog();
@@ -536,8 +536,8 @@
                PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(0);
                p.setListener(this.mDialogDoneListener);
                p.setMessage(this.mDialogMessageResourceId);
-               p.setPositiveButton(C0257R.string.f87no);
-               p.setNegativeButton(C0257R.string.yes);
+               p.setPositiveButton(R.string.no);
+               p.setNegativeButton(R.string.yes);
                p.show(CommentsFragment.this.getFragmentManager());
                     }
                 }
@@ -552,7 +552,7 @@
                     @Override 
            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
                super.onCreateActionMode(mode, menu);
-               MenuItem spamButton = menu.findItem(C0257R.id.comment_action_spam);
+               MenuItem spamButton = menu.findItem(R.id.comment_action_spam);
                spamButton.setVisible(false);
                return true;
                     }
@@ -586,14 +586,14 @@
                     @Override 
            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
                super.onCreateActionMode(mode, menu);
-               MenuItem spamButton = menu.findItem(C0257R.id.comment_action_delete);
+               MenuItem spamButton = menu.findItem(R.id.comment_action_delete);
                spamButton.setVisible(false);
                return true;
                     }
 
                     @Override 
            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-               if (item.getItemId() == C0257R.id.action_reply) {
+               if (item.getItemId() == R.id.action_reply) {
                    CommentsFragment.access$100(CommentsFragment.this);
                         } else {
                    CommentsFragment.access$000(CommentsFragment.this);
@@ -609,7 +609,7 @@
                 }
 
        private CommentActionCallback createCommentActionCallback(CommentActionType type) {
-                    return type == CommentActionType.DELETE_ACTION ? new CommentDeleteActionCallback(C0257R.menu.comment_actions, C0257R.string.delete_comment_prompt) : new CommentSpamActionCallback(C0257R.menu.comment_actions, C0257R.string.block_or_report_comment);
+                    return type == CommentActionType.DELETE_ACTION ? new CommentDeleteActionCallback(R.menu.comment_actions, R.string.delete_comment_prompt) : new CommentSpamActionCallback(R.menu.comment_actions, R.string.block_or_report_comment);
                 }
 
                 @Override 
@@ -713,9 +713,9 @@
                 @Override 
        public void onTextChanged(CharSequence s, int start, int before, int count) {
            if (this.mEdit.getText().length() > 0) {
-               this.mSendButton.setColorFilter(getResources().getColor(C0257R.color.vine_green) | (-16777216));
+               this.mSendButton.setColorFilter(getResources().getColor(R.color.vine_green) | (-16777216));
                     } else {
-               this.mSendButton.setColorFilter(getResources().getColor(C0257R.color.btn_pressed_fill) | (-16777216));
+               this.mSendButton.setColorFilter(getResources().getColor(R.color.btn_pressed_fill) | (-16777216));
                     }
                 }
 
@@ -735,7 +735,7 @@
                    if (comments == null || comments.size() == 0) {
                        if (statusCode != 200) {
                                 CommentsFragment.this.mFetched = false;
-                           CommentsFragment.this.mEmptyText.setText(C0257R.string.failed_to_load_comments);
+                           CommentsFragment.this.mEmptyText.setText(R.string.failed_to_load_comments);
                                 }
                        CommentsFragment.this.showSadface(true, false);
                             } else {
@@ -813,7 +813,7 @@
                PendingRequest request = CommentsFragment.this.removeRequest(reqId);
                if (request != null && statusCode == 200) {
                             if (((CommentViewHolder) CommentsFragment.access$200(CommentsFragment.this).getTag()).userId != CommentsFragment.this.mAppController.getActiveId()) {
-                       CommentsFragment.access$1600(CommentsFragment.this, C0257R.string.block_user_comment_delete_prompt);
+                       CommentsFragment.access$1600(CommentsFragment.this, R.string.block_user_comment_delete_prompt);
                             }
                    ((CommentsAdapter) CommentsFragment.this.mAdapter).deleteComment(commentId);
                    if (CommentsFragment.this.mAdapter.getCount() == 0) {

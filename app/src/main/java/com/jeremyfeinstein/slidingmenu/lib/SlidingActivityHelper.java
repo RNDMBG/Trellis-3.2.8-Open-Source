@@ -8,7 +8,7 @@
             import android.view.LayoutInflater;
             import android.view.View;
             import android.view.ViewGroup;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class SlidingActivityHelper {
@@ -29,7 +29,7 @@
                 }
 
         public void onCreate(Bundle savedInstanceState) {
-            this.mSlidingMenu = (SlidingMenu) LayoutInflater.from(this.mActivity).inflate(C0257R.layout.slidingmenumain, (ViewGroup) null);
+            this.mSlidingMenu = (SlidingMenu) LayoutInflater.from(this.mActivity).inflate(R.layout.slidingmenumain, (ViewGroup) null);
                 }
 
         public void onPostCreate(Bundle savedInstanceState) {

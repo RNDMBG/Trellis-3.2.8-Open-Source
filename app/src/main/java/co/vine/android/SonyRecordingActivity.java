@@ -48,8 +48,8 @@
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             Resources res = getResources();
-            this.mSonyFilterColor = res.getColor(C0257R.color.sony_filtered_color);
-            this.mSonyModeName = res.getString(C0257R.string.app_name);
+            this.mSonyFilterColor = res.getColor(R.color.sony_filtered_color);
+            this.mSonyModeName = res.getString(R.string.app_name);
                 }
 
                 @Override 
@@ -93,11 +93,11 @@
                 }
 
         public void setupSonyOverlay() {
-            this.mSonyModeSelectorButton = (ImageView) findViewById(C0257R.id.sony_button);
+            this.mSonyModeSelectorButton = (ImageView) findViewById(R.id.sony_button);
             if (this.mSonyModeSelectorButton != null) {
-                ViewGroup vg = (ViewGroup) findViewById(C0257R.id.root_layout);
+                ViewGroup vg = (ViewGroup) findViewById(R.id.root_layout);
                 if (vg != null && this.mSonySelectorContainer == null) {
-                    this.mSonySelectorContainer = (ViewGroup) getLayoutInflater().inflate(C0257R.layout.sony_container, vg, false);
+                    this.mSonySelectorContainer = (ViewGroup) getLayoutInflater().inflate(R.layout.sony_container, vg, false);
                     vg.addView(this.mSonySelectorContainer);
                         }
                 this.mSonyModeSelectorButton.setVisibility(0);
@@ -195,7 +195,7 @@
                         }
                onShowSonyOverlay();
                     } catch (IllegalAccessError | NoClassDefFoundError e) {
-               Util.showCenteredToast(this, C0257R.string.unsupported_feature);
+               Util.showCenteredToast(this, R.string.unsupported_feature);
                CrashUtil.logOrThrowInDebug(e);
                     }
                 }
@@ -232,9 +232,9 @@
                 }
 
        private void onHideSonyOverlay() {
-           View recordingOptions = findViewById(C0257R.id.recording_options);
-           View captureX = findViewById(C0257R.id.capture_x);
-           View progressBar = findViewById(C0257R.id.progress);
+           View recordingOptions = findViewById(R.id.recording_options);
+           View captureX = findViewById(R.id.capture_x);
+           View progressBar = findViewById(R.id.progress);
            if (recordingOptions != null) {
                recordingOptions.setVisibility(0);
                     }
@@ -247,9 +247,9 @@
                 }
 
        private void onShowSonyOverlay() {
-           View recordingOptions = findViewById(C0257R.id.recording_options);
-           View captureX = findViewById(C0257R.id.capture_x);
-           View progressBar = findViewById(C0257R.id.progress);
+           View recordingOptions = findViewById(R.id.recording_options);
+           View captureX = findViewById(R.id.capture_x);
+           View progressBar = findViewById(R.id.progress);
            if (recordingOptions != null) {
                recordingOptions.setVisibility(4);
                     }

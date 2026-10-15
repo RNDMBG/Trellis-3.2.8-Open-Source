@@ -121,37 +121,37 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           return createView(inflater, C0257R.layout.reporting_menu, container);
+           return createView(inflater, R.layout.reporting_menu, container);
                 }
 
                 @Override 
        public void onViewCreated(View view, Bundle savedInstanceState) {
            Activity activity = getActivity();
-           this.mAdapter = new ComplaintChoiceAdapter(activity, C0257R.layout.settings_check, new ComplaintMenuOption.ComplaintChoice[0]);
-           this.mProgressBar = (ProgressBar) view.findViewById(C0257R.id.progress_bar);
-           this.mReportMenu = view.findViewById(C0257R.id.reporting_custom_menu);
+           this.mAdapter = new ComplaintChoiceAdapter(activity, R.layout.settings_check, new ComplaintMenuOption.ComplaintChoice[0]);
+           this.mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
+           this.mReportMenu = view.findViewById(R.id.reporting_custom_menu);
            ((RefreshableListView) this.mListView).disablePTR();
            this.mListView.setAdapter((ListAdapter) this.mAdapter);
-           this.mBlockPersonText = (TextView) view.findViewById(C0257R.id.block_person_text);
-           this.mBlockPersonSubtext = (TextView) view.findViewById(C0257R.id.block_person_subtitle);
+           this.mBlockPersonText = (TextView) view.findViewById(R.id.block_person_text);
+           this.mBlockPersonSubtext = (TextView) view.findViewById(R.id.block_person_subtitle);
            if (!TextUtils.isEmpty(this.mUsernameToBlock)) {
-               this.mBlockPersonText.setText(getString(C0257R.string.block_username, this.mUsernameToBlock));
-               this.mBlockPersonSubtext.setText(getString(C0257R.string.block_username_explanation, this.mUsernameToBlock));
+               this.mBlockPersonText.setText(getString(R.string.block_username, this.mUsernameToBlock));
+               this.mBlockPersonSubtext.setText(getString(R.string.block_username_explanation, this.mUsernameToBlock));
                     }
            this.mBlockPersonText.setTypeface(Typefaces.get(activity).getContentTypeface(0, 4));
-           TextView fileReportText = (TextView) view.findViewById(C0257R.id.file_report_text);
+           TextView fileReportText = (TextView) view.findViewById(R.id.file_report_text);
            fileReportText.setTypeface(Typefaces.get(activity).getContentTypeface(0, 4));
-           this.mBlockSelector = view.findViewById(C0257R.id.block_switch);
+           this.mBlockSelector = view.findViewById(R.id.block_switch);
            ComplaintChoiceAdapter.setSelected(activity, this.mBlockSelector, true, BLOCK_COLOR);
-           this.mReportSelector = view.findViewById(C0257R.id.report_switch);
+           this.mReportSelector = view.findViewById(R.id.report_switch);
            ComplaintChoiceAdapter.setSelected(activity, this.mReportSelector, false, -1);
-           this.mReportButton = (Button) view.findViewById(C0257R.id.report_button);
+           this.mReportButton = (Button) view.findViewById(R.id.report_button);
            this.mReportButton.setOnClickListener(new ViewOnClickListenerC02681());
-           this.mBlockPersonContainer = view.findViewById(C0257R.id.block_person_container);
-           this.mReportContainer = view.findViewById(C0257R.id.report_container);
+           this.mBlockPersonContainer = view.findViewById(R.id.block_person_container);
+           this.mReportContainer = view.findViewById(R.id.report_container);
            this.mBlockPersonContainer.setOnClickListener(new ViewOnClickListenerC02692());
            this.mReportContainer.setOnClickListener(new ViewOnClickListenerC02703());
-           this.mPromptText = (TextView) view.findViewById(C0257R.id.reporting_prompt);
+           this.mPromptText = (TextView) view.findViewById(R.id.reporting_prompt);
            this.mAppController.fetchComplaintsMenu();
                 }
 
@@ -196,8 +196,8 @@
                Activity act = ReportingFragment.this.getActivity();
                if (!ReportingFragment.access$200(ReportingFragment.this).isSelected()) {
                    ReportingFragment.access$300(ReportingFragment.this).setVisibility(0);
-                   ReportingFragment.access$100(ReportingFragment.this).setText(C0257R.string.send_report);
-                   ComplaintChoiceAdapter.setSelected(act, ReportingFragment.access$200(ReportingFragment.this), true, ReportingFragment.this.getResources().getColor(C0257R.color.vine_green));
+                   ReportingFragment.access$100(ReportingFragment.this).setText(R.string.send_report);
+                   ComplaintChoiceAdapter.setSelected(act, ReportingFragment.access$200(ReportingFragment.this), true, ReportingFragment.this.getResources().getColor(R.color.vine_green));
                    ReportingFragment.access$100(ReportingFragment.this).setEnabled(true);
                    return;
                         }
@@ -211,7 +211,7 @@
                         }
                ReportingFragment.access$502(ReportingFragment.this, null);
                ComplaintChoiceAdapter.setSelected(act, ReportingFragment.access$200(ReportingFragment.this), false, -1);
-               ReportingFragment.access$100(ReportingFragment.this).setText(C0257R.string.block_button);
+               ReportingFragment.access$100(ReportingFragment.this).setText(R.string.block_button);
                if (!ReportingFragment.access$000(ReportingFragment.this).isSelected()) {
                    ReportingFragment.access$100(ReportingFragment.this).setEnabled(false);
                         }
@@ -222,8 +222,8 @@
        public void onListItemClick(ListView l, View v, int position, long id) {
            Activity activity = getActivity();
            ComplaintMenuOption.ComplaintChoice c = (ComplaintMenuOption.ComplaintChoice) this.mAdapter.getItem(position);
-           View selectionIndicator = v.findViewById(C0257R.id.selection_indicator);
-           ComplaintChoiceAdapter.setSelected(activity, selectionIndicator, true, getResources().getColor(C0257R.color.vine_green));
+           View selectionIndicator = v.findViewById(R.id.selection_indicator);
+           ComplaintChoiceAdapter.setSelected(activity, selectionIndicator, true, getResources().getColor(R.color.vine_green));
            if (this.mSelectedView != null) {
                ComplaintChoiceAdapter.setSelected(activity, this.mSelectedView, false, -1);
                if (this.mChoice != null) {
@@ -256,7 +256,7 @@
            if (this.mComplaintMenuOptions != null) {
                this.mPromptText.setText(this.mComplaintMenuOptions.prompt);
                     }
-           this.mAdapter = new ComplaintChoiceAdapter(getActivity(), C0257R.layout.settings_check, this.mComplaintMenuOptions.complaintChoices);
+           this.mAdapter = new ComplaintChoiceAdapter(getActivity(), R.layout.settings_check, this.mComplaintMenuOptions.complaintChoices);
            this.mListView.setAdapter((ListAdapter) this.mAdapter);
                 }
 
@@ -293,7 +293,7 @@
                 }
 
        protected void showErrorDialog() {
-           PromptDialogSupportFragment dialog = PromptDialogSupportFragment.newInstance(0).setMessage(C0257R.string.API_ERROR_UNKNOWN_ERROR).setPositiveButton(C0257R.string.f88ok);
+           PromptDialogSupportFragment dialog = PromptDialogSupportFragment.newInstance(0).setMessage(R.string.API_ERROR_UNKNOWN_ERROR).setPositiveButton(R.string.ok);
            dialog.setListener(new C02714());
                     try {
                dialog.show(getActivity().getSupportFragmentManager());

@@ -81,7 +81,7 @@
 
                 @Override 
        public String getAuthTokenLabel(String authTokenType) {
-           return this.mContext.getString(C0257R.string.app_name);
+           return this.mContext.getString(R.string.app_name);
                 }
 
                 @Override 

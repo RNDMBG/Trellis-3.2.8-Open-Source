@@ -6,7 +6,7 @@
             import android.view.View;
             import android.view.ViewGroup;
             import android.widget.LinearLayout;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.recorder.VineRecorder;
             import java.lang.ref.WeakReference;
             
@@ -34,7 +34,7 @@
                 this.mPrimaryColor = ((RecorderPluginSupportedFragment) fragment).getColor(true);
                 this.mSecondaryColor = ((RecorderPluginSupportedFragment) fragment).getColor(false);
                     }
-            LinearLayout view = (LinearLayout) inflater.inflate(C0257R.layout.plugin_base_tool, parent, false);
+            LinearLayout view = (LinearLayout) inflater.inflate(R.layout.plugin_base_tool, parent, false);
             view.setOnClickListener(this);
             T viewOnLayoutInflated = onLayoutInflated(view, inflater, fragment);
             if (viewOnLayoutInflated != null) {

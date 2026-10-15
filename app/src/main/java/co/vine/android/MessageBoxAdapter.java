@@ -42,13 +42,13 @@
             this.mContext = context;
             this.mViewHolders = new ArrayList<>();
             this.mFragment = fragment;
-            this.mDefaultBg = new ColorDrawable(this.mContext.getResources().getColor(C0257R.color.conversation_menu_bg));
+            this.mDefaultBg = new ColorDrawable(this.mContext.getResources().getColor(R.color.conversation_menu_bg));
                 }
 
                 @Override 
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            View v = layoutInflater.inflate(C0257R.layout.inbox_row_view, parent, false);
+            View v = layoutInflater.inflate(R.layout.inbox_row_view, parent, false);
             ConversationViewHolder holder = new ConversationViewHolder(v);
             v.setTag(holder);
             this.mViewHolders.add(new WeakReference<>(holder));
@@ -65,14 +65,14 @@
                 holder.image.setVisibility(0);
                     } else {
                 if (count == 2) {
-                    holder.username.setText(username + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + this.mContext.getString(C0257R.string.and_x_others_single));
+                    holder.username.setText(username + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + this.mContext.getString(R.string.and_x_others_single));
                         } else if (count > 2) {
-                    holder.username.setText(username + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + String.format(this.mContext.getString(C0257R.string.and_x_others_plural), Integer.valueOf(count - 1)));
+                    holder.username.setText(username + MinimalPrettyPrinter.DEFAULT_ROOT_VALUE_SEPARATOR + String.format(this.mContext.getString(R.string.and_x_others_plural), Integer.valueOf(count - 1)));
                         }
                 holder.image.setVisibility(8);
                     }
             holder.loadMoreContent.setVisibility(0);
-            holder.loadMoreProgress.findViewById(C0257R.id.progress).setVisibility(8);
+            holder.loadMoreProgress.findViewById(R.id.progress).setVisibility(8);
             holder.loadMore.setVisibility(8);
             holder.retryProgress.setVisibility(8);
             long timestamp = cursor.getLong(2);
@@ -80,7 +80,7 @@
             holder.timestamp.setText(relativeTime);
             int color = cursor.getInt(13);
             if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-                color = 16777215 & this.mContext.getResources().getColor(C0257R.color.vine_green);
+                color = 16777215 & this.mContext.getResources().getColor(R.color.vine_green);
                     }
             holder.color = color;
             int unreadCount = cursor.getInt(4);
@@ -98,11 +98,11 @@
                holder.timestamp.setVisibility(0);
                holder.tapToRetry.setVisibility(8);
                     } else {
-               holder.username.setTextColor(this.mContext.getResources().getColor(C0257R.color.conversation_menu_section_text));
+               holder.username.setTextColor(this.mContext.getResources().getColor(R.color.conversation_menu_section_text));
                holder.unreadCount.setVisibility(8);
                holder.failedUpload.setVisibility(0);
                holder.timestamp.setVisibility(8);
-               holder.tapToRetry.setText(C0257R.string.message_failed_tap_to_retry);
+               holder.tapToRetry.setText(R.string.message_failed_tap_to_retry);
                holder.tapToRetry.setVisibility(0);
                     }
            String url = cursor.getString(12);
@@ -170,17 +170,17 @@
                     public TextView username;
 
            public ConversationViewHolder(View v) {
-               this.failedUpload = (ImageView) v.findViewById(C0257R.id.failed_upload);
-               this.image = (ImageView) v.findViewById(C0257R.id.avatar);
-               this.timestamp = (TextView) v.findViewById(C0257R.id.timestamp);
-               this.username = (TextView) v.findViewById(C0257R.id.inbox_username);
-               this.unreadCount = (TextView) v.findViewById(C0257R.id.unread_count);
-               this.loadMore = (FrameLayout) v.findViewById(C0257R.id.load_more);
-               this.divider = v.findViewById(C0257R.id.divider);
-               this.tapToRetry = (TextView) v.findViewById(C0257R.id.tap_to_retry);
-               this.retryProgress = v.findViewById(C0257R.id.retry_progress);
-               this.loadMoreContent = v.findViewById(C0257R.id.load_more_content);
-               this.loadMoreProgress = v.findViewById(C0257R.id.progress);
+               this.failedUpload = (ImageView) v.findViewById(R.id.failed_upload);
+               this.image = (ImageView) v.findViewById(R.id.avatar);
+               this.timestamp = (TextView) v.findViewById(R.id.timestamp);
+               this.username = (TextView) v.findViewById(R.id.inbox_username);
+               this.unreadCount = (TextView) v.findViewById(R.id.unread_count);
+               this.loadMore = (FrameLayout) v.findViewById(R.id.load_more);
+               this.divider = v.findViewById(R.id.divider);
+               this.tapToRetry = (TextView) v.findViewById(R.id.tap_to_retry);
+               this.retryProgress = v.findViewById(R.id.retry_progress);
+               this.loadMoreContent = v.findViewById(R.id.load_more_content);
+               this.loadMoreProgress = v.findViewById(R.id.progress);
                     }
                 }
 

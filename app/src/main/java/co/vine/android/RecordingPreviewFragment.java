@@ -160,7 +160,7 @@
            this.mIsFromSony = args.getBoolean("f_s");
            this.mColor = args.getInt("color", -1);
            if (this.mColor == Settings.DEFAULT_PROFILE_COLOR || this.mColor <= 0) {
-               this.mColor = 16777215 & getResources().getColor(C0257R.color.vine_green);
+               this.mColor = 16777215 & getResources().getColor(R.color.vine_green);
                     }
            this.mColor |= -16777216;
                 }
@@ -176,11 +176,11 @@
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
            Resources res = getResources();
-           View view = inflater.inflate(C0257R.layout.preview, container, false);
+           View view = inflater.inflate(R.layout.preview, container, false);
            Point size = SystemUtil.getDisplaySize((Activity) getActivity());
-           this.mMessagingEditText = (EditText) view.findViewById(C0257R.id.messaging_preview_caption);
-           this.mMessagingLoopLimitText = (Button) view.findViewById(C0257R.id.messagingLoopLimit);
-           this.mNextButton = view.findViewById(C0257R.id.toPostButton);
+           this.mMessagingEditText = (EditText) view.findViewById(R.id.messaging_preview_caption);
+           this.mMessagingLoopLimitText = (Button) view.findViewById(R.id.messagingLoopLimit);
+           this.mNextButton = view.findViewById(R.id.toPostButton);
            if (this.mIsMessaging) {
                this.mMaxLoop = 0;
                updateMessageLoopLimit();
@@ -189,15 +189,15 @@
                    this.mMessagingLoopLimitText.setVisibility(8);
                         }
                this.mMessagingEditText.setVisibility(0);
-               this.mPreviewButtons = view.findViewById(C0257R.id.messagingPreviewTopButtons);
+               this.mPreviewButtons = view.findViewById(R.id.messagingPreviewTopButtons);
                this.mPreviewButtons.setVisibility(0);
                this.mPreviewButtons.setOnTouchListener(new ViewOnTouchListenerC02643());
-               int vmBgColor = res.getColor(C0257R.color.capture_background_vm);
+               int vmBgColor = res.getColor(R.color.capture_background_vm);
                this.mPreviewButtons.setBackgroundColor(vmBgColor);
                view.setBackgroundColor(vmBgColor);
-               View scrollView = view.findViewById(C0257R.id.scrollview);
+               View scrollView = view.findViewById(R.id.scrollview);
                scrollView.setBackgroundColor(vmBgColor);
-               TypefacesTextView recipient = (TypefacesTextView) view.findViewById(C0257R.id.recipient_name);
+               TypefacesTextView recipient = (TypefacesTextView) view.findViewById(R.id.recipient_name);
                recipient.setWeight(3);
                recipient.setTypeface(Typefaces.get(getActivity()).mediumContent);
                recipient.setVisibility(0);
@@ -207,32 +207,32 @@
                     } else {
                this.mMessagingLoopLimitText.setVisibility(8);
                this.mMessagingEditText.setVisibility(8);
-               this.mPreviewButtons = view.findViewById(C0257R.id.previewTopButtons);
+               this.mPreviewButtons = view.findViewById(R.id.previewTopButtons);
                this.mPreviewButtons.setVisibility(0);
                this.mPreviewButtons.setOnTouchListener(new ViewOnTouchListenerC02654());
                this.mNextButton.setVisibility(0);
                     }
-           view.findViewById(C0257R.id.previewTitle).setOnClickListener(new ViewOnClickListenerC02665());
+           view.findViewById(R.id.previewTitle).setOnClickListener(new ViewOnClickListenerC02665());
            this.mNextButton.setOnClickListener(this);
-           view.findViewById(C0257R.id.previewCaptureButton).setOnClickListener(this);
-           view.findViewById(C0257R.id.previewEditButton).setOnClickListener(this);
-           TextView nextButton = (TextView) view.findViewById(C0257R.id.messagingPreviewNextButton);
+           view.findViewById(R.id.previewCaptureButton).setOnClickListener(this);
+           view.findViewById(R.id.previewEditButton).setOnClickListener(this);
+           TextView nextButton = (TextView) view.findViewById(R.id.messagingPreviewNextButton);
            nextButton.setOnClickListener(this);
            if (this.mIsMessaging) {
                nextButton.setTextColor(this.mColor);
                     }
-           View backButton = view.findViewById(C0257R.id.messagingPreviewBackButton);
+           View backButton = view.findViewById(R.id.messagingPreviewBackButton);
            backButton.setOnClickListener(this);
            if (this.mIsMessaging) {
-               ViewUtil.fillColor(res, this.mColor, C0257R.drawable.ic_arrow_back_large, backButton);
+               ViewUtil.fillColor(res, this.mColor, R.drawable.ic_arrow_back_large, backButton);
                     }
-           this.mVideoPlayer = (SdkVideoView) view.findViewById(C0257R.id.sdkVideoView);
+           this.mVideoPlayer = (SdkVideoView) view.findViewById(R.id.sdkVideoView);
            this.mVideoPlayer.setUseVinePlayer(false);
            this.mVideoPlayer.setVisibility(0);
            this.mVideoPlayer.setAutoPlayOnPrepared(true);
            this.mVideoPlayer.setKeepScreenOn(true);
-           View videoPlayerContainer = view.findViewById(C0257R.id.videoViewContainer);
-           int topMaskHeightPx = res.getDimensionPixelSize(C0257R.dimen.capture_top_mask);
+           View videoPlayerContainer = view.findViewById(R.id.videoViewContainer);
+           int topMaskHeightPx = res.getDimensionPixelSize(R.dimen.capture_top_mask);
            ((StaticSizeVideoView) this.mVideoPlayer).setSize(size.x, size.x);
            videoPlayerContainer.setOnClickListener(new OnSingleVideoClickedListener(this.mVideoPlayer));
            this.mVideoPlayer.setLooping(true);
@@ -240,12 +240,12 @@
            Window window = getActivity().getWindow();
            window.getDecorView().getWindowVisibleDisplayFrame(rect);
            window.setSoftInputMode(16);
-           View bottomMask = view.findViewById(C0257R.id.bottom_mask);
+           View bottomMask = view.findViewById(R.id.bottom_mask);
            if (this.mIsMessaging) {
                bottomMask.setVisibility(8);
                     } else {
                RelativeLayout.LayoutParams postButtonParams = (RelativeLayout.LayoutParams) this.mNextButton.getLayoutParams();
-               int postButtonHeight = res.getDimensionPixelSize(C0257R.dimen.post_button_size);
+               int postButtonHeight = res.getDimensionPixelSize(R.dimen.post_button_size);
                int doneButtonBottomMargin = ((((rect.bottom - rect.top) - size.x) - topMaskHeightPx) - postButtonHeight) / 2;
                postButtonParams.setMargins(0, 0, 0, doneButtonBottomMargin);
                this.mNextButton.setLayoutParams(postButtonParams);
@@ -349,7 +349,7 @@
                if (id == 2131427757) {
                    if (!AppController.getInstance(activity).isLoggedIn()) {
                        PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1);
-                       p.setMessage(C0257R.string.share_login_to_post);
+                       p.setMessage(R.string.share_login_to_post);
                        p.setPositiveButton(android.R.string.ok);
                        p.setNeutralButton(android.R.string.cancel);
                        p.setListener(this.mLoginRequiredDialogDoneListener);

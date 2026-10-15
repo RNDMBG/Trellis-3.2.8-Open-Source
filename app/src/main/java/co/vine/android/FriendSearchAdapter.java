@@ -31,9 +31,9 @@
         public FriendSearchAdapter(Context context, AppController appController, List<VineUser> users) {
             super(context, 0, users);
             this.mAppController = appController;
-            this.mProfileImageSize = context.getResources().getDimensionPixelOffset(C0257R.dimen.user_image_size);
+            this.mProfileImageSize = context.getResources().getDimensionPixelOffset(R.dimen.user_image_size);
             this.mViewHolders = new ArrayList<>();
-            this.mVineGreen = context.getResources().getColor(C0257R.color.vine_green);
+            this.mVineGreen = context.getResources().getColor(R.color.vine_green);
                 }
 
                 @Override 
@@ -44,7 +44,7 @@
                 this.mViewHolders.add(new WeakReference<>(holder));
                     } else {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
-                convertView = inflater.inflate(C0257R.layout.user_row_simple_view, parent, false);
+                convertView = inflater.inflate(R.layout.user_row_simple_view, parent, false);
                 holder = new UserViewHolder(convertView);
                     }
             VineUser user = getItem(position);
@@ -108,7 +108,7 @@
            if (bmp != null) {
                holder.image.setImageDrawable(new RecyclableBitmapDrawable(getContext().getResources(), bmp));
                     } else {
-               holder.image.setImageResource(C0257R.drawable.circle_shape_light);
+               holder.image.setImageResource(R.drawable.circle_shape_light);
                     }
                 }
             }

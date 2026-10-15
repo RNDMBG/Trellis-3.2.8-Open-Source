@@ -255,7 +255,7 @@
                    long id = cursor.getLong(6);
                    int color = cursor.getInt(7);
                    if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-                       color = 16777215 & getResources().getColor(C0257R.color.vine_green);
+                       color = 16777215 & getResources().getColor(R.color.vine_green);
                             }
                    int color2 = color | (-16777216);
                    if (this.mRecipientColor == 0) {
@@ -307,20 +307,20 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View v = createView(inflater, C0257R.layout.conversation, container);
-           TypefacesEditText edit = (TypefacesEditText) v.findViewById(C0257R.id.edit_reply);
+           View v = createView(inflater, R.layout.conversation, container);
+           TypefacesEditText edit = (TypefacesEditText) v.findViewById(R.id.edit_reply);
            edit.setOnEditorActionListener(this);
            edit.addTextChangedListener(this);
            edit.setKeyboardListener(this);
            this.mEdit = edit;
-           this.mTextInputContainer = (RelativeLayout) v.findViewById(C0257R.id.text_input_container);
-           this.mTextInputToggle = v.findViewById(C0257R.id.text_input_toggle);
+           this.mTextInputContainer = (RelativeLayout) v.findViewById(R.id.text_input_container);
+           this.mTextInputToggle = v.findViewById(R.id.text_input_toggle);
            this.mTextInputToggle.setOnClickListener(this);
-           this.mNewMessageBarContainer = v.findViewById(C0257R.id.new_message_bar_container);
+           this.mNewMessageBarContainer = v.findViewById(R.id.new_message_bar_container);
            this.mNewMessageBarContainer.setOnClickListener(this);
-           this.mNewMessageBarText = (TextView) this.mNewMessageBarContainer.findViewById(C0257R.id.new_message_bar);
-           this.mRecordButton = (ImageView) v.findViewById(C0257R.id.record_button);
-           this.mSendButton = (ImageView) v.findViewById(C0257R.id.send_reply_button);
+           this.mNewMessageBarText = (TextView) this.mNewMessageBarContainer.findViewById(R.id.new_message_bar);
+           this.mRecordButton = (ImageView) v.findViewById(R.id.record_button);
+           this.mSendButton = (ImageView) v.findViewById(R.id.send_reply_button);
            return v;
                 }
 
@@ -336,9 +336,9 @@
                         } catch (IOException e) {
                    this.mRecordingEnabled = false;
                    if (e instanceof NotEnoughSpaceException) {
-                       Util.showCenteredToast(activity, C0257R.string.failed_to_start_recording_space);
+                       Util.showCenteredToast(activity, R.string.failed_to_start_recording_space);
                             } else {
-                       Util.showCenteredToast(activity, C0257R.string.failed_to_start_recording_storage_not_ready);
+                       Util.showCenteredToast(activity, R.string.failed_to_start_recording_storage_not_ready);
                             }
                    CrashUtil.log("Exception has happened: {}", e);
                         }
@@ -353,41 +353,41 @@
            listView.setDivider(null);
            ((ConversationList) listView).deactivateRefresh(true);
            this.mAppSessionListener = new ConversationSessionListener(this, null);
-           ViewGroup loadMoreHeader = (ViewGroup) LayoutInflater.from(activity).inflate(C0257R.layout.conversation_list_load_more_header, (ViewGroup) null);
-           this.mLoadMoreHeaderContent = loadMoreHeader.findViewById(C0257R.id.header_content);
+           ViewGroup loadMoreHeader = (ViewGroup) LayoutInflater.from(activity).inflate(R.layout.conversation_list_load_more_header, (ViewGroup) null);
+           this.mLoadMoreHeaderContent = loadMoreHeader.findViewById(R.id.header_content);
            this.mLoadMoreHeaderContent.setVisibility(8);
-           this.mLoadMoreProgress = loadMoreHeader.findViewById(C0257R.id.progress);
+           this.mLoadMoreProgress = loadMoreHeader.findViewById(R.id.progress);
            listView.addHeaderView(loadMoreHeader);
            this.mLoadMoreHeaderContent.setOnClickListener(this);
            this.mLoadMoreHeaderContent.setVisibility(0);
            listView.setAdapter(this.mCursorAdapter);
-           ViewGroup uploadProgressContainer = (ViewGroup) LayoutInflater.from(activity).inflate(C0257R.layout.conversation_reply_progress, (ViewGroup) this.mListView, false);
-           this.mUploadProgressContainer = (ViewGroup) uploadProgressContainer.findViewById(C0257R.id.progress_container);
-           this.mProgressView = (ProgressView) uploadProgressContainer.findViewById(C0257R.id.progress_view);
-           this.mUploadThumbnail = (ImageView) uploadProgressContainer.findViewById(C0257R.id.thumbnail);
-           ViewGroup footer = (ViewGroup) LayoutInflater.from(activity).inflate(C0257R.layout.conversation_chat_presence, (ViewGroup) this.mListView, false);
-           this.mChatPresenceContainer = (ViewGroup) footer.findViewById(C0257R.id.container);
-           this.mChatPresenceEllipsis = (ImageView) footer.findViewById(C0257R.id.ellipsis);
+           ViewGroup uploadProgressContainer = (ViewGroup) LayoutInflater.from(activity).inflate(R.layout.conversation_reply_progress, (ViewGroup) this.mListView, false);
+           this.mUploadProgressContainer = (ViewGroup) uploadProgressContainer.findViewById(R.id.progress_container);
+           this.mProgressView = (ProgressView) uploadProgressContainer.findViewById(R.id.progress_view);
+           this.mUploadThumbnail = (ImageView) uploadProgressContainer.findViewById(R.id.thumbnail);
+           ViewGroup footer = (ViewGroup) LayoutInflater.from(activity).inflate(R.layout.conversation_chat_presence, (ViewGroup) this.mListView, false);
+           this.mChatPresenceContainer = (ViewGroup) footer.findViewById(R.id.container);
+           this.mChatPresenceEllipsis = (ImageView) footer.findViewById(R.id.ellipsis);
            this.mChatPresenceFooter = footer;
            this.mListView.addFooterView(this.mChatPresenceFooter);
            View rootView = getView();
            if (this.mRecordingEnabled) {
-               this.mRecorderManager = (InlineRecorderManager) rootView.findViewById(C0257R.id.inline_recorder_manager);
+               this.mRecorderManager = (InlineRecorderManager) rootView.findViewById(R.id.inline_recorder_manager);
                this.mRecorderManager.init(this, activity, this.mVersion);
                     } else {
-               ((InlineRecorderManager) rootView.findViewById(C0257R.id.inline_recorder_manager)).initDisabled(this);
+               ((InlineRecorderManager) rootView.findViewById(R.id.inline_recorder_manager)).initDisabled(this);
                     }
            activity.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(this.mRecipientColor));
-           this.mComposeContainer = rootView.findViewById(C0257R.id.compose_container);
+           this.mComposeContainer = rootView.findViewById(R.id.compose_container);
            int rawColor = prefs.getInt("profile_background", Settings.DEFAULT_PROFILE_COLOR);
            if (rawColor == Settings.DEFAULT_PROFILE_COLOR || rawColor <= 0) {
-               rawColor = 16777215 & getResources().getColor(C0257R.color.vine_green);
+               rawColor = 16777215 & getResources().getColor(R.color.vine_green);
                     }
            this.mMyColor = (-16777216) | rawColor;
-           ((ProgressView) getView().findViewById(C0257R.id.progress_inline)).setColor(this.mMyColor);
-           ((ProgressView) getView().findViewById(C0257R.id.finishing_progress)).setColor(this.mMyColor);
+           ((ProgressView) getView().findViewById(R.id.progress_inline)).setColor(this.mMyColor);
+           ((ProgressView) getView().findViewById(R.id.finishing_progress)).setColor(this.mMyColor);
            ViewUtil.setBackground(this.mComposeContainer, new ColorDrawable(getMyColor()));
-           GradientDrawable dr = (GradientDrawable) activity.getResources().getDrawable(C0257R.drawable.chat_cursor_drawable);
+           GradientDrawable dr = (GradientDrawable) activity.getResources().getDrawable(R.drawable.chat_cursor_drawable);
            dr.setColor((-16777216) | this.mMyColor);
            this.mNewMessageBarContainer.setBackgroundDrawable(new ColorDrawable(this.mRecipientColor));
            this.mSendButton.setOnClickListener(this.mLaunchRecorderListener);
@@ -419,7 +419,7 @@
                 @Override 
        public void onResume() {
            super.onResume();
-           GradientDrawable dr = (GradientDrawable) getResources().getDrawable(C0257R.drawable.chat_cursor_drawable);
+           GradientDrawable dr = (GradientDrawable) getResources().getDrawable(R.drawable.chat_cursor_drawable);
            dr.setColor((-16777216) | this.mMyColor);
            ConversationActivity activity = (ConversationActivity) getActivity();
            if (activity.keyBoardUpOnStart) {
@@ -444,7 +444,7 @@
                         } catch (IOException e) {
                    this.mRecordingEnabled = false;
                    CrashUtil.log("Failed to create folder.");
-                   Util.showCenteredToast(getActivity(), C0257R.string.failed_to_start_recording_storage_not_ready);
+                   Util.showCenteredToast(getActivity(), R.string.failed_to_start_recording_storage_not_ready);
                         }
                     }
                 }
@@ -542,7 +542,7 @@
                        SLog.dWithTag(ConversationFragment.TAG, "Result receiver was set in VineUploadService, conversationId=" + conversationRowId);
                        if (isActive && ConversationFragment.access$700(ConversationFragment.this) == conversationRowId) {
                            ConversationFragment.access$800(ConversationFragment.this).setVisibility(0);
-                           ConversationFragment.access$902(ConversationFragment.this, (ProgressView) ConversationFragment.access$800(ConversationFragment.this).findViewById(C0257R.id.progress_view));
+                           ConversationFragment.access$902(ConversationFragment.this, (ProgressView) ConversationFragment.access$800(ConversationFragment.this).findViewById(R.id.progress_view));
                            if (!TextUtils.isEmpty(thumbnailPath)) {
                                Bitmap thumbnailBitmap = BitmapFactory.decodeFile(thumbnailPath);
                                ConversationFragment.access$1000(ConversationFragment.this).setImageBitmap(thumbnailBitmap);
@@ -671,7 +671,7 @@
                    color = Integer.valueOf(this.mRecipientColor);
                         }
                container.setVisibility(0);
-               container.getLayoutParams().height = getResources().getDimensionPixelSize(C0257R.dimen.chat_presence_height);
+               container.getLayoutParams().height = getResources().getDimensionPixelSize(R.dimen.chat_presence_height);
                ellipsis.setColorFilter(1509949440 | (color.intValue() & ViewCompat.MEASURED_SIZE_MASK));
                scrollToBottom(true, false);
                return;
@@ -730,7 +730,7 @@
 
                     @Override 
            protected void applyTransformation(float interpolatedTime, Transformation t) {
-               int height = ConversationFragment.this.getResources().getDimensionPixelSize(C0257R.dimen.chat_presence_height);
+               int height = ConversationFragment.this.getResources().getDimensionPixelSize(R.dimen.chat_presence_height);
                this.mView.getLayoutParams().height = (int) (height * (1.0f - interpolatedTime));
                this.mView.requestLayout();
                     }
@@ -755,10 +755,10 @@
                 @Override 
        public void onTextChanged(CharSequence s, int start, int before, int count) {
            if (this.mEdit.getText().length() == 0) {
-               this.mSendButton.setImageResource(C0257R.drawable.ic_vm_capture_keyboard);
+               this.mSendButton.setImageResource(R.drawable.ic_vm_capture_keyboard);
                this.mSendButton.setOnClickListener(this.mLaunchRecorderListener);
                     } else {
-               this.mSendButton.setImageResource(C0257R.drawable.ic_action_send);
+               this.mSendButton.setImageResource(R.drawable.ic_action_send);
                this.mSendButton.setOnClickListener(this);
                     }
                 }
@@ -878,7 +878,7 @@
        private void sendTextMessage() {
            EditText editText = this.mEdit;
            if (editText.getText().length() > 420) {
-               Util.showTopToast(getActivity(), C0257R.string.message_length_exceeded);
+               Util.showTopToast(getActivity(), R.string.message_length_exceeded);
                return;
                     }
            if (validate(this.mEdit)) {
@@ -916,7 +916,7 @@
                edit.requestFocus();
                Util.setSoftKeyboardVisibility(activity, edit, true);
                this.mTextInputContainer.setVisibility(0);
-               ViewUtil.setBackground(this.mComposeContainer.findViewById(C0257R.id.compose_container), new ColorDrawable(activity.getResources().getColor(C0257R.color.solid_white)));
+               ViewUtil.setBackground(this.mComposeContainer.findViewById(R.id.compose_container), new ColorDrawable(activity.getResources().getColor(R.color.solid_white)));
                this.mRecordButton.setVisibility(8);
                this.mTextInputToggle.setVisibility(8);
                     }
@@ -947,7 +947,7 @@
        public void onNewMessage() {
            if (this.mListView.getLastVisiblePosition() < this.mCursorAdapter.getCount() && this.mTextInputContainer.getVisibility() != 0) {
                this.mLocalUnreadCount++;
-               this.mNewMessageBarText.setText(getResources().getQuantityString(C0257R.plurals.new_messages, this.mLocalUnreadCount, Integer.valueOf(this.mLocalUnreadCount)));
+               this.mNewMessageBarText.setText(getResources().getQuantityString(R.plurals.new_messages, this.mLocalUnreadCount, Integer.valueOf(this.mLocalUnreadCount)));
                toggleNewMessageBar(true);
                     }
                 }

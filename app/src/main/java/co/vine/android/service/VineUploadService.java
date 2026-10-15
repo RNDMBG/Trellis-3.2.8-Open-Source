@@ -20,7 +20,7 @@
             import android.os.RemoteException;
             import android.support.v4.app.NotificationCompat;
             import android.text.TextUtils;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.PostActivity;
             import co.vine.android.Settings;
             import co.vine.android.StartActivity;
@@ -109,7 +109,7 @@
                 public static final int RESULT_STATUS_FAILED = 1;
                 public static final int RESULT_STATUS_SUCCEEDED = 2;
                 public static final int RESULT_STATUS_UPLOADING = 0;
-                private static final int SMALL_ICON = 2130838053;
+                private static final int SMALL_ICON = R.drawable.ic_vine_status_bar;
                 private static final String TAG = "VineUploadService";
                 private static boolean sShowProgress;
                 private static Messenger sUploadResultReceiver;
@@ -649,13 +649,13 @@
            if (upload != null) {
                SLog.m448d("Show failed notification for {}, upload expired? {}.", path, Boolean.valueOf(upload.isExpired()));
                NotificationCompat.Builder nb = new NotificationCompat.Builder(this);
-               nb.setSmallIcon(2130838053);
+                nb.setSmallIcon(R.drawable.ic_vine_status_bar);
                nb.setLargeIcon(setScaledNotificationIcon(upload.thumbnailPath));
                Intent intent = StartActivity.getStartIntent(this, StartActivity.ACTION_VIEW_UPLOAD_LIST);
                PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
                nb.setContentIntent(pendingIntent);
-               nb.setContentTitle(getText(C0257R.string.post_failed));
-               nb.setContentText(getText(C0257R.string.tap_to_retry_or_cancel));
+               nb.setContentTitle(getText(R.string.post_failed));
+               nb.setContentText(getText(R.string.tap_to_retry_or_cancel));
                nb.setAutoCancel(false);
                showNotification(nb, 0);
                     }
@@ -667,7 +667,7 @@
                Bitmap bm2 = this.mBitmaps.get(thumbnailPath);
                if (bm2 == null) {
                    if (this.mNotificationPanelSize == -1) {
-                       this.mNotificationPanelSize = getResources().getDimensionPixelSize(C0257R.dimen.notification_panel_height);
+                       this.mNotificationPanelSize = getResources().getDimensionPixelSize(R.dimen.notification_panel_height);
                             }
                    Bitmap thumbnailBitmap = BitmapFactory.decodeFile(thumbnailPath);
                    if (thumbnailBitmap != null && (bm = Bitmap.createScaledBitmap(thumbnailBitmap, this.mNotificationPanelSize, this.mNotificationPanelSize, true)) != null) {
@@ -682,7 +682,7 @@
                         }
                     }
            if (this.mDefaultNotificationIcon == null) {
-               this.mDefaultNotificationIcon = BitmapFactory.decodeResource(getResources(), 2130837952);
+                this.mDefaultNotificationIcon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
                     }
            this.mBitmaps.put(thumbnailPath, this.mDefaultNotificationIcon);
            return this.mDefaultNotificationIcon;
@@ -761,22 +761,22 @@
 
                     @Override 
            public void showPostNotification(String thumbnail) {
-               updateNotification(thumbnail, C0257R.string.posting, C0257R.string.almost_done, true);
+               updateNotification(thumbnail, R.string.posting, R.string.almost_done, true);
                     }
 
            private void updateUploadNotification(String thumbnail) {
-               updateNotification(thumbnail, C0257R.string.uploading, C0257R.string.uploading_text, true);
+               updateNotification(thumbnail, R.string.uploading, R.string.uploading_text, true);
                     }
 
            private void updateTranscodeNotification(String thumbnail) {
-               updateNotification(thumbnail, C0257R.string.preparing, C0257R.string.preparing_text, true);
+               updateNotification(thumbnail, R.string.preparing, R.string.preparing_text, true);
                     }
 
            private void updateNotification(String thumbnail, int title, int text, boolean showProgress) {
                SLog.m448d("Update notification: {}, {}.", Boolean.valueOf(showProgress), Integer.valueOf(this.lastProgress));
                NotificationCompat.Builder nb = new NotificationCompat.Builder(VineUploadService.this);
                nb.setLargeIcon(VineUploadService.access$600(VineUploadService.this, thumbnail));
-               nb.setSmallIcon(2130838053);
+                nb.setSmallIcon(R.drawable.ic_vine_status_bar);
                nb.setContentTitle(VineUploadService.this.getText(title));
                nb.setContentText(VineUploadService.this.getText(text));
                nb.setWhen(0L);

@@ -10,14 +10,14 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_layout, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_layout, true);
             if (this.mAppController == null) {
                 this.mAppController = AppController.getInstance(this);
                 CrashUtil.logException(new VineLoggingException(), "App controller is null here, and now? " + this.mAppController, new Object[0]);
                     }
             if (savedInstanceState == null) {
                 ReportingFragment fragment = ReportingFragment.newFragment(getIntent());
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, fragment, TAG).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment, TAG).commit();
                     }
                 }
             }

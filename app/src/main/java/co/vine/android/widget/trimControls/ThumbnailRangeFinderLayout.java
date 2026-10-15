@@ -7,7 +7,7 @@
             import android.view.MotionEvent;
             import android.widget.FrameLayout;
             import android.widget.HorizontalScrollView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.recorder.ThumbnailExtractor;
             import co.vine.android.recorder.ThumbnailExtractorInterface;
             import co.vine.android.util.CrashUtil;
@@ -103,7 +103,7 @@
             addView(this.mThumbnailTrimmer);
             addView(this.mGripTrack);
             this.mScrollView = scrollView;
-            this.mCarouselPadding = getResources().getDimensionPixelSize(C0257R.dimen.carousel_padding);
+            this.mCarouselPadding = getResources().getDimensionPixelSize(R.dimen.carousel_padding);
                 }
 
                 @Override 

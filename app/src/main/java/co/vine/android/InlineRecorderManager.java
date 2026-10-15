@@ -103,11 +103,11 @@
                 @Override 
         protected void onFinishInflate() {
             super.onFinishInflate();
-            this.mRecordingButtonContainer = findViewById(C0257R.id.record_button_container);
-            this.mRecordingContainer = findViewById(C0257R.id.inline_record_root);
-            this.mFinishProgressView = (ProgressView) findViewById(C0257R.id.finishing_progress);
-            this.mTopMask = findViewById(C0257R.id.top_mask);
-            this.mCameraView = findViewById(C0257R.id.cameraView);
+            this.mRecordingButtonContainer = findViewById(R.id.record_button_container);
+            this.mRecordingContainer = findViewById(R.id.inline_record_root);
+            this.mFinishProgressView = (ProgressView) findViewById(R.id.finishing_progress);
+            this.mTopMask = findViewById(R.id.top_mask);
+            this.mCameraView = findViewById(R.id.cameraView);
                 }
 
         public void initDisabled(ConversationFragment fragment) {
@@ -118,11 +118,11 @@
             this.mFragment = fragment;
             this.mCanInline = RecordConfigUtils.isCapableOfInline(activity);
             View root = this.mFragment.getView();
-            this.mTextToggle = root.findViewById(C0257R.id.text_input_toggle);
-            this.mSwipeUpText = (TextView) root.findViewById(C0257R.id.swipe_up);
+            this.mTextToggle = root.findViewById(R.id.text_input_toggle);
+            this.mSwipeUpText = (TextView) root.findViewById(R.id.swipe_up);
             this.mVersion = version;
             if (this.mCanInline) {
-                this.mRecorder = new InlineVineRecorder(version, new BaseRecorderPluginManager(), SystemUtil.getDisplaySize((Activity) activity), activity, this, activity.getResources().getDimensionPixelSize(C0257R.dimen.vm_record_margin), C0257R.id.progress_inline, C0257R.id.finishing_progress, C0257R.id.cameraView, C0257R.id.top_mask, C0257R.id.bottom_mask, C0257R.string.opening_camera, C0257R.id.layout_root, activity.getResources().getDrawable(C0257R.drawable.progress_horizontal), AbstractRecordingActivity.getDeviceIssueStringGetter(activity), this.mFragment.getText(C0257R.string.getting_ready), this.mFragment.getText(C0257R.string.finish_processing_1), this.mFragment.getText(C0257R.string.finish_processing_2), this.mFragment.getText(C0257R.string.finish_processing_3));
+                this.mRecorder = new InlineVineRecorder(version, new BaseRecorderPluginManager(), SystemUtil.getDisplaySize((Activity) activity), activity, this, activity.getResources().getDimensionPixelSize(R.dimen.vm_record_margin), R.id.progress_inline, R.id.finishing_progress, R.id.cameraView, R.id.top_mask, R.id.bottom_mask, R.string.opening_camera, R.id.layout_root, activity.getResources().getDrawable(R.drawable.progress_horizontal), AbstractRecordingActivity.getDeviceIssueStringGetter(activity), this.mFragment.getText(R.string.getting_ready), this.mFragment.getText(R.string.finish_processing_1), this.mFragment.getText(R.string.finish_processing_2), this.mFragment.getText(R.string.finish_processing_3));
                     }
                 }
 
@@ -166,7 +166,7 @@
                        if (this.mRecorder == null) {
                                     return true;
                                 }
-                       this.mSwipeUpText.setTextColor(getResources().getColor(C0257R.color.solid_light_gray_vm));
+                       this.mSwipeUpText.setTextColor(getResources().getColor(R.color.solid_light_gray_vm));
                        this.mRecorder.setStarted(true);
                        waitForResume();
                        this.mRecorder.openCamera();
@@ -229,7 +229,7 @@
                    if (isInCancelZone(event.getY())) {
                        this.mSwipeUpText.setTextColor(this.mFragment.getMyColor());
                             } else {
-                       this.mSwipeUpText.setTextColor(getResources().getColor(C0257R.color.solid_light_gray_vm));
+                       this.mSwipeUpText.setTextColor(getResources().getColor(R.color.solid_light_gray_vm));
                             }
                    return this.mDownWasInRecordButton;
                         default:

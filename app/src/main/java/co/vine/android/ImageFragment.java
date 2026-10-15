@@ -54,7 +54,7 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View v = inflater.inflate(C0257R.layout.image_layout, container, false);
+            View v = inflater.inflate(R.layout.image_layout, container, false);
             this.mImageView = (ImageView) v.findViewById(2131427383);
             this.mProgress = (ProgressBar) v.findViewById(2131427334);
             return v;
@@ -143,7 +143,7 @@
 
                         @Override 
                public void run() {
-                   Util.showCenteredToast(ImageFragment.this.getActivity(), C0257R.string.load_image_failure);
+                   Util.showCenteredToast(ImageFragment.this.getActivity(), R.string.load_image_failure);
                    ImageFragment.this.getActivity().finish();
                         }
                     }

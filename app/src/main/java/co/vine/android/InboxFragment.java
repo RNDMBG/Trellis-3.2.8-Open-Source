@@ -200,7 +200,7 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           return createView(inflater, C0257R.layout.friends_menu_list_fragment, container);
+           return createView(inflater, R.layout.friends_menu_list_fragment, container);
                 }
 
                 
@@ -438,15 +438,15 @@
                 @Override 
        public View createView(LayoutInflater inflater, int id, ViewGroup container) {
            View root = super.createView(inflater, id, container);
-           View header = getActivity().getLayoutInflater().inflate(C0257R.layout.menu_header, (ViewGroup) this.mListView, false);
-           this.mFriendsText = (TextView) header.findViewById(C0257R.id.friends);
-           this.mOthersText = (TextView) header.findViewById(C0257R.id.others);
+           View header = getActivity().getLayoutInflater().inflate(R.layout.menu_header, (ViewGroup) this.mListView, false);
+           this.mFriendsText = (TextView) header.findViewById(R.id.friends);
+           this.mOthersText = (TextView) header.findViewById(R.id.others);
            this.mListView.addHeaderView(header, null, false);
-           View emptyHeader = inflater.inflate(C0257R.layout.vm_friends_empty, (ViewGroup) null);
+           View emptyHeader = inflater.inflate(R.layout.vm_friends_empty, (ViewGroup) null);
            this.mEmptyView = emptyHeader;
-           this.mEmptyImage = (ImageView) this.mEmptyView.findViewById(C0257R.id.sadface);
-           this.mEmptyWords = (TextView) this.mEmptyView.findViewById(C0257R.id.sadwords);
-           this.mEmptyTitle = (TextView) this.mEmptyView.findViewById(C0257R.id.sadTitle);
+           this.mEmptyImage = (ImageView) this.mEmptyView.findViewById(R.id.sadface);
+           this.mEmptyWords = (TextView) this.mEmptyView.findViewById(R.id.sadwords);
+           this.mEmptyTitle = (TextView) this.mEmptyView.findViewById(R.id.sadTitle);
            return root;
                 }
 
@@ -498,10 +498,10 @@
                if (account != null && VineAccountHelper.shouldShowStoreContactsPrompt(am, account)) {
                    PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1);
                    p.setListener(this.mStoreContactDialogDoneListener);
-                   p.setMessage(C0257R.string.store_contacts_desc);
-                   p.setTitle(C0257R.string.store_contacts);
-                   p.setNegativeButton(C0257R.string.f87no);
-                   p.setPositiveButton(C0257R.string.f88ok);
+                   p.setMessage(R.string.store_contacts_desc);
+                   p.setTitle(R.string.store_contacts);
+                   p.setNegativeButton(R.string.no);
+                   p.setPositiveButton(R.string.ok);
                             try {
                        p.show(((HomeTabActivity) a).getSupportFragmentManager());
                        VineAccountHelper.setDidShowStoreContactsPrompt(am, account);
@@ -515,7 +515,7 @@
        public void setPersonalizedColor(int profileBackground) {
            this.mColor = profileBackground;
            if (profileBackground == Settings.DEFAULT_PROFILE_COLOR || profileBackground <= 0) {
-               profileBackground = 16777215 & getResources().getColor(C0257R.color.vine_green);
+               profileBackground = 16777215 & getResources().getColor(R.color.vine_green);
                     }
            if (this.mListView != null) {
                ((RefreshableListView) this.mListView).colorizePTR((-16777216) | profileBackground);
@@ -557,7 +557,7 @@
            this.mTypefaces = Typefaces.get(getActivity());
            int profileColor = Util.getDefaultSharedPrefs(getActivity()).getInt("profile_background", Settings.DEFAULT_PROFILE_COLOR);
            if (profileColor == Settings.DEFAULT_PROFILE_COLOR || profileColor <= 0) {
-               profileColor = 16777215 & getResources().getColor(C0257R.color.vine_green);
+               profileColor = 16777215 & getResources().getColor(R.color.vine_green);
                     }
            if (this.mInboxAdapter == null) {
                this.mInboxAdapter = new MessageBoxAdapter(getActivity(), this.mAppController, this, 0);
@@ -575,7 +575,7 @@
            if (this.mOtherAdapter == null) {
                this.mOtherAdapter = new MessageBoxAdapter(getActivity(), this.mAppController, this, 0);
                     }
-           this.mSectionAdapter = new SectionAdapter(null, null, new int[]{0, 0, 0}, new BaseAdapter[]{this.mInboxAdapter, this.mFriendsAdapter, this.mAddressAdapter}, C0257R.layout.menu_section_divider, 1);
+           this.mSectionAdapter = new SectionAdapter(null, null, new int[]{0, 0, 0}, new BaseAdapter[]{this.mInboxAdapter, this.mFriendsAdapter, this.mAddressAdapter}, R.layout.menu_section_divider, 1);
            this.mFriendsText.setOnClickListener(new TabSwicher(this.mSectionAdapter));
            this.mOthersText.setOnClickListener(new TabSwicher(this.mOtherAdapter));
            this.mActiveAdapter = this.mSectionAdapter;
@@ -593,8 +593,8 @@
                this.mFriendsText.setTypeface(this.mTypefaces.mediumContent);
                this.mOthersText.setTypeface(this.mTypefaces.boldContent);
                this.mCursorAdapter = null;
-               this.mEmptyWords.setText(C0257R.string.vm_other_empty);
-               this.mEmptyImage.setImageResource(C0257R.drawable.vm_watermark);
+               this.mEmptyWords.setText(R.string.vm_other_empty);
+               this.mEmptyImage.setImageResource(R.drawable.vm_watermark);
                this.mEmptyTitle.setVisibility(8);
                ViewUtil.setBackground(this.mListView, null);
                     } else {
@@ -604,9 +604,9 @@
                this.mFriendsText.setTypeface(this.mTypefaces.boldContent);
                this.mCursorAdapter = this.mFriendsAdapter;
                this.mEmptyTitle.setVisibility(0);
-               this.mEmptyWords.setText(C0257R.string.empty_inbox);
-               this.mEmptyImage.setImageResource(C0257R.drawable.vm_roundel);
-               this.mListView.setBackgroundColor(getResources().getColor(C0257R.color.solid_super_light_gray));
+               this.mEmptyWords.setText(R.string.empty_inbox);
+               this.mEmptyImage.setImageResource(R.drawable.vm_roundel);
+               this.mListView.setBackgroundColor(getResources().getColor(R.color.solid_super_light_gray));
                     }
            invalidateEmptyView(true);
                 }
@@ -714,17 +714,17 @@
                return;
                     }
            this.mAppController.retryMessagesInConversationRowId(inboxCursor.getLong(1));
-           TextView retryText = (TextView) item.findViewById(C0257R.id.tap_to_retry);
-           retryText.setText(C0257R.string.message_sending);
-           item.findViewById(C0257R.id.failed_upload).setVisibility(8);
-           item.findViewById(C0257R.id.retry_progress).setVisibility(0);
+           TextView retryText = (TextView) item.findViewById(R.id.tap_to_retry);
+           retryText.setText(R.string.message_sending);
+           item.findViewById(R.id.failed_upload).setVisibility(8);
+           item.findViewById(R.id.retry_progress).setVisibility(0);
                 }
 
                 @Override 
        public void onClick(View view) {
-           if (view.getId() == C0257R.id.load_more && !hasPendingRequest(1)) {
-               view.findViewById(C0257R.id.load_more_content).setVisibility(8);
-               view.findViewById(C0257R.id.progress).setVisibility(0);
+           if (view.getId() == R.id.load_more && !hasPendingRequest(1)) {
+               view.findViewById(R.id.load_more_content).setVisibility(8);
+               view.findViewById(R.id.progress).setVisibility(0);
                this.mMessageCount += 10;
                restartLoader(1);
                fetchContent(1, 1, true);
@@ -748,7 +748,7 @@
                                 default:
                            InboxFragment.this.hideProgress(3);
                            if (req.fetchType != 3) {
-                               Util.showCenteredToast(InboxFragment.this.getActivity(), C0257R.string.error_server);
+                               Util.showCenteredToast(InboxFragment.this.getActivity(), R.string.error_server);
                                     }
                            SLog.m455e("Error " + statusCode + " - " + reasonPhrase);
                                     break;

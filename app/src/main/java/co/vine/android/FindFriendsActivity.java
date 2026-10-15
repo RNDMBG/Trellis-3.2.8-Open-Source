@@ -13,7 +13,7 @@
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.find_friends, (Boolean) true, (Boolean) true);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.find_friends, (Boolean) true, (Boolean) true);
             this.mAppSessionListener = new FindFriendsListener(this, null);
             IconTabHost tabHost = this.mTabHost;
             this.mScrollBar.setRange(3);
@@ -23,14 +23,14 @@
             tabHost.setOnTabChangedListener(this);
             tabHost.setOnTabClickedListener(this);
             Bundle addressBundle = new Bundle();
-            addressBundle.putInt("empty_desc", C0257R.string.find_friends_address_no_friends);
-            this.mTabsAdapter.addTab(tabHost.newTabSpec(FindFriendsBaseActivity.TAG_ADDRESS_BOOK).setIndicator(TabIndicator.newIconIndicator(inflater, C0257R.layout.find_friends_tab_indicator, tabHost, C0257R.drawable.find_friends_address, 0)), FindFriendsAddressFragment.class, addressBundle);
+            addressBundle.putInt("empty_desc", R.string.find_friends_address_no_friends);
+            this.mTabsAdapter.addTab(tabHost.newTabSpec(FindFriendsBaseActivity.TAG_ADDRESS_BOOK).setIndicator(TabIndicator.newIconIndicator(inflater, R.layout.find_friends_tab_indicator, tabHost, R.drawable.find_friends_address, 0)), FindFriendsAddressFragment.class, addressBundle);
             Bundle twitterBundle = new Bundle();
-            twitterBundle.putInt("empty_desc", C0257R.string.find_friends_twitter_no_friends);
-            this.mTabsAdapter.addTab(tabHost.newTabSpec("twitter").setIndicator(TabIndicator.newIconIndicator(inflater, C0257R.layout.find_friends_tab_indicator, tabHost, C0257R.drawable.find_friends_twitter, 0)), FindFriendsTwitterFragment.class, twitterBundle);
+            twitterBundle.putInt("empty_desc", R.string.find_friends_twitter_no_friends);
+            this.mTabsAdapter.addTab(tabHost.newTabSpec("twitter").setIndicator(TabIndicator.newIconIndicator(inflater, R.layout.find_friends_tab_indicator, tabHost, R.drawable.find_friends_twitter, 0)), FindFriendsTwitterFragment.class, twitterBundle);
             Bundle searchBundle = new Bundle();
-            searchBundle.putInt("layout", C0257R.layout.find_friends_search);
-            this.mTabsAdapter.addTab(tabHost.newTabSpec("search").setIndicator(TabIndicator.newIconIndicator(inflater, C0257R.layout.find_friends_tab_indicator, tabHost, C0257R.drawable.find_friends_search, 0)), FindFriendsSearchFragment.class, searchBundle);
+            searchBundle.putInt("layout", R.layout.find_friends_search);
+            this.mTabsAdapter.addTab(tabHost.newTabSpec("search").setIndicator(TabIndicator.newIconIndicator(inflater, R.layout.find_friends_tab_indicator, tabHost, R.drawable.find_friends_search, 0)), FindFriendsSearchFragment.class, searchBundle);
                 }
 
                 @Override 

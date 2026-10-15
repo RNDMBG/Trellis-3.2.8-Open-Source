@@ -21,7 +21,7 @@
             import android.widget.ListView;
             import android.widget.TextView;
             import co.vine.android.BaseTimelineFragment;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.Settings;
             import co.vine.android.ViewOffsetResolver;
             import co.vine.android.api.VineComment;
@@ -110,10 +110,10 @@
            this.mRevineCache = revineCache;
            this.mFollowEventSource = followEventSource;
            this.mProfileImageSize = Util.getUserImageSize(res);
-           this.mVineGreen = res.getColor(C0257R.color.vine_green);
-           this.mVineGray = res.getColor(C0257R.color.black_thirty_five_percent);
+           this.mVineGreen = res.getColor(R.color.vine_green);
+           this.mVineGray = res.getColor(R.color.black_thirty_five_percent);
            this.mProfileColor = this.mVineGreen;
-           this.mRevineDrawable = this.mContext.getResources().getDrawable(C0257R.drawable.ic_revine);
+           this.mRevineDrawable = this.mContext.getResources().getDrawable(R.drawable.ic_revine);
            this.mListView = listView;
            this.mListView.setDivider(null);
            this.mListView.setOnScrollListener(timelineFragment);
@@ -122,7 +122,7 @@
 
        public void setProfileColor(int color) {
            if (color == Settings.DEFAULT_PROFILE_COLOR || color <= 0) {
-               color = this.mContext.getResources().getColor(C0257R.color.vine_green);
+               color = this.mContext.getResources().getColor(R.color.vine_green);
                     }
            if (this.mProfileColor != color) {
                this.mProfileColor = (-16777216) | color;
@@ -357,7 +357,7 @@
                     }
            if (commentData != null && commentData.items != null && !commentData.items.isEmpty() && holder != null) {
                if (commentData.count > 3) {
-                   String cta = res.getString(C0257R.string.timeline_comments_many, Integer.valueOf(commentData.count));
+                   String cta = res.getString(R.string.timeline_comments_many, Integer.valueOf(commentData.count));
                    SpannableStringBuilder ssb = new SpannableStringBuilder();
                    ssb.append((CharSequence) cta);
                    StyledClickableSpan clickableSpan = new StyledClickableSpan(3, new SpanCommentObjectTag(holder.post.postId, holder.post.getVineRepostRepostId(), holder.post.userId), this.mSpanClickListener);
@@ -400,8 +400,8 @@
                                int timestampEnd = thisCommentSb.length();
                                StyledClickableSpan span = new StyledClickableSpan(1, Long.valueOf(comment.userId), this.mSpanClickListener);
                                TypefacesSpan boldSpan = new TypefacesSpan(null, Typefaces.get(this.mContext).getContentTypeface(0, 3));
-                               ColorStateList color = new ColorStateList(new int[][]{new int[0]}, new int[]{res.getColor(C0257R.color.black_thirty_five_percent)});
-                               TextAppearanceSpan timestampSpan = new TextAppearanceSpan(null, 0, res.getDimensionPixelSize(C0257R.dimen.font_size_middle), color, null);
+                               ColorStateList color = new ColorStateList(new int[][]{new int[0]}, new int[]{res.getColor(R.color.black_thirty_five_percent)});
+                               TextAppearanceSpan timestampSpan = new TextAppearanceSpan(null, 0, res.getDimensionPixelSize(R.dimen.font_size_middle), color, null);
                                span.setColor(this.mProfileColor);
                                Util.safeSetSpan(thisCommentSb, span, 0, usernameEnd, 33);
                                Util.safeSetSpan(thisCommentSb, boldSpan, 0, usernameEnd, 33);
@@ -466,7 +466,7 @@
                SpannableStringBuilder sb = new SpannableStringBuilder();
                if (likeCount > 0) {
                    String numberLikesString = Util.numberFormat(res, likeCount);
-                   sb.append((CharSequence) res.getQuantityString(C0257R.plurals.timeline_compact_likes, likeCount, numberLikesString));
+                   sb.append((CharSequence) res.getQuantityString(R.plurals.timeline_compact_likes, likeCount, numberLikesString));
                    StyledClickableSpan clickableSpan = new StyledClickableSpan(2, Long.valueOf(h.post.postId), this.mSpanClickListener);
                    clickableSpan.setColor(this.mVineGray);
                    int end = sb.length();
@@ -477,7 +477,7 @@
                        sb.append(SPACE).append(INTERPUNCT).append(SPACE);
                             }
                    String numberCommentsString = Util.numberFormat(res, commentCount);
-                   sb.append((CharSequence) res.getQuantityString(C0257R.plurals.timeline_compact_comments, commentCount, numberCommentsString));
+                   sb.append((CharSequence) res.getQuantityString(R.plurals.timeline_compact_comments, commentCount, numberCommentsString));
                    StyledClickableSpan clickableSpan2 = new StyledClickableSpan(3, new SpanCommentObjectTag(h.post.postId, h.post.getVineRepostRepostId(), h.post.userId), this.mSpanClickListener);
                    clickableSpan2.setColor(this.mVineGray);
                    int interpunctIndex = sb.toString().indexOf(183);
@@ -490,7 +490,7 @@
                        sb.append(SPACE).append(INTERPUNCT).append(SPACE);
                             }
                    String numRevinersString = Util.numberFormat(res, revinersCount);
-                   sb.append((CharSequence) res.getQuantityString(C0257R.plurals.revine_count, revinersCount, numRevinersString));
+                   sb.append((CharSequence) res.getQuantityString(R.plurals.revine_count, revinersCount, numRevinersString));
                    StyledClickableSpan clickableSpan3 = new StyledClickableSpan(7, new SpanCommentObjectTag(h.post.postId, h.post.getVineRepostRepostId(), h.post.userId), this.mSpanClickListener);
                    clickableSpan3.setColor(this.mVineGray);
                    int interpunctIndex2 = sb.toString().lastIndexOf(183);
@@ -508,7 +508,7 @@
                h.compactLikesCommentsRevinesCounts.setMovementMethod(LinkMovementMethod.getInstance());
                h.compactLikesCommentsRevinesCounts.setText(h.post.styledCompactLikesComments);
                     } else {
-               h.compactLikesCommentsRevinesCounts.setText(this.mContext.getString(C0257R.string.first_to_like));
+               h.compactLikesCommentsRevinesCounts.setText(this.mContext.getString(R.string.first_to_like));
                     }
            h.compactLikesCommentsRevinesCounts.setVisibility(0);
                 }
@@ -529,7 +529,7 @@
        protected boolean setUserImage(ImageView imageView, Bitmap bitmap) {
            imageView.setColorFilter((ColorFilter) null);
            if (bitmap == null) {
-               imageView.setImageResource(C0257R.drawable.circle_shape_light);
+               imageView.setImageResource(R.drawable.circle_shape_light);
                         return false;
                     }
            imageView.setBackgroundColor(0);
@@ -539,7 +539,7 @@
 
        protected boolean setImage(View imageView, Bitmap bitmap, String url) {
            if (bitmap == null) {
-               imageView.setBackgroundColor(this.mContext.getResources().getColor(C0257R.color.solid_light_gray));
+               imageView.setBackgroundColor(this.mContext.getResources().getColor(R.color.solid_light_gray));
                return false;
                     }
            ViewUtil.setBackground(imageView, new RecyclableBitmapDrawable(this.mContext.getResources(), bitmap));

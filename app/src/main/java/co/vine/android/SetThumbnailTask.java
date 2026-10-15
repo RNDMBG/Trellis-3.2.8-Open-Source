@@ -62,7 +62,7 @@
                     }
             Uri photoUri = params[0];
             Resources resources = context.getResources();
-            float size = resources.getDimensionPixelSize(C0257R.dimen.user_image_size) * resources.getDisplayMetrics().density;
+            float size = resources.getDimensionPixelSize(R.dimen.user_image_size) * resources.getDisplayMetrics().density;
             Bitmap resizedBitmap = ImageUtils.resizeBitmap(context, photoUri, size, size, 0);
             if (resizedBitmap != null) {
                 resizedBitmap = ImageUtils.getCroppedBitmap(resizedBitmap, (int) size);

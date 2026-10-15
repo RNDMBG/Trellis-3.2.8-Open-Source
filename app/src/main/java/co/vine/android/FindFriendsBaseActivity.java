@@ -27,18 +27,18 @@
 
                 @Override 
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.main_find_friends, true);
+            super.onCreate(savedInstanceState, R.layout.main_find_friends, true);
             if (BuildUtil.isExplore()) {
                 setupTabs();
                     }
-            this.mScrollBar = (ViewPagerScrollBar) findViewById(C0257R.id.scrollbar);
+            this.mScrollBar = (ViewPagerScrollBar) findViewById(R.id.scrollbar);
             Intent intent = getIntent();
             if (intent != null && intent.getBooleanExtra(EXTRA_IS_TWITTER_REG, false)) {
-                this.mScrollBar.setColorIds(C0257R.array.find_friends_colors_twitter_reg);
+                this.mScrollBar.setColorIds(R.array.find_friends_colors_twitter_reg);
                     }
-            this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
-            this.mViewPager.setPageMargin(getResources().getDimensionPixelSize(C0257R.dimen.home_pager_margin));
-            this.mViewPager.setPageMarginDrawable(C0257R.color.bg_grouped_list);
+            this.mViewPager = (ViewPager) findViewById(R.id.pager);
+            this.mViewPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.home_pager_margin));
+            this.mViewPager.setPageMarginDrawable(R.color.bg_grouped_list);
                 }
 
                 @Override 
@@ -65,7 +65,7 @@
                 throw new RuntimeException("Your content must have a TabHost whose id attribute is 'android.R.id.tabhost'");
                     }
             this.mTabHost.setup();
-            this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
+            this.mViewPager = (ViewPager) findViewById(R.id.pager);
                 }
 
                 @Override 

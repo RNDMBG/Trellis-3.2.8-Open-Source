@@ -129,7 +129,7 @@
                     int navRGB;
                     int titleRGB;
                     TextView title;
-            super.onCreate(savedInstanceState, C0257R.layout.main, true);
+            super.onCreate(savedInstanceState, R.layout.main, true);
                     
                     
                     
@@ -157,21 +157,21 @@
                     }
            this.mChannelTitle = channel;
            if (TextUtils.isEmpty(navRGBParam)) {
-               navRGB = getResources().getColor(C0257R.color.vine_green);
+               navRGB = getResources().getColor(R.color.vine_green);
                     } else {
                         try {
                    navRGB = Color.parseColor(navRGBParam);
                         } catch (IllegalArgumentException e) {
-                   navRGB = getResources().getColor(C0257R.color.vine_green);
+                   navRGB = getResources().getColor(R.color.vine_green);
                         }
                     }
            if (TextUtils.isEmpty(titleRGBParam)) {
-               titleRGB = getResources().getColor(C0257R.color.solid_white);
+               titleRGB = getResources().getColor(R.color.solid_white);
                     } else {
                         try {
                    titleRGB = Color.parseColor(titleRGBParam);
                         } catch (IllegalArgumentException e2) {
-                   titleRGB = getResources().getColor(C0257R.color.solid_white);
+                   titleRGB = getResources().getColor(R.color.solid_white);
                         }
                     }
            setupActionBar((Boolean) true, (Boolean) true, channel, (Boolean) true, (Boolean) true);
@@ -183,13 +183,13 @@
            if (actionBarTitleId > 0 && (title = (TextView) findViewById(actionBarTitleId)) != null) {
                title.setTextColor(titleRGB);
                     }
-           this.mScrollBar = (ViewPagerScrollBar) findViewById(C0257R.id.scrollbar);
+           this.mScrollBar = (ViewPagerScrollBar) findViewById(R.id.scrollbar);
            this.mScrollBar.setLineColor(navRGB);
            this.mScrollBar.setRange(2);
            this.mScrollBar.setVisibility(0);
-           this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
-           this.mViewPager.setPageMargin(getResources().getDimensionPixelSize(C0257R.dimen.home_pager_margin));
-           this.mViewPager.setPageMarginDrawable(C0257R.color.bg_grouped_list);
+           this.mViewPager = (ViewPager) findViewById(R.id.pager);
+           this.mViewPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.home_pager_margin));
+           this.mViewPager.setPageMarginDrawable(R.color.bg_grouped_list);
            this.mViewPager.setOffscreenPageLimit(1);
            IconTabHost tabHost = this.mTabHost;
            this.mTabsAdapter = new TabsAdapter(this, tabHost, this.mViewPager, this.mScrollBar);
@@ -198,19 +198,19 @@
            tabHost.setOnTabChangedListener(this);
            tabHost.setOnTabClickedListener(this);
            Bundle popularBundle = ExploreChannelsFragment.prepareArguments(intent, true, channelId, "popular", "popular", navRGB);
-           popularBundle.putInt("empty_desc", C0257R.string.failed_to_load_posts);
-           this.mTabsAdapter.addTab(tabHost.newTabSpec("popular").setIndicator(TabIndicator.newTextIndicator(inflater, C0257R.layout.explore_tab_indicator, tabHost, C0257R.string.tab_title_popular, true)), ExploreChannelsFragment.class, popularBundle);
+           popularBundle.putInt("empty_desc", R.string.failed_to_load_posts);
+           this.mTabsAdapter.addTab(tabHost.newTabSpec("popular").setIndicator(TabIndicator.newTextIndicator(inflater, R.layout.explore_tab_indicator, tabHost, R.string.tab_title_popular, true)), ExploreChannelsFragment.class, popularBundle);
            if (showRecent) {
                Bundle recentBundle = ExploreChannelsFragment.prepareArguments(intent, true, channelId, "recent", "recent", navRGB);
-               recentBundle.putInt("empty_desc", C0257R.string.failed_to_load_posts);
-               this.mTabsAdapter.addTab(tabHost.newTabSpec("recent").setIndicator(TabIndicator.newTextIndicator(inflater, C0257R.layout.explore_tab_indicator, tabHost, C0257R.string.tab_title_recent, true)), ExploreChannelsFragment.class, recentBundle);
+               recentBundle.putInt("empty_desc", R.string.failed_to_load_posts);
+               this.mTabsAdapter.addTab(tabHost.newTabSpec("recent").setIndicator(TabIndicator.newTextIndicator(inflater, R.layout.explore_tab_indicator, tabHost, R.string.tab_title_recent, true)), ExploreChannelsFragment.class, recentBundle);
                     } else {
                this.mTabHost.getTabWidget().setVisibility(8);
                this.mScrollBar.setVisibility(8);
                     }
            setIconImage(iconPath);
            this.mChannelId = Long.valueOf(channelId).longValue();
-           this.mRootView = (ViewGroup) findViewById(C0257R.id.home_root);
+           this.mRootView = (ViewGroup) findViewById(R.id.home_root);
            this.mHandler = new Handler();
                 }
 
@@ -244,8 +244,8 @@
 
                 @Override 
        public boolean onCreateOptionsMenu(Menu menu) {
-           getMenuInflater().inflate(C0257R.menu.explore_channels, menu);
-           this.mFollowMenuItem = menu.findItem(C0257R.id.follow_channel);
+           getMenuInflater().inflate(R.menu.explore_channels, menu);
+           this.mFollowMenuItem = menu.findItem(R.id.follow_channel);
            this.mShowCaptureIcon = false;
            return super.onCreateOptionsMenu(menu);
                 }
@@ -313,7 +313,7 @@
                throw new RuntimeException("Your content must have a TabHost whose id attribute is 'android.R.id.tabhost'");
                     }
            this.mTabHost.setup();
-           this.mViewPager = (ViewPager) findViewById(C0257R.id.pager);
+           this.mViewPager = (ViewPager) findViewById(R.id.pager);
                 }
 
        public void resetNav() {
@@ -366,7 +366,7 @@
        private void setIconImage(Bitmap iconImage) {
            ActionBar ab = getSupportActionBar();
            if (ab != null) {
-               int l = getResources().getDimensionPixelSize(C0257R.dimen.action_bar_icon);
+               int l = getResources().getDimensionPixelSize(R.dimen.action_bar_icon);
                Bitmap scaledIconImage = Bitmap.createScaledBitmap(iconImage, l, l, true);
                ab.setIcon(new BitmapDrawable(getResources(), scaledIconImage));
                     }
@@ -375,7 +375,7 @@
        private void setFollowIcon(boolean following) {
            if (this.mFollowMenuItem != null) {
                this.mFollowMenuItem.setVisible(true);
-               this.mFollowMenuItem.setIcon(following ? C0257R.drawable.channel_following_ic : C0257R.drawable.channel_follow_ic);
+               this.mFollowMenuItem.setIcon(following ? R.drawable.channel_following_ic : R.drawable.channel_follow_ic);
                     }
                 }
 
@@ -418,7 +418,7 @@
            public void onFollowChannelComplete(String reqId, int statusCode, String reasonPhrase) {
                if (statusCode != 200) {
                    ExploreChannelsActivity.access$502(ExploreChannelsActivity.this, !ExploreChannelsActivity.access$500(ExploreChannelsActivity.this));
-                   Util.showCenteredToast(ExploreChannelsActivity.this, C0257R.string.generic_error);
+                   Util.showCenteredToast(ExploreChannelsActivity.this, R.string.generic_error);
                         } else if (ExploreChannelsActivity.access$500(ExploreChannelsActivity.this)) {
                    ExploreChannelsActivity.this.showChannelFollowedModal();
                         }
@@ -426,9 +426,9 @@
                 }
 
        public void showChannelFollowedModal() {
-           ModalView modal = new ModalView(this, this.mRootView, C0257R.layout.channel_followed_modal);
-           ImageView followingIcon = (ImageView) modal.findViewById(C0257R.id.following_ic);
-           TextView textView = (TextView) modal.findViewById(C0257R.id.description);
+           ModalView modal = new ModalView(this, this.mRootView, R.layout.channel_followed_modal);
+           ImageView followingIcon = (ImageView) modal.findViewById(R.id.following_ic);
+           TextView textView = (TextView) modal.findViewById(R.id.description);
            this.mModal = modal;
            if (this.mLargeIconImageKey != null) {
                Bitmap iconImage = this.mAppController.getPhotoBitmap(this.mLargeIconImageKey);
@@ -436,14 +436,14 @@
                    setModalIconImage(iconImage);
                         }
                         try {
-                   Drawable bg = getResources().getDrawable(C0257R.drawable.circle);
+                   Drawable bg = getResources().getDrawable(R.drawable.circle);
                    bg.setColorFilter(Color.parseColor(this.mChannel.backgroundColor), PorterDuff.Mode.SRC_IN);
                    followingIcon.setBackground(bg);
                         } catch (RuntimeException e) {
                         }
                     }
            if (!TextUtils.isEmpty(this.mChannelTitle)) {
-               textView.setText(getString(C0257R.string.follow_channel_confirmation, new Object[]{this.mChannelTitle}));
+               textView.setText(getString(R.string.follow_channel_confirmation, new Object[]{this.mChannelTitle}));
                     }
                 }
 
@@ -465,10 +465,10 @@
            public void run() {
                Activity context = ExploreChannelsActivity.this;
                if (!OnboardHelper.getChannelFollowHintShown(context)) {
-                   View anchor = context.findViewById(C0257R.id.follow_channel);
+                   View anchor = context.findViewById(R.id.follow_channel);
                    if (anchor != null) {
                        String title = TextUtils.isEmpty(ExploreChannelsActivity.access$700(ExploreChannelsActivity.this)) ? "" : ExploreChannelsActivity.access$700(ExploreChannelsActivity.this);
-                       TooltipOverlayView overlay = new TooltipOverlayView(context, ExploreChannelsActivity.this.getString(C0257R.string.follow_channel_tooltip, new Object[]{title}));
+                       TooltipOverlayView overlay = new TooltipOverlayView(context, ExploreChannelsActivity.this.getString(R.string.follow_channel_tooltip, new Object[]{title}));
                        ExploreChannelsActivity.access$800(ExploreChannelsActivity.this).addView(overlay);
                        overlay.showTooltip(anchor);
                        ExploreChannelsActivity.access$902(ExploreChannelsActivity.this, overlay);

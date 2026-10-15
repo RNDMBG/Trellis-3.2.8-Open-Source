@@ -11,7 +11,7 @@
             import android.view.ViewGroup;
             import android.widget.ImageView;
             import android.widget.SeekBar;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.recorder.RecordConfigUtils;
             import co.vine.android.recorder.VineRecorder;
             import co.vine.android.recorder.camera.CameraManager;
@@ -67,7 +67,7 @@
 
                     
             public PlusMinusTouchListener(Fragment fragment, ImageView target, int res) {
-                super(fragment.getActivity(), res == 2130838217 ? avcodec.AV_CODEC_ID_VP9 : avcodec.AV_CODEC_ID_MSS2);
+                super(fragment.getActivity(), res == R.drawable.zoom_minus ? avcodec.AV_CODEC_ID_VP9 : avcodec.AV_CODEC_ID_MSS2);
                 this.mDrawableId = res;
                 this.mRes = fragment.getResources();
                 this.mTarget = target;
@@ -101,14 +101,14 @@
 
                 @Override 
        public View onLayout(ViewGroup parent, LayoutInflater inflater, Fragment fragment) {
-           ViewGroup subOptionsContainer = (ViewGroup) fragment.getView().findViewById(C0257R.id.recording_sub_options);
-           this.mZoomSeekContainer = inflater.inflate(C0257R.layout.plugin_zoom_seek_container, subOptionsContainer, false);
+           ViewGroup subOptionsContainer = (ViewGroup) fragment.getView().findViewById(R.id.recording_sub_options);
+           this.mZoomSeekContainer = inflater.inflate(R.layout.plugin_zoom_seek_container, subOptionsContainer, false);
            subOptionsContainer.addView(this.mZoomSeekContainer);
-           ViewGroup trigger = (ViewGroup) fragment.getView().findViewById(C0257R.id.zoom_minus);
-           trigger.setOnTouchListener(new PlusMinusTouchListener(fragment, (ImageView) trigger.getChildAt(0), C0257R.drawable.zoom_minus));
-           ViewGroup trigger2 = (ViewGroup) fragment.getView().findViewById(C0257R.id.zoom_plus);
-           trigger2.setOnTouchListener(new PlusMinusTouchListener(fragment, (ImageView) trigger2.getChildAt(0), C0257R.drawable.zoom_plus));
-           View container = fragment.getView().findViewById(C0257R.id.zoom_seek);
+           ViewGroup trigger = (ViewGroup) fragment.getView().findViewById(R.id.zoom_minus);
+           trigger.setOnTouchListener(new PlusMinusTouchListener(fragment, (ImageView) trigger.getChildAt(0), R.drawable.zoom_minus));
+           ViewGroup trigger2 = (ViewGroup) fragment.getView().findViewById(R.id.zoom_plus);
+           trigger2.setOnTouchListener(new PlusMinusTouchListener(fragment, (ImageView) trigger2.getChildAt(0), R.drawable.zoom_plus));
+           View container = fragment.getView().findViewById(R.id.zoom_seek);
            ViewGroup.LayoutParams params = container.getLayoutParams();
            params.width = (int) ((((double) SystemUtil.getDisplaySize((Activity) fragment.getActivity()).x) * 0.8d) - ((double) ((fragment.getResources().getDisplayMetrics().density * 2.0f) * 36.0f)));
            container.setLayoutParams(params);
@@ -204,7 +204,7 @@
                 @Override 
        public void onResume(Activity activity) {
            super.onResume(activity);
-           this.mZoomSeek = (SeekBar) activity.findViewById(C0257R.id.zoom_seek);
+           this.mZoomSeek = (SeekBar) activity.findViewById(R.id.zoom_seek);
            this.mZoomSeek.setProgress(0);
            this.mZoomSeek.setOnSeekBarChangeListener(this.mZoomSeekListener);
                 }

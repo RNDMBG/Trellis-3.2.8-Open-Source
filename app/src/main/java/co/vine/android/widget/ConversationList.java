@@ -6,7 +6,7 @@
             import android.view.View;
             import android.view.ViewGroup;
             import android.widget.AbsListView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.views.SdkListView;
             
             
@@ -37,8 +37,8 @@
             super.onFinishInflate();
             super.setOnScrollListener(this);
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            this.mGetMoreHeaderProgressContainer = inflater.inflate(C0257R.layout.conversation_header, (ViewGroup) null);
-            this.mProgressView = this.mGetMoreHeaderProgressContainer.findViewById(C0257R.id.header_content);
+            this.mGetMoreHeaderProgressContainer = inflater.inflate(R.layout.conversation_header, (ViewGroup) null);
+            this.mProgressView = this.mGetMoreHeaderProgressContainer.findViewById(R.id.header_content);
             addHeaderView(this.mGetMoreHeaderProgressContainer, null, false);
                 }
 

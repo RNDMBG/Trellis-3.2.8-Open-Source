@@ -132,16 +132,16 @@
 
                 @Override 
        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-           View v = inflater.inflate(C0257R.layout.explore, container, false);
-           this.mEmpty = v.findViewById(C0257R.id.empty);
-           this.mEmptyText = (TextView) v.findViewById(C0257R.id.empty_text);
-           this.mProgressContainer = (RelativeLayout) v.findViewById(C0257R.id.progress_container);
-           this.mSadfaceContainer = v.findViewById(C0257R.id.real_sadface);
-           this.mSadface = (ImageView) v.findViewById(C0257R.id.sadface);
-           this.mWebViewContainer = (WebViewContainerLayout) v.findViewById(C0257R.id.webview_container);
+           View v = inflater.inflate(R.layout.explore, container, false);
+           this.mEmpty = v.findViewById(R.id.empty);
+           this.mEmptyText = (TextView) v.findViewById(R.id.empty_text);
+           this.mProgressContainer = (RelativeLayout) v.findViewById(R.id.progress_container);
+           this.mSadfaceContainer = v.findViewById(R.id.real_sadface);
+           this.mSadface = (ImageView) v.findViewById(R.id.sadface);
+           this.mWebViewContainer = (WebViewContainerLayout) v.findViewById(R.id.webview_container);
            this.mWebViewContainer.setInitializationListener(new WebViewInitializedListener(null));
-           v.findViewById(C0257R.id.search).setOnClickListener(new ViewOnClickListenerC02062());
-           ((ScrollDeltaScrollView) v.findViewById(C0257R.id.scrollview)).setScrollDeltaListener(this);
+           v.findViewById(R.id.search).setOnClickListener(new ViewOnClickListenerC02062());
+           ((ScrollDeltaScrollView) v.findViewById(R.id.scrollview)).setScrollDeltaListener(this);
            this.mPrefs = Util.getDefaultSharedPrefs(getActivity());
            return v;
                 }
@@ -324,9 +324,9 @@
                    ExploreFragment.access$500(ExploreFragment.this).setVisibility(0);
                         }
                if (errorCode == -2) {
-                   message = ExploreFragment.this.getString(C0257R.string.explore_empty_no_connectivity);
+                   message = ExploreFragment.this.getString(R.string.explore_empty_no_connectivity);
                         } else {
-                   message = ExploreFragment.this.getString(C0257R.string.explore_empty_generic);
+                   message = ExploreFragment.this.getString(R.string.explore_empty_generic);
                         }
                ExploreFragment.access$500(ExploreFragment.this).setText(message);
                     }

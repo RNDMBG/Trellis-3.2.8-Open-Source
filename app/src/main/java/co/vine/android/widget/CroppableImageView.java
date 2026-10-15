@@ -10,7 +10,7 @@
             import android.support.annotation.NonNull;
             import android.util.AttributeSet;
             import android.widget.ImageView;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             
             
     public class CroppableImageView extends MultiTouchImageView {
@@ -40,23 +40,23 @@
         public CroppableImageView(Context context) {
             super(context);
             Resources res = getResources();
-            init(res.getColor(C0257R.color.solid_white), res.getColor(C0257R.color.translucent_black));
+            init(res.getColor(R.color.solid_white), res.getColor(R.color.translucent_black));
                 }
 
         public CroppableImageView(Context context, AttributeSet attrs) {
-            this(context, attrs, C0257R.attr.croppableImageViewStyle);
+            this(context, attrs, R.attr.croppableImageViewStyle);
                 }
 
         public CroppableImageView(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
-            TypedArray a = context.obtainStyledAttributes(attrs, C0257R.styleable.CroppableImageView, defStyle, 0);
-            int cropRectPadding = a.getDimensionPixelSize(0, 0);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CroppableImageView, defStyle, 0);
+            int cropRectPadding = a.getDimensionPixelSize(R.styleable.CroppableImageView_cropRectPadding, 0);
             if (cropRectPadding > 0) {
                 this.mCropRectPadding = cropRectPadding;
                     }
             Resources res = getResources();
-            int cropRectStrokeColor = a.getColor(1, res.getColor(C0257R.color.solid_white));
-            int shadowColor = a.getColor(2, res.getColor(C0257R.color.translucent_black));
+            int cropRectStrokeColor = a.getColor(R.styleable.CroppableImageView_cropRectStrokeColor, res.getColor(R.color.solid_white));
+            int shadowColor = a.getColor(R.styleable.CroppableImageView_cropShadowColor, res.getColor(R.color.translucent_black));
             a.recycle();
             init(cropRectStrokeColor, shadowColor);
                 }

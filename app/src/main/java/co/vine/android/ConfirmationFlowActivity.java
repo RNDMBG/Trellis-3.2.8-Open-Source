@@ -30,14 +30,14 @@
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
                     Fragment frag;
-            super.onCreate(savedInstanceState, C0257R.layout.fragment_full_layout, true, true);
+            super.onCreate(savedInstanceState, R.layout.fragment_full_layout, true, true);
             Intent intent = getIntent();
             boolean fromSignup = intent.getBooleanExtra("from_sign_up", false);
             FlurryUtils.trackNuxScreenDisplayed("verify_phone");
             if (fromSignup) {
-                setupActionBar((Boolean) false, (Boolean) true, C0257R.string.login_sign_up, (Boolean) false, (Boolean) true);
+                setupActionBar((Boolean) false, (Boolean) true, R.string.login_sign_up, (Boolean) false, (Boolean) true);
                     } else {
-                setupActionBar((Boolean) true, (Boolean) true, C0257R.string.confirm_phone_title, (Boolean) true, (Boolean) true);
+                setupActionBar((Boolean) true, (Boolean) true, R.string.confirm_phone_title, (Boolean) true, (Boolean) true);
                     }
             if (savedInstanceState == null) {
                 if (fromSignup) {
@@ -48,7 +48,7 @@
                 Bundle args = BaseFragment.prepareArguments(intent);
                 args.putString("phone_number", intent.getStringExtra("phone_number"));
                 frag.setArguments(args);
-                getSupportFragmentManager().beginTransaction().add(C0257R.id.fragment_container, frag, TAG).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag, TAG).commit();
                     }
                 }
             }

@@ -42,24 +42,24 @@
 
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup root, Bundle savedInstanceState) {
-            View rootView = inflater.inflate(C0257R.layout.draft_camera, root, false);
+            View rootView = inflater.inflate(R.layout.draft_camera, root, false);
             if (rootView == null) {
                 return null;
                     }
-            int draftProgressDimen = this.mRes.getDimensionPixelOffset(C0257R.dimen.draft_progress_view_height);
-            int progressDimen = this.mRes.getDimensionPixelOffset(C0257R.dimen.progress_view_height);
-            RelativeLayout container = (RelativeLayout) rootView.findViewById(C0257R.id.preview_container);
+            int draftProgressDimen = this.mRes.getDimensionPixelOffset(R.dimen.draft_progress_view_height);
+            int progressDimen = this.mRes.getDimensionPixelOffset(R.dimen.progress_view_height);
+            RelativeLayout container = (RelativeLayout) rootView.findViewById(R.id.preview_container);
             container.setOnClickListener(this);
-            RelativeLayout icon = (RelativeLayout) container.findViewById(C0257R.id.icon_container);
+            RelativeLayout icon = (RelativeLayout) container.findViewById(R.id.icon_container);
             RelativeLayout.LayoutParams iconParams = (RelativeLayout.LayoutParams) icon.getLayoutParams();
             iconParams.width = this.mDimen;
             iconParams.height = this.mDimen;
             iconParams.topMargin = (draftProgressDimen * 2) + progressDimen;
             icon.setLayoutParams(iconParams);
             this.mPreviewView = icon;
-            this.mIcon = (ImageView) icon.findViewById(C0257R.id.preview_icon);
+            this.mIcon = (ImageView) icon.findViewById(R.id.preview_icon);
             Point screenSize = ((AbstractRecordingActivity) getActivity()).getScreenSize();
-            int dotsHeight = this.mRes.getDimensionPixelOffset(C0257R.dimen.draft_dots_height);
+            int dotsHeight = this.mRes.getDimensionPixelOffset(R.dimen.draft_dots_height);
             int actualHeight = screenSize.x + progressDimen + dotsHeight;
             initMasks(rootView, screenSize.x, actualHeight);
             return rootView;
@@ -69,14 +69,14 @@
                     try {
                         if (!this.mMasksAdjusted) {
                     this.mMasksAdjusted = true;
-                    View topMask = rootView.findViewById(C0257R.id.draft_camera_top_mask);
-                    View bottomMask = rootView.findViewById(C0257R.id.draft_camera_bottom_mask);
+                    View topMask = rootView.findViewById(R.id.draft_camera_top_mask);
+                    View bottomMask = rootView.findViewById(R.id.draft_camera_bottom_mask);
                    topMask.setOnTouchListener(this.onMaskTouchListener);
                    bottomMask.setOnTouchListener(this.onMaskTouchListener);
                    int desiredHeight = this.mDimen;
                    if (actualHeight > desiredHeight) {
-                       int draftProgress = this.mRes.getDimensionPixelOffset(C0257R.dimen.draft_progress_view_height);
-                       int progress = this.mRes.getDimensionPixelOffset(C0257R.dimen.progress_view_height);
+                       int draftProgress = this.mRes.getDimensionPixelOffset(R.dimen.draft_progress_view_height);
+                       int progress = this.mRes.getDimensionPixelOffset(R.dimen.progress_view_height);
                        int topHeight = (draftProgress * 3) + progress;
                        int bottomHeight = (actualHeight - topHeight) - this.mDimen;
                        if (bottomHeight > 0) {

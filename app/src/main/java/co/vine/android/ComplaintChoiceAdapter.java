@@ -35,9 +35,9 @@
                 convertView = inflater.inflate(this.mLayoutId, parent, false);
                     }
             TextView title = (TextView) convertView.findViewById(2131427387);
-            View selectionIndicator = convertView.findViewById(C0257R.id.selection_indicator);
+            View selectionIndicator = convertView.findViewById(R.id.selection_indicator);
             if (complaintChoice.selected) {
-                setSelected(this.mContext, selectionIndicator, true, this.mContext.getResources().getColor(C0257R.color.vine_green));
+                setSelected(this.mContext, selectionIndicator, true, this.mContext.getResources().getColor(R.color.vine_green));
                     } else {
                 setSelected(this.mContext, selectionIndicator, false, -1);
                     }
@@ -49,12 +49,12 @@
             selectionIndicator.setSelected(selected);
             Resources res = context.getResources();
             if (selected) {
-                Drawable bg = res.getDrawable(C0257R.drawable.ic_circle_selected).mutate();
+                Drawable bg = res.getDrawable(R.drawable.ic_circle_selected).mutate();
                 bg.setColorFilter(new PorterDuffColorFilter((-16777216) | color, PorterDuff.Mode.SRC_IN));
                 ViewUtil.setBackground(selectionIndicator, bg);
                     } else {
-                Drawable bg2 = res.getDrawable(C0257R.drawable.ic_circle_default);
-                bg2.setColorFilter(new PorterDuffColorFilter(res.getColor(C0257R.color.btn_circle_stroke), PorterDuff.Mode.SRC_IN));
+                Drawable bg2 = res.getDrawable(R.drawable.ic_circle_default);
+                bg2.setColorFilter(new PorterDuffColorFilter(res.getColor(R.color.btn_circle_stroke), PorterDuff.Mode.SRC_IN));
                 ViewUtil.setBackground(selectionIndicator, bg2);
                     }
                 }

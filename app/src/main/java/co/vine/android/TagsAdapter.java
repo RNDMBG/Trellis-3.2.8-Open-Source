@@ -50,7 +50,7 @@
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
                 LayoutInflater layoutInflater = LayoutInflater.from(this.mContext);
-                convertView = layoutInflater.inflate(C0257R.layout.tag_row_view, parent, false);
+                convertView = layoutInflater.inflate(R.layout.tag_row_view, parent, false);
                     }
             TagViewHolder holder = new TagViewHolder(convertView);
             convertView.setTag(holder);
@@ -62,7 +62,7 @@
             TagViewHolder holder = (TagViewHolder) view.getTag();
             VineTag tag = this.mTags.get(position);
             if (!TextUtils.isEmpty(tag.tagName)) {
-                int grayColor = this.mContext.getResources().getColor(C0257R.color.tag_search_hashtag);
+                int grayColor = this.mContext.getResources().getColor(R.color.tag_search_hashtag);
                 ForegroundColorSpan colorSpan = new ForegroundColorSpan(grayColor);
                 SpannableStringBuilder ssb = new SpannableStringBuilder("#");
                 Util.safeSetSpan(ssb, colorSpan, 0, ssb.length(), 33);

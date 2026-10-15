@@ -71,18 +71,18 @@
 
                 @Override 
         public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState, C0257R.layout.xauth, false);
-            setupActionBar((Boolean) true, (Boolean) true, C0257R.string.login_xauth_title, (Boolean) true, (Boolean) true);
-            this.mUsername = (EditText) findViewById(C0257R.id.login_username);
+            super.onCreate(savedInstanceState, R.layout.xauth, false);
+            setupActionBar((Boolean) true, (Boolean) true, R.string.login_xauth_title, (Boolean) true, (Boolean) true);
+            this.mUsername = (EditText) findViewById(R.id.login_username);
             this.mUsername.setTypeface(Typefaces.get(this).getContentTypeface(0, 2));
-            this.mPassword = (EditText) findViewById(C0257R.id.login_password);
+            this.mPassword = (EditText) findViewById(R.id.login_password);
             this.mPassword.setTypeface(Typefaces.get(this).getContentTypeface(0, 2));
             this.mPassword.setOnEditorActionListener(new C02431());
             this.mFinish = getIntent().getBooleanExtra("finish", false);
             this.mAppSessionListener = new LoginTwitterListener(this, null);
-            TextView mTos = (TextView) findViewById(C0257R.id.tos_line_2);
+            TextView mTos = (TextView) findViewById(R.id.tos_line_2);
             StyleSpan[] boldStyle = {new StyleSpan(1), new StyleSpan(1)};
-            Spanned spanned = Util.getSpannedText(boldStyle, getString(C0257R.string.login_xauth_tos_line_2), CommonUtil.MARKER_QUOTES);
+            Spanned spanned = Util.getSpannedText(boldStyle, getString(R.string.login_xauth_tos_line_2), CommonUtil.MARKER_QUOTES);
             mTos.setText(spanned);
             mTos.setMovementMethod(LinkMovementMethod.getInstance());
             Spannable clickSpannable = (Spannable) mTos.getText();
@@ -91,7 +91,7 @@
            int start = spanned.getSpanStart(spans[0]);
            int end = spanned.getSpanEnd(spans[0]);
            StyledClickableSpan clickableSpan = new StyledClickableSpan(2, null, this);
-           clickableSpan.setColor(res.getColor(C0257R.color.text_fineprint));
+           clickableSpan.setColor(res.getColor(R.color.text_fineprint));
            Util.safeSetSpan(clickSpannable, clickableSpan, start, end, 33);
            if (savedInstanceState != null && savedInstanceState.containsKey(STATE_VINE_LOGIN)) {
                this.mVineLogin = (VineLogin) savedInstanceState.getParcelable(STATE_VINE_LOGIN);
@@ -99,7 +99,7 @@
            int start2 = spanned.getSpanStart(spans[1]);
            int end2 = spanned.getSpanEnd(spans[1]);
            StyledClickableSpan clickableSpan2 = new StyledClickableSpan(1, null, this);
-           clickableSpan2.setColor(res.getColor(C0257R.color.text_fineprint));
+           clickableSpan2.setColor(res.getColor(R.color.text_fineprint));
            Util.safeSetSpan(clickSpannable, clickableSpan2, start2, end2, 33);
            FlurryUtils.trackNuxStarted("twitter-xauth");
                 }
@@ -128,7 +128,7 @@
 
                 @Override 
        public boolean onCreateOptionsMenu(Menu menu) {
-           getMenuInflater().inflate(C0257R.menu.login, menu);
+           getMenuInflater().inflate(R.menu.login, menu);
            return true;
                 }
 
@@ -159,19 +159,19 @@
 
        private boolean validateAndDisplayToastIfCredentialsInvalid() {
            if (this.mUsername.getText().toString().isEmpty()) {
-               Util.showCenteredToast(this, C0257R.string.login_twitter_empty_username_email);
+               Util.showCenteredToast(this, R.string.login_twitter_empty_username_email);
                         return false;
                     }
            if (this.mPassword.getText().toString().isEmpty()) {
-               Util.showCenteredToast(this, C0257R.string.login_empty_password);
+               Util.showCenteredToast(this, R.string.login_empty_password);
                         return false;
                     }
            return true;
                 }
 
        private void login(boolean reactivate) {
-           ProgressDialog dialog = new ProgressDialog(this, C0257R.style.ProgressDialogTheme);
-           dialog.setMessage(getString(C0257R.string.sign_up_authorizing));
+           ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
+           dialog.setMessage(getString(R.string.sign_up_authorizing));
            dialog.setProgress(0);
            DialogUtils.showDialogUnsafe(dialog);
            this.mProgressDialog = dialog;
@@ -181,7 +181,7 @@
                VineLogin login = this.mVineLogin;
                this.mAppController.loginCheckTwitter(login.twitterUsername, login.twitterToken, login.twitterSecret, login.twitterUserId, true);
                     } else {
-               Util.showCenteredToast(this, C0257R.string.error_xauth);
+               Util.showCenteredToast(this, R.string.error_xauth);
                     }
                 }
 
@@ -211,7 +211,7 @@
                        return;
                             }
                    LoginTwitterActivity.this.dismissDialog();
-                   Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.find_friends_twitter_xauth_error);
+                   Util.showCenteredToast(LoginTwitterActivity.this, R.string.find_friends_twitter_xauth_error);
                    return;
                         }
                if (statusCode == 200 && login != null) {
@@ -223,7 +223,7 @@
                if (!TextUtils.isEmpty(reasonPhrase)) {
                    Util.showCenteredToast(LoginTwitterActivity.this, reasonPhrase);
                         } else {
-                   Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.error_xauth);
+                   Util.showCenteredToast(LoginTwitterActivity.this, R.string.error_xauth);
                         }
                     }
 
@@ -239,7 +239,7 @@
                                 }
                        return;
                             } catch (VineLoggingException e) {
-                       Util.showCenteredToast(LoginTwitterActivity.this, C0257R.string.failed_to_add_account_on_device);
+                       Util.showCenteredToast(LoginTwitterActivity.this, R.string.failed_to_add_account_on_device);
                        CrashUtil.logException(e);
                        LoginTwitterActivity.this.finish();
                        return;
@@ -253,10 +253,10 @@
                         } else {
                    if (errorCode == VineKnownErrors.ACCOUNT_DEACTIVATED.code) {
                        PromptDialogSupportFragment dialogFragment = PromptDialogSupportFragment.newInstance(1);
-                       dialogFragment.setMessage(C0257R.string.settings_activate_account_dialog);
-                       dialogFragment.setTitle(C0257R.string.settings_activate_account_title);
-                       dialogFragment.setNegativeButton(C0257R.string.cancel);
-                       dialogFragment.setPositiveButton(C0257R.string.settings_activate_account_confirm);
+                       dialogFragment.setMessage(R.string.settings_activate_account_dialog);
+                       dialogFragment.setTitle(R.string.settings_activate_account_title);
+                       dialogFragment.setNegativeButton(R.string.cancel);
+                       dialogFragment.setPositiveButton(R.string.settings_activate_account_confirm);
                        dialogFragment.setListener(LoginTwitterActivity.access$500(LoginTwitterActivity.this));
                        dialogFragment.show(LoginTwitterActivity.this.getSupportFragmentManager());
                        return;

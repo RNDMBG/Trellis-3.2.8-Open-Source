@@ -91,13 +91,13 @@
             this.mViewClickListener = viewClickListener;
             this.mContext = context;
             Resources res = context.getResources();
-            this.mFollowRequestsString = res.getString(C0257R.string.follow_header);
-            this.mNewActivityString = res.getString(C0257R.string.new_activity);
-            this.mOlderActivityString = res.getString(C0257R.string.older_activity);
-            this.mVineGreen = res.getColor(C0257R.color.vine_green);
-            this.mSpanColor = res.getColor(C0257R.color.soft_black);
-           this.mPinnedHeaderHeight = res.getDimensionPixelSize(C0257R.dimen.activity_header_height);
-           int profileImageSize = context.getResources().getDimensionPixelSize(C0257R.dimen.user_image_size);
+            this.mFollowRequestsString = res.getString(R.string.follow_header);
+            this.mNewActivityString = res.getString(R.string.new_activity);
+            this.mOlderActivityString = res.getString(R.string.older_activity);
+            this.mVineGreen = res.getColor(R.color.vine_green);
+            this.mSpanColor = res.getColor(R.color.soft_black);
+           this.mPinnedHeaderHeight = res.getDimensionPixelSize(R.dimen.activity_header_height);
+           int profileImageSize = context.getResources().getDimensionPixelSize(R.dimen.user_image_size);
                     if (profileImageSize <= 0) {
                         profileImageSize = Math.max(1, Math.round(48.0f * res.getDisplayMetrics().density));
                     }
@@ -153,14 +153,14 @@
            int itemViewType = getItemViewType(position);
                     switch (itemViewType) {
                         case 1:
-                   view = LayoutInflater.from(this.mContext).inflate(C0257R.layout.activity_row_view_milestone, root, false);
+                   view = LayoutInflater.from(this.mContext).inflate(R.layout.activity_row_view_milestone, root, false);
                             break;
                         case 2:
                         default:
-                   view = LayoutInflater.from(this.mContext).inflate(C0257R.layout.activity_row_view, root, false);
+                   view = LayoutInflater.from(this.mContext).inflate(R.layout.activity_row_view, root, false);
                             break;
                         case 3:
-                   view = LayoutInflater.from(this.mContext).inflate(C0257R.layout.activity_row_view_count, root, false);
+                   view = LayoutInflater.from(this.mContext).inflate(R.layout.activity_row_view_count, root, false);
                             break;
                     }
            ActivityViewHolder holder = new ActivityViewHolder(view);
@@ -257,7 +257,7 @@
            h.avatar.setTag(Long.valueOf(notif.userId));
            h.avatar.setOnClickListener(this.mAvatarClicker);
            h.typeIcon.setVisibility(0);
-           h.typeIcon.setImageResource(C0257R.drawable.ic_activity_follow);
+           h.typeIcon.setImageResource(R.drawable.ic_activity_follow);
            h.thumbnail.setVisibility(8);
            bindBodyText(h, notif);
                 }
@@ -285,7 +285,7 @@
                ImageKey key2 = new ImageKey(notif.milestone.backgroundImageUrl, this.mProfileImageSize, this.mProfileImageSize, isUserType);
                h.milestoneImageImageKey = key2;
                setImage(h.milestoneImage, this.mAppController.getPhotoBitmap(key2), false);
-               h.milestoneImageFrame.setImageResource(isUserType ? C0257R.drawable.milestone_avatar_frame : C0257R.drawable.milestone_thumb_frame);
+               h.milestoneImageFrame.setImageResource(isUserType ? R.drawable.milestone_avatar_frame : R.drawable.milestone_thumb_frame);
                ImageKey key3 = new ImageKey(notif.milestone.iconUrl);
                h.milestoneIconImageKey = key3;
                setImage(h.milestoneIcon, this.mAppController.getPhotoBitmap(key3), false);
@@ -327,7 +327,7 @@
                    h.thumbnailImageKey = key;
                    setImage(h.thumbnail, this.mAppController.getPhotoBitmap(key));
                         } else {
-                   setImage(h.thumbnail, BitmapFactory.decodeResource(this.mContext.getResources(), 2130837952));
+                   setImage(h.thumbnail, BitmapFactory.decodeResource(this.mContext.getResources(), R.drawable.ic_launcher));
                         }
                     } else if (VineEverydayNotification.TYPE_FOLLOW_APPROVED.equals(notif.type)) {
                h.thumbnail.setVisibility(8);
@@ -336,19 +336,19 @@
                     }
            if (VineEverydayNotification.TYPE_FOLLOWED.equals(notif.type) || VineEverydayNotification.TYPE_FOLLOW_APPROVED.equals(notif.type) || VineEverydayNotification.TYPE_ADDRESS_BOOK_FRIEND_JOINED.equals(notif.type)) {
                h.typeIcon.setVisibility(0);
-               h.typeIcon.setImageResource(C0257R.drawable.ic_activity_follow);
+               h.typeIcon.setImageResource(R.drawable.ic_activity_follow);
                     } else if (VineEverydayNotification.TYPE_COMMENT_MENTION.equals(notif.type) || VineEverydayNotification.TYPE_COMMENTED.equals(notif.type) || VineEverydayNotification.TYPE_GROUP_COMMENTED.equals(notif.type) || VineEverydayNotification.TYPE_POST_MENTION.equals(notif.type) || VineEverydayNotification.TYPE_MENTION.equals(notif.type)) {
                h.typeIcon.setVisibility(0);
-               h.typeIcon.setImageResource(C0257R.drawable.ic_activity_comment);
+               h.typeIcon.setImageResource(R.drawable.ic_activity_comment);
                     } else if (VineEverydayNotification.TYPE_LIKED.equals(notif.type)) {
                h.typeIcon.setVisibility(0);
-               h.typeIcon.setImageResource(C0257R.drawable.ic_activity_like);
+               h.typeIcon.setImageResource(R.drawable.ic_activity_like);
                     } else if (VineEverydayNotification.TYPE_REVINED.equals(notif.type)) {
                h.typeIcon.setVisibility(0);
-               h.typeIcon.setImageResource(C0257R.drawable.ic_activity_revine);
+               h.typeIcon.setImageResource(R.drawable.ic_activity_revine);
                     } else if (VineEverydayNotification.TYPE_TWITTER_FRIEND_JOINED.equals(notif.type)) {
                h.typeIcon.setVisibility(0);
-               h.typeIcon.setImageResource(C0257R.drawable.ic_activity_twitter);
+               h.typeIcon.setImageResource(R.drawable.ic_activity_twitter);
                     } else {
                h.typeIcon.setVisibility(8);
                h.clickable = false;
@@ -385,9 +385,9 @@
                                if (user != null && user.isFollowing()) {
                                    this.mFriendships.addFollowing(followUserId);
                                }
-                       h.followButton.setBackgroundResource(C0257R.drawable.btn_following_default);
+                       h.followButton.setBackgroundResource(R.drawable.btn_following_default);
                             } else {
-                       h.followButton.setBackgroundResource(C0257R.drawable.btn_follow_default);
+                       h.followButton.setBackgroundResource(R.drawable.btn_follow_default);
                             }
                     }
                     } else {
@@ -535,7 +535,7 @@
            if (v != null) {
                v.setColorFilter((ColorFilter) null);
                if (bmp == null) {
-                   v.setImageResource(C0257R.drawable.circle_shape_light);
+                   v.setImageResource(R.drawable.circle_shape_light);
                         } else {
                    v.setBackgroundColor(0);
                    v.setImageDrawable(new RecyclableBitmapDrawable(this.mContext.getResources(), bmp));
@@ -551,7 +551,7 @@
            if (v != null) {
                if (bmp == null) {
                    if (showGray) {
-                       v.setBackgroundColor(this.mContext.getResources().getColor(C0257R.color.solid_light_gray));
+                       v.setBackgroundColor(this.mContext.getResources().getColor(R.color.solid_light_gray));
                             } else {
                        v.setBackgroundColor(ViewCompat.MEASURED_SIZE_MASK);
                             }
@@ -675,7 +675,7 @@
                         return null;
                     }
            if (convertView == null) {
-               convertView = LayoutInflater.from(this.mContext).inflate(C0257R.layout.activity_header, (ViewGroup) null);
+               convertView = LayoutInflater.from(this.mContext).inflate(R.layout.activity_header, (ViewGroup) null);
                convertView.layout(0, 0, this.mListView.getWidth(), this.mPinnedHeaderHeight);
                ActivityViewHolder h = new ActivityViewHolder(convertView);
                convertView.setTag(h);

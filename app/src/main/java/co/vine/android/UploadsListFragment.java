@@ -157,7 +157,7 @@
                                UploadsListFragment.access$702(UploadsListFragment.this, UploadsListFragment.access$600(UploadsListFragment.this).getMeasuredWidth());
                                     }
                            UploadsListFragment.access$600(UploadsListFragment.this).setProgressRatio((float) ((0.98d * p) / 100.0d));
-                           UploadsListFragment.access$500(UploadsListFragment.this).setText(UploadsListFragment.this.getString(C0257R.string.upload_status_uploading));
+                           UploadsListFragment.access$500(UploadsListFragment.this).setText(UploadsListFragment.this.getString(R.string.upload_status_uploading));
                                     break;
                                 }
                                 break;
@@ -166,7 +166,7 @@
                        SLog.dWithTag(UploadsListFragment.TAG, "Post completed, success=" + success);
                        sendMessage(Message.obtain((Handler) null, 2));
                        if (success) {
-                           UploadsListFragment.access$500(UploadsListFragment.this).setText(UploadsListFragment.this.getString(C0257R.string.upload_status_succeeded));
+                           UploadsListFragment.access$500(UploadsListFragment.this).setText(UploadsListFragment.this.getString(R.string.upload_status_succeeded));
                                 } else {
                            UploadsListFragment.access$800(UploadsListFragment.this);
                                 }
@@ -177,7 +177,7 @@
 
        private void resetFailedUpload() {
            if (this.mStatusMessage != null && this.mRefreshIcon != null && this.mProgressView != null) {
-               this.mStatusMessage.setText(getString(C0257R.string.upload_status_failed));
+               this.mStatusMessage.setText(getString(R.string.upload_status_failed));
                this.mRefreshIcon.setVisibility(0);
                this.mProgressView.setProgressRatio(0.0f);
                     }
@@ -193,15 +193,15 @@
                     try {
                this.mVersions = RecordSessionVersion.getValuesWithManagers(activity);
                     } catch (IOException e) {
-               Util.showCenteredToast(activity, C0257R.string.storage_not_ready);
+               Util.showCenteredToast(activity, R.string.storage_not_ready);
                activity.finish();
                     }
-           View header = LayoutInflater.from(activity).inflate(C0257R.layout.upload_header_view, (ViewGroup) this.mListView, false);
+           View header = LayoutInflater.from(activity).inflate(R.layout.upload_header_view, (ViewGroup) this.mListView, false);
            TextView headerTitle = (TextView) header.findViewById(2131427387);
-           headerTitle.setText(C0257R.string.upload_header_title);
+           headerTitle.setText(R.string.upload_header_title);
            ListView listview = this.mListView;
            listview.addHeaderView(header, null, false);
-           listview.setBackgroundColor(getResources().getColor(C0257R.color.uploads_list_bg));
+           listview.setBackgroundColor(getResources().getColor(R.color.uploads_list_bg));
            listview.setDividerHeight(0);
            listview.setOnItemLongClickListener(this);
            listview.setAdapter((ListAdapter) this.mCursorAdapter);
@@ -235,7 +235,7 @@
                    if (loading != null) {
                        loading.setVisibility(8);
                             }
-                   ImageView retry = (ImageView) currentRow.findViewById(C0257R.id.retry);
+                   ImageView retry = (ImageView) currentRow.findViewById(R.id.retry);
                    if (retry != null) {
                        retry.setVisibility(0);
                             }
@@ -299,12 +299,12 @@
            int uploadPosition = position - l.getHeaderViewsCount();
            if (uploadPosition == 0 && cursor.moveToFirst()) {
                this.mPath = cursor.getString(1);
-               this.mProgressView = (ProgressView) v.findViewById(C0257R.id.progress_view);
-               ImageView retry = (ImageView) v.findViewById(C0257R.id.retry);
+               this.mProgressView = (ProgressView) v.findViewById(R.id.progress_view);
+               ImageView retry = (ImageView) v.findViewById(R.id.retry);
                retry.setVisibility(8);
                this.mRefreshIcon = retry;
-               TextView statusMessage = (TextView) v.findViewById(C0257R.id.status_message);
-               statusMessage.setText(getString(C0257R.string.uploading).toUpperCase());
+               TextView statusMessage = (TextView) v.findViewById(R.id.status_message);
+               statusMessage.setText(getString(R.string.uploading).toUpperCase());
                this.mStatusMessage = statusMessage;
                handleRetryPost(cursor, false);
                     }
@@ -338,9 +338,9 @@
            this.mReference = cursor.getString(11);
            PromptDialogSupportFragment promptDialogFragment = PromptDialogSupportFragment.newInstance(1);
            promptDialogFragment.setListener(new C03112());
-           promptDialogFragment.setMessage(C0257R.string.delete_confirm_pending);
-           promptDialogFragment.setPositiveButton(C0257R.string.yes);
-           promptDialogFragment.setNegativeButton(C0257R.string.cancel);
+           promptDialogFragment.setMessage(R.string.delete_confirm_pending);
+           promptDialogFragment.setPositiveButton(R.string.yes);
+           promptDialogFragment.setNegativeButton(R.string.cancel);
            promptDialogFragment.show(getChildFragmentManager());
                     return true;
                 }

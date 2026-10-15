@@ -14,7 +14,7 @@
             import android.widget.ProgressBar;
             import android.widget.TextView;
             import co.vine.android.AbstractRecordingActivity;
-            import co.vine.android.C0257R;
+            import co.vine.android.R;
             import co.vine.android.RecordingFragment;
             import co.vine.android.recorder.BasicVineRecorder;
             import co.vine.android.recorder.RecordSessionManager;
@@ -208,10 +208,10 @@
                            numDrafts--;
                                 }
                        this.mDraftsButton.setText(String.valueOf(numDrafts));
-                       this.mDraftsButton.setBackgroundResource(C0257R.drawable.ic_drafts);
+                       this.mDraftsButton.setBackgroundResource(R.drawable.ic_drafts);
                             } else {
                        this.mDraftsButton.setText("");
-                       this.mDraftsButton.setBackgroundResource(C0257R.drawable.ic_save);
+                       this.mDraftsButton.setBackgroundResource(R.drawable.ic_save);
                             }
                    this.mNumDrafts = numDrafts;
                         }
@@ -235,27 +235,27 @@
 
                 @Override 
        public View onLayout(ViewGroup parent, LayoutInflater inflater, Fragment fragment) {
-           this.mFadeIn = AnimationUtils.loadAnimation(fragment.getActivity(), C0257R.anim.fade_in);
-           this.mFadeOut = AnimationUtils.loadAnimation(fragment.getActivity(), C0257R.anim.fade_out);
-           View draftButton = inflater.inflate(C0257R.layout.plugin_drafts, parent, false);
-           this.mUpgradeSpinner = (ProgressBar) draftButton.findViewById(C0257R.id.upgrade_spinner);
-           this.mDraftsButton = (TextView) draftButton.findViewById(C0257R.id.drafts_button);
+           this.mFadeIn = AnimationUtils.loadAnimation(fragment.getActivity(), R.anim.fade_in);
+           this.mFadeOut = AnimationUtils.loadAnimation(fragment.getActivity(), R.anim.fade_out);
+           View draftButton = inflater.inflate(R.layout.plugin_drafts, parent, false);
+           this.mUpgradeSpinner = (ProgressBar) draftButton.findViewById(R.id.upgrade_spinner);
+           this.mDraftsButton = (TextView) draftButton.findViewById(R.id.drafts_button);
            this.mDraftsButton.setAlpha(0.35f);
            this.mDraftsButton.setOnTouchListener(new ViewOnTouchListenerC04284());
            View view = fragment.getView();
-           ViewGroup topView = (ViewGroup) view.findViewById(C0257R.id.thumbnail_list);
-           inflater.inflate(C0257R.layout.plugin_no_drafts_overlay, topView, true);
-           this.mRecordingOptions = view.findViewById(C0257R.id.recording_options);
-           this.mNoDraftsOverlay = view.findViewById(C0257R.id.no_drafts_overlay);
+           ViewGroup topView = (ViewGroup) view.findViewById(R.id.thumbnail_list);
+           inflater.inflate(R.layout.plugin_no_drafts_overlay, topView, true);
+           this.mRecordingOptions = view.findViewById(R.id.recording_options);
+           this.mNoDraftsOverlay = view.findViewById(R.id.no_drafts_overlay);
            Resources res = fragment.getResources();
-           View sadface = this.mNoDraftsOverlay.findViewById(C0257R.id.no_drafts_overlay_face);
-           float progressHeight = res.getDimensionPixelOffset(C0257R.dimen.progress_view_height);
-           float sadfaceHeight = res.getDimensionPixelOffset(C0257R.dimen.draft_sadface_height);
+           View sadface = this.mNoDraftsOverlay.findViewById(R.id.no_drafts_overlay_face);
+           float progressHeight = res.getDimensionPixelOffset(R.dimen.progress_view_height);
+           float sadfaceHeight = res.getDimensionPixelOffset(R.dimen.draft_sadface_height);
            sadface.setY(((SystemUtil.getDisplaySize((Activity) fragment.getActivity()).x / 2) + progressHeight) - sadfaceHeight);
-           View sadfaceText = this.mNoDraftsOverlay.findViewById(C0257R.id.no_drafts_text);
-           float spacing = res.getDimensionPixelOffset(C0257R.dimen.draft_sadface_spacing);
+           View sadfaceText = this.mNoDraftsOverlay.findViewById(R.id.no_drafts_text);
+           float spacing = res.getDimensionPixelOffset(R.dimen.draft_sadface_spacing);
            sadfaceText.setY(sadface.getY() + spacing);
-           this.mDraftOverlayIcon = view.findViewById(C0257R.id.no_draft_overlay_draft_button);
+           this.mDraftOverlayIcon = view.findViewById(R.id.no_draft_overlay_draft_button);
            return draftButton;
                 }
 
@@ -371,7 +371,7 @@
                    int x = location[0];
                    int y = location[1];
                    this.mDraftOverlayIcon.setX(x);
-                   int draftOverlayOffset = this.mActivity.getResources().getDimensionPixelOffset(C0257R.dimen.draft_overlay_offset);
+                   int draftOverlayOffset = this.mActivity.getResources().getDimensionPixelOffset(R.dimen.draft_overlay_offset);
                    this.mDraftOverlayIcon.setY(y - draftOverlayOffset);
                    this.mNoDraftsOverlay.setOnTouchListener(this.mOnNoDraftOverlayTouchListener);
                    this.mFadeIn.setAnimationListener(this.mFadeInListener);
@@ -388,7 +388,7 @@
                     @Override 
            public void run() {
                if (DraftPlugin.this.mActivity != null) {
-                   Util.showCenteredToast(DraftPlugin.this.mActivity, C0257R.string.draft_upgrade_in_process);
+                   Util.showCenteredToast(DraftPlugin.this.mActivity, R.string.draft_upgrade_in_process);
                         }
                if (!DraftPlugin.access$700(DraftPlugin.this)) {
                    DraftPlugin.access$702(DraftPlugin.this, true);
