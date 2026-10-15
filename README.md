@@ -31,10 +31,3 @@ next time you open the app. Each release here must be tagged
 `build-<number>` (like `build-30`) and have the signed APK attached
 (any file name ending in `.apk`).
 
-## One rule
-
-`app/src/main/java/co/vine/android/C0257R.java` is a frozen copy of the
-resource numbers. **Every time you add a file to `res/`, you must refresh
-the numbers in it from the build output** (`app/build/intermediates/
-runtime_symbol_list/.../R.txt`) before you ship. If you skip this, the
-app will have unexpected behaviour and crash.
