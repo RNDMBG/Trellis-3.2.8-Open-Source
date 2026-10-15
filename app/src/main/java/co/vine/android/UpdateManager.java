@@ -68,6 +68,7 @@ public final class UpdateManager {
     private static final Map<Long, Integer> PENDING_BUILDS = new HashMap<>();
     private static BroadcastReceiver sDownloadReceiver;
     private static boolean sStartupChecked;
+    private static boolean sDownloadActive;
 
     private UpdateManager() {
     }
@@ -363,7 +364,11 @@ public final class UpdateManager {
 
     static File downloadedApkFile(Context context) {
         try {
-            return new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), UpdateConfig.APK_FILE_NAME);
+            File dir = context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+            if (dir == null) {
+                return null;
+            }
+            return new File(dir, UpdateConfig.APK_FILE_NAME);
         } catch (Exception e) {
             return null;
         }
@@ -400,7 +405,10 @@ public final class UpdateManager {
     
     static void deleteStaleApks(Context context) {
         try {
-            File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            File dir = context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+            if (dir == null) {
+                return;
+            }
             File[] files = dir.listFiles();
             if (files == null) {
                 return;
@@ -465,8 +473,17 @@ public final class UpdateManager {
     
     public static void downloadAndInstall(final Activity activity, String apkUrl, final int build) {
         final Context app = activity.getApplicationContext();
+        synchronized (UpdateManager.class) {
+            if (sDownloadActive) {
+                return;
+            }
+            sDownloadActive = true;
+        }
         final long id = enqueueDownload(app, apkUrl);
         if (id < 0) {
+            synchronized (UpdateManager.class) {
+                sDownloadActive = false;
+            }
             try {
                 Toast.makeText(app, C0257R.string.updates_error, Toast.LENGTH_LONG).show();
             } catch (Exception ignored) {
@@ -534,6 +551,7 @@ public final class UpdateManager {
             long lastProgressAt = startedAt[0];
             long lastProgressBytes = 0;
             int restarts = 0;
+            try {
             while (!done && !cancelled[0]) {
                 long id = trackId[0];
                 int status = -1;
@@ -709,6 +727,11 @@ public final class UpdateManager {
                     }
                 }
             }
+            } finally {
+                synchronized (UpdateManager.class) {
+                    sDownloadActive = false;
+                }
+            }
         } catch (Exception e) {
             CrashUtil.logException(e);
         }
@@ -756,9 +779,12 @@ public final class UpdateManager {
         try {
             ensureDownloadReceiver(app);
             try {
-                File stale = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), UpdateConfig.APK_FILE_NAME);
-                if (stale.exists()) {
-                    stale.delete();
+                File dir = app.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+                if (dir != null) {
+                    File stale = new File(dir, UpdateConfig.APK_FILE_NAME);
+                    if (stale.exists()) {
+                        stale.delete();
+                    }
                 }
             } catch (Exception ignored) {
             }
@@ -770,7 +796,7 @@ public final class UpdateManager {
             request.setTitle(app.getString(C0257R.string.updates_title));
             request.setMimeType("application/vnd.android.package-archive");
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
-            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, UpdateConfig.APK_FILE_NAME);
+            request.setDestinationInExternalFilesDir(app, Environment.DIRECTORY_DOWNLOADS, UpdateConfig.APK_FILE_NAME);
             long id = dm.enqueue(request);
             synchronized (PENDING_NAMES) {
                 PENDING_NAMES.put(Long.valueOf(id), UpdateConfig.APK_FILE_NAME);
@@ -838,7 +864,8 @@ public final class UpdateManager {
     }
 
     private static void installApk(Context context, String fileName) throws Exception {
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
+        File dir = context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+        File file = dir != null ? new File(dir, fileName) : null;
         if (file == null || !file.exists()) {
             throw new java.io.FileNotFoundException(fileName);
         }
