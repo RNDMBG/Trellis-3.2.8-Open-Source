@@ -4,6 +4,7 @@
             import android.accounts.AccountManager;
             import android.accounts.AccountManagerFuture;
             import android.content.Context;
+            import android.content.SharedPreferences;
             import android.os.Build;
             import android.provider.Settings;
             import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@
             import co.vine.android.util.BuildUtil;
             import co.vine.android.util.CrashUtil;
             import co.vine.android.util.SystemUtil;
+            import co.vine.android.util.Util;
             import com.edisonwang.android.slog.SLog;
             import com.vandalsoftware.p004io.IoUtils;
             import java.security.MessageDigest;
@@ -98,11 +100,12 @@
                    am.setUserData(account, KEY_LOGIN_TYPE, String.valueOf(2));
                             break;
                     }
-           am.setUserData(account, KEY_USER_NAME, accountName);
-           am.setUserData(account, KEY_USER_AVATAR, avatar);
-           am.setUserData(account, KEY_USER_ID, String.valueOf(vl.userId));
-           am.setAuthToken(account, SESSION_TOKEN_KEY, vl.key);
-                    return account;
+            am.setUserData(account, KEY_USER_NAME, accountName);
+            am.setUserData(account, KEY_USER_AVATAR, avatar);
+            am.setUserData(account, KEY_USER_ID, String.valueOf(vl.userId));
+            am.setAuthToken(account, SESSION_TOKEN_KEY, vl.key);
+            markAccountKnown(context);
+            return account;
                 }
 
        public static AccountManagerFuture<Boolean> removeAccount(Context context, String accountName) {
@@ -329,9 +332,47 @@
            return mActiveSession;
                 }
 
-       public static void resetActiveSession() {
-           mActiveSession = null;
+        public static void resetActiveSession() {
+            mActiveSession = null;
                 }
+
+        private static final String PREF_KNOWN_ACCOUNT = "known_account";
+
+        public static void markAccountKnown(Context context) {
+                     try {
+                Util.getDefaultSharedPrefs(context).edit().putBoolean(PREF_KNOWN_ACCOUNT, true).apply();
+                     } catch (Exception ignored) {
+                     }
+                 }
+
+        public static void clearAccountsIfDataWiped(Context context) {
+                     try {
+                AccountManager am = AccountManager.get(context);
+                         if (am == null) {
+                             return;
+                         }
+                Account[] accounts = am.getAccountsByType(ACCOUNT_TYPE);
+                         if (accounts == null || accounts.length == 0) {
+                             return;
+                         }
+                SharedPreferences prefs = Util.getDefaultSharedPrefs(context);
+                         if (prefs.getBoolean(PREF_KNOWN_ACCOUNT, false)) {
+                             return;
+                         }
+                         if (!prefs.getAll().isEmpty()) {
+                    markAccountKnown(context);
+                    return;
+                         }
+                         for (Account account : accounts) {
+                             try {
+                        am.removeAccount(account, null, null);
+                             } catch (Exception ignored) {
+                             }
+                         }
+                     } catch (Exception e) {
+                CrashUtil.logException(e);
+                     }
+                 }
 
        public static Account getActiveAccount(Context context) {
            return getAccount(context, AppController.getInstance(context).getActiveSession().getLoginEmail());

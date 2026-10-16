@@ -12,6 +12,7 @@
             import android.text.TextUtils;
             import co.vine.android.client.AppController;
             import co.vine.android.client.FacebookVineApp;
+            import co.vine.android.client.VineAccountHelper;
             import co.vine.android.client.VineAPI;
             import co.vine.android.network.NetworkOperation;
 import co.vine.android.player.SdkVideoView;
@@ -57,9 +58,10 @@ import co.vine.android.provider.VineDatabaseHelper;
                     }
                 }
 
-                @Override 
+                 @Override 
         public void onCreate() {
             super.onCreate();
+            VineAccountHelper.clearAccountsIfDataWiped(this.mAppContext);
             if (BuildUtil.isI18nOn()) {
                 Resources resources = this.mAppContext.getResources();
                 if (resources != null) {
