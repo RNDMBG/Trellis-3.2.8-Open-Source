@@ -81,7 +81,7 @@
         protected void onLayout(boolean changed, int l, int t, int r, int b) {
                     for (int i = 0; i < getChildCount(); i++) {
                 View child = getChildAt(i);
-                if (child.getId() == 2131427584) {
+                if (child.getId() == R.id.floating_notification) {
                     RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) child.getLayoutParams();
                     params.addRule(10);
                     params.topMargin = this.mNotificationMargin;

@@ -174,7 +174,7 @@
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
-           if (item.getItemId() == 2131427939) {
+           if (item.getItemId() == R.id.done) {
                Editable e = this.mConfirmationBox.getText();
                if (e == null) {
                             return false;
@@ -196,14 +196,14 @@
                 @Override 
        public void onClick(View v) {
            int id = v.getId();
-           if (id == 2131427455) {
+           if (id == R.id.confirm_send_again) {
                this.mSentAgain = true;
                ConfirmationFlowActivity.requestPhoneVerification(this.mAppController, this.mPhone);
                this.mHandler.postDelayed(this.mShowMessageRunnable, 500L);
                this.mSendAgain.setOnClickListener(null);
                return;
                     }
-           if (id == 2131427456) {
+           if (id == R.id.skip) {
                startActivity(new Intent(getActivity(), (Class<?>) ChannelsListNUXActivity.class));
                     }
                 }

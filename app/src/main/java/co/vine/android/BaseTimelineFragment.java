@@ -443,10 +443,10 @@ import java.util.Map;
 
        protected void populateClientFlagsBanner(String title, String text) {
            if (!TextUtils.isEmpty(title)) {
-               setBannerText(2131427459, title);
+               setBannerText(R.id.text1, title);
                     }
            if (!TextUtils.isEmpty(text)) {
-               setBannerText(2131427465, text);
+               setBannerText(R.id.text2, text);
                     }
                 }
 

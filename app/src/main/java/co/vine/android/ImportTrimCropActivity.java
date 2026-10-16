@@ -531,7 +531,7 @@
 
                 @Override 
        public void onClick(View view) {
-           if (view.getId() == 2131427603) {
+           if (view.getId() == R.id.import_play_button) {
                playPauseVideo();
                     }
                 }
@@ -566,7 +566,7 @@
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
            int id = item.getItemId();
-           if (id == 2131427600) {
+           if (id == R.id.add) {
                add();
                     } else if (id == 16908332) {
                release();

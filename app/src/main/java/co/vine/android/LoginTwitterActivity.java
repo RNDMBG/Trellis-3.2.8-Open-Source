@@ -134,7 +134,7 @@
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
-           if (item.getItemId() != 2131427943 || !validateAndDisplayToastIfCredentialsInvalid()) {
+           if (item.getItemId() != R.id.sign_in || !validateAndDisplayToastIfCredentialsInvalid()) {
                         return super.onOptionsItemSelected(item);
                     }
            login(false);

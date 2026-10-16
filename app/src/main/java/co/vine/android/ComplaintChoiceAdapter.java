@@ -34,7 +34,7 @@
                 LayoutInflater inflater = ((Activity) this.mContext).getLayoutInflater();
                 convertView = inflater.inflate(this.mLayoutId, parent, false);
                     }
-            TextView title = (TextView) convertView.findViewById(2131427387);
+            TextView title = (TextView) convertView.findViewById(R.id.title);
             View selectionIndicator = convertView.findViewById(R.id.selection_indicator);
             if (complaintChoice.selected) {
                 setSelected(this.mContext, selectionIndicator, true, this.mContext.getResources().getColor(R.color.vine_green));

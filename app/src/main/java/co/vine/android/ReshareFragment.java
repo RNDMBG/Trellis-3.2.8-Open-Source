@@ -201,7 +201,7 @@
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
-           if (item.getItemId() == 2131427939) {
+           if (item.getItemId() == R.id.done) {
                int characterLimit = (140 - this.mShareUrl.length()) - 1;
                if ("twitter".equals(this.mNetwork) && this.mCaption.getText().length() > characterLimit) {
                    Util.showCenteredToast(getActivity(), getString(R.string.reshare_tweet_length_exceeded, Integer.valueOf(characterLimit)));

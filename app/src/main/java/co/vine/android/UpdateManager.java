@@ -27,7 +27,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -62,6 +66,9 @@ public final class UpdateManager {
 
     private static final String LATEST_URL =
             "https://api.github.com/repos/" + UpdateConfig.GITHUB_OWNER + "/" + UpdateConfig.GITHUB_REPO + "/releases/latest";
+
+    private static final String RELEASES_URL =
+            "https://api.github.com/repos/" + UpdateConfig.GITHUB_OWNER + "/" + UpdateConfig.GITHUB_REPO + "/releases";
 
     private static final Handler MAIN = new Handler(Looper.getMainLooper());
     private static final Map<Long, String> PENDING_NAMES = new HashMap<>();
@@ -211,6 +218,164 @@ public final class UpdateManager {
             if (conn != null) {
                 conn.disconnect();
             }
+        }
+    }
+
+    public static final class ReleaseNotes {
+        public final String version;
+        public final int build;
+        public final String body;
+
+        public ReleaseNotes(String version, int build, String body) {
+            this.version = version;
+            this.build = build;
+            this.body = body != null ? body : "";
+        }
+    }
+
+    public interface ReleasesCallback {
+        void onResult(List<ReleaseNotes> releases);
+
+        void onError();
+    }
+
+    public static void fetchAllReleaseNotes(final Context context, final ReleasesCallback callback) {
+        final Handler caller = new Handler(Looper.getMainLooper());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final List<ReleaseNotes> notes = fetchReleases();
+                caller.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (notes != null) {
+                            callback.onResult(notes);
+                        } else {
+                            callback.onError();
+                        }
+                    }
+                });
+            }
+        }).start();
+    }
+
+    private static List<ReleaseNotes> fetchReleases() {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(RELEASES_URL);
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setConnectTimeout(15000);
+            conn.setReadTimeout(15000);
+            conn.setRequestProperty("User-Agent", "Vine-Android-Updater");
+            conn.setRequestProperty("Accept", "application/vnd.github+json");
+            if (conn.getResponseCode() != 200) {
+                return null;
+            }
+            InputStream in = conn.getInputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            reader.close();
+            JSONArray array = new JSONArray(sb.toString());
+            ArrayList<ReleaseNotes> out = new ArrayList<>();
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject release = array.optJSONObject(i);
+                if (release == null) {
+                    continue;
+                }
+                String tag = release.optString("tag_name", "");
+                int tagBuild = parseBuildNumber(tag);
+                if (tagBuild < 0) {
+                    continue;
+                }
+                out.add(new ReleaseNotes(tag, tagBuild, release.optString("body", "")));
+            }
+            Collections.sort(out, new Comparator<ReleaseNotes>() {
+                @Override
+                public int compare(ReleaseNotes a, ReleaseNotes b) {
+                    if (a.build < b.build) {
+                        return 1;
+                    } else if (a.build > b.build) {
+                        return -1;
+                    }
+                    return 0;
+                }
+            });
+            return out;
+        } catch (Exception e) {
+            return null;
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+    }
+
+    public static void maybeShowChangelogPopup(final Activity activity) {
+        try {
+            final Context app = activity.getApplicationContext();
+            final int current = currentBuild(app);
+            final SharedPreferences prefs = Util.getDefaultSharedPrefs(app);
+            final int lastSeen = prefs.getInt(UpdateConfig.PREF_LAST_CHANGELOG_BUILD, -1);
+            if (lastSeen == current) {
+                return;
+            }
+            if (lastSeen < 0 || current < lastSeen) {
+                prefs.edit().putInt(UpdateConfig.PREF_LAST_CHANGELOG_BUILD, current).apply();
+                return;
+            }
+            fetchAllReleaseNotes(app, new ReleasesCallback() {
+                @Override
+                public void onResult(List<ReleaseNotes> releases) {
+                    String body = null;
+                    if (releases != null) {
+                        for (ReleaseNotes notes : releases) {
+                            if (notes != null && notes.build == current && notes.body.length() > 0) {
+                                body = notes.body;
+                                break;
+                            }
+                        }
+                    }
+                    final String message = body;
+                    if (message == null) {
+                        prefs.edit().putInt(UpdateConfig.PREF_LAST_CHANGELOG_BUILD, current).apply();
+                        return;
+                    }
+                    MAIN.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                if (activity.isFinishing()) {
+                                    return;
+                                }
+                                new AlertDialog.Builder(activity)
+                                        .setTitle(R.string.updates_changelog_popup_title)
+                                        .setMessage(message)
+                                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.dismiss();
+                                            }
+                                        })
+                                        .setCancelable(true)
+                                        .show();
+                                prefs.edit().putInt(UpdateConfig.PREF_LAST_CHANGELOG_BUILD, current).apply();
+                            } catch (Exception e) {
+                                CrashUtil.logException(e);
+                            }
+                        }
+                    });
+                }
+
+                @Override
+                public void onError() {
+                }
+            });
+        } catch (Exception e) {
+            CrashUtil.logException(e);
         }
     }
 
@@ -664,7 +829,7 @@ public final class UpdateManager {
                     }
                 } else if (cancelled[0]) {
                     done = true;
-                } else if (fStatus == DownloadManager.STATUS_PAUSED) {
+                } else if (fStatus != DownloadManager.STATUS_RUNNING && fStatus != DownloadManager.STATUS_SUCCESSFUL && fStatus != DownloadManager.STATUS_FAILED) {
                     lastProgressAt = now;
                     try {
                         Thread.sleep(400);

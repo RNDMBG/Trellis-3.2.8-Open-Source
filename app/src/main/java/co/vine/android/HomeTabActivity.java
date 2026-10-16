@@ -212,6 +212,7 @@
        public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState, R.layout.main, true);
             ActivityPollJobService.schedule(this);
+            UpdateManager.maybeShowChangelogPopup(this);
             if (BuildUtil.isExplore()) {
                setupTabs();
                     }

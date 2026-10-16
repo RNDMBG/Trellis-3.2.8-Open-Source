@@ -784,7 +784,7 @@
 
                 @Override 
        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-           if (v.getId() != 2131427449) {
+           if (v.getId() != R.id.edit_reply) {
                         return false;
                     }
            if (actionId == 4) {
@@ -925,19 +925,19 @@
                 @Override 
        public void onClick(View view) {
            int id = view.getId();
-           if (id == 2131427473) {
+           if (id == R.id.send_reply_button) {
                sendTextMessage();
                return;
                     }
-           if (id == 2131427470) {
+           if (id == R.id.text_input_toggle) {
                toggleInput();
                return;
                     }
-           if (id == 2131427494) {
+           if (id == R.id.header_content) {
                this.mLoadMoreHeaderContent.setVisibility(8);
                this.mLoadMoreProgress.setVisibility(0);
                fetchContent(1);
-                    } else if (id == 2131427489) {
+                    } else if (id == R.id.new_message_bar) {
                scrollToBottom(false, false);
                toggleNewMessageBar(false);
                this.mLocalUnreadCount = 0;

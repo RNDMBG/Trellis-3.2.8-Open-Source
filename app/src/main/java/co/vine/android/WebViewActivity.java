@@ -81,7 +81,7 @@
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
-           if (item.getItemId() != 2131427939) {
+           if (item.getItemId() != R.id.done) {
                         return super.onOptionsItemSelected(item);
                     }
            finish();

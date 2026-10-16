@@ -542,6 +542,8 @@
     <id name="updates_check" />
     <id name="updates_auto" />
     <id name="updates_github" />
+    <id name="updates_changelog_title" />
+    <id name="updates_changelog" />
     <id name="privacy_controls" />
     <id name="alert_icon" />
     <id name="favorite_people" />

@@ -50,7 +50,7 @@
 
                 @Override 
         public boolean onOptionsItemSelected(MenuItem item) {
-            if (item.getItemId() == 2131427946) {
+            if (item.getItemId() == R.id.send) {
                 String emailAddress = this.mEmailAddress.getText().toString();
                 if (emailAddress.isEmpty()) {
                     Util.showCenteredToast(this, R.string.login_empty_email);

@@ -276,7 +276,7 @@
                public NotificationSettingsViewHolder(View view) {
                    this.header = view.findViewById(R.id.header);
                    this.headerText = (TextView) view.findViewById(R.id.header_text);
-                   this.title = (TextView) view.findViewById(2131427387);
+                   this.title = (TextView) view.findViewById(R.id.title);
                    this.spinner = (Spinner) view.findViewById(R.id.spinner);
                    this.selectionIndicator = view.findViewById(R.id.selection_indicator);
                         }
@@ -317,7 +317,7 @@
                         } else {
                    res = LayoutInflater.from(this.mContext).inflate(R.layout.settings_spinner_row_item, (ViewGroup) null);
                         }
-               TextView t = (TextView) res.findViewById(2131427387);
+               TextView t = (TextView) res.findViewById(R.id.title);
                t.setText((CharSequence) choice.first);
                t.setSingleLine(false);
                res.invalidate();
@@ -337,7 +337,7 @@
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
-           if (item.getItemId() != 2131427939) {
+           if (item.getItemId() != R.id.done) {
                         return super.onOptionsItemSelected(item);
                     }
            if (this.mAdapter != null) {

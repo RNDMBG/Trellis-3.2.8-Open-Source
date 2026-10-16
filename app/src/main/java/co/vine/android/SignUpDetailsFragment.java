@@ -119,7 +119,7 @@
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
-           if (item.getItemId() == 2131427939 && validateAndDisplayToastIfCredentialsInvalid()) {
+           if (item.getItemId() == R.id.done && validateAndDisplayToastIfCredentialsInvalid()) {
                if (validateAndDisplayToastIfCredentialsInvalid()) {
                    return onNextClicked();
                         }

@@ -45,7 +45,7 @@
         protected void onCreate(Bundle savedInstanceState, int layout) {
             super.onCreate(savedInstanceState, layout, false);
             this.mUri = (Uri) getIntent().getParcelableExtra("uri");
-            this.mView = (CroppableImageView) findViewById(2131427383);
+            this.mView = (CroppableImageView) findViewById(R.id.image);
             this.mView.setVisibility(4);
             if (savedInstanceState != null) {
                 this.mCurrDegrees = savedInstanceState.getInt(STATE_DEGREES, 0);
@@ -90,9 +90,9 @@
 
         public void onClickHandler(View view) {
             int id = view.getId();
-            if (id == 2131427518) {
+            if (id == R.id.save_button) {
                 doCrop();
-                    } else if (id == 2131427517) {
+                    } else if (id == R.id.cancel_button) {
                setResult(0);
                finish();
                     }

@@ -57,7 +57,7 @@
                 ab.setDisplayShowCustomEnabled(true);
                 ab.setCustomView(R.layout.search_action_box);
                 ViewGroup customView = (ViewGroup) ab.getCustomView();
-                TextView title = (TextView) customView.findViewById(2131427378);
+                TextView title = (TextView) customView.findViewById(R.id.action_bar_title);
                 title.setText(R.string.find_friends);
                 EditText query = (EditText) customView.findViewById(R.id.query);
                 ViewUtil.reduceTextSizeViaFontScaleIfNeeded(this, 1.1f, 12.0f, query);
@@ -96,7 +96,7 @@
 
                 @Override 
        public void onClick(View v) {
-           if (v.getId() == 2131427686) {
+           if (v.getId() == R.id.clear) {
                clearSearch();
                     }
                 }
@@ -131,13 +131,13 @@
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
            int id = item.getItemId();
-           if (id == 2131427554) {
+           if (id == R.id.search) {
                item.setVisible(false);
                showSearchBar(true);
                this.mClear.setVisibility(0);
                this.mQuery.requestFocus();
                Util.setSoftKeyboardVisibility(this, this.mQuery, true);
-                    } else if (id == 2131427941) {
+                    } else if (id == R.id.next) {
                this.mViewPager.setCurrentItem(1);
                     } else if (!this.mUserIdsToFollow.isEmpty()) {
                ProgressDialog dialog = new ProgressDialog(this, R.style.ProgressDialogTheme);
@@ -257,7 +257,7 @@
 
                 @Override 
        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-           if (v.getId() != 2131427790) {
+           if (v.getId() != R.id.query) {
                         return false;
                     }
            if (actionId != 3 && (event == null || event.getKeyCode() != 66)) {
@@ -299,7 +299,7 @@
                ViewGroup customView = (ViewGroup) ab.getCustomView();
                EditText query = (EditText) customView.findViewById(R.id.query);
                ImageButton clear = (ImageButton) customView.findViewById(R.id.clear);
-               TextView title = (TextView) customView.findViewById(2131427378);
+               TextView title = (TextView) customView.findViewById(R.id.action_bar_title);
                query.setVisibility(show ? 0 : 8);
                clear.setVisibility(show ? 0 : 8);
                title.setVisibility(show ? 8 : 0);

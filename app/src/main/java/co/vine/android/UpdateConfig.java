@@ -15,6 +15,7 @@ public final class UpdateConfig {
     public static final String APK_FILE_NAME = "vine-update.apk";
     public static final String PREF_UPDATE_READY = "update_ready";
     public static final String PREF_READY_BUILD = "update_ready_build";
+    public static final String PREF_LAST_CHANGELOG_BUILD = "last_changelog_build";
     
     
     

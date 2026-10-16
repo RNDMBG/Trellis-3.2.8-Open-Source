@@ -346,7 +346,7 @@
                    this.mUploadPath = activity.makeSureUploadIsReady();
                         }
                int id = view.getId();
-               if (id == 2131427757) {
+               if (id == R.id.toPostButton) {
                    if (!AppController.getInstance(activity).isLoggedIn()) {
                        PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1);
                        p.setMessage(R.string.share_login_to_post);
@@ -360,7 +360,7 @@
                    FlurryUtils.trackPreviewAction("post");
                    return;
                         }
-               if (id == 2131427755) {
+               if (id == R.id.messagingPreviewNextButton) {
                    Editable text = this.mMessagingEditText.getText();
                    String message = text != null ? text.toString() : "";
                    if (this.mIsMessaging) {
@@ -383,7 +383,7 @@
                             }
                    return;
                         }
-               if (id == 2131427754 || id == 2131427750) {
+               if (id == R.id.previewCaptureButton || id == R.id.messagingPreviewBackButton) {
                    animateOutViews();
                             try {
                        previewToRecord((AbstractRecordingActivity) getActivity(), false);
@@ -393,7 +393,7 @@
                        return;
                             }
                         }
-               if (id == 2131427752) {
+               if (id == R.id.previewEditButton) {
                    animateOutViews();
                             try {
                        previewToRecord((AbstractRecordingActivity) getActivity(), true);

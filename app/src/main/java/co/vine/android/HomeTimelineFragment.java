@@ -213,10 +213,10 @@ import android.text.TextUtils;
                String messageTitle = prefs.getString(ClientFlagsHelper.PREF_MESSAGE_TITLE, null);
                String messageText = prefs.getString(ClientFlagsHelper.PREF_MESSAGE_TEXT, null);
                if (!TextUtils.isEmpty(messageTitle)) {
-                            setBannerText(2131427459, messageTitle);
+                            setBannerText(R.id.text1, messageTitle);
                         }
                if (!TextUtils.isEmpty(messageText)) {
-                            setBannerText(2131427465, messageText);
+                            setBannerText(R.id.text2, messageText);
                         }
                if (this.mInviteBottomBanner != null) {
                    this.mInviteBottomBanner.setVisibility(8);

@@ -757,7 +757,7 @@
            RecordSegment segment = this.mSegment.get();
            if (recorder != null && segment != null) {
                int id = v.getId();
-               if (id == 2131427544) {
+               if (id == R.id.duplicateButton) {
                    SegmentEditorAdapter adapter = recorder.getEditorAdatper();
                    int count = adapter.getCount();
                    int pos = -1;
@@ -773,9 +773,9 @@
                             }
                    return;
                         }
-               if (id == 2131427546) {
+               if (id == R.id.silenceButton) {
                    silence(segment);
-                        } else if (id == 2131427545) {
+                        } else if (id == R.id.trashCanButtonIndividual) {
                    delete(recorder);
                         }
                     }

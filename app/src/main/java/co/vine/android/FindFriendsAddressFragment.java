@@ -65,7 +65,7 @@
                 @Override 
         public void onClick(View view) {
                     FollowButtonViewHolder holder;
-            if (view.getId() == 2131427917 && (holder = (FollowButtonViewHolder) view.getTag()) != null) {
+            if (view.getId() == R.id.follow_button && (holder = (FollowButtonViewHolder) view.getTag()) != null) {
                 if (!holder.following) {
                     this.mAppController.followUser(this.mAppController.getActiveSession(), holder.userId, true);
                     this.mFriendships.addFollowing(holder.userId);

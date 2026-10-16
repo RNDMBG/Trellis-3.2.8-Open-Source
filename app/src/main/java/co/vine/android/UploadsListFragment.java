@@ -197,7 +197,7 @@
                activity.finish();
                     }
            View header = LayoutInflater.from(activity).inflate(R.layout.upload_header_view, (ViewGroup) this.mListView, false);
-           TextView headerTitle = (TextView) header.findViewById(2131427387);
+           TextView headerTitle = (TextView) header.findViewById(R.id.title);
            headerTitle.setText(R.string.upload_header_title);
            ListView listview = this.mListView;
            listview.addHeaderView(header, null, false);
@@ -231,7 +231,7 @@
            public void handleFailedCaptchaRequest(PendingCaptchaRequest pendingCaptchaRequest) {
                         View currentRow;
                if (UploadsListFragment.this.mListView != null && UploadsListFragment.this.mListView.getChildCount() > UploadsListFragment.this.mListView.getHeaderViewsCount() && (currentRow = UploadsListFragment.this.mListView.getChildAt(UploadsListFragment.this.mListView.getHeaderViewsCount())) != null) {
-                   ProgressBar loading = (ProgressBar) currentRow.findViewById(2131427334);
+                   ProgressBar loading = (ProgressBar) currentRow.findViewById(R.id.loading);
                    if (loading != null) {
                        loading.setVisibility(8);
                             }

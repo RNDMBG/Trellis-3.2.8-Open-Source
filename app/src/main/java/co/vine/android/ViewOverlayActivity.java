@@ -42,12 +42,12 @@
                 @Override 
         public void onClick(View v) {
             int id = v.getId();
-            if (id == 2131427627) {
+            if (id == R.id.gingerbread_notif_button) {
                 Util.getDefaultSharedPrefs(this).edit().putBoolean(Settings.PREF_GINGERBREAD_NOTIF_DISMISSED, true).apply();
                 setResult(-1);
                 finish();
                     }
-            if (id == 2131427456) {
+            if (id == R.id.skip) {
                 setResult(0);
                 finish();
                     }

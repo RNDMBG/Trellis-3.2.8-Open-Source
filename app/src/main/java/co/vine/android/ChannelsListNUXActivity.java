@@ -39,7 +39,7 @@
 
                 @Override 
         public boolean onOptionsItemSelected(MenuItem item) {
-            if (item.getItemId() == 2131427941) {
+            if (item.getItemId() == R.id.next) {
                 ChannelsListFragment fragment = getFragment();
                 if (fragment != null) {
                     if (fragment.getSelectedChannelIds().isEmpty()) {

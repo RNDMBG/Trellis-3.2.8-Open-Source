@@ -126,11 +126,11 @@
                 @Override 
        public void onClick(View v) {
            int id = v.getId();
-           if (id == 2131427790) {
+           if (id == R.id.query) {
                Util.setSoftKeyboardVisibility(this, this.mQuery, true);
                return;
                     }
-           if (id == 2131427686) {
+           if (id == R.id.clear) {
                this.mClear.setVisibility(8);
                clearQueryText();
                if (this.mCurrentFragment != null && this.mCurrentFragment.get() != null) {
@@ -140,14 +140,14 @@
                         }
                return;
                     }
-           if (id == 2131427848 || id == 2131427846) {
+           if (id == R.id.search_go_btn || id == R.id.search_close_btn) {
                performSearch();
                     }
                 }
 
                 @Override 
        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-           if (v.getId() == 2131427790) {
+           if (v.getId() == R.id.query) {
                int minimumQueryLength = 2;
                if (this.mCurrentFragment != null && this.mCurrentFragment.get() != null) {
                    minimumQueryLength = this.mCurrentFragment.get().getMinimumSearchQueryLength();

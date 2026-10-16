@@ -55,8 +55,8 @@
                 @Override 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View v = inflater.inflate(R.layout.image_layout, container, false);
-            this.mImageView = (ImageView) v.findViewById(2131427383);
-            this.mProgress = (ProgressBar) v.findViewById(2131427334);
+            this.mImageView = (ImageView) v.findViewById(R.id.image);
+            this.mProgress = (ProgressBar) v.findViewById(R.id.loading);
             return v;
                 }
 

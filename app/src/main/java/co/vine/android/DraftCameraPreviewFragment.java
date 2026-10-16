@@ -96,7 +96,7 @@
 
                 @Override 
        public void onClick(View v) {
-           if (v.getId() == 2131427524) {
+           if (v.getId() == R.id.preview_container) {
                AbstractRecordingActivity activity = (AbstractRecordingActivity) getActivity();
                activity.cameraPreviewToRecorder(this.mPreviewView, this.mIcon);
                     }

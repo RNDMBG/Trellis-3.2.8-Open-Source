@@ -286,11 +286,11 @@
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
            int id = item.getItemId();
-           if (id == 2131427937) {
+           if (id == R.id.ignore) {
                showIgnoreDialog();
                         return true;
                     }
-           if (id == 2131427938) {
+           if (id == R.id.delete_conversation) {
                showDeleteDialog();
                         return true;
                     }
@@ -298,11 +298,11 @@
                onBackPressed();
                         return true;
                     }
-           if (id == 2131427936) {
+           if (id == R.id.go_to_user_profile) {
                ProfileActivity.start(this, this.mDirectUserId, EVENT_SOURCE_TITLE);
                         return true;
                     }
-           if (id == 2131427935) {
+           if (id == R.id.follow_user) {
                this.mAppController.followUser(this.mAppController.getActiveSession(), this.mDirectUserId, true);
                         return true;
                     }

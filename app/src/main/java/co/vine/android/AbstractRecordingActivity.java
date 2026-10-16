@@ -1712,7 +1712,7 @@
 
                         @Override 
               public void onClick(View v) {
-                  if (v.getId() == 2131427531 && !AbstractRecordingActivity.access$1900(AbstractRecordingActivity.this) && !AbstractRecordingActivity.access$1500(AbstractRecordingActivity.this)) {
+                  if (v.getId() == R.id.videoViewContainer && !AbstractRecordingActivity.access$1900(AbstractRecordingActivity.this) && !AbstractRecordingActivity.access$1500(AbstractRecordingActivity.this)) {
                       CrashUtil.log("User clicked on fragment to resume.");
                       AbstractRecordingActivity.access$3202(AbstractRecordingActivity.this, true);
                       AbstractRecordingActivity.access$3300(AbstractRecordingActivity.this, this.val$fragment);

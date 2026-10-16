@@ -288,7 +288,7 @@
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
-                    return item.getItemId() == 2131427941 ? onNextClicked(getActivity()) : super.onOptionsItemSelected(item);
+                    return item.getItemId() == R.id.next ? onNextClicked(getActivity()) : super.onOptionsItemSelected(item);
                 }
 
        private boolean onNextClicked(Activity a) {
@@ -422,7 +422,7 @@
 
                 @Override 
        public void onClick(View view) {
-           if (view.getId() == 2131427595) {
+           if (view.getId() == R.id.user_image_container) {
                addPhoto();
                     }
                 }

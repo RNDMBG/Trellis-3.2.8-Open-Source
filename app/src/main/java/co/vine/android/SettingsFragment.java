@@ -1531,17 +1531,11 @@
               return;
                     }
           if (id == R.id.notification_settings || id == R.id.alert_icon) {
-              if (this.mErrorCode != 0) {
-                  Dialog errorDialog = GooglePlayServicesUtil.getErrorDialog(this.mErrorCode, getActivity(), 6);
-                  errorDialog.show();
-                  return;
-                        } else {
-                  FlurryUtils.trackNotificationSettings();
-                  Intent intent5 = new Intent(getActivity(), (Class<?>) NotificationSettingsActivity.class);
-                  intent5.putExtra("color", this.mBackgroundColor);
-                  startActivity(intent5);
-                  return;
-                        }
+              FlurryUtils.trackNotificationSettings();
+              Intent intent5 = new Intent(getActivity(), (Class<?>) NotificationSettingsActivity.class);
+              intent5.putExtra("color", this.mBackgroundColor);
+              startActivity(intent5);
+              return;
                     }
           if (id == R.id.email_verified) {
               if (!this.mIsEmailVerified) {
@@ -1688,7 +1682,7 @@
                         } else {
                   res = LayoutInflater.from(SettingsFragment.this.getActivity()).inflate(R.layout.settings_spinner_row_item, (ViewGroup) null);
                         }
-              TextView t = (TextView) res.findViewById(2131427387);
+              TextView t = (TextView) res.findViewById(R.id.title);
               t.setText(getEditionName(i));
               t.setSingleLine(true);
               t.setEllipsize(TextUtils.TruncateAt.END);
@@ -1706,7 +1700,7 @@
                         } else {
                   res = LayoutInflater.from(SettingsFragment.this.getActivity()).inflate(R.layout.settings_spinner_row_item, (ViewGroup) null);
                         }
-              TextView t = (TextView) res.findViewById(2131427387);
+              TextView t = (TextView) res.findViewById(R.id.title);
               t.setText(getEditionName(i));
               t.setSingleLine(false);
               res.invalidate();

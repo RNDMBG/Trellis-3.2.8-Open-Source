@@ -119,7 +119,7 @@
 
                     @Override 
            public void onCheckedChanged(RadioGroup group, int checkedId) {
-               LocaleDialog.access$100(LocaleDialog.this).setEnabled(checkedId == 2131427619);
+               LocaleDialog.access$100(LocaleDialog.this).setEnabled(checkedId == R.id.custom_locale);
                LocaleDialog.access$202(LocaleDialog.this, true);
                     }
                 }
@@ -134,7 +134,7 @@
        public void onDismiss(DialogInterface dialog) {
            super.onDismiss(dialog);
            if (this.mChanges) {
-               boolean customLocale = this.mLocaleOptions.getCheckedRadioButtonId() == 2131427619;
+               boolean customLocale = this.mLocaleOptions.getCheckedRadioButtonId() == R.id.custom_locale;
                int position = this.mLocales.getSelectedItemPosition();
                int index = 0;
                Locale selectedLocale = null;

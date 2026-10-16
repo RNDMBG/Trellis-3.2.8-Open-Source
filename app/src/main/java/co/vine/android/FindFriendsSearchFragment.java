@@ -59,12 +59,12 @@
                 @Override 
         public void onClick(View view) {
             int id = view.getId();
-            if (id == 2131427579) {
+            if (id == R.id.btn_friends_txt) {
                 FlurryUtils.trackInvite("sms", "FindFriends");
                 startActivity(Intent.createChooser(this.mSmsIntent, getString(R.string.send)));
                 return;
                     }
-            if (id == 2131427580) {
+            if (id == R.id.btn_friends_email) {
                 FlurryUtils.trackInvite("email", "FindFriends");
                 Intent intent = new Intent("android.intent.action.SENDTO", Uri.fromParts("mailto", "", null));
                 intent.putExtra("android.intent.extra.SUBJECT", getString(R.string.find_friends_invite_email_subject));
@@ -72,7 +72,7 @@
                 startActivity(Intent.createChooser(intent, getString(R.string.find_friends_email_choose_title)));
                 return;
                     }
-            if (id == 2131427578) {
+            if (id == R.id.btn_friends_search) {
                 FlurryUtils.trackVisitSearch("FindFriends");
                 startActivity(new Intent(getActivity(), (Class<?>) SearchActivity.class));
                     }

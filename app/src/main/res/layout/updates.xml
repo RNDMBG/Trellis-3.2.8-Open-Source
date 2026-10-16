@@ -11,4 +11,8 @@
         <co.vine.android.views.SwitchImple android:id="@id/updates_auto" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/VineSwitch" />
     </LinearLayout>
     <TextView android:textSize="14.0sp" android:textColor="#ff33b5e5" android:id="@id/updates_github" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="@string/updates_github_fallback" />
+    <TextView android:textSize="16.0sp" android:textColor="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="@string/updates_changelog_title" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0" android:layout_marginTop="8.0dp">
+        <TextView android:textSize="13.0sp" android:textColor="@android:color/black" android:id="@id/updates_changelog" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/updates_changelog_loading" />
+    </ScrollView>
 </LinearLayout>

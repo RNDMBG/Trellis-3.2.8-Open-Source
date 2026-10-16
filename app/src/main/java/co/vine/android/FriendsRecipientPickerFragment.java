@@ -90,7 +90,7 @@
 
                 @Override 
        public void onClick(View v) {
-           if (v.getId() == 2131427664) {
+           if (v.getId() == R.id.find_friends) {
                FlurryUtils.trackVisitFindFriends("VM Share");
                startActivity(new Intent(getActivity(), (Class<?>) FindFriendsActivity.class));
                     }

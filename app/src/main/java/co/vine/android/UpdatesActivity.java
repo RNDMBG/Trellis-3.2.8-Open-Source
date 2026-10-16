@@ -16,6 +16,7 @@ public class UpdatesActivity extends BaseControllerActionBarActivity implements 
     private TextView mStatus;
     private Button mCheckButton;
     private co.vine.android.views.SwitchInterface mAutoSwitch;
+    private TextView mChangelog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,45 @@ public class UpdatesActivity extends BaseControllerActionBarActivity implements 
         });
         TextView githubRow = (TextView) findViewById(R.id.updates_github);
         githubRow.setOnClickListener(this);
+        mChangelog = (TextView) findViewById(R.id.updates_changelog);
         refreshStatus();
+        loadChangelog();
+    }
+
+    private void loadChangelog() {
+        if (mChangelog == null) {
+            return;
+        }
+        mChangelog.setText(R.string.updates_changelog_loading);
+        UpdateManager.fetchAllReleaseNotes(this, new UpdateManager.ReleasesCallback() {
+            @Override
+            public void onResult(java.util.List<UpdateManager.ReleaseNotes> releases) {
+                if (mChangelog == null) {
+                    return;
+                }
+                if (releases == null || releases.isEmpty()) {
+                    mChangelog.setText(R.string.updates_error);
+                    return;
+                }
+                StringBuilder sb = new StringBuilder();
+                for (UpdateManager.ReleaseNotes notes : releases) {
+                    if (notes == null) {
+                        continue;
+                    }
+                    sb.append("<b>Build ").append(notes.build).append("</b><br>");
+                    String body = notes.body.replace("`", "").trim().replace("\n", "<br>");
+                    sb.append(body).append("<br><br>");
+                }
+                mChangelog.setText(android.text.Html.fromHtml(sb.toString().trim()));
+            }
+
+            @Override
+            public void onError() {
+                if (mChangelog != null) {
+                    mChangelog.setText(R.string.updates_error);
+                }
+            }
+        });
     }
 
     private void refreshStatus() {

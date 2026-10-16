@@ -98,7 +98,7 @@
                 @Override 
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            ViewUtil.reduceTextSizeViaFontScaleIfNeeded(getActivity(), 1.1f, 10.0f, (TextView) this.mView.findViewById(2131427459), (TextView) this.mView.findViewById(2131427465));
+            ViewUtil.reduceTextSizeViaFontScaleIfNeeded(getActivity(), 1.1f, 10.0f, (TextView) this.mView.findViewById(R.id.text1), (TextView) this.mView.findViewById(R.id.text2));
             ViewUtil.reduceTextSizeViaFontScaleIfNeeded(getActivity(), 1.1f, 5.0f, (TextView) this.mView.findViewById(R.id.text3), (TextView) this.mView.findViewById(R.id.explicit_description_settings));
                 }
 
@@ -237,7 +237,7 @@
                 @Override 
        public void onCheckedChanged(CompoundButton compoundButton, boolean on) {
            int id = compoundButton.getId();
-           if (id == 2131427460) {
+           if (id == R.id.private_switch) {
                if (on) {
                    this.mPrivateIcon.setImageResource(R.drawable.ic_settings_private_on);
                    PromptDialogSupportFragment p = PromptDialogSupportFragment.newInstance(1);
@@ -259,7 +259,7 @@
                p2.show(getActivity().getSupportFragmentManager());
                return;
                     }
-           if (id == 2131427466) {
+           if (id == R.id.explicit_switch) {
                if (on) {
                    this.mExplicitIcon.setImageResource(R.drawable.ic_settings_explicit_on);
                    PromptDialogSupportFragment p3 = PromptDialogSupportFragment.newInstance(3);

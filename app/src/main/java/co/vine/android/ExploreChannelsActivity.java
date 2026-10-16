@@ -253,7 +253,7 @@
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
            int id = item.getItemId();
-           if (id != 2131427940) {
+           if (id != R.id.follow_channel) {
                return super.onOptionsItemSelected(item);
                     }
                     if (this.mChannelId <= 0) {
@@ -449,7 +449,7 @@
 
        private void setModalIconImage(Bitmap bitmap) {
            if (this.mModal != null) {
-               ImageView imageView = (ImageView) this.mModal.findViewById(2131427383);
+               ImageView imageView = (ImageView) this.mModal.findViewById(R.id.image);
                Drawable bg = imageView.getBackground();
                bg.setColorFilter(Color.parseColor(this.mChannel.backgroundColor), PorterDuff.Mode.SRC_IN);
                imageView.setImageBitmap(bitmap);

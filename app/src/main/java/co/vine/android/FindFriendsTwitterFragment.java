@@ -297,11 +297,11 @@
                 @Override 
        public void onClick(View view) {
            int id = view.getId();
-           if (id == 2131427582) {
+           if (id == R.id.friends_btn) {
                fetchContent(3);
                return;
                     }
-           if (id == 2131427917) {
+           if (id == R.id.follow_button) {
                FollowButtonViewHolder holder = (FollowButtonViewHolder) view.getTag();
                if (holder != null) {
                    if (!holder.following) {
@@ -326,7 +326,7 @@
                         }
                return;
                     }
-           if (id == 2131427576) {
+           if (id == R.id.select_all_toggle) {
                this.mSelected = this.mSelected ? false : true;
                this.mActivity.toggleFollowAll(this.mSelected, this.mTwitterFriends, this.mFriendships);
                this.mSelectAllToggle.setText(this.mSelected ? R.string.deselect_all : R.string.select_all);

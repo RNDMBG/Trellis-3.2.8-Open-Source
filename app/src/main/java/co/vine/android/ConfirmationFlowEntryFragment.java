@@ -126,7 +126,7 @@
 
                 @Override 
        public boolean onOptionsItemSelected(MenuItem item) {
-           if (item.getItemId() == 2131427941) {
+           if (item.getItemId() == R.id.next) {
                Editable e = this.mPhoneNumberBox.getText();
                if (e == null) {
                             return false;

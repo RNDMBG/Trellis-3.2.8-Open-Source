@@ -763,4 +763,7 @@ looping videos"</string>
     <string name="notif_followed">%1$s followed you</string>
     <string name="notif_mentioned">%1$s mentioned you</string>
     <string name="notif_summary">%1$d new notifications</string>
+    <string name="updates_changelog_title">Changelog</string>
+    <string name="updates_changelog_loading">Loading changelog…</string>
+    <string name="updates_changelog_popup_title">What\'s new</string>
 </resources>

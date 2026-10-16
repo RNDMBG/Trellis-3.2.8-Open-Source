@@ -228,7 +228,7 @@
                     }
            if (id == R.id.mention) {
                insertText("@");
-                    } else if (id == 2131427933) {
+                    } else if (id == R.id.tag) {
                insertText("#");
                     } else {
                return super.onOptionsItemSelected(item);
